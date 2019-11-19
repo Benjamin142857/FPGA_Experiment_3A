@@ -1,5 +1,5 @@
 Analysis & Synthesis report for E3_DigtialClock
-Tue Nov 19 12:16:54 2019
+Tue Nov 19 15:13:55 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -14,11 +14,19 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: my_pll:HZ_10000|altpll:altpll_component
- 11. altpll Parameter Settings by Entity Instance
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: my_pll:HZ_10000|altpll:altpll_component
+ 13. Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Mod0
+ 14. Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Div1
+ 15. Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Mod1
+ 16. Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Div2
+ 17. Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Mod2
+ 18. Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Div0
+ 19. altpll Parameter Settings by Entity Instance
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -44,20 +52,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 19 12:16:54 2019            ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 19 15:13:55 2019            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; E3_DigtialClock                                  ;
 ; Top-level Entity Name              ; E3_DigtialClock                                  ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 0                                                ;
-;     Total combinational functions  ; 0                                                ;
-;     Dedicated logic registers      ; 0                                                ;
-; Total registers                    ; 0                                                ;
-; Total pins                         ; 2                                                ;
+; Total logic elements               ; 279                                              ;
+;     Total combinational functions  ; 276                                              ;
+;     Dedicated logic registers      ; 54                                               ;
+; Total registers                    ; 54                                               ;
+; Total pins                         ; 57                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
-; Total PLLs                         ; 0                                                ;
+; Total PLLs                         ; 1                                                ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -165,21 +173,36 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------+---------+
-; E3_DigtialClock.bdf              ; yes             ; User Block Diagram/Schematic File  ; E:/#Programming/Electronics/Quartus/FPGA_Experiment_3B/E3_DigtialClock/E3_DigtialClock.bdf ;         ;
-; my_pll.v                         ; yes             ; User Wizard-Generated File         ; E:/#Programming/Electronics/Quartus/FPGA_Experiment_3B/E3_DigtialClock/my_pll.v            ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                       ; d:/quartus ii 13/quartus/libraries/megafunctions/altpll.tdf                                ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                       ; d:/quartus ii 13/quartus/libraries/megafunctions/aglobal130.inc                            ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                       ; d:/quartus ii 13/quartus/libraries/megafunctions/stratix_pll.inc                           ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                       ; d:/quartus ii 13/quartus/libraries/megafunctions/stratixii_pll.inc                         ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                       ; d:/quartus ii 13/quartus/libraries/megafunctions/cycloneii_pll.inc                         ;         ;
-; db/my_pll_altpll.v               ; yes             ; Auto-Generated Megafunction        ; E:/#Programming/Electronics/Quartus/FPGA_Experiment_3B/E3_DigtialClock/db/my_pll_altpll.v  ;         ;
-; 74292.bdf                        ; yes             ; Megafunction                       ; d:/quartus ii 13/quartus/libraries/others/maxplus2/74292.bdf                               ;         ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
+; E3_DigtialClock.bdf              ; yes             ; User Block Diagram/Schematic File  ; D:/FPGA_Experiment_3B/E3_DigtialClock/E3_DigtialClock.bdf        ;         ;
+; my_pll.v                         ; yes             ; User Wizard-Generated File         ; D:/FPGA_Experiment_3B/E3_DigtialClock/my_pll.v                   ;         ;
+; digital_clock.v                  ; yes             ; User Verilog HDL File              ; D:/FPGA_Experiment_3B/E3_DigtialClock/digital_clock.v            ;         ;
+; 7447.bdf                         ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/others/maxplus2/7447.bdf            ;         ;
+; 74292.bdf                        ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/others/maxplus2/74292.bdf           ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
+; db/my_pll_altpll.v               ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/my_pll_altpll.v         ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/lpm_divide.tdf        ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/abs_divider.inc       ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/sign_div_unsign.inc   ;         ;
+; db/lpm_divide_j9m.tdf            ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/lpm_divide_j9m.tdf      ;         ;
+; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/sign_div_unsign_8kh.tdf ;         ;
+; db/alt_u_div_44f.tdf             ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/alt_u_div_44f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_hhm.tdf            ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/lpm_divide_hhm.tdf      ;         ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/sign_div_unsign_9kh.tdf ;         ;
+; db/alt_u_div_64f.tdf             ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/alt_u_div_64f.tdf       ;         ;
+; db/lpm_divide_k9m.tdf            ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/lpm_divide_k9m.tdf      ;         ;
+; db/lpm_divide_ghm.tdf            ; yes             ; Auto-Generated Megafunction        ; D:/FPGA_Experiment_3B/E3_DigtialClock/db/lpm_divide_ghm.tdf      ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -187,47 +210,145 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
+; Estimated Total logic elements              ; 279   ;
 ;                                             ;       ;
-; Total combinational functions               ; 0     ;
+; Total combinational functions               ; 276   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
+;     -- 4 input functions                    ; 64    ;
+;     -- 3 input functions                    ; 75    ;
+;     -- <=2 input functions                  ; 137   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
+;     -- normal mode                          ; 204   ;
+;     -- arithmetic mode                      ; 72    ;
 ;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
+; Total registers                             ; 54    ;
+;     -- Dedicated logic registers            ; 54    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 2     ;
+; I/O pins                                    ; 57    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; CLK   ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 2     ;
-; Average fan-out                             ; 0.50  ;
+; Total PLLs                                  ; 1     ;
+;     -- PLLs                                 ; 1     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; inst2 ;
+; Maximum fan-out                             ; 38    ;
+; Total fan-out                               ; 930   ;
+; Average fan-out                             ; 2.09  ;
 +---------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |E3_DigtialClock           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 2    ; 0            ; |E3_DigtialClock    ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                       ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |E3_DigtialClock                          ; 276 (2)           ; 54 (0)       ; 0           ; 0            ; 0       ; 0         ; 57   ; 0            ; |E3_DigtialClock                                                                                                                   ; work         ;
+;    |74292:inst10|                         ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|74292:inst10                                                                                                      ; work         ;
+;    |74292:inst7|                          ; 14 (14)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|74292:inst7                                                                                                       ; work         ;
+;    |7447:inst14|                          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|7447:inst14                                                                                                       ; work         ;
+;    |7447:inst18|                          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|7447:inst18                                                                                                       ; work         ;
+;    |7447:inst1|                           ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|7447:inst1                                                                                                        ; work         ;
+;    |7447:inst20|                          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|7447:inst20                                                                                                       ; work         ;
+;    |7447:inst22|                          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|7447:inst22                                                                                                       ; work         ;
+;    |7447:inst6|                           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|7447:inst6                                                                                                        ; work         ;
+;    |main_clock:inst55|                    ; 216 (68)          ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55                                                                                                 ; work         ;
+;       |lpm_divide:Div0|                   ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div0                                                                                 ; work         ;
+;          |lpm_divide_ghm:auto_generated|  ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div0|lpm_divide_ghm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_8kh:divider| ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div0|lpm_divide_ghm:auto_generated|sign_div_unsign_8kh:divider                       ; work         ;
+;                |alt_u_div_44f:divider|    ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div0|lpm_divide_ghm:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_44f:divider ; work         ;
+;       |lpm_divide:Div1|                   ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div1                                                                                 ; work         ;
+;          |lpm_divide_hhm:auto_generated|  ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div1|lpm_divide_hhm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div1|lpm_divide_hhm:auto_generated|sign_div_unsign_9kh:divider                       ; work         ;
+;                |alt_u_div_64f:divider|    ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div1|lpm_divide_hhm:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ; work         ;
+;       |lpm_divide:Div2|                   ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div2                                                                                 ; work         ;
+;          |lpm_divide_hhm:auto_generated|  ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div2|lpm_divide_hhm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div2|lpm_divide_hhm:auto_generated|sign_div_unsign_9kh:divider                       ; work         ;
+;                |alt_u_div_64f:divider|    ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Div2|lpm_divide_hhm:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ; work         ;
+;       |lpm_divide:Mod0|                   ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod0                                                                                 ; work         ;
+;          |lpm_divide_j9m:auto_generated|  ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod0|lpm_divide_j9m:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_8kh:divider| ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod0|lpm_divide_j9m:auto_generated|sign_div_unsign_8kh:divider                       ; work         ;
+;                |alt_u_div_44f:divider|    ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod0|lpm_divide_j9m:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_44f:divider ; work         ;
+;       |lpm_divide:Mod1|                   ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod1                                                                                 ; work         ;
+;          |lpm_divide_k9m:auto_generated|  ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod1|lpm_divide_k9m:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod1|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                       ; work         ;
+;                |alt_u_div_64f:divider|    ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod1|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ; work         ;
+;       |lpm_divide:Mod2|                   ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod2                                                                                 ; work         ;
+;          |lpm_divide_k9m:auto_generated|  ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod2|lpm_divide_k9m:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod2|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                       ; work         ;
+;                |alt_u_div_64f:divider|    ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|main_clock:inst55|lpm_divide:Mod2|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ; work         ;
+;    |my_pll:HZ_10000|                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|my_pll:HZ_10000                                                                                                   ; work         ;
+;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|my_pll:HZ_10000|altpll:altpll_component                                                                           ; work         ;
+;          |my_pll_altpll:auto_generated|   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |E3_DigtialClock|my_pll:HZ_10000|altpll:altpll_component|my_pll_altpll:auto_generated                                              ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                              ;
-+--------+--------------+---------+--------------+--------------+----------------------------------+---------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                  ; IP Include File                                                                 ;
-+--------+--------------+---------+--------------+--------------+----------------------------------+---------------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |E3_DigtialClock|my_pll:HZ_10000 ; E:/#Programming/Electronics/Quartus/FPGA_Experiment_3B/E3_DigtialClock/my_pll.v ;
-+--------+--------------+---------+--------------+--------------+----------------------------------+---------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                             ;
++--------+--------------+---------+--------------+--------------+----------------------------------+------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                  ; IP Include File                                ;
++--------+--------------+---------+--------------+--------------+----------------------------------+------------------------------------------------+
+; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |E3_DigtialClock|my_pll:HZ_10000 ; D:/FPGA_Experiment_3B/E3_DigtialClock/my_pll.v ;
++--------+--------------+---------+--------------+--------------+----------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; 74292:inst7|7                          ; Lost fanout                            ;
+; 74292:inst7|8                          ; Lost fanout                            ;
+; 74292:inst7|9                          ; Lost fanout                            ;
+; 74292:inst7|26                         ; Lost fanout                            ;
+; 74292:inst7|41                         ; Lost fanout                            ;
+; 74292:inst7|65                         ; Lost fanout                            ;
+; 74292:inst7|54                         ; Lost fanout                            ;
+; 74292:inst7|66                         ; Lost fanout                            ;
+; 74292:inst7|77                         ; Lost fanout                            ;
+; 74292:inst7|89                         ; Lost fanout                            ;
+; 74292:inst7|78                         ; Lost fanout                            ;
+; 74292:inst7|90                         ; Lost fanout                            ;
+; 74292:inst7|101                        ; Lost fanout                            ;
+; 74292:inst7|113                        ; Lost fanout                            ;
+; 74292:inst7|102                        ; Lost fanout                            ;
+; 74292:inst7|114                        ; Lost fanout                            ;
+; 74292:inst10|7                         ; Lost fanout                            ;
+; 74292:inst10|8                         ; Lost fanout                            ;
+; 74292:inst10|9                         ; Lost fanout                            ;
+; 74292:inst10|26                        ; Lost fanout                            ;
+; 74292:inst10|41                        ; Lost fanout                            ;
+; 74292:inst10|65                        ; Lost fanout                            ;
+; 74292:inst10|54                        ; Lost fanout                            ;
+; 74292:inst10|66                        ; Lost fanout                            ;
+; 74292:inst10|77                        ; Lost fanout                            ;
+; 74292:inst10|89                        ; Lost fanout                            ;
+; 74292:inst10|78                        ; Lost fanout                            ;
+; 74292:inst10|90                        ; Lost fanout                            ;
+; 74292:inst10|101                       ; Lost fanout                            ;
+; 74292:inst10|113                       ; Lost fanout                            ;
+; 74292:inst10|102                       ; Lost fanout                            ;
+; 74292:inst10|114                       ; Lost fanout                            ;
+; 74292:inst10|125                       ; Lost fanout                            ;
+; 74292:inst10|209                       ; Lost fanout                            ;
+; 74292:inst10|198                       ; Lost fanout                            ;
+; 74292:inst10|186                       ; Lost fanout                            ;
+; 74292:inst10|197                       ; Lost fanout                            ;
+; 74292:inst10|185                       ; Lost fanout                            ;
+; 74292:inst10|174                       ; Lost fanout                            ;
+; 74292:inst10|162                       ; Merged with 74292:inst7|125            ;
+; 74292:inst10|173                       ; Merged with 74292:inst7|209            ;
+; 74292:inst7|198                        ; Merged with 74292:inst10|161           ;
+; 74292:inst7|186                        ; Merged with 74292:inst10|150           ;
+; 74292:inst7|197                        ; Merged with 74292:inst10|138           ;
+; 74292:inst7|185                        ; Merged with 74292:inst10|149           ;
+; 74292:inst7|174                        ; Merged with 74292:inst10|137           ;
+; main_clock:inst55|Mh[3]                ; Stuck at GND due to stuck port data_in ;
+; main_clock:inst55|Sh[3]                ; Stuck at GND due to stuck port data_in ;
+; main_clock:inst55|Hh[2,3]              ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 50 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -235,7 +356,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 54    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -243,6 +364,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |E3_DigtialClock|main_clock:inst55|M ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |E3_DigtialClock|main_clock:inst55|H ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |E3_DigtialClock|main_clock:inst55|S ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
 +--------------------------------------------------------------------------------------+
@@ -619,6 +751,144 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Mod0 ;
++------------------------+----------------+------------------------------------------+
+; Parameter Name         ; Value          ; Type                                     ;
++------------------------+----------------+------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                  ;
+; LPM_WIDTHD             ; 4              ; Untyped                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
+; CBXI_PARAMETER         ; lpm_divide_j9m ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
++------------------------+----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Div1 ;
++------------------------+----------------+------------------------------------------+
+; Parameter Name         ; Value          ; Type                                     ;
++------------------------+----------------+------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                  ;
+; LPM_WIDTHD             ; 4              ; Untyped                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
+; CBXI_PARAMETER         ; lpm_divide_hhm ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
++------------------------+----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Mod1 ;
++------------------------+----------------+------------------------------------------+
+; Parameter Name         ; Value          ; Type                                     ;
++------------------------+----------------+------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                  ;
+; LPM_WIDTHD             ; 4              ; Untyped                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
+; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
++------------------------+----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Div2 ;
++------------------------+----------------+------------------------------------------+
+; Parameter Name         ; Value          ; Type                                     ;
++------------------------+----------------+------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                  ;
+; LPM_WIDTHD             ; 4              ; Untyped                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
+; CBXI_PARAMETER         ; lpm_divide_hhm ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
++------------------------+----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Mod2 ;
++------------------------+----------------+------------------------------------------+
+; Parameter Name         ; Value          ; Type                                     ;
++------------------------+----------------+------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                  ;
+; LPM_WIDTHD             ; 4              ; Untyped                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
+; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
++------------------------+----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: main_clock:inst55|lpm_divide:Div0 ;
++------------------------+----------------+------------------------------------------+
+; Parameter Name         ; Value          ; Type                                     ;
++------------------------+----------------+------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                  ;
+; LPM_WIDTHD             ; 4              ; Untyped                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
+; CBXI_PARAMETER         ; lpm_divide_ghm ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
++------------------------+----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                            ;
 +-------------------------------+-----------------------------------------+
@@ -641,7 +911,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -651,7 +921,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Nov 19 12:16:47 2019
+    Info: Processing started: Tue Nov 19 15:13:52 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off E3_DigtialClock -c E3_DigtialClock
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file e3_digtialclock.bdf
@@ -661,11 +931,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file my_pll.
 Info (12021): Found 1 design units, including 1 entities, in source file digital_clock.v
     Info (12023): Found entity 1: main_clock
 Info (12127): Elaborating entity "E3_DigtialClock" for the top level hierarchy
-Warning (275009): Pin "DEBUG" not connected
-Warning (275008): Primitive "AND2" of instance "inst" not used
-Warning (275008): Primitive "OR2" of instance "inst2" not used
-Warning (275008): Primitive "AND2" of instance "inst3" not used
-Warning (275008): Primitive "NOT" of instance "inst4" not used
+Warning (275011): Block or symbol "NOT" of instance "inst99" overlaps another block or symbol
+Warning (275011): Block or symbol "NOT" of instance "inst555" overlaps another block or symbol
+Info (12128): Elaborating entity "7447" for hierarchy "7447:inst6"
+Info (12130): Elaborated megafunction instantiation "7447:inst6"
+Info (12128): Elaborating entity "main_clock" for hierarchy "main_clock:inst55"
+Warning (10230): Verilog HDL assignment warning at digital_clock.v(28): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at digital_clock.v(30): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at digital_clock.v(36): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at digital_clock.v(49): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at digital_clock.v(50): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at digital_clock.v(51): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at digital_clock.v(52): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at digital_clock.v(53): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at digital_clock.v(54): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "74292" for hierarchy "74292:inst10"
+Info (12130): Elaborated megafunction instantiation "74292:inst10"
 Info (12128): Elaborating entity "my_pll" for hierarchy "my_pll:HZ_10000"
 Info (12128): Elaborating entity "altpll" for hierarchy "my_pll:HZ_10000|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "my_pll:HZ_10000|altpll:altpll_component"
@@ -727,23 +1008,80 @@ Info (12133): Instantiated megafunction "my_pll:HZ_10000|altpll:altpll_component
 Info (12021): Found 1 design units, including 1 entities, in source file db/my_pll_altpll.v
     Info (12023): Found entity 1: my_pll_altpll
 Info (12128): Elaborating entity "my_pll_altpll" for hierarchy "my_pll:HZ_10000|altpll:altpll_component|my_pll_altpll:auto_generated"
-Info (12128): Elaborating entity "74292" for hierarchy "74292:inst10"
-Info (12130): Elaborated megafunction instantiation "74292:inst10"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following PLL node(s):
-        Warning (14320): Synthesized away node "my_pll:HZ_10000|altpll:altpll_component|my_pll_altpll:auto_generated|wire_pll1_clk[0]"
+Info (13014): Ignored 17 buffer(s)
+    Info (13019): Ignored 17 SOFT buffer(s)
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer inst2~synth
+Info (278001): Inferred 6 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "main_clock:inst55|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "main_clock:inst55|Div1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "main_clock:inst55|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "main_clock:inst55|Div2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "main_clock:inst55|Mod2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "main_clock:inst55|Div0"
+Info (12130): Elaborated megafunction instantiation "main_clock:inst55|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "main_clock:inst55|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_j9m.tdf
+    Info (12023): Found entity 1: lpm_divide_j9m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_8kh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_44f.tdf
+    Info (12023): Found entity 1: alt_u_div_44f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc
+Info (12130): Elaborated megafunction instantiation "main_clock:inst55|lpm_divide:Div1"
+Info (12133): Instantiated megafunction "main_clock:inst55|lpm_divide:Div1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hhm.tdf
+    Info (12023): Found entity 1: lpm_divide_hhm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_64f.tdf
+    Info (12023): Found entity 1: alt_u_div_64f
+Info (12130): Elaborated megafunction instantiation "main_clock:inst55|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "main_clock:inst55|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_k9m.tdf
+    Info (12023): Found entity 1: lpm_divide_k9m
+Info (12130): Elaborated megafunction instantiation "main_clock:inst55|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "main_clock:inst55|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ghm.tdf
+    Info (12023): Found entity 1: lpm_divide_ghm
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Hhb" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 39 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLK"
-    Warning (15610): No output dependent on input pin "DEBUG"
-Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4632 megabytes
-    Info: Processing ended: Tue Nov 19 12:16:54 2019
-    Info: Elapsed time: 00:00:07
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Key_H"
+    Warning (15610): No output dependent on input pin "Key_M"
+    Warning (15610): No output dependent on input pin "Key_S"
+Info (21057): Implemented 354 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 50 output pins
+    Info (21061): Implemented 296 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4626 megabytes
+    Info: Processing ended: Tue Nov 19 15:13:55 2019
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 

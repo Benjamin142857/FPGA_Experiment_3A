@@ -1,81 +1,191 @@
 |E3_DigtialClock
+Hh8 <= 7447:inst6.OA
+DEBUG => inst3.IN0
+DEBUG => inst4.IN0
 CLK => my_pll:HZ_10000.inclk0
-DEBUG => ~NO_FANOUT~
+RST => main_clock:inst55.RST
+LOAD => main_clock:inst55.LOAD
+Key_H => inst555.IN0
+Key_M => inst88.IN0
+Key_S => inst99.IN0
+Hh9 <= 7447:inst6.OB
+Hh10 <= 7447:inst6.OC
+Hh11 <= 7447:inst6.OD
+Hh12 <= 7447:inst6.OE
+Hh13 <= 7447:inst6.OF
+Hh14 <= 7447:inst6.OG
+Hh15 <= 7447:inst14.OA
+Hh16 <= 7447:inst14.OB
+Hh17 <= 7447:inst14.OC
+Hh18 <= 7447:inst14.OD
+Hh19 <= 7447:inst14.OE
+Hh20 <= 7447:inst14.OF
+Hh21 <= 7447:inst14.OG
+Hh22 <= 7447:inst18.OA
+Hh23 <= 7447:inst18.OB
+Hh24 <= 7447:inst18.OC
+Hh25 <= 7447:inst18.OD
+Hh26 <= 7447:inst18.OE
+Hh27 <= 7447:inst18.OF
+Hh28 <= 7447:inst18.OG
+Hh29 <= 7447:inst20.OA
+Hh30 <= 7447:inst20.OB
+Hh31 <= 7447:inst20.OC
+Hh32 <= 7447:inst20.OD
+Hh33 <= 7447:inst20.OE
+Hh34 <= 7447:inst20.OF
+Hh35 <= 7447:inst20.OG
+Hh36 <= 7447:inst22.OA
+Hh37 <= 7447:inst22.OB
+Hh38 <= 7447:inst22.OC
+Hh39 <= 7447:inst22.OD
+Hh40 <= 7447:inst22.OE
+Hh41 <= 7447:inst22.OF
+Hh42 <= 7447:inst22.OG
+Hha <= 7447:inst1.OA
+Hhb <= 7447:inst1.OB
+Hhc <= 7447:inst1.OC
+Hhd <= 7447:inst1.OD
+Hhe <= 7447:inst1.OE
+Hhf <= 7447:inst1.OF
+Hhg <= 7447:inst1.OG
+LEDR10 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+LEDR11 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+LEDR12 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+LEDR13 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+LEDR14 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+LEDR15 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+LEDR16 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+LEDR17 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|E3_DigtialClock|my_pll:HZ_10000
-inclk0 => sub_wire3[0].IN1
-c0 <= altpll:altpll_component.clk
+|E3_DigtialClock|7447:inst6
+OG <= 87.DB_MAX_OUTPUT_PORT_TYPE
+C => 25.IN0
+LTN => 25.IN1
+LTN => 27.IN1
+LTN => 29.IN1
+LTN => 13.IN5
+LTN => 38.IN3
+BIN => 37.IN0
+B => 27.IN0
+D => 14.IN0
+A => 29.IN0
+RBIN => 15.IN0
+OF <= 86.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 85.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 13.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 84.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 83.DB_MAX_OUTPUT_PORT_TYPE
+OB <= 82.DB_MAX_OUTPUT_PORT_TYPE
+OA <= 81.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|E3_DigtialClock|my_pll:HZ_10000|altpll:altpll_component
-inclk[0] => my_pll_altpll:auto_generated.inclk[0]
-inclk[1] => my_pll_altpll:auto_generated.inclk[1]
-fbin => ~NO_FANOUT~
-pllena => ~NO_FANOUT~
-clkswitch => ~NO_FANOUT~
-areset => ~NO_FANOUT~
-pfdena => ~NO_FANOUT~
-clkena[0] => ~NO_FANOUT~
-clkena[1] => ~NO_FANOUT~
-clkena[2] => ~NO_FANOUT~
-clkena[3] => ~NO_FANOUT~
-clkena[4] => ~NO_FANOUT~
-clkena[5] => ~NO_FANOUT~
-extclkena[0] => ~NO_FANOUT~
-extclkena[1] => ~NO_FANOUT~
-extclkena[2] => ~NO_FANOUT~
-extclkena[3] => ~NO_FANOUT~
-scanclk => ~NO_FANOUT~
-scanclkena => ~NO_FANOUT~
-scanaclr => ~NO_FANOUT~
-scanread => ~NO_FANOUT~
-scanwrite => ~NO_FANOUT~
-scandata => ~NO_FANOUT~
-phasecounterselect[0] => ~NO_FANOUT~
-phasecounterselect[1] => ~NO_FANOUT~
-phasecounterselect[2] => ~NO_FANOUT~
-phasecounterselect[3] => ~NO_FANOUT~
-phaseupdown => ~NO_FANOUT~
-phasestep => ~NO_FANOUT~
-configupdate => ~NO_FANOUT~
-fbmimicbidir <> <GND>
-clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
-clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
-clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
-clk[3] <= clk[3].DB_MAX_OUTPUT_PORT_TYPE
-clk[4] <= clk[4].DB_MAX_OUTPUT_PORT_TYPE
-extclk[0] <= <GND>
-extclk[1] <= <GND>
-extclk[2] <= <GND>
-extclk[3] <= <GND>
-clkbad[0] <= <GND>
-clkbad[1] <= <GND>
-enable1 <= <GND>
-enable0 <= <GND>
-activeclock <= <GND>
-clkloss <= <GND>
-locked <= <GND>
-scandataout <= <GND>
-scandone <= <GND>
-sclkout0 <= <GND>
-sclkout1 <= <GND>
-phasedone <= <GND>
-vcooverrange <= <GND>
-vcounderrange <= <GND>
-fbout <= <GND>
-fref <= <GND>
-icdrclk <= <GND>
-
-
-|E3_DigtialClock|my_pll:HZ_10000|altpll:altpll_component|my_pll_altpll:auto_generated
-clk[0] <= pll1.CLK
-clk[1] <= pll1.CLK1
-clk[2] <= pll1.CLK2
-clk[3] <= pll1.CLK3
-clk[4] <= pll1.CLK4
-inclk[0] => pll1.CLK
-inclk[1] => pll1.CLK1
+|E3_DigtialClock|main_clock:inst55
+CLK => isFull~reg0.CLK
+CLK => Sl[0]~reg0.CLK
+CLK => Sl[1]~reg0.CLK
+CLK => Sl[2]~reg0.CLK
+CLK => Sl[3]~reg0.CLK
+CLK => Sh[0]~reg0.CLK
+CLK => Sh[1]~reg0.CLK
+CLK => Sh[2]~reg0.CLK
+CLK => Sh[3]~reg0.CLK
+CLK => Ml[0]~reg0.CLK
+CLK => Ml[1]~reg0.CLK
+CLK => Ml[2]~reg0.CLK
+CLK => Ml[3]~reg0.CLK
+CLK => Mh[0]~reg0.CLK
+CLK => Mh[1]~reg0.CLK
+CLK => Mh[2]~reg0.CLK
+CLK => Mh[3]~reg0.CLK
+CLK => Hl[0]~reg0.CLK
+CLK => Hl[1]~reg0.CLK
+CLK => Hl[2]~reg0.CLK
+CLK => Hl[3]~reg0.CLK
+CLK => Hh[0]~reg0.CLK
+CLK => Hh[1]~reg0.CLK
+CLK => Hh[2]~reg0.CLK
+CLK => Hh[3]~reg0.CLK
+CLK => S[0].CLK
+CLK => S[1].CLK
+CLK => S[2].CLK
+CLK => S[3].CLK
+CLK => S[4].CLK
+CLK => S[5].CLK
+CLK => M[0].CLK
+CLK => M[1].CLK
+CLK => M[2].CLK
+CLK => M[3].CLK
+CLK => M[4].CLK
+CLK => M[5].CLK
+CLK => H[0].CLK
+CLK => H[1].CLK
+CLK => H[2].CLK
+CLK => H[3].CLK
+CLK => H[4].CLK
+RST => H.OUTPUTSELECT
+RST => H.OUTPUTSELECT
+RST => H.OUTPUTSELECT
+RST => H.OUTPUTSELECT
+RST => H.OUTPUTSELECT
+RST => M.OUTPUTSELECT
+RST => M.OUTPUTSELECT
+RST => M.OUTPUTSELECT
+RST => M.OUTPUTSELECT
+RST => M.OUTPUTSELECT
+RST => M.OUTPUTSELECT
+RST => S.OUTPUTSELECT
+RST => S.OUTPUTSELECT
+RST => S.OUTPUTSELECT
+RST => S.OUTPUTSELECT
+RST => S.OUTPUTSELECT
+RST => S.OUTPUTSELECT
+LOAD => H.OUTPUTSELECT
+LOAD => H.OUTPUTSELECT
+LOAD => H.OUTPUTSELECT
+LOAD => H.OUTPUTSELECT
+LOAD => H.OUTPUTSELECT
+LOAD => M.OUTPUTSELECT
+LOAD => M.OUTPUTSELECT
+LOAD => M.OUTPUTSELECT
+LOAD => M.OUTPUTSELECT
+LOAD => M.OUTPUTSELECT
+LOAD => M.OUTPUTSELECT
+LOAD => S.OUTPUTSELECT
+LOAD => S.OUTPUTSELECT
+LOAD => S.OUTPUTSELECT
+LOAD => S.OUTPUTSELECT
+LOAD => S.OUTPUTSELECT
+LOAD => S.OUTPUTSELECT
+key_H => ~NO_FANOUT~
+key_M => ~NO_FANOUT~
+key_S => ~NO_FANOUT~
+Hh[0] <= Hh[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Hh[1] <= Hh[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Hh[2] <= Hh[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Hh[3] <= Hh[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Hl[0] <= Hl[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Hl[1] <= Hl[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Hl[2] <= Hl[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Hl[3] <= Hl[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Mh[0] <= Mh[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Mh[1] <= Mh[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Mh[2] <= Mh[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Mh[3] <= Mh[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Ml[0] <= Ml[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Ml[1] <= Ml[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Ml[2] <= Ml[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Ml[3] <= Ml[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Sh[0] <= Sh[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Sh[1] <= Sh[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Sh[2] <= Sh[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Sh[3] <= Sh[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Sl[0] <= Sl[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Sl[1] <= Sl[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Sl[2] <= Sl[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Sl[3] <= Sl[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+isFull <= isFull~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |E3_DigtialClock|74292:inst10
@@ -309,6 +419,81 @@ TP2 <= 310.DB_MAX_OUTPUT_PORT_TYPE
 TP1 <= 297.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|E3_DigtialClock|my_pll:HZ_10000
+inclk0 => sub_wire3[0].IN1
+c0 <= altpll:altpll_component.clk
+
+
+|E3_DigtialClock|my_pll:HZ_10000|altpll:altpll_component
+inclk[0] => my_pll_altpll:auto_generated.inclk[0]
+inclk[1] => my_pll_altpll:auto_generated.inclk[1]
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= clk[1].DB_MAX_OUTPUT_PORT_TYPE
+clk[2] <= clk[2].DB_MAX_OUTPUT_PORT_TYPE
+clk[3] <= clk[3].DB_MAX_OUTPUT_PORT_TYPE
+clk[4] <= clk[4].DB_MAX_OUTPUT_PORT_TYPE
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= <GND>
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= <GND>
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|E3_DigtialClock|my_pll:HZ_10000|altpll:altpll_component|my_pll_altpll:auto_generated
+clk[0] <= pll1.CLK
+clk[1] <= pll1.CLK1
+clk[2] <= pll1.CLK2
+clk[3] <= pll1.CLK3
+clk[4] <= pll1.CLK4
+inclk[0] => pll1.CLK
+inclk[1] => pll1.CLK1
+
+
 |E3_DigtialClock|74292:inst7
 Q <= 126.DB_MAX_OUTPUT_PORT_TYPE
 CLRN => 126.ACLR
@@ -538,5 +723,115 @@ A => 296.IN0
 TP3 <= 328.DB_MAX_OUTPUT_PORT_TYPE
 TP2 <= 310.DB_MAX_OUTPUT_PORT_TYPE
 TP1 <= 297.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|E3_DigtialClock|7447:inst14
+OG <= 87.DB_MAX_OUTPUT_PORT_TYPE
+C => 25.IN0
+LTN => 25.IN1
+LTN => 27.IN1
+LTN => 29.IN1
+LTN => 13.IN5
+LTN => 38.IN3
+BIN => 37.IN0
+B => 27.IN0
+D => 14.IN0
+A => 29.IN0
+RBIN => 15.IN0
+OF <= 86.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 85.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 13.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 84.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 83.DB_MAX_OUTPUT_PORT_TYPE
+OB <= 82.DB_MAX_OUTPUT_PORT_TYPE
+OA <= 81.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|E3_DigtialClock|7447:inst18
+OG <= 87.DB_MAX_OUTPUT_PORT_TYPE
+C => 25.IN0
+LTN => 25.IN1
+LTN => 27.IN1
+LTN => 29.IN1
+LTN => 13.IN5
+LTN => 38.IN3
+BIN => 37.IN0
+B => 27.IN0
+D => 14.IN0
+A => 29.IN0
+RBIN => 15.IN0
+OF <= 86.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 85.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 13.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 84.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 83.DB_MAX_OUTPUT_PORT_TYPE
+OB <= 82.DB_MAX_OUTPUT_PORT_TYPE
+OA <= 81.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|E3_DigtialClock|7447:inst20
+OG <= 87.DB_MAX_OUTPUT_PORT_TYPE
+C => 25.IN0
+LTN => 25.IN1
+LTN => 27.IN1
+LTN => 29.IN1
+LTN => 13.IN5
+LTN => 38.IN3
+BIN => 37.IN0
+B => 27.IN0
+D => 14.IN0
+A => 29.IN0
+RBIN => 15.IN0
+OF <= 86.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 85.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 13.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 84.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 83.DB_MAX_OUTPUT_PORT_TYPE
+OB <= 82.DB_MAX_OUTPUT_PORT_TYPE
+OA <= 81.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|E3_DigtialClock|7447:inst22
+OG <= 87.DB_MAX_OUTPUT_PORT_TYPE
+C => 25.IN0
+LTN => 25.IN1
+LTN => 27.IN1
+LTN => 29.IN1
+LTN => 13.IN5
+LTN => 38.IN3
+BIN => 37.IN0
+B => 27.IN0
+D => 14.IN0
+A => 29.IN0
+RBIN => 15.IN0
+OF <= 86.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 85.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 13.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 84.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 83.DB_MAX_OUTPUT_PORT_TYPE
+OB <= 82.DB_MAX_OUTPUT_PORT_TYPE
+OA <= 81.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|E3_DigtialClock|7447:inst1
+OG <= 87.DB_MAX_OUTPUT_PORT_TYPE
+C => 25.IN0
+LTN => 25.IN1
+LTN => 27.IN1
+LTN => 29.IN1
+LTN => 13.IN5
+LTN => 38.IN3
+BIN => 37.IN0
+B => 27.IN0
+D => 14.IN0
+A => 29.IN0
+RBIN => 15.IN0
+OF <= 86.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 85.DB_MAX_OUTPUT_PORT_TYPE
+RBON <= 13.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 84.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 83.DB_MAX_OUTPUT_PORT_TYPE
+OB <= 82.DB_MAX_OUTPUT_PORT_TYPE
+OA <= 81.DB_MAX_OUTPUT_PORT_TYPE
 
 
