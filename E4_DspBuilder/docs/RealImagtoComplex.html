@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Real-Imag to Complex</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_lib_complex_signals.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body style="background-repeat: no-repeat; border-bottom-color: Transparent; border-left-color: Transparent; border-right-color: Transparent; border-top-color: Transparent; border-top-style: solid; border-top-width: thin; margin-bottom: -150px; margin-left: 16px; margin-top: 65px">
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="ComplextoRealImag.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_lib_gates.21.01.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_block"><a name="1013319">Real-Imag to Complex</a></div>
+      <div class="B0_body"><a name="1015792">The </a><span class="Code">Real-Imag to Complex</span> block constructs a fixed-point complex output from real and imaginary inputs.</div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1079111" title="Real-Imag to Complex" name="1051930">Table&nbsp;16–24</a></span> shows the <span class="Code">Real-Imag to Complex</span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;"> </span>block has the inputs and outputs.</div>
+      <div class="TA_table_anchor"><a name="1079102">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 378pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;16–24.&nbsp;<a name="1079111"> Real-Imag to Complex Block Inputs and Outputs</a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 75.0pt">
+            <div class="THC_heading_center"><a name="1051946">Signal</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 55.0pt">
+            <div class="THC_heading_center"><a name="1051948">Direction</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 248.0pt">
+            <div class="THC_heading_center"><a name="1051950">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1051958">r</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1051960">Input</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1051962">Real part input.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1051964">i</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1051966">Input</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1051968">Imaginary part input.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1052034">c</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1052036">Output</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1052038">Complex output.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1077558" title="Real-Imag to Complex" name="1015796">Table&nbsp;16–25</a></span> shows the <span class="Code">Real-Imag to Complex</span> block parameters.</div>
+      <table class="Table" style="text-align: left; width: 467.1048pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;16–25.&nbsp;<a name="1077558">Real-Imag to Complex Block Parameters </a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 94.6708pt">
+            <div class="THC_heading_center"><a name="1015809">Name</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 81.37pt">
+            <div class="THC_heading_center"><a name="1015811">Value</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 291.064pt">
+            <div class="THC_heading_center"><a name="1015813">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1015815">Bus Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1015817">Signed Integer, </a>Signed Fractional, Unsigned Integer</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1015819">Specify the number format you want to use for the bus.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1015821">[number of bits].[]</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1015823">&gt;= 0 </a>(Parameterizable)</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1015825">Select the number of data input bits to the left of the binary point, including </a>the sign bit. </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1015827">[].[number of bits]</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1015829">&gt;= 0 </a>(Parameterizable)</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1015831">Select the number of data input bits to the right of the binary point. This </a>option applies only to signed fractional formats.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1077582" title="Real-Imag to Complex" name="1013364">Table&nbsp;16–26</a></span> shows the <span class="Code">Real-Imag to Complex</span> block I/O formats.</div>
+      <div class="TA_table_anchor"><a name="1077576">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 466.8323pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;16–26.&nbsp;<a name="1077582">Real-Imag to Complex Block I/O Formats </a><span class="Superscript" style="font-style: italic"><a href="ButterflyOperator.html#1014729" title="Butterfly">&nbsp;</a></span><span class="N_007cLink" style="font-style: italic"><a href="ButterflyOperator.html#1014729" title="Butterfly">(1)</a></span></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 20.0pt">
+            <div class="THC_heading_center"><a name="1013382">I/O</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 100.0829pt">
+            <div class="THC_heading_center"><a name="1013390">Simulink </a><span class="Superscript" style="font-style: italic"><a href="ButterflyOperator.html#1014731" title="Butterfly">&nbsp;</a></span><span class="N_007cLink" style="font-style: italic"><a href="ButterflyOperator.html#1014731" title="Butterfly">(2)</a></span>, <span class="Superscript" style="font-style: italic"><a href="ButterflyOperator.html#1014733" title="Butterfly">&nbsp;</a></span><span class="N_007cLink" style="font-style: italic"><a href="ButterflyOperator.html#1014733" title="Butterfly">(3)</a></span></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 308.3714pt">
+            <div class="THC_heading_center"><a name="1013392">VHDL</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 38.378pt">
+            <div class="THC_heading_center"><a name="1013397">Type </a><span class="Superscript" style="font-style: italic"><a href="ButterflyOperator.html#1014735" title="Butterfly">&nbsp;</a></span><span class="N_007cLink" style="font-style: italic"><a href="ButterflyOperator.html#1014735" title="Butterfly">(4)</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013399">I</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013401">I1</a><span class="Subscript">Real([L1].[R1])</span></div>
+            <div class="TBL_body_left"><a name="1013402">I2</a><span class="Subscript">Imag([L1].[R1])</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013404">I1Real: in STD_LOGIC_VECTOR({LP1 + RP1 - 1} DOWNTO 0)</a></div>
+            <div class="TBL_body_left"><a name="1013405">I1Imag: in STD_LOGIC_VECTOR({LP1 + RP1 - 1} DOWNTO 0)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013407">Implicit</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013409">O</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013411">O1</a><span class="Subscript">Real([L1].[R1])Imag([L1].[</span><span class="Subscript">R1])</span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013413">O1Real: in STD_LOGIC_VECTOR({LP1 + RP1 - 1} DOWNTO 0)</a></div>
+            <div class="TBL_body_left"><a name="1013414">O1Imag: in STD_LOGIC_VECTOR({LP1 + RP1 - 1} DOWNTO 0)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013416">Explicit</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top" colspan="4">
+            <div class="NH_note_heading"><a name="1015885">Notes to </a><span class="N_007cLink"><a href="#1077582" title="Real-Imag to Complex">Table&nbsp;16–26</a></span>:</div>
+            <div class="NN_note_numbered_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="NN_note_numbered_inner" style="width: 16pt; white-space: nowrap">(1)	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="NN_note_numbered_inner"><a name="1015886">For signed integers and signed binary fractional numbers, the MSB is the sign bit.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="NN_note_numbered_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="NN_note_numbered_inner" style="width: 16pt; white-space: nowrap">(2)	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="NN_note_numbered_inner"><a name="1015887">[L] is the number of bits on the left side of the binary point; [R] is the number of bits on the right side of the binary point. For signed or unsigned </a>integers R = 0, that is, [L].[0]. For single bits, R = 0, that is, [1] is a single bit.</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="NN_note_numbered_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="NN_note_numbered_inner" style="width: 16pt; white-space: nowrap">(3)	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="NN_note_numbered_inner"><a name="1015888">I1</a><span class="Subscript">[L].[R]</span> is an input port. O1<span class="Subscript">[L].[R]</span> is an output port.</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="NN_note_numbered_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="NN_note_numbered_inner" style="width: 16pt; white-space: nowrap">(4)	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="NN_note_numbered_inner"><a name="1099399">Explicit means that the port bit width information is a block parameter. Implicit means that the port bit width information is set by the datapath </a>bit width propagation mechanism. To specify the bus format of an implicit input port, use a <span class="Code">Bus Conver</span>sion block to set the width.</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1081340" title="Real-Imag to Complex" name="1052063">Figure&nbsp;16–9</a></span> shows an example with the <span class="Code">Real-Imag to Complex</span> block.</div>
+      <div class="TA_table_anchor"><a name="1081333">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;16–9.&nbsp;<a name="1081340">Real-Imag to Complex Block Example</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1081342"><img class="Default" src="images/RealtoComplexExample.JPG" width="554" height="133" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1052051">&nbsp;</a></div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Bottom">
+          <a href="http://www.altera.com" target="external_window"><img src="banner.gif" border="0" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com" target="external_window"> </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Fax_Bottom">Copyright© 1995-2013 Altera Corporation. Altera, the ALTERA logo and Altera's product names, logos and stylization are registered trademarks or trademarks of Altera Corporation in the United States and other countries.</td>
+      </tr>
+    </table>
+  </body>
+</html>

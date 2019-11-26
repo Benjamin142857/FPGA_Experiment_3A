@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>VCD Sink</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_lib_altlab.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body style="background-repeat: no-repeat; border-bottom-color: Transparent; border-left-color: Transparent; border-right-color: Transparent; border-top-color: Transparent; border-top-style: solid; border-top-width: thin; margin-bottom: -150px; margin-left: 16px; margin-top: 65px">
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="Testbench.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="VirtualPins.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_block"><a name="1013402">VCD Sink</a></div>
+      <div class="B0_body"><a name="1013403">The </a><span class="Code">VCD Sink</span> block exports Simulink signals to a third‑party waveform viewer. When you run the simulation of your model, the <span class="Code">VCD Sink</span> block generates a value change dump (.<span class="Bold">vcd</span>) <span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">VCD</span><span class="Emphasis" style="font-weight: normal">&nbsp;</span><span class="Emphasis" style="font-weight: normal">Sink</span><span class="Emphasis" style="font-weight: normal">&nbsp;</span><span class="Emphasis" style="font-weight: normal">block</span><span class="Emphasis" style="font-weight: normal">&nbsp;</span><span class="Emphasis" style="font-weight: normal">name</span><span class="Bold" style="font-style: italic">&gt;</span><span class="Bold" style="font-style: normal">.vcd</span> file, which a third‑party waveform viewer can read. </div>
+      <div class="B0_body"><a name="1013404">To use the </a><span class="Code">VCD Sink</span> block in your Simulink model, perform the following steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1013405">Add a </a><span class="Code">VCD Sink</span> block to your Simulink model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1013406">Connect the simulink signals you want to display in a third</a>‑party waveform viewer to the <span class="Code">VCD Sink</span> block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1013407">Run the Simulink simulation.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1013408">Read the VCD file in the third</a>‑party waveform viewer.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1139948">If you use the ModelSim software to view waveforms, run the script </a><span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">VCD</span><span class="Emphasis" style="font-weight: normal">&nbsp;</span><span class="Emphasis" style="font-weight: normal">Sink</span><span class="Emphasis" style="font-weight: normal">&nbsp;</span><span class="Emphasis" style="font-weight: normal">block</span><span class="Emphasis" style="font-weight: normal">&nbsp;</span><span class="Emphasis" style="font-weight: normal">path</span><span class="Bold" style="font-style: italic">&gt;</span><span class="Bold" style="font-style: normal">_vcd.tcl</span> where the path is the hierarchical path of the block in the Simulink model. That is: <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">model name</span><span class="Bold" style="font-style: normal">&gt;_&lt;</span><span class="Emphasis" style="font-weight: normal">subsystem names</span><span class="Bold" style="font-style: normal">&gt;_&lt;</span><span class="Emphasis" style="font-weight: normal">block name</span><span class="Bold" style="font-style: normal">&gt;</span> each separated by underscore character.</div>
+      <div class="B0_body"><a name="1139944">This Tcl script converts VCD files to ModelSim waveform format (</a><span class="Bold">.wlf</span>), starts the waveform viewer, and displays the signals. If you use any other third-party viewer, load the VCD file directly into the viewer.</div>
+      <div class="B0_body"><a name="1071102">The </a><span class="Code">VCD Sink</span> block does not have any hardware representation and therefore does not appear in the VHDL RTL representation created by the <span class="N_007cLink" style="font-family: &quot;Microsoft Sans Serif&quot;"><a href="SignalCompiler.html#1036630" title="Signal Compiler">Signal Compiler</a></span> block.</div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1146343" title="VCD Sink" name="1013439">Table&nbsp;14–20</a></span> shows the parameters for the <span class="Code">VCD Sink</span> block.</div>
+      <div class="TA_table_anchor"><a name="1146333">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 467.263pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;14–20.&nbsp;<a name="1146343">VCD Sink Block Parameters</a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 76.9201pt">
+            <div class="THC_heading_center"><a name="1013422">Name</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 101.0pt">
+            <div class="THC_heading_center"><a name="1013424">Value</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 289.3429pt">
+            <div class="THC_heading_center"><a name="1013426">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013428">Number of Inputs</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013430">An integer greater than 0</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1013432">Specify the number of input ports on the </a><span class="Code">VCD Sink</span> block.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1152587" title="VCD Sink" name="1013443">Figure&nbsp;14–7</a></span> shows an example of the <span class="Code">VCD Sink</span> block</div>
+      <div class="TA_table_anchor"><a name="1152580">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;14–7.&nbsp;<a name="1152587">Simulink Model With the VCD Sink Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1152589"><img class="Default" src="images/ALVCDSimulinkModel.jpg" width="503" height="198" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+    <hr align="left" />
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Bottom">
+          <a href="http://www.altera.com" target="external_window"><img src="banner.gif" border="0" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com" target="external_window"> </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Fax_Bottom">Copyright© 1995-2013 Altera Corporation. Altera, the ALTERA logo and Altera's product names, logos and stylization are registered trademarks or trademarks of Altera Corporation in the United States and other countries.</td>
+      </tr>
+    </table>
+  </body>
+</html>

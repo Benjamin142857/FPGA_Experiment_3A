@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board uniquename="CycloneIIIEP3C25" family="Cyclone III">
+	<displayname>Cyclone III EP3C25 Starter Board</displayname>
+
+	<!-- LEDs -->
+	<component name="LED1" pin="Pin_P13" />
+	<component name="LED2" pin="Pin_P12" />
+	<component name="LED3" pin="Pin_N12" />
+	<component name="LED4" pin="Pin_N9" />
+
+	<!-- Switches -->
+	<component name="SW1" pin="Pin_F1" />
+	<component name="SW2" pin="Pin_F2" />
+	<component name="SW3" pin="Pin_A10" />
+	<component name="SW4" pin="Pin_B10" />
+
+	<!-- User Reset_n: SW6 on board -->
+	<component name="CPU_RESETN" pin="Pin_N2" />
+
+	<configuration icon="3c25.bmp" width="166" height="144">
+		<devices jtag-code="0x020F30DD">
+			<device name="EP3C25F324C8" />
+		</devices>
+
+		<!-- Input clock selection list -->
+		<option name="ClockPinIn" label="Clock Pin In">
+			<pin location="Pin_B9" />
+			<pin location="None" />
+		</option>
+
+		<!-- Global Reset Pin -->
+		<option name="GlobalResetPin" label="Global Reset Pin">
+			<pin location="Pin_N2" />
+			<pin location="Pin_F1" />
+			<pin location="Pin_F2" />
+			<pin location="Pin_A10" />
+			<pin location="Pin_B10" />
+			<pin location="None" />
+		</option>
+	</configuration>
+</board>

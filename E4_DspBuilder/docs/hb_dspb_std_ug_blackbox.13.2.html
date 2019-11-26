@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>HDL Import Design Example</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_blackbox.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_blackbox.13.1.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_blackbox.13.3.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1028474">HDL Import Design Example</a></div>
+      <div class="Body"><a name="1029631">The </a><span class="Code">HDL Import</span> block provides an interface to import a HDL module into your DSP Builder design.</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1029633">To define imported VHDL use </a><span class="Emphasis">std_logic_1164</span> types. If your design uses any other VHDL type definitions (such as arithmetic or numeric types), write a wrapper that converts them to <span class="Emphasis">std_logic</span> or <span class="Emphasis">std_logic_vector</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1018985">The following sections show an example of importing an existing VHDL design into </a>the DSP Builder environment with the <span class="Code">HDL Import</span> block.</div>
+      <div class="H2_heading"><a name="1007429">Importing Existing HDL Files</a></div>
+      <div class="Body"><a name="1007789">To import existing HDL files into a DSP Builder design, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1007791">In MATLAB, change the current directory setting to: </a><span class="Bold" style="font-style: italic;">&lt;</span><span class="Emphasis" style="font-weight: normal;">DSP Builder install </span><span class="Emphasis" style="font-weight: normal;">path</span><span class="Bold">&gt;</span><span class="Bold" style="font-style: normal;">\DesignExamples\Tutorials\BlackBox\HDLImport</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1007783">On the File menu, click </a><span class="Bold">Open</span> and select <span class="Bold">empty_MyFilter.mdl</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1040334">This design file has some of the peripheral blocks instantiated including the input </a>and output ports and source blocks that provide appropriate stimulus for simulation. It is missing the main filter function, which you can import as HDL.</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1033260">Rename the file by clicking </a><span class="Bold">Save As</span> on the File menu. Name your new MDL file <span class="Bold">MyFilter.mdl</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1033264">Open the Simulink Library Browser. Expand the </a><span class="Bold">Altera DSP Builder Blockset</span> and select the <span class="Bold">AltLab</span> library.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1007739">Drag and drop a </a><span class="Code">HDL Import</span> block into your model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1007740">Double-click on the </a><span class="Code">HDL Import</span> block to bring up the DSP Builder <span class="Bold">HDL Import</span> dialog box (<span class="N_007cLink"><a href="#1040610" title="HDL Import Design Example">Figure&nbsp;8–1 on page&nbsp;8–3</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">7.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1040477">In the </a><span class="Bold">HDL Import</span> dialog box, enable the <span class="Bold">Import HDL</span> radio button and click on the <span class="Bold">Add</span> button to select the HDL input files.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">8.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1040478">From the </a><span class="Bold">VHDL Black Box File</span> dialog box, select the files <span class="Bold">fir_vhdl.vhd</span>, <span class="Bold">four_mult_add.vhd</span>, and <span class="Bold">final_add.vhd, </span>then click on <span class="Bold">Open</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">9.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1040479">Ensure that </a><span class="Code">fir_vhdl</span> is specified as the name of the top-level design entity. The <span class="Bold">fir_vhdl.vhd</span> file describes the top-level entity, which implements an 8-tap low-pass FIR filter design.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">10.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1040480">Turn on the option to </a><span class="Bold">Sort top-level ports by name</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">11.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1040481">Under </a><span class="Bold">Generate Simulink Model</span>, click <span class="Bold">Compile</span> to generate a Simulink simulation model for the imported HDL design. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1040616">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;8–1.&nbsp;</span><span style="color: #000000; font-family: &quot;Microsoft Sans Serif&quot;; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><a name="1040610">HDL Import Dialog Box</a></span></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1040615"><img class="Default" src="images/HDLImportDlg.jpg" width="396" height="664" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">12.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1040903">Progress messages issue in the </a><span class="Bold">HDL Import</span> dialog box ending with the message:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="C1_code_indent"><span class="Code"><a name="1040645">Quartus II Analysis &amp; Synthesis was successful</a></span>.</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">13.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1040897">The </a><span class="Code">HDL Import</span> block in the <span class="Bold">MyFilter.mdl</span> model updates to show the ports defined in the imported HDL. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">14.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1040788">Click </a><span class="Bold">OK</span> to close the <span class="Bold">HDL Import</span> dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">15.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1040621">Connect the input and output ports to the symbol (</a><span class="N_007cLink"><a href="#1035354" title="HDL Import Design Example">Figure&nbsp;8–2</a></span>). The code generated for the <span class="Code">HDL Import</span> block automatically converts to a black box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TAW_table_anchor_wide"><a name="1035339">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;8–2.&nbsp;</span><a name="1035354">Completed Design</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1035356"><img class="Default" src="images/ImportedFIRvhdl.jpg" width="598" height="197" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">16.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1012139">Click </a><span class="Bold">Save</span> on the File menu to save the <span class="Bold">MyFilter.mdl</span> file.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1009196">Simulating the HDL Import Model using Simulink</a></div>
+      <div class="Body"><a name="1008104">Follow these steps to run simulation in Simulink:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1008106">Double-click on the manual switch connected to the </a><span class="Code">Tsamp</span> block which feeds into the <span class="Code">fir_data_in</span> input port.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1047063">This toggles the switch and sets the </a><span class="Code">impulse_in</span> stimulus, which verifies the impulse response of the low-pass filter.</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1047067">Click </a><span class="Bold">Start</span> on the Simulation menu in your model window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1047060">Double-click on the </a><span class="Code">Scope</span> block to view the simulation results.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1008402">Click the </a><span class="Bold">Autoscale</span> icon to resize the scope. This scales both axes to display all stored simulation data until the end of the simulation (which is set to 500*Tsamp for this model).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1008403">Click the </a><span class="Bold">Zoom X-axis</span> icon and drag the cursor to zoom in on the first 70 X-axis time units. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><span class="N_007cLink"><a href="#1035448" title="HDL Import Design Example" name="1041562">Figure&nbsp;8–3 on page&nbsp;8–5</a></span> shows the simulation results.</div>
+      <div class="TA_table_anchor"><a name="1035441">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;8–3.&nbsp;</span><a name="1035448">Simulink Simulation Results for the Impulse Stimulus</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1035450"><img class="Default" src="images/HDLImportImpulseResults.jpg" width="391" height="244" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1008551">Double-click on the manual switch connected to the </a><span class="Code">Tsamp</span> block to select the <span class="Bold">chirp_in</span> stimulus—a sinusoidal signal the frequency of which increases at a linear rate with time.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">7.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1008552">Click </a><span class="Bold">Start</span> on the Simulation menu in your model window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">8.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1008553">Double-click on the </a><span class="Code">Scope</span> block to view the simulation results. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">9.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1008594">Press the </a><span class="Bold">Autoscale</span> icon to resize the scope.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><span class="N_007cLink"><a href="#1035507" title="HDL Import Design Example" name="1008656">Figure&nbsp;8–4</a></span> shows the simulation results.</div>
+      <div class="TA_table_anchor"><a name="1035500">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;8–4.&nbsp;</span><a name="1035507">Simulink Simulation Results for the Chirp Stimulus</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1035509"><img class="Default" src="images/HDLImportChirpResults.jpg" width="393" height="249" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1029070">The HDL import tutorial is complete. You can optionally compile your model for </a>synthesis or perform RTL simulation on your design by following similar procedures to those described in the <span class="N_007cLink"><a href="hb_dspb_std_ug_tutorial.07.1.html#1000950" title="Getting Started">“Getting Started”</a></span>.</div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

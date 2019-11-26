@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="mvc_test">
+    
+    <property name="iptb_bin" value="D:/San_Jose/iptb_build/bin"/>
+    <property name="flowbase_jar" value="${iptb_bin}/flowbase.jar"/>
+
+    <target depends="clean, compile, jar" name="all">
+    </target>
+    
+    <target name="clean">
+        <delete>
+            <fileset dir="." includes="mvcgui.jar"/>
+            <fileset dir="." includes="**/*.class"/>
+        </delete>
+    </target>
+    
+    <target depends="clean" name="compile">
+        <javac classpath="${flowbase_jar}" debug="true" includes="**/*.java" srcdir="."/>
+    </target>
+    
+    <target depends="compile" name="jar">
+        <jar jarfile="mvcgui.jar">
+            <fileset dir="." includes="**/*.class"/>
+            <fileset dir="." includes="**/*.gif"/>
+            <manifest>
+                <attribute name="Manifest-Version" value="2.1"/>
+                <section name="altera/ipbu/mvcgui/MVCTextField.class">
+                    <attribute name="Java-Bean" value="True"/>
+                </section>
+                <section name="altera/ipbu/mvcgui/MVCCheckBox.class">
+                    <attribute name="Java-Bean" value="True"/>
+                </section>
+                <section name="altera/ipbu/mvcgui/MVCCombo.class">
+                    <attribute name="Java-Bean" value="True"/>
+                </section>
+                <section name="altera/ipbu/mvcgui/MVCRadioButton.class">
+                    <attribute name="Java-Bean" value="True"/>
+                </section>
+                <section name="altera/ipbu/mvcgui/MVCLabel.class">
+                    <attribute name="Java-Bean" value="True"/>
+                </section>
+            </manifest>
+        </jar>
+    </target>
+</project>

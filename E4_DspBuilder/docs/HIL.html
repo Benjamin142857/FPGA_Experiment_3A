@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>HIL (Hardware in the Loop)</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_lib_altlab.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body style="background-repeat: no-repeat; border-bottom-color: Transparent; border-left-color: Transparent; border-right-color: Transparent; border-top-color: Transparent; border-top-style: solid; border-top-width: thin; margin-bottom: -150px; margin-left: 16px; margin-top: 65px">
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="HDLOutput.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="QuartusIIGlobalProjectAssignment.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_block"><a name="1037246">HIL (Hardware in the Loop)</a></div>
+      <div class="B0_body"><a name="1048076">The </a><span class="Code">HIL</span> (Hardware in the Loop) block allows you to use an FPGA as a simulation device inside a Simulink design. This configuration accelerates the simulation time, and also allows access to real hardware in a simulation.</div>
+      <div class="B0_body"><a name="1048077">To use an </a><span class="Code">HIL</span> block, you need an FPGA development board with a JTAG interface. Use any JTAG download cable, such as a ByteBlasterMV™, ByteBlaster™, or USB‑Blaster™ cable.</div>
+      <div class="B0_body"><a name="1070470">HIL supports advanced features, including:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1070471">Exported ports (allows the use of hardware components connected to the FPGA)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1070472">Burst mode (improves HIL simulation speed)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1109069">This block supports only single clock designs with registered paths in a design. The </a>simulation results may be unreliable for combinational paths.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1146489" title="HIL (Hardware in the Loop)" name="1037277">Table&nbsp;14–12</a></span> shows the parameters specified in page 1 of the <span class="Code">HIL</span> dialog box.</div>
+      <div class="TA_table_anchor"><a name="1146482">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 468.0132pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;14–12.&nbsp;<a name="1146489">HIL Block Parameters, Page 1</a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 92.2415pt">
+            <div class="THC_heading_center"><a name="1037260">Name</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 55.25pt">
+            <div class="THC_heading_center"><a name="1037262">Value</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 320.5217pt">
+            <div class="THC_heading_center"><a name="1037264">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037266">Select the Quartus II </a>project</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037268">.</a><span class="Bold">qpf</span> file</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070130">Browse for a Quartus II project file ,which describes the hardware design that the </a><span class="Code">HIL</span> block uses.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037272">Select the clock pin</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037274">Port name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037276">The clock pin name for the hardware design in the Quartus II software.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1172245">Select the reset pin</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1172247">Port name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1172249">The reset pin name for the hardware design in the Quartus II software.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037832">Identify the signed </a>ports</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037834">Signed or </a>Unsigned</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037836">Set the number of bits and select the type (signed or unsigned) of each input and </a>output port in the hardware design.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037826">Export</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037828">On or Off</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037830">When on, the selected port is exported on an FPGA pin (or on multiple pins for </a>buses). When off (the default), the port is exported to the Simulink model.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1172271">Select the reset level</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1172273">Active_High, </a>Active_Low</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1172275">The reset level that matches the setting in the original design. For designs originated </a>from the standard blockset, the reset level is specified in the <span class="Code">Clock</span> or <span class="Code">Clock_Derived</span> block. If your design uses no clock block, it uses a default clock with reset level active high. For designs originated from the advanced blockset, the reset level is specified in the <span class="Code">Signals</span> block.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037820">Burst Mode</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037927">On or Off</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1038433">When on, allows sending data to the FPGA in bursts, which improves the simulation </a>speed, but delays the outputs by the burst length. When Off, it defaults to single-step mode.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037814">Burst Length</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><span class="Superscript" style="font-style: italic; font-weight: bold"><a href="#1163830" title="HIL (Hardware in the Loop)" name="1037816">&nbsp;</a></span><span class="N_007cLink" style="font-style: italic; font-weight: bold"><a href="#1163830" title="HIL (Hardware in the Loop)">(1)</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1038448">Specify the length of a burst ("1" is equivalent to disabling burst mode). Use higher </a>values to produce faster simulations (although the extra gain becomes negligible with bigger burst sizes).</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070277">Sampling Period</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070279">Integer</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070281">Specify the sample time period in seconds. (A value of -1 means that the sampling </a>period is inherited from the block connected to the inputs.)</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037790">Assert “Sclr” before </a>starting the simulation</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1037955">On or Off</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1038694">When on, asserts the </a><span class="Code">synchronous clear</span> signal before the simulation starts.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top" colspan="3">
+            <div class="NH_note_heading"><a name="1163793">Note to </a><span class="N_007cLink"><a href="#1146489" title="HIL (Hardware in the Loop)">Table&nbsp;14–12</a></span>:</div>
+            <div class="NN_note_numbered_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="NN_note_numbered_inner" style="width: 16pt; white-space: nowrap">(1)	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="NN_note_numbered_inner"><a name="1163830">The record size is 32×1024×1024, which is the product of (</a><span class="Emphasis">packet size</span>) × (<span class="Emphasis">burst length</span>) while the packet size is the larger of the total input data width and the total output data width. For example, for a packet size of 1024 bits, set the burst length to 32×1024. However, due to the limitations of the JTAG interface, the optimal record size is between 1 to 2 MBPS (depending on the host computer, USB driver and cables). Hence, setting a bigger burst size might not give significant speed up.</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1070567">The </a><span class="Code">HIL</span> block needs recompilation if you change the Quartus II project, clock pin, or any of the exported ports.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1146631" title="HIL (Hardware in the Loop)" name="1070624">Table&nbsp;14–13</a></span> shows the parameters specified in page 2 of the <span class="Code">HIL </span>dialog box.&nbsp;</div>
+      <div class="TA_table_anchor"><a name="1146617">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 467.3782pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;14–13.&nbsp;<a name="1146631">HIL Block Parameters, Page 2</a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 100.0pt">
+            <div class="THC_heading_center"><a name="1070581">Name</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 65.0721pt">
+            <div class="THC_heading_center"><a name="1070730">Value</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 302.3061pt">
+            <div class="THC_heading_center"><a name="1070583">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070585">FPGA device</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070732">device name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070587">The FPGA device.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070589">Compile with Quartus II</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBC_body_center"><a name="1080130">—</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070591">Click to compile the </a><span class="Code">HIL</span> block with the Quartus II software.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070593">JTAG Cable</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070736">cable name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070595">The JTAG cable.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070597">Device in chain</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070738">device location</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070599">The required entry for the location of the device.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1172613">Scan JTAG</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBC_body_center"><a name="1172623">—</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1172659">Click to scan the JTAG interface for all JTAG cables attached to the system </a>(including any remote computers) and the devices on each JTAG cable. The available cable names and device names are loaded into the <span class="Bold">JTAG Cable</span> and <span class="Bold">Device in chain</span> list boxes.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070601">Configure FPGA</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBC_body_center"><a name="1080139">—</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070603">Click to configure the FPGA.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070914">Transcript window</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBC_body_center"><a name="1080161">—</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1070918">Displays the progress of the compilation.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1150260" title="HIL (Hardware in the Loop)" name="1125968">Figure&nbsp;14–2</a></span> shows an example with the <span class="Code">HIL</span> block.</div>
+      <div class="TA_table_anchor"><a name="1150241">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;14–2.&nbsp;<a name="1150260">Example With the HIL Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1150262"><img class="Default" src="images/HIL_example.jpg" width="601" height="133" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1117774">Refer to the </a><span class="Document_title">“Using Hardware in the Loop</span>” chapter in the <span class="Link" style="font-style: italic"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_ug.pdf" target="external_window">DSP Builder Standard Blockset User Guide </a></span>section in volume 2 of the <span class="Document_title">DSP Builder Handbook</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Bottom">
+          <a href="http://www.altera.com" target="external_window"><img src="banner.gif" border="0" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com" target="external_window"> </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Fax_Bottom">Copyright© 1995-2013 Altera Corporation. Altera, the ALTERA logo and Altera's product names, logos and stylization are registered trademarks or trademarks of Altera Corporation in the United States and other countries.</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+#macro(listall $list)
+#foreach ($foo in $list)$foo #end
+
+#end
+
+#macro(listlist $list)
+#set ($total = 0)
+#foreach ($foo in $list)
+	#set($total = $total + 1) 
+#end
+#set ($count = 0)
+#foreach ($foo in $list)#set($count = $count + 1)$foo#if($count != $total),#end#end
+#end

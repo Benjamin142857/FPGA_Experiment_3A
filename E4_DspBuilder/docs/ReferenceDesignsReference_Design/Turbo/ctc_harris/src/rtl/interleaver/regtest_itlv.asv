@@ -1,0 +1,51 @@
+clear variables;
+
+% set up CML
+cd ./../../../cml;
+CmlStartup;
+cd ./../src/rtl/interleaver;
+
+% set up simulation
+system('vlib work');
+system('vmap work work');
+system('vcom -work work auk_dspip_ctc_umtsitlv2_lut.vhd');
+system('vcom -work work auk_dspip_ctc_umts2_itlv.vhd');
+system('vcom -work work tb_auk_dspip_ctc_umts2_itlv.vhd');
+
+fileID = fopen('log.txt', 'a')
+passes = 0;
+fails = 0;
+
+% run simulation for all block sizes
+for i=[40:41]
+    
+   reference = Create3GPP2Interleaver(i);
+   system(['vsim work.tb_auk_dspip_ctc_umts2_itlv  -do "run -all; quit -f" -wlfdeleteonquit -Gblk=', int2str(i)]);
+   hdl = load(['result_', int2str(i), '.txt']);
+    
+   if isequal(reference, hdl)
+       fprintf(fileID, 'pass for block size %d\n\n ', i);
+       fprintf('pass for block size %d\n\n ', i);
+       check(i) = 1;
+       system(['rm -f result_', int2str(i), '.txt']); % only keep hdl result when there is a mismatch
+       passes = passes+1;
+   else
+       fprintf(fileID, 'fail for block size %d\n\n', i);
+       fprintf('fail for block size %d\n\n', i);
+       check(i) = 0;
+       reference
+       hdl
+       fails = fails+1;
+   end
+   fprintf('\n\n***** %d passes and %d fails so far ...\n\n', passes, fails)
+   
+end
+
+fclose(fileID);
+
+check(40:5114)
+min(check(40:5114))
+
+fprintf('/n/nFinished.  You can check the results in log.txt./n/n');
+
+

@@ -1,0 +1,4113 @@
+Model {
+  Name			  "Edge_detector"
+  Version		  7.6
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.166"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  MaxMDLFileLineLength	  120
+  InitFcn		  "ed_in_script\n%% DSPBuilder Start\nalt_dspbuilder_update_model(bdroot)\n%% DSPBuilder End\n"
+  StopFcn		  "ed_out_script"
+  Created		  "Tue May 11 18:36:13 2004"
+  Creator		  "lkong"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "akarapet"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Jun 18 14:56:06 2013"
+  RTWModifiedTimeStamp	  293468057
+  ModelVersionFormat	  "1.%<AutoIncrement:166>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.10.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.10.0"
+	  StartTime		  "0.0"
+	  StopTime		  "307201.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  ConcurrentTasks	  off
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.10.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "OptimizeModelRefInitCode"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.10.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "None"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.10.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.10.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.10.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateSLWebview	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		11
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTCodeCoverageTool     "None"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      ExtraOptions	      "-aInitFltsAndDblsToZero=1 -aInitFltsAndDblsToZero=1 "
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 508, 251, 1388, 881 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      FixptAsFi		      off
+    }
+  }
+  System {
+    Name		    "Edge_detector"
+    Location		    [273, 155, 1497, 1074]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "143"
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "1"
+      Position		      [55, 150, 85, 180]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      Value		      "50"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant6"
+      SID		      "2"
+      Position		      [55, 315, 85, 345]
+      ForegroundColor	      "blue"
+      ShowName		      off
+    }
+    Block {
+      BlockType		      FromWorkspace
+      Name		      "From\nWorkspace1"
+      SID		      "3"
+      Position		      [40, 208, 105, 232]
+      ForegroundColor	      "blue"
+      VariableName	      "rst_in"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      Name		      "From\nWorkspace2"
+      SID		      "4"
+      Position		      [40, 263, 105, 287]
+      ForegroundColor	      "blue"
+      VariableName	      "simin"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      SID		      "5"
+      Ports		      []
+      Position		      [39, 23, 108, 70]
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily	      "Cyclone III"
+      DeviceName	      "EP3C120F780C7"
+      EnableSignalTap	      off
+      SignalTapDepth	      "1024"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "Clock"
+      ExportDir		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tu"
+      "torials/HIL/EdgeDetection"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      SID		      "6"
+      Ports		      [1]
+      Position		      [740, 160, 800, 190]
+      ForegroundColor	      "blue"
+      VariableName	      "data_valid"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace2"
+      SID		      "7"
+      Ports		      [1]
+      Position		      [740, 235, 800, 265]
+      ForegroundColor	      "blue"
+      VariableName	      "simout"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace3"
+      SID		      "8"
+      Ports		      [1]
+      Position		      [740, 310, 800, 340]
+      ForegroundColor	      "blue"
+      VariableName	      "simout1"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "clken"
+      SID		      "9"
+      Ports		      [1, 1]
+      Position		      [195, 322, 260, 338]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_clken.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "datavalid"
+      SID		      "10"
+      Ports		      [1, 1]
+      Position		      [630, 167, 695, 183]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_datavalid.capture"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "edge_prewitt"
+      SID		      "11"
+      Ports		      [4, 3]
+      Position		      [350, 137, 545, 358]
+      ForegroundColor	      "blue"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"edge_prewitt"
+	Location		[429, 367, 1485, 1076]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	212
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "threshold[7:0]"
+	  SID			  "12"
+	  Position		  [100, 123, 130, 137]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "reset"
+	  SID			  "13"
+	  Position		  [325, 133, 355, 147]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "data_in[7:0]"
+	  SID			  "14"
+	  Position		  [325, 33, 355, 47]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "clock_en"
+	  SID			  "15"
+	  Position		  [325, 83, 355, 97]
+	  ForegroundColor	  "blue"
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  SID			  "16"
+	  Position		  [85, 557, 115, 573]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  SID			  "17"
+	  Position		  [85, 522, 115, 538]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clken"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From20"
+	  SID			  "18"
+	  Position		  [380, 336, 440, 354]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "threshold"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From21"
+	  SID			  "19"
+	  Position		  [85, 237, 125, 253]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r3_d2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From22"
+	  SID			  "20"
+	  Position		  [85, 252, 125, 268]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r2_d1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From23"
+	  SID			  "21"
+	  Position		  [85, 267, 125, 283]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r1_d2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From24"
+	  SID			  "22"
+	  Position		  [85, 282, 125, 298]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From25"
+	  SID			  "23"
+	  Position		  [85, 297, 125, 313]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From26"
+	  SID			  "24"
+	  Position		  [85, 312, 125, 328]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From27"
+	  SID			  "25"
+	  Position		  [85, 397, 125, 413]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r1_d1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From28"
+	  SID			  "26"
+	  Position		  [85, 427, 125, 443]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r3_d1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  SID			  "27"
+	  Position		  [390, 397, 420, 413]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From4"
+	  SID			  "28"
+	  Position		  [390, 367, 420, 383]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clken"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  SID			  "29"
+	  Position		  [85, 327, 115, 343]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "clken"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  SID			  "30"
+	  Position		  [85, 342, 115, 358]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "rst"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  SID			  "31"
+	  Position		  [455, 96, 505, 114]
+	  ShowName		  off
+	  GotoTag		  "clken"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  SID			  "32"
+	  Position		  [450, 147, 490, 163]
+	  ShowName		  off
+	  GotoTag		  "rst"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto10"
+	  SID			  "33"
+	  Position		  [755, 152, 795, 168]
+	  ShowName		  off
+	  GotoTag		  "r3_d2"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  SID			  "34"
+	  Position		  [180, 121, 240, 139]
+	  ShowName		  off
+	  GotoTag		  "threshold"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto3"
+	  SID			  "35"
+	  Position		  [755, 12, 795, 28]
+	  ShowName		  off
+	  GotoTag		  "r1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto4"
+	  SID			  "36"
+	  Position		  [755, 32, 795, 48]
+	  ShowName		  off
+	  GotoTag		  "r2"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto5"
+	  SID			  "37"
+	  Position		  [755, 52, 795, 68]
+	  ShowName		  off
+	  GotoTag		  "r3"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto6"
+	  SID			  "38"
+	  Position		  [755, 72, 795, 88]
+	  ShowName		  off
+	  GotoTag		  "r1_d1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto7"
+	  SID			  "39"
+	  Position		  [755, 92, 795, 108]
+	  ShowName		  off
+	  GotoTag		  "r1_d2"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto8"
+	  SID			  "40"
+	  Position		  [755, 112, 795, 128]
+	  ShowName		  off
+	  GotoTag		  "r2_d1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto9"
+	  SID			  "41"
+	  Position		  [755, 132, 795, 148]
+	  ShowName		  off
+	  GotoTag		  "r3_d1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "combine_prewitt_v_h"
+	  SID			  "42"
+	  Ports			  [5, 2]
+	  Position		  [465, 265, 640, 425]
+	  ForegroundColor	  "blue"
+	  DropShadow		  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "combine_prewitt_v_h"
+	    Location		    [268, 131, 1193, 747]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "edge_detect_v[10:0]"
+	      SID		      "43"
+	      Position		      [40, 78, 70, 92]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "edge_detect_h[10:0]"
+	      SID		      "44"
+	      Position		      [40, 108, 70, 122]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "threshold[7:0]"
+	      SID		      "45"
+	      Position		      [35, 308, 65, 322]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clock_en"
+	      SID		      "46"
+	      Position		      [35, 338, 65, 352]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "reset"
+	      SID		      "47"
+	      Position		      [35, 373, 65, 387]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "BusConversion1"
+	      SID		      "48"
+	      Ports		      [1, 1]
+	      Position		      [305, 196, 380, 214]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Bus Conversion"
+	      SourceType	      "Bus Conversion AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      ibwl		      "11"
+	      ibwr		      "0"
+	      bwl		      "8"
+	      bwr		      "0"
+	      bitToConnectToOutputLSB "0"
+	      round		      off
+	      saturate		      on
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Comparator"
+	      SID		      "49"
+	      Ports		      [2, 1]
+	      Position		      [440, 248, 475, 277]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Comparator"
+	      SourceType	      "Comparator AlteraBlockset"
+	      direction		      "a < b"
+	      pipeline_display	      "0"
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_combine%5Fprewitt%5Fv%5Fh_Comparator.f"
+	      "ixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant"
+	      SID		      "50"
+	      Ports		      [0, 1]
+	      Position		      [535, 281, 585, 299]
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+	      SourceType	      "Constant AlteraBlockset"
+	      mask_cst		      "255"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "8"
+	      bwr		      "0"
+	      roundMode		      "Truncate"
+	      satMode		      "Wrap"
+	      SpecifyClock	      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_combine%5Fprewitt%5Fv%5Fh_Constant.fix"
+	      "edpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant1"
+	      SID		      "51"
+	      Ports		      [0, 1]
+	      Position		      [535, 306, 585, 324]
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+	      SourceType	      "Constant AlteraBlockset"
+	      mask_cst		      "0"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "8"
+	      bwr		      "0"
+	      roundMode		      "Truncate"
+	      satMode		      "Wrap"
+	      SpecifyClock	      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_combine%5Fprewitt%5Fv%5Fh_Constant1.fi"
+	      "xedpointlog"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From12"
+	      SID		      "52"
+	      Position		      [535, 332, 565, 348]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From13"
+	      SID		      "53"
+	      Position		      [535, 357, 565, 373]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From14"
+	      SID		      "54"
+	      Position		      [140, 197, 170, 213]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From15"
+	      SID		      "55"
+	      Position		      [140, 227, 170, 243]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From20"
+	      SID		      "56"
+	      Position		      [345, 261, 405, 279]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "threshold"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND1"
+	      SID		      "57"
+	      Ports		      [0, 1]
+	      Position		      [150, 136, 165, 154]
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      SID		      "58"
+	      Position		      [180, 335, 235, 355]
+	      ShowName		      off
+	      GotoTag		      "clken"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      SID		      "59"
+	      Position		      [180, 372, 235, 388]
+	      ShowName		      off
+	      GotoTag		      "rst"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto2"
+	      SID		      "60"
+	      Position		      [175, 306, 235, 324]
+	      ShowName		      off
+	      GotoTag		      "threshold"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder3"
+	      SID		      "61"
+	      Ports		      [6, 2]
+	      Position		      [200, 73, 275, 247]
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "11"
+	      bwr		      "0"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      AddSubDirection	      "ADD"
+	      use_cin		      on
+	      use_ovl		      on
+	      use_addsub	      on
+	      use_ena		      on
+	      use_aclr		      on
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      SID		      "62"
+	      Position		      [315, 110, 335, 130]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "VCC1"
+	      SID		      "63"
+	      Ports		      [0, 1]
+	      Position		      [150, 167, 165, 183]
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/VCC"
+	      SourceType	      "VCC AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "n-to-1 Multiplexer"
+	      SID		      "64"
+	      Ports		      [5, 1]
+	      Position		      [605, 252, 655, 378]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+	      SourceType	      "Multiplexer AlteraBlockset"
+	      numInputs		      "2"
+	      pipeline		      "1"
+	      oneHot		      off
+	      pipeline_display	      "1"
+	      use_ena		      on
+	      use_aclr		      on
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_combine%5Fprewitt%5Fv%5Fh_n-to-1+Multi"
+	      "plexer.fixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "post[7:0]"
+	      SID		      "65"
+	      Position		      [800, 308, 830, 322]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "pre[7:0]"
+	      SID		      "66"
+	      Position		      [615, 198, 645, 212]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Comparator"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "BusConversion1"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		Points			[0, 50]
+		DstBlock		"Comparator"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"pre[7:0]"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "From12"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "From13"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder3"
+	      SrcPort		      2
+	      DstBlock		      "BusConversion1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GND1"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder3"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "VCC1"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder3"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "From14"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder3"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "From15"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder3"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "edge_detect_v[10:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "edge_detect_h[10:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "threshold[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Goto2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "reset"
+	      SrcPort		      1
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "n-to-1 Multiplexer"
+	      SrcPort		      1
+	      DstBlock		      "post[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "clock_en"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From20"
+	      SrcPort		      1
+	      DstBlock		      "Comparator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder3"
+	      SrcPort		      1
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "Combine vertical edge detection and horizontal edge detection results prior to thresholding.\n"
+	      Position		      [402, 44]
+	    }
+	    Annotation {
+	      Name		      "Edge Detection Result Circuit"
+	      Position		      [395, 16]
+	      FontName		      "Arial"
+	      FontSize		      14
+	      FontWeight	      "bold"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "edge_detect_h"
+	  SID			  "67"
+	  Ports			  [8, 1]
+	  Position		  [185, 380, 315, 480]
+	  ForegroundColor	  "blue"
+	  DropShadow		  on
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "edge_detect_h"
+	    Location		    [166, 527, 1091, 815]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "21"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In[7:0]"
+	      SID		      "67:1"
+	      Position		      [60, 28, 90, 42]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1[7:0]"
+	      SID		      "67:2"
+	      Position		      [60, 53, 90, 67]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2[7:0]"
+	      SID		      "67:3"
+	      Position		      [60, 93, 90, 107]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In3[7:0]"
+	      SID		      "67:4"
+	      Position		      [65, 133, 95, 147]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In4[7:0]"
+	      SID		      "67:5"
+	      Position		      [65, 158, 95, 172]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In5[7:0]"
+	      SID		      "67:6"
+	      Position		      [65, 198, 95, 212]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clock_en"
+	      SID		      "67:7"
+	      Position		      [65, 243, 95, 257]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "reset"
+	      SID		      "67:8"
+	      Position		      [65, 278, 95, 292]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From14"
+	      SID		      "67:9"
+	      Position		      [510, 207, 540, 223]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From15"
+	      SID		      "67:10"
+	      Position		      [510, 222, 540, 238]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND"
+	      SID		      "67:11"
+	      Ports		      [0, 1]
+	      Position		      [515, 177, 535, 193]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      SID		      "67:12"
+	      Position		      [175, 240, 230, 260]
+	      ShowName		      off
+	      GotoTag		      "clken"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      SID		      "67:13"
+	      Position		      [175, 277, 230, 293]
+	      ShowName		      off
+	      GotoTag		      "rst"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Magnitude"
+	      SID		      "67:14"
+	      Ports		      [1, 1]
+	      Position		      [700, 204, 725, 226]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Magnitude"
+	      SourceType	      "Magnitude AlteraBlockset"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder"
+	      SID		      "67:15"
+	      Ports		      [6, 2]
+	      Position		      [580, 150, 665, 235]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "11"
+	      bwr		      "0"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      AddSubDirection	      "ADD"
+	      use_cin		      on
+	      use_ovl		      on
+	      use_addsub	      on
+	      use_ena		      on
+	      use_aclr		      on
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder1"
+	      SID		      "67:16"
+	      Ports		      [2, 1]
+	      Position		      [380, 60, 460, 115]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "10"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder2"
+	      SID		      "67:17"
+	      Ports		      [2, 1]
+	      Position		      [380, 140, 460, 195]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "10"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder3"
+	      SID		      "67:18"
+	      Ports		      [2, 1]
+	      Position		      [235, 125, 315, 180]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "9"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder5"
+	      SID		      "67:19"
+	      Ports		      [2, 1]
+	      Position		      [235, 20, 315, 75]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "9"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      SID		      "67:20"
+	      Position		      [695, 165, 715, 185]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out[10:0]"
+	      SID		      "67:21"
+	      Position		      [820, 208, 850, 222]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In2[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder5"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, 25]
+	      DstBlock		      "Pipelined Adder1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In3[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In4[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder3"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder1"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 65]
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder2"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Magnitude"
+	      SrcPort		      1
+	      DstBlock		      "Out[10:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GND"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		DstBlock		"Pipelined Adder"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[20, 0]
+		DstBlock		"Pipelined Adder"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "In5[7:0]"
+	      SrcPort		      1
+	      Points		      [245, 0; 0, -25]
+	      DstBlock		      "Pipelined Adder2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "reset"
+	      SrcPort		      1
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "clock_en"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder"
+	      SrcPort		      2
+	      DstBlock		      "Magnitude"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From14"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "From15"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder"
+	      SrcPort		      1
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "edge_detect_v"
+	  SID			  "68"
+	  Ports			  [8, 1]
+	  Position		  [180, 236, 315, 359]
+	  ForegroundColor	  "blue"
+	  DropShadow		  on
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "edge_detect_v"
+	    Location		    [250, 386, 1152, 683]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "21"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In[7:0]"
+	      SID		      "68:1"
+	      Position		      [55, 53, 85, 67]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1[7:0]"
+	      SID		      "68:2"
+	      Position		      [55, 78, 85, 92]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2[7:0]"
+	      SID		      "68:3"
+	      Position		      [55, 118, 85, 132]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In3[7:0]"
+	      SID		      "68:4"
+	      Position		      [55, 158, 85, 172]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In4[7:0]"
+	      SID		      "68:5"
+	      Position		      [55, 183, 85, 197]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In5[7:0]"
+	      SID		      "68:6"
+	      Position		      [55, 218, 85, 232]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clock_en"
+	      SID		      "68:7"
+	      Position		      [55, 268, 85, 282]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "reset"
+	      SID		      "68:8"
+	      Position		      [55, 303, 85, 317]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From14"
+	      SID		      "68:9"
+	      Position		      [470, 232, 500, 248]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From15"
+	      SID		      "68:10"
+	      Position		      [470, 247, 500, 263]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND"
+	      SID		      "68:11"
+	      Ports		      [0, 1]
+	      Position		      [485, 207, 505, 223]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      SID		      "68:12"
+	      Position		      [170, 265, 225, 285]
+	      ShowName		      off
+	      GotoTag		      "clken"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      SID		      "68:13"
+	      Position		      [170, 302, 225, 318]
+	      ShowName		      off
+	      GotoTag		      "rst"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Magnitude"
+	      SID		      "68:14"
+	      Ports		      [1, 1]
+	      Position		      [665, 234, 690, 256]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Magnitude"
+	      SourceType	      "Magnitude AlteraBlockset"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder"
+	      SID		      "68:15"
+	      Ports		      [6, 2]
+	      Position		      [555, 167, 615, 268]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "11"
+	      bwr		      "0"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      AddSubDirection	      "ADD"
+	      use_cin		      on
+	      use_ovl		      on
+	      use_addsub	      on
+	      use_ena		      on
+	      use_aclr		      on
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder1"
+	      SID		      "68:16"
+	      Ports		      [2, 1]
+	      Position		      [365, 85, 445, 140]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "10"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder2"
+	      SID		      "68:17"
+	      Ports		      [2, 1]
+	      Position		      [365, 165, 445, 220]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "10"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder3"
+	      SID		      "68:18"
+	      Ports		      [2, 1]
+	      Position		      [230, 150, 310, 205]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "9"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder5"
+	      SID		      "68:19"
+	      Ports		      [2, 1]
+	      Position		      [225, 45, 305, 100]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "9"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      SID		      "68:20"
+	      Position		      [640, 185, 660, 205]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out[10:0]"
+	      SID		      "68:21"
+	      Position		      [760, 238, 790, 252]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In2[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder5"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, 25]
+	      DstBlock		      "Pipelined Adder1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In3[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In4[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In5[7:0]"
+	      SrcPort		      1
+	      Points		      [240, 0; 0, -20]
+	      DstBlock		      "Pipelined Adder2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder3"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder1"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, 65]
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder2"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Magnitude"
+	      SrcPort		      1
+	      DstBlock		      "Out[10:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GND"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      Branch {
+		Points			[10, 0]
+		DstBlock		"Pipelined Adder"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[10, 0]
+		DstBlock		"Pipelined Adder"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder"
+	      SrcPort		      2
+	      DstBlock		      "Magnitude"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "reset"
+	      SrcPort		      1
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "clock_en"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From14"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "From15"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder"
+	      SrcPort		      1
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "gen_data_valid"
+	  SID			  "69"
+	  Ports			  [2, 1]
+	  Position		  [200, 514, 335, 581]
+	  ForegroundColor	  "blue"
+	  DropShadow		  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "gen_data_valid"
+	    Location		    [209, 602, 1112, 966]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clock_en"
+	      SID		      "70"
+	      Position		      [75, 183, 105, 197]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "reset"
+	      SID		      "71"
+	      Position		      [75, 208, 105, 222]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Comparator"
+	      SID		      "72"
+	      Ports		      [2, 1]
+	      Position		      [550, 158, 585, 187]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Comparator"
+	      SourceType	      "Comparator AlteraBlockset"
+	      direction		      "a < b"
+	      pipeline_display	      "0"
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_gen%5Fdata%5Fvalid_Comparator.fixedpoi"
+	      "ntlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant2"
+	      SID		      "73"
+	      Ports		      [0, 1]
+	      Position		      [475, 171, 525, 189]
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+	      SourceType	      "Constant AlteraBlockset"
+	      mask_cst		      "640+3"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "12"
+	      bwr		      "0"
+	      roundMode		      "Truncate"
+	      satMode		      "Wrap"
+	      SpecifyClock	      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_gen%5Fdata%5Fvalid_Constant2.fixedpoin"
+	      "tlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Counter"
+	      SID		      "74"
+	      Ports		      [5, 1]
+	      Position		      [260, 106, 440, 224]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Counter"
+	      SourceType	      "Counter AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "13"
+	      bwr		      "0"
+	      use_modulo	      on
+	      modulo		      "8*640"
+	      SpecifyClock	      off
+	      direction		      "Use Direction Port (updown)"
+	      use_sload		      on
+	      use_sset		      off
+	      svalue		      "1"
+	      use_clk_ena	      off
+	      use_ena		      on
+	      use_sclr		      on
+	      pipeline_display	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flip Flop"
+	      SID		      "75"
+	      Ports		      [4, 1]
+	      Position		      [635, 129, 695, 201]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Flipflop"
+	      SourceType	      "Flipflop AlteraBlockset"
+	      mode		      "DFFE"
+	      BusType		      "Signed Fractional"
+	      bwl		      "1"
+	      bwr		      "1"
+	      pipeline_display	      "1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      SID		      "76"
+	      Position		      [710, 182, 740, 198]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From18"
+	      SID		      "77"
+	      Position		      [500, 147, 530, 163]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From19"
+	      SID		      "78"
+	      Position		      [500, 217, 530, 233]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND3"
+	      SID		      "79"
+	      Ports		      [0, 1]
+	      Position		      [180, 107, 200, 123]
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      SID		      "80"
+	      Position		      [185, 191, 235, 209]
+	      ShowName		      off
+	      GotoTag		      "clken"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      SID		      "81"
+	      Position		      [185, 217, 225, 233]
+	      ShowName		      off
+	      GotoTag		      "rst"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Logical\nBit Operator"
+	      SID		      "82"
+	      Ports		      [2, 1]
+	      Position		      [770, 153, 840, 202]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operator"
+	      SourceType	      "Logical Bit Operator AlteraBlockset"
+	      LogicalOperator	      "AND"
+	      user_inputs	      "2"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "NOT"
+	      SID		      "83"
+	      Ports		      [1, 1]
+	      Position		      [550, 217, 590, 233]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operator"
+	      SourceType	      "Logical Bit Operator AlteraBlockset"
+	      LogicalOperator	      "NOT"
+	      user_inputs	      "2"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "VCC3"
+	      SID		      "84"
+	      Ports		      [0, 1]
+	      Position		      [180, 157, 200, 173]
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/VCC"
+	      SourceType	      "VCC AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "data_valid"
+	      SID		      "85"
+	      Position		      [885, 173, 915, 187]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Counter"
+	      SrcPort		      1
+	      DstBlock		      "Comparator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Comparator"
+	      SrcPort		      1
+	      DstBlock		      "Flip Flop"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From18"
+	      SrcPort		      1
+	      DstBlock		      "Flip Flop"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "NOT"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -30]
+	      DstBlock		      "Flip Flop"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "From19"
+	      SrcPort		      1
+	      DstBlock		      "NOT"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Flip Flop"
+	      SrcPort		      1
+	      Points		      [0, 0; 35, 0]
+	      Branch {
+		Points			[0, -50; -130, 0; 0, 20]
+		DstBlock		"Flip Flop"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Logical\nBit Operator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Comparator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "VCC3"
+	      SrcPort		      1
+	      DstBlock		      "Counter"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "clock_en"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      Branch {
+		DstBlock		"Counter"
+		DstPort			4
+	      }
+	      Branch {
+		DstBlock		"Goto"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "reset"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      Branch {
+		DstBlock		"Counter"
+		DstPort			5
+	      }
+	      Branch {
+		DstBlock		"Goto1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nBit Operator"
+	      SrcPort		      1
+	      DstBlock		      "data_valid"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nBit Operator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "GND3"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		DstBlock		"Counter"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"Counter"
+		DstPort			2
+	      }
+	    }
+	    Annotation {
+	      Name		      "Generate data valid signal after buffer is filled with more than one line of data"
+	      Position		      [447, 74]
+	      ForegroundColor	      "blue"
+	    }
+	    Annotation {
+	      Position		      [345, 45]
+	    }
+	    Annotation {
+	      Name		      " Data Valid Circuit"
+	      Position		      [440, 51]
+	      ForegroundColor	      "blue"
+	      FontName		      "Arial"
+	      FontSize		      14
+	      FontWeight	      "bold"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "image_line_buffer"
+	  SID			  "86"
+	  Ports			  [3, 8]
+	  Position		  [550, 15, 715, 165]
+	  ForegroundColor	  "blue"
+	  DropShadow		  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "image_line_buffer"
+	    Location		    [427, 283, 1365, 869]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data_in[7:0]"
+	      SID		      "87"
+	      Position		      [60, 98, 90, 112]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clock_en"
+	      SID		      "88"
+	      Position		      [60, 148, 90, 162]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "reset"
+	      SID		      "89"
+	      Position		      [60, 188, 90, 202]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      SID		      "90"
+	      Ports		      [3, 1]
+	      Position		      [415, 94, 460, 146]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_image%5Fline%5Fbuffer_Delay.fixedpoint"
+	      "log"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay2"
+	      SID		      "91"
+	      Ports		      [3, 1]
+	      Position		      [415, 289, 465, 341]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_image%5Fline%5Fbuffer_Delay2.fixedpoin"
+	      "tlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay3"
+	      SID		      "92"
+	      Ports		      [3, 1]
+	      Position		      [540, 110, 590, 160]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_image%5Fline%5Fbuffer_Delay3.fixedpoin"
+	      "tlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay4"
+	      SID		      "93"
+	      Ports		      [3, 1]
+	      Position		      [540, 194, 590, 246]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "2"
+	      pipeline_display	      "2"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_image%5Fline%5Fbuffer_Delay4.fixedpoin"
+	      "tlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay5"
+	      SID		      "94"
+	      Ports		      [3, 1]
+	      Position		      [540, 308, 590, 362]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_image%5Fline%5Fbuffer_Delay5.fixedpoin"
+	      "tlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      SID		      "95"
+	      Position		      [370, 112, 400, 128]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      SID		      "96"
+	      Position		      [490, 127, 520, 143]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From10"
+	      SID		      "97"
+	      Position		      [490, 347, 520, 363]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From11"
+	      SID		      "98"
+	      Position		      [370, 322, 400, 338]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From12"
+	      SID		      "99"
+	      Position		      [60, 422, 100, 438]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From13"
+	      SID		      "100"
+	      Position		      [60, 452, 100, 468]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r3"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From14"
+	      SID		      "101"
+	      Position		      [60, 482, 100, 498]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r1_d1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From15"
+	      SID		      "102"
+	      Position		      [425, 392, 465, 408]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r1_d2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From16"
+	      SID		      "103"
+	      Position		      [425, 427, 465, 443]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r2_d1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From17"
+	      SID		      "104"
+	      Position		      [425, 462, 465, 478]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r3_d1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From18"
+	      SID		      "105"
+	      Position		      [425, 492, 465, 508]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r3_d2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      SID		      "106"
+	      Position		      [490, 212, 520, 228]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From26"
+	      SID		      "107"
+	      Position		      [60, 392, 100, 408]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From3"
+	      SID		      "108"
+	      Position		      [490, 327, 520, 343]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From4"
+	      SID		      "109"
+	      Position		      [370, 307, 400, 323]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From5"
+	      SID		      "110"
+	      Position		      [185, 212, 220, 228]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From6"
+	      SID		      "111"
+	      Position		      [250, 307, 280, 323]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From7"
+	      SID		      "112"
+	      Position		      [370, 127, 400, 143]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From8"
+	      SID		      "113"
+	      Position		      [490, 142, 520, 158]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From9"
+	      SID		      "114"
+	      Position		      [490, 227, 520, 243]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      SID		      "115"
+	      Position		      [155, 146, 205, 164]
+	      ShowName		      off
+	      GotoTag		      "clken"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      SID		      "116"
+	      Position		      [160, 187, 200, 203]
+	      ShowName		      off
+	      GotoTag		      "rst"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto10"
+	      SID		      "117"
+	      Position		      [390, 266, 440, 284]
+	      ShowName		      off
+	      GotoTag		      "r3"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto3"
+	      SID		      "118"
+	      Position		      [625, 126, 675, 144]
+	      ShowName		      off
+	      GotoTag		      "r1_d2"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto4"
+	      SID		      "119"
+	      Position		      [235, 131, 285, 149]
+	      ShowName		      off
+	      GotoTag		      "r1"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto5"
+	      SID		      "120"
+	      Position		      [505, 81, 555, 99]
+	      ShowName		      off
+	      GotoTag		      "r1_d1"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto6"
+	      SID		      "121"
+	      Position		      [310, 236, 360, 254]
+	      ShowName		      off
+	      GotoTag		      "r2"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto7"
+	      SID		      "122"
+	      Position		      [625, 211, 675, 229]
+	      ShowName		      off
+	      GotoTag		      "r2_d1"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto8"
+	      SID		      "123"
+	      Position		      [625, 326, 675, 344]
+	      ShowName		      off
+	      GotoTag		      "r3_d2"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto9"
+	      SID		      "124"
+	      Position		      [510, 276, 560, 294]
+	      ShowName		      off
+	      GotoTag		      "r3_d1"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Memory Delay"
+	      SID		      "125"
+	      Ports		      [2, 1]
+	      Position		      [240, 177, 280, 233]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Memory Delay"
+	      SourceType	      "Memory Delay AlteraBlockset"
+	      BusType		      "Inferred"
+	      bwl		      "8"
+	      bwr		      "0"
+	      pipeline		      "640"
+	      pipeline_display	      "640"
+	      ram_type		      "AUTO"
+	      use_ena		      on
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_image%5Fline%5Fbuffer_Memory+Delay.fix"
+	      "edpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Memory Delay1"
+	      SID		      "126"
+	      Ports		      [2, 1]
+	      Position		      [310, 272, 350, 328]
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Memory Delay"
+	      SourceType	      "Memory Delay AlteraBlockset"
+	      BusType		      "Inferred"
+	      bwl		      "8"
+	      bwr		      "0"
+	      pipeline		      "640"
+	      pipeline_display	      "640"
+	      ram_type		      "AUTO"
+	      use_ena		      on
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_edge%5Fprewitt_image%5Fline%5Fbuffer_Memory+Delay1.fi"
+	      "xedpointlog"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "lb_r1[7:0]"
+	      SID		      "127"
+	      Position		      [255, 393, 285, 407]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "lb_r2[7:0]"
+	      SID		      "128"
+	      Position		      [255, 423, 285, 437]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "lb_r3[7:0]"
+	      SID		      "129"
+	      Position		      [255, 453, 285, 467]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "lb_r1_d1[7:0]"
+	      SID		      "130"
+	      Position		      [255, 483, 285, 497]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "lb_r1_d2[7:0]"
+	      SID		      "131"
+	      Position		      [635, 393, 665, 407]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "lb_r2_d1[7:0]"
+	      SID		      "132"
+	      Position		      [635, 428, 665, 442]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "lb_r3_d1[7:0]"
+	      SID		      "133"
+	      Position		      [635, 463, 665, 477]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "lb_r3_d2[7:0]"
+	      SID		      "134"
+	      Position		      [635, 493, 665, 507]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Memory Delay"
+	      SrcPort		      1
+	      Points		      [-25, 0; 30, 0]
+	      Branch {
+		Labels			[1, 0]
+		DstBlock		"Delay4"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 35]
+		Branch {
+		  Points		  [0, 45]
+		  DstBlock		  "Memory Delay1"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 5]
+		  DstBlock		  "Goto6"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Memory Delay1"
+	      SrcPort		      1
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		DstBlock		"Delay2"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -25]
+		DstBlock		"Goto10"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Delay"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Delay3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      DstBlock		      "Delay4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From3"
+	      SrcPort		      1
+	      DstBlock		      "Delay5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From4"
+	      SrcPort		      1
+	      DstBlock		      "Delay2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From5"
+	      SrcPort		      1
+	      DstBlock		      "Memory Delay"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From6"
+	      SrcPort		      1
+	      DstBlock		      "Memory Delay1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From7"
+	      SrcPort		      1
+	      DstBlock		      "Delay"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From8"
+	      SrcPort		      1
+	      DstBlock		      "Delay3"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From11"
+	      SrcPort		      1
+	      DstBlock		      "Delay2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From9"
+	      SrcPort		      1
+	      DstBlock		      "Delay4"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From10"
+	      SrcPort		      1
+	      DstBlock		      "Delay5"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [0, 0; 10, 0]
+	      Branch {
+		DstBlock		"Delay3"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"Goto5"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Delay2"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		DstBlock		"Delay5"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"Goto9"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "data_in[7:0]"
+	      SrcPort		      1
+	      Points		      [115, 0]
+	      Branch {
+		Points			[0, 35]
+		Branch {
+		  DstBlock		  "Goto4"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 50]
+		  DstBlock		  "Memory Delay"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Delay3"
+	      SrcPort		      1
+	      DstBlock		      "Goto3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay4"
+	      SrcPort		      1
+	      DstBlock		      "Goto7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay5"
+	      SrcPort		      1
+	      DstBlock		      "Goto8"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "clock_en"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "reset"
+	      SrcPort		      1
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From26"
+	      SrcPort		      1
+	      DstBlock		      "lb_r1[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From12"
+	      SrcPort		      1
+	      DstBlock		      "lb_r2[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From13"
+	      SrcPort		      1
+	      DstBlock		      "lb_r3[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From14"
+	      SrcPort		      1
+	      DstBlock		      "lb_r1_d1[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From15"
+	      SrcPort		      1
+	      DstBlock		      "lb_r1_d2[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From16"
+	      SrcPort		      1
+	      DstBlock		      "lb_r2_d1[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From17"
+	      SrcPort		      1
+	      DstBlock		      "lb_r3_d1[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From18"
+	      SrcPort		      1
+	      DstBlock		      "lb_r3_d2[7:0]"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "Shift incoming image pixel through line buffers to create a delay line.  Buffer depth depends on t"
+	      "he number of pixels\nin each line.  Number of buffer lines depend on the size of the convolutional kernel."
+	      Position		      [362, 54]
+	      ForegroundColor	      "blue"
+	    }
+	    Annotation {
+	      Position		      [260, 25]
+	    }
+	    Annotation {
+	      Name		      "Line Buffer Circuit"
+	      Position		      [355, 31]
+	      ForegroundColor	      "blue"
+	      FontName		      "Arial"
+	      FontSize		      14
+	      FontWeight	      "bold"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "data_valid"
+	  SID			  "135"
+	  Position		  [585, 543, 615, 557]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "post[7:0]"
+	  SID			  "136"
+	  Position		  [815, 298, 845, 312]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pre[7:0]"
+	  SID			  "137"
+	  Position		  [820, 378, 850, 392]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "edge_detect_v"
+	  SrcPort		  1
+	  Points		  [0, -15]
+	  DstBlock		  "combine_prewitt_v_h"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "edge_detect_h"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, -115]
+	  DstBlock		  "combine_prewitt_v_h"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From21"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    DstBlock		    "edge_detect_v"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 180]
+	    DstBlock		    "edge_detect_h"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  SrcBlock		  "From22"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_v"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From23"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    DstBlock		    "edge_detect_v"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 120]
+	    DstBlock		    "edge_detect_h"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "From24"
+	  SrcPort		  1
+	  Points		  [0, 0; 15, 0]
+	  Branch {
+	    DstBlock		    "edge_detect_v"
+	    DstPort		    4
+	  }
+	  Branch {
+	    Points		    [0, 155]
+	    DstBlock		    "edge_detect_h"
+	    DstPort		    6
+	  }
+	}
+	Line {
+	  SrcBlock		  "From25"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_v"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From26"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    DstBlock		    "edge_detect_v"
+	    DstPort		    6
+	  }
+	  Branch {
+	    Points		    [0, 95]
+	    DstBlock		    "edge_detect_h"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "From27"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_h"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From28"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_h"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "gen_data_valid"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "data_valid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "image_line_buffer"
+	  SrcPort		  1
+	  DstBlock		  "Goto3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "image_line_buffer"
+	  SrcPort		  2
+	  DstBlock		  "Goto4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "image_line_buffer"
+	  SrcPort		  3
+	  DstBlock		  "Goto5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "image_line_buffer"
+	  SrcPort		  4
+	  DstBlock		  "Goto6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "image_line_buffer"
+	  SrcPort		  5
+	  DstBlock		  "Goto7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "image_line_buffer"
+	  SrcPort		  6
+	  DstBlock		  "Goto8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "image_line_buffer"
+	  SrcPort		  7
+	  DstBlock		  "Goto9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "image_line_buffer"
+	  SrcPort		  8
+	  DstBlock		  "Goto10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "gen_data_valid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "gen_data_valid"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From20"
+	  SrcPort		  1
+	  DstBlock		  "combine_prewitt_v_h"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From4"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "combine_prewitt_v_h"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "combine_prewitt_v_h"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "combine_prewitt_v_h"
+	  SrcPort		  2
+	  Points		  [0, 0]
+	  DstBlock		  "pre[7:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "combine_prewitt_v_h"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "post[7:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "reset"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  Branch {
+	    DstBlock		    "image_line_buffer"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Goto1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "data_in[7:0]"
+	  SrcPort		  1
+	  DstBlock		  "image_line_buffer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "clock_en"
+	  SrcPort		  1
+	  Points		  [70, 0]
+	  Branch {
+	    DstBlock		    "image_line_buffer"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Goto"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  Points		  [0, 0; 35, 0]
+	  Branch {
+	    DstBlock		    "edge_detect_v"
+	    DstPort		    7
+	  }
+	  Branch {
+	    Points		    [0, 120]
+	    DstBlock		    "edge_detect_h"
+	    DstPort		    7
+	  }
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  Points		  [0, 0; 40, 0]
+	  Branch {
+	    DstBlock		    "edge_detect_v"
+	    DstPort		    8
+	  }
+	  Branch {
+	    Points		    [0, 115]
+	    DstBlock		    "edge_detect_h"
+	    DstPort		    8
+	  }
+	}
+	Line {
+	  SrcBlock		  "threshold[7:0]"
+	  SrcPort		  1
+	  DstBlock		  "Goto2"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "(c) 2007 Altera Corporation. All rights reserved.  Altera products are protected under numerous U.S. and "
+	  "foreign patents, maskwork rights, copyrights and other intellectual property laws. \nThis reference design file, an"
+	  "d your use thereof, is subject to and governed by the terms and conditions of the applicable Altera Reference Desig"
+	  "n License Agreement (found at www.altera.com).\nBy using this reference design file, you indicate your acceptance o"
+	  "f such terms and conditions between you and Altera Corporation. \nIn the event that you do not agree with such term"
+	  "s and conditions, you may not use the reference design file and please promptly destroy any copies you have made.\n"
+	  "This reference design file being provided on an \"as-is\" basis and as an accommodation and therefore all warrantie"
+	  "s, representations or guarantees of any kind (whether express, implied or statutory)\nincluding, without limitation"
+	  ", warranties of merchantability, non-infringement, or fitness for a particular purpose, are specifically disclaimed"
+	  ".\nBy making this reference design file available, Altera expressly does not recommend, suggest or require that thi"
+	  "s reference design file be used in combination with any other product not provided by Altera"
+	  Position		  [58, 685]
+	  HorizontalAlignment	  "left"
+	  ForegroundColor	  "blue"
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "in1"
+      SID		      "138"
+      Ports		      [1, 1]
+      Position		      [195, 267, 260, 283]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_in1.salt"
+      BusType		      "Unsigned Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "post_thresh"
+      SID		      "139"
+      Ports		      [1, 1]
+      Position		      [630, 242, 695, 258]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_post%5Fthresh.capture"
+      BusType		      "Unsigned Integer"
+      bwl		      "8"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pre_thresh"
+      SID		      "140"
+      Ports		      [1, 1]
+      Position		      [630, 317, 695, 333]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_pre%5Fthresh.capture"
+      BusType		      "Unsigned Integer"
+      bwl		      "8"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "rst"
+      SID		      "141"
+      Ports		      [1, 1]
+      Position		      [195, 212, 260, 228]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_rst.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "threshold"
+      SID		      "142"
+      Ports		      [1, 1]
+      Position		      [195, 157, 260, 173]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/EdgeDetection/tb_Edge_detector/Edge%5Fdetector_threshold.salt"
+      BusType		      "Unsigned Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Line {
+      SrcBlock		      "Constant6"
+      SrcPort		      1
+      DstBlock		      "clken"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "threshold"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From\nWorkspace1"
+      SrcPort		      1
+      DstBlock		      "rst"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "clken"
+      SrcPort		      1
+      Points		      [80, 0]
+      DstBlock		      "edge_prewitt"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "From\nWorkspace2"
+      SrcPort		      1
+      DstBlock		      "in1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "in1"
+      SrcPort		      1
+      Points		      [80, 0]
+      DstBlock		      "edge_prewitt"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "rst"
+      SrcPort		      1
+      Points		      [80, 0]
+      DstBlock		      "edge_prewitt"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "threshold"
+      SrcPort		      1
+      Points		      [80, 0]
+      DstBlock		      "edge_prewitt"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "datavalid"
+      SrcPort		      1
+      DstBlock		      "To Workspace1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "edge_prewitt"
+      SrcPort		      2
+      DstBlock		      "post_thresh"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "edge_prewitt"
+      SrcPort		      1
+      DstBlock		      "datavalid"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "pre_thresh"
+      SrcPort		      1
+      DstBlock		      "To Workspace3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "post_thresh"
+      SrcPort		      1
+      DstBlock		      "To Workspace2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "edge_prewitt"
+      SrcPort		      3
+      DstBlock		      "pre_thresh"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "HIL Edge Detection Design"
+      Position		      [411, 56]
+      ForegroundColor	      "blue"
+      FontName		      "Arial"
+      FontSize		      26
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "The Edge_detector.mdl demonstates the usage of two-dimensional Prewitt filters for video and image "
+      "processing. \nIt scans pixel values from input image file \"TestImage.bmp\" into the workspace and performs a tw"
+      "o-dimensional \nconvolution in parallel to create a final binary image as the edge detection result. \n\nThe fin"
+      "al image is presented in figures showing the pre-threshold and post-threshold edge detection results\nalongside "
+      "the original color and grayscale plots.\n\nPlease refer to Application Note AN364 for more details.\n\nHardware "
+      "in the Loop (HIL) is used to speed-up simulation as well as to verify the design in hardware."
+      Position		      [36, 531]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      FontName		      "Arial"
+      FontSize		      18
+    }
+    Annotation {
+      Name		      "(c) 2007 Altera Corporation. All rights reserved.  Altera products are protected under numerous U.S"
+      ". and foreign patents, maskwork rights, copyrights and other intellectual property laws. \nThis reference design"
+      " file, and your use thereof, is subject to and governed by the terms and conditions of the applicable Altera Ref"
+      "erence Design License Agreement (found at www.altera.com).\nBy using this reference design file, you indicate yo"
+      "ur acceptance of such terms and conditions between you and Altera Corporation. \nIn the event that you do not ag"
+      "ree with such terms and conditions, you may not use the reference design file and please promptly destroy any co"
+      "pies you have made.\nThis reference design file being provided on an \"as-is\" basis and as an accommodation and"
+      " therefore all warranties, representations or guarantees of any kind (whether express, implied or statutory)\nin"
+      "cluding, without limitation, warranties of merchantability, non-infringement, or fitness for a particular purpos"
+      "e, are specifically disclaimed.\nBy making this reference design file available, Altera expressly does not recom"
+      "mend, suggest or require that this reference design file be used in combination with any other product not provi"
+      "ded by Altera"
+      Position		      [36, 706]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+    }
+  }
+}

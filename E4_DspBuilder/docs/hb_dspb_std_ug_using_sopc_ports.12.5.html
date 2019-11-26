@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Avalon-MM FIFO Design Example</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_using_sopc_ports.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_using_sopc_ports.12.4.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_using_sopc_ports.12.6.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1029956">Avalon-MM FIFO Design Example</a></div>
+      <div class="Body"><a name="1029957">This tutorial describes how to interface a design built using the </a><span class="Code">Avalon-MM FIFO</span> block as a custom peripheral to the Nios<span class="Superscript">®</span>&nbsp;II embedded processor in SOPC Builder. </div>
+      <div class="Body"><a name="1030329">The design consists of a Prewitt edge detector with one Avalon-MM write FIFO buffer </a>and one Avalon-MM read FIFO buffer. The design uses an additional slave port as a control port. </div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1030221">For a full description of the Prewitt edge detector design, refer to </a><span class="Document_title" style="color: #3f7f3f;"><a href="http://www.altera.com/literature/an/an364.pdf" target="external_window">AN364: Edge Detection Reference Design</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1030222">For this hardware implementation, DSP Builder stores the image in the compact flash </a>and loads it in DMA with a Nios II embedded processor. DSP Builder outputs the edge detected image through a VGA controller. The DSP Builder model uses Simulink to read in the original image and to capture the edge detected result.</div>
+      <div class="H2_heading"><a name="1029973">Opening the Design Example</a></div>
+      <div class="Body"><a name="1029974">To open the design example, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029975">Click </a><span class="Bold">Open</span> on the File menu in the MATLAB software.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029976">Browse to the </a><span class="Bold" style="font-style: italic;">&lt;</span><span class="Emphasis" style="font-weight: normal;">DSP Builder install path</span><span class="Bold">&gt;</span><span class="Bold" style="font-style: normal;">\DesignExamples\Tutorials\ </span><span class="Bold" style="font-style: normal;">SOPCBuilder\AvalonFIFO</span> directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029977">Select the </a><span class="Bold">sopc_edge_detector.mdl</span> file and click <span class="Bold">Open</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1057731" title="Avalon-MM FIFO Design Example" name="1029981">Figure&nbsp;7–10</a></span> shows <span class="Bold">sopc_edge_detector.mdl</span>.</div>
+      <div class="TAW_table_anchor_wide"><a name="1057723">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;7–10.&nbsp;</span><a name="1057731">sopc_edge_detector.mdl Design Example</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1057733"><img class="Default" src="images/AvalonFIFOExample.jpg" width="604" height="213" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1029989">Compiling the Design</a></div>
+      <div class="Body"><a name="1070366">In this example, you use the </a><span class="Code">Signal Compiler</span> block to verify that your design generates valid HDL.</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1070556">Alternatively, use the </a><span class="Code">TestBench</span> block (<span class="N_007cLink"><a href="hb_dspb_std_ug_using_sopc_ports.12.4.html#1029226" title="Avalon-MM Interface Blocks Design Example">“Avalon-MM Interface Blocks Design Example”</a></span> in <span class="N_007cLink"><a href="hb_dspb_std_ug_using_sopc_ports.12.4.html#1026869" title="Avalon-MM Interface Blocks Design Example">“Verifying the Design” on page&nbsp;7–11</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1070561">To verify your design, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1070562">Double-click the </a><span class="Code">Signal Compiler</span> block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045170">Select the family and device for the DSP Development board you are using. The </a>design example is configured for a Stratix 1S25 board (<span class="N_007cLink"><a href="#1057815" title="Avalon-MM FIFO Design Example">Figure&nbsp;7–11</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1071121">Click </a><span class="Bold">Compile</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1057808">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;7–11.&nbsp;</span><a name="1057815">Signal Compiler Dialog Box</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1057817"><img class="Default" src="images/DlgSignalCompilerSopcEdge.jpg" width="424" height="594" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029999">When the compilation completes successfully, click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1030439">The Avalon-MM read and write converter is simulation only and does not synthesize </a>to HDL.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1030441">Instantiating the Design in SOPC Builder</a></div>
+      <div class="Body"><a name="1030004">To instantiate your design as a custom peripheral to the Nios II embedded processor </a>in SOPC Builder, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030005">Start the Quartus</a>&nbsp;II software. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1042857">On the File menu in the Quartus</a>&nbsp;II software, click <span class="Bold">New Project Wizard</span> and set the following options:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1042858">Specify the working directory for your project by browsing to </a><span class="Bold" style="font-style: italic;">&lt;</span><span class="Emphasis" style="font-weight: normal;">DSP Builder </span><span class="Emphasis" style="font-weight: normal;">install path</span><span class="Bold">&gt;</span><span class="Bold" style="font-style: normal;">\DesignExamples\Tutorials\SOPCBuilder\AvalonFIFO</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1042859">Specify a name for your project. This tutorial uses </a><span class="Code">FIFO </span>for the project name.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1042860">The Quartus II software automatically specifies a top-level design entity </a>that has the same name as the project. This tutorial assumes that the names are the same. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1042861">Click </a><span class="Bold">Finish </span>to create the Quartus II project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1042862">On the Tools menu, click </a><span class="Bold">Tcl Scripts</span> and set the following options:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066116">Load your design by selecting </a><span class="Bold">sopc_edge_detector_add.tcl</span> in the Project folder.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066136">Click </a><span class="Bold">Run</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045289">On the Tools menu, click </a><span class="Bold">SOPC Builder</span> to display the <span class="Bold">Create New System</span> dialog box. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066147">Specify </a><span class="Code">AvalonFIFO</span><span class="Bold" style="font-family: &quot;Microsoft Sans Serif&quot;;"> </span>as the system name.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066151">Select </a><span class="Bold">VHDL</span> for the target HDL.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066152">Click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045336">Click the </a><span class="Bold">System Contents</span> tab in SOPC Builder and set the following options:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066189">Expand </a><span class="Bold">Memories and Memory Controllers</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066233">Expand </a><span class="Bold">On-Chip</span> and double-click <span class="Bold">On Chip Memory (RAM or ROM)</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066212">Click </a><span class="Bold">Finish</span> to add an on-chip RAM device with default parameters.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045337">Double-click the </a><span class="Bold">Nios II Processor</span><span class="Code" style="font-weight: normal;"> </span>module in the <span class="Bold">System Contents</span> tab to display the MegaWizard interface. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">7.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045321">Set the reset and exception vectors to use </a><span class="Bold">onchip_memory2_0</span> and click <span class="Bold">Finish</span> to add the processor to your system with all other parameters set to their default values.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">8.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045356">Expand </a><span class="Bold">DSPBuilder Systems</span> in the <span class="Bold">System Contents</span> tab and double-click the <span class="Bold">sopc_edge_detector_interface</span> module to include it in your Nios&nbsp;II system.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1030024">You can now design the rest of your NIOS embedded processor with the standard </a>SOPC Builder design flow.</div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1074061">For more detailed instructions, refer to </a><span class="N_007cLink"><a href="hb_dspb_std_ug_using_sopc_ports.12.4.html#1012613" title="Avalon-MM Interface Blocks Design Example">“Instantiating the Design in SOPC Builder” on page&nbsp;7–12</a></span> in the <span class="N_007cLink"><a href="hb_dspb_std_ug_using_sopc_ports.12.4.html#1029226" title="Avalon-MM Interface Blocks Design Example">“Avalon-MM Interface Blocks Design Example”</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

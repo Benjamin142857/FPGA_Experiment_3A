@@ -1,0 +1,16 @@
+// Timeout specification                                                        
+timeout = 3600 sec;			// This is the hard device timeout-- required           
+soft_timeout = 0;			// This is THE optional soft timeout = 4*123              
+                            // = 492 sec                                    
+// OpenCore spec file authentication                                            
+entity = auk_dspip_ctc_umts_encoder_top;                                                           
+core_name = 'UMTS Turbo Reference Design v2.0';                                                          
+// This specifies target entity-- required                                
+                                                                                
+// Vendor specific messages                                                     
+message = 'The output signal source_data will go low when the evaluation time expires'; 
+                                                                                
+// Port definition                                                              
+               
+output source_data = all'b0;	// Force low on all bits in the bus                   
+                                                                                

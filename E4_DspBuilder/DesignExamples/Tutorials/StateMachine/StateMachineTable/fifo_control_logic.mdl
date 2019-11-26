@@ -1,0 +1,1327 @@
+Model {
+  Name			  "fifo_control_logic"
+  Version		  7.0
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.115"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bdroot)\n%% DSPBuilder End\n"
+  Created		  "Mon Sep 30 08:37:34 2002"
+  Creator		  "gnixon"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "ggriffit"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Aug 28 17:03:39 2008"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:115>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.3.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.3.0"
+	  StartTime		  "0.0"
+	  StopTime		  "300"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.3.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.3.0"
+	  BlockReduction	  on
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.3.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "Warning"
+	  LoggingUnavailableSignals "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.3.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.3.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.3.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  RTWCompilerOptimization "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.3.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.3.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      FixptAsFi		      off
+    }
+    Block {
+      BlockType		      UniformRandomNumber
+      Minimum		      "-1"
+      Maximum		      "1"
+      Seed		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "fifo_control_logic"
+    Location		    [28, 306, 971, 745]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.196850, 0.196850, 0.196850, 0.196850]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "Dual-Port RAM"
+      Ports		      [4, 1]
+      Position		      [520, 110, 700, 190]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Dual-Port RAM"
+      SourceType	      "Dual-Port RAM AlteraBlockset"
+      numwords		      "8"
+      BusType		      "Inferred"
+      bwl		      "8"
+      bwr		      "0"
+      memory_type	      "AUTO"
+      ram_type		      "DualRAM"
+      initialization	      "Blank"
+      init_file		      "input.hex"
+      init_array	      "[0:1:15]"
+      register_outputs	      off
+      use_ena		      off
+      ClockPhase	      "1"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\PerforceWorkspaces\\DSPB_81_BRANCH\\Documentation\\DesignExamples\\Tutorials\\StateMachine\\StateMachineTable\\tb_fifo_control_logic\\fifo%5Fcontrol%5Flogic_Dual-Port+RAM.fixedpointlog"
+      pipeline_display	      "1"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator"
+      Ports		      [0, 1]
+      Position		      [40, 284, 70, 316]
+      ShowName		      off
+      Period		      "32"
+      PulseWidth	      "12"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator1"
+      Ports		      [0, 1]
+      Position		      [40, 324, 70, 356]
+      ShowName		      off
+      Period		      "32"
+      PulseWidth	      "12"
+      PhaseDelay	      "16"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      Ports		      [5]
+      Position		      [875, 310, 910, 400]
+      Floating		      off
+      Location		      [985, 280, 1382, 759]
+      Open		      on
+      NumInputPorts	      "5"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+      }
+      YMin		      "-200~-200~-0.5~-0.5~-0.5"
+      YMax		      "200~200~1.5~1.5~1.5"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      Ports		      []
+      Position		      [25, 20, 78, 65]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily	      "Stratix III"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "Clock"
+      ExportDir		      "."
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Step"
+      Position		      [40, 205, 70, 235]
+      ShowName		      off
+      AttributesFormatString  "step time = %<Time>"
+      Time		      "5"
+      Before		      "1"
+      After		      "0"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      UniformRandomNumber
+      Name		      "Uniform Random\nNumber"
+      Position		      [45, 104, 75, 136]
+      Minimum		      "0"
+      Maximum		      "255"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Up_Down_Counter"
+      Ports		      [2, 1]
+      Position		      [475, 297, 570, 368]
+      ForegroundColor	      "blue"
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Up_Down_Counter"
+	Location		[37, 134, 609, 364]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.196850, 0.196850, 0.196850, 0.196850]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "down"
+	  Position		  [110, 98, 140, 112]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "up"
+	  Position		  [110, 143, 140, 157]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Decrement"
+	  Ports			  [1, 1]
+	  Position		  [175, 86, 300, 124]
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Increment Decrement"
+	  SourceType		  "Increment Decrement AlteraBlockset"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "3"
+	  bwr			  "0"
+	  SpecifyClock		  "off"
+	  clr_value		  "0"
+	  direction		  "Increment"
+	  phase_selection	  "1"
+	  use_ena		  "on"
+	  use_sclr		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Increment"
+	  Ports			  [1, 1]
+	  Position		  [175, 133, 300, 167]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Increment Decrement"
+	  SourceType		  "Increment Decrement AlteraBlockset"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "3"
+	  bwr			  "0"
+	  SpecifyClock		  "off"
+	  clr_value		  "0"
+	  direction		  "Increment"
+	  phase_selection	  "1"
+	  use_ena		  "on"
+	  use_sclr		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Parallel \nAdder Subtractor"
+	  Ports			  [2, 1]
+	  Position		  [340, 83, 415, 172]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "-+"
+	  use_pipeline		  "off"
+	  phase_selection	  "1"
+	  use_ena		  "off"
+	  use_aclr		  "off"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "count_out[2:0]"
+	  Position		  [480, 123, 510, 137]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "Parallel \nAdder Subtractor"
+	  SrcPort		  1
+	  DstBlock		  "count_out[2:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Decrement"
+	  SrcPort		  1
+	  DstBlock		  "Parallel \nAdder Subtractor"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Increment"
+	  SrcPort		  1
+	  DstBlock		  "Parallel \nAdder Subtractor"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "up"
+	  SrcPort		  1
+	  DstBlock		  "Increment"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "down"
+	  SrcPort		  1
+	  DstBlock		  "Decrement"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Up/Down Counter"
+	  Position		  [116, 35]
+	  ForegroundColor	  "blue"
+	  FontName		  "Arial"
+	  FontSize		  18
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "data_in"
+      Ports		      [1, 1]
+      Position		      [115, 112, 180, 128]
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\PerforceWorkspaces\\DSPB_81_BRANCH\\Documentation\\DesignExamples\\Tutorials\\StateMachine\\StateMachineTable\\tb_fifo_control_logic\\fifo%5Fcontrol%5Flogic_data%5Fin.salt"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"data_in"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "data_in1"
+      Position		      [850, 75, 910, 95]
+      ShowName		      off
+      VariableName	      "data_in"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "data_out"
+      Position		      [850, 140, 910, 160]
+      ShowName		      off
+      VariableName	      "q"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "data_out1"
+      Position		      [850, 200, 910, 220]
+      ShowName		      off
+      VariableName	      "empty"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "data_out2"
+      Position		      [850, 235, 910, 255]
+      ShowName		      off
+      VariableName	      "full"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "data_out3"
+      Position		      [850, 271, 910, 289]
+      ShowName		      off
+      VariableName	      "idle"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "empty"
+      Ports		      [1, 1]
+      Position		      [715, 202, 780, 218]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\PerforceWorkspaces\\DSPB_81_BRANCH\\Documentation\\DesignExamples\\Tutorials\\StateMachine\\StateMachineTable\\tb_fifo_control_logic\\fifo%5Fcontrol%5Flogic_empty.capture"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"empty"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "fifo_controller"
+      Ports		      [4, 5]
+      Position		      [245, 197, 410, 363]
+      ForegroundColor	      "blue"
+      FontName		      "Arial"
+      FontSize		      12
+      SourceBlock	      "allblocks_alteradspbuilder2/State Machine"
+      SourceType	      "State Machine AlteraBlockset"
+      Inputs		      "4"
+      States		      "5"
+      db_entity		      "fifo_control_logic_fifo_controller"
+      VHDL_ARCHITECTURE	      "TYPE               STATE_TYPE         IS                 (empty_st,         full_st,           idle_st,           pop_not_empty_st,  push_not_full_st); SIGNAL             current_state,     next_state         :                  STATE_TYPE;        SIGNAL             reset_sig          :                  INTEGER;           SIGNAL             count_in_sig       :                  INTEGER;           SIGNAL             pop_sig            :                  INTEGER;           SIGNAL             push_sig           :                  INTEGER;           BEGIN              reset_sig          <=                 conv_integer       (reset_input       or                 aclr               );                 count_in_sig       <=                 conv_integer       (                  signed             (input0)           );                 pop_sig            <=                 conv_integer       (                  signed             (input1)           );                 push_sig           <=                 conv_integer       (                  signed             (input2)           );                 PROCESS            (clock,            reset_sig)         BEGIN              IF                 (reset_sig=1)      THEN               current_state      <=                 empty_st;          ELSIF              rising_edge(clock) THEN               current_state      <=                 next_state;        END                IF;                END                PROCESS;           PROCESS            (current_state,    count_in_sig,      pop_sig,           push_sig)          BEGIN              CASE               current_state      IS                 WHEN               empty_st=>         IF                 ((push_sig=1)      AND                (count_in_sig/=7)) THEN               next_state         <=                 push_not_full_st;  ELSIF              ((push_sig=0)      AND                (pop_sig=0))       THEN               next_state         <=                 idle_st;           ELSE               next_state         <=                 empty_st;          END                IF;                WHEN               full_st=>          IF                 ((push_sig=0)      AND                (pop_sig=0))       THEN               next_state         <=                 idle_st;           ELSIF              ((pop_sig=1))      THEN               next_state         <=                 pop_not_empty_st;  ELSE               next_state         <=                 full_st;           END                IF;                WHEN               idle_st=>          IF                 ((pop_sig=1)       AND                (count_in_sig=0))  THEN               next_state         <=                 empty_st;          ELSIF              (push_sig=1)       THEN               next_state         <=                 push_not_full_st;  ELSIF              ((pop_sig=1)       AND                (count_in_sig/=0)) THEN               next_state         <=                 pop_not_empty_st;  ELSIF              ((push_sig=1)      AND                (count_in_sig=7))  THEN               next_state         <=                 full_st;           ELSE               next_state         <=                 idle_st;           END                IF;                WHEN               pop_not_empty_st=> IF                 ((push_sig=0)      AND                (pop_sig=0))       THEN               next_state         <=                 idle_st;           ELSIF              ((pop_sig=1)       AND                (count_in_sig=0))  THEN               next_state         <=                 empty_st;          ELSIF              ((push_sig=1)      AND                (count_in_sig/=7)) THEN               next_state         <=                 push_not_full_st;  ELSIF              ((pop_sig=1)       AND                (count_in_sig/=0)) THEN               next_state         <=                 pop_not_empty_st;  ELSIF              ((push_sig=1)      AND                (count_in_sig=7))  THEN               next_state         <=                 full_st;           ELSE               next_state         <=                 pop_not_empty_st;  END                IF;                WHEN               push_not_full_st=> IF                 ((push_sig=0)      AND                (pop_sig=0))       THEN               next_state         <=                 idle_st;           ELSIF              ((pop_sig=1)       AND                (count_in_sig=0))  THEN               next_state         <=                 empty_st;          ELSIF              ((push_sig=1)      AND                (count_in_sig/=7)) THEN               next_state         <=                 push_not_full_st;  ELSIF              ((push_sig=1)      AND                (count_in_sig=7))  THEN               next_state         <=                 full_st;           ELSIF              ((pop_sig=1)       AND                (count_in_sig/=0)) THEN               next_state         <=                 pop_not_empty_st;  ELSE               next_state         <=                 push_not_full_st;  END                IF;                END                CASE;              END                PROCESS;           output0            <=                 '1'                WHEN               current_state      =                  empty_st           ELSE               '0';               output1            <=                 '1'                WHEN               current_state      =                  full_st            ELSE               '0';               output2            <=                 '1'                WHEN               current_state      =                  idle_st            ELSE               '0';               output3            <=                 '1'                WHEN               current_state      =                  pop_not_empty_st   ELSE               '0';               output4            <=                 '1'                WHEN               current_state      =                  push_not_full_st   ELSE               '0';               END                a;                 "
+      reset_state	      "empty"
+      all_states	      "empty|full|idle|pop_not_empty|push_not_full"
+      all_inputs	      "reset|count_in|pop|push"
+      all_conditions	      "empty	(push=1)&(count_in!=7)	push_not_full\nempty	(push=0)&(pop=0)	idle\nfull	(push=0)&(pop=0)	idle\nfull	(pop=1)	pop_not_empty\nidle	(pop=1)&(count_in=0)	empty\nidle	push=1	push_not_full\nidle	(pop=1)&(count_in!=0)	pop_not_empty\nidle	(push=1)&(count_in=7)	full\npop_not_empty	(push=0)&(pop=0)	idle\npop_not_empty	(pop=1)&(count_in=0)	empty\npop_not_empty	(push=1)&(count_in!=7)	push_not_full\npop_not_empty	(pop=1)&(count_in!=0)	pop_not_empty\npop_not_empty	(push=1)&(count_in=7)	full\npush_not_full	(push=0)&(pop=0)	idle\npush_not_full	(pop=1)&(count_in=0)	empty\npush_not_full	(push=1)&(count_in!=7)	push_not_full\npush_not_full	(push=1)&(count_in=7)	full\npush_not_full	(pop=1)&(count_in!=0)	pop_not_empty\n"
+      input_names	      "reset count_in pop push"
+      output_names	      "empty full idle pop_not_empty push_not_full"
+      is_initialized	      on
+      pipeline_display	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "full"
+      Ports		      [1, 1]
+      Position		      [715, 237, 780, 253]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\PerforceWorkspaces\\DSPB_81_BRANCH\\Documentation\\DesignExamples\\Tutorials\\StateMachine\\StateMachineTable\\tb_fifo_control_logic\\fifo%5Fcontrol%5Flogic_full.capture"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"full"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "idle"
+      Ports		      [1, 1]
+      Position		      [715, 272, 780, 288]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\PerforceWorkspaces\\DSPB_81_BRANCH\\Documentation\\DesignExamples\\Tutorials\\StateMachine\\StateMachineTable\\tb_fifo_control_logic\\fifo%5Fcontrol%5Flogic_idle.capture"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"idle"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "local_reset"
+      Ports		      [1, 1]
+      Position		      [95, 212, 160, 228]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\PerforceWorkspaces\\DSPB_81_BRANCH\\Documentation\\DesignExamples\\Tutorials\\StateMachine\\StateMachineTable\\tb_fifo_control_logic\\fifo%5Fcontrol%5Flogic_local%5Freset.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pop"
+      Ports		      [1, 1]
+      Position		      [100, 292, 165, 308]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\PerforceWorkspaces\\DSPB_81_BRANCH\\Documentation\\DesignExamples\\Tutorials\\StateMachine\\StateMachineTable\\tb_fifo_control_logic\\fifo%5Fcontrol%5Flogic_pop.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "push"
+      Ports		      [1, 1]
+      Position		      [100, 332, 165, 348]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\PerforceWorkspaces\\DSPB_81_BRANCH\\Documentation\\DesignExamples\\Tutorials\\StateMachine\\StateMachineTable\\tb_fifo_control_logic\\fifo%5Fcontrol%5Flogic_push.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "q"
+      Ports		      [1, 1]
+      Position		      [715, 142, 780, 158]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\PerforceWorkspaces\\DSPB_81_BRANCH\\Documentation\\DesignExamples\\Tutorials\\StateMachine\\StateMachineTable\\tb_fifo_control_logic\\fifo%5Fcontrol%5Flogic_q.capture"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"q"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Line {
+      SrcBlock		      "Dual-Port RAM"
+      SrcPort		      1
+      DstBlock		      "q"
+      DstPort		      1
+    }
+    Line {
+      Name		      "data_in"
+      SrcBlock		      "data_in"
+      SrcPort		      1
+      Points		      [265, 0]
+      Branch {
+	DstBlock		"Dual-Port RAM"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -35; 370, 0]
+	Branch {
+	  DstBlock		  "data_in1"
+	  DstPort		  1
+	}
+	Branch {
+	  Labels		  [-1, 1]
+	  Points		  [0, 230]
+	  DstBlock		  "Scope"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "local_reset"
+      SrcPort		      1
+      DstBlock		      "fifo_controller"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "pop"
+      SrcPort		      1
+      DstBlock		      "fifo_controller"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "fifo_controller"
+      SrcPort		      1
+      DstBlock		      "empty"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fifo_controller"
+      SrcPort		      2
+      DstBlock		      "full"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Up_Down_Counter"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	Points			[0, 60; -400, 0; 0, -135]
+	DstBlock		"fifo_controller"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -70; -115, 0; 0, -105]
+	Branch {
+	  DstBlock		  "Dual-Port RAM"
+	  DstPort		  3
+	}
+	Branch {
+	  Points		  [0, -20]
+	  DstBlock		  "Dual-Port RAM"
+	  DstPort		  2
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Step"
+      SrcPort		      1
+      DstBlock		      "local_reset"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Uniform Random\nNumber"
+      SrcPort		      1
+      DstBlock		      "data_in"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Pulse\nGenerator"
+      SrcPort		      1
+      DstBlock		      "pop"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fifo_controller"
+      SrcPort		      3
+      DstBlock		      "idle"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fifo_controller"
+      SrcPort		      4
+      DstBlock		      "Up_Down_Counter"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fifo_controller"
+      SrcPort		      5
+      Points		      [20, 0]
+      Branch {
+	Points			[0, -170]
+	DstBlock		"Dual-Port RAM"
+	DstPort			4
+      }
+      Branch {
+	DstBlock		"Up_Down_Counter"
+	DstPort			2
+      }
+    }
+    Line {
+      Name		      "q"
+      SrcBlock		      "q"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	DstBlock		"data_out"
+	DstPort			1
+      }
+      Branch {
+	Labels			[-1, 1]
+	Points			[0, 185]
+	DstBlock		"Scope"
+	DstPort			2
+      }
+    }
+    Line {
+      Name		      "empty"
+      SrcBlock		      "empty"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	DstBlock		"data_out1"
+	DstPort			1
+      }
+      Branch {
+	Labels			[-1, 1]
+	Points			[0, 145]
+	DstBlock		"Scope"
+	DstPort			3
+      }
+    }
+    Line {
+      Name		      "full"
+      SrcBlock		      "full"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	DstBlock		"data_out2"
+	DstPort			1
+      }
+      Branch {
+	Labels			[-1, 1]
+	Points			[0, 130]
+	DstBlock		"Scope"
+	DstPort			4
+      }
+    }
+    Line {
+      Name		      "idle"
+      SrcBlock		      "idle"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"data_out3"
+	DstPort			1
+      }
+      Branch {
+	Labels			[-1, 1]
+	Points			[0, 115]
+	DstBlock		"Scope"
+	DstPort			5
+      }
+    }
+    Line {
+      SrcBlock		      "Pulse\nGenerator1"
+      SrcPort		      1
+      DstBlock		      "push"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "push"
+      SrcPort		      1
+      DstBlock		      "fifo_controller"
+      DstPort		      4
+    }
+    Annotation {
+      Name		      "FIFO Example"
+      Position		      [226, 45]
+      ForegroundColor	      "blue"
+      FontName		      "Arial"
+      FontSize		      18
+      FontWeight	      "bold"
+    }
+  }
+}

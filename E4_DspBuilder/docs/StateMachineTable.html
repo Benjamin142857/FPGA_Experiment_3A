@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>State Machine Table</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_lib_state_machine.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body style="background-repeat: no-repeat; border-bottom-color: Transparent; border-left-color: Transparent; border-right-color: Transparent; border-top-color: Transparent; border-top-style: solid; border-top-width: thin; margin-bottom: -150px; margin-left: 16px; margin-top: 65px">
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="StateMachineEditor.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_lib_dsp_boards.28.01.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_block"><a name="1020910">State Machine Table</a></div>
+      <div class="B0_body"><a name="1021096">The </a><span class="Code">State Machine Table</span> block represents a one-hot Moore-style state machine where the output is equal to the current state (<span class="N_007cLink"><a href="#1025095" title="State Machine Table">Figure&nbsp;23–3</a></span>).</div>
+      <div class="TA_table_anchor"><a name="1025088">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;23–3.&nbsp;<a name="1025095">Moore Style State Machine</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1025097"><img class="Default" src="images/MooreStateMachine.jpg" width="498" height="128" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1028974">The default state machine has five inputs and five states. Each state is represented by </a>an output.</div>
+      <div class="B0_body"><a name="1028975">While the state machine is operating, an output is assigned a logic level 1 if its </a>respective state is equal to the current state. All other outputs are assigned a logic level 0. The inputs and outputs are represented as integers in Simulink. In VHDL, the input and output are represented as standard logic vectors.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1030102">The </a><span class="Code">State Machine Table</span> block is not available on Linux and is deprecated on Windows. Use the <span class="N_007cLink" style="font-family: &quot;Microsoft Sans Serif&quot;"><a href="StateMachineEditor.html#1022728" title="State Machine Editor">State Machine Editor</a></span> block in new designs.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1025125" title="State Machine Table" name="1028964">Figure&nbsp;23–4</a></span> shows the default <span class="Code">State Machine Table</span> symbol . </div>
+      <div class="TA_table_anchor"><a name="1025118">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;23–4.&nbsp;<a name="1025125">Default State Machine Table Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1025127"><img class="Default" src="images/state_machine-default.jpg" width="71" height="107" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1021085">The </a><span class="Bold">State Machine Builder</span> dialog box allows you to specify the inputs, states, and conditional statements, which control the transitions between the states. </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1021224" title="State Machine Table" name="1021305">Table&nbsp;23–3</a></span> shows the controls available in the <span class="Bold">State Machine Builder</span> dialog box.</div>
+      <div class="TA_table_anchor"><a name="1024754">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 467.2504pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;23–3.&nbsp;<a name="1021224">State Transition Table Block Controls </a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 53.0pt">
+            <div class="THC_heading_center"><a name="1021163">Name</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 52.75pt">
+            <div class="THC_heading_center"><a name="1021165">Value</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 361.5004pt">
+            <div class="THC_heading_center"><a name="1021167">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021169">Add</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBC_body_center"><a name="1021171">—</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021173">Adds the specified input name, state name, or conditional statement to the table.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021175">Change</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBC_body_center"><a name="1021581">—</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021179">Allows you to change the selected state name or conditional statement. Do not use this option </a>in the <span style="font-weight: bold">Inputs</span> tab. You cannot change an input name or state name that the design uses in a conditional statement.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021181">Delete</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBC_body_center"><a name="1021585">—</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021185">Deletes the selected input name, state name or conditional statement. You cannot delete an </a>input or state that the design uses in a conditional statement.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021187">Reset State</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021189">state name</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021191">This option is available in the </a><span style="font-weight: bold">States</span> tab and allows you to specify the reset state from a list of specified state names. You can change the reset state but you cannot delete or change the name of the reset state.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021267">Move Up</a></div>
+            <div class="TBL_body_left"><a name="1021295">Move Down</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBC_body_center"><a name="1021593">—</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021271">Available in the </a><span class="bold" style="font-weight: bold">Conditional Statements</span> tab and allows you to change the transition priority when there is more than one condition leaving a state by moving the conditional statement up or down the list.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021193">Analyze</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBC_body_center"><a name="1021599">—</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021197">Available in the </a><span class="bold" style="font-weight: bold">Design Rule Check</span> tab to validate your state machine table.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1024779" title="State Machine Table" name="1021311">Table&nbsp;23–4</a></span> shows the operators that you can use to define a conditional expression.</div>
+      <div class="TA_table_anchor"><a name="1024773">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 375pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;23–4.&nbsp;<a name="1024779">State Machine Table Operators </a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 60.0pt">
+            <div class="THC_heading_center"><a name="1021323">Operator</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 125.0pt">
+            <div class="THC_heading_center"><a name="1021325">Description</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 60.0pt">
+            <div class="THC_heading_center"><a name="1021327">Priority</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 130.0pt">
+            <div class="THC_heading_center"><a name="1021329">Example</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021331">- (unary)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021333">Negative</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021335">1</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021337">-1</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021339">(...)</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021341">Brackets</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021343">1</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021345">(1)</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021347">=</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021349">Numeric equality</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021351">2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021353">in1=5</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021355">!=</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021357">Not equal to</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021359">2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021361">in1!=5</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021363">&gt;</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021365">Greater than</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021367">2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021369">in1&gt;in2</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021371">&gt;=</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021373">Greater than or equal to</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021375">2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021377">in1&gt;=in2</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021379">&lt;</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021381">Less than</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021383">2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021385">in1&lt;in2</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021387">&lt;=</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021389">Less than or equal to</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021391">2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021393">in1&lt;=in2</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021395">&amp;</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021397">AND</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021399">2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021401">(in1=in2)&amp;(in3&gt;=4)</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021403">|</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021405">OR</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021407">2</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1021409">(in1=in2)|(in1&gt;in2)</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1021420">A conditional statement consists of a current state, a condition that causes a transition </a>to take place, and the next state to which the state machine transitions. The current state and next state values must be state names defined in the States tab, which you can select from drop down list in the dialog box.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1021421">To indicate in a conditional statement that a state machine always transitions from the </a>current state to the next state, specify the conditional expression to be one.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1025203" title="State Machine Table" name="1021417">Figure&nbsp;23–5</a></span> shows the dialog box that specifies a simple state transition table with the default inputs and states.</div>
+      <div class="TA_table_anchor"><a name="1025196">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;23–5.&nbsp;<a name="1025203">Simple State Transition Table</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1025205"><img class="Default" src="images/state_machine_conditional.jpg" width="483" height="339" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1022440">When VHDL generates, the expression strings for the port names are replaced by </a>signals named <span class="Code">&lt;port name&gt;_sig</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1022474">Specify at least one transition for each state. Otherwise, the block does not generate </a>legal VHDL.</div>
+      <div class="B0_body"><a name="1022468">You may experience problems when using very large input signals (greater than 2</a><span class="Superscript">25</span>).</div>
+      <div class="H2_heading"><a name="1021530">Design Rule Checks</a></div>
+      <div class="B0_body"><a name="1021535">The </a><span class="Bold">Analyze</span> button in the <span class="Bold">Design Rule Checks</span> tab of the <span class="Bold">State Machine Builder</span> dialog box performs the following checks:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1021550">At least two states must be defined</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1021554">At least two conditional statements must be defined</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1021562">All input port names must be unique</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1021563">All state names must be unique</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1021564">A single reset state must exist</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1021565">A reset input port must exist</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1021566">All current state and next state values must be valid</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1021567">All conditional statements must be syntactically correct</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1025340" title="State Machine Table" name="1022338">Figure&nbsp;23–6</a></span> shows an example with the <span class="Code">State Machine Table</span> block as a FIFO controller.</div>
+      <div class="TA_table_anchor"><a name="1025333">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;23–6.&nbsp;<a name="1025340">Example With the State Machine Table Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1025342"><img class="Default" src="images/StateMachine_example.jpg" width="576" height="231" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1023584">For more information, refer to the </a><span class="Emphasis">Using the State Machine Table Block</span> chapter in the <span class="Link" style="font-style: italic"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_ug.pdf" target="external_window">DSP Builder Standard Blockset User Guide </a></span>section in volume 2 of the <span class="Document_title">DSP Builder </span><span class="Document_title">Handbook</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Bottom">
+          <a href="http://www.altera.com" target="external_window"><img src="banner.gif" border="0" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com" target="external_window"> </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Fax_Bottom">Copyright© 1995-2013 Altera Corporation. Altera, the ALTERA logo and Altera's product names, logos and stylization are registered trademarks or trademarks of Altera Corporation in the United States and other countries.</td>
+      </tr>
+    </table>
+  </body>
+</html>

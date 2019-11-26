@@ -1,0 +1,1317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>MegaCore Function Design Example</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_megacore.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_megacore.09.4.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_megacore.09.6.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1030911">MegaCore Function Design Example</a></div>
+      <div class="Body"><a name="1033232">This tutorial shows how to create a custom low-pass FIR filter MegaCore function </a>variation using the IP Toolbench interface. </div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1033240">This tutorial assumes that your PC has the Altera MegaCore IP Library.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1033242">Creating a New Simulink Model</a></div>
+      <div class="Body"><a name="1006303">To create a new Simulink workspace, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1006307">Start the MATLAB or Simulink software.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1050201">On the File menu, point to </a><span class="Bold">New </span>and click <span class="Bold">Model</span> to create a new model window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1006317">Click </a><span class="Bold">Save</span> on the File menu in the new model window. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1006318">Browse to the directory in which you want to save the file. This directory becomes </a>your working directory. This tutorial creates and uses the working directory <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal;">DSP </span><span class="Emphasis" style="font-weight: normal;">Builder install path</span><span class="Bold" style="font-style: normal;">&gt;\DesignExamples\Tutorials\MegaCore</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1006319">Type the file name into the </a><span class="Bold">File name</span> box. This tutorial uses the name <span class="Bold">mc_example.mdl</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1006320">Click </a><span class="Bold">Save</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1006383">Adding the FIR Compiler Function</a></div>
+      <div class="Body"><a name="1006426">To place a </a><span class="Code">FIR Compiler</span> MegaCore function block in your design, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1006401">On the View menu In your Simulink model window, click </a><span class="Bold">Library Browser</span>. The Simulink Library Browser displays.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1055448">Select the </a><span class="Bold">MegaCore Functions</span> library from the <span class="Bold">Altera DSP Builder Blockset </span>folder in the Simulink Library Browser (<span class="N_007cLink"><a href="#1056156" title="MegaCore Function Design Example">Figure&nbsp;4–1 on page&nbsp;4–4</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1056162">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–1.&nbsp;</span><a name="1056156">MegaCore Functions Library</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1056161"><img class="Default" src="images/mc-library.jpg" width="478" height="468" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1055556">Drag and drop a blue versioned </a><span class="Code">fir_compiler_v9.0</span> block into your model (<span class="N_007cLink"><a href="#1039574" title="MegaCore Function Design Example">Figure&nbsp;4–2</a></span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1039560">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–2.&nbsp;</span><a name="1039574">FIR Compiler Block Placed in Simulink Model</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1039576"><img class="Default" src="images/fir-comp-block.jpg" width="375" height="66" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1062885">Rename the block to </a><span class="Code">my_fir_compiler</span>. To rename the block, click the default name (the text outside of the block itself) and edit the text. Naming conventions are described in <span class="N_007cLink"><a href="hb_dspb_std_ug_design_rules.08.02.html#1012562" title="DSP Builder Naming Conventions">“DSP Builder Naming Conventions” on page&nbsp;3–1</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1062892">Parameterizing the FIR Compiler Function</a></div>
+      <div class="Body"><a name="1006515">To use FIR Compiler to create a MegaCore function variation that fits the specific </a>needs of your design, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1006523">Double-click the </a><span class="Code">my_fir_compiler</span> block to start IP Toolbench.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1006531">Click </a><span class="Bold">Step 1: Parameterize</span> to specify how the FIR filter should operate. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1031919">The </a><span class="Bold">Parameterize - FIR Compiler MegaCore function</span> dialog box displays.</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1020018">Use the default values, specifying a low-pass filter. Click </a><span class="Bold">Finish</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1006532">Generating the FIR Compiler Function Variation</a></div>
+      <div class="Body"><a name="1006707">After you parameterize the MegaCore function, to generate the files for inclusion in </a>the Simulink model and simulation, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1006737">Click </a><span class="Bold">Step 2: Generate</span> in IP&nbsp;Toolbench.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1014567">The generation report lists the design files that IP</a>&nbsp;Toolbench creates. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1050575">Click </a><span class="Bold">Exit</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1050577">For more information about the FIR Compiler including a complete description of the </a>generated files, refer to the <span class="Link" style="font-style: italic;"><a href="http://www.altera.com/literature/ug/fircompiler_ug.pdf" target="external_window">FIR Compiler User Guide</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1028796">The </a><span class="Code">my_fir_compiler</span> block in the Simulink model updates to show the input and output ports for your configuration (<span class="N_007cLink"><a href="#1040020" title="MegaCore Function Design Example">Figure&nbsp;4–3</a></span>). The FIR filter is ready for you to connect it to the rest of your Simulink design.</div>
+      <div class="TA_table_anchor"><a name="1040013">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–3.&nbsp;</span><a name="1040020">FIR Compiler Block in Simulink Model After Generation</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1040022"><img class="Default" src="images/fir-after-generation.jpg" width="374" height="100" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1006207">Adding Stimulus and Scope Blocks</a></div>
+      <div class="Body"><a name="1006939">To create a sample design to test the low-pass filter by feeding the filter two sine </a>waves (<span class="N_007cLink"><a href="#1040376" title="MegaCore Function Design Example">Figure&nbsp;4–4 on page&nbsp;4–8</a></span>), follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1006969">Add two </a><span class="Code">Sine Wave</span> blocks (from the Simulink <span class="Bold">Sources</span> library).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1050539">DSP Builder automatically gives the second block a unique name.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1050319">Use the </a><span class="Bold">Block Parameters</span> dialog box to set the parameters for the <span class="Code">Sine Wave</span> block (<span class="N_007cLink"><a href="#1050342" title="MegaCore Function Design Example">Table&nbsp;4–1</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1050320">&nbsp;</a></div>
+      <table class="Tbl_2_col_standard" style="text-align: left; width: 377.0002pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">
+            <span class="N_007cRun-in_heading">Table&nbsp;4–1.&nbsp;</span><a name="1050342">Parameters for the Sine Wave Blocks</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 177.0002pt;" rowspan="2">
+            <div class="TCHL_column_head_left"><a name="1050346">Parameter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 200pt;" colspan="2">
+            <div class="TCHC_column_head_center"><a name="1050348">Value</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 177.0002pt;">
+            <div class="TCHL_column_head_left" style="color: #000000; font-family: Courier; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Code"><a name="1050488">Sine Wave</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 100pt;">
+            <div class="TCHL_column_head_left" style="color: #000000; font-family: Courier; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Code"><a name="1050490">Sine Wave1</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050350">Sine type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050352">Sample based</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050470">Sample based</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050411">Time</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050413">Use simulation time</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050472">Use simulation time</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050354">Amplitude</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050356">64</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050474">64</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050422">Bias</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050424">0</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050476">0</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050509">Samples per period</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050511">200</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050513">7</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050429">Number of offset examples</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050431">0</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050478">0</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050362">Sample time</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050364">1</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050482">1</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050433">Interpret vector parameters as 1-D</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050435">On</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050484">On</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1063388">Repeat Step </a><span class="N_007cLink"><a href="#1050319" title="MegaCore Function Design Example">2</a></span> for the <span class="Code">Sine Wave1 </span>block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1063377">Connect the outputs from the </a><span class="Code">Sine Wave</span> and <span class="Code">Sine Wave1</span> blocks to an <span class="Code">Add</span> block (from the Simulink <span class="Bold">Math Operations</span> library).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1032538">Add an </a><span class="Code">Input</span> block (from the <span class="Bold">IO &amp; Bus</span> library in the <span class="Bold">Altera DSP Builder</span> <span class="Bold">Blockset</span>) and connect it between the <span class="Code">Add</span> block and the <span class="Code">ast_sink_data</span> pin on the <span class="Code">my_fir_compiler</span> block. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1051000">Use the </a><span class="Bold">Block Parameters</span> dialog box to set the parameters (<span class="N_007cLink"><a href="#1051004" title="MegaCore Function Design Example">Table&nbsp;4–2</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1051023">&nbsp;</a></div>
+      <table class="Tbl_2_col_standard" style="text-align: left; width: 376pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">
+            <span class="N_007cRun-in_heading">Table&nbsp;4–2.&nbsp;</span><a name="1051004">Parameters for the Input Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 188pt;">
+            <div class="TCHL_column_head_left"><a name="1051008">Parameter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 188pt;">
+            <div class="TCHL_column_head_left"><a name="1051010">Value</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051012">Bus Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051014">Signed Integer</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051016">[number of bits].[]</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051018">8</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051020">Specify Clock</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051022">Off</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">7.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1032539">Add a </a><span class="Code">Constant</span> block (from the IO &amp; Bus library) and connect this block to both the <span class="Code">ast_sink_valid</span> and <span class="Code">ast_source_ready</span> pins on the <span class="Code">my_fir_compiler</span> block. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">8.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1050668">Add another </a><span class="Code">Constant</span> block (from the IO &amp; Bus library) and connect this block to the <span class="Code">ast_sink_error</span> pin on the <span class="Code">my_fir_compiler</span> block. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">9.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029132">Use the </a><span class="Bold">Block Parameters</span> dialog box to set the parameters for the <span class="Code">Constant</span> block (<span class="N_007cLink"><a href="#1050691" title="MegaCore Function Design Example">Table&nbsp;4–3</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1050756">&nbsp;</a></div>
+      <table class="Tbl_2_col_standard" style="text-align: left; width: 377.0002pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">
+            <span class="N_007cRun-in_heading">Table&nbsp;4–3.&nbsp;</span><a name="1050691">Parameters for the Constant Blocks</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 177.0002pt;" rowspan="2">
+            <div class="TCHL_column_head_left"><a name="1050697">Parameter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 200pt;" colspan="2">
+            <div class="TCHC_column_head_center"><a name="1050699">Value</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 177.0002pt;">
+            <div class="TCHL_column_head_left" style="color: #000000; font-family: Courier; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Code"><a name="1050705">Constant</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 100pt;">
+            <div class="TCHL_column_head_left" style="color: #000000; font-family: Courier; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Code"><a name="1050707">Constant1</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050709">Constant Value</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050711">1</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050781">0</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050715">Bus Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050717">Single Bit</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050783">Signed Integer</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050721">[Number of Bits].[]</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050723">–</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050785">2</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050727">Rounding Mode</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050729">Truncate</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050787">Truncate</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050733">Saturation Mode</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050735">Wrap</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050789">Wrap</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050739">Specify Clock</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050741">Off</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050791">Off</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">10.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1063441">Repeat Step </a><span class="N_007cLink"><a href="#1029132" title="MegaCore Function Design Example">9</a></span> for the <span class="Code">Constant1 </span>block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">11.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1063414">Add a </a><span class="Code">Single Pulse</span> block (from the Gate &amp; Control library in the <span class="Bold">Altera DSP </span><span class="Bold">Builder</span> <span class="Bold">Blockset</span>) and connect it to the <span class="Code">reset_n </span>pin on the <span class="Code">my_fir_compiler</span> block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">12.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1050925">Use the </a><span class="Bold">Block Parameters</span> dialog box to set the parameters (<span class="N_007cLink"><a href="#1050940" title="MegaCore Function Design Example">Table&nbsp;4–4</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1050933">&nbsp;</a></div>
+      <table class="Tbl_2_col_standard" style="text-align: left; width: 376pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">
+            <span class="N_007cRun-in_heading">Table&nbsp;4–4.&nbsp;</span><a name="1050940">Parameters for the Single Pulse Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 188pt;">
+            <div class="TCHL_column_head_left"><a name="1050944">Parameter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 188pt;">
+            <div class="TCHL_column_head_left"><a name="1050946">Value</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050948">Signal Generation Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050950">Step Up</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050952">Delay</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050954">50</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050956">Specify Clock</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1050958">Off</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">13.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1007020">Add an </a><span class="Code">Output</span> block (from the IO &amp; Bus library in the <span class="Bold">Altera DSP Builder</span> <span class="Bold">Blockset</span>) to your design and connect it to the <span class="Code">ast_source_data</span> pin on the <span class="Code">my_fir_compiler</span> block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">14.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1022728">Use the </a><span class="Bold">Block Parameters</span> dialog box to set the parameters (<span class="N_007cLink"><a href="#1051061" title="MegaCore Function Design Example">Table&nbsp;4–5 on page&nbsp;4–7</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1051080">&nbsp;</a></div>
+      <table class="Tbl_2_col_standard" style="text-align: left; width: 376pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">
+            <span class="N_007cRun-in_heading">Table&nbsp;4–5.&nbsp;</span><a name="1051061">Parameters for the Output Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 188pt;">
+            <div class="TCHL_column_head_left"><a name="1051065">Parameter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 188pt;">
+            <div class="TCHL_column_head_left"><a name="1051067">Value</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051069">Bus Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051071">Signed Integer</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051073">[number of bits].[]</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051075">18</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051077">External Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1051079">Inferred</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">15.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1021172">Add a </a><span class="Code">Scope</span> block (from the Simulink Sinks library). Use the <span class="Bold">‘Scope’ Parameters</span> dialog box to configure the <span class="Code">Scope</span> block as a 2‑input scope. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">16.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1022979">Connect the </a><span class="Code">Scope</span> block to the <span class="Code">Input</span> and <span class="Code">Output</span> blocks to monitor the source noise data and the filtered output.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><span class="N_007cLink"><a href="#1040376" title="MegaCore Function Design Example" name="1021176">Figure&nbsp;4–4</a></span> shows how your model looks.</div>
+      <div class="TAW_table_anchor_wide"><a name="1040361">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–4.&nbsp;</span><a name="1040376">Connecting Blocks to the Low-Pass Filter</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1040378"><img class="Default" src="images/MegacoreModel.jpg" width="590" height="229" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1006223">Simulating the Design in Simulink</a></div>
+      <div class="Body"><a name="1007119">To simulate your design, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1007191">On the Simulation menu in your model, click </a><span class="Bold">Configuration Parameters</span> to display the <span class="Bold">Configuration</span> <span class="Bold">Parameters</span> dialog box (<span class="N_007cLink"><a href="#1040537" title="MegaCore Function Design Example">Figure&nbsp;4–5 on page&nbsp;4–8</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TAW_table_anchor_wide"><a name="1040522">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–5.&nbsp;</span><a name="1040537">Configuration Parameters: mc_example/Configuration Dialog Box</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1040539"><img class="Default" src="images/ConfigurationMegacore.jpg" width="580" height="336" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1063646">Select the </a><span class="Bold">Solver</span> page and set the parameters (<span class="N_007cLink"><a href="#1063650" title="MegaCore Function Design Example">Table&nbsp;4–6</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1063673">&nbsp;</a></div>
+      <table class="Tbl_2_col_standard" style="text-align: left; width: 376pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">
+            <span class="N_007cRun-in_heading">Table&nbsp;4–6.&nbsp;</span><a name="1063650">Configuration Parameters for the singen Model</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 188pt;">
+            <div class="TCHL_column_head_left"><a name="1063654">Parameter</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 188pt;">
+            <div class="TCHL_column_head_left"><a name="1063656">Value</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1063658">Start time</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1063660">0.0</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1063662">Stop time</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1063664">5000</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1063666">Type</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1063668">Fixed-step</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1063670">Solver</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1063672">discrete (no continuous states)</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AR1_reference_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR1_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR1_reference_inner"><a name="1063674">For detailed information about solver options, refer to the description of </a>the Solver Pane in the Simulink Help.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1063675">Click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1063634">On the Simulation menu in the simulink model, click </a><span class="Bold">Start</span>. The scope output shows the effect of the low-pass filter in the bottom window (<span class="N_007cLink"><a href="#1045987" title="MegaCore Function Design Example">Figure&nbsp;4–6</a></span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1045993">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–6.&nbsp;</span><a name="1045987">Simulation Output</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1045992"><img class="Default" src="images/megacore_walk13.jpg" width="265" height="239" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1_body"><a name="1045994">Check that the FIR filter block behaves as you expect and filters high-frequency </a>data as a low‑pass filter.</div>
+      <div class="AI1_information_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1029070">You may need to use the </a><span class="Bold">Autoscale</span> command in the Scope display to view the complete waveforms.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1010578">Compiling the Design</a></div>
+      <div class="Body"><a name="1010579">To create and compile a Quartus II project for your DSP Builder design, and to </a>program your design onto an Altera FPGA, add a <span class="Code">Signal Compiler</span> block. Follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1010580">Select the </a><span class="Bold">AltLab</span> library from the <span class="Bold">Altera DSP</span><span class="Bold">&nbsp;</span><span class="Bold">Builder Blockset</span> folder in the Simulink Library Browser.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1023310">Drag and drop a </a><span class="Code">Signal Compiler</span> block into your model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1010582">Double-click the new </a><span class="Code">Signal Compiler</span> block in your model. The <span class="Bold">Signal </span><span class="Bold">Compiler</span> dialog box appears (<span class="N_007cLink"><a href="#1040664" title="MegaCore Function Design Example">Figure&nbsp;4–7</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1040657">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–7.&nbsp;</span><a name="1040664">Signal Compiler Dialog Box</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1040666"><img class="Default" src="images/MegacoreSignalCompiler.jpg" width="424" height="539" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1046222">Click </a><span class="Bold">Compile</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1046215">When the compilation has completed successfully, click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1029256">Performing RTL Simulation</a></div>
+      <div class="Body"><a name="1010659">To perform RTL simulation with the ModelSim software, add a </a><span class="Code">TestBench</span> block. Follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1010660">Select the </a><span class="Bold">AltLab</span> library from the <span class="Bold">Altera DSP Builder</span> <span class="Bold">BlockSet</span> folder in the Simulink Library Browser.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1032180">Drag and drop a </a><span class="Code">TestBench</span> block into your model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1032181">Double-click on the new </a><span class="Code">TestBench</span> block. The <span class="Bold">TestBench Generator</span> dialog box appears (<span class="N_007cLink"><a href="#1040743" title="MegaCore Function Design Example">Figure&nbsp;4–8</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1040736">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–8.&nbsp;</span><a name="1040743">TestBench Generator Dialog Box</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1040745"><img class="Default" src="images/MegaCoreTestBench.jpg" width="399" height="442" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1032223">Ensure that </a><span class="Bold">Enable Test Bench generation</span> is on.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1032253">Click the </a><span class="Bold">Advanced</span> Tab (<span class="N_007cLink"><a href="#1040796" title="MegaCore Function Design Example">Figure&nbsp;4–9</a></span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1040789">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–9.&nbsp;</span><a name="1040796">TestBench Generator Dialog Box Advanced Tab</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1040798"><img class="Default" src="images/MegaCoreTestBenchAdvanced.jpg" width="399" height="442" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1046147">Turn on the </a><span class="Bold">Launch GUI</span> option to launch the ModelSim GUI if you invoke ModelSim simulation.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">7.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1046148">Click </a><span class="Bold">Generate HDL</span> to generate a VDHL-based testbench from your model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">8.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1046141">Click </a><span class="Bold">Run Simulink</span> to generate Simulink simulation results for the testbench.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">9.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1032350">Click </a><span class="Bold">Run ModelSim</span> to simulate your design in ModelSim.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1029358">Your design loads into ModelSim and simulates with the Wave window </a>displaying the output.</div>
+      <div class="AI1_information_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1029370">All waveforms initially show using digital format in the ModelSim Wave </a>window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">10.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1010665">Right-click the </a><span class="Code">input</span> signal in the ModelSim Wave window and click <span class="Bold">Properties</span> in the pop-up menu to display the <span class="Bold">Wave Properties</span> dialog box. Click the <span class="Bold">Format</span> tab and change the format to <span class="Bold">Analog</span> with height 75 and Scale 0.25.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">11.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029387">Repeat Step </a><span class="N_007cLink"><a href="#1010665" title="MegaCore Function Design Example">10</a></span> for the <span class="Code">output</span> signal in the ModelSim Wave window and use the <span class="Bold">Wave Properties</span> dialog box to change the format to <span class="Bold">Analog</span> with height 75 and scale 0.001.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">12.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029416">Click </a><span class="Bold">Zoom Full</span> on the right button right button pop-up menu in the ModelSim Wave window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1029374">The ModelSim simulator now displays the input and output waveforms in analog </a>format (<span class="N_007cLink"><a href="#1040944" title="MegaCore Function Design Example">Figure&nbsp;4–10</a></span>).</div>
+      <div class="TAW_table_anchor_wide"><a name="1040929">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–10.&nbsp;</span><a name="1040944">Generated HDL for mc_example Simulated in ModelSim Simulator </a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1040946"><img class="Default" src="images/megacore_msim_example.jpg" width="586" height="369" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top;">
+            <div class="NH_note_heading"><a name="1040967">Note to </a><span class="N_007cLink"><a href="#1040944" title="MegaCore Function Design Example">Figure&nbsp;4–10</a></span>:</div>
+            <div class="NN_note_numbered_outer" style="margin-left: 0pt;">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline;">
+                  <td>
+                    <div class="NN_note_numbered_inner" style="width: 16pt; white-space: nowrap;">(1)	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="NN_note_numbered_inner"><a name="1040982">This waveform display format shows the input and output signals as analog waveforms.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029426">Click </a><span class="Bold">Compare Results</span> in the <span class="Bold">Testbench Generator</span> dialog box to compare the simulink results with the ModelSim-generated results. The message <span class="Code">Exact </span><span class="Code">Match</span> indicates that the results are identical.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1032384">Click </a><span class="Bold">OK</span> to close the <span class="Bold">Testbench Generator</span> dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

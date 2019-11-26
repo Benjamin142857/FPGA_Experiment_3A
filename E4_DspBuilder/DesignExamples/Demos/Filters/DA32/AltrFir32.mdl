@@ -1,0 +1,2198 @@
+Model {
+  Name			  "AltrFir32"
+  Version		  6.3
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.232"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  PreLoadFcn		  "close all\nclear all\nFilterOrder = 32\nInputBit"
+"Width = 8\nLowPassFreqBand = [0 0.1 0.2 1];\nLowPassMagnBand = [1 0.9 0.000"
+"1 0.0001];\n\nFlCoef = firls(FilterOrder,LowPassFreqBand,LowPassMagnBand);"
+"\n\nCoefBitWidth = InputBitWidth + ceil(log2((max(abs(FlCoef))/min(abs(FlCoe"
+"f)))))\n\nScalingFactor = (2^(CoefBitWidth-1))-1;\nFpCoef = fix(ScalingFac"
+"tor * FlCoef);\nplot(FpCoef,'o');\ntitle('Fixed-point scaled coefficient va"
+"lue');\nImpulseData = zeros(1,1000);\nImpulseData(1) = 100;\nh = conv(Impu"
+"lseData,FpCoef);\nfftplot(h);\ntitle('FIR Frequency response');\nFirSampli"
+"ngPeriod=1;\n"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bd"
+"root)\n%% DSPBuilder End\n"
+  Created		  "Mon Jun 16 15:40:19 2003"
+  Creator		  "mjervis"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "LKONG"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jul 09 10:28:06 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:232>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "Warning"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "3000"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      RandomNumber
+      Mean		      "0"
+      Variance		      "1"
+      Seed		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Sin
+      SineType		      "Time based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "AltrFir32"
+    Location		    [227, 179, 1557, 1133]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "Bit Level \nSum of Product"
+      Ports		      [4, 1]
+      Position		      [665, 118, 740, 187]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Bit Level Sum of Pr"
+"oducts"
+      SourceType	      "BitSumProducts AlteraBlockset"
+      number_of_coefficients  "4"
+      BusType		      "Signed Integer"
+      bwl		      "9"
+      bwr		      "0"
+      coefficients	      "[FpCoef(1:4)]"
+      register_inputs	      off
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Bit Level \nSum of Product1"
+      Ports		      [8, 1]
+      Position		      [665, 330, 740, 490]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Bit Level Sum of Pr"
+"oducts"
+      SourceType	      "BitSumProducts AlteraBlockset"
+      number_of_coefficients  "8"
+      BusType		      "Signed Integer"
+      bwl		      "14"
+      bwr		      "0"
+      coefficients	      "[FpCoef(9:16)]"
+      register_inputs	      off
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Bit Level \nSum of Product2"
+      Ports		      [8, 1]
+      Position		      [660, 545, 740, 705]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Bit Level Sum of Pr"
+"oducts"
+      SourceType	      "BitSumProducts AlteraBlockset"
+      number_of_coefficients  "8"
+      BusType		      "Signed Integer"
+      bwl		      "14"
+      bwr		      "0"
+      coefficients	      "[FpCoef(17:24)]"
+      register_inputs	      off
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Bit Level \nSum of Product4"
+      Ports		      [4, 1]
+      Position		      [665, 223, 740, 292]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Bit Level Sum of Pr"
+"oducts"
+      SourceType	      "BitSumProducts AlteraBlockset"
+      number_of_coefficients  "4"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+      coefficients	      "[FpCoef(5:8)]"
+      register_inputs	      off
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Bit Level \nSum of Product5"
+      Ports		      [4, 1]
+      Position		      [665, 748, 735, 817]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Bit Level Sum of Pr"
+"oducts"
+      SourceType	      "BitSumProducts AlteraBlockset"
+      number_of_coefficients  "4"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+      coefficients	      "[FpCoef(25:28)]"
+      register_inputs	      off
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Bit Level \nSum of Product6"
+      Ports		      [4, 1]
+      Position		      [665, 856, 735, 934]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Bit Level Sum of Pr"
+"oducts"
+      SourceType	      "BitSumProducts AlteraBlockset"
+      number_of_coefficients  "4"
+      BusType		      "Signed Integer"
+      bwl		      "9"
+      bwr		      "0"
+      coefficients	      "[FpCoef(29:32)]"
+      register_inputs	      off
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Clock"
+      Ports		      []
+      Position		      [35, 258, 85, 276]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Clock"
+      SourceType	      "BaseClock AlteraBlockset"
+      ClockPeriod	      "20"
+      ClockPeriodUnit	      "ns"
+      SampleTime	      "1"
+      SimulationStartCycle    "5"
+      PhaseOffset	      "0"
+      Reset		      "aclr"
+      ResetType		      "Active Low"
+      Export		      off
+    }
+    Block {
+      BlockType		      From
+      Name		      "From"
+      Position		      [875, 531, 940, 559]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "SyncRst"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From1"
+      Position		      [1130, 398, 1195, 422]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "InputFilter"
+      Port {
+	PortNumber		1
+	Name			"InputFilter"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      Position		      [370, 209, 435, 231]
+      ShowName		      off
+      GotoTag		      "SyncRst"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto1"
+      Position		      [270, 96, 345, 124]
+      ShowName		      off
+      GotoTag		      "InputFilter"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "InputData"
+      Ports		      [1, 1]
+      Position		      [170, 134, 235, 156]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Filters\\DA32\\tb_AltrFir32\\AltrFir32_InputData.salt"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Parallel To Serial"
+      Ports		      [3, 1]
+      Position		      [380, 134, 435, 186]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Parallel To Serial"
+      SourceType	      "Parallel To Serial AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      msbfirsttext	      "LSB First"
+      msbfirst		      "0"
+      repeatlastbit	      on
+      use_ena		      on
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Partial Product \nAdder"
+      Ports		      [6, 1]
+      Position		      [860, 384, 950, 491]
+      ForegroundColor	      "blue"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Partial Product \nAdder"
+	Location		[227, 179, 916, 610]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In[10:0]"
+	  Position		  [50, 93, 80, 107]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1[10:0]"
+	  Position		  [50, 48, 80, 62]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In2[12:0]"
+	  Position		  [50, 163, 80, 177]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In3[12:0]"
+	  Position		  [50, 208, 80, 222]
+	  ForegroundColor	  "blue"
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In4[16:0]"
+	  Position		  [50, 283, 80, 297]
+	  ForegroundColor	  "blue"
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In5[16:0]"
+	  Position		  [50, 333, 80, 347]
+	  ForegroundColor	  "blue"
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Parallel \nAdder Subtractor"
+	  Ports			  [3, 1]
+	  Position		  [425, 141, 485, 249]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "3"
+	  direction		  "++"
+	  use_pipeline		  on
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pipelined Adder"
+	  Ports			  [2, 1]
+	  Position		  [235, 33, 360, 122]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Pipelined Adder"
+	  SourceType		  "Pipelined Adder AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "12"
+	  bwr			  "0"
+	  pipeline		  "2"
+	  AddSubDirection	  "ADD"
+	  use_cin		  off
+	  use_ovl		  off
+	  use_addsub		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pipelined Adder1"
+	  Ports			  [2, 1]
+	  Position		  [235, 146, 355, 239]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Pipelined Adder"
+	  SourceType		  "Pipelined Adder AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  pipeline		  "2"
+	  AddSubDirection	  "ADD"
+	  use_cin		  off
+	  use_ovl		  off
+	  use_addsub		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pipelined Adder2"
+	  Ports			  [2, 1]
+	  Position		  [235, 264, 355, 366]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Pipelined Adder"
+	  SourceType		  "Pipelined Adder AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "18"
+	  bwr			  "0"
+	  pipeline		  "2"
+	  AddSubDirection	  "ADD"
+	  use_cin		  off
+	  use_ovl		  off
+	  use_addsub		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out[19:0]"
+	  Position		  [625, 188, 655, 202]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "In[10:0]"
+	  SrcPort		  1
+	  DstBlock		  "Pipelined Adder"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In1[10:0]"
+	  SrcPort		  1
+	  DstBlock		  "Pipelined Adder"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In2[12:0]"
+	  SrcPort		  1
+	  DstBlock		  "Pipelined Adder1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In3[12:0]"
+	  SrcPort		  1
+	  DstBlock		  "Pipelined Adder1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In4[16:0]"
+	  SrcPort		  1
+	  DstBlock		  "Pipelined Adder2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In5[16:0]"
+	  SrcPort		  1
+	  DstBlock		  "Pipelined Adder2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Pipelined Adder"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 80]
+	  DstBlock		  "Parallel \nAdder Subtractor"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Pipelined Adder1"
+	  SrcPort		  1
+	  DstBlock		  "Parallel \nAdder Subtractor"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Pipelined Adder2"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -85]
+	  DstBlock		  "Parallel \nAdder Subtractor"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Parallel \nAdder Subtractor"
+	  SrcPort		  1
+	  DstBlock		  "Out[19:0]"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Pattern"
+      Ports		      [1, 1]
+      Position		      [205, 204, 305, 236]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Pattern"
+      SourceType	      "Pattern AlteraBlockset"
+      Sequence		      "10000000"
+      SpecifyClock	      off
+      use_ena		      on
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Power Spectral\nDensity"
+      Ports		      [1]
+      Position		      [1235, 530, 1265, 560]
+      Orientation	      "down"
+      NamePlacement	      "alternate"
+      SourceBlock	      "simulink_extras/Additional\nSinks/Power Spectra"
+"l\nDensity"
+      SourceType	      "Power Spectral Density"
+      ShowPortLabels	      on
+      npts		      "256"
+      fftpts		      "1024"
+      HowOften		      "64"
+      sampleT		      "8"
+    }
+    Block {
+      BlockType		      RandomNumber
+      Name		      "Random\nNumber"
+      Position		      [25, 155, 55, 185]
+      Variance		      "50"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Scaling Accumulator"
+      Ports		      [2, 1]
+      Position		      [1020, 427, 1095, 478]
+      ForegroundColor	      "blue"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Scaling Accumulator"
+	Location		[227, 179, 1521, 692]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In[19:0]"
+	  Position		  [65, 188, 95, 202]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "clr"
+	  Position		  [65, 353, 95, 367]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Adder"
+	  Ports			  [3, 1]
+	  Position		  [490, 82, 570, 258]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Pipelined Adder"
+	  SourceType		  "Pipelined Adder AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "21"
+	  bwr			  "0"
+	  pipeline		  "0"
+	  AddSubDirection	  "ADD"
+	  use_cin		  on
+	  use_ovl		  off
+	  use_addsub		  off
+	  use_ena		  on
+	  use_aclr		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusBuild"
+	  Ports			  [2, 1]
+	  Position		  [245, 207, 280, 278]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bus Builder"
+	  SourceType		  "BusBuilder AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "2"
+	  bwr			  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConcatenation"
+	  Ports			  [2, 1]
+	  Position		  [845, 253, 930, 317]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bus Concatenati"
+"on"
+	  SourceType		  "Bus Concatenate AlteraBlockset"
+	  isSigned		  on
+	  awidth		  "20"
+	  bwidth		  "8"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay"
+	  Ports			  [1, 1]
+	  Position		  [650, 198, 680, 232]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay4"
+	  Ports			  [2, 1]
+	  Position		  [1120, 269, 1165, 331]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  on
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ExtractBit"
+	  Ports			  [1, 1]
+	  Position		  [640, 268, 695, 292]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Extract Bit"
+	  SourceType		  "Extract Bit AlteraBlockset"
+	  BusType		  "Signed Fractional"
+	  bwl			  "21"
+	  bwr			  "0"
+	  bitToSelect		  "0"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [220, 70, 290, 90]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "FeedBack"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  Position		  [1050, 305, 1100, 325]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Sync"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [220, 45, 275, 65]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Sync"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GND"
+	  Ports			  [0, 1]
+	  Position		  [715, 312, 735, 328]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/GND"
+	  SourceType		  "GND AlteraBlockset"
+	  SpecifyClock		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GND2"
+	  Ports			  [0, 1]
+	  Position		  [290, 97, 310, 113]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/GND"
+	  SourceType		  "GND AlteraBlockset"
+	  SpecifyClock		  off
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [855, 206, 940, 224]
+	  ShowName		  off
+	  GotoTag		  "FeedBack"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  Position		  [305, 351, 360, 369]
+	  ShowName		  off
+	  GotoTag		  "Sync"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Inverse Last\nPartial Product"
+	  Ports			  [2, 1]
+	  Position		  [315, 171, 400, 269]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bitwise Logical"
+" Bus Operator"
+	  SourceType		  "Bitwise Logical Bus Operator AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "20"
+	  bwr			  "0"
+	  LogicalOperator	  "XOR"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Output Resolution\nArea of Interrest"
+	  Ports			  [1, 1]
+	  Position		  [955, 268, 1030, 302]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Round"
+	  SourceType		  "Round AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "28"
+	  bwr			  "0"
+	  bitsToRemove		  "17"
+	  roundMode		  "TRUNCATE_LOW"
+	  userRoundMode		  "Truncate"
+	  pipeline		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pipeline \nDelay"
+	  Ports			  [1, 1]
+	  Position		  [150, 177, 190, 213]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reset On\nLast Partial Product"
+	  Ports			  [3, 1]
+	  Position		  [330, 43, 380, 117]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "2"
+	  pipeline		  "0"
+	  oneHot		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Serial To Parallel"
+	  Ports			  [3, 1]
+	  Position		  [755, 269, 805, 331]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Serial To Paral"
+"lel"
+	  SourceType		  "Serial To Parallel AlteraBlockset"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "8"
+	  bwr			  "0"
+	  msbfirsttext		  "LSB First"
+	  msbfirst		  "0"
+	  use_ena		  on
+	  use_sclr		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Shift by Two"
+	  Ports			  [1, 1]
+	  Position		  [730, 206, 805, 224]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bus Conversion"
+	  SourceType		  "Bus Conversion AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  ibwl			  "21"
+	  ibwr			  "0"
+	  bwl			  "20"
+	  bwr			  "0"
+	  bitToConnectToOutputLSB "1"
+	  round			  off
+	  saturate		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Sync Delay"
+	  Ports			  [1, 1]
+	  Position		  [145, 337, 200, 383]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "13"
+	  ram_type		  "AUTO"
+	  use_ena		  off
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Sync Delay2"
+	  Ports			  [1, 1]
+	  Position		  [240, 339, 275, 381]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VCC1"
+	  Ports			  [0, 1]
+	  Position		  [715, 292, 735, 308]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/VCC"
+	  SourceType		  "VCC AlteraBlockset"
+	  SpecifyClock		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out[10:0]"
+	  Position		  [1205, 293, 1235, 307]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "clr"
+	  SrcPort		  1
+	  DstBlock		  "Sync Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In[19:0]"
+	  SrcPort		  1
+	  DstBlock		  "Pipeline \nDelay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  DstBlock		  "Shift by Two"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift by Two"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, 55]
+	    DstBlock		    "BusConcatenation"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Goto"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "VCC1"
+	  SrcPort		  1
+	  DstBlock		  "Serial To Parallel"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Serial To Parallel"
+	  SrcPort		  1
+	  DstBlock		  "BusConcatenation"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "GND"
+	  SrcPort		  1
+	  DstBlock		  "Serial To Parallel"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Delay4"
+	  SrcPort		  1
+	  DstBlock		  "Out[10:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConcatenation"
+	  SrcPort		  1
+	  DstBlock		  "Output Resolution\nArea of Interrest"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ExtractBit"
+	  SrcPort		  1
+	  DstBlock		  "Serial To Parallel"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reset On\nLast Partial Product"
+	  SrcPort		  1
+	  Points		  [45, 0; 0, 30]
+	  DstBlock		  "Adder"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GND2"
+	  SrcPort		  1
+	  DstBlock		  "Reset On\nLast Partial Product"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Reset On\nLast Partial Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "Delay4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  DstBlock		  "Reset On\nLast Partial Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Adder"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, 45]
+	  Branch {
+	    DstBlock		    "Delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 65]
+	    DstBlock		    "ExtractBit"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sync Delay"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "Sync Delay2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -50]
+	    Branch {
+	      Points		      [0, -50]
+	      Branch {
+		DstBlock		"BusBuild"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -35]
+		DstBlock		"BusBuild"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      Points		      [225, 0; 0, -80]
+	      DstBlock		      "Adder"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Inverse Last\nPartial Product"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, -50]
+	  DstBlock		  "Adder"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Pipeline \nDelay"
+	  SrcPort		  1
+	  DstBlock		  "Inverse Last\nPartial Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sync Delay2"
+	  SrcPort		  1
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Output Resolution\nArea of Interrest"
+	  SrcPort		  1
+	  DstBlock		  "Delay4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusBuild"
+	  SrcPort		  1
+	  DstBlock		  "Inverse Last\nPartial Product"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      Ports		      [2]
+      Position		      [1275, 385, 1305, 480]
+      Floating		      off
+      Location		      [188, 365, 667, 891]
+      Open		      off
+      NumInputPorts	      "2"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      TimeRange		      "3000"
+      YMin		      "-150~-30"
+      YMax		      "150~30"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Shift Taps"
+      Ports		      [1, 5]
+      Position		      [530, 123, 585, 197]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Shift Taps"
+      SourceType	      "Shift Taps AlteraBlockset"
+      number_of_taps	      "4"
+      tap_distance	      "8"
+      use_shiftout	      on
+      use_ena		      off
+      use_sclr		      off
+      use_dedicated_circuitry on
+      ram_type		      "AUTO"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Shift Taps1"
+      Ports		      [1, 9]
+      Position		      [530, 329, 585, 511]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Shift Taps"
+      SourceType	      "Shift Taps AlteraBlockset"
+      number_of_taps	      "8"
+      tap_distance	      "8"
+      use_shiftout	      on
+      use_ena		      off
+      use_sclr		      off
+      use_dedicated_circuitry on
+      ram_type		      "AUTO"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Shift Taps2"
+      Ports		      [1, 9]
+      Position		      [530, 548, 585, 722]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Shift Taps"
+      SourceType	      "Shift Taps AlteraBlockset"
+      number_of_taps	      "8"
+      tap_distance	      "8"
+      use_shiftout	      on
+      use_ena		      off
+      use_sclr		      off
+      use_dedicated_circuitry on
+      ram_type		      "AUTO"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Shift Taps4"
+      Ports		      [1, 5]
+      Position		      [530, 228, 585, 302]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Shift Taps"
+      SourceType	      "Shift Taps AlteraBlockset"
+      number_of_taps	      "4"
+      tap_distance	      "8"
+      use_shiftout	      on
+      use_ena		      off
+      use_sclr		      off
+      use_dedicated_circuitry on
+      ram_type		      "AUTO"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Shift Taps5"
+      Ports		      [1, 5]
+      Position		      [530, 753, 585, 827]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Shift Taps"
+      SourceType	      "Shift Taps AlteraBlockset"
+      number_of_taps	      "4"
+      tap_distance	      "8"
+      use_shiftout	      on
+      use_ena		      off
+      use_sclr		      off
+      use_dedicated_circuitry on
+      ram_type		      "AUTO"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Shift Taps6"
+      Ports		      [1, 4]
+      Position		      [530, 858, 585, 932]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Shift Taps"
+      SourceType	      "Shift Taps AlteraBlockset"
+      number_of_taps	      "4"
+      tap_distance	      "8"
+      use_shiftout	      off
+      use_ena		      off
+      use_sclr		      off
+      use_dedicated_circuitry on
+      ram_type		      "AUTO"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      Ports		      []
+      Position		      [24, 308, 93, 355]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily          "Stratix IV"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "clock"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave"
+      Ports		      [0, 1]
+      Position		      [25, 105, 55, 135]
+      SineType		      "Sample based"
+      Amplitude		      "100"
+      Samples		      "100"
+      SampleTime	      "8"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Single Pulse "
+      Ports		      [0, 1]
+      Position		      [150, 204, 190, 236]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Single Pulse"
+      SourceType	      "Single Pulse AlteraBlockset"
+      signal_type	      "Step Up"
+      impulse_width	      "1"
+      delay		      "1"
+      SpecifyClock	      off
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      Ports		      [2, 1]
+      Position		      [80, 96, 90, 194]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay"
+      Position		      [115, 130, 145, 160]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VCC"
+      Ports		      [0, 1]
+      Position		      [325, 152, 345, 168]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/VCC"
+      SourceType	      "VCC AlteraBlockset"
+      SpecifyClock	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "oFirResult"
+      Ports		      [1, 1]
+      Position		      [1125, 444, 1190, 466]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Filters\\DA32\\tb_AltrFir32\\AltrFir32_oFirResult.capture"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+      Port {
+	PortNumber		1
+	Name			"sFirResult"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Line {
+      SrcBlock		      "Shift Taps1"
+      SrcPort		      1
+      DstBlock		      "Bit Level \nSum of Product1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps1"
+      SrcPort		      2
+      DstBlock		      "Bit Level \nSum of Product1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Shift Taps1"
+      SrcPort		      3
+      DstBlock		      "Bit Level \nSum of Product1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Shift Taps1"
+      SrcPort		      4
+      DstBlock		      "Bit Level \nSum of Product1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Shift Taps1"
+      SrcPort		      5
+      DstBlock		      "Bit Level \nSum of Product1"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Shift Taps1"
+      SrcPort		      6
+      DstBlock		      "Bit Level \nSum of Product1"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Shift Taps1"
+      SrcPort		      7
+      DstBlock		      "Bit Level \nSum of Product1"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Shift Taps1"
+      SrcPort		      8
+      DstBlock		      "Bit Level \nSum of Product1"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Shift Taps2"
+      SrcPort		      1
+      DstBlock		      "Bit Level \nSum of Product2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps2"
+      SrcPort		      2
+      DstBlock		      "Bit Level \nSum of Product2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Shift Taps2"
+      SrcPort		      3
+      DstBlock		      "Bit Level \nSum of Product2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Shift Taps2"
+      SrcPort		      4
+      DstBlock		      "Bit Level \nSum of Product2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Shift Taps2"
+      SrcPort		      5
+      DstBlock		      "Bit Level \nSum of Product2"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Shift Taps2"
+      SrcPort		      6
+      DstBlock		      "Bit Level \nSum of Product2"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Shift Taps2"
+      SrcPort		      7
+      DstBlock		      "Bit Level \nSum of Product2"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Shift Taps2"
+      SrcPort		      8
+      DstBlock		      "Bit Level \nSum of Product2"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Shift Taps1"
+      SrcPort		      9
+      Points		      [0, 35; -75, 0]
+      DstBlock		      "Shift Taps2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Parallel To Serial"
+      SrcPort		      1
+      DstBlock		      "Shift Taps"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Single Pulse "
+      SrcPort		      1
+      DstBlock		      "Pattern"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Pattern"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"Goto"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -45]
+	DstBlock		"Parallel To Serial"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "From"
+      SrcPort		      1
+      Points		      [35, 0; 0, -80]
+      DstBlock		      "Scaling Accumulator"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Partial Product \nAdder"
+      SrcPort		      1
+      DstBlock		      "Scaling Accumulator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      1
+      DstBlock		      "Bit Level \nSum of Product"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      2
+      DstBlock		      "Bit Level \nSum of Product"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      3
+      DstBlock		      "Bit Level \nSum of Product"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      4
+      DstBlock		      "Bit Level \nSum of Product"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Shift Taps4"
+      SrcPort		      1
+      DstBlock		      "Bit Level \nSum of Product4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps4"
+      SrcPort		      2
+      DstBlock		      "Bit Level \nSum of Product4"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Shift Taps4"
+      SrcPort		      3
+      DstBlock		      "Bit Level \nSum of Product4"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Shift Taps4"
+      SrcPort		      4
+      DstBlock		      "Bit Level \nSum of Product4"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      5
+      Points		      [0, 30; -75, 0]
+      DstBlock		      "Shift Taps4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps4"
+      SrcPort		      5
+      Points		      [5, 0; 0, 25; -80, 0]
+      DstBlock		      "Shift Taps1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps5"
+      SrcPort		      1
+      DstBlock		      "Bit Level \nSum of Product5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps5"
+      SrcPort		      2
+      DstBlock		      "Bit Level \nSum of Product5"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Shift Taps5"
+      SrcPort		      3
+      DstBlock		      "Bit Level \nSum of Product5"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Shift Taps5"
+      SrcPort		      4
+      DstBlock		      "Bit Level \nSum of Product5"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Shift Taps6"
+      SrcPort		      1
+      DstBlock		      "Bit Level \nSum of Product6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps6"
+      SrcPort		      2
+      DstBlock		      "Bit Level \nSum of Product6"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Shift Taps6"
+      SrcPort		      3
+      DstBlock		      "Bit Level \nSum of Product6"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Shift Taps6"
+      SrcPort		      4
+      DstBlock		      "Bit Level \nSum of Product6"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Shift Taps5"
+      SrcPort		      5
+      Points		      [0, 30; -75, 0]
+      DstBlock		      "Shift Taps6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps2"
+      SrcPort		      9
+      Points		      [0, 25; -75, 0]
+      DstBlock		      "Shift Taps5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bit Level \nSum of Product5"
+      SrcPort		      1
+      Points		      [65, 0; 0, -340]
+      DstBlock		      "Partial Product \nAdder"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Bit Level \nSum of Product"
+      SrcPort		      1
+      Points		      [50, 0; 0, 245]
+      DstBlock		      "Partial Product \nAdder"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bit Level \nSum of Product6"
+      SrcPort		      1
+      Points		      [55, 0; 0, -480]
+      DstBlock		      "Partial Product \nAdder"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Bit Level \nSum of Product4"
+      SrcPort		      1
+      Points		      [35, 0; 0, 170]
+      DstBlock		      "Partial Product \nAdder"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Bit Level \nSum of Product1"
+      SrcPort		      1
+      Points		      [20, 0; 0, 50]
+      DstBlock		      "Partial Product \nAdder"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Bit Level \nSum of Product2"
+      SrcPort		      1
+      Points		      [70, 0; 0, -150]
+      DstBlock		      "Partial Product \nAdder"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "VCC"
+      SrcPort		      1
+      DstBlock		      "Parallel To Serial"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "InputData"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"Parallel To Serial"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -35]
+	DstBlock		"Goto1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Unit Delay"
+      SrcPort		      1
+      DstBlock		      "InputData"
+      DstPort		      1
+    }
+    Line {
+      Name		      "InputFilter"
+      Labels		      [0, 0]
+      SrcBlock		      "From1"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+    Line {
+      Name		      "sFirResult"
+      Labels		      [0, 0]
+      SrcBlock		      "oFirResult"
+      SrcPort		      1
+      Points		      [55, 0]
+      Branch {
+	DstBlock		"Scope"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Power Spectral\nDensity"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Unit Delay"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sine Wave"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Random\nNumber"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Scaling Accumulator"
+      SrcPort		      1
+      DstBlock		      "oFirResult"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "Fixed-Coefficient 32 TAP Low Pass Filter Exampl"
+"e.\nUseage of mixed 4-8 LUT table for partial product pre-computation"
+      Position		      [24, 35]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      18
+    }
+    Annotation {
+      Name		      "% Model pre-load function\n% Coefficient Genera"
+"tion\nFilterOrder = 32\nInputBitWidth = 8\nLowPassFreqBand = [0 0.1 0.2 1];\n"
+"LowPassMagnBand = [1 0.9 0.0001 0.0001];\n\nFlCoef = firls(FilterOrder,LowPas"
+"sFreqBand,LowPassMagnBand);\n\nCoefBitWidth = InputBitWidth + ceil(log2((max("
+"abs(FlCoef))/min(abs(FlCoef)))))\nScalingFactor = (2^(CoefBitWidth-1))-1;\n\n"
+"FpCoef = fix(ScalingFactor * FlCoef);\n\nplot(FpCoef,'o');\ntitle('Coefficien"
+"t Value');\nImpulseData = zeros(1,1000);\nImpulseData(1) = 100;\nh = conv(Imp"
+"ulseData,FpCoef);\nfftplot(h);\ntitle('Frequency response');\nFirSamplingPeri"
+"od=1;"
+      Position		      [19, 595]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      14
+    }
+    Annotation {
+      Name		      "(c) 2007 Altera Corporation. All rights reserve"
+"d.  Altera products are protected under numerous U.S. and foreign patents, ma"
+"skwork rights, copyrights and other intellectual property laws. \nThis refere"
+"nce design file, and your use thereof, is subject to and governed by the term"
+"s and conditions of the applicable Altera Reference Design License Agreement "
+"(found at www.altera.com).\nBy using this reference design file, you indicate"
+" your acceptance of such terms and conditions between you and Altera Corporat"
+"ion. \nIn the event that you do not agree with such terms and conditions, you"
+" may not use the reference design file and please promptly destroy any copies"
+" you have made.\nThis reference design file being provided on an \"as-is\" ba"
+"sis and as an accommodation and therefore all warranties, representations or "
+"guarantees of any kind (whether express, implied or statutory)\nincluding, wi"
+"thout limitation, warranties of merchantability, non-infringement, or fitness"
+" for a particular purpose, are specifically disclaimed.\nBy making this refer"
+"ence design file available, Altera expressly does not recommend, suggest or r"
+"equire that this reference design file be used in combination with any other "
+"product not provided by Altera"
+      Position		      [31, 1011]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      UseDisplayTextAsClickCallback off
+    }
+  }
+}

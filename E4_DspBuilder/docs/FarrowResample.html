@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Farrow Based Resampler</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_lib_demo_designs.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body>
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="ColorSpaceConverter.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="Cordic.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="hb_dspb_std_lib_COVER.html#1020369">Section II.&nbsp;DSP Builder Standard Blockset Libraries</a> : <a class="WebWorks_Breadcrumb_Link" href="hb_dspb_std_lib_demo_designs.30.01.html#1020369">26.&nbsp;Design Examples</a> : Farrow Based Resampler</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_block"><a name="1020369">Farrow Based Resampler</a></div>
+      <div class="B0_body"><a href="matlab:alt_dspbuilder_internal_launch_demo('DesignExamples/Demos/Filters/FarrowResamp', 'FarrowResamp')" target="external_window" name="1098459">Open this model</a></div>
+      <div class="B0_body"><a name="1014201">This design example illustrates how to implement a Farrow based decimating sample </a>rate converter. </div>
+      <div class="B0_body"><a name="1027321">Many integrated systems, such as software defined radios (SDR), require you to </a>resample data so that a unit can comply with communication standards where the sample rates are different. In some cases, where one clock rate is a simple integer multiple of another clock rate, use interpolating and decimating FIR filters to accomplish resampling. However, in most cases the interpolation and decimation factors are so high that this approach is impractical. </div>
+      <div class="B0_body"><a name="1048191">Farrow resamplers provide an efficient way to resample a data stream at a different </a>sample rate. The underlying principle is that the phase difference between the current input and wanted output is determined on a sample by sample basis. This phase difference then combines the phases of a polyphase filter in such a way that a sample for the output phase, which you want, generates. </div>
+      <div class="B0_body"><a name="1091189">This design example illustrates a Farrow resampler. You can simulate its performance </a>in MATLAB, change it as required for your application, generate VHDL and synthesize the model to Altera devices. The design example has an input clock rate identical to the system clock. For applications where the input rate is much lower than the system clock, time sharing should be implemented to achieve a cost effective solution. </div>
+      <div class="B0_body"><a name="1030779">The example model is </a><span class="Bold">FarrowResamp.mdl</span>.</div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1026974">For more information about this design, click on the </a><span class="Code">Doc</span> symbol in the design model window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+  </body>
+</html>

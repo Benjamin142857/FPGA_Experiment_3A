@@ -1,0 +1,1172 @@
+Model {
+  Name			  "blockdemo"
+  Version		  7.0
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.18"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bdroot)\n%% DSPBuilder End\n"
+  Created		  "Tue May 01 09:29:21 2001"
+  Creator		  "mjervis"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "delphick"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Dec 11 15:51:42 2008"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:18>"
+  ConfigurationManager	  "none"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.3.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.3.0"
+	  StartTime		  "0.0"
+	  StopTime		  "20"
+	  AbsTol		  "auto"
+	  FixedStep		  "1"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.3.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.3.0"
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.3.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "Warning"
+	  LoggingUnavailableSignals "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.3.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.3.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.3.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  RTWCompilerOptimization "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.3.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.3.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "blockdemo"
+    Location		    [358, 430, 902, 838]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.196850, 0.196850, 0.196850, 0.196850]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Scope
+      Name		      "Arithmetic Operations"
+      Ports		      [5]
+      Position		      [475, 193, 520, 387]
+      ShowName		      off
+      Floating		      off
+      Location		      [1203, 403, 1472, 859]
+      Open		      on
+      NumInputPorts	      "5"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+      }
+      TimeRange		      "20"
+      YMin		      "0~0~0~0~0"
+      YMax		      "20~20~10~20~20"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Increment\nDecrement"
+      Ports		      [0, 1]
+      Position		      [15, 70, 90, 110]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Increment Decrement"
+      SourceType	      "Increment Decrement AlteraBlockset"
+      BusType		      "Unsigned Integer"
+      bwl		      "4"
+      bwr		      "0"
+      SpecifyClock	      off
+      clr_value		      "0"
+      direction		      "Increment"
+      phase_selection	      "1"
+      use_ena		      off
+      use_sclr		      off
+      pipeline_display	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Logical\nBus Operator"
+      Ports		      [1, 1]
+      Position		      [130, 74, 260, 106]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bus Operator"
+      SourceType	      "Logical Bus Operator AlteraBlockset"
+      BusType		      "Unsigned Integer"
+      bwl		      "4"
+      bwr		      "0"
+      LogicalOp_text	      "AND"
+      mask_value_num	      "3"
+      shift_amount	      "0"
+      force_sign_ext	      off
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Logical\nBus Operator1"
+      Ports		      [1, 1]
+      Position		      [130, 114, 260, 146]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bus Operator"
+      SourceType	      "Logical Bus Operator AlteraBlockset"
+      BusType		      "Unsigned Integer"
+      bwl		      "4"
+      bwr		      "0"
+      LogicalOp_text	      "OR"
+      mask_value_num	      "3"
+      shift_amount	      "0"
+      force_sign_ext	      off
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Logical\nBus Operator2"
+      Ports		      [1, 1]
+      Position		      [130, 154, 260, 186]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bus Operator"
+      SourceType	      "Logical Bus Operator AlteraBlockset"
+      BusType		      "Unsigned Integer"
+      bwl		      "4"
+      bwr		      "0"
+      LogicalOp_text	      "XOR"
+      mask_value_num	      "3"
+      shift_amount	      "0"
+      force_sign_ext	      off
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Logical\nBus Operator3"
+      Ports		      [1, 1]
+      Position		      [130, 192, 260, 228]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bus Operator"
+      SourceType	      "Logical Bus Operator AlteraBlockset"
+      BusType		      "Unsigned Integer"
+      bwl		      "4"
+      bwr		      "0"
+      LogicalOp_text	      "Invert"
+      mask_value_num	      "3"
+      shift_amount	      "0"
+      force_sign_ext	      off
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Logical\nBus Operator4"
+      Ports		      [1, 1]
+      Position		      [130, 234, 260, 266]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bus Operator"
+      SourceType	      "Logical Bus Operator AlteraBlockset"
+      BusType		      "Unsigned Integer"
+      bwl		      "4"
+      bwr		      "0"
+      LogicalOp_text	      "Shift Left"
+      mask_value_num	      "3"
+      shift_amount	      "1"
+      force_sign_ext	      off
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Logical\nBus Operator5"
+      Ports		      [1, 1]
+      Position		      [130, 273, 260, 307]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bus Operator"
+      SourceType	      "Logical Bus Operator AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "4"
+      bwr		      "0"
+      LogicalOp_text	      "Shift Right"
+      mask_value_num	      "3"
+      shift_amount	      "1"
+      force_sign_ext	      off
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Logical\nBus Operator6"
+      Ports		      [1, 1]
+      Position		      [130, 313, 260, 347]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bus Operator"
+      SourceType	      "Logical Bus Operator AlteraBlockset"
+      BusType		      "Unsigned Integer"
+      bwl		      "4"
+      bwr		      "0"
+      LogicalOp_text	      "Rotate Left"
+      mask_value_num	      "3"
+      shift_amount	      "1"
+      force_sign_ext	      off
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Logical\nBus Operator7"
+      Ports		      [1, 1]
+      Position		      [130, 354, 260, 386]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bus Operator"
+      SourceType	      "Logical Bus Operator AlteraBlockset"
+      BusType		      "Unsigned Integer"
+      bwl		      "4"
+      bwr		      "0"
+      LogicalOp_text	      "Rotate Right"
+      mask_value_num	      "3"
+      shift_amount	      "1"
+      force_sign_ext	      off
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Logical Operations"
+      Ports		      [5]
+      Position		      [410, 42, 450, 218]
+      ShowName		      off
+      Floating		      off
+      Location		      [915, 403, 1192, 858]
+      Open		      on
+      NumInputPorts	      "5"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+      }
+      TimeRange		      "20"
+      YMin		      "0~0~0~0~0"
+      YMax		      "20~4~20~20~20"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output1"
+      Ports		      [1, 1]
+      Position		      [280, 82, 345, 98]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\perforce_workspace81\\main\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\UnitBlocks\\GateAndControl\\LogicalBusOperator\\tb_blockdemo\\blockdemo_Output1.capture"
+      BusType		      "Inferred"
+      bwl		      "4"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"and 0011"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output2"
+      Ports		      [1, 1]
+      Position		      [280, 37, 345, 53]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\perforce_workspace81\\main\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\UnitBlocks\\GateAndControl\\LogicalBusOperator\\tb_blockdemo\\blockdemo_Output2.capture"
+      BusType		      "Inferred"
+      bwl		      "4"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"Input"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output3"
+      Ports		      [1, 1]
+      Position		      [280, 122, 345, 138]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\perforce_workspace81\\main\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\UnitBlocks\\GateAndControl\\LogicalBusOperator\\tb_blockdemo\\blockdemo_Output3.capture"
+      BusType		      "Inferred"
+      bwl		      "4"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"or 0011"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output4"
+      Ports		      [1, 1]
+      Position		      [280, 162, 345, 178]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\perforce_workspace81\\main\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\UnitBlocks\\GateAndControl\\LogicalBusOperator\\tb_blockdemo\\blockdemo_Output4.capture"
+      BusType		      "Inferred"
+      bwl		      "4"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"xor 0011"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output5"
+      Ports		      [1, 1]
+      Position		      [280, 202, 345, 218]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\perforce_workspace81\\main\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\UnitBlocks\\GateAndControl\\LogicalBusOperator\\tb_blockdemo\\blockdemo_Output5.capture"
+      BusType		      "Inferred"
+      bwl		      "4"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"invert"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output6"
+      Ports		      [1, 1]
+      Position		      [280, 242, 345, 258]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\perforce_workspace81\\main\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\UnitBlocks\\GateAndControl\\LogicalBusOperator\\tb_blockdemo\\blockdemo_Output6.capture"
+      BusType		      "Inferred"
+      bwl		      "4"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"Left shift 1"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output7"
+      Ports		      [1, 1]
+      Position		      [280, 282, 345, 298]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\perforce_workspace81\\main\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\UnitBlocks\\GateAndControl\\LogicalBusOperator\\tb_blockdemo\\blockdemo_Output7.capture"
+      BusType		      "Inferred"
+      bwl		      "4"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"Right shift 1"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output8"
+      Ports		      [1, 1]
+      Position		      [280, 322, 345, 338]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\perforce_workspace81\\main\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\UnitBlocks\\GateAndControl\\LogicalBusOperator\\tb_blockdemo\\blockdemo_Output8.capture"
+      BusType		      "Inferred"
+      bwl		      "4"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"Left rotate 1"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output9"
+      Ports		      [1, 1]
+      Position		      [280, 362, 345, 378]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\perforce_workspace81\\main\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\UnitBlocks\\GateAndControl\\LogicalBusOperator\\tb_blockdemo\\blockdemo_Output9.capture"
+      BusType		      "Inferred"
+      bwl		      "4"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"Right rotate 1"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      Ports		      []
+      Position		      [19, 323, 88, 370]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily          "Stratix IV"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "Clock"
+      ExportDir		      "C:\\Documents and Settings\\delphick\\My Documents\\MATLAB"
+    }
+    Line {
+      Name		      "and 0011"
+      Labels		      [1, 0]
+      SrcBlock		      "Output1"
+      SrcPort		      1
+      Points		      [45, 0]
+      DstBlock		      "Logical Operations"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Increment\nDecrement"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"Logical\nBus Operator"
+	DstPort			1
+      }
+      Branch {
+	Labels			[2, 0]
+	Points			[0, -45]
+	DstBlock		"Output2"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 40]
+	Branch {
+	  DstBlock		  "Logical\nBus Operator1"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 40]
+	  Branch {
+	    DstBlock		    "Logical\nBus Operator2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 40]
+	    Branch {
+	      DstBlock		      "Logical\nBus Operator3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 40]
+	      Branch {
+		DstBlock		"Logical\nBus Operator4"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 40]
+		Branch {
+		  DstBlock		  "Logical\nBus Operator5"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 40]
+		  Branch {
+		    DstBlock		    "Logical\nBus Operator6"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "Logical\nBus Operator7"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	  }
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Logical\nBus Operator"
+      SrcPort		      1
+      DstBlock		      "Output1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Input"
+      Labels		      [1, 0]
+      SrcBlock		      "Output2"
+      SrcPort		      1
+      Points		      [45, 0]
+      Branch {
+	DstBlock		"Logical Operations"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -15; 65, 0]
+	DstBlock		"Arithmetic Operations"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "or 0011"
+      Labels		      [1, 0]
+      SrcBlock		      "Output3"
+      SrcPort		      1
+      DstBlock		      "Logical Operations"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Logical\nBus Operator1"
+      SrcPort		      1
+      DstBlock		      "Output3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "xor 0011"
+      Labels		      [1, 0]
+      SrcBlock		      "Output4"
+      SrcPort		      1
+      Points		      [45, 0]
+      DstBlock		      "Logical Operations"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Logical\nBus Operator2"
+      SrcPort		      1
+      DstBlock		      "Output4"
+      DstPort		      1
+    }
+    Line {
+      Name		      "invert"
+      Labels		      [1, 0]
+      SrcBlock		      "Output5"
+      SrcPort		      1
+      Points		      [45, 0]
+      DstBlock		      "Logical Operations"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Logical\nBus Operator3"
+      SrcPort		      1
+      DstBlock		      "Output5"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Left shift 1"
+      Labels		      [1, 0]
+      SrcBlock		      "Output6"
+      SrcPort		      1
+      DstBlock		      "Arithmetic Operations"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Logical\nBus Operator4"
+      SrcPort		      1
+      DstBlock		      "Output6"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Right shift 1"
+      Labels		      [1, 0]
+      SrcBlock		      "Output7"
+      SrcPort		      1
+      DstBlock		      "Arithmetic Operations"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Logical\nBus Operator5"
+      SrcPort		      1
+      DstBlock		      "Output7"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Left rotate 1"
+      Labels		      [1, 0]
+      SrcBlock		      "Output8"
+      SrcPort		      1
+      DstBlock		      "Arithmetic Operations"
+      DstPort		      4
+    }
+    Line {
+      Name		      "Right rotate 1"
+      Labels		      [1, 0]
+      SrcBlock		      "Output9"
+      SrcPort		      1
+      DstBlock		      "Arithmetic Operations"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Logical\nBus Operator7"
+      SrcPort		      1
+      DstBlock		      "Output9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Logical\nBus Operator6"
+      SrcPort		      1
+      DstBlock		      "Output8"
+      DstPort		      1
+    }
+  }
+}

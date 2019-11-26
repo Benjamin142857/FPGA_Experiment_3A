@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Integration of Multiple Models in a Top-Level Quartus II Project</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_managing.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_managing.17.7.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_troubleshooting.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1025235">Integration of Multiple Models in a Top-Level Quartus II Project</a></div>
+      <div class="Body"><a name="1025236">To integrate multiple DSP Builder (standard blockset) designs in a top-level Quartus </a>II project, you need the .<span class="Bold">mdl</span> and .<span class="Bold">ipx</span> files.</div>
+      <div class="Body"><a name="1025237">Use the Quartus II IP (.</a><span class="Bold">qip</span>) file as the single source file for each DSP Builder model. The .<span class="Bold">qip</span> file is a single file that contains paths for all the files for an IP design. The .<span class="Bold">qip</span> file allows you to add an IP design to the project by adding only one file, rather than adding all the necessary files individually. You only need the .<span class="Bold">qip</span> file for Quartus II archiving for DSP Builder, which does not use it for generation.</div>
+      <div class="Body"><a name="1025238">If the DSP Builder design includes HDL import or IP MegaCore functions, the </a>top-level .<span class="Bold">qip</span> may reference embedded .<span class="Bold">qip</span> file(s). Also, some older versions of IP MegaCore functions (before v8.0) and HDL import blocks may have absolute paths in the generated .<span class="Bold">qip</span> files. If you migrate the files from a different location, it may be necessary to manually edit their corresponding .<span class="Bold">qip</span> files to reflect the new environment. By running the <span class="Bold">Analyze</span> process from the <span class="Code">Signal Compiler</span> block in the new location, the .<span class="Bold">qip</span> file updates automatically with the new path settings. These embedded .<span class="Bold">qip</span> file(s) contain the information concerning the projects, libraries and source HDL required by the Quartus II software for successful integration of these external entities into DSP Builder.</div>
+      <div class="Body"><a name="1025239">In addition to the .</a><span class="Bold">qip</span> source files, the top-level project also requires an IP Index (.<span class="Bold">ipx</span>) file that specifies additional paths for the IP Librarian to find components. SOPC Builder uses the same IP librarian to search for SOPC Builder components. Specifically for DSP Builder designs, the Quartus II software needs the .<span class="Bold">ipx</span> file for the HDL import and IP MegaCore function blocks that your model uses. Essentially, the DSP Builder system is an entity composed of DSP Builder blocks, (which themselves are entities but are easily discoverable), and non-native entities like HDL import and MegaCore functions. Use the IP Librarian with .<span class="Bold">ipx</span> files to find all entities. </div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1025240">The DSP Builder specifies the main entities in the main Quartus II .</a><span class="Bold">ipx</span> file and need no special action—you just need to add the extra HDL import and MegaCore function entities. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1025241">To update the IP librarian search path for the top-level Quartus II project, create an </a>additional directory <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal;">project directory</span><span class="Bold" style="font-style: normal;">&gt;/ip/&lt;</span><span class="Emphasis" style="font-weight: normal;">module name</span><span class="Bold" style="font-style: normal;">&gt; </span>and create a file <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal;">module </span><span class="Emphasis" style="font-weight: normal;">name</span><span class="Bold" style="font-style: normal;">&gt;</span>.<span class="Bold">ipx</span> in that subdirectory.</div>
+      <div class="Body"><a name="1025242">The .</a><span class="Bold">ipx</span> file has the following contents:</div>
+      <div class="C1_code_indent"><a name="1025243">&lt;library&gt;</a></div>
+      <div class="C1_code_indent"><a name="1025244">	</a>&lt;path path='../../../&lt;<span class="Emphasis">module name</span>&gt;/**/*'/&gt;</div>
+      <div class="C1_code_indent"><a name="1025245">&lt;/library&gt;</a></div>
+      <div class="Body"><a name="1025246">These statements specify the relative path to the directory where to locate the .</a><span class="Bold">mdl</span> file and where to search for directories containing further .<span class="Bold">ipx</span> files. The ** means search recursively, and the final * locates all identifiable elements there.</div>
+      <div class="Body"><a name="1025247">You can combine all the search paths into a single .</a><span class="Bold">ipx</span> file. For example: </div>
+      <div class="C1_code_indent"><a name="1025248">&lt;library&gt;</a></div>
+      <div class="C1_code_indent"><a name="1025249">&lt;path path='../../../&lt;</a><span class="Emphasis">module name1</span>&gt;/**/*'/&gt;</div>
+      <div class="C1_code_indent"><a name="1025250">&lt;path path='../../../&lt;</a><span class="Emphasis">module name2</span>&gt;/**/*'/&gt;</div>
+      <div class="C1_code_indent"><a name="1025251">...</a></div>
+      <div class="C1_code_indent"><a name="1025252">&lt;/library&gt;</a></div>
+      <div class="Body"><a name="1025253">You can also specify a path to a specific .</a><span class="Bold">ipx</span> file using:</div>
+      <div class="C1_code_indent"><a name="1025254">&lt;index file='../../../blockdemo.ipx'/&gt;</a></div>
+      <div class="H2_heading"><a name="1025255">Design Example</a></div>
+      <div class="Body"><a name="1025256">The following example shows how you can integrate multiple DSP Builder designs </a>into a top-level Quartus II project.  Suppose your top-level design consists of the following three DSP Builder models:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025257">fir1.mdl</a></span>—containing two Avalon-MM slave interfaces</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025258">fir2.mdl</a></span>—containing multiple HDL import blocks</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025259">fir3.mdl</a></span>—containing one IP MegaCore function block with two Avalon-ST interfaces</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1025260">In the top-level Quartus II project, there are the following four design files:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025261">top.vhd</a></span>—Top-level wrapper that instantiates the three separate models</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025262">fir1.qip</a></span>—Quartus IP file for <span class="Bold">fir1.mdl</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none;"><span class="Bold"><a name="1025263">fir2.qip</a></span><span style="font-weight: normal;">—Quartus IP file for </span><span class="Bold">fir2.mdl</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none;"><span class="Bold"><a name="1025264">fir3.qip</a></span><span style="font-weight: normal;">—Quartus IP file for </span><span class="Bold">fir3.mdl</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1025671" title="Integration of Multiple Models in a Top-Level Quartus II Project" name="1025658">Figure&nbsp;12–2 on page&nbsp;12–7</a></span> shows the design example in the Quartus II <span class="Bold">Project </span><span class="Bold">Navigator</span> window.</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1026394">In this example, </a><span class="Bold">fir2.qip</span> has an embedded .<span class="Bold">qip</span> associated with the HDL import block and <span class="Bold">fir3.qip</span> has an embedded .<span class="Bold">qip</span> associated with the IP MegaCore function block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1026395">To update the IP Librarian search path, create additional directories </a><span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal;">project </span><span class="Emphasis" style="font-weight: normal;">directory</span><span class="Bold" style="font-style: normal;">&gt;/ip/&lt;</span><span class="Emphasis" style="font-weight: normal;">module name</span><span class="Bold" style="font-style: normal;">&gt;</span> and create an .<span class="Bold">ipx</span> file in each subdirectory.</div>
+      <div class="Body"><a name="1026396">Thus in this design example, create the following directories:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none;"><span class="Bold"><a name="1026397">../</a></span><span class="Bold" style="font-style: italic;">&lt;</span><span class="Emphasis" style="font-weight: normal;">project directory</span><span class="Bold" style="font-style: normal;">&gt;/ip/fir1</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none;"><span class="Bold"><a name="1026398">../</a></span><span class="Bold" style="font-style: italic;">&lt;</span><span class="Emphasis" style="font-weight: normal;">project directory</span><span class="Bold" style="font-style: normal;">&gt;/ip/fir2</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none;"><span class="Bold"><a name="1026399">../</a></span><span class="Bold" style="font-style: italic;">&lt;</span><span class="Emphasis" style="font-weight: normal;">project directory</span><span class="Bold" style="font-style: normal;">&gt;/ip/fir3</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1026400">and in each subdirectory, create a text file &lt;</a><span class="Emphasis">module name</span><span class="Bold" style="font-style: normal;">&gt;.ipx</span> with the following contents:</div>
+      <div class="C1_code_indent"><a name="1026401">&lt;library&gt;</a></div>
+      <div class="C1_code_indent"><a name="1026402">            &lt;path path='../../../&lt;</a><span class="Emphasis">module name</span>&gt;/**/*'/&gt;</div>
+      <div class="C1_code_indent"><a name="1026403">&lt;/library&gt;</a></div>
+      <div class="Body"><a name="1026404">These .</a><span class="Bold">ipx</span> files specify the relative path to the directory, where the .<span class="Bold">mdl</span> file is located and tell the IP Librarian where to look for the components. </div>
+      <div class="TA_table_anchor"><a name="1025665">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;12–2.&nbsp;</span><a name="1025671">Project Navigator Window in the Quartus II Software</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1025673"><img class="Default" src="images/ProjectNavigator.png" width="599" height="470" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="N_007cPN_part_number"><a name="998639">&nbsp;</a></div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

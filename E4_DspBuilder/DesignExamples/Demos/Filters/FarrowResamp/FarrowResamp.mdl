@@ -1,0 +1,3713 @@
+Model {
+  Name			  "FarrowResamp"
+  Version		  6.6
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.467"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  PreLoadFcn		  "clock_period=50/3\nclock_sample=clock_period*1.0e-0"
+"09\nslow_clock=25\nfast_clock=32\n"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  on
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks on
+  BrowserLookUnderMasks	  on
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bd"
+"root)\n%% DSPBuilder End\n"
+  Created		  "Thu Nov 20 09:35:03 2003"
+  Creator		  "mjervis"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "lkong"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Apr 24 10:31:00 2008"
+  ModelVersionFormat	  "1.%<AutoIncrement:467>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  AccelVerboseBuild	  off
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.2.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.2.0"
+	  StartTime		  "0.0"
+	  StopTime		  "1800*clock_sample"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.2.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.2.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "none"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "Warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.2.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.2.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Diagnostics/Sample Time"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutDataTypeMode	      "Inherit via back propagation"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      FunctionName	      "mlfile"
+      DisplayMFileStacktrace  on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SignalSpecification
+      Dimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+    }
+    Block {
+      BlockType		      Sin
+      SineType		      "Time based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "FarrowResamp"
+    Location		    [268, 96, 1461, 1090]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "Clock"
+      Ports		      []
+      Position		      [340, 75, 525, 93]
+      SourceBlock	      "allblocks_alteradspbuilder2/Clock"
+      SourceType	      "BaseClock AlteraBlockset"
+      ClockPeriod	      "clock_period"
+      ClockPeriodUnit	      "ns"
+      SampleTime	      "clock_sample"
+      SimulationStartCycle    "5"
+      PhaseOffset	      "0"
+      Reset		      "aclr"
+      ResetType		      "Active Low"
+      Export		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Clock_Derived"
+      Ports		      []
+      Position		      [339, 111, 526, 128]
+      SourceBlock	      "allblocks_alteradspbuilder2/Clock_Derived"
+      SourceType	      "Clock AlteraBlockset"
+      ClockNumerator	      "slow_clock"
+      ClockDenominator	      "fast_clock"
+      SimulationStartCycle    "5"
+      PhaseOffset	      "0"
+      Reset		      "slow_aclr"
+      ResetType		      "Active Low"
+      Export		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay"
+      Ports		      [1, 1]
+      Position		      [300, 589, 335, 621]
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+      SourceType	      "Delay AlteraBlockset"
+      pipeline		      "4"
+      pipeline_display	      "4"
+      ClockPhase	      "1"
+      use_ena		      off
+      use_sclr		      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\spr\\269066\\tb_FarrowResamp\\FarrowResamp_"
+"Delay.fixedpointlog"
+      use_init		      off
+      reset_value	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay1"
+      Ports		      [1, 1]
+      Position		      [305, 684, 340, 716]
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+      SourceType	      "Delay AlteraBlockset"
+      pipeline		      "4"
+      pipeline_display	      "4"
+      ClockPhase	      "1"
+      use_ena		      off
+      use_sclr		      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\spr\\269066\\tb_FarrowResamp\\FarrowResamp_"
+"Delay1.fixedpointlog"
+      use_init		      off
+      reset_value	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Din"
+      Ports		      [1, 1]
+      Position		      [210, 202, 275, 218]
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\spr\\269066\\tb_FarrowResamp\\FarrowResamp_"
+"Din.salt"
+      BusType		      "Signed Fractional"
+      bwl		      "1"
+      bwr		      "15"
+      SpecifyClock	      on
+      clock		      "Clock"
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DinOut"
+      Ports		      [1, 1]
+      Position		      [460, 202, 525, 218]
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\spr\\269066\\tb_FarrowResamp\\FarrowResamp_"
+"DinOut.capture"
+      BusType		      "Signed Fractional"
+      bwl		      "1"
+      bwr		      "15"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "DocBlock"
+      Ports		      []
+      Position		      [1023, 66, 1147, 145]
+      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
+      ShowName		      off
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      CopyFcn		      "docblock('breaklink',gcb);"
+      DeleteFcn		      "docblock('close_document',gcb);"
+      PreSaveFcn	      "docblock('save_document',gcb);"
+      OpenFcn		      "docblock('edit_document',gcb);"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "DocBlock"
+      MaskDescription	      "Use this block to save long descriptive text wi"
+"th the model.  Double-clicking the block will open an editor."
+      MaskPromptString	      "E Coder Flag|Document Type"
+      MaskStyleString	      "edit,popup(Text|RTF|HTML)"
+      MaskTunableValueString  "off,off"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,off"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "ECoderFlag=&1;DocumentType=&2;"
+      MaskDisplay	      "plot([.8 0 0 1 1 .8 .8 1],[1 1 0 0 .8 1 .8 .8])"
+";\ntext(.5,.5,'DOC','horizontalalignment','center');\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "|Text"
+      MaskTabNameString	      ","
+      System {
+	Name			"DocBlock"
+	Location		[480, 85, 980, 386]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "EmptySubsystem"
+	  Ports			  []
+	  Position		  [115, 50, 145, 80]
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "EmptySubsystem"
+	    Location		    [146, 180, 902, 673]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dout"
+      Ports		      [1, 1]
+      Position		      [600, 597, 665, 613]
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\spr\\269066\\tb_FarrowResamp\\FarrowResamp_"
+"Dout.capture"
+      BusType		      "Signed Fractional"
+      bwl		      "2"
+      bwr		      "15"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dual-Clock FIFO"
+      Ports		      [3, 1]
+      Position		      [470, 567, 570, 643]
+      SourceBlock	      "allblocks_alteradspbuilder2/Dual-Clock FIFO"
+      SourceType	      "Dual-Clock FIFO AlteraBlockset"
+      numwords		      "16"
+      BusType		      "Signed Fractional"
+      bwl		      "2"
+      bwr		      "15"
+      ram_type		      "AUTO"
+      UseBaseWriteClock	      on
+      UseBaseReadClock	      off
+      read_clock	      "Clock_Derived"
+      use_rdempty	      off
+      use_rdfull	      off
+      use_rdusedw	      off
+      use_wrempty	      off
+      use_wrfull	      off
+      use_wrusedw	      off
+      use_user_aclr	      off
+      register_output	      off
+      use_les_only	      off
+      showahead_mode	      off
+      synchronized	      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\spr\\269066\\tb_FarrowResamp\\FarrowResamp_"
+"Dual-Clock+FIFO.fixedpointlog"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Input Spectrum"
+      Ports		      [1]
+      Position		      [850, 130, 885, 180]
+      DialogController	      "dspdialog.SpectrumScope"
+      DialogControllerArgs    "DataTag1"
+      SourceBlock	      "dspsnks4/Spectrum\nScope"
+      SourceType	      "Spectrum Scope"
+      ShowPortLabels	      "none"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ScopeProperties	      on
+      Domain		      "Frequency"
+      HorizSpan		      "1"
+      UseBuffer		      on
+      BufferSize	      "1024"
+      Overlap		      "512"
+      inpFftLenInherit	      off
+      FFTlength		      "128"
+      numAvg		      "2"
+      DisplayProperties	      off
+      AxisGrid		      on
+      Memory		      off
+      FrameNumber	      on
+      AxisLegend	      off
+      AxisZoom		      off
+      OpenScopeAtSimStart     on
+      OpenScopeImmediately    off
+      FigPos		      "get(0,'defaultfigureposition')"
+      AxisProperties	      off
+      XUnits		      "Hertz"
+      XRange		      "[0...Fs/2]"
+      InheritXIncr	      on
+      XIncr		      "1.0"
+      XLabel		      "Samples"
+      XLimit		      "Auto"
+      YUnits		      "dB"
+      XMax		      "1"
+      XMin		      "0"
+      YMin		      "-153.243329043552"
+      YMax		      "22.477497462716"
+      YLabel		      "Magnitude, dB"
+      LineProperties	      off
+      wintypeSpecScope	      "Hann"
+      RsSpecScope	      "50"
+      betaSpecScope	      "5"
+      winsampSpecScope	      "Periodic"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Input Spectrum quantised"
+      Ports		      [1]
+      Position		      [655, 185, 690, 235]
+      DialogController	      "dspdialog.SpectrumScope"
+      DialogControllerArgs    "DataTag2"
+      SourceBlock	      "dspsnks4/Spectrum\nScope"
+      SourceType	      "Spectrum Scope"
+      ShowPortLabels	      "none"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ScopeProperties	      on
+      Domain		      "Frequency"
+      HorizSpan		      "1"
+      UseBuffer		      on
+      BufferSize	      "1024"
+      Overlap		      "512"
+      inpFftLenInherit	      off
+      FFTlength		      "128"
+      numAvg		      "2"
+      DisplayProperties	      off
+      AxisGrid		      on
+      Memory		      off
+      FrameNumber	      on
+      AxisLegend	      off
+      AxisZoom		      off
+      OpenScopeAtSimStart     on
+      OpenScopeImmediately    off
+      FigPos		      "get(0,'defaultfigureposition')"
+      AxisProperties	      off
+      XUnits		      "Hertz"
+      XRange		      "[0...Fs/2]"
+      InheritXIncr	      on
+      XIncr		      "1.0"
+      XLabel		      "Samples"
+      XLimit		      "Auto"
+      YUnits		      "dB"
+      XMax		      "1"
+      XMin		      "0"
+      YMin		      "-152.110626534928"
+      YMax		      "22.4774480317679"
+      YLabel		      "Magnitude, dB"
+      LineProperties	      off
+      LineColors	      "magenta"
+      wintypeSpecScope	      "Hann"
+      RsSpecScope	      "50"
+      betaSpecScope	      "5"
+      winsampSpecScope	      "Periodic"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Logical Bit Operator"
+      Ports		      [2, 1]
+      Position		      [235, 673, 280, 722]
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operato"
+"r"
+      SourceType	      "Logical Bit Operator AlteraBlockset"
+      LogicalOperator	      "OR"
+      user_inputs	      "2"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Output Spectrum"
+      Ports		      [1]
+      Position		      [715, 580, 750, 630]
+      DialogController	      "dspdialog.SpectrumScope"
+      DialogControllerArgs    "DataTag3"
+      SourceBlock	      "dspsnks4/Spectrum\nScope"
+      SourceType	      "Spectrum Scope"
+      ShowPortLabels	      "none"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ScopeProperties	      on
+      Domain		      "Frequency"
+      HorizSpan		      "1"
+      UseBuffer		      on
+      BufferSize	      "1024"
+      Overlap		      "512"
+      inpFftLenInherit	      off
+      FFTlength		      "128"
+      numAvg		      "2"
+      DisplayProperties	      off
+      AxisGrid		      on
+      Memory		      off
+      FrameNumber	      on
+      AxisLegend	      off
+      AxisZoom		      off
+      OpenScopeAtSimStart     on
+      OpenScopeImmediately    off
+      FigPos		      "get(0,'defaultfigureposition')"
+      AxisProperties	      off
+      XUnits		      "Hertz"
+      XRange		      "[0...Fs/2]"
+      InheritXIncr	      on
+      XIncr		      "1.0"
+      XLabel		      "Samples"
+      XLimit		      "Auto"
+      YUnits		      "dB"
+      XMax		      "1"
+      XMin		      "0"
+      YMin		      "-107.092610263266"
+      YMax		      "23.1676114232961"
+      YLabel		      "Magnitude, dB"
+      LineProperties	      off
+      LineColors	      "blue"
+      wintypeSpecScope	      "Hann"
+      RsSpecScope	      "50"
+      betaSpecScope	      "5"
+      winsampSpecScope	      "Periodic"
+    }
+    Block {
+      BlockType		      SignalSpecification
+      Name		      "Signal Specification"
+      Position		      [605, 344, 820, 366]
+      SampleTime	      "clock_sample * (slow_clock/fast_clock)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      Ports		      []
+      Position		      [74, 63, 143, 110]
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily	      "Stratix III"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "clock"
+      ExportDir		      "."
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave A"
+      Ports		      [0, 1]
+      Position		      [65, 170, 95, 200]
+      SineType		      "Sample based"
+      Amplitude		      "0.4999"
+      SampleTime	      "clock_sample"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave B"
+      Ports		      [0, 1]
+      Position		      [65, 220, 95, 250]
+      SineType		      "Sample based"
+      Amplitude		      "0.4999"
+      Samples		      "11"
+      SampleTime	      "clock_sample"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      Ports		      [2, 1]
+      Position		      [135, 162, 145, 258]
+      ShowName		      off
+      CollapseMode	      "All dimensions"
+      InputSameDT	      off
+      OutDataTypeMode	      "Inherit via internal rule"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Tsamp"
+      Ports		      [1, 1]
+      Position		      [380, 691, 430, 709]
+      SourceBlock	      "allblocks_alteradspbuilder2/Tsamp"
+      SourceType	      "Time Set AlteraBlockset"
+      SpecifyClock	      on
+      clock		      "Clock_Derived"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "clock_ratio"
+      Position		      [710, 15, 840, 45]
+      Value		      "slow_clock/fast_clock"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "farrow_combiner"
+      Ports		      [4, 1]
+      Position		      [301, 445, 509, 545]
+      Orientation	      "down"
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"farrow_combiner"
+	Location		[197, 90, 1202, 960]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "mu[2].[15]"
+	  Position		  [30, 258, 60, 272]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "phase0[3].[15]"
+	  Position		  [30, 58, 60, 72]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "phase1[3].[15]"
+	  Position		  [30, 133, 60, 147]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "phase2[2].[15]"
+	  Position		  [30, 178, 60, 192]
+	  ForegroundColor	  "blue"
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AltBus2"
+	  Ports			  [1, 1]
+	  Position		  [270, 189, 345, 211]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/AltBus"
+	  SourceType		  "AltBus AlteraBlockset"
+	  BusType		  "Signed Fractional"
+	  bwl			  "3"
+	  bwr			  "15"
+	  saturate		  off
+	  floatingPointInput	  off
+	  floatingPointOutput	  off
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_AltBus2.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AltBus6"
+	  Ports			  [1, 1]
+	  Position		  [655, 195, 730, 225]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/AltBus"
+	  SourceType		  "AltBus AlteraBlockset"
+	  BusType		  "Signed Fractional"
+	  bwl			  "5"
+	  bwr			  "15"
+	  saturate		  off
+	  floatingPointInput	  off
+	  floatingPointOutput	  off
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_AltBus6.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AltBus7"
+	  Ports			  [1, 1]
+	  Position		  [445, 157, 515, 183]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/AltBus"
+	  SourceType		  "AltBus AlteraBlockset"
+	  BusType		  "Signed Fractional"
+	  bwl			  "3"
+	  bwr			  "15"
+	  saturate		  on
+	  floatingPointInput	  off
+	  floatingPointOutput	  off
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_AltBus7.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AltBus8"
+	  Ports			  [1, 1]
+	  Position		  [440, 252, 515, 278]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/AltBus"
+	  SourceType		  "AltBus AlteraBlockset"
+	  BusType		  "Signed Fractional"
+	  bwl			  "2"
+	  bwr			  "15"
+	  saturate		  off
+	  floatingPointInput	  off
+	  floatingPointOutput	  off
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_AltBus8.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay"
+	  Ports			  [1, 1]
+	  Position		  [185, 115, 230, 165]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_Delay.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay2"
+	  Ports			  [1, 1]
+	  Position		  [185, 240, 230, 290]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_Delay2.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay3"
+	  Ports			  [1, 1]
+	  Position		  [365, 240, 410, 290]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_Delay3.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay"
+	  Ports			  [1, 1]
+	  Position		  [660, 46, 735, 84]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "3"
+	  pipeline_display	  "3"
+	  ram_type		  "AUTO"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_Memory+Delay.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Parallel \nAdder Subtractor"
+	  Ports			  [2, 1]
+	  Position		  [375, 108, 410, 232]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "++"
+	  use_pipeline		  on
+	  pipeline_display	  "1"
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_Parallel+%0AAdder+Subtractor.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Parallel \nAdder Subtractor1"
+	  Ports			  [2, 1]
+	  Position		  [770, 111, 805, 164]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "++"
+	  use_pipeline		  on
+	  pipeline_display	  "1"
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_Parallel+%0AAdder+Subtractor1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [185, 170, 250, 230]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Product"
+	  SourceType		  "Product AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  UseLPM		  off
+	  UseDedicatedCircuitry	  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_Product.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Product1"
+	  Ports			  [2, 1]
+	  Position		  [565, 183, 630, 232]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Product"
+	  SourceType		  "Product AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  UseLPM		  off
+	  UseDedicatedCircuitry	  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_farrow%5Fcombiner_Product1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out[2].[15]"
+	  Position		  [940, 133, 970, 147]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "phase0[3].[15]"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "phase1[3].[15]"
+	  SrcPort		  1
+	  DstBlock		  "Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "phase2[2].[15]"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "mu[2].[15]"
+	  SrcPort		  1
+	  Points		  [100, 0]
+	  Branch {
+	    Points		    [0, -50]
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Delay2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  DstBlock		  "Parallel \nAdder Subtractor"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "AltBus2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Parallel \nAdder Subtractor"
+	  SrcPort		  1
+	  DstBlock		  "AltBus7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay2"
+	  SrcPort		  1
+	  DstBlock		  "Delay3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  DstBlock		  "AltBus6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay3"
+	  SrcPort		  1
+	  DstBlock		  "AltBus8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "AltBus8"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, -45]
+	  DstBlock		  "Product1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "AltBus6"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  DstBlock		  "Parallel \nAdder Subtractor1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "AltBus7"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 25]
+	  DstBlock		  "Product1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Parallel \nAdder Subtractor1"
+	  SrcPort		  1
+	  DstBlock		  "Out[2].[15]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Parallel \nAdder Subtractor1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "AltBus2"
+	  SrcPort		  1
+	  DstBlock		  "Parallel \nAdder Subtractor"
+	  DstPort		  2
+	}
+	Annotation {
+	  Name			  "(c) 2007 Altera Corporation. All rights res"
+"erved.  Altera products are protected under numerous U.S. and foreign patents"
+", maskwork rights, copyrights and other intellectual property laws. \nThis re"
+"ference design file, and your use thereof, is subject to and governed by the "
+"terms and conditions of the applicable Altera Reference Design License Agreem"
+"ent (found at www.altera.com).\nBy using this reference design file, you indi"
+"cate your acceptance of such terms and conditions between you and Altera Corp"
+"oration. \nIn the event that you do not agree with such terms and conditions,"
+" you may not use the reference design file and please promptly destroy any co"
+"pies you have made.\nThis reference design file being provided on an \"as-is"
+"\" basis and as an accommodation and therefore all warranties, representation"
+"s or guarantees of any kind (whether express, implied or statutory)\nincludin"
+"g, without limitation, warranties of merchantability, non-infringement, or fi"
+"tness for a particular purpose, are specifically disclaimed.\nBy making this "
+"reference design file available, Altera expressly does not recommend, suggest"
+" or require that this reference design file be used in combination with any o"
+"ther product not provided by Altera"
+	  Position		  [28, 400]
+	  HorizontalAlignment	  "left"
+	  ForegroundColor	  "blue"
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "inout"
+      Ports		      [2]
+      Position		      [750, 475, 780, 510]
+      Floating		      off
+      Location		      [6, 216, 1286, 1194]
+      Open		      off
+      NumInputPorts	      "2"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      YMin		      "-5~-5"
+      YMax		      "5~5"
+      SaveName		      "ScopeData2"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "mu_gen"
+      Ports		      [0, 2]
+      Position		      [75, 400, 170, 480]
+      ForegroundColor	      "blue"
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"mu_gen"
+	Location		[201, 102, 1198, 948]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	174
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Binary Point\nCasting"
+	  Ports			  [1, 1]
+	  Position		  [670, 251, 785, 269]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Binary Point Ca"
+"sting"
+	  SourceType		  "Binary Point Casting AlteraBlockset"
+	  BusType		  "Signed Fractional"
+	  bwl			  "32"
+	  bwr			  "0"
+	  OutputPointPosition	  "15"
+	  pipeline_display	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay_match"
+	  Ports			  [1, 1]
+	  Position		  [770, 169, 800, 201]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "3"
+	  pipeline_display	  "3"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_Delay%5Fmatch.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Difference"
+	  Ports			  [2, 1]
+	  Position		  [420, 280, 455, 335]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "-"
+	  use_pipeline		  on
+	  pipeline_display	  "1"
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_Difference.fixedpointlog"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "DocBlock"
+	  Ports			  []
+	  Position		  [872, 60, 912, 99]
+	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
+	  ShowName		  off
+	  List {
+	    ListType		    RTWdata
+	    document_text01	    "The task of this block is to generate the"
+" values for mu.  mu describes the 	\nnormalised phase difference betwe"
+"en the current input sample and the wanted 	\noutput sample.  	"
+"\n	\nOne way to generate the values for mu is to use two counters.  Le"
+"t's assume 	\nthe clock ratios can be described as a ratio of slow_clo"
+"ck/fast_clock.  The	\nlower counter will increment by slow_clock until"
+" it reaches the value 	\nslow_clock*fast_clock.  In that case it will "
+"fall back to 0 again.	\n	\nThe second counter is similar:  It w"
+"ill increment by fast_clock until it 	\nreaches the value slow_clock*f"
+"ast_clock.  However, it will only increment if 	\nits current value is"
+" smaller than the current value of the other counter.  	\nIf this is n"
+"ot the case, the counter will pause and flag the count value as 	\ninv"
+"alid.  Value mucan be generated by taking the difference between the count "
+"	\nvalues.  	\n	\nSince the counting is done in integer "
+"logic, the difference must be scaled to 	\nproduce the normalised valu"
+"e between 0 and 1.  This is done using a constant 	\ngain multiplier, "
+"which multiplies with the inverse of slow_clock."
+	  }
+	  CopyFcn		  "docblock('breaklink',gcb);"
+	  DeleteFcn		  "docblock('close_document',gcb);"
+	  PreSaveFcn		  "docblock('save_document',gcb);"
+	  OpenFcn		  "docblock('edit_document',gcb);"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskType		  "DocBlock"
+	  MaskDescription	  "Use this block to save long descriptive tex"
+"t with the model.  Double-clicking the block will open an editor."
+	  MaskPromptString	  "E Coder Flag|Document Type"
+	  MaskStyleString	  "edit,popup(Text|RTF|HTML)"
+	  MaskTunableValueString  "off,off"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,off"
+	  MaskToolTipString	  "on,on"
+	  MaskVarAliasString	  ","
+	  MaskVariables		  "ECoderFlag=&1;DocumentType=&2;"
+	  MaskDisplay		  "plot([.8 0 0 1 1 .8 .8 1],[1 1 0 0 .8 1 .8 "
+".8]);\ntext(.5,.5,'DOC','horizontalalignment','center');\n"
+	  MaskIconFrame		  off
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "|Text"
+	  MaskTabNameString	  ","
+	  System {
+	    Name		    "DocBlock"
+	    Location		    [480, 85, 980, 386]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "EmptySubsystem"
+	      Ports		      []
+	      Position		      [115, 50, 145, 80]
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      System {
+		Name			"EmptySubsystem"
+		Location		[146, 180, 902, 673]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gain1"
+	  Ports			  [1, 1]
+	  Position		  [580, 237, 640, 283]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Gain"
+	  SourceType		  "Gain AlteraBlockset"
+	  vgain			  "(1/slow_clock+2^-15) *(2^15)"
+	  BusType		  "Signed Integer"
+	  bwl			  "16"
+	  bwr			  "0"
+	  pipeline		  "2"
+	  pipeline_display	  "2"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_Gain1.fixedpointlog"
+	  MaskValue		  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  lpm			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Parallel \nAdder Subtractor1"
+	  Ports			  [2, 1]
+	  Position		  [495, 295, 525, 355]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "++"
+	  use_pipeline		  off
+	  pipeline_display	  "0"
+	  phase_selection	  "1"
+	  use_ena		  on
+	  use_aclr		  on
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_Parallel+%0AAdder+Subtractor1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Zero"
+	  Ports			  [0, 1]
+	  Position		  [595, 116, 645, 134]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "0"
+	  BusType		  "Signed Integer"
+	  bwl			  "12"
+	  bwr			  "0"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_Zero.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "deduct_to_0"
+	  Ports			  [2, 1]
+	  Position		  [250, 290, 285, 350]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "+-"
+	  use_pipeline		  on
+	  pipeline_display	  "1"
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_deduct%5Fto%5F0.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "deduct_to_O"
+	  Ports			  [3, 1]
+	  Position		  [250, 132, 285, 208]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "+-"
+	  use_pipeline		  on
+	  pipeline_display	  "1"
+	  phase_selection	  "1"
+	  use_ena		  on
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_deduct%5Fto%5FO.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fast"
+	  Ports			  [0, 1]
+	  Position		  [50, 156, 100, 174]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "fast_clock"
+	  BusType		  "Signed Integer"
+	  bwl			  "12"
+	  bwr			  "0"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_fast.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "fast_counter"
+	  Ports			  [2, 1]
+	  Position		  [120, 107, 155, 183]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "+"
+	  use_pipeline		  off
+	  pipeline_display	  "0"
+	  phase_selection	  "1"
+	  use_ena		  on
+	  use_aclr		  on
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_fast%5Fcounter.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "gt1"
+	  Ports			  [2, 1]
+	  Position		  [425, 76, 460, 129]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Comparator"
+	  SourceType		  "Comparator AlteraBlockset"
+	  direction		  "a > b"
+	  pipeline_display	  "0"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_gt1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "gt2"
+	  Ports			  [2, 1]
+	  Position		  [415, 376, 450, 429]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Comparator"
+	  SourceType		  "Comparator AlteraBlockset"
+	  direction		  "a > b"
+	  pipeline_display	  "0"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_gt2.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "le1"
+	  Ports			  [2, 1]
+	  Position		  [420, 156, 455, 209]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Comparator"
+	  SourceType		  "Comparator AlteraBlockset"
+	  direction		  "a <= b"
+	  pipeline_display	  "0"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_le1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "n-to-1 Multiplexer"
+	  Ports			  [3, 1]
+	  Position		  [560, 393, 610, 457]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "2"
+	  pipeline		  "0"
+	  oneHot		  off
+	  pipeline_display	  "0"
+	  use_ena		  off
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_n-to-1+Multiplexer.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "n-to-1 Multiplexer1"
+	  Ports			  [3, 1]
+	  Position		  [665, 93, 715, 157]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "2"
+	  pipeline		  "0"
+	  oneHot		  off
+	  pipeline_display	  "0"
+	  use_ena		  off
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_n-to-1+Multiplexer1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "one"
+	  Ports			  [0, 1]
+	  Position		  [335, 346, 385, 364]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "1"
+	  BusType		  "Signed Integer"
+	  bwl			  "12"
+	  bwr			  "0"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_one.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "restrict_width_1"
+	  Ports			  [1, 1]
+	  Position		  [235, 27, 300, 43]
+	  Orientation		  "left"
+	  SourceBlock		  "allblocks_alteradspbuilder2/AltBus"
+	  SourceType		  "AltBus AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  saturate		  off
+	  floatingPointInput	  off
+	  floatingPointOutput	  off
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_restrict%5Fwidth%5F1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "restrict_width_2"
+	  Ports			  [1, 1]
+	  Position		  [235, 247, 300, 263]
+	  Orientation		  "left"
+	  SourceBlock		  "allblocks_alteradspbuilder2/AltBus"
+	  SourceType		  "AltBus AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  saturate		  off
+	  floatingPointInput	  off
+	  floatingPointOutput	  off
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_restrict%5Fwidth%5F2.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "slow"
+	  Ports			  [0, 1]
+	  Position		  [50, 316, 100, 334]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "slow_clock"
+	  BusType		  "Signed Integer"
+	  bwl			  "12"
+	  bwr			  "0"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_slow.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "slow_counter"
+	  Ports			  [2, 1]
+	  Position		  [115, 267, 150, 343]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "+"
+	  use_pipeline		  off
+	  pipeline_display	  "0"
+	  phase_selection	  "1"
+	  use_ena		  on
+	  use_aclr		  on
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_slow%5Fcounter.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "slow_x_fast"
+	  Ports			  [0, 1]
+	  Position		  [595, 151, 645, 169]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "slow_clock*fast_clock"
+	  BusType		  "Signed Integer"
+	  bwl			  "12"
+	  bwr			  "0"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_slow%5Fx%5Ffast.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "slow_x_fast1"
+	  Ports			  [0, 1]
+	  Position		  [490, 456, 540, 474]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "slow_clock*fast_clock"
+	  BusType		  "Signed Integer"
+	  bwl			  "12"
+	  bwr			  "0"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_slow%5Fx%5Ffast1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "slow_x_fast_-_fast"
+	  Ports			  [0, 1]
+	  Position		  [365, 106, 410, 124]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "slow_clock*fast_clock-fast_clock"
+	  BusType		  "Signed Integer"
+	  bwl			  "12"
+	  bwr			  "0"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_slow%5Fx%5Ffast%5F-%5Ffast.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "slow_x_fast_-_slow"
+	  Ports			  [0, 1]
+	  Position		  [330, 406, 375, 424]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "slow_clock*fast_clock-slow_clock"
+	  BusType		  "Signed Integer"
+	  bwl			  "12"
+	  bwr			  "0"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_slow%5Fx%5Ffast%5F-%5Fslow.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "zero_1"
+	  Ports			  [0, 1]
+	  Position		  [490, 416, 540, 434]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "0"
+	  BusType		  "Signed Integer"
+	  bwl			  "12"
+	  bwr			  "0"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_mu%5Fgen_zero%5F1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "mu[1].[15]"
+	  Position		  [910, 253, 940, 267]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "valid"
+	  Position		  [945, 178, 975, 192]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "deduct_to_0"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    Points		    [25, 0]
+	    Branch {
+	      Points		      [0, -65]
+	      Branch {
+		Points			[0, 0]
+		DstBlock		"restrict_width_2"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -60]
+		DstBlock		"le1"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "Difference"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    DstBlock		    "gt2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "deduct_to_O"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    Points		    [0, -80]
+	    Branch {
+	      Points		      [0, -55]
+	      DstBlock		      "restrict_width_1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 0]
+	      DstBlock		      "gt1"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [20, 0]
+	    Branch {
+	      DstBlock		      "le1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 125]
+	      DstBlock		      "Difference"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "le1"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    Points		    [0, -120; -265, 0; 0, 130]
+	    DstBlock		    "deduct_to_O"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Delay_match"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "gt2"
+	  SrcPort		  1
+	  DstBlock		  "n-to-1 Multiplexer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "zero_1"
+	  SrcPort		  1
+	  DstBlock		  "n-to-1 Multiplexer"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "n-to-1 Multiplexer"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 75; -460, 0; 0, -165]
+	  DstBlock		  "deduct_to_0"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Zero"
+	  SrcPort		  1
+	  DstBlock		  "n-to-1 Multiplexer1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "gt1"
+	  SrcPort		  1
+	  DstBlock		  "n-to-1 Multiplexer1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "slow_x_fast1"
+	  SrcPort		  1
+	  Points		  [-5, 0; 0, -20]
+	  DstBlock		  "n-to-1 Multiplexer"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "slow_x_fast"
+	  SrcPort		  1
+	  DstBlock		  "n-to-1 Multiplexer1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "slow_x_fast_-_slow"
+	  SrcPort		  1
+	  DstBlock		  "gt2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "slow_x_fast_-_fast"
+	  SrcPort		  1
+	  DstBlock		  "gt1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Delay_match"
+	  SrcPort		  1
+	  DstBlock		  "valid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "restrict_width_2"
+	  SrcPort		  1
+	  Points		  [-130, 0]
+	  DstBlock		  "slow_counter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "slow"
+	  SrcPort		  1
+	  DstBlock		  "slow_counter"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "slow_counter"
+	  SrcPort		  1
+	  DstBlock		  "deduct_to_0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "n-to-1 Multiplexer1"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, -115; -545, 0; 0, 160]
+	  DstBlock		  "deduct_to_O"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "fast_counter"
+	  SrcPort		  1
+	  DstBlock		  "deduct_to_O"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "restrict_width_1"
+	  SrcPort		  1
+	  Points		  [-125, 0]
+	  DstBlock		  "fast_counter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "fast"
+	  SrcPort		  1
+	  DstBlock		  "fast_counter"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Difference"
+	  SrcPort		  1
+	  DstBlock		  "Parallel \nAdder Subtractor1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Parallel \nAdder Subtractor1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -65]
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "one"
+	  SrcPort		  1
+	  Points		  [85, 0; 0, -15]
+	  DstBlock		  "Parallel \nAdder Subtractor1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Binary Point\nCasting"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Binary Point\nCasting"
+	  SrcPort		  1
+	  DstBlock		  "mu[1].[15]"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "(c) 2007 Altera Corporation. All rights res"
+"erved.  Altera products are protected under numerous U.S. and foreign patents"
+", maskwork rights, copyrights and other intellectual property laws. \nThis re"
+"ference design file, and your use thereof, is subject to and governed by the "
+"terms and conditions of the applicable Altera Reference Design License Agreem"
+"ent (found at www.altera.com).\nBy using this reference design file, you indi"
+"cate your acceptance of such terms and conditions between you and Altera Corp"
+"oration. \nIn the event that you do not agree with such terms and conditions,"
+" you may not use the reference design file and please promptly destroy any co"
+"pies you have made.\nThis reference design file being provided on an \"as-is"
+"\" basis and as an accommodation and therefore all warranties, representation"
+"s or guarantees of any kind (whether express, implied or statutory)\nincludin"
+"g, without limitation, warranties of merchantability, non-infringement, or fi"
+"tness for a particular purpose, are specifically disclaimed.\nBy making this "
+"reference design file available, Altera expressly does not recommend, suggest"
+" or require that this reference design file be used in combination with any o"
+"ther product not provided by Altera"
+	  Position		  [23, 580]
+	  HorizontalAlignment	  "left"
+	  ForegroundColor	  "blue"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "parabolic_filter"
+      Ports		      [1, 3]
+      Position		      [352, 250, 508, 400]
+      Orientation	      "down"
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"parabolic_filter"
+	Location		[174, 177, 1226, 872]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	174
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"94"
+	Block {
+	  BlockType		  Inport
+	  Name			  "sample_in[1].[15]"
+	  Position		  [75, 123, 105, 137]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay11"
+	  Ports			  [1, 1]
+	  Position		  [375, 190, 420, 240]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Delay11.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay12"
+	  Ports			  [1, 1]
+	  Position		  [485, 190, 530, 240]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Delay12.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay21"
+	  Ports			  [1, 1]
+	  Position		  [375, 105, 420, 155]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Delay21.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay22"
+	  Ports			  [1, 1]
+	  Position		  [485, 105, 530, 155]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Delay22.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay_match_1"
+	  Ports			  [1, 1]
+	  Position		  [282, 475, 328, 525]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Delay%5Fmatch%5F1.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "DocBlock"
+	  Ports			  []
+	  Position		  [107, 290, 147, 329]
+	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
+	  ShowName		  off
+	  List {
+	    ListType		    RTWdata
+	    document_text01	    "The filter coefficients for this polyphas"
+"e filters are suitable for a 	\nparabolic farrow combiner, and have be"
+"en calculated based on a low pass 	\nfilter with cutoff at 02.5, and p"
+"assband at 0.75.  The filter coefficients are:	\n	\nh = [[0 1 0"
+" 0]	\n    [-0.37102969585002 -0.65524639874618 1.34475360125379 -0.371"
+"02969585000]	\n    [0.37102969585001 -0.34475360125381 -0.344753601253"
+"81 0.37102969585001]];	\n    	\nFor efficient hardware implemen"
+"tation it is desirable to have the minimum number 	\nof multiplication"
+"s.  The filter can be rewritten as	\n	\nh = [[0 1 0 0]	"
+"\n    [-0.37102969585002 -1+0.34475360125381 1+0.34475360125379 -0.3710296958"
+"5000]	\n    [0.37102969585001 -0.34475360125381 -0.34475360125381 0.37"
+"102969585001]];	\n    	\nThis way the filter can be implemented"
+" using just two multipliers.  The samples	\nare fed into both multipli"
+"ers, and the output of the multipliers is fed into two 	\ndelay chains"
+".  A third delay chain contains delayed versions of the samples.  	\nA"
+"dders and subtractors are used to combine the elements of the 3 delay chains"
+"	\nto perform the filtering operation.	\n    	\n	"
+"\n"
+	  }
+	  CopyFcn		  "docblock('breaklink',gcb);"
+	  DeleteFcn		  "docblock('close_document',gcb);"
+	  PreSaveFcn		  "docblock('save_document',gcb);"
+	  OpenFcn		  "docblock('edit_document',gcb);"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskType		  "DocBlock"
+	  MaskDescription	  "Use this block to save long descriptive tex"
+"t with the model.  Double-clicking the block will open an editor."
+	  MaskPromptString	  "E Coder Flag|Document Type"
+	  MaskStyleString	  "edit,popup(Text|RTF|HTML)"
+	  MaskTunableValueString  "off,off"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,off"
+	  MaskToolTipString	  "on,on"
+	  MaskVarAliasString	  ","
+	  MaskVariables		  "ECoderFlag=&1;DocumentType=&2;"
+	  MaskDisplay		  "plot([.8 0 0 1 1 .8 .8 1],[1 1 0 0 .8 1 .8 "
+".8]);\ntext(.5,.5,'DOC','horizontalalignment','center');\n"
+	  MaskIconFrame		  off
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "|Text"
+	  MaskTabNameString	  ","
+	  System {
+	    Name		    "DocBlock"
+	    Location		    [480, 85, 980, 386]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "EmptySubsystem"
+	      Ports		      []
+	      Position		      [115, 50, 145, 80]
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      System {
+		Name			"EmptySubsystem"
+		Location		[146, 180, 902, 673]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gain"
+	  Ports			  [1, 1]
+	  Position		  [225, 24, 330, 76]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Gain"
+	  SourceType		  "Gain AlteraBlockset"
+	  vgain			  "0.37102969585002"
+	  BusType		  "Signed Fractional"
+	  bwl			  "1"
+	  bwr			  "15"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Gain.fixedpointlog"
+	  MaskValue		  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  lpm			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Gain1"
+	  Ports			  [1, 1]
+	  Position		  [220, 99, 325, 161]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Gain"
+	  SourceType		  "Gain AlteraBlockset"
+	  vgain			  "0.34475360125381"
+	  BusType		  "Signed Fractional"
+	  bwl			  "1"
+	  bwr			  "15"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Gain1.fixedpointlog"
+	  MaskValue		  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  lpm			  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay"
+	  Ports			  [1, 1]
+	  Position		  [485, 22, 525, 78]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "3"
+	  pipeline_display	  "3"
+	  ram_type		  "AUTO"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Memory+Delay.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay1"
+	  Ports			  [1, 1]
+	  Position		  [751, 355, 789, 395]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "3"
+	  pipeline_display	  "3"
+	  ram_type		  "AUTO"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Memory+Delay1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Phase I AddSub"
+	  Ports			  [6, 1]
+	  Position		  [502, 375, 628, 445]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "6"
+	  direction		  "-+-++-"
+	  use_pipeline		  on
+	  pipeline_display	  "3"
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Phase+I+AddSub.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Phase II AddSub"
+	  Ports			  [4, 1]
+	  Position		  [263, 370, 347, 435]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "4"
+	  direction		  "+-+-"
+	  use_pipeline		  on
+	  pipeline_display	  "2"
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_Phase+II+AddSub.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "match_mult_delay"
+	  Ports			  [1, 1]
+	  Position		  [265, 190, 310, 240]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_parabolic%5Ffilter_match%5Fmult%5Fdelay.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "phase0[3].[15]"
+	  Position		  [885, 443, 915, 457]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "phase1[3].[15]"
+	  Position		  [885, 503, 915, 517]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "phase2[3].[15]"
+	  Position		  [885, 568, 915, 582]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "sample_in[1].[15]"
+	  SrcPort		  1
+	  Points		  [95, 0]
+	  Branch {
+	    Points		    [0, -80]
+	    DstBlock		    "Gain"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 85]
+	    DstBlock		    "match_mult_delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Gain1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Delay21"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    DstBlock		    "Delay22"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 170]
+	    Branch {
+	      Points		      [-150, 0]
+	      DstBlock		      "Phase II AddSub"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [90, 0]
+	      DstBlock		      "Phase I AddSub"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Delay22"
+	  SrcPort		  1
+	  Points		  [60, 0; 0, 210]
+	  Branch {
+	    Points		    [-260, 0]
+	    DstBlock		    "Phase II AddSub"
+	    DstPort		    4
+	  }
+	  Branch {
+	    DstBlock		    "Phase I AddSub"
+	    DstPort		    5
+	  }
+	}
+	Line {
+	  SrcBlock		  "Delay11"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  Branch {
+	    DstBlock		    "Delay12"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 45; 95, 0]
+	    Branch {
+	      DstBlock		      "Phase I AddSub"
+	      DstPort		      3
+	    }
+	    Branch {
+	      Points		      [215, 0]
+	      DstBlock		      "Memory Delay1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    Points		    [0, 230]
+	    Branch {
+	      Points		      [-65, 0]
+	      DstBlock		      "Phase II AddSub"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [175, 0]
+	      DstBlock		      "Phase I AddSub"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Memory Delay"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Delay21"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "match_mult_delay"
+	  SrcPort		  1
+	  DstBlock		  "Delay11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay"
+	  SrcPort		  1
+	  Points		  [85, 0; 0, 270]
+	  Branch {
+	    Points		    [-300, 0]
+	    DstBlock		    "Phase II AddSub"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Phase I AddSub"
+	    DstPort		    6
+	  }
+	}
+	Line {
+	  SrcBlock		  "Memory Delay1"
+	  SrcPort		  1
+	  Points		  [0, 50]
+	  DstBlock		  "phase0[3].[15]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Phase I AddSub"
+	  SrcPort		  1
+	  Points		  [0, 60]
+	  DstBlock		  "phase1[3].[15]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Phase II AddSub"
+	  SrcPort		  1
+	  DstBlock		  "Delay_match_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay_match_1"
+	  SrcPort		  1
+	  Points		  [0, 45]
+	  DstBlock		  "phase2[3].[15]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay12"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  DstBlock		  "Phase I AddSub"
+	  DstPort		  4
+	}
+	Annotation {
+	  Name			  "Parabolic Filter"
+	  Position		  [760, 90]
+	  FontName		  "Arial"
+	  FontSize		  20
+	}
+	Annotation {
+	  Name			  "Polyphase low pass filter with passband = 0"
+".25 and stopband = 0.75\n\nFilter coefficients:\nh = [[ 0                    "
+"          1                                0                               0 "
+"          ]\n       [-0.37102969585002 -0.65524639874618  1.34475360125379 -0"
+".37102969585000]\n       [ 0.37102969585001 -0.34475360125381 -0.344753601253"
+"81  0.37102969585001]];"
+	  Position		  [697, 150]
+	  HorizontalAlignment	  "left"
+	}
+	Annotation {
+	  Name			  "(c) 2007 Altera Corporation. All rights res"
+"erved.  Altera products are protected under numerous U.S. and foreign patents"
+", maskwork rights, copyrights and other intellectual property laws. \nThis re"
+"ference design file, and your use thereof, is subject to and governed by the "
+"terms and conditions of the applicable Altera Reference Design License Agreem"
+"ent (found at www.altera.com).\nBy using this reference design file, you indi"
+"cate your acceptance of such terms and conditions between you and Altera Corp"
+"oration. \nIn the event that you do not agree with such terms and conditions,"
+" you may not use the reference design file and please promptly destroy any co"
+"pies you have made.\nThis reference design file being provided on an \"as-is"
+"\" basis and as an accommodation and therefore all warranties, representation"
+"s or guarantees of any kind (whether express, implied or statutory)\nincludin"
+"g, without limitation, warranties of merchantability, non-infringement, or fi"
+"tness for a particular purpose, are specifically disclaimed.\nBy making this "
+"reference design file available, Altera expressly does not recommend, suggest"
+" or require that this reference design file be used in combination with any o"
+"ther product not provided by Altera"
+	  Position		  [38, 690]
+	  HorizontalAlignment	  "left"
+	  ForegroundColor	  "blue"
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "resampled"
+      Ports		      [1]
+      Position		      [855, 330, 890, 380]
+      DialogController	      "dspdialog.SpectrumScope"
+      DialogControllerArgs    "DataTag4"
+      SourceBlock	      "dspsnks4/Spectrum\nScope"
+      SourceType	      "Spectrum Scope"
+      ShowPortLabels	      "none"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      ScopeProperties	      on
+      Domain		      "Frequency"
+      HorizSpan		      "1"
+      UseBuffer		      on
+      BufferSize	      "1024"
+      Overlap		      "512"
+      inpFftLenInherit	      off
+      FFTlength		      "128"
+      numAvg		      "2"
+      DisplayProperties	      off
+      AxisGrid		      on
+      Memory		      off
+      FrameNumber	      on
+      AxisLegend	      off
+      AxisZoom		      off
+      OpenScopeAtSimStart     on
+      OpenScopeImmediately    off
+      FigPos		      "get(0,'defaultfigureposition')"
+      AxisProperties	      off
+      XUnits		      "Hertz"
+      XRange		      "[0...Fs/2]"
+      InheritXIncr	      on
+      XIncr		      "1.0"
+      XLabel		      "Samples"
+      XLimit		      "Auto"
+      YUnits		      "dB"
+      XMax		      "1"
+      XMin		      "0"
+      YMin		      "-152.110626534928"
+      YMax		      "22.4774480317679"
+      YLabel		      "Magnitude, dB"
+      LineProperties	      off
+      LineColors	      "magenta"
+      wintypeSpecScope	      "Hann"
+      RsSpecScope	      "50"
+      betaSpecScope	      "5"
+      winsampSpecScope	      "Periodic"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "slow_clock/fast_clock"
+      Ports		      [1]
+      Position		      [865, 15, 945, 45]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "symmetric_rounding"
+      Ports		      [1, 1]
+      Position		      [310, 190, 415, 230]
+      ForegroundColor	      "blue"
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"symmetric_rounding"
+	Location		[224, 102, 1276, 797]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In[1].[15]"
+	  Position		  [85, 53, 115, 67]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Comparator"
+	  Ports			  [2, 1]
+	  Position		  [300, 143, 335, 172]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Comparator"
+	  SourceType		  "Comparator AlteraBlockset"
+	  direction		  "a < b"
+	  pipeline_display	  "0"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_symmetric%5Frounding_Comparator.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant"
+	  Ports			  [0, 1]
+	  Position		  [175, 156, 225, 174]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "0"
+	  BusType		  "Signed Fractional"
+	  bwl			  "1"
+	  bwr			  "15"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_symmetric%5Frounding_Constant.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant1"
+	  Ports			  [0, 1]
+	  Position		  [175, 251, 270, 269]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "1*2^-15"
+	  BusType		  "Signed Fractional"
+	  bwl			  "1"
+	  bwr			  "15"
+	  roundMode		  "Truncate"
+	  satMode		  "Wrap"
+	  SpecifyClock		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_symmetric%5Frounding_Constant1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Parallel \nAdder Subtractor"
+	  Ports			  [2, 1]
+	  Position		  [505, 15, 540, 195]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "+"
+	  use_pipeline		  on
+	  pipeline_display	  "1"
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_symmetric%5Frounding_Parallel+%0AAdder+Subtractor.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "n-to-1 Multiplexer"
+	  Ports			  [3, 1]
+	  Position		  [380, 137, 435, 283]
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "2"
+	  pipeline		  "0"
+	  oneHot		  off
+	  pipeline_display	  "0"
+	  use_ena		  off
+	  use_aclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "d:\\spr\\269066\\tb_FarrowResamp\\FarrowRes"
+"amp_symmetric%5Frounding_n-to-1+Multiplexer.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out[1].[15]"
+	  Position		  [670, 98, 700, 112]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "In[1].[15]"
+	  SrcPort		  1
+	  Points		  [145, 0]
+	  Branch {
+	    Points		    [0, 90]
+	    DstBlock		    "Comparator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Parallel \nAdder Subtractor"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "n-to-1 Multiplexer"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Comparator"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Comparator"
+	  SrcPort		  1
+	  DstBlock		  "n-to-1 Multiplexer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "n-to-1 Multiplexer"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Parallel \nAdder Subtractor"
+	  SrcPort		  1
+	  DstBlock		  "Out[1].[15]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "n-to-1 Multiplexer"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, -60]
+	  DstBlock		  "Parallel \nAdder Subtractor"
+	  DstPort		  2
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "parabolic_filter"
+      SrcPort		      1
+      DstBlock		      "farrow_combiner"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "parabolic_filter"
+      SrcPort		      2
+      DstBlock		      "farrow_combiner"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "parabolic_filter"
+      SrcPort		      3
+      DstBlock		      "farrow_combiner"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "mu_gen"
+      SrcPort		      1
+      Points		      [155, 0]
+      DstBlock		      "farrow_combiner"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "mu_gen"
+      SrcPort		      2
+      Points		      [20, 0; 0, 145]
+      DstBlock		      "Delay"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay"
+      SrcPort		      1
+      Points		      [10, 0; 0, 40]
+      Branch {
+	Points			[0, -40]
+	DstBlock		"Dual-Clock FIFO"
+	DstPort			2
+      }
+      Branch {
+	Points			[-155, 0; 0, 40]
+	DstBlock		"Logical Bit Operator"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Dout"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"Output Spectrum"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -105]
+	DstBlock		"inout"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Din"
+      SrcPort		      1
+      DstBlock		      "symmetric_rounding"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "clock_ratio"
+      SrcPort		      1
+      DstBlock		      "slow_clock/fast_clock"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sine Wave A"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sine Wave B"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Signal Specification"
+      SrcPort		      1
+      DstBlock		      "resampled"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "symmetric_rounding"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"parabolic_filter"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"DinOut"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	DstBlock		"Din"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -55]
+	DstBlock		"Input Spectrum"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "DinOut"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	DstBlock		"Input Spectrum quantised"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 145]
+	Branch {
+	  Points		  [0, 130]
+	  DstBlock		  "inout"
+	  DstPort		  1
+	}
+	Branch {
+	  DstBlock		  "Signal Specification"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Logical Bit Operator"
+      SrcPort		      1
+      DstBlock		      "Delay1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay1"
+      SrcPort		      1
+      Points		      [10, 0; 0, 55]
+      Branch {
+	Points			[-160, 0; 0, -45]
+	DstBlock		"Logical Bit Operator"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -55]
+	DstBlock		"Tsamp"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Tsamp"
+      SrcPort		      1
+      Points		      [5, 0; 0, -70]
+      DstBlock		      "Dual-Clock FIFO"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Dual-Clock FIFO"
+      SrcPort		      1
+      DstBlock		      "Dout"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "farrow_combiner"
+      SrcPort		      1
+      Points		      [0, 30]
+      DstBlock		      "Dual-Clock FIFO"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "(c) 2008 Altera Corporation. All rights reserve"
+"d.  Altera products are protected under numerous U.S. and foreign patents, ma"
+"skwork rights, copyrights and other intellectual property laws. \nThis refere"
+"nce design file, and your use thereof, is subject to and governed by the term"
+"s and conditions of the applicable Altera Reference Design License Agreement "
+"(found at www.altera.com).\nBy using this reference design file, you indicate"
+" your acceptance of such terms and conditions between you and Altera Corporat"
+"ion. \nIn the event that you do not agree with such terms and conditions, you"
+" may not use the reference design file and please promptly destroy any copies"
+" you have made.\nThis reference design file being provided on an \"as-is\" ba"
+"sis and as an accommodation and therefore all warranties, representations or "
+"guarantees of any kind (whether express, implied or statutory)\nincluding, wi"
+"thout limitation, warranties of merchantability, non-infringement, or fitness"
+" for a particular purpose, are specifically disclaimed.\nBy making this refer"
+"ence design file available, Altera expressly does not recommend, suggest or r"
+"equire that this reference design file be used in combination with any other "
+"product not provided by Altera"
+      Position		      [28, 925]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+    }
+    Annotation {
+      Name		      "This shows the input spectrum"
+      Position		      [864, 204]
+    }
+    Annotation {
+      Name		      "This shows the input spectrum after quantisatio"
+"n"
+      Position		      [709, 259]
+    }
+    Annotation {
+      Name		      "This shows the spectrum after resampling using "
+"the Farrow \narchitecture.  While undesired frequencies are clearly visible, "
+"\nthey are about 40dB below the wanted frequency."
+      Position		      [764, 607]
+      HorizontalAlignment     "left"
+    }
+    Annotation {
+      Name		      "You can control the ratio of input clock to out"
+"put clock via the variables \"slow_clock\" and \"fast_clock\" from the\nMATLA"
+"B command window.  \"fast_clock\" is the input clock frequency ratio, and \"s"
+"low_clock\" the output clock\nfrequency ratio. The default values are slow_cl"
+"ock=9 and fast_clock=10. \n\nClock and Clock_Derived are clock input pins, wi"
+"th the frequency ratio defined by slow_clock/fast_clock."
+      Position		      [26, 825]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "Farrow Based Decimating Sample Rate Converter"
+      Position		      [290, 30]
+      ForegroundColor	      "blue"
+      FontName		      "Arial"
+      FontSize		      20
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "This would be the spectrum, if the input had\nj"
+"ust been resampled at the desired sample rate."
+      Position		      [775, 412]
+      HorizontalAlignment     "left"
+    }
+    Annotation {
+      Name		      "Input and Output waveform.  You can see that th"
+"e output\nfollows the input.  If you zoom in, you'll see that the length \nof"
+" each output sample exceeds the length of each input\nsample"
+      Position		      [794, 495]
+      HorizontalAlignment     "left"
+    }
+  }
+}
+MatData {
+  NumRecords		  5
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    ,     8    (    !          %    "
+"\"                0         0          "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    ,     8    (    !          %    "
+"\"                0         0          "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    ,     8    (    !          %    "
+"\"                0         0          "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    ,     8    (    !          %    "
+"\"                0         0          "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    X!,   8    (     @         %    "
+"\"     $    !     0         %  0 \"     $    0    =F5R<VEO;@!C;VYT96YT  X    "
+"X    !@    @    &          4    (     0    $    !          D    (    FIF9F9F9"
+"\\3\\.    4!,   8    (    !          %    \"     $    <$P   0         0    '!"
+",  #T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/0D*1F%R<F]W($)"
+"A<V5D($1E8VEM871I;F<@4V%M<&QE(%)A=&4@0V]N=F5R=&5R\"0H]/3T]/3T]/3T]/3T]/3T]/3T"
+"]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T]/3T)\"@D*26YT<F]D=6-T:6]N\"0HM+2TM+2TM+2TM+2"
+"T)\"DUA;GD@:6YT96=R871E9\"!S>7-T96US+\"!S=6-H(&%S(%-O9G1W87)E($1E9FEN960@4F%D"
+":6]S(\"A31%(I+\"!R97%U:7)E(&1A=&$)\"G1O(&)E(')E<V%M<&QE9\"X@(%1H:7,@:7,@='EP:"
+"6-A;&QY('1H92!C87-E('=H97)E(&$@=6YI=\"!C86X@8F4@8V]N9FEG=7)E9\"!T;PD*8V]M<&QY"
+"('=I=&@@9&EF9F5R96YT(&-O;6UU;FEC871I;VX@<W1A;F1A<F1S+\"!W:&5R92!T:&4@<V%M<&QE"
+"(')A=&5S(&%R92!D:69F97)E;G0N\"0I);B!S;VUE(&-A<V5S+\"!W:&5R92!O;F4@8VQO8VL@<F%"
+"T92!I<R!A('-I;7!L92!I;G1E9V5R(&UU;'1I<&QY(&]F(&%N;W1H97(@8VQO8VL@\"0IR871E+\""
+"!T:&ES(&-A;B!B92!D;VYE('=I=&@@:6YT97)P;VQA=&EN9R!A;F0@9&5C:6UA=&EN9R!&25(@9FE"
+"L=&5R<RX@($AO=V5V97(L(&EN( D*;6]S=\"!C87-E<R!T:&4@:6YT97)P;VQA=&EO;B!A;F0@9&5"
+"C:6UA=&EO;B!F86-T;W)S('=O=6QD(&)E('-O(&AI9V@@=&AA=\"!T:&ES( D*87!P<F]A8V@@:7,"
+"@:6UP<F%C=&EC86PN\"0I&87)R;W<@<F5S86UP;&5R<R!O9F9E<B!A;B!E9F9I8VEE;G0@=V%Y('1"
+"O(')E<V%M<&QE(&$@9&%T82!S=')E86T@870@82!D:69F97)E;G0)\"G-A;7!L92!R871E+B @5&A"
+"E('5N9&5R;'EI;F<@<')I;F-I<&QE(&ES('1H870@=&AE('!H87-E(&1I9F9E<F5N8V4@8F5T=V5E"
+";B!T:&4)\"F-U<G)E;G0@:6YP=70@86YD('=A;G1E9\"!O=71P=70@:7,@9&5T97)M:6YE9\"!O;B"
+"!A('-A;7!L92!B>2!S86UP;&4@8F%S:7,N(\"!4:&ES( D*<&AA<V4@9&EF9F5R96YC92!I<R!T:&"
+"5N('5S960@=&\\@8V]M8FEN92!T:&4@<&AA<V5S(&]F(&$@<&]L>7!H87-E(&9I;'1E<B!I;B!S=6"
+"-H( D*82!W87D@=&AA=\"!A('-A;7!L92!F;W(@=&AE('=A;G1E9\"!O=71P=70@<&AA<V4@:7,@9"
+"V5N97)A=&5D+@D*5&AI<R!D97-I9VX@9&5M;VYS=')A=&5S(&AO=R!A($9A<G)O=R!R97-A;7!L97"
+"(@:7,@=V]R:VEN9RX@(%EO=2!C86X@<VEM=6QA=&4@:71S\"0IP97)F;W)M86YC92!I;B!-051,04"
+"(L(&-H86YG92!I=\"!A<R!R97%U:7)E9\"!F;W(@>6]U<B!A<'!L:6-A=&EO;BP@9V5N97)A=&4@8"
+"2 )\"E9$2$P@=F5R<VEO;B!A;F0@<WEN=&AE<VEZ92!I=\"!T;R!!;'1E<F$@9&5V:6-E<RX@( D*"
+"5&AI<R!D96UO(&ES(&1E<VEG;F5D(&9O<B!A;B!I;G!U=\"!C;&]C:R!R871E(&ED96YT:6-A;\"!"
+"T;R!T:&4@<WES=&5M(&-L;V-K+B @1F]R\"0IA<'!L:6-A=&EO;G,@=VAE<F4@=&AE(&EN<'5T(')"
+"A=&4@:7,@;75C:\"!L;W=E<B!T:&%N('1H92!S>7-T96T@8VQO8VLL('1I;64@<VAA<FEN9PD*<VA"
+"O=6QD(&)E(&EM<&QE;65N=&5D('1O(&=E=\"!A(&-O<W0@969F96-T:79E('-O;'5T:6]N+@D*\"0"
+"H)\"E5S86=E\"0HM+2TM+0D*66]U(&-A;B!R=6X@=&AE(&1E<VEG;B!A<R!I=\"!I<RP@:G5S=\"!"
+"P<F5S<R!T:&4@<G5N(&)U='1O;B!T;R!S=&%R=\"!T:&4@<VEM=6QA=&EO;BX)\"EEO=2!W:6QL(&"
+"=E=\" T('=A=F5F;W)M<RP@<VAO=VEN9R!T:&4@<W!E8W1R=6T@870@=&AE(&9O;&QO=VEN9R!P;&"
+"%C97,Z\"0HQ*2!T:&4@:6YP=70@\"0HR*2!T:&4@:6YP=70L('%U86YT:7-E9 D*,RD@=&AE(&EN<"
+"'5T+\"!I9B!I=\"!H860@8F5E;B!J=7-T(')E<V%M<&QE9&)Y(')E9VES=&5R:6YG(&ET(&EN(&$@"
+"9FQI<\"!F;&]P(')U;FYI;F<)\"B @(&%T('1H92!O=71P=70@8VQO8VL@<F%T92 H=&AE('-I;7!"
+"L97-T('=A>2!O9B!C:&%N9VEN9R!S86UP;&4@<F%T92D)\"C0I(&%T('1H92!O=71P=70@;V8@=&A"
+"E($9A<G)O=R!R97-A;7!L97(N\"0H)\"EEO=2!C86X@9V5N97)A=&4@5DA$3\"!A;F0@<WEN=&AE<"
+"VES92!T:&4@<V%M92!W87D@87,@86YY(&]T:&5R($134$)U:6QD97(@9&5S:6=N( D*=7-I;F<@=&"
+"AE(\")3:6=N86Q#;VUP:6QE<B(@8FQO8VLN\"0H)\"EEO=2!C86X@8VAA;F=E('1H92!S=&EM=6QI"
+"(&)Y(&-O;FYE8W1I;F<@=&AE(&EN<'5T('1O(&$@9&EF9F5R96YT('-O=7)C92X@($EF('EO=2 )"
+"\"G=A;G0@=&\\@8VAA;F=E('1H92!R871I;R!O9B!I;G!U=\"!C;&]C:R!T;R!O=71P=70@8VQO8V"
+"LL('EO=2!C86X@9&\\@=&AI<R!F<F]M('1H92 )\"DU!5$Q!0B!C;VUM86YD('!R;VUP=\"X@($EN"
+"('1H:7,@8V%S92P@<&QE87-E('-E=\"!T:&4@=F%R:6%B;&5S(\")S;&]W7V-L;V-K(B!A;F0@\"0"
+"HB9F%S=%]C;&]C:R(@=&\\@=&AE(')E<75I<F5D(&YU;6)E<G,L(&)Y(&1E9F%U;'0@=&AE>2!A<F"
+"4@<V5T('1O(#D@86YD(#$P('1O('!R;W9I9&4)\"F$@<F%T:6\\@;V8@.2\\Q,\"P@:2YE+B!T:&4"
+"@;W5T<'5T(')A=&4@:7,@.3 E(&]F('1H92!I;G!U=\"!C;&]C:R!R871E+B @5&AE\"0IV87)I86"
+")L97,@(F9A<W1?8VQO8VLB(&%N9\" B<VQO=U]C;&]C:R(@87)E('5S960@:6X@82!N=6UB97(@;V"
+"8@:6YS=&%N8V5S( D*=&AR;W5G:&]U=\"!T:&4@9&5S:6=N+B @5&AE(')U;&5S(&9O<B!S971T:6"
+"YG('1H97-E('9A<FEA8FQE<R!A<F4Z\"0HQ*2!S;&]W7V-L;V-K+\"!I+F4N('1H92!O=71P=70@8"
+"VQO8VLL(&UU<W0@8F4@<VQO=V5R('1H86X@9F%S=%]C;&]C:R!F;W(@82!D96-I+0D*(\" @;6%T:"
+"6YG($9A<G)O=R!F:6QT97(N(\" )\"C(I('-L;W=?8VQO8VLJ9F%S=%]C;&]C:R!M=7-T(&)E(&QE"
+"<W,@=&AA;B R7C$T+B @5&AI<R!I<R!A(')E<W1R:6-T:6]N(&]F('1H:7,@\"0H@(\"!P87)T:6-"
+"U;&%R(&EM<&QE;65N=&%T:6]N+B @66]U(&-A;B!W;W)K('=I=&@@<F%T:6]S('=H97)E('1H:7,@"
+":7,@;F]T('1H92 )\"B @(&-A<V4L(&)U=\"!Y;W4@=&AE;B!N965D('1O(&-H86YG92!T:&4@8FE"
+"T('=I9'1H(&EN('1H92!A8V-U;75L871O<G,@:6X@=&AE( D*(\" @;75?9V5N(&)L;V-K+B @\"0"
+"HS*2!)9B!S;&]W7V-L;V-K(&ES(&QE<W,@=&AA;B!H86QF(&]F(&9A<W1?8VQO8VLL('1H92!F:6Q"
+"T97(@=VEL;\"!W;W)K+\"!B=70@\"0H@(\"!T:&4@<F5S=6QT<R!W:6QL(&)E('-U8BUO<'1I;6%L"
+"+B @26X@=&AI<R!C87-E(&ET(&ES(&)E='1E<B!T;R!D;W5B;&4@<VQO=U]C;&]C:RP)\"B @('=H"
+":6-H('-H;W5L9\"!T:&5N('-T:6QL(&)E(&QE<W,@=&AA;B!F87-T7V-L;V-K+\"!A;F0@9&5C:6U"
+"A=&4@870@=&AE(&]U='!U=\"!B>0D*(\" @<F5J96-T:6YG(&5V97)Y(&]T:&5R('-A;7!L92X@( "
+"D*\"0H)\"D1E<VEG;B!D971A:6QS\"0HM+2TM+2TM+2TM+2TM+0D*\"0I);G!U=\"!3=&EM=6QI\""
+"0H)\"B @5&AI<R!T97-T8F5N8V@@<')O=FED97,@=&AR964@<W1I;75L:3H@( D*(\" Q*2!4:&4@"
+"<VEN97=A=F4@9V5N97)A=&]R(&ES('5S969U;\"!T;R!A;F%L>7-E('1H92!E9F9E8W0@;V8@=&AE"
+"(')E<V%M<&QI;F<@;VX@\"0H@(\" @('1H92!F<F5Q=65N8WD@<W!E8W1R=6TN(\" @66]U(&-A;B"
+"!C:&%N9V4@=&AE(&9R97%U96YC>2!B>2!D;W5B;&4M8VQI8VMI;F<@\"0H@(\" @('1H92 B4VEN9"
+"2!7879E(B!B;&]C:RP@86YD(&-H86YG:6YG('1H92 B4V%M<&QE<R!P97(@4&5R:6]D(B!P87)A;6"
+"5T97(N(\" )\"B @,BD@5&AE(&EM<'5L<V4@9V5N97)A=&]R(&=E;F5R871E<R!A('-I;F=L92!I;"
+"7!U;'-E(&%N9\"!I<R P(&9O<B!T:&4@<F5S=\"!O9B!T:&4@\"0H@(\" @('-I;75L871I;VXN("
+"\"!4:&ES(&ES(&$@=7-E9G5L('1O;VP@9F]R(&EN=F5S=&EG871I;F<@=&AE(&9I;'1E<BP@=VAI8"
+"V@@:7,@<&%R=\" )\"B @(\" @;V8@=&AE(&9A<G)O=R!R97-A;7!L97(N\"0H@(#,I(%1H92!A9&"
+"1I=&EO;B!O9B!T=V\\@<VEN97=A=F5S+@D*\"0I3>6UM971R:6,@<F]U;F1I;F<)\"@D*(\"!3>6U"
+"M971R:6,@<F]U;F1I;F<@96YS=7)E<R!T:&%T(&YO($1#(&]F9G-E=\"!I<R!I;G1R;V1U8V5D('1"
+"H<F]U9V@@=&AE( D*(\"!R;W5N9&EN9R!O<&5R871I;VXN\"0H)\"E!A<F%B;VQI8R!F:6QT97()"
+"\"@D*(\"!,;W<@<&%S<R!F:6QT97(@=VET:\"!P87-S8F%N9#TP+C(U(&%N9\"!S=&]P8F%N9#TP+"
+"C<U(\"X@(%EO=2!F:6YD(&UO<F4@9&5T86EL960@\"0H@(&1O8W5M96YT871I;VX@=VAE;B!Y;W4@"
+"<'5S:\"!I;G1O('1H92!F:6QT97(@8GD@9&]U8FQE+6-L:6-K:6YG(&ET+@D*\"0IM=2!'96YE<F%"
+"T;W()\"@D*(\"!4:&ES(&)L;V-K(&-A;&-U;&%T97,@=&AE('!H87-E(&1I9F9E<F5N8V4@8F5T=V"
+"5E;B!T:&4@8W5R<F5N=\"!I;G!U=\"!S86UP;&4@\"0H@(&%N9\"!T:&4@9&5S:7)E9\"!O=71P=7"
+"0@<V%M<&QE+B @1&]U8FQE+6-L:6-K(&9O<B!M;W)E(&EN9F]R;6%T:6]N+@D*\"0I&87)R;W<@0V"
+"]M8FEN97()\"@D*(\"!4:&4@9F%R<F]W(&-O;6)I;F5R(')E<&QA8V5S('1H92!P;VQY<&AA<V4@<"
+"V5L96-T;W(@:6X@=')A9&ET:6]N86P@<&]L>7!H87-E( D*(\"!F:6QT97)S+B @270@=VEL;\"!W"
+"96EG:\"!T:&4@:6YD:79I9'5A;\"!P;VQY<&AA<V5S(&)E9F]R92!A9&1I;F<@=&AE;2X@($1O=6)"
+"L92T)\"B @8VQI8VL@=&AE($9A<G)O=U]#;VUB:6YE<B!B;&]C:R!F;W(@;6]R92!I;F9O<FUA=&E"
+"O;BX)\"@D*1DE&3PD*\"0H@(%1H92!F87)R;W<@8V]M8FEN97(@=V]R:W,@870@=&AE(&EN<'5T(&"
+"-L;V-K(')A=&4N(\"!4:&ES(&UE86YS(&ET(&=E;F5R871E<R!M;W)E( D*(\"!S86UP;&5S('1H8"
+"6X@:70@<VAO=6QD+B @5&AE('1A<VL@;V8@=&AE($9)1D\\@:7,@=&\\@<F5M;W9E(&EN=F%L:60@"
+"<V%M<&QE<RP@86YD\"0H@(&%L<V\\@86QL;W=S('1H92!T<F%N<V9E<B!B971W965N('1H92!C;&]"
+"C:R!D;VUA:6YS+B @5VAI;&4@=&AE('=R:71E('-I9&4@=V]R:W,)\"B @870@:6YP=70@8VQO8VL"
+"@<F%T92P@=&AE(')E860@<VED92!W;W)K<R!A=\"!O=71P=70@8VQO8VL@<F%T92X)\"@D*      "
+  }
+}

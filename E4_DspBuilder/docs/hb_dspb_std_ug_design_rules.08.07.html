@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Timing Semantics Between Simulink and HDL Simulation</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_design_rules.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_design_rules.08.06.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_design_rules.08.08.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1023418">Timing Semantics Between Simulink and HDL Simulation</a></div>
+      <div class="Body"><a name="1023419">DSP</a>&nbsp;Builder uses Simulink to simulate the behavior of hardware components. However, there are some fundamental differences between the step-based simulation in Simulink and the event-driven simulation that VHDL and Verilog HDL designs use. </div>
+      <div class="Body"><a name="1155729">This section describes the timing semantics that DSP</a>&nbsp;Builder uses for translating between the Simulink and HDL environments.</div>
+      <div class="H2_heading"><a name="1023421">Simulink Simulation Model</a></div>
+      <div class="Body"><a name="1023422">To ensure correlation between the HDL and Simulink simulation, you must use a </a>discrete fixed or variable-step solver in Simulink. </div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1155356">Use a fixed-step solver for a single clock domain design or a variable-step solver for </a>multiple-clock domain designs.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1155353">Configure the solver timing mode in the </a><span class="Bold">Configuration Parameters</span> dialog box from the Simulation menu in Simulink. Each step is a discrete unit of simulation. DSP Builder quantizes the clock in an idealized manner as a cycle counter.</div>
+      <div class="Body"><a name="1024362">At the beginning of each step, Simulink provides each block with inputs that you </a>know. DSP Builder evaluates functions and propagates the resultant outputs in the current step. The outputs of your model are the results of all these computations.</div>
+      <div class="Body"><a name="1024363">For all steps, Simulink blocks produce output signals. Outputs varying based on </a>inputs received in the same step are referred to as direct feedthrough. Some DSP Builder blocks may include direct feedthrough outputs, depending on the parameterization of each block.</div>
+      <div class="H2_heading"><a name="1023425">HDL Simulation Models</a></div>
+      <div class="Body"><a name="1023426">DSP Builder drives hardware simulation with a clock signal and the available input </a>stimuli. The <span class="Code">TestBench</span> block’ s testbench script feeds input signals to the HDL simulator that maintain correlation between the HDL and Simulink simulation.</div>
+      <div class="Body"><a name="1024985">Simulation models in the DSP Builder libraries evaluate their logic on positive clock </a>edges. To avoid any timing conflicts, external inputs transition on negative clock edges. DSP Builder updates registered outputs on positive clock edges. The <span class="Code">TestBench</span> block-generated inputs arrive on negative clock edges, causing an apparent half-cycle delay in the arrival of output (<span class="N_007cLink"><a href="#1118153" title="Timing Semantics Between Simulink and HDL Simulation">Figure&nbsp;3–17 on page&nbsp;3–18</a></span>).</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1155247">The HDL simulation in ModelSim should run over the same time as the Simulink </a>simulation. Generally DSP Builder aligns the timing so that ModelSim simulation finishes at the end of the stimulus data. However, occasionally when using multiple clocks, the rounding calculation that aligns the clock signals may set ModelSim simulation to run for one additional clock cycle (on the fastest clock). You may receive an <span class="Code">unexpected end of file</span> error message because there is no stimulus data for this extra cycle.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1023430">Startup &amp; Initial Conditions</a></div>
+      <div class="Body"><a name="1023431">The testbench includes a global reset for each clock domain. All blocks (except the </a><span class="Code">HDL Import</span> and MegaCore function blocks) automatically connect any reset on the hardware to the global asynchronous reset for the clock domain.</div>
+      <div class="Body"><a name="1086196">When a block explicitly declares an asynchronous reset, this reset is </a><span class="Code">OR</span>ed with the global reset.</div>
+      <div class="Body"><a name="1086168">A </a><span class="Code">Global Reset</span> block (<span class="Code">SCLR)</span>, which corresponds to this hardware signal is in the Altera DSP Builder Blockset IO &amp; Bus library.</div>
+      <div class="Body"><a name="1023432">The global reset signal is reset before meaningful simulation. When converting from </a>the Simulink domain to the hardware domain, the reset period is before the Simulink simulation begins. Therefore, in Simulink simulation, the <span class="Code">Global Reset</span> block outputs only a constant zero and has no simulation behavior. Connect the hardware to reset, and thus reset at the start of a ModelSim testbench simulation.</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1083167">DSP blocks or MegaCore functions may have additional initial conditions or startup </a>states that are not automatically reset by the global reset signal. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1027187">DSP Builder Global Reset Circuitry</a></div>
+      <div class="Body"><a name="1027231">By default, Simulink does not graphically display the clock enable and reset input </a>pins on DSP Builder registered blocks. When DSP Builder converts a design to HDL, it automatically connects the implied clock enable and reset pins. </div>
+      <div class="Body"><a name="1083107">If you turn on the optional ports in the </a><span class="Bold">Block Parameters</span> dialog box for each of the DSP Builder registered blocks, you can access and drive the clock enable and reset input pins graphically in the Simulink software.</div>
+      <div class="Body"><a name="1082826">In the HDL domain, the registered DSP Builder blocks uses an asynchronous reset, as </a>this behavioral VHDL code example shows:</div>
+      <div class="C1_code_indent"><a name="1082890">process(CLOCK, RESET)</a><br />begin<br />	if RESET = '1' then<br />		dout &lt;= (others =&gt; '0');<br />	else if CLOCK'event and CLOCK = '1' then<br />		dout &lt;= din;<br />	end if;<br />end</div>
+      <div class="Body"><a name="1082837">In addition, when targeting a development board, the </a><span class="Bold">Block Parameters</span> dialog box for the DSP Board configuration block typically includes a <span class="Bold">Global Reset Pin</span> selection box where you can choose from a list of pins that correspond to the DIP and push-button switches. </div>
+      <div class="Body"><a name="1131528">The reset logic polarity can be either active-high or active-low. When you select </a>active-low, the value of the reset signal in Simulink simulation is still 0 for inactive and 1 for active. However, DSP Builder inserts a <span class="Code">NOT</span> gate on the input pin in the generated hardware. The value of the reset signal in simulation is therefore the value as it exists across the internal design, rather then the value at the input pin.</div>
+      <div class="Body"><a name="1038380">Quartus</a><span class="Superscript">®</span> II synthesis interprets this reset as an asynchronous reset, and uses an input of the logic element look-up table to instantiate the function. The HDL simulates correctly in this case because the testbench produces the reset input as required.</div>
+      <div class="H2_heading"><a name="1024566">Reference Timing Diagram</a></div>
+      <div class="Body"><span class="N_007cLink"><a href="#1118153" title="Timing Semantics Between Simulink and HDL Simulation" name="1025728">Figure&nbsp;3–17</a></span> shows the timing relationships in a hypothetical case where a register is fed by the output of a counter. The counter output begins at 10—the value is 10 during the first Simulink clock step. </div>
+      <div class="TAW_table_anchor_wide"><a name="1118130">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–17.&nbsp;</span><a name="1118153">Single-Clock Timing Relationships</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1118155"><img class="Default" src="images/SimulinkClockCycles.jpg" width="561" height="236" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1083771">This timing is not true when crossing clock domains. For example, </a><span class="N_007cLink"><a href="#1118252" title="Timing Semantics Between Simulink and HDL Simulation">Figure&nbsp;3–18</a></span> shows the timing delays in a design with a derived clock that has half the base clock period. In general, DSP Builder is not cycle-accurate when crossing clock domains.</div>
+      <div class="TAW_table_anchor_wide"><a name="1118237">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–18.&nbsp;</span><a name="1118252">Multiple-Clock Timing Relationships</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1118254"><img class="Default" src="images/SimulinkMultiClockCycles.jpg" width="564" height="277" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

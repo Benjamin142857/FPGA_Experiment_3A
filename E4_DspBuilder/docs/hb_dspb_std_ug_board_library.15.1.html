@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Adding a Board Library</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_board_library.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_custom_blocks.14.3.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_board_library.15.2.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H0_chapter">10.&nbsp;<a name="1000950">Adding a Board Library</a></div>
+      <div class="Body"><a name="1012554">This chapter describes how to create and build a custom board library to use inside </a>DSP Builder using built-in board components. </div>
+      <div class="Body"><a name="1026001">Each board library is defined by a XML board description file. This board description </a>file contains all the board components and their FPGA pin assignments.</div>
+      <div class="Body"><a name="1026016">DSP Builder supports the following development boards:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026017">Cyclone II DE2 Starter board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026018">Cyclone II EP2C35 board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026019">Cyclone II EP2C70 board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1032483">Cyclone III EP3C25 Starter board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1032484">Cyclone III EP3C120 board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026021">Stratix EP1S25 board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026022">Stratix EP1S80 board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026023">Stratix II EP2S60 board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026024">Stratix II EP2S180 board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026025">Stratix II EP2SGX90 PCI Express board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1032485">Stratix III EP3SL150 board</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1033436">For information about these boards, refer to the </a><span class="Link" style="font-style: italic;"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_lib.pdf" target="external_window">DSP Builder Standard Blockset Libraries</a></span> section in volume 2 of the <span class="Document_title">DSP Builder Handbook</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

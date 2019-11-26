@@ -1,0 +1,2045 @@
+Model {
+  Name			  "DIT8FFT"
+  Version		  6.3
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.120"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bd"
+"root)\n%% DSPBuilder End\n"
+  Created		  "Tue Oct 15 15:57:58 2002"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "LKONG"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Apr 16 14:02:29 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:120>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "5"
+	  AbsTol		  "auto"
+	  FixedStep		  "1"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "DIT8FFT"
+    Location		    [95, 115, 1474, 866]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly000"
+      Ports		      [2, 2]
+      Position		      [355, 230, 490, 285]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "8"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "9"
+      obwr		      "0"
+      olsb		      "8"
+      constant_W	      on
+      W_real		      "127"
+      W_imag		      "0"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly1"
+      Ports		      [2, 2]
+      Position		      [580, 231, 730, 284]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "9"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "10"
+      obwr		      "0"
+      olsb		      "8"
+      constant_W	      on
+      W_real		      "127"
+      W_imag		      "0"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly10"
+      Ports		      [2, 2]
+      Position		      [850, 411, 1000, 464]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "10"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "11"
+      obwr		      "0"
+      olsb		      "10"
+      constant_W	      on
+      W_real		      "0"
+      W_imag		      "127"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly11"
+      Ports		      [2, 2]
+      Position		      [855, 496, 1005, 549]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "10"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "11"
+      obwr		      "0"
+      olsb		      "10"
+      constant_W	      on
+      W_real		      "-89"
+      W_imag		      "89"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly2"
+      Ports		      [2, 2]
+      Position		      [355, 315, 490, 370]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "8"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "9"
+      obwr		      "0"
+      olsb		      "8"
+      constant_W	      on
+      W_real		      "127"
+      W_imag		      "0"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly3"
+      Ports		      [2, 2]
+      Position		      [360, 401, 495, 459]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "8"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "9"
+      obwr		      "0"
+      olsb		      "8"
+      constant_W	      on
+      W_real		      "127"
+      W_imag		      "0"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly4"
+      Ports		      [2, 2]
+      Position		      [360, 500, 495, 555]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "8"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "9"
+      obwr		      "0"
+      olsb		      "8"
+      constant_W	      on
+      W_real		      "127"
+      W_imag		      "0"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly5"
+      Ports		      [2, 2]
+      Position		      [575, 316, 725, 369]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "9"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "10"
+      obwr		      "0"
+      olsb		      "8"
+      constant_W	      on
+      W_real		      "127"
+      W_imag		      "0"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly6"
+      Ports		      [2, 2]
+      Position		      [585, 401, 735, 454]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "9"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "10"
+      obwr		      "0"
+      olsb		      "8"
+      constant_W	      on
+      W_real		      "0"
+      W_imag		      "127"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly7"
+      Ports		      [2, 2]
+      Position		      [585, 496, 735, 549]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "9"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "10"
+      obwr		      "0"
+      olsb		      "8"
+      constant_W	      on
+      W_real		      "0"
+      W_imag		      "127"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly8"
+      Ports		      [2, 2]
+      Position		      [850, 231, 1000, 284]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "10"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "11"
+      obwr		      "0"
+      olsb		      "10"
+      constant_W	      on
+      W_real		      "127"
+      W_imag		      "0"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Butterfly9"
+      Ports		      [2, 2]
+      Position		      [850, 326, 1000, 379]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Butterfly"
+      SourceType	      "Butterfly Complex AlteraBlockSet"
+      BusType		      "Signed Integer"
+      ibwl		      "10"
+      ibwr		      "0"
+      pipeline		      "5"
+      full_resolution	      off
+      obwl		      "11"
+      obwr		      "0"
+      olsb		      "10"
+      constant_W	      on
+      W_real		      "89"
+      W_imag		      "89"
+      dedicated_circuitry     "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Clock"
+      Ports		      []
+      Position		      [170, 55, 220, 73]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Clock"
+      SourceType	      "BaseClock AlteraBlockset"
+      ClockPeriod	      "100"
+      ClockPeriodUnit	      "ns"
+      SampleTime	      "1"
+      SimulationStartCycle    "5"
+      PhaseOffset	      "0"
+      Reset		      "aclr"
+      Export		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant"
+      Ports		      [0, 1]
+      Position		      [195, 194, 215, 206]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+      SourceType	      "Constant AlteraBlockset"
+      mask_cst		      "0"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant1"
+      Ports		      [0, 1]
+      Position		      [195, 254, 215, 266]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+      SourceType	      "Constant AlteraBlockset"
+      mask_cst		      "0"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant2"
+      Ports		      [0, 1]
+      Position		      [195, 314, 215, 326]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+      SourceType	      "Constant AlteraBlockset"
+      mask_cst		      "0"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant3"
+      Ports		      [0, 1]
+      Position		      [195, 374, 215, 386]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+      SourceType	      "Constant AlteraBlockset"
+      mask_cst		      "0"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant4"
+      Ports		      [0, 1]
+      Position		      [195, 434, 215, 446]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+      SourceType	      "Constant AlteraBlockset"
+      mask_cst		      "0"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant5"
+      Ports		      [0, 1]
+      Position		      [195, 494, 215, 506]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+      SourceType	      "Constant AlteraBlockset"
+      mask_cst		      "0"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant6"
+      Ports		      [0, 1]
+      Position		      [195, 554, 215, 566]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+      SourceType	      "Constant AlteraBlockset"
+      mask_cst		      "0"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Constant7"
+      Ports		      [0, 1]
+      Position		      [195, 614, 215, 626]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+      SourceType	      "Constant AlteraBlockset"
+      mask_cst		      "0"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Input"
+      Ports		      [1, 1]
+      Position		      [67, 290, 83, 355]
+      Orientation	      "down"
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_Input.salt"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator"
+      Ports		      [0, 1]
+      Position		      [58, 195, 92, 240]
+      Orientation	      "down"
+      NamePlacement	      "alternate"
+      PulseType		      "Time based"
+      PulseWidth	      "50"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Shift Taps"
+      Ports		      [1, 8]
+      Position		      [125, 146, 185, 634]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Shift Taps"
+      SourceType	      "Shift Taps AlteraBlockset"
+      number_of_taps	      "8"
+      tap_distance	      "1"
+      use_shiftout	      off
+      use_ena		      off
+      use_sclr		      off
+      use_dedicated_circuitry on
+      ram_type		      "AUTO"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      Ports		      []
+      Position		      [59, 28, 128, 75]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily          "Stratix IV"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "Clock"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [1285, 155, 1305, 175]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      Position		      [1285, 195, 1305, 215]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator10"
+      Position		      [1285, 510, 1305, 530]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator11"
+      Position		      [1285, 545, 1305, 565]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator12"
+      Position		      [1285, 585, 1305, 605]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator13"
+      Position		      [1285, 620, 1305, 640]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator14"
+      Position		      [1290, 660, 1310, 680]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator15"
+      Position		      [1290, 695, 1310, 715]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      Position		      [1285, 230, 1305, 250]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      Position		      [1285, 265, 1305, 285]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator4"
+      Position		      [1285, 300, 1305, 320]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator5"
+      Position		      [1285, 335, 1305, 355]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator6"
+      Position		      [1285, 370, 1305, 390]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator7"
+      Position		      [1285, 410, 1305, 430]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator8"
+      Position		      [1285, 440, 1305, 460]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator9"
+      Position		      [1285, 475, 1305, 495]
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "X0"
+      Ports		      [1, 2]
+      Position		      [1075, 174, 1120, 201]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Complex to Real-Ima"
+"g"
+      SourceType	      "ComplexToRealImag AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "X1"
+      Ports		      [1, 2]
+      Position		      [1075, 239, 1120, 266]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Complex to Real-Ima"
+"g"
+      SourceType	      "ComplexToRealImag AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "X2"
+      Ports		      [1, 2]
+      Position		      [1080, 304, 1120, 331]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Complex to Real-Ima"
+"g"
+      SourceType	      "ComplexToRealImag AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "X3"
+      Ports		      [1, 2]
+      Position		      [1080, 359, 1120, 386]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Complex to Real-Ima"
+"g"
+      SourceType	      "ComplexToRealImag AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "X4"
+      Ports		      [1, 2]
+      Position		      [1080, 463, 1125, 492]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Complex to Real-Ima"
+"g"
+      SourceType	      "ComplexToRealImag AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "X5"
+      Ports		      [1, 2]
+      Position		      [1080, 524, 1125, 551]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Complex to Real-Ima"
+"g"
+      SourceType	      "ComplexToRealImag AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "X6"
+      Ports		      [1, 2]
+      Position		      [1080, 608, 1125, 632]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Complex to Real-Ima"
+"g"
+      SourceType	      "ComplexToRealImag AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "X7"
+      Ports		      [1, 2]
+      Position		      [1080, 659, 1125, 701]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Complex to Real-Ima"
+"g"
+      SourceType	      "ComplexToRealImag AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "11"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XI"
+      Ports		      [1, 1]
+      Position		      [1180, 197, 1245, 213]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XI.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XI1"
+      Ports		      [1, 1]
+      Position		      [1185, 267, 1250, 283]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XI1.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XI2"
+      Ports		      [1, 1]
+      Position		      [1185, 337, 1250, 353]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XI2.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XI3"
+      Ports		      [1, 1]
+      Position		      [1190, 412, 1255, 428]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XI3.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XI4"
+      Ports		      [1, 1]
+      Position		      [1195, 477, 1260, 493]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XI4.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XI5"
+      Ports		      [1, 1]
+      Position		      [1200, 547, 1265, 563]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XI5.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XI6"
+      Ports		      [1, 1]
+      Position		      [1200, 622, 1265, 638]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XI6.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XI7"
+      Ports		      [1, 1]
+      Position		      [1205, 697, 1270, 713]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XI7.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XR"
+      Ports		      [1, 1]
+      Position		      [1180, 157, 1245, 173]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XR.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XR1"
+      Ports		      [1, 1]
+      Position		      [1185, 232, 1250, 248]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XR1.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XR2"
+      Ports		      [1, 1]
+      Position		      [1185, 302, 1250, 318]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XR2.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XR3"
+      Ports		      [1, 1]
+      Position		      [1190, 372, 1255, 388]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XR3.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XR4"
+      Ports		      [1, 1]
+      Position		      [1195, 442, 1260, 458]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XR4.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XR5"
+      Ports		      [1, 1]
+      Position		      [1200, 512, 1265, 528]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XR5.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XR6"
+      Ports		      [1, 1]
+      Position		      [1200, 587, 1265, 603]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XR6.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "XR7"
+      Ports		      [1, 1]
+      Position		      [1205, 662, 1270, 678]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\dspbuilder\\dspb_71\\DesignExamples\\demos"
+"\\Transforms\\8PointFFT\\tb_DIT8FFT\\DIT8FFT_XR7.capture"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "x0"
+      Ports		      [2, 1]
+      Position		      [260, 169, 295, 211]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Real-Imag to Comple"
+"x"
+      SourceType	      "RealImagToComplex AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "x1"
+      Ports		      [2, 1]
+      Position		      [260, 230, 295, 270]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Real-Imag to Comple"
+"x"
+      SourceType	      "RealImagToComplex AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "x2"
+      Ports		      [2, 1]
+      Position		      [260, 290, 295, 330]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Real-Imag to Comple"
+"x"
+      SourceType	      "RealImagToComplex AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "x3"
+      Ports		      [2, 1]
+      Position		      [260, 349, 295, 391]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Real-Imag to Comple"
+"x"
+      SourceType	      "RealImagToComplex AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "x4"
+      Ports		      [2, 1]
+      Position		      [260, 410, 295, 450]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Real-Imag to Comple"
+"x"
+      SourceType	      "RealImagToComplex AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "x5"
+      Ports		      [2, 1]
+      Position		      [260, 470, 295, 510]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Real-Imag to Comple"
+"x"
+      SourceType	      "RealImagToComplex AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "x6"
+      Ports		      [2, 1]
+      Position		      [260, 529, 295, 571]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Real-Imag to Comple"
+"x"
+      SourceType	      "RealImagToComplex AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "x7"
+      Ports		      [2, 1]
+      Position		      [260, 590, 295, 630]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Real-Imag to Comple"
+"x"
+      SourceType	      "RealImagToComplex AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "x0"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      DstBlock		      "x1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      DstBlock		      "x2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      DstBlock		      "x3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant4"
+      SrcPort		      1
+      DstBlock		      "x4"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant5"
+      SrcPort		      1
+      DstBlock		      "x5"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant6"
+      SrcPort		      1
+      DstBlock		      "x6"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant7"
+      SrcPort		      1
+      DstBlock		      "x7"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      1
+      DstBlock		      "x0"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      2
+      DstBlock		      "x1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      3
+      DstBlock		      "x2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      4
+      DstBlock		      "x3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      5
+      DstBlock		      "x4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      6
+      DstBlock		      "x5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      7
+      DstBlock		      "x6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Shift Taps"
+      SrcPort		      8
+      DstBlock		      "x7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Input"
+      SrcPort		      1
+      Points		      [0, 30]
+      DstBlock		      "Shift Taps"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "x0"
+      SrcPort		      1
+      Points		      [30, 0; 0, 55]
+      DstBlock		      "Butterfly000"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "x3"
+      SrcPort		      1
+      Points		      [15, 0; 0, 145]
+      DstBlock		      "Butterfly4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "x4"
+      SrcPort		      1
+      Points		      [5, 0; 0, -160]
+      DstBlock		      "Butterfly000"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "x7"
+      SrcPort		      1
+      Points		      [25, 0; 0, -70]
+      DstBlock		      "Butterfly4"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Butterfly1"
+      SrcPort		      1
+      Points		      [115, 0]
+      DstBlock		      "Butterfly8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly000"
+      SrcPort		      1
+      DstBlock		      "Butterfly1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X0"
+      SrcPort		      1
+      Points		      [20, 0; 0, -15]
+      DstBlock		      "XR"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X0"
+      SrcPort		      2
+      Points		      [20, 0; 0, 10]
+      DstBlock		      "XI"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X1"
+      SrcPort		      1
+      Points		      [25, 0; 0, -5]
+      DstBlock		      "XR1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X1"
+      SrcPort		      2
+      Points		      [0, 15]
+      DstBlock		      "XI1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X2"
+      SrcPort		      1
+      DstBlock		      "XR2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X2"
+      SrcPort		      2
+      Points		      [25, 0; 0, 20]
+      DstBlock		      "XI2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X3"
+      SrcPort		      1
+      Points		      [25, 0; 0, 15]
+      DstBlock		      "XR3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X3"
+      SrcPort		      2
+      Points		      [15, 0; 0, 40]
+      DstBlock		      "XI3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X4"
+      SrcPort		      1
+      Points		      [20, 0; 0, -20]
+      DstBlock		      "XR4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X4"
+      SrcPort		      2
+      DstBlock		      "XI4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X5"
+      SrcPort		      1
+      Points		      [30, 0; 0, -10]
+      DstBlock		      "XR5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X5"
+      SrcPort		      2
+      Points		      [0, 10]
+      DstBlock		      "XI5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X6"
+      SrcPort		      1
+      Points		      [25, 0; 0, -20]
+      DstBlock		      "XR6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X6"
+      SrcPort		      2
+      Points		      [0, 5]
+      DstBlock		      "XI6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X7"
+      SrcPort		      1
+      DstBlock		      "XR7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "X7"
+      SrcPort		      2
+      Points		      [30, 0; 0, 15]
+      DstBlock		      "XI7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "x2"
+      SrcPort		      1
+      Points		      [20, 0; 0, 20]
+      DstBlock		      "Butterfly2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "x1"
+      SrcPort		      1
+      Points		      [25, 0; 0, 165]
+      DstBlock		      "Butterfly3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "x5"
+      SrcPort		      1
+      Points		      [10, 0; 0, -45]
+      DstBlock		      "Butterfly3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Butterfly2"
+      SrcPort		      1
+      Points		      [35, 0; 0, -60]
+      DstBlock		      "Butterfly1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Butterfly000"
+      SrcPort		      2
+      Points		      [15, 0; 0, 30; 40, 0; 0, 30]
+      DstBlock		      "Butterfly5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly2"
+      SrcPort		      2
+      DstBlock		      "Butterfly5"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Butterfly3"
+      SrcPort		      1
+      DstBlock		      "Butterfly6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly4"
+      SrcPort		      1
+      Points		      [30, 0; 0, -75]
+      DstBlock		      "Butterfly6"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Butterfly4"
+      SrcPort		      2
+      Points		      [55, 0; 0, -5]
+      DstBlock		      "Butterfly7"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Butterfly3"
+      SrcPort		      2
+      Points		      [10, 0; 0, 50; 55, 0; 0, 15]
+      DstBlock		      "Butterfly7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly6"
+      SrcPort		      1
+      Points		      [60, 0; 0, -145]
+      DstBlock		      "Butterfly8"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Butterfly1"
+      SrcPort		      2
+      Points		      [75, 0; 0, 70]
+      DstBlock		      "Butterfly9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly6"
+      SrcPort		      2
+      Points		      [80, 0; 0, -75]
+      DstBlock		      "Butterfly9"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Butterfly5"
+      SrcPort		      1
+      Points		      [50, 0; 0, 95]
+      DstBlock		      "Butterfly10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly7"
+      SrcPort		      1
+      Points		      [10, 0; 0, -60]
+      DstBlock		      "Butterfly10"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Butterfly5"
+      SrcPort		      2
+      Points		      [40, 0; 0, 155]
+      DstBlock		      "Butterfly11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly7"
+      SrcPort		      2
+      Points		      [115, 0]
+      DstBlock		      "Butterfly11"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Butterfly8"
+      SrcPort		      1
+      Points		      [55, 0]
+      DstBlock		      "X0"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly9"
+      SrcPort		      1
+      Points		      [55, 0]
+      DstBlock		      "X1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly10"
+      SrcPort		      1
+      Points		      [60, 0]
+      DstBlock		      "X2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly11"
+      SrcPort		      1
+      Points		      [65, 0; 0, -140]
+      DstBlock		      "X3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly8"
+      SrcPort		      2
+      Points		      [50, 0; 0, 210]
+      DstBlock		      "X4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly9"
+      SrcPort		      2
+      Points		      [40, 0; 0, 175]
+      DstBlock		      "X5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly10"
+      SrcPort		      2
+      Points		      [30, 0; 0, 170]
+      DstBlock		      "X6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Butterfly11"
+      SrcPort		      2
+      Points		      [15, 0; 0, 145]
+      DstBlock		      "X7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "x6"
+      SrcPort		      1
+      Points		      [20, 0; 0, -195]
+      DstBlock		      "Butterfly2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "XR"
+      SrcPort		      1
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XI"
+      SrcPort		      1
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XR1"
+      SrcPort		      1
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XI1"
+      SrcPort		      1
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XR2"
+      SrcPort		      1
+      DstBlock		      "Terminator4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XI2"
+      SrcPort		      1
+      DstBlock		      "Terminator5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XR3"
+      SrcPort		      1
+      DstBlock		      "Terminator6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XI3"
+      SrcPort		      1
+      DstBlock		      "Terminator7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XR4"
+      SrcPort		      1
+      DstBlock		      "Terminator8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XI4"
+      SrcPort		      1
+      DstBlock		      "Terminator9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XR5"
+      SrcPort		      1
+      DstBlock		      "Terminator10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XI5"
+      SrcPort		      1
+      DstBlock		      "Terminator11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XR6"
+      SrcPort		      1
+      DstBlock		      "Terminator12"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XI6"
+      SrcPort		      1
+      DstBlock		      "Terminator13"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XR7"
+      SrcPort		      1
+      DstBlock		      "Terminator14"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "XI7"
+      SrcPort		      1
+      DstBlock		      "Terminator15"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Pulse\nGenerator"
+      SrcPort		      1
+      DstBlock		      "Input"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "8 Point Radix 8 DIT FFT"
+      Position		      [349, 69]
+      ForegroundColor	      "blue"
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      16
+    }
+    Annotation {
+      Name		      "Scaling 8 bits: \nW0_8 = 127 + 0j\nW0_8 = 127 +"
+" 0j\nW1_8 = 89+89J\nW2_8 = 0+127J\nW3_8 = -89+89J"
+      Position		      [568, 94]
+      UseDisplayTextAsClickCallback off
+    }
+  }
+}

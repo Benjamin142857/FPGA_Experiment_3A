@@ -1,0 +1,1771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Design Rules and Procedures</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_design_rules.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body style="background-repeat: no-repeat; border-bottom-color: Transparent; border-left-color: Transparent; border-right-color: Transparent; border-top-color: Transparent; border-top-style: solid; border-top-width: thin; margin-bottom: -150px; margin-left: 16px; margin-top: 65px">
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_tutorial.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_megacore.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H0_chapter"><a name="1000950">Design Rules and Procedures</a></div>
+      <div class="B0_body"><a name="1162423">This chapter discusses the following topics:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1012562" title="Design Rules and Procedures" name="1162556">“DSP Builder Naming Conventions”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1064260" title="Design Rules and Procedures" name="1162637">“Using a MATLAB Variable”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1012586" title="Design Rules and Procedures" name="1162659">“Fixed-Point Notation”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1101410" title="Design Rules and Procedures" name="1162681">“Bit Width Design Rule”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1058580" title="Design Rules and Procedures" name="1162787">“Frequency Design Rules”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1023418" title="Design Rules and Procedures" name="1162817">“Timing Semantics Between Simulink and HDL Simulation”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1055926" title="Design Rules and Procedures" name="1162844">“Signal Compiler and TestBench Blocks”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1035798" title="Design Rules and Procedures" name="1162956">“Hierarchical Design”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1023801" title="Design Rules and Procedures" name="1163049">“Goto and From Block Support”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1132448" title="Design Rules and Procedures" name="1163103">“Create Black Box and HDL Import”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1075376" title="Design Rules and Procedures" name="1163132">“Using a MATLAB Array or .hex File to Initialize a Block”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1087245" title="Design Rules and Procedures" name="1163162">“Comparison Utility”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1094069" title="Design Rules and Procedures" name="1163192">“Adding Comments to Blocks”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1103297" title="Design Rules and Procedures" name="1163216">“Adding Quartus&nbsp;II Constraints”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1098865" title="Design Rules and Procedures" name="1163238">“Displaying Port Data Types”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1097455" title="Design Rules and Procedures" name="1163265">“Displaying the Pipeline Depth”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1103883" title="Design Rules and Procedures" name="1163295">“Updating HDL Import Blocks”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1099182" title="Design Rules and Procedures" name="1163332">“Analyzing the Hardware Resource Usage”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1165278" title="Design Rules and Procedures" name="1163354">“Loading Additional ModelSim Commands”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="N_007cLink"><a href="#1104808" title="Design Rules and Procedures" name="1163387">“Making Quartus&nbsp;II Assignments to Block Entity Names”</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><span class="change_bars"><a name="1012562">DSP Builder Naming Conventions</a></span></div>
+      <div class="B0_body"><a name="1024179">DSP Builder generates VHDL files for simulation and synthesis. When there are </a>blocks or ports in your model that share the same VHDL name, they are given unique names in the VHDL to avoid name clashes. However, clock and reset ports are never renamed, and an error issues if they do not have unique names. Avoid name clashes on other ports, to avoid renaming of the top-level ports in the VHDL. </div>
+      <div class="B0_body"><a name="1139492">A</a><span class="change_bars">ll DSP Builder port names must comply with the following naming conventions:</span></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="change_bars"><a name="1012564">VHDL is not case sensitive. For example, the input port </a></span><span class="Code">MyInput</span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;"> and </span><span class="Code">MYINPUT</span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;"> is the </span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;">same VHDL entity.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="change_bars"><a name="1012565">Avoid using VHDL keywords for DSP Builder port names.</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="change_bars"><a name="1012566">Do not use illegal characters. VHDL identifier names can contain only a</a></span><span class="change_bars">&nbsp;</span><span class="change_bars">-</span><span class="change_bars">&nbsp;</span><span class="change_bars">z, 0</span><span class="change_bars">&nbsp;</span><span class="change_bars">-</span><span class="change_bars">&nbsp;</span><span class="change_bars">9, </span><span class="change_bars">and underscore (_) characters.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="change_bars"><a name="1012567">Begin all port names with a letter (a - z). VHDL does not allow identifiers to begin </a></span><span class="change_bars">with non-alphabetic characters or end with an underscore.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="change_bars"><a name="1012568">Do not use two underscores in succession (__) in port names because it is illegal in </a></span><span class="change_bars">VHDL.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1012569">White spaces in the names for the blocks, components, and signals are converted to an </a>underscore when DSP Builder converts the Simulink model file (<span class="Bold">.mdl</span>) into VHDL.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1064260">Using a MATLAB Variable</a></div>
+      <div class="B0_body"><a name="1162146">You can specify many block parameters (such as bit widths and pipeline depth) by </a>entering a MATLAB base workspace or masked subsystem variable. You can then set these variables on the MATLAB command line or from a script. DSP Builder evaluates the variable and passes its value to the simulation model files. DSP Builder ensures that the parameters are in the required range.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1162149">Although DSP Builder no longer restricts parameters to 51 bits, MATLAB evaluates </a>parameter values to doubles, which restricts the possible values to 51-bit numbers expressible by a double.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1081774">For information about which values are parameterizable, refer to the </a><span class="Link" style="font-style: italic"><a href="http://www.altera.com/literature/hb/dsp_builder/hb_dspb_std_lib.pdf" target="external_window">DSP Builder Standard Blockset Libraries</a></span> section in volume 2 of the <span class="Document_title">DSP Builder Handbook</span> or to the block descriptions, which you can access with the <span class="Bold">Help</span> command in the right button pop-up menu for each block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1012586">Fixed-Point Notation</a></div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1111212" title="Design Rules and Procedures" name="1012670">Figure&nbsp;3–1</a></span> describes the fixed-point notation that I/O formats use in the DSP Builder block descriptions.</div>
+      <div class="TA_table_anchor"><a name="1110824">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 468.7278pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;3–1.&nbsp;<a name="1153923">Fixed-Point Notation</a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 74.182pt">
+            <div class="THC_heading_center"><a name="1153931">Description</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 206.1741pt" colspan="2">
+            <div class="THC_heading_center"><a name="1153933">Notation</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 188.3717pt">
+            <div class="THC_heading_center"><a name="1153937">Simulink-to-HDL</a>&nbsp;Translation</div>
+            <div class="THC_heading_center"><span class="Superscript" style="font-style: italic"><a href="#1153984" title="Design Rules and Procedures" name="1153944">&nbsp;</a></span><span class="N_007cLink" style="font-style: italic"><a href="#1153984" title="Design Rules and Procedures">(1)</a></span>, <span class="Superscript" style="font-style: italic"><a href="#1153986" title="Design Rules and Procedures">&nbsp;</a></span><span class="N_007cLink" style="font-style: italic"><a href="#1153986" title="Design Rules and Procedures">(2)</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 74.182pt">
+            <div class="TBL_body_left"><a name="1153946">Signed binary: </a>fractional (SBF) representation; a fractional number</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 61.0pt">
+            <div class="TBL_body_left"><a name="1153948">[L].[R] where:</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 145.1741pt">
+            <div class="TBL_body_left"><a name="1153950">[L] is the number of bits to the left of </a>the binary point and the MSB is the sign bit</div>
+            <div class="TBL_body_left"><a name="1153951">[R] is the number of bits to the right </a>of the binary point</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 188.3717pt">
+            <div class="TBL_body_left"><a name="1153953">A Simulink SBF signal A[L].[R] maps in VHDL to </a>STD_LOGIC_VECTOR({L&nbsp;+&nbsp;R&nbsp;-&nbsp;1} DOWNTO 0)</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153955">Signed binary; </a>integer (INT)</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153957">[L] where:</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153959">[L] is the number of bits of the </a>signed bus and the MSB is the sign bit</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153961">A Simulink signed binary signal A[L] maps to </a>STD_LOGIC_VECTOR({L&nbsp;-&nbsp;1} DOWNTO 0)</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153963">Unsigned binary; </a>integer (UINT)</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153965">[L] where:</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153967">[L] is the number of bits of the </a>unsigned bus</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153969">A Simulink unsigned binary signal A[L] maps to </a>STD_LOGIC_VECTOR({L&nbsp;-&nbsp;1} DOWNTO 0)</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.0pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153971">Single bit integer </a>(BIT)</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.0pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153973">[1] where:</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153975">the single bit can have values 1 or 0</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.0pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1153977">A Simulink single bit integer signal maps to </a>STD_LOGIC</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: none; border-bottom-style: none; border-bottom-width: 0.0pt; border-left-color: none; border-left-style: none; border-left-width: 0.0pt; border-right-color: none; border-right-style: none; border-right-width: 0.0pt; border-top-color: none; border-top-style: none; border-top-width: 0.0pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top" colspan="4">
+            <div class="NH_note_heading"><a name="1153982">Notes to </a><span class="N_007cLink"><a href="#1153923" title="Design Rules and Procedures">Table&nbsp;3–1</a></span>:</div>
+            <div class="NN_note_numbered_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="NN_note_numbered_inner" style="width: 16pt; white-space: nowrap">(1)	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="NN_note_numbered_inner"><a name="1153984">STD_LOGIC_VECTOR and STD_LOGIC are VHDL signal types defined in the (</a><span class="Bold">ieee</span>.<span class="Bold">std_logic_1164.all </span>and <span class="Bold">ieee.std_logic_signed.all</span> IEEE library packages).</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="NN_note_numbered_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="NN_note_numbered_inner" style="width: 16pt; white-space: nowrap">(2)	</div>
+                  </td>
+                  <td width="100%">
+                    <div class="NN_note_numbered_inner"><a name="1153986">For designs in which unsigned integer signals are used in Simulink, DSP Builder translates the Simulink unsigned bus type with width </a><span class="Emphasis">w</span> into a VHDL signed bus of width <span class="Emphasis">w</span> + 1 where the MSB bit is set to 0.</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1111212" title="Design Rules and Procedures" name="1041492">Figure&nbsp;3–1</a></span> graphically compares the signed binary fractional, signed binary, and unsigned binary number formats.</div>
+      <div class="TA_table_anchor"><a name="1111205">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–1.&nbsp;<a name="1111212">Number Format Comparison</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1111214"><img class="Default" src="images/number_sbf.jpg" width="281" height="262" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1031146">Binary Point Location in Signed Binary Fractional Format</a></div>
+      <div class="B0_body"><a name="1012682">For hardware implementation, you must cast Simulink signals into the desired </a>hardware bus format. Therefore, convert floating-point values to fixed-point values. </div>
+      <div class="B0_body"><a name="1101923">This conversion is a critical step for hardware implementation because the number of </a>bits required to represent a fixed-point value plus the location of the binary point affects both the hardware resources and the system accuracy.</div>
+      <div class="B0_body"><a name="1012683">Choosing a large number of bits gives excellent accuracy—the fixed</a>‑point result is almost identical to the floating-point result—but consumes a large amount of hardware. You must design for the optimum size and accuracy trade-off. DSP Builder speeds up your design cycle by enabling simulation with fixed-point and floating-point signals in the same environment.</div>
+      <div class="B0_body"><a name="1012684">The </a><span class="Code">Input</span> block casts floating-point Simulink signals of type double into fixed-point signals. DSP Builder represents the fixed-point signals in the following signed binary fractional (SBF) format:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1012685">[</a><span class="Emphasis">number of bits</span>].[]—represents the number of bits to the left of the binary point including the sign bit.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1012686">[].[</a><span class="Emphasis">number of bits</span>]—represents the number of bits to the right of the binary point.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1012687">In VHDL, DSP Builder types the signals as STD_LOGIC_VECTOR. </a></div>
+      <div class="B0_body"><a name="1076972">For example, DSP Builder represents the 4-bit binary number 1101 as:</a></div>
+      <div class="B1_body"><a name="1012688">Simulink</a>	This signed integer is interpreted as –3</div>
+      <div class="B1_body"><a name="1012689">VHDL</a>	This signed STD_LOGIC_VECTOR is interpreted as –3</div>
+      <div class="B0_body"><a name="1012690">If you change the location of the binary point to 11.01, that is, two bits on the left side </a>of the binary point and two bits on the right side, DSP Builder represents the numbers as:</div>
+      <div class="B1_body"><a name="1012691">Simulink</a>	This signed fraction is interpreted as –0.75</div>
+      <div class="B1_body"><a name="1012692">VHDL</a>	This signed STD_LOGIC_VECTOR is interpreted as –3</div>
+      <div class="B0_body"><a name="1012693">From a system-level analysis point of view, multiplying a number by –0.75 or –3 is </a>very different, especially when looking at the bit width growth. In the first case, the multiplier output bus grows on the most significant bit (MSB), in the second case, the multiplier output bus grows on the least significant bit (LSB). </div>
+      <div class="B0_body"><a name="1101959">In both cases, the binary numbers are identical. However, the location of the binary </a>point affects how a simulator formats the representation of the signal. For complex systems, you can adjust the binary point location to define the signal range and the area of interest.</div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1012696">For more information about number systems, refer to </a><span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/an/an083_01.pdf" target="external_window">AN 83: Binary Numbering Systems</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1101410">Bit Width Design Rule</a></div>
+      <div class="B0_body"><a name="1101413">You must specify the bit width at the source of the datapath. DSP Builder propagates </a>this bit width from the source to the destination through all intermediate blocks. Some intermediate DSP Builder blocks must have a bit width specified, while others have specific bit width growth rules which are described in the documentation for each block. </div>
+      <div class="B0_body"><a name="1101415">Some blocks which allow bit widths to be specified optionally, have an </a><span class="Code">Inferred</span> type setting that allows a growth rule to be used. For example, in the amplitude modulation tutorial design (<span class="N_007cLink"><a href="hb_dspb_std_ug_tutorial.html#1000950" title="Getting Started">Chapter&nbsp;2, Getting Started</a></span>) the <span class="Code">SinIn</span> and <span class="Code">SinDelay</span> blocks have a bit width of 16. Therefore, a bit width of 16 is automatically assigned to the intermediate <span class="Code">Delay</span> block.</div>
+      <div class="H2_heading"><a name="1101641">Data Width Propagation</a></div>
+      <div class="B0_body"><a name="1101642">You can specify the bit width of many Altera blocks in the Simulink design. However, </a>you do not need to specify the bit width for all blocks. If you do not specify explicitly the bit width, DSP Builder assigns a bit width during the Simulink-to-VHDL conversion by propagating the bit width from the source of a datapath to its destination. </div>
+      <div class="B0_body"><a name="1101644">Some intermediate DSP Builder blocks must have a specified bit width, while others </a>have specific bit width growth rules that the documentation for each block describes. Some blocks, which allow bit widths to be specified optionally, allow use of a growth rule—the <span class="Code">Inferred</span> type setting.</div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1112049" title="Design Rules and Procedures" name="1101645">Figure&nbsp;3–2</a></span> illustrates bit‑width propagation.</div>
+      <div class="TA_table_anchor"><a name="1112009">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–2.&nbsp;<a name="1112049">3-Tap FIR Filter</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1112051"><img class="Default" src="images/FIR3tap_FCA1.jpg" width="506" height="221" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1101655">The </a><span class="Bold">fir3tapsub.mdl</span> design is a 3-tap finite impulse response (FIR) filter and has the following attributes:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101656">The input data signal is an 8-bit signed integer bus</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101657">The output data signal is a 20-bit signed integer bus</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101658">Three </a><span class="Code">Delay</span> blocks build the tapped delay line</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101659">The coefficient values are {1.0000, -5.0000, 1.0000}, a </a><span class="Code">Gain</span> block performs the coefficient multiplication</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1112773" title="Design Rules and Procedures" name="1101663">Figure&nbsp;3–3</a></span> shows the RTL representation of <span class="Bold">fir3tapsub.mdl</span> created by <span class="Code">Signal </span><span class="Code">Compiler</span>.</div>
+      <div class="TA_table_anchor"><a name="1112734">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–3.&nbsp;<a name="1112773">3-Tap FIR Filter in Quartus</a>&nbsp;II RTL View</div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1112775"><img class="Default" src="images/FIR3tap_rtl_view.jpg" width="613" height="115" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H3_heading"><a name="1101670">Tapped Delay Line</a></div>
+      <div class="B0_body"><a name="1101671">The bit width propagation mechanism starts at the source of the datapath, in this case </a>at the <span class="Code">Input</span> block, which is an 8-bit input bus. This bus feeds the register <span class="Code">U0</span>, which feeds <span class="Code">U1</span>, which feeds <span class="Code">U2</span>. DSP Builder propagates the 8-bit bus in this register chain where each register is eight bits wide (<span class="N_007cLink"><a href="#1113291" title="Design Rules and Procedures">Figure&nbsp;3–4</a></span>).</div>
+      <div class="TA_table_anchor"><a name="1113259">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–4.&nbsp;<a name="1113291">Tap Delay Line in Quartus</a>&nbsp;II Version RTL Viewer</div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1113293"><img class="Default" src="images/FIR3tap_delay_line_rtl_view.jpg" width="587" height="124" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H3_heading"><a name="1101681">Arithmetic Operation</a></div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1143372" title="Design Rules and Procedures" name="1101685">Figure&nbsp;3–5</a></span> shows the arithmetic section of the filter, that computes the output <span class="Code">yout</span>:</div>
+      <div class="N_007cFA_frame_anchor"><a name="1129435"><img class="Default" src="images/hb_dspb_std_ug_design_rules.06.1.05.png" width="101" height="37" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="B1_body"><a name="1101694">where </a><span class="Emphasis">c[i]</span> are the coefficients and <span class="Emphasis">x</span>[<span class="Emphasis">k</span> - <span class="Emphasis">i</span>] are the data.</div>
+      <div class="TA_table_anchor"><a name="1143378">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–5.&nbsp;<a name="1143372">3-Tap FIR Filter Arithmetic Operation in Quartus</a>&nbsp;II Version RTL Viewer</div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1143377"><img class="Default" src="images/FIR3tap_arithmetic_rtl_view.jpg" width="568" height="179" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1143379">This design requires three multipliers and one parallel adder. The arithmetic </a>operations increase the bus width in the following ways:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101702">Multiplying </a><span class="Emphasis">a</span> <span class="Symbol_font">×</span> <span class="Emphasis">b</span> in SBF format (where <span class="Emphasis">l</span> is left and <span class="Emphasis">r</span> is right) is equal to:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B2_body"><a name="1129875">	</a>[<span class="Emphasis">la</span>].[<span class="Emphasis">ra</span>] <span class="Symbol_font">×</span> [<span class="Emphasis">lb</span>].[<span class="Emphasis">rb</span>]</div>
+      <div class="B1_body"><a name="1129895">The bus width of the resulting signal is:</a></div>
+      <div class="B2_body"><a name="1129904">([</a><span class="Emphasis">la</span>] + [<span class="Emphasis">lb</span>]).([<span class="Emphasis">ra</span>] + [<span class="Emphasis">rb</span>])</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101703">Adding </a><span class="Emphasis">a</span> + <span class="Emphasis">b</span> + <span class="Emphasis">c</span> in SBF format (where <span class="Emphasis">l</span> is left and <span class="Emphasis">r</span> is right) is equal to:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B2_body"><a name="1129959">[</a><span class="Emphasis">la</span>].[<span class="Emphasis">ra</span>] + [<span class="Emphasis">lb</span>].[<span class="Emphasis">rb</span>] + [<span class="Emphasis">lc</span>].[<span class="Emphasis">rc</span>]</div>
+      <div class="B1_body"><a name="1129975">The bus width of the resulting signal is: </a></div>
+      <div class="B2_body"><a name="1129992">(max([</a><span class="Emphasis">la</span>], [<span class="Emphasis">lb</span>], [<span class="Emphasis">lc</span>]) + 2).(max([<span class="Emphasis">ra</span>], [<span class="Emphasis">rb</span>], [<span class="Emphasis">rc</span>]))</div>
+      <div class="B0_body"><a name="1101704">The parallel adder has three input buses of 14, 16, and 14 bits. To perform this </a>addition in binary, DSP Builder automatically sign extends the 14-bit busses to 16 bits. The output bit width of the parallel adder is 18&nbsp;bits, which covers the full resolution.</div>
+      <div class="B0_body"><a name="1101705">The following options can change the internal bit width resolution and therefore </a>change the size of the hardware required to perform the function that Simulink describes:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101706">Change the bit width of the input data.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101707">Change the bit width of the output data. The VHDL synthesis tool removes any </a>unused logic.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101708">Insert a </a><span class="Code">Bus Conversion</span> block to change the internal signal bit width.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1114463" title="Design Rules and Procedures" name="1101712">Figure&nbsp;3–6</a></span> shows how you can use <span class="Code">Bus Conversion</span> blocks to control internal bit widths. </div>
+      <div class="TA_table_anchor"><a name="1114448">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–6.&nbsp;<a name="1114463">3-Tap Filter with BusConversion to Control Bit Widths</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1114465"><img class="Default" src="images/FIR3tap_FCA2.jpg" width="537" height="206" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1130184">In </a><span class="N_007cLink"><a href="#1114463" title="Design Rules and Procedures">Figure&nbsp;3–6</a></span>, the output of the <span class="Code">Gain</span> block has 4 bits removed. Port data type display is enabled in this example and shows that the inputs to the <span class="Code">Delay</span> blocks are of type <span class="Code">INT_8</span> but the outputs from the <span class="Code">Bus Conversion</span> blocks are of type <span class="Code">INT_6</span>.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1130185">You can also achieve bus conversion by inserting an </a><span class="Code">AltBus</span>, <span class="Code">Round</span>, or <span class="Code">Saturate</span> block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1130177">The RTL view illustrates the effect of this truncation. The parallel adder required has a </a>smaller bit width and the synthesis tool reduces the size of the multiplier to have a 9-bit output (<span class="N_007cLink"><a href="#1114834" title="Design Rules and Procedures">Figure&nbsp;3–7</a></span>).</div>
+      <div class="TA_table_anchor"><a name="1114823">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–7.&nbsp;<a name="1114834">3-Tap Filter with BusConversion to Control Bit Widths in Quartus</a>&nbsp;II RTL Viewer</div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1114836"><img class="Default" src="images/FIR3tap_busconversion_rtl_view.jpg" width="586" height="220" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1145092">For more information, refer to </a><span class="N_007cLink"><a href="#1012586" title="Design Rules and Procedures">“Fixed-Point Notation” on page&nbsp;3–2</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1058580">Frequency Design Rules</a></div>
+      <div class="B0_body"><a name="1058582">This section describes the frequency design rules for single and multiple clock </a>domains.</div>
+      <div class="H2_heading"><a name="1012700">Single Clock Domain</a></div>
+      <div class="B0_body"><a name="1012701">If your design does not contain a </a><span class="Code">PLL</span> block or <span class="Code">Clock_Derived</span> block, DSP Builder uses synchronous design rules to convert a Simulink design into hardware. All DSP Builder registered blocks (such as the <span class="Code">Delay</span> block) operate on the positive edge of the single clock domain, which runs at the system sampling frequency. </div>
+      <div class="B0_body"><a name="1082077">The clock pin is not graphically displayed in Simulink unless you use the </a><span class="Code">Clock</span> block. However, when DSP Builder converts your design to VHDL it automatically connects the clock pin of the registered blocks (such as the <span class="Code">Delay</span> block) to the single clock domain of the system.</div>
+      <div class="B0_body"><a name="1096653">The default clock pin is named </a><span class="Code">clock</span> and there is also a default active-low reset pin named <span class="Code">aclr</span>.</div>
+      <div class="B0_body"><a name="1097290">By default, Simulink does not graphically display the clock enable and reset input </a>pins of the DSP Builder registered blocks. When DSP Builder converts a design to VHDL, it automatically connects these pins. You can access and drive these optional ports by checking the appropriate option in the <span class="Bold">Block Parameters</span> dialog box.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1097806">Simulink issues a warning if you are using an inappropriate solver for your model. </a>You should set the solver options to fixed-step discrete when you are using a single clock domain. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1097807">For Simulink simulation, all DSP Builder blocks (including registered DSP Builder </a>blocks) use the sampling <span class="change_bars">period specified in the </span><span class="Code">Clock</span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;"> block. If there is no </span><span class="Code">Clock</span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;"> block </span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;">in your design, the DSP Builder blocks use a sampling frequency of 1. You can use the </span><span class="Code">Clock</span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;"> block to change the Simulink sample period and the hardware clock period.</span></div>
+      <div class="H2_heading"><a name="1036582">Multiple Clock Domains</a></div>
+      <div class="B0_body"><a name="1027641">A DSP Builder model can operate using multiple Simulink sampling periods. You can </a>specify the clock domain in some DSP Builder block sources, such as the <span class="Code">Counter</span> block. You can also specify the clock domain in DSP Builder rate change blocks such as <span class="Code">Tsamp</span>. </div>
+      <div class="B0_body"><a name="1027739">When using multiple sampling periods, DSP Builder must associate each sampling </a>period to a physical clock domain that can be available from an FPGA PLL or a clock input pin. Therefore, the top-level DSP Builder model must contain DSP Builder rate change blocks such as <span class="Code">PLL</span> or <span class="Code">Clock_Derived</span>. </div>
+      <div class="B0_body"><a name="1055260">You can use a </a><span class="Code">PLL</span> block to synthesize additional clock signals from a reference clock signal. These internal clock signals are multiples of the system clock frequency. </div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1163863">Refer to </a><span class="N_007cLink"><a href="#1055366" title="Design Rules and Procedures">“Using the PLL Block” on page&nbsp;3–14</a></span> for more information.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1082341">If your design contains the </a><span class="Code">PLL</span> block, <span class="Code">Clock</span> or <span class="Code">Clock_Derived</span> blocks, the DSP Builder registered blocks operate on the positive edge of one of the block’s output clocks. </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1097377">You must set a variable-step discrete solver in Simulink when you are using multiple </a>clock domains. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1042019">To ensure a proper hardware implementation of a DSP Builder design using multiple </a>clock domains, consider the following points:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1027643">Do not use DSP Builder combinational blocks for rate transitions to ensure that the </a>behavior of the DSP Builder Simulink model is identical to the generated RTL representation. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><span class="N_007cLink"><a href="#1115480" title="Design Rules and Procedures" name="1130516">Figure&nbsp;3–8</a></span> illustrates an incorrect use of the DSP Builder <span class="Code">Logical Bit Operator</span> (NOT) block.</div>
+      <div class="TA_table_anchor"><a name="1115472">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–8.&nbsp;<a name="1115480">Example of Incorrect Usage: Mixed Sampling Rate on a NOT Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1115482"><img class="Default" src="images/example_incorrect_usage_NOT_block.jpg" width="558" height="151" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1027645">Two DSP Builder blocks can operate with two different sampling periods. </a>However for most DSP Builder blocks, the sampling period of each input port and each output port must be identical. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><a name="1089567">Although this rule applies most of the DSP Builder blocks, there are some </a>exceptions such as the <span class="Code">Dual-Clock FIFO</span> block where the sampling period of the read input port is expected to be different than the sampling period of the write input port.</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1028304">For a datapath using mixed clock domains, the design may require additional </a>register decoupling around the register that is between the domains.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><a name="1047886">This requirement is especially true when the source data rate is higher than the </a>destination register, in other words, when the data of a register is toggling at the higher rate than the register’s clock pin (<span class="N_007cLink"><a href="#1115613" title="Design Rules and Procedures">Figure&nbsp;3–9</a></span>). </div>
+      <div class="TA_table_anchor"><a name="1115596">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–9.&nbsp;<a name="1115613">Data Toggling Faster than Clock</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1115615"><img class="Default" src="images/data-toggling.jpg" width="536" height="140" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B1_body"><span class="N_007cLink"><a href="#1115826" title="Design Rules and Procedures" name="1047848">Figure&nbsp;3–10</a></span> shows a stable hardware implementation.</div>
+      <div class="TA_table_anchor"><a name="1115794">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–10.&nbsp;<a name="1115826">Stable Hardware Implementation</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1115828"><img class="Default" src="images/more-stable.jpg" width="589" height="258" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1055330">Using Clock and Clock_Derived Blocks</a></div>
+      <div class="B0_body"><a name="1055362">DSP Builder maps the </a><span class="Code">Clock</span> and <span class="Code">Clock_Derived</span> blocks to two hardware device input pins; one for the clock input, and one for the reset input for the clock domain. A design may contain zero or one <span class="Code">Clock</span> block and zero or more <span class="Code">Clock_Derived</span> blocks. </div>
+      <div class="B0_body"><a name="1101290">If you use </a><span class="Code">Clock_Derived</span> blocks, and there is only one system clock, you must generate an appropriate clock signal for connection to the hardware device input pins for the derived clocks.</div>
+      <div class="B0_body"><a name="1080174">The </a><span class="Code">Clock</span> block defines the base clock domain, and <span class="Code">Clock_Derived</span> blocks define other clock domains. DSP Builder specifies sample times in terms of the base clock sample time. If there is no <span class="Code">Clock</span> block, DSP Builder uses a default base clock, with a Simulink sample time of 1, and a hardware clock period of 20 <span class="Symbol_font">μ</span>s.</div>
+      <div class="B0_body"><a name="1078127">This feature is available across all device families that DSP Builder supports. If no </a><span class="Code">Clock</span> block is present, the design uses a default clock pin named <span class="Code">clock</span> and a default active-low reset pin named <span class="Code">aclr</span>.</div>
+      <div class="B0_body"><a name="1055331">The </a><span class="Code">Signal Compiler</span> block assigns a clock buffer and a dedicated clock-tree to clock-signal input pin automatically to maintain minimum clock skew. If your design contains more <span class="Code">Clock</span> and <span class="Code">Clock_Derived</span> blocks than there are clock buffers available, non dedicated routing resources route the clock signals.</div>
+      <div class="H2_heading"><a name="1102356">Clock Assignment</a></div>
+      <div class="B0_body"><a name="1102358">DSP Builder identifies registered DSP Builder blocks such as the </a><span class="Code">Delay</span> block and implicitly connects the clock, clock enable, and reset signals in the VHDL design for synthesis. When your design does not contain a <span class="Code">Clock</span> block, <span class="Code">Clock_Derived</span> block, or <span class="Code">PLL</span> block, all the registered DSP Builder block clock pins connect to a single clock domain (signal clock in VHDL). </div>
+      <div class="B0_body"><a name="1102359">Define clock domains by the clock source blocks: the </a><span class="Code">Clock</span> block, the <span class="Code">Clock_Derived</span> block and the <span class="Code">PLL</span> block. </div>
+      <div class="B0_body"><a name="1102360">The </a><span class="Code">Clock</span> block defines the base clock domain. You can specify its Simulink sample time and hardware clock period directly. If there is no <span class="Code">Clock</span> block, there is a default base clock with a Simulink sample time of 1. You can use the <span class="Code">Clock_Derived</span> block to define clock domains in terms of the base clock. DSP Builder specifies the sample time of a derived clock as a multiple and divisor of the base clock sample time.</div>
+      <div class="B0_body"><a name="1102361">The </a><span class="Code">PLL</span> block maps to a hardware PLL. You can use it to define multiple clock domains with sample times specified in terms of the PLL input clock. Use the PLL input clock either as the base clock or a derived clock.</div>
+      <div class="B0_body"><a name="1102362">Each clock domain has an associated reset pin. The </a><span class="Code">Clock</span> block and each of the <span class="Code">Clock_Derived</span> blocks have their own reset pin, the name of which is in the block's parameter dialog box. The clock domains of the <span class="Code">PLL</span> block share the reset pin of the <span class="Code">PLL</span> block's input clock.</div>
+      <div class="B0_body"><a name="1102363">When your design contains clock source blocks, DSP Builder implicitly connects the </a>clock pins of all the registered blocks to the appropriate clock pin or PLL output. DSP Builder also connects the reset pins of the registered blocks to the top-level reset port for the block's clock domain.</div>
+      <div class="B0_body"><a name="1102365">DSP Builder blocks fall into the following clocking categories:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1102366">Combinational blocks—the output always changes at the same sample time slot as </a>the input.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1102367">Registered blocks—the output changes after a variable number of sample time </a>slots.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1116643" title="Design Rules and Procedures" name="1102371">Figure&nbsp;3–11</a></span> illustrates DSP Builder block combinational behavior. </div>
+      <div class="TA_table_anchor"><a name="1116609">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–11.&nbsp;<a name="1116643">Magnitude Block: Combinational Behavior</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1116645"><img class="Default" src="images/magnitude.jpg" width="599" height="229" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1102378">The </a><span class="Code">Magnitude</span> block translates as a combinational signal in VHDL. DSP Builder does not add clock pins to this function.</div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1116876" title="Design Rules and Procedures" name="1102382">Figure&nbsp;3–12</a></span> illustrates the behavior of a registered DSP block. In the VHDL netlist, DSP Builder adds clock pin inputs to this function. The <span class="Code">Delay</span> block, with the <span class="Bold">Clock </span><span class="Bold">Phase Selection</span> parameter equal to 100, is converted into a VHDL shift register with a decimation of three and an initial value of zero.</div>
+      <div class="TA_table_anchor"><a name="1116844">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–12.&nbsp;<a name="1116876">Delay Block: Registered Behavior</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1116878"><img class="Default" src="images/delay.jpg" width="604" height="252" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1102389">For feedback circuitry (the output of a block fed back into the input of a block), a </a>registered block must be in the feedback loop. Otherwise, DSP Builder creates an unresolved combinational loop (<span class="N_007cLink"><a href="#1117051" title="Design Rules and Procedures">Figure&nbsp;3–13</a></span>).</div>
+      <div class="TA_table_anchor"><a name="1117020">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–13.&nbsp;<a name="1117051">Feedback Loop</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1117053"><img class="Default" src="images/SignalCompiler_feedback.jpg" width="611" height="233" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1102399">Use the </a><span class="Code">PLL</span> block and assign different sampling periods on registered DSP Builder blocks to design multirate designs.</div>
+      <div class="B0_body"><a name="1102400">Alternatively, use a single clock domain with clock enable and the following design </a>rules to design multirate designs without the DSP Builder <span class="Code">PLL</span> block:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1102401">The fastest sample rate is an integer multiple of the slower sample rates. The </a><span class="Bold">Clock </span><span class="Bold">Phase Selection</span> field in the <span class="Bold">Block Parameters</span> dialog box specifies the values for the <span class="Code">Delay</span> block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1164204">The </a><span class="Bold">Clock Phase Selection</span> box accepts a binary pattern string to describe the clock phase selection. DSP Builder processes each digit or bit of this string sequentially on every cycle of the fastest clock. When a bit is equal to one, DSP Builder enables the block; when a bit is equal to zero, DSP Builder disables the block. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><span class="N_007cLink"><a href="#1110930" title="Design Rules and Procedures" name="1131040">Table&nbsp;3–2</a></span> shows some examples of typical clock phase selections.</div>
+      <div class="TA_table_anchor"><a name="1110912">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 377.31680000000005pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;3–2.&nbsp;<a name="1110930">Clock Phase Selection Example</a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 49.2501pt">
+            <div class="THC_heading_center"><a name="1102413">Phase</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 328.0667pt">
+            <div class="THC_heading_center"><a name="1102415">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1102417">1</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1102419">The </a><span class="Code">Delay</span> block is always enabled and captures all data passing through the block (sampled at the rate 1).</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1102421">10</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1102423">The </a><span class="Code">Delay</span> block is enabled every other phase and every other data (sampled at the rate 1) passes through.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1102425">0100</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1102427">The </a><span class="Code">Delay</span> block is enabled on the 2nd phase out of 4 and only the 2nd data out of 4 (sampled at the rate 1) passes through. The data on phases 1, 3, and 4 does not pass through the <span class="Code">Delay</span> block.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1117274" title="Design Rules and Procedures" name="1102431">Figure&nbsp;3–14</a></span> compares the scopes for the <span class="Code">Delay</span> block operating at a one quarter rate on the <span class="Code">1000</span> and <span class="Code">0100</span> phases, respectively.</div>
+      <div class="TA_table_anchor"><a name="1117251">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–14.&nbsp;<a name="1117274">1000 as Opposed to 0100 Phase Delay</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1117276"><img class="Default" src="images/Signalcompiler_phasedelay.jpg" width="597" height="250" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1055366">Using the PLL Block</a></div>
+      <div class="B0_body"><a name="1055381">DSP Builder maps the </a><span class="Code">PLL</span> block to the hardware device PLL. The number of PLL internal clock outputs that each device family supports depends on the specific device packaging.</div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1155143">For information about the built-in PLLs, refer to the device handbook for the device </a>family you are targeting.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1117434" title="Design Rules and Procedures" name="1080689">Figure&nbsp;3–15</a></span> shows an example of multiple-clock domain support using the <span class="Code">PLL</span> block.</div>
+      <div class="TA_table_anchor"><a name="1117419">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 377pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–15.&nbsp;<a name="1117434">MultipleClockDelay.mdl</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 377.0pt">
+            <div class="N_007cFA_frame_anchor"><a name="1117436"><img class="Default" src="images/screen_multipleclockdelay.jpg" width="434" height="202" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1117516" title="Design Rules and Procedures" name="1012778">Figure&nbsp;3–16</a></span> shows the clock setting configuration for the <span class="Code">PLL</span> block in the design example <span class="Bold">MultipleClockDelay.mdl</span>. Output clock <span class="Code">PLL_clk0</span> is set to 800&nbsp;ns, and output clock <span class="Code">PLL_clk1</span> is set to 100&nbsp;ns.</div>
+      <div class="TA_table_anchor"><a name="1117496">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–16.&nbsp;<a name="1117516">PLL Setting</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1117518"><img class="Default" src="images/pll_setting.jpg" width="382" height="361" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1055490">Datapath A (green in </a><span class="N_007cLink"><a href="#1117434" title="Design Rules and Procedures">Figure&nbsp;3–15</a></span>) operates on output clock <span class="Code">PLL_clk0</span> and datapath B (red in <span class="N_007cLink"><a href="#1117434" title="Design Rules and Procedures">Figure&nbsp;3–15</a></span>) operates on output clock <span class="Code">PLL_clk1</span>. Specify these clocks by setting the <span class="Bold">Specify Clock</span> option and enter the clock name in the <span class="Bold">Block Parameter</span> dialog box for each input block.</div>
+      <div class="B0_body"><a name="1055497">In this design, the </a><span class="Bold">Sample time</span> parameters for the <span class="Code">Sine Wave a</span> block and <span class="Code">Sine Wave </span><span class="Code">b</span> block are set explicitly to 1e-006 and 1e-007, so that DSP Builder provides data to the input blocks at the rate at which they sample.</div>
+      <div class="H3_heading"><a name="1012826">Using Advanced PLL Features</a></div>
+      <div class="B0_body"><a name="1082780">The DSP Builder </a><span class="Code">PLL</span> block supports the fundamental multiplication and division factor for the PLL. If you want to use other PLL features (such as phase&nbsp;shift, duty cycle), use a separate Quartus II project with the following method: </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1089559">Create a new Quartus II project and use the MegaWizard™ Plug-In to configure </a>the <span class="Code">ALTPLL</span> block. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1089563">Add the DSP Builder .</a><span class="Bold">mdl</span> file to the Quartus II project as a source file. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1089564">Create a top-level design that instantiates your ALTPLL variation and your DSP </a>Builder design.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1023418">Timing Semantics Between Simulink and HDL Simulation</a></div>
+      <div class="B0_body"><a name="1023419">DSP</a>&nbsp;Builder uses Simulink to simulate the behavior of hardware components. However, there are some fundamental differences between the step-based simulation in Simulink and the event-driven simulation that VHDL and Verilog HDL designs use. </div>
+      <div class="B0_body"><a name="1155729">This section describes the timing semantics that DSP</a>&nbsp;Builder uses for translating between the Simulink and HDL environments.</div>
+      <div class="H2_heading"><a name="1023421">Simulink Simulation Model</a></div>
+      <div class="B0_body"><a name="1023422">To ensure correlation between the HDL and Simulink simulation, you must use a </a>discrete fixed or variable-step solver in Simulink. </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1155356">Use a fixed-step solver for a single clock domain design or a variable-step solver for </a>multiple-clock domain designs.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1155353">Configure the solver timing mode in the </a><span class="Bold">Configuration Parameters</span> dialog box from the Simulation menu in Simulink. Each step is a discrete unit of simulation. DSP Builder quantizes the clock in an idealized manner as a cycle counter.</div>
+      <div class="B0_body"><a name="1024362">At the beginning of each step, Simulink provides each block with inputs that you </a>know. DSP Builder evaluates functions and propagates the resultant outputs in the current step. The outputs of your model are the results of all these computations.</div>
+      <div class="B0_body"><a name="1024363">For all steps, Simulink blocks produce output signals. Outputs varying based on </a>inputs received in the same step are referred to as direct feedthrough. Some DSP Builder blocks may include direct feedthrough outputs, depending on the parameterization of each block.</div>
+      <div class="H2_heading"><a name="1023425">HDL Simulation Models</a></div>
+      <div class="B0_body"><a name="1023426">DSP Builder drives hardware simulation with a clock signal and the available input </a>stimuli. The <span class="Code">TestBench</span> block’ s testbench script feeds input signals to the HDL simulator that maintain correlation between the HDL and Simulink simulation.</div>
+      <div class="B0_body"><a name="1024985">Simulation models in the DSP Builder libraries evaluate their logic on positive clock </a>edges. To avoid any timing conflicts, external inputs transition on negative clock edges. DSP Builder updates registered outputs on positive clock edges. The <span class="Code">TestBench</span> block-generated inputs arrive on negative clock edges, causing an apparent half-cycle delay in the arrival of output (<span class="N_007cLink"><a href="#1118153" title="Design Rules and Procedures">Figure&nbsp;3–17 on page&nbsp;3–18</a></span>).</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1155247">The HDL simulation in ModelSim should run over the same time as the Simulink </a>simulation. Generally DSP Builder aligns the timing so that ModelSim simulation finishes at the end of the stimulus data. However, occasionally when using multiple clocks, the rounding calculation that aligns the clock signals may set ModelSim simulation to run for one additional clock cycle (on the fastest clock). You may receive an <span class="Code">unexpected end of file</span> error message because there is no stimulus data for this extra cycle.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1023430">Startup &amp; Initial Conditions</a></div>
+      <div class="B0_body"><a name="1023431">The testbench includes a global reset for each clock domain. All blocks (except the </a><span class="Code">HDL </span><span class="Code">Import</span> and MegaCore function blocks) automatically connect any reset on the hardware to the global asynchronous reset for the clock domain.</div>
+      <div class="B0_body"><a name="1086196">When a block explicitly declares an asynchronous reset, this reset is </a><span class="Code">OR</span>ed with the global reset.</div>
+      <div class="B0_body"><a name="1086168">A </a><span class="Code">Global Reset</span> block (<span class="Code">SCLR)</span>, which corresponds to this hardware signal is in the Altera DSP Builder Blockset IO &amp; Bus library.</div>
+      <div class="B0_body"><a name="1023432">The global reset signal is reset before meaningful simulation. When converting from </a>the Simulink domain to the hardware domain, the reset period is before the Simulink simulation begins. Therefore, in Simulink simulation, the <span class="Code">Global Reset</span> block outputs only a constant zero and has no simulation behavior. Connect the hardware to reset, and thus reset at the start of a ModelSim testbench simulation.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1168360">DSP blocks or MegaCore functions may have additional initial conditions or startup </a>states that are not automatically reset by the global reset signal. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1168470">Initial Reset of HDL Import Blocks and MegaCore Functions in Simulink </a>Simulations</div>
+      <div class="B0_body"><a name="1168529">The ModelSim testbenches have an initial reset cycle, which ModelSim performs, </a>before simulation. The first 200 cycles are reset, then the testbench puts the test vectors through. The reset sets the intial state of registers, which may otherwise have 'X' (unknown) outputs. In Simulink simulations, there is no explicit reset signal—the Simulink simulation models for DSP Builder blocks assume there is a reset. HDL import blocks and MegaCore functions do not provide explicit models, but use a generic HDL simulator. Simulink does not have a way to represent 'X' in its numeric types— it writes an unknown 'X' as a 0. The HDL import block or MegaCore function may have registers that require a reset to avoid unknown outputs. Unknown states may be initially propagating through your imported HDL import block or MegaCore function. For some imported HDL import blocks or MegaCore functions, these initial unknown outputs may result in outputs that are different to the ModelSim simulation (which is reset). </div>
+      <div class="B0_body"><a name="1168715">Altera recommends that you must first explicitly reset HDL import blocks and </a>MegaCore functions in Simulink simulation. If you have any such registers with unknown outputs in a feedback loop, the Simulink simulation always gives 'X' (zero in Simulink's numeric types) until reset and the unknown states continue to propagate. </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1168892">If a block in one clock domain drives a block in another clock domain with an </a>asynchronous clear port, Simulink may not model the system. An asynchronous clear only takes full effect if you assert it at the end of a sample; if it is asserted then cleared, DSP Builder ignores it. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1168363">DSP Builder Global Reset Circuitry</a></div>
+      <div class="B0_body"><a name="1027231">By default, Simulink does not graphically display the clock enable and reset input </a>pins on DSP Builder registered blocks. When DSP Builder converts a design to HDL, it automatically connects the implied clock enable and reset pins. </div>
+      <div class="B0_body"><a name="1083107">If you turn on the optional ports in the </a><span class="Bold">Block Parameters</span> dialog box for each of the DSP Builder registered blocks, you can access and drive the clock enable and reset input pins graphically in the Simulink software.</div>
+      <div class="B0_body"><a name="1082826">In the HDL domain, the registered DSP Builder blocks uses an asynchronous reset, as </a>this behavioral VHDL code example shows:</div>
+      <div class="C1_code"><a name="1082890">process(CLOCK, RESET)</a><br />begin<br />	if RESET = '1' then<br />		dout &lt;= (others =&gt; '0');<br />	else if CLOCK'event and CLOCK = '1' then<br />		dout &lt;= din;<br />	end if;<br />end</div>
+      <div class="B0_body"><a name="1082837">In addition, when targeting a development board, the </a><span class="Bold">Block Parameters</span> dialog box for the DSP Board configuration block typically includes a <span class="Bold">Global Reset Pin</span> selection box where you can choose from a list of pins that correspond to the DIP and push-button switches. </div>
+      <div class="B0_body"><a name="1131528">The reset logic polarity can be either active-high or active-low. When you select </a>active-low, the value of the reset signal in Simulink simulation is still 0 for inactive and 1 for active. However, DSP Builder inserts a <span class="Code">NOT</span> gate on the input pin in the generated hardware. The value of the reset signal in simulation is therefore the value as it exists across the internal design, rather then the value at the input pin.</div>
+      <div class="B0_body"><a name="1038380">Quartus</a><span class="Superscript">®</span> II synthesis interprets this reset as an asynchronous reset, and uses an input of the logic element look-up table to instantiate the function. The HDL simulates correctly in this case because the testbench produces the reset input as required.</div>
+      <div class="H2_heading"><a name="1024566">Reference Timing Diagram</a></div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1118153" title="Design Rules and Procedures" name="1025728">Figure&nbsp;3–17</a></span> shows the timing relationships in a hypothetical case where a register is fed by the output of a counter. The counter output begins at 10—the value is 10 during the first Simulink clock step. </div>
+      <div class="TA_table_anchor"><a name="1118130">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–17.&nbsp;<a name="1118153">Single-Clock Timing Relationships</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1118155"><img class="Default" src="images/SimulinkClockCycles.jpg" width="561" height="236" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1083771">This timing is not true when crossing clock domains. For example, </a><span class="N_007cLink"><a href="#1118252" title="Design Rules and Procedures">Figure&nbsp;3–18</a></span> shows the timing delays in a design with a derived clock that has half the base clock period. In general, DSP Builder is not cycle-accurate when crossing clock domains.</div>
+      <div class="TA_table_anchor"><a name="1118237">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–18.&nbsp;<a name="1118252">Multiple-Clock Timing Relationships</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1118254"><img class="Default" src="images/SimulinkMultiClockCycles.jpg" width="564" height="277" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H1_heading"><a name="1055926">Signal Compiler and TestBench Blocks</a></div>
+      <div class="B0_body"><a name="1056023">The </a><span class="Code">Signal Compiler</span> block uses Quartus II synthesis to convert a Simulink design into synthesizable VHDL including generation of a VHDL testbench and other supporting files for simulation and synthesis.</div>
+      <div class="B0_body"><span class="Code"><a name="1056269">Signal Compiler</a></span> assumes that your design complies with the Simulink rules and that any variables and inherited variables propagate through the whole design.</div>
+      <div class="B0_body"><a name="1056139">You should always run a simulation in Simulink before running </a><span class="Code">Signal Compiler</span>. The simulation updates all variables in your design (including workspace variables and inherited parameters), sets up certain blocks (such as the memory blocks, and inputs from and outputs to workspace blocks), and also traps any design errors that do not comply with Simulink rules.</div>
+      <div class="B0_body"><a name="1056413">The </a><span class="Code">Input</span> and <span class="Code">Output</span> blocks map to input and output ports in VHDL and mark the edge of the generated system. Typically, you connect these blocks to the Simulink simulation blocks for your testbench. An <span class="Code">Output</span> block should not connect to another Altera block. If you connect more Altera blocks (that map to HDL), empty ports are created and the HDL does not compile for synthesis.</div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1056432">For more information about the </a><span class="Code">Input</span> and <span class="Code">Output</span> blocks, refer to the <span class="Document_title">IO &amp; Bus Library</span> chapter of the <span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/manual/mnl_dsp_builder.pdf" target="external_window">DSP Builder Reference Manual</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1056430">Design Flows for Synthesis, Compilation and Simulation</a></div>
+      <div class="B0_body"><a name="1056463">You can use the </a><span class="Code">Signal Compiler</span> and <span class="Code">Testbench</span> blocks to control your design flow for synthesis, compilation, and simulation. DSP Builder supports the following flows:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1056466">Automatic flow—allows you to control the entire design process in the MATLAB </a>or Simulink environment with the <span class="Code">Signal Compiler</span> block. With this flow, your design compiles inside a temporary Quartus II project. The results of the synthesis and compilation display in the Signal Compiler Messages box. You can also use the automatic flow to download your design into supported development boards.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1056531">Manual flow—you can also add the .</a><span class="Bold">mdl</span> file to an existing Quartus II project using the <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">model name</span><span class="Bold" style="font-style: normal">&gt;_add.tcl</span> script. This script is generated whenever the <span class="Code">Signal Compiler</span> or <span class="Code">TestBench</span> block is run. You can use the script to add the .<span class="Bold">mdl</span> file and any imported HDL to your project. You can then instantiate your design in HDL.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1056468">Simulation flow—if the ModelSim executable (</a><span class="Bold">vsim.exe</span>) is on your path, you can use the <span class="Code">TestBench</span> block to compile your design for ModelSim simulation. You can then automatically compare the Simulink and ModelSim simulation results. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1146193">For an example that uses the </a><span class="Code">Signal Compiler</span> blocker, refer to <span class="N_007cLink"><a href="hb_dspb_std_ug_tutorial.html#1020256" title="Getting Started">page&nbsp;2–14</a></span> of the <span class="N_007cLink"><a href="hb_dspb_std_ug_tutorial.html#1000950" title="Getting Started">“Getting Started”</a></span>.</div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1055988">For information about the parameters for the </a><span class="Code">Signal Compiler</span> and <span class="Code">TestBench</span> blocks, refer to the <span class="Document_title">AltLab Library</span> chapter of the <span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/manual/mnl_dsp_builder.pdf" target="external_window">DSP Builder Reference Manual</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1169277">DSP Builder supports the Simulink Bus Creator, Bus Selector, and Bus Assignment </a>blocks but you must only use them for routing.</div>
+      <div class="H1_heading"><a name="1035798">Hierarchical Design</a></div>
+      <div class="B0_body"><a name="1069077">DSP Builder supports hierarchical design using the Simulink </a><span class="Code">Subsystem</span> block. </div>
+      <div class="B0_body"><a name="1069078">DSP Builder preserves the hierarchy structure in a VHDL design and each hierarchical </a>level in a Simulink model file (.<span class="Bold">mdl</span>) translates into one VHDL file. </div>
+      <div class="B0_body"><a name="1086730">For example, </a><span class="N_007cLink"><a href="#1118533" title="Design Rules and Procedures">Figure&nbsp;3–19</a></span> illustrates a hierarchy for a design <span class="Bold">fir3tap.mdl</span>, which implements two FIR filters.</div>
+      <div class="TA_table_anchor"><a name="1118509">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 466.2501pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–19.&nbsp;<a name="1118533">Hierarchical Design Example</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 466.2501pt">
+            <div class="N_007cFA_frame_anchor"><a name="1118535"><img class="Default" src="images/fir3tap-hierarchy.jpg" width="557" height="586" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><span class="change_bars"><a name="1146223">For information about naming the </a></span><span class="Code">Subsystem</span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;"> block instances, refer to </span><span class="N_007cLink" style="font-family: &quot;Microsoft Sans Serif&quot;"><a href="#1012562" title="Design Rules and Procedures">“DSP Builder Naming Conventions” on page&nbsp;3–1</a></span><span class="change_bars" style="color: #000000; font-family: &quot;Microsoft Sans Serif&quot;">. </span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1023801">Goto and From Block Support</a></div>
+      <div class="B0_body"><a name="1012847">DSP Builder supports the </a><span class="Code">Goto</span> and <span class="Code">From</span> blocks from the <span class="Bold">Signal Routing</span> folder in the generic Simulink library. </div>
+      <div class="B0_body"><a name="1055150">You can use these blocks for large fan-out signals and to enhance the diagram clarity. </a></div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1118909" title="Design Rules and Procedures" name="1012852">Figure&nbsp;3–20</a></span> shows an example of the <span class="Code">Goto</span> and <span class="Code">From</span> blocks. </div>
+      <div class="TA_table_anchor"><a name="1118886">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–20.&nbsp;<a name="1118909">Goto &amp; From Block Example</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1118911"><img class="Default" src="images/GotoFromExample.jpg" width="603" height="534" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1132295">Use the Goto blocks ([</a><span class="Code">ReadAddr</span>], [<span class="Code">WriteAddr</span>], and [<span class="Code">WriteEna</span>] with the <span class="Code">From</span> blocks ([<span class="Code">ReadAddr</span>], [<span class="Code">WriteAddr</span>], and [<span class="Code">WriteEna</span>], which connect to the dual-port RAM blocks.</div>
+      <div class="H1_heading"><a name="1132448">Create Black Box and HDL Import</a></div>
+      <div class="B0_body"><a name="1132296">You can add your own VHDL or Verilog HDL code to your design and specify which </a>subsystem block(s) DSP Builder should translate into VHDL. You can implement this process—creating a black box—implicitly or explicitly. </div>
+      <div class="B0_body"><a name="1132298">An explicit black box uses the </a><span class="Code">HDL Input</span>, <span class="Code">HDL Output</span>, <span class="Code">HDL Entity</span>, and <span class="Code">Subsystem </span><span class="Code">Builder</span> blocks. For information about using these blocks to create an explicit black box, refer to <span class="N_007cLink"><a href="hb_dspb_std_ug_blackbox.html#1029517" title="Using Black Boxes for HDL Subsystems">“Subsystem Builder Design Example”</a></span><span class="Emphasis"> </span>in <span class="N_007cLink"><a href="hb_dspb_std_ug_blackbox.html#998290" title="Using Black Boxes for HDL Subsystems">Chapter&nbsp;8</a></span><span class="Emphasis">.</span></div>
+      <div class="B0_body"><a name="1132307">An implicit black box uses the </a><span class="Code">HDL Import</span> block to instantiate the black-box subsystem. For information about creating an implicit black box with your own HDL code, refer to<span class="change_bars"> </span>the <span class="N_007cLink"><a href="hb_dspb_std_ug_blackbox.html#1028474" title="Using Black Boxes for HDL Subsystems">“HDL Import Design Example”</a></span> in <span class="N_007cLink"><a href="hb_dspb_std_ug_blackbox.html#998290" title="Using Black Boxes for HDL Subsystems">Chapter&nbsp;8</a></span><span class="Emphasis">.</span></div>
+      <div class="H1_heading"><a name="1075376">Using a MATLAB Array or .hex File to Initialize a Block</a></div>
+      <div class="B0_body"><a name="1075383">Use a MATLAB array to specify the values entered in the </a><span class="Code">LUT</span> block or to initialize the <span class="Code">Dual-Port RAM</span>, <span class="Code">Single-Port RAM</span>, <span class="Code">True Dual-Port RAM</span>, or <span class="Code">ROM</span> blocks. You can also use an Intel format hexadecimal format (.<span class="Bold">hex</span>) file to initialize a <span class="Code">RAM</span> or <span class="Code">ROM</span> block.</div>
+      <div class="B0_body"><a name="1075385">If the MATLAB array data values or the values in the </a><span class="Bold">.hex</span> file do not represent exactly in the selected data type, DSP Builder rounds them and issues a warning. DSP Builder rounds the values by expressing the number in binary format, then truncates to the specified width, which results in rounding towards minus infinity. </div>
+      <div class="B0_body"><a name="1075436">For example, if the input value is –</a><span class="Code">0.25</span> (minimally expressed in signed binary fractional two’s compliment format as <span class="Code">111</span>) and the selected target data format is signed fractional <span class="Code">[1].[1]</span>, DSP Builder truncates the value to <span class="Code">11</span> = –<span class="Code">0.5</span>. DSP Builder rounds the value towards minus infinity to the nearest representable number.</div>
+      <div class="B0_body"><a name="1075437">Similarly, if you select unsigned integer data type and the value is 1.9, DSP Builder </a>rounds this value down to 1.</div>
+      <div class="H1_heading"><a name="1087245">Comparison Utility</a></div>
+      <div class="B0_body"><a name="1087266">DSP Builder provides a simple utility that runs simulation comparison between </a>Simulink and ModelSim from the command line:</div>
+      <div class="C1_code"><a name="1087254">alt_dspbuilder_verifymodel('modelname.mdl', 'logfile.txt')</a><span class="Altera_symbols">r</span></div>
+      <div class="B0_body"><a name="1087273">A testbench GUI displays messages as DSP Builder performs the comparison. The </a>command returns true (1) or false (0) according to whether the simulation results match and the output is recorded in the specified log file.</div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1146260">For more information about running a comparison between Simulink and ModelSim, </a>refer to <span class="N_007cLink"><a href="hb_dspb_std_ug_tutorial.html#1041026" title="Getting Started">“Performing RTL Simulation”</a></span> in <span class="N_007cLink"><a href="hb_dspb_std_ug_tutorial.html#1000950" title="Getting Started">Chapter&nbsp;2</a></span><span class="Emphasis">.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1094069">Adding Comments to Blocks</a></div>
+      <div class="B0_body"><a name="1094070">You can add comments to any DSP Builder block by right-clicking on the block to </a>display the <span class="Bold">Block Properties</span> dialog box and entering text in the <span class="Bold">Description</span> field of the dialog box (<span class="N_007cLink"><a href="#1140574" title="Design Rules and Procedures">Figure&nbsp;3–21 on page&nbsp;3–24</a></span>).</div>
+      <div class="TA_table_anchor"><a name="1140580">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–21.&nbsp;<a name="1140574">Adding Comments to a Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1140579"><img class="Default" src="images/BlockComments.jpg" width="345" height="386" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1140581">DSP Builder includes the comment text next to the instantiation of the block in the </a>generated HDL.</div>
+      <div class="H1_heading"><a name="1103297">Adding Quartus</a>&nbsp;II Constraints</div>
+      <div class="B0_body"><a name="1103298">You can set Quartus II global project assignments in your Simulink model by adding </a><span class="Code">Quartus II Global Project Assignment</span> blocks from the AltLab library. Each block sets a single global assignment but you can use multiple blocks for multiple assignments. You can use these assignments to set Quartus II compilation directives, such as target device or timing requirements.</div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1103299">For a description of the </a><span class="Code">Quartus II Global Project Assignment</span> block, refer to the <span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/manual/mnl_dsp_builder.pdf" target="external_window">DSP Builder Reference Manual</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1103301">You can add additional Quartus II assignments or constraints that are not supported </a>in DSP Builder by creating a Tcl script in your design directory. Any file named <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">model </span><span class="Emphasis" style="font-weight: normal">name</span><span class="Bold" style="font-style: normal">&gt;_add_user.tcl</span> is automatically sourced when you run <span class="Code">Signal Compiler</span>. </div>
+      <div class="B0_body"><a name="1132645">The Tcl file can include any number of Quartus II assignments with the syntax:</a></div>
+      <div class="C1_code"><a name="1103303">set_global_assignment -name &lt;</a><span class="Emphasis">assignment</span>&gt; &lt;<span class="Emphasis">value</span>&gt;</div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1103304">For detailed information about Quartus II assignments, refer to the </a><span class="Link" style="font-style: italic"><a href="http://www.altera.com/literature/manual/mnl_qsf_reference.pdf" target="external_window">Quartus II Settings File Reference Manual</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1098865">Displaying Port Data Types</a></div>
+      <div class="B0_body"><a name="1098866">You can optionally display the Simulink and DSP Builder port data types for each of </a>the signals in your Simulink model by turning on <span class="Bold">Port Data Types</span> in the <span class="Bold">Port/Signal </span><span class="Bold">Displays</span> section of the Simulink Format menu.</div>
+      <div class="B0_body"><a name="1098868">When you set this option, the DSP Builder internal signal type (</a><span class="Code" style="font-style: normal">S</span><span class="Code" style="font-style: normal">BF_L_R</span>, <span class="Code">INT_L</span>, <span class="Variable">UINT_L</span>, or <span class="Code">BIT</span> where L, and R are the number of bit to the left and right of the binary point) displays. For example, <span class="Code">SBF_8_4</span> for a 12-bit signed binary fractional data type with 4 fractional bits, or <span class="Code">UINT_16</span> for a 16-bit unsigned integer.</div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1119695" title="Design Rules and Procedures" name="1098919">Figure&nbsp;3–22</a></span> shows the amplitude modulation example with port data type display enabled.</div>
+      <div class="TA_table_anchor"><a name="1119685">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–22.&nbsp;<a name="1119695">Tutorial Example Showing Port Data Types and Pipeline Depth</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1119697"><img class="Default" src="images/PortDataType.jpg" width="578" height="262" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1146307">For more information about the DSP Builder internal signal types, refer to </a><span class="N_007cLink"><a href="#1012586" title="Design Rules and Procedures">“Fixed-Point Notation” on page&nbsp;3–2</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1097455">Displaying the Pipeline Depth</a></div>
+      <div class="B0_body"><a name="1098930">You can optionally display the pipeline depth on the primitive blocks (such as the </a>Arithmetic library blocks) in your Simulink model by adding a <span class="Code">Display Pipeline </span><span class="Code">Depth</span> block from the AltLab library.</div>
+      <div class="B0_body"><a name="1098957">You can change the display mode by double-clicking on the block. When set, the </a>current pipeline depth displays at the top right corner of each block that adds latency to your design (<span class="N_007cLink"><a href="#1119695" title="Design Rules and Procedures">Figure&nbsp;3–22</a></span>). The selected mode shows on the <span class="Code">Display Pipeline </span><span class="Code">Depth</span> block symbol.</div>
+      <div class="H1_heading"><a name="1103883">Updating HDL Import Blocks</a></div>
+      <div class="B0_body"><a name="1103885">The </a><span class="Code">HDL Import</span> blocks in your design may need updating if you upgrade from a previous software version or move a design to a different workstation.</div>
+      <div class="B0_body"><a name="1103886">You can use the </a><span class="Code">alt_dspbuilder_refresh_hdlimport</span> command to update these blocks. This command checks that the referenced HDL files (or Quartus II project) exists. If it finds the references, the <span class="Bold">HDL Import</span> dialog box opens and a compilation is automatically invokes to regenerate the Simulink model. If it finds neither, but there is an existing simulation netlist, it uses this netlist for simulation.</div>
+      <div class="B0_body"><a name="1103887">To run the command, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1103888">Start the MATLAB or Simulink software.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1103889">Open a Simulink model that contains imported HDL.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1103890">Run the command by typing the following at the MATLAB prompt:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><span class="Code"><a name="1103891">alt_dspbuilder_refresh_hdlimport</a></span> <span class="Altera_symbols">r</span></div>
+      <div class="B0_body"><a name="1103880">You can optionally select a </a><span class="Code">HDL Import</span> block to run the command on only the selected subsystem.</div>
+      <div class="H1_heading"><a name="1099182">Analyzing the Hardware Resource Usage</a></div>
+      <div class="B0_body"><a name="1099183">To analyze the hardware resources required for your design with a </a><span class="Code">Resource Usage</span> block, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1099185">Select the </a><span class="Bold">AltLab</span> library from the <span class="Bold">Altera DSP Builder BlockSet</span> folder in the Simulink Library Browser.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1099186">Drag and drop a </a><span class="Code">Resource Usage </span>block into your model and double-click on the block to open the <span class="Bold">Resource Usage</span> dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1099187">Double-click on the </a><span class="Code">Signal Compiler</span> block and click <span class="Bold">Compile</span> to recompile your design in the Quartus II software.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><a name="1099188">The </a><span class="Code">Resource Usage </span>block updates to show a summary of the estimated logic, RAM and DSP block usage (<span class="N_007cLink"><a href="#1119914" title="Design Rules and Procedures">Figure&nbsp;3–23</a></span>). </div>
+      <div class="TA_table_anchor"><a name="1119907">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–23.&nbsp;<a name="1119914">Resource Usage Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1119916"><img class="Default" src="images/ResourceUsageBlock.jpg" width="265" height="71" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B1_body"><a name="1099226">The </a><span class="Bold">Resource Usage</span> dialog box updates to show a detailed report of the resources that each of the blocks require in your model that generate hardware. </div>
+      <div class="B1_body"><a name="1099258">For example, </a><span class="N_007cLink"><a href="#1120049" title="Design Rules and Procedures">Figure&nbsp;3–24</a></span> shows the hardware resources that the <span class="Code">Product</span> block requires in the amplitude modulation example.</div>
+      <div class="TA_table_anchor"><a name="1120025">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–24.&nbsp;<a name="1120049">Resource Usage Dialog Box</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1120051"><img class="Default" src="images/DlgResourceUsage.jpg" width="465" height="463" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AR1_reference_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR1_reference_inner" style="width: 30pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR1_reference_inner"><a name="1099265">The information depends on the selected device family. Refer to the device </a>documentation for more information.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><a name="1099259">You can also click the </a><span class="Bold">Timing</span> tab and click <span class="Bold">Highlight path</span> to highlight the critical paths on your design.</div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1099292">When the source and destination in the dialog box are the same and a single </a>block is highlights, the critical path is due to the internal function or a feedback loop. For a more complex example, the entire critical path through your design may highlight.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1165278">Loading Additional ModelSim Commands</a></div>
+      <div class="B0_body"><a name="1165279">When you import HDL as a black box, DSP Builder creates a subdirectory </a><span class="Bold">DSPBuilder&lt;</span><span class="Emphasis" style="font-weight: normal">model name</span><span class="Bold" style="font-style: normal">&gt;_import</span>. Any Tcl script <span class="Bold">*_add_msim.tcl</span> in this subdirectory automatically sources when you launch ModelSim. </div>
+      <div class="B0_body"><a name="1133008">You should not modify the generated scripts, but you can create you own scripts such </a>as <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">user name</span><span class="Bold" style="font-style: normal">&gt;_add_msim.tcl</span>, which contain additional ModelSim commands that you want to load into ModelSim.</div>
+      <div class="H1_heading"><a name="1104808">Making Quartus</a>&nbsp;II Assignments to Block Entity Names</div>
+      <div class="B0_body"><a name="1104812">The VHDL entity names of the blocks in a DSP Builder design are dependent on the </a>block’s parameter values. Blocks of the same type and same parameterization share a common VHDL entity. </div>
+      <div class="B0_body"><a name="1104886">The entity names have the following format:</a></div>
+      <div class="C1_code"><span class="Code"><a name="1104814">&lt;</a></span><span class="Emphasis" style="font-family: Courier">block type name</span><span class="Code" style="font-style: normal">&gt;_GN&lt;</span><span class="Emphasis" style="font-family: Courier">8 alphanumeric characters</span><span class="Code" style="font-style: normal">&gt;</span></div>
+      <div class="B0_body"><a name="1104815">For example, a </a><span class="Code">Delay</span> block entity name:</div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1104818">alt_dspbuilder_delay_GNLVAGVO3B</a></span></div>
+      <div class="B0_body"><a name="1104822">Changing the parameterization of the block causes the entity name to change. If you </a>want to make an assignment to a block in the Quartus II project, and for the assignment to remain when the block parameters change, you can use regular expressions in the assignments. </div>
+      <div class="B0_body"><a name="1104927">For example, you may want to make a </a><span class="Bold">Preserve Registers</span> assignment to the <span class="Code">Delay</span> blocks in <span class="N_007cLink"><a href="#1120247" title="Design Rules and Procedures">Figure&nbsp;3–25</a></span> to prevent them from merging.</div>
+      <div class="TA_table_anchor"><a name="1120240">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–25.&nbsp;<a name="1120247">Entity Name Assignment Example</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1120249"><img class="Default" src="images/preserve_regs.png" width="349" height="177" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1104830">Using the Quartus II Assignment Editor and Node Finder tools, you can identify the </a>names of the registers and make the assignments to them. For example, if your model is <span class="Code">my_model</span>, the names may be:</div>
+      <div class="C1_code"><a name="1104832">my_model_GN:auto_inst|alt_dspbuilder_delay_GNLVAGVO3B:Delay|alt_dsp</a>builder_SDelay:Delay1i|DelayLine</div>
+      <div class="C1_code"><a name="1133132">my_model_GN:auto_inst|alt_dspbuilder_delay_GNLVAGVO3B:Delay1|alt_ds</a>pbuilder_SDelay:Delay1i|DelayLine</div>
+      <div class="B0_body"><a name="1104838">These assignments prevent merging of the registers. If you change the length of the </a>delay, the assignments are no longer valid. However, you can edit the <span class="Bold">To</span> field of the assignment and use a regular expression that is still valid if the entity name changes due to a parameter change: Replace the eight alphanumeric characters following the <span class="Code">GN</span> in the block entity name with <span class="Code">.{8}</span>, which is a regular expression that matches any eight characters. The targets of the assignments then become:</div>
+      <div class="C1_code"><a name="1104840">my_model_GN:auto_inst|alt_dspbuilder_delay_GN.{8}:Delay|alt_dspbuil</a>der_SDelay:Delay1i|DelayLine</div>
+      <div class="C1_code"><a name="1133153">my_model_GN:auto_inst|alt_dspbuilder_delay_GN.{8}:Delay1|alt_dspbui</a>lder_SDelay:Delay1i|DelayLine</div>
+      <div class="B0_body"><a name="1104844">If you want the assignment to apply to the whole block, not just the specific nodes, </a>you can use the following code:</div>
+      <div class="C1_code"><a name="1104846">my_model_GN:auto_inst|alt_dspbuilder_delay_GN.{8}:Delay</a></div>
+      <div class="C1_code"><a name="1133155">my_model_GN:auto_inst|alt_dspbuilder_delay_GN.{8}:Delay1</a></div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1120325" title="Design Rules and Procedures" name="1104850">Figure&nbsp;3–26</a></span> shows this example in the Quartus II Assignment Editor.</div>
+      <div class="TA_table_anchor"><a name="1120318">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;3–26.&nbsp;<a name="1120325">Preserve Registers Assignment in the Quartus II Assignment Editor</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1120327"><img class="Default" src="images/AssignmentEditor.png" width="607" height="86" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1105246">This type of assignment can be useful for a complicated block that contains many </a>registers when you want the assignment to apply to all of the registers.</div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Bottom">
+          <a href="http://www.altera.com" target="external_window"><img src="banner.gif" border="0" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com" target="external_window"> </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Fax_Bottom">Copyright© 1995-2013 Altera Corporation. Altera, the ALTERA logo and Altera's product names, logos and stylization are registered trademarks or trademarks of Altera Corporation in the United States and other countries.</td>
+      </tr>
+    </table>
+  </body>
+</html>

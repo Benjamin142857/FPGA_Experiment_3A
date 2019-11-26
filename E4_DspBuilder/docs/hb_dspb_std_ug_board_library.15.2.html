@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Creating a New Board Description</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_board_library.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_board_library.15.1.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_board_library.15.3.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1032640">Creating a New Board Description</a></div>
+      <div class="Body"><a name="1032641">To add additional boards create new board description files. You only need to create a </a>board description file for each new board and run a MATLAB command to build it into a DSP Builder Library. You can use the existing components or create your own custom components.</div>
+      <div class="H2_heading"><a name="1026078">Predefined Components</a></div>
+      <div class="Body"><a name="1026079">Predefined components are in the following folder:</a></div>
+      <div class="L1_body"><span class="Bold"><a name="1032349">&lt;</a></span><span class="Emphasis" style="font-weight: normal;">install dir</span><span class="Bold" style="font-style: normal;">&gt;\quartus</span>\<span class="Bold">dsp_builder</span>\<span class="Bold">lib</span>\<span class="Bold">boardsupport</span>\<span class="Bold">components</span></div>
+      <div class="Body"><a name="1032350">There is a single XML file, </a><span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal;">component_name</span><span class="Bold" style="font-style: normal;">&gt;.component, </span>that describes each separate board component. This file defines its data type, direction, bus width, and appearance. The file also contains a brief description of the component.</div>
+      <div class="H3_heading"><a name="1026083">Component Types</a></div>
+      <div class="Body"><a name="1026084">There are three main types of component: single bit, fixed size bus, and selectable </a>single bit.</div>
+      <div class="H4_heading"><a name="1026085">Single Bit Type</a></div>
+      <div class="Body"><a name="1026180">These components have a single bit with one FPGA pin assigned to each component. </a>The components are either inputs or outputs and you cannot change them. DSP Builder offers the following single-bit predefined components:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026086">Red and Green LEDs (</a><span class="Code">LED0</span> to <span class="Code">LED17</span> and <span class="Code">LEDG0</span> to <span class="Code">LEDG8</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026087">Software switches (</a><span class="Code">SW0</span> to <span class="Code">SW17</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026088">User push buttons (PB0 to PB3)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026089">Reset push buttons (</a><span class="Code">IO_DEV_CLRn</span> and <span class="Code">USER_RESETN</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026090">RS232 receive output and RS232 transmit input pins (</a><span class="Code">RS232Rout</span> and <span class="Code">RS232Tin</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H4_heading"><a name="1026195">Fixed-Size Bus Type</a></div>
+      <div class="Body"><a name="1026199">These components have a fixed-sized group of same type (either input or output) pins </a>with one FPGA pin assigned to each bit of the bus. DSP Builder offers the following fixed-size bus type predefined components:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026092">12-bit analog-to-digital converter (</a><span class="Code">A2D1Bit12</span> and <span class="Code">A2D2Bit12</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026093">14-bit analog-to-digital converter (</a><span class="Code">A2D1Bit14</span> and <span class="Code">A2D2Bit14</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026094">14-bit digital-to-analog converter (</a><span class="Code">D2A1</span> and <span class="Code">D2A2</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026095">8-bit dual in-line package switch (</a><span class="Code">DipSwitch</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026096">7-Segment display with a decimal point (</a><span class="Code">SevenSegmentDisplay0</span> to <span class="Code">SevenSegmentDisplay1</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026097">Simple 7-Segment display without a decimal point (</a><span class="Code">Simple7SegmentDisplay0</span> to <span class="Code">Simple7SegmentDisplay7</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H4_heading"><a name="1026098">Selectable Single Bit Type</a></div>
+      <div class="Body"><a name="1026217">These components have a single bit, you can select the pin from a group of predefined </a>FPGA pins. Furthermore, the pin can be set as either input or output. DSP Builder offers the following selectable single-bit predefined components:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026099">Debug pins (</a><span class="Code">DebugA</span> and <span class="Code">DebugB</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026100">Prototyping pins (</a><span class="Code">PROTO</span>, <span class="Code">PROTO1</span> to <span class="Code">PROTO3</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026245">Evaluation input pin (</a><span class="Code">EvalIoIn</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026263">Evaluation output pin (</a><span class="Code">EvalIoOut</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1028621">Component Description File</a></div>
+      <div class="Body"><a name="1028622">To define a new component create a corresponding component file, </a><span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal;">component_name</span><span class="Bold" style="font-style: normal;">&gt;.component, </span>in the same folder as the predefined components.</div>
+      <div class="Body"><a name="1028322">The component description file contains a root element </a><span class="Code">component</span> that contains several attributes and subelements that define the component. The <span class="Code">component</span> has the following attributes:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028330">displayname= </a></span>Specifies the name of the component, which the board description file references.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028331">direction= </a></span>Specifies the direction of the signal. It can have the value of <span class="Code">Input</span> or <span class="Code">Output</span>. You can omit this attribute for the Selectable Single Bit Type, because it is set later.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028332">type= </a></span>Specifies the data type of the signal. The type can be <span class="Code">BIT</span>, <span class="Code">INT</span>, or <span class="Code">UINT</span>. followed by the size in square brackets. For example, "<span class="Code">BIT[1,0]</span>" defines a single bit while "<span class="Code">UINT[12,0]</span>" is a 12-bit unsigned integer.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1028333">The component subelements have the following definitions:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1028335">&lt;</a><span class="Code">documentation</span>&gt; <span class="Emphasis">text</span> &lt;/<span class="Code">documentation</span>&gt; This subelement contains text describing the component and one of the following variable that define how the pin name, or list of pin-names appears in the new board library:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBBS_bullet_body_small">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><span class="Code"><a name="1028339">%pinname%</a></span> for single bit type</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBBS_bullet_body_small">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><span class="Code"><a name="1028340">%pinlist%</a></span> for selectable single bit type</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBBS_bullet_body_small">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><span class="Code"><a name="1028341">%indexedpinliat%</a></span> for fixed size bus type</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1028343">&lt;</a><span class="Code">display [attributes]</span>&gt; This subelement has the following attributes:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBBS_bullet_body_small">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><span class="Code"><a name="1028344">icon= </a></span>specifies the image file name for the component</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBBS_bullet_body_small">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><span class="Code"><a name="1028345">width=</a></span> specifies the display width for the image file</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBBS_bullet_body_small">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><span class="Code"><a name="1028346">height=</a></span> specifies the display height for the image file</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1033035">For components without an image, you can omit the </a><span class="Code">icon</span> display attribute and define a visual representation using the <span class="Code">plot</span> and <span class="Code">fprintf</span> commands. For example: </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="C1_code_indent"><a name="1033036">	</a>&lt;display width="90" height="26"&gt;</div>
+      <div class="C1_code_indent"><a name="1033037">	</a>plot([0 19 20 21 22 21 20 19], [0 0 1 0 0 0 -1 0]);</div>
+      <div class="C1_code_indent"><a name="1032377">	</a>fprintf('EVAL IO OUT \n%pinname% ');</div>
+      <div class="C1_code_indent"><a name="1032378">	</a>&lt;/display&gt;</div>
+      <div class="H3_heading"><a name="1028701">Example Component Description File</a></div>
+      <div class="Body"><a name="1033083">The following code shows an example of a component description file:</a></div>
+      <div class="C1_code_indent"><a name="1028715">&lt;component displayname="EVAL IO OUT" direction="Output" </a>type="BIT[1,0]"&gt;</div>
+      <div class="C1_code_indent"><a name="1032364">	</a>&lt;documentation&gt;</div>
+      <div class="C1_code_indent"><a name="1032365">Prototyping Area Pin Single Bit Output</a></div>
+      <div class="C1_code_indent"><a name="1032366">%pinlist%</a></div>
+      <div class="C1_code_indent"><a name="1032367">	</a>&lt;/documentation&gt;</div>
+      <div class="C1_code_indent"><a name="1032368">	</a>&lt;display width="90" height="26"&gt;</div>
+      <div class="C1_code_indent"><a name="1032369">	</a>	plot([0 19 20 21 22 21 20 19],[0 0 1 0 0 0 -1 0]);</div>
+      <div class="C1_code_indent"><a name="1032370">	</a>	fprintf('EVAL IO OUT \n%pinname% ');</div>
+      <div class="C1_code_indent"><a name="1032371">	</a>&lt;/display&gt;</div>
+      <div class="C1_code_indent"><a name="1032375">&lt;/component&gt;</a></div>
+      <div class="H2_heading"><a name="1028694">Board Description File</a></div>
+      <div class="Body"><a name="1026366">Create the board description file, </a><span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal;">board_name</span><span class="Bold" style="font-style: normal;">&gt;.board, </span>in the following folder:</div>
+      <div class="L1_body"><span class="Bold"><a name="1027405">&lt;</a></span><span class="Emphasis" style="font-weight: normal;">install dir</span><span class="Bold" style="font-style: normal;">&gt;\quartus</span>\<span class="Bold">dsp_builder</span>\<span class="Bold">lib</span>\<span class="Bold">boardsupport</span>\<span class="Bold">boards</span></div>
+      <div class="Body"><a name="1026367">The board description file has header and board description sections.</a></div>
+      <div class="H3_heading"><a name="1032358">Header Section</a></div>
+      <div class="Body"><a name="1026368">This section contains the following line that defines the XML version and character </a>encoding:</div>
+      <div class="C1_code_indent"><a name="1026442">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</a></div>
+      <div class="Body"><a name="1026439">In this case, the document conforms to the 1.0 specification of XML and uses the </a>ISO-8859-1 (Latin-1/West European) character set. </div>
+      <div class="Body"><a name="1028838">You should not modify this line.</a></div>
+      <div class="H3_heading"><a name="1026370">Board Description Section</a></div>
+      <div class="Body"><a name="1028848">The main body of the document is a root element </a><span class="Code">board</span> that has several attributes and subelements that define the details of the board. </div>
+      <div class="CO_code"><a name="1029394">&lt;board </a><span class="Emphasis">Attributes&gt;</span></div>
+      <div class="CO_code"><a name="1032387">	</a>&lt;displayname&gt; <span class="Emphasis">Text</span> &lt;/displayname&gt;</div>
+      <div class="CO_code"><a name="1032388">	</a>&lt;component <span class="Emphasis">Attributes</span> /&gt;</div>
+      <div class="CO_code"><a name="1032389">	</a>...........</div>
+      <div class="CO_code"><a name="1032390">	</a>&lt;component <span class="Emphasis">Attributes</span> /&gt;</div>
+      <div class="CO_code"><a name="1032391">	</a>&lt;configuration <span class="Emphasis">Attributes</span>&gt;</div>
+      <div class="CO_code"><a name="1032392">	</a>	&lt;devices&gt; <span class="Emphasis">Attributes</span>&gt;</div>
+      <div class="CO_code"><a name="1032393">	</a>	&lt;/devices&gt;</div>
+      <div class="CO_code"><a name="1032394">	</a>	&lt;option <span class="Emphasis">Attributes</span>&gt;</div>
+      <div class="CO_code"><a name="1032395">	</a>	&lt;/option&gt;</div>
+      <div class="CO_code"><a name="1032396">	</a>&lt;/configuration&gt;</div>
+      <div class="CO_code"><a name="1032397">&lt;/board&gt;</a></div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1029376">The last line in the file must be a closing tag for the root element board &lt;/</a><span class="Code">board</span>&gt;.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1029371">The </a><span class="Code">board</span> attributes have the following definitions:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1026373">uniquename=</a></span> A unique name to reference the board.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1026374">family=</a></span> Device family of the FPGA on board (assuming only one device is on the board).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1027636">The board must contain a </a><span class="Code">displayname </span>subelement containing text that describes the board. For example:</div>
+      <div class="C1_code_indent"><a name="1027624">&lt;displayname&gt;Cyclone II XYZ Board&lt;/displayname&gt;</a></div>
+      <div class="Body"><a name="1027695">The following </a><span class="Code">component</span> subelements declare the components:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1027733">Single bit type examples:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="C1_code_indent"><a name="1026572">&lt;component name="LED0" pin="Pin_E5"/&gt;</a></div>
+      <div class="C1_code_indent"><a name="1032427">&lt;component name="LED1" pin="Pin_B3"/&gt;</a></div>
+      <div class="L1_body"><a name="1026378">where attribute </a><span class="Code">name</span> defines the name of the component on the board and <span class="Code">pin</span> defines the FPGA pin to which the component is connected. The name must match one of the predefined components and you can use it only once per board.</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026379">Fixed-size bus type example:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="C1_code_indent"><a name="1026604">&lt;component name="DipSwitch" label="S1"&gt;</a></div>
+      <div class="C1_code_indent"><a name="1032434">	</a>&lt;pin location="Pin_AC13"/&gt; &lt;!-- LSB --&gt;</div>
+      <div class="C1_code_indent"><a name="1032435">	</a>&lt;pin location="Pin_A19"/&gt; </div>
+      <div class="C1_code_indent"><a name="1032436">	</a>&lt;pin location="Pin_C21"/&gt; </div>
+      <div class="C1_code_indent"><a name="1032437">	</a>&lt;pin location="Pin_C23"/&gt; </div>
+      <div class="C1_code_indent"><a name="1032438">	</a>&lt;pin location="Pin_AE18"/&gt; </div>
+      <div class="C1_code_indent"><a name="1032439">	</a>&lt;pin location="Pin_AE19"/&gt; &lt;!-- MSB--&gt;</div>
+      <div class="C1_code_indent"><a name="1032440">&lt;/component&gt;</a></div>
+      <div class="L1_body"><a name="1026623">where attribute </a><span class="Code">name</span> defines the name of the component on the board and <span class="Code">label</span> defines the name of the component as it appears in Simulink. For a component with width <span class="Emphasis">n</span>, there must be <span class="Emphasis">n</span> pin subelements. The pin location must be a valid FPGA pin name. The pin ordering is listed from LSB to MSB, with LSB on top of the list.</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026624">Selectable single bit type example:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CO_code"><a name="1027791">	</a>&lt;component name="PROTO1"&gt;</div>
+      <div class="CO_code"><a name="1032441">	</a>	&lt;pin location="Pin_C3"/&gt;</div>
+      <div class="CO_code"><a name="1032442">	</a>	&lt;pin location="Pin_D2"/&gt;</div>
+      <div class="CO_code"><a name="1032443">	</a>	&lt;pin location="Pin_L3"/&gt;</div>
+      <div class="CO_code"><a name="1032444">	</a>	&lt;pin location="Pin_J7"/&gt;</div>
+      <div class="CO_code"><a name="1032445">	</a>	&lt;pin location="Pin_J6"/&gt;</div>
+      <div class="CO_code"><a name="1032446">	</a>	&lt;pin location="Pin_K6"/&gt;</div>
+      <div class="CO_code"><a name="1032450">	</a>&lt;/component&gt;</div>
+      <div class="L1_body"><a name="1026681">This element has the same format as the fixed-size bus type, but you can choose </a>each pin element from a specified list of available FPGA pin locations.</div>
+      <div class="Body"><a name="1029453">The </a><span class="Code">configuration </span>element defines the board configuration block. For example:</div>
+      <div class="C1_code_indent"><a name="1029454">&lt;configuration icon="dspboard2c35.bmp" width="166" height="144"&gt;</a></div>
+      <div class="C1_code_indent"><a name="1032454">	</a>&lt;devices jtag-code="0x020B40DD"&gt;</div>
+      <div class="C1_code_indent"><a name="1032455">	</a>	&lt;device name="EP2C35F672C6" /&gt;</div>
+      <div class="C1_code_indent"><a name="1032456">	</a>&lt;/devices&gt;</div>
+      <div class="C1_code_indent"><a name="1032457">&lt;!-- Input clock selection list --&gt;</a></div>
+      <div class="C1_code_indent"><a name="1032458">	</a>&lt;option name="ClockPinIn" label="Clock Pin In"&gt;</div>
+      <div class="C1_code_indent"><a name="1032459">	</a>	&lt;pin location="Pin_N2"/&gt;</div>
+      <div class="C1_code_indent"><a name="1032460">	</a>	&lt;pin location="Pin_N25"/&gt;</div>
+      <div class="C1_code_indent"><a name="1032461">	</a>	&lt;pin location="Pin_AE14"/&gt;</div>
+      <div class="C1_code_indent"><a name="1032462">	</a>	&lt;pin location="Pin_AF14"/&gt;</div>
+      <div class="C1_code_indent"><a name="1032463">	</a>	&lt;pin location="None"/&gt;</div>
+      <div class="C1_code_indent"><a name="1032464">	</a>&lt;/option&gt;</div>
+      <div class="C1_code_indent"><a name="1032465">&lt;!-- Global Reset Pin --&gt;</a></div>
+      <div class="C1_code_indent"><a name="1032466">	</a>&lt;option name="GlobalResetPin" label="Global Reset Pin"&gt;</div>
+      <div class="C1_code_indent"><a name="1032467">	</a>	&lt;pin location="Pin_A14"/&gt;</div>
+      <div class="C1_code_indent"><a name="1032468">	</a>	&lt;pin location="Pin_AC18"/&gt;</div>
+      <div class="C1_code_indent"><a name="1032469">	</a>	&lt;pin location="Pin_AE16"/&gt;</div>
+      <div class="C1_code_indent"><a name="1032470">	</a>	&lt;pin location="Pin_AE22"/&gt;</div>
+      <div class="C1_code_indent"><a name="1032471">	</a>	&lt;pin location="None"/&gt;</div>
+      <div class="C1_code_indent"><a name="1032472">	</a>&lt;/option&gt;</div>
+      <div class="C1_code_indent"><a name="1032473">&lt;/configuration&gt;</a></div>
+      <div class="Body"><a name="1028916">The configuration attributes have the following definitions:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028917">icon</a></span> = the image file to be used for the board configuration block</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028918">width</a></span> = the width of the image</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028919">height</a></span> = the height of the image</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1028920">The </a><span class="Code">devices</span> subelement has the following attributes:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028921">jtag-code</a></span> = the JTAG code of the FPGA device</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028922">device name</a></span> = the device name of the FPGA used on the board</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><span class="Code"><a name="1028923">Each option</a></span> subelement has the following attributes:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028924">name</a></span> = the name of the option (clock or reset pin)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028925">label</a></span> = labels that identifies the pins on the blocks</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1028926">pin location</a></span> = a list of selectable clock or reset pins</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1027093">For more examples, refer to any of the existing board description files.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

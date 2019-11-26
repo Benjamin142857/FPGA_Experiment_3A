@@ -1,0 +1,961 @@
+<?xml version="1.0"?>
+<!--SimgenC Mapping Library File Verilog to Simgen C++ (module to node)-->
+<!--$Id: //acds/rel/13.1/dsp_builder/dsp_builder2/simgen/src/simgen/SimgenCMap.xml#1 $-->
+<!--Copyright &#169; 2004 Altera Corporation. All rights reserved-->
+<SgateLib>
+	<Module VName="dffe" CName="1">
+		<ParameterSection n_Parameters="1">
+			<Param VName="array_width" CName="array_width" Type="integer" Default="1"/>
+		</ParameterSection>
+		<PortSection n_Input="6" n_Ouput="1" n_Bidir="0" n_Clock="1" clkport="clk" rstport="aclr">
+			<!-- Parameters Section Syntax -->
+			<!-- CName = SimgenC Name -->
+			<!-- VName = Verilog Name -->
+			<!-- if Width<1 then 0 -> width = Param_val(0) or -1 then -> width = Param_val(1))> -->
+			<ClkPort VName="clk" CName="clk" Width="1" Type="bit" DefaultValue="0"/>
+			<InpPort VName="datain" CName="datain" Width="0" Type="bit" DefaultValue="0"/>
+			<InpPort VName="aclr" CName="clear" Width="1" Type="bit" DefaultValue="0"/>
+			<InpPort VName="adata" CName="adata" Width="0" Type="bit" DefaultValue="0"/>
+			<InpPort VName="aload" CName="aload" Width="1" Type="bit" DefaultValue="0"/>
+			<InpPort VName="ena" CName="ena" Width="1" Type="bit" DefaultValue="1"/>
+			<InpPort VName="preset" CName="preset" Width="1" Type="bit" DefaultValue="0"/>
+			<InpPort VName="sclr" CName="sclr" Width="1" Type="bit" DefaultValue="0"/>
+			<InpPort VName="sload" CName="sload" Width="1" Type="bit" DefaultValue="0"/>
+			<OutPort VName="dataout" CName="dataout" Width="0" Type="bit" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="mux21" CName="2">
+		<ParameterSection n_Parameters="1">
+			<Param VName="array_width" CName="array_width" Type="integer" Default="1"/>
+		</ParameterSection>
+		<PortSection n_Input="3" n_Ouput="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="dataa" CName="dataa" Width="1" Type="bit" DefaultValue="0"/>
+			<InpPort VName="datab" CName="datab" Width="1" Type="bit" DefaultValue="1"/>
+			<InpPort VName="outputselect" CName="outputselect" Width="1" Type="bit" DefaultValue="0"/>
+			<OutPort VName="dataout" CName="dataout" Width="1" Type="bit" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="comb_or" CName="3">
+		<ParameterSection n_Parameters="2">
+			<Param VName="width_datain" CName="width_datain" Type="natural" Default="8"/>
+			<Param VName="width_dataout" CName="width_dataout" Type="natural" Default="1"/>
+		</ParameterSection>
+		<PortSection n_Input="1" n_Ouput="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="datain" CName="datain" Width="0" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="dataout" CName="dataout" Width="1" Type="bit" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_add" CName="4">
+		<ParameterSection n_Parameters="4">
+			<Param VName="width_a" CName="width_a" Type="natural" Default="8"/>
+			<Param VName="width_b" CName="width_b" Type="natural" Default="8"/>
+			<Param VName="width_o" CName="width_o" Type="natural" Default="8"/>
+			<Param VName="sgate_representation" CName="signed" Type="bool" Default="0"/>
+		</ParameterSection>
+		<PortSection n_Input="3" n_Ouput="2" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="dataa" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="b" CName="datab" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="cin" CName="cin" Width="1" Type="bit" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Width="-2" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="cout" CName="cout" Width="1" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_mult" CName="5">
+		<ParameterSection n_Parameters="4">
+			<Param VName="width_a" CName="width_a" Type="natural" Default="8"/>
+			<Param VName="width_b" CName="width_b" Type="natural" Default="8"/>
+			<Param VName="width_o" CName="width_o" Type="natural" Default="8"/>
+			<Param VName="sgate_representation" CName="signed" Type="bool" Default="0"/>
+		</ParameterSection>
+		<PortSection n_Input="2" n_Ouput="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="dataa" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="b" CName="datab" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Width="-2" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="comb_xor" CName="6">
+		<ParameterSection n_Parameters="2">
+			<Param VName="width_datain" CName="width_datain" Type="natural" Default="8"/>
+			<Param VName="width_dataout" CName="width_dataout" Type="natural" Default="8"/>
+		</ParameterSection>
+		<PortSection n_Input="1" n_Ouput="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="datain" CName="datain" Width="0" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="dataout" CName="dataout" Width="1" Type="bit" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="comb_and" CName="7">
+		<ParameterSection n_Parameters="2">
+			<Param VName="width_datain" CName="width_datain" Type="natural" Default="8"/>
+			<Param VName="width_dataout" CName="width_dataout" Type="natural" Default="8"/>
+		</ParameterSection>
+		<PortSection n_Input="1" n_Ouput="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="datain" CName="datain" Width="0" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="dataout" CName="dataout" Width="1" Type="bit" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_addsub" CName="8">
+		<ParameterSection n_Parameters="3">
+			<Param VName="width_a" CName="width_a" Type="natural" Default="32"/>
+			<Param VName="width_b" CName="width_b" Type="natural" Default="32"/>
+			<Param VName="width_o" CName="width_o" Type="natural" Default="32"/>
+			<Param VName="sgate_representation" CName="signed" Type="bool" Default="0"/>
+		</ParameterSection>
+		<PortSection n_Input="3" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="dataa" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="b" CName="datab" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="addnsub" CName="flag" Width="1" Type="bit" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Width="-2" Type="unsigned"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_selector" CName="9">
+		<ParameterSection n_Parameters="2">
+			<Param VName="width_sel" CName="width_sel" Type="natural" Default="6"/>
+			<Param VName="width_data" CName="width_data" Type="natural" Default="6"/>
+		</ParameterSection>
+		<PortSection n_Input="2" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="sel" CName="mask" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="data" CName="data" Width="0" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="o" CName="out" Width="1" Type="bool"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_less_than" CName="10">
+		<ParameterSection n_Parameters="3">
+			<Param VName="width_a" CName="width_a" Type="natural" Default="6"/>
+			<Param VName="width_b" CName="width_b" Type="natural" Default="6"/>
+			<Param VName="sgate_representation" CName="signed" Type="bool" Default="0"/>
+		</ParameterSection>
+		<PortSection n_Input="3" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="dataa" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="b" CName="datab" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="cin" CName="equ_ok" Width="1" Type="bool" DefaultValue="0"/>
+			<OutPort VName="o" CName="out" Width="1" Type="bool"/>
+		</PortSection>
+	</Module>
+	<Module VName="io_buf_tri" CName="11">
+		<ParameterSection n_Parameters="0"/>
+		<PortSection n_Input="2" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="datain" CName="datain" Width="1" Type="bool" DefaultValue="0"/>
+			<InpPort VName="oe" CName="enable" Width="1" Type="bool" DefaultValue="0"/>
+			<OutPort VName="dataout" CName="dataout" Width="1" Type="bool" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_mux" CName="12">
+		<ParameterSection n_Parameters="2">
+			<Param VName="width_sel" CName="width_select" Type="natural" Default="6"/>
+			<Param VName="width_data" CName="width_data" Type="natural" Default="6"/>
+		</ParameterSection>
+		<PortSection n_Input="2" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="sel" CName="select" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="data" CName="datain" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Width="1" Type="bool" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_div" CName="13">
+		<ParameterSection n_Parameters="4">
+			<Param VName="width_a" CName="width_a" Type="natural" DefaultValue="6"/>
+			<Param VName="width_b" CName="width_b" Type="natural" DefaultValue="6"/>
+			<Param VName="width_o" CName="width_o" Type="natural" DefaultValue="6"/>
+			<Param VName="sgate_representation" CName="signed" Type="bool" DefaultValue="6"/>
+		</ParameterSection>
+		<PortSection n_Input="2" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="dataa" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="b" CName="datab" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Width="-2" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_mod" CName="14">
+		<ParameterSection n_Parameters="4">
+			<Param VName="width_a" CName="width_a" Type="natural" DefaultValue="6"/>
+			<Param VName="width_b" CName="width_b" Type="natural" DefaultValue="6"/>
+			<Param VName="width_o" CName="width_o" Type="natural" DefaultValue="6"/>
+			<Param VName="sgate_representation" CName="signed" Type="bool" DefaultValue="0"/>
+		</ParameterSection>
+		<PortSection n_Input="2" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="dataa" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="b" CName="datab" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Width="-2" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_left_shift" CName="15">
+		<ParameterSection n_Parameters="4">
+			<Param VName="width_a" CName="width_in" Type="natural" DefaultValue="6"/>
+			<Param VName="width_amount" CName="width_amount" Type="natural" DefaultValue="6"/>
+			<Param VName="width_o" CName="width_out" Type="natural" DefaultValue="6"/>
+			<Param VName="sgate_representation" CName="fill" Type="bool" DefaultValue="0"/>
+		</ParameterSection>
+		<PortSection n_Input="3" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="datain" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="amount" CName="amount" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="cin" CName="fill" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_right_shift" CName="16">
+		<ParameterSection n_Parameters="4">
+			<Param VName="width_a" CName="width_in" Type="natural" DefaultValue="6"/>
+			<Param VName="width_amount" CName="width_amount" Type="natural" DefaultValue="6"/>
+			<Param VName="width_o" CName="width_out" Type="natural" DefaultValue="6"/>
+			<Param VName="sgate_representation" CName="fill" Type="bool" DefaultValue="0"/>
+		</ParameterSection>
+		<PortSection n_Input="3" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="datain" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="amount" CName="amount" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="cin" CName="fill" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_rotate_left" CName="17">
+		<ParameterSection n_Parameters="4">
+			<Param VName="width_a" CName="width_in" Type="natural" DefaultValue="6"/>
+			<Param VName="width_amount" CName="width_amount" Type="natural" DefaultValue="6"/>
+			<Param VName="width_o" CName="width_out" Type="natural" DefaultValue="6"/>
+			<Param VName="sgate_representation" CName="(ignored)" Type="natural" DefaultValue="0"/>
+		</ParameterSection>
+		<PortSection n_Input="2" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="datain" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="amount" CName="amount" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Width="-2" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_rotate_right" CName="18">
+		<ParameterSection n_Parameters="4">
+			<Param VName="width_a" CName="width_in" Type="natural" DefaultValue="6"/>
+			<Param VName="width_amount" CName="width_amount" Type="natural" DefaultValue="6"/>
+			<Param VName="width_o" CName="width_out" Type="natural" DefaultValue="6"/>
+			<Param VName="sgate_representation" CName="(ignored)" Type="natural" DefaultValue="0"/>
+		</ParameterSection>
+		<PortSection n_Input="2" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="datain" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="amount" CName="amount" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Width="-2" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="io_buf_opdrn" CName="19">
+		<ParameterSection n_Parameters="0"/>
+		<PortSection n_Input="1" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="datain" CName="datain" Width="1" Type="bit" DefaultValue="0"/>
+			<OutPort VName="dataout" CName="dataout" Width="1" Type="bit" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="tri_bus" CName="3">
+		<ParameterSection n_Parameters="2">
+			<Param VName="width_datain" CName="width_datain" Type="natural" DefaultValue="2"/>
+			<Param VName="width_dataout" CName="width_dataout" Type="natural" DefaultValue="1"/>
+		</ParameterSection>
+		<PortSection n_Input="1" n_Ouput="1" n_Bidir="0" n_Clock="0">
+			<InpPort CName="datain" VName="datain" Width="0" Type="unsigned" DefaultValue="0"/>
+			<OutPort CName="dataout" VName="dataout" Width="1" Type="bit" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_decoder" CName="21">
+		<ParameterSection n_Parameters="2">
+			<Param VName="width_i" CName="width_i" Type="natural" DefaultValue="6"/>
+			<Param VName="width_o" CName="width_o" Type="natural" DefaultValue="6"/>
+		</ParameterSection>
+		<PortSection n_Input="1" n_Ouput="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="i" CName="datain" Width="0" Type="unsigned" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Width="-1" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_bus_mux" CName="22">
+		<ParameterSection n_Parameters="3">
+			<Param VName="width_a" CName="width_a" Type="natural" DefaultValue="6"/>
+			<Param VName="width_b" CName="width_b" Type="natural" DefaultValue="6"/>
+			<Param VName="width_o" CName="width_o" Type="natural" DefaultValue="6"/>
+		</ParameterSection>
+		<PortSection n_Input="3" n_Ouput="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="a" CName="dataa" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="b" CName="datab" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<InpPort VName="sel" CName="select" Width="1" Type="bit" DefaultValue="0"/>
+			<OutPort VName="o" CName="dataout" Width="-2" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="oper_latch" CName="23">
+		<ParameterSection n_Parameters="0"/>
+		<PortSection n_Input="4" n_Output="1" n_Bidir="0" n_Clock="0">
+			<InpPort VName="datain" CName="datain" Width="1" Type="bit" DefaultValue="0"/>
+			<InpPort VName="latch_enable" CName="latch_enable" Width="1" Type="bit" DefaultValue="1"/>
+			<InpPort VName="aclr" CName="aclr" Width="1" Type="bit" DefaultValue="0"/>
+			<InpPort VName="preset" CName="apre" Width="1" Type="bit" DefaultValue="0"/>	
+			<OutPort VName="dataout" CName="dataout" Width="1" Type="bit"/>
+		</PortSection>
+	</Module>
+	<!-- MF and LPM libraries -->
+	<Module VName="altsyncram" CName="100">
+		<ParameterSection n_Parameters="49">
+			<Param CName="operation_mode" Vname="operation_mode" Type="string" Default="SINGLE_PORT"/>
+			<Param CName="outdata_reg_a" Vname="outdata_reg_a" Type="string" Default="UNREGISTERED"/>
+			<Param CName="address_aclr_a" Vname="address_aclr_a" Type="string" Default="NONE"/>
+			<Param CName="outdata_aclr_a" Vname="outdata_aclr_a" Type="string" Default="NONE"/>
+			<Param CName="indata_aclr_a" Vname="indata_aclr_a" Type="string" Default="CLEAR0"/>
+			<Param CName="wrcontrol_aclr_a" Vname="wrcontrol_aclr_a" Type="string" Default="CLEAR0"/>
+			<Param CName="byteena_aclr_a" Vname="byteena_aclr_a" Type="string" Default="NONE"/>
+			<Param CName="width_byteena" Vname="width_byteena" Type="integer" Default="1"/>
+			<Param CName="width_byteena_a" Vname="width_byteena_a" Type="integer" Default="1"/>
+			<Param CName="rdcontrol_reg_b" Vname="rdcontrol_reg_b" Type="string" Default="CLOCK1"/>
+			<Param CName="address_reg_b" Vname="address_reg_b" Type="string" Default="CLOCK1"/>
+			<Param CName="outdata_reg_b" Vname="outdata_reg_b" Type="string" Default="UNREGISTERED"/>
+			<Param CName="outdata_aclr_b" Vname="outdata_aclr_b" Type="string" Default="NONE"/>
+			<Param CName="rdcontrol_aclr_b" Vname="rdcontrol_aclr_b" Type="string" Default="NONE"/>
+			<Param CName="indata_reg_b" Vname="indata_reg_b" Type="string" Default="CLOCK1"/>
+			<Param CName="wrcontrol_wraddress_reg_b" Vname="wrcontrol_wraddress_reg_b" Type="string" Default="CLOCK1"/>
+			<Param CName="byteena_reg_b" Vname="byteena_reg_b" Type="string" Default="CLOCK1"/>
+			<Param CName="indata_aclr_b" Vname="indata_aclr_b" Type="string" Default="NONE"/>
+			<Param CName="wrcontrol_aclr_b" Vname="wrcontrol_aclr_b" Type="string" Default="NONE"/>
+			<Param CName="address_aclr_b" Vname="address_aclr_b" Type="string" Default="NONE"/>
+			<Param CName="byteena_aclr_b" Vname="byteena_aclr_b" Type="string" Default="NONE"/>
+			<Param CName="clock_enable_input_a" Vname="clock_enable_input_a" Type="string" Default="NORMAL"/>
+			<Param CName="clock_enable_output_a" Vname="clock_enable_output_a" Type="string" Default="NORMAL"/>
+			<Param CName="clock_enable_input_b" Vname="clock_enable_input_b" Type="string" Default="NORMAL"/>
+			<Param CName="clock_enable_output_b" Vname="clock_enable_output_b" Type="string" Default="NORMAL"/>
+			<Param CName="clock_enable_core_a" Vname="clock_enable_core_a" Type="string" Default="NORMAL"/>
+			<Param CName="clock_enable_core_b" Vname="clock_enable_core_b" Type="string" Default="NORMAL"/>
+			<Param CName="read_during_write_mode_port_a" Vname="read_during_write_mode_port_a" Type="string" Default="NO_DATA_NO_NBE_READ"/>
+			<Param CName="read_during_write_mode_port_b" Vname="read_during_write_mode_port_b" Type="string" Default="NO_DATA_NO_NBE_READ"/>
+			<Param CName="enable_ecc" Vname="enable_ecc" Type="string" Default="FALSE"/>
+			<Param CName="eccstatus_reg" Vname="eccstatus_reg" Type="string" Default="UNREGISTERED"/>
+			<Param CName="eccstatus_aclr" Vname="eccstatus_aclr" Type="string" Default="NONE"/>
+			<Param CName="clock_enable_eccstatus" Vname="clock_enable_eccstatus" Type="string" Default="NORMAL"/>
+			<Param CName="read_during_write_mode_mixed_ports" Vname="read_during_write_mode_mixed_ports" Type="string" Default="DONT_CARE"/>
+			<Param CName="ram_block_type" Vname="ram_block_type" Type="string" Default="AUTO"/>
+			<Param CName="init_file" Vname="init_file" Type="string" Default="UNUSED"/>
+			<Param CName="init_file_layout" Vname="init_file_layout" Type="string" Default="UNUSED"/>
+			<Param CName="intended_device_family" Vname="intended_device_family" Type="string" Default="STRATIX"/>
+			<Param CName="width_b" Vname="width_b" Type="integer" Default="8"/>
+			<Param CName="widthad_b" Vname="widthad_b" Type="integer" Default="4"/>
+			<Param CName="numwords_b" Vname="numwords_b" Type="integer" Default="4"/>
+			<Param CName="width_byteena_b" Vname="width_byteena_b" Type="integer" Default="1"/>
+			<Param CName="byte_size" Vname="byte_size" Type="integer" Default="8"/>
+			<Param CName="maximum_depth" Vname="maximum_depth" Type="integer" Default="0"/>
+			<Param CName="width_a" Vname="width_a" Type="integer" Default="8"/>
+			<Param CName="widthad_a" Vname="widthad_a" Type="integer" Default="2"/>
+			<Param CName="numwords_a" Vname="numwords_a" Type="integer" Default="4"/>
+			<Param CName="ecc_pipeline_stage_enabled" Vname="ecc_pipeline_stage_enabled" Type="string" Default="FALSE"/>
+			<Param CName="width_eccstatus" Vname="width_eccstatus" Type="integer" Default="3"/>
+			<Param CName="lpm_hint" VName="lpm_hint" Type="string" Default="UNUSED"/>
+		</ParameterSection>
+		<PortSection n_Input="18" n_Ouput="3" n_Bidir="0" n_Clock="2" clkport="clock0,clock1" rstport="aclr">
+			<ClkPort Cname="clock0" Vname="clock0" Type="bit" DefaultValue="0"/>
+			<ClkPort Cname="clock1" Vname="clock1" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="wren_a" Vname="wren_a" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="rden_a" Vname="rden_a" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="wren_b" Vname="wren_b" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="rden_b" Vname="rden_b" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="data_a" Vname="data_a" Type="unsigned" DefaultValue="0"/>
+			<InpPort Cname="data_b" Vname="data_b" Type="unsigned" DefaultValue="0"/>
+			<InpPort Cname="address_a" Vname="address_a" Type="unsigned" DefaultValue="0"/>
+			<InpPort Cname="address_b" Vname="address_b" Type="unsigned" DefaultValue="0"/>
+			<InpPort Cname="clocken0" Vname="clocken0" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="clocken1" Vname="clocken1" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="clocken2" Vname="clocken2" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="clocken3" Vname="clocken3" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="aclr0" Vname="aclr0" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="aclr1" Vname="aclr1" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="byteena_a" Vname="byteena_a" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="byteena_b" Vname="byteena_b" Type="bit" DefaultValue="0"/>
+			<InpPort Cname="addressstall_a" Vname="addressstall_a" Type="unsigned" DefaultValue="0"/>
+			<InpPort Cname="addressstall_b" Vname="addressstall_b" Type="unsigned" DefaultValue="0"/>
+			<OutPort CName="q_a" VName="q_a" Width="1" Type="unsigned" DefaultValue="0"/>
+			<OutPort CName="q_b" VName="q_b" Width="1" Type="unsigned" DefaultValue="0"/>
+			<OutPort CName="eccstatus" VName="eccstatus" Width="2" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="lpm_mult" CName="101">
+		<ParameterSection n_Parameters="9">
+			<Param CName="lpm_widtha" VName="lpm_widtha" Type="integer" Default="1"/>
+			<Param CName="lpm_widthb" VName="lpm_widthb" Type="integer" Default="1"/>
+			<Param CName="lpm_widthp" VName="lpm_widthp" Type="integer" Default="1"/>
+			<Param CName="lpm_widths" VName="lpm_widths" Type="integer" Default="1"/>
+			<Param CName="lpm_representation" VName="lpm_representation" Type="string" Default="UNSIGNED"/>
+			<Param CName="lpm_pipeline" VName="lpm_pipeline" Type="integer" Default="0"/>
+			<Param CName="lpm_type" VName="lpm_type" Type="string" Default="lpm_mult"/>
+			<Param CName="lpm_hint" VName="lpm_hint" Type="string" Default="UNUSED"/>
+			<Param CName="use_ahdl_implementation" VName="use_ahdl_implementation" Type="string" Default="OFF"/>
+		</ParameterSection>
+		<PortSection n_Input="5" n_Output="1" n_Bidir="0" n_Clock="1" clkport="clock">
+			<ClkPort CName="clock" VName="clock" Type="bit" DefaultValue="0"/>
+			<InpPort CName="dataa" VName="dataa" Width="0" Type="unsigned" DefaultValue="0"/>
+			<InpPort CName="datab" VName="datab" Width="-1" Type="unsigned" DefaultValue="0"/>
+			<InpPort CName="sum" VName="sum" Width="-3" Type="unsigned" DefaultValue="0"/>
+			<InpPort CName="aclr" VName="aclr" Type="bit" DefaultValue="0"/>
+			<InpPort CName="clken" VName="clken" Type="bit" DefaultValue="1"/>
+			<OutPort CName="result" VName="result" Width="-2" Type="unsigned" DefaultValue="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="altaccumulate" CName="102">
+		<ParameterSection n_Parameters="7">
+			<Param CName="width_in" VName="width_in" Type="integer" Default="4"/>
+			<Param CName="width_out" VName="width_out" Type="integer" Default="8"/>
+			<Param CName="lpm_representation" VName="lpm_representation" Type="string" Default="UNSIGNED"/>
+			<Param CName="extra_latency" VName="extra_latency" Type="integer" Default="0"/>
+			<Param CName="use_wys" VName="use_wys" Type="string" Default="ON"/>
+			<Param CName="lpm_hint" VName="lpm_hint" Type="string" Default="UNUSED"/>
+			<Param CName="lpm_type" VName="lpm_type" Type="string" Default="altaccumulate"/>
+		</ParameterSection>
+		<PortSection n_Input="8" n_Output="3" n_Bidir="0" n_Clock="1" clkport="clock">
+			<ClkPort CName="clock" VName="clock" Type="bit" DefaultValue="0"/>
+			<InpPort CName="cin" VName="cin" Type="bit" DefaultValue="0"/>
+			<InpPort CName="data" VName="data" Type="unsigned" Width="0" DefaultValue="0"/>
+			<InpPort CName="add_sub" VName="add_sub" Type="bit" DefaultValue="1"/>
+			<InpPort CName="sload" VName="sload" Type="bit" DefaultValue="0"/>
+			<InpPort CName="clken" VName="clken" Type="bit" DefaultValue="1"/>
+			<InpPort CName="sign_data" VName="sign_data" Type="bit" DefaultValue="0"/>
+			<InpPort CName="aclr" VName="aclr" Type="bit" DefaultValue="0"/>
+			<OutPort CName="result" VName="result" Type="unsigned" Width="-1"/>
+			<OutPort CName="cout" VName="cout" Type="bit"/>
+			<OutPort CName="overflow" VName="overflow" Type="bit"/>
+		</PortSection>
+	</Module>
+	<Module VName="lpm_compare" CName="103">
+		<ParameterSection n_Parameters="5">
+			<Param VName="lpm_width" CName="lpm_width" Type="integer" Default="1"/>
+			<Param VName="lpm_representation" CName="lpm_representation" Type="string" Default="UNSIGNED"/>
+			<Param VName="lpm_pipeline" CName="lpm_pipeline" Type="integer" Default="0"/>
+			<Param VName="lpm_type" CName="lpm_type" Type="string" Default="lpm_compare"/>
+			<Param VName="lpm_hint" CName="lpm_hint" Type="string" Default="UNUSED"/>
+		</ParameterSection>
+		<PortSection n_Input="4" n_Output="6" n_Bidir="0" n_Clock="1" clkport="clock">
+			<ClkPort VName="clock" CName="clock" Type="bit"/>
+			<InpPort VName="dataa" CName="dataa" Type="unsigned" Width="0" DefaultValue="0"/>
+			<InpPort VName="datab" CName="datab" Type="unsigned" Width="0" DefaultValue="0"/>
+			<InpPort VName="aclr" CName="aclr" Type="bit" DefaultValue="0"/>
+			<InpPort VName="clken" CName="clken" Type="bit" DefaultValue="0"/>
+			<OutPort VName="alb" CName="alb" Type="bit"/>
+			<OutPort VName="aeb" CName="aeb" Type="bit"/>
+			<OutPort VName="agb" CName="agb" Type="bit"/>
+			<OutPort VName="aleb" CName="aleb" Type="bit"/>
+			<OutPort VName="aneb" CName="aneb" Type="bit"/>
+			<OutPort VName="ageb" CName="ageb" Type="bit"/>
+		</PortSection>
+	</Module>
+	<Module VName="lpm_add_sub" CName="104">
+		<ParameterSection n_Parameters="6">
+			<Param VName="lpm_width" CName="lpm_width" Type="integer" Default="1"/>
+			<Param VName="lpm_representation" CName="lpm_representation" Type="string" Default="SIGNED"/>
+			<Param VName="lpm_direction" CName="lpm_direction" Type="string" Default="UNUSED"/>
+			<Param VName="lpm_hint" CName="lpm_hint" Type="string" Default="UNUSED"/>
+			<Param VName="lpm_pipeline" CName="lpm_pipeline" Type="integer" Default="0"/>
+			<Param VName="lpm_type" CName="lpm_type" Type="string" Default="lpm_add_sub"/>
+		</ParameterSection>
+		<PortSection n_Input="6" n_Output="3" n_Bidir="0" n_Clock="1" clkport="clock">
+			<ClkPort VName="clock" CName="clock" Type="bit"/>
+			<InpPort VName="dataa" CName="dataa" Type="unsigned" Width="0" DefaultValue="0"/>
+			<InpPort VName="datab" CName="datab" Type="unsigned" Width="0" DefaultValue="0"/>
+			<InpPort VName="cin" CName="cin" Type="bit" DefaultValue="0"/>
+			<InpPort VName="add_sub" CName="add_sub" Type="bit" DefaultValue="1"/>
+			<InpPort VName="aclr" CName="aclr" Type="bit" DefaultValue="0"/>
+			<InpPort VName="clken" CName="clken" Type="bit" DefaultValue="1"/>
+			<OutPort VName="result" CName="result" Type="unsigned" Width="0"/>
+			<OutPort VName="cout" CName="cout" Type="bit"/>
+			<OutPort VName="overflow" CName="overflow" Type="bit"/>
+		</PortSection>
+	</Module>
+	<Module VName="altshift_taps" CName="105">
+		<ParameterSection n_Parameters="7">
+			<Param VName="number_of_taps" CName="number_of_taps" Type="integer" Default="4"/>
+			<Param VName="tap_distance" CName="tap_distance" Type="integer" Default="3"/>
+			<Param VName="width" CName="width" Type="integer" Default="8"/>
+			<Param VName="power_up_state" CName="power_up_state" Type="string" Default="CLEARED"/>
+			<Param VName="lpm_type" CName="lpm_type" Type="string" Default="altshift_taps"/>
+			<Param VName="lpm_hint" CName="lpm_hint" Type="string" Default="UNUSED"/>
+			<Param Vname="intended_device_family" CName="intended_device_family" type="string" Default="STRATIX"/>
+			<Param CName="width_byteena" Vname="width_byteena" Type="integer" Default="1"/>
+		</ParameterSection>
+		<PortSection n_Input="2" n_Output="2" n_Bidir="0" n_Clock="1" clkport="clock">
+			<ClkPort VName="clock" CName="clock" Type="bit"/>
+			<InpPort VName="shiftin" CName="shiftin" Type="unsigned" Width="-2" DefaultValue="0"/>
+			<InpPort VName="clken" CName="clken" Type="bit" DefaultValue="1"/>
+			<InpPort VName="aclr" CName="aclr" Type="bit" DefaultValue="0"/>
+			<OutPort VName="shiftout" CName="shiftout" Type="unsigned" Width="-2"/>
+			<OutPort VName="taps" CName="taps" Type="unsigned" Width="0"/>
+			<!-- FIXME: Complex widths not yet supported -->
+		</PortSection>
+	</Module>
+	<Module VName="parallel_add" CName="106">
+		<ParameterSection n_Parameters="9">
+			<Param VName="width" CName="width_in" Type="integer" Default="4"/>
+			<Param VName="size" CName="size" Type="integer" Default="2"/>
+			<Param VName="widthr" CName="width_out" Type="integer" Default="4"/>
+			<Param VName="shift" CName="shift" Type="integer" Default="0"/>
+			<Param VName="msw_subtract" CName="msw" Type="string" Default="NO"/>
+			<Param VName="representation" CName="representation" Type="string" Default="UNSIGNED"/>
+			<Param VName="pipeline" CName="pipeline" Type="integer" Default="0"/>
+			<Param VName="result_alignment" CName="alignment" Type="string" Default="LSB"/>
+			<Param VName="lpm_type" CName="lpm_type" Type="string" Default="parallel_add"/>
+			<Param VName="lpm_hint" CName="lpm_hint" Type="string" Default="UNUSED"/>
+		</ParameterSection>
+		<PortSection n_Input="3" n_Output="1" n_Bidir="0" n_Clock="1" clkport="clock">
+			<ClkPort VName="clock" CName="clock" Type="bit"/>
+			<InpPort VName="data" CName="data" Type="unsigned" Width="0" DefaultValue="0"/>
+			<!-- FIXME: Complex widths not yet supported -->
+			<InpPort VName="aclr" CName="aclr" Type="bit" DefaultValue="0"/>
+			<InpPort VName="clken" CName="clken" Type="bit" DefaultValue="1"/>
+			<OutPort VName="result" CName="result" Type="unsigned" Width="-2"/>
+		</PortSection>
+	</Module>
+	<Module VName="lpm_counter" CName="107">
+		<ParameterSection n_Parameters="9">
+			<Param VName="lpm_width" CName="width" Type="integer" Default="1"/>
+			<Param VName="lpm_direction" CName="direction" Type="string" Default="UNUSED"/>
+			<Param VName="lpm_modulus" CName="modulus" Type="integer" Default="0"/>
+			<Param VName="lpm_avalue" CName="avalue" Type="string" Default="UNUSED"/>
+			<Param VName="lpm_svalue" CName="svalue" Type="string" Default="UNUSED"/>
+			<Param VName="lpm_pvalue" CName="pvalue" Type="string" Default="UNUSED"/>
+			<Param VName="lpm_type" CName="type" Type="string" Default="lpm_counter"/>
+			<Param VName="lpm_hint" CName="hint" Type="string" Default="UNUSED"/>
+			<Param VName="lpm_port_updown" CName="port_updown" Type="string" Default="PORT_CONNECTIVITY" />
+		</ParameterSection>
+		<PortSection n_Input="11" n_Output="3" n_Bidir="0" n_Clock="1" clkport="clock">
+			<ClkPort VName="clock" CName="clock" Type="bit"/>
+			<InpPort VName="clk_en" CName="clk_en" Type="bit" Default="1"/>
+			<InpPort VName="cnt_en" CName="cnt_en" Type="bit" Default="1"/>
+			<InpPort VName="updown" CName="updown" Type="bit" Default="1"/>
+			<InpPort VName="aclr" CName="aclr" Type="bit" Default="0"/>
+			<InpPort VName="aset" CName="aset" Type="bit" Default="0"/>
+			<InpPort VName="aload" CName="aload" Type="bit" Default="0"/>
+			<InpPort VName="sclr" CName="sclr" Type="bit" Default="0"/>
+			<InpPort VName="sset" CName="sset" Type="bit" Default="0"/>
+			<InpPort VName="sload" CName="sload" Type="bit" Default="0"/>
+			<InpPort VName="data" CName="data" Type="unsigned" Width="0" Default="0"/>
+			<InpPort VName="cin" CName="cin" Type="bit" Default="0"/>
+			<OutPort VName="q" CName="q" Type="unsigned" Width="0"/>
+			<OutPort VName="cout" CName="cout" Type="bit"/>
+			<OutPort VName="eq" CName="eq" Type="bit"/>
+		</PortSection>
+	</Module>
+	<Module VName="lpm_ram_dp" CName="108">
+		<ParameterSection n_Parameters="13">
+			<Param VName="lpm_width" CName="width" Type="integer" Default="0"/>
+			<Param VName="lpm_widthad" CName="addr_wid" Type="integer" Default="0"/>
+			<Param VName="lpm_numwords" CName="ram_size" Type="integer" Default="0"/>
+			<Param VName="lpm_indata" CName="input" Type="string" Default="REGISTERED"/>
+			<Param VName="lpm_rdaddress_control" CName="r_ctrl" Type="string" Default="REGISTERED"/>
+			<Param VName="lpm_wraddress_control" CName="w_ctrl" Type="string" Default="REGISTERED"/>
+			<Param VName="lpm_outdata" CName="output" Type="string" Default="REGISTERED"/>
+			<Param VName="lpm_file" CName="file" Type="string" Default="UNUSED"/>
+			<Param VName="use_eab" CName="eab" Type="string" Default="OFF"/>
+			<Param VName="rden_used" CName="use_r_en" Type="string" Default="TRUE"/>
+			<Param VName="intended_device_family" CName="device_fam" Type="string" Default="APEX20KE"/>
+			<Param VName="lpm_type" CName="type" Type="string" Default="lpm_ram_dp"/>
+			<Param VName="lpm_hint" CName="hint" Type="string" Default="UNUSED"/>
+		</ParameterSection>
+		<PortSection n_Input="7" n_Output="1" n_Bidir="0" n_Clock="2" clkport="rdclock,wrclock">
+			<ClkPort VName="rdclock" CName="rdclock" Type="bit"/>
+			<ClkPort VName="wrclock" CName="wrclock" Type="bit"/>
+			<InpPort VName="data" CName="data" Type="unsigned" Width="0" Default="0"/>
+			<InpPort VName="rdaddress" CName="rdaddress" Type="unsigned" Width="-1" Default="0"/>
+			<InpPort VName="wraddress" CName="wraddress" Type="unsigned" Width="-1" Default="0"/>
+			<InpPort VName="rdclken" CName="rdclken" Type="bit" Default="1"/>
+			<InpPort VName="wrclken" CName="wrclken" Type="bit" Default="1"/>
+			<InpPort VName="rden" CName="rden" Type="bit" Default="1"/>
+			<InpPort VName="wren" CName="wren" Type="bit" Default="1"/>
+			<OutPort VName="q" CName="q" Type="unsigned" Width="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="altmult_add" CName="109">
+		<ParameterSection n_Parameters="155">
+			<Param VName="accum_direction"	 			CName="accum_direction"	 			Type="string" />
+			<Param VName="accum_sload_aclr"	 			CName="accum_sload_aclr"	 		Type="string" />
+			<Param VName="accum_sload_pipeline_aclr"	 	CName="accum_sload_pipeline_aclr"	 	Type="string" />
+			<Param VName="accum_sload_pipeline_register"	 	CName="accum_sload_pipeline_register"	 	Type="string" />
+			<Param VName="accum_sload_register"	 		CName="accum_sload_register"	 		Type="string" />
+			<Param VName="accumulator"	 			CName="accumulator"	 			Type="string" />
+			<Param VName="adder1_rounding"	 			CName="adder1_rounding"	 			Type="string" />
+			<Param VName="adder3_rounding"	 			CName="adder3_rounding"	 			Type="string" />
+			<Param VName="addnsub_multiplier_aclr1"	 		CName="addnsub_multiplier_aclr1"	 	Type="string" />
+			<Param VName="addnsub_multiplier_aclr3"	 		CName="addnsub_multiplier_aclr3"	 	Type="string" />
+			<Param VName="addnsub_multiplier_pipeline_aclr1"	CName="addnsub_multiplier_pipeline_aclr1"	Type="string" />
+			<Param VName="addnsub_multiplier_pipeline_aclr3"	CName="addnsub_multiplier_pipeline_aclr3"	Type="string" />
+			<Param VName="addnsub_multiplier_pipeline_register1" 	CName="addnsub_multiplier_pipeline_register1"	Type="string" />
+			<Param VName="addnsub_multiplier_pipeline_register3" 	CName="addnsub_multiplier_pipeline_register3"	Type="string" />
+			<Param VName="addnsub_multiplier_register1"	 	CName="addnsub_multiplier_register1"	 	Type="string" />
+			<Param VName="addnsub_multiplier_register3"	 	CName="addnsub_multiplier_register3"	 	Type="string" />
+			<Param VName="addnsub1_round_aclr"	 		CName="addnsub1_round_aclr"	 		Type="string" />
+			<Param VName="addnsub1_round_pipeline_aclr"	 	CName="addnsub1_round_pipeline_aclr"	 	Type="string" />
+			<Param VName="addnsub1_round_pipeline_register"		CName="addnsub1_round_pipeline_register"	Type="string" />
+			<Param VName="addnsub1_round_register"	 		CName="addnsub1_round_register"	 		Type="string" />
+			<Param VName="addnsub3_round_aclr"	 		CName="addnsub3_round_aclr"	 		Type="string" />
+			<Param VName="addnsub3_round_pipeline_aclr"	 	CName="addnsub3_round_pipeline_aclr"	 	Type="string" />
+			<Param VName="addnsub3_round_pipeline_register"		CName="addnsub3_round_pipeline_register"	Type="string" />
+			<Param VName="addnsub3_round_register"	 		CName="addnsub3_round_register"	 		Type="string" />
+			<Param VName="chainout_aclr"	 			CName="chainout_aclr"	 			Type="string" />
+			<Param VName="chainout_adder"	 			CName="chainout_adder"	 			Type="string" />
+			<Param VName="chainout_register"	 		CName="chainout_register"	 		Type="string" />
+			<Param VName="chainout_round_aclr"	 		CName="chainout_round_aclr"	 		Type="string" />
+			<Param VName="chainout_round_output_aclr"	 	CName="chainout_round_output_aclr"	 	Type="string" />
+			<Param VName="chainout_round_output_register"		CName="chainout_round_output_register"		Type="string" />
+			<Param VName="chainout_round_pipeline_aclr"	 	CName="chainout_round_pipeline_aclr"	 	Type="string" />
+			<Param VName="chainout_round_pipeline_register"		CName="chainout_round_pipeline_register"	Type="string" />
+			<Param VName="chainout_round_register"	 		CName="chainout_round_register"	 		Type="string" />
+			<Param VName="chainout_rounding"	 		CName="chainout_rounding"	 		Type="string" />
+			<Param VName="chainout_saturate_aclr"	 		CName="chainout_saturate_aclr"	 		Type="string" />
+			<Param VName="chainout_saturate_output_aclr"	 	CName="chainout_saturate_output_aclr"	 	Type="string" />
+			<Param VName="chainout_saturate_output_register"	CName="chainout_saturate_output_register"	Type="string" />
+			<Param VName="chainout_saturate_pipeline_aclr"		CName="chainout_saturate_pipeline_aclr"		Type="string" />
+			<Param VName="chainout_saturate_pipeline_register"	CName="chainout_saturate_pipeline_register"	Type="string" />
+			<Param VName="chainout_saturate_register"	 	CName="chainout_saturate_register"	 	Type="string" />
+			<Param VName="chainout_saturation"	 		CName="chainout_saturation"	 		Type="string" />
+			<Param VName="coef0_0"	 		CName="coef0_0"	 		Type="integer" />
+			<Param VName="coef0_1"	 		CName="coef0_1"	 		Type="integer" />
+			<Param VName="coef0_2"	 		CName="coef0_2"	 		Type="integer" />
+			<Param VName="coef0_3"	 		CName="coef0_3"	 		Type="integer" />
+			<Param VName="coef0_4"	 		CName="coef0_4"	 		Type="integer" />
+			<Param VName="coef0_5"	 		CName="coef0_5"	 		Type="integer" />
+			<Param VName="coef0_6"	 		CName="coef0_6"	 		Type="integer" />
+			<Param VName="coef0_7"	 		CName="coef0_7"	 		Type="integer" />
+			<Param VName="coef1_0"	 		CName="coef1_0"	 		Type="integer" />
+			<Param VName="coef1_1"	 		CName="coef1_1"	 		Type="integer" />
+			<Param VName="coef1_2"	 		CName="coef1_2"	 		Type="integer" />
+			<Param VName="coef1_3"	 		CName="coef1_3"	 		Type="integer" />
+			<Param VName="coef1_4"	 		CName="coef1_4"	 		Type="integer" />
+			<Param VName="coef1_5"	 		CName="coef1_5"	 		Type="integer" />
+			<Param VName="coef1_6"	 		CName="coef1_6"	 		Type="integer" />
+			<Param VName="coef1_7"	 		CName="coef1_7"	 		Type="integer" />
+			<Param VName="coef2_0"	 		CName="coef2_0"	 		Type="integer" />
+			<Param VName="coef2_1"	 		CName="coef2_1"	 		Type="integer" />
+			<Param VName="coef2_2"	 		CName="coef2_2"	 		Type="integer" />
+			<Param VName="coef2_3"	 		CName="coef2_3"	 		Type="integer" />
+			<Param VName="coef2_4"	 		CName="coef2_4"	 		Type="integer" />
+			<Param VName="coef2_5"	 		CName="coef2_5"	 		Type="integer" />
+			<Param VName="coef2_6"	 		CName="coef2_6"	 		Type="integer" />
+			<Param VName="coef2_7"	 		CName="coef2_7"	 		Type="integer" />
+			<Param VName="coef3_0"	 		CName="coef3_0"	 		Type="integer" />
+			<Param VName="coef3_1"	 		CName="coef3_1"	 		Type="integer" />
+			<Param VName="coef3_2"	 		CName="coef3_2"	 		Type="integer" />
+			<Param VName="coef3_3"	 		CName="coef3_3"	 		Type="integer" />
+			<Param VName="coef3_4"	 		CName="coef3_4"	 		Type="integer" />
+			<Param VName="coef3_5"	 		CName="coef3_5"	 		Type="integer" />
+			<Param VName="coef3_6"	 		CName="coef3_6"	 		Type="integer" />
+			<Param VName="coef3_7"	 		CName="coef3_7"	 		Type="integer" />
+			<Param VName="coefsel0_aclr"	 		CName="coefsel0_aclr"	 		Type="string" />
+			<Param VName="coefsel0_register"	 	CName="coefsel0_register"	 	Type="string" />
+			<Param VName="coefsel1_aclr"	 		CName="coefsel1_aclr"	 		Type="string" />
+			<Param VName="coefsel1_register"	 	CName="coefsel1_register"	 	Type="string" />
+			<Param VName="coefsel2_aclr"	 		CName="coefsel2_aclr"	 		Type="string" />
+			<Param VName="coefsel2_register"	 	CName="coefsel2_register"	 	Type="string" />
+			<Param VName="coefsel3_aclr"	 		CName="coefsel3_aclr"	 		Type="string" />
+			<Param VName="coefsel3_register"	 	CName="coefsel3_register"	 	Type="string" />
+			<Param VName="dedicated_multiplier_circuitry"		CName="dedicated_multiplier_circuitry"		Type="string" />   <!-- no longer used in SIII -->
+			<Param VName="dsp_block_balancing"	 		CName="dsp_block_balancing"	 		Type="string" />
+			<Param VName="extra_latency"	 			CName="extra_latency"	 			Type="integer" />
+			<Param VName="input_aclr_a0"	 			CName="input_aclr_a0"	 			Type="string" />
+			<Param VName="input_aclr_a1"	 			CName="input_aclr_a1"	 			Type="string" />
+			<Param VName="input_aclr_a2"	 			CName="input_aclr_a2"	 			Type="string" />
+			<Param VName="input_aclr_a3"	 			CName="input_aclr_a3"	 			Type="string" />
+			<Param VName="input_aclr_b0"	 			CName="input_aclr_b0"	 			Type="string" />
+			<Param VName="input_aclr_b1"	 			CName="input_aclr_b1"	 			Type="string" />
+			<Param VName="input_aclr_b2"	 			CName="input_aclr_b2"	 			Type="string" />
+			<Param VName="input_aclr_b3"	 			CName="input_aclr_b3"	 			Type="string" />
+			<Param VName="input_aclr_c0"	 			CName="input_aclr_c0"	 			Type="string" />
+			<Param VName="input_aclr_c1"	 			CName="input_aclr_c1"	 			Type="string" />
+			<Param VName="input_aclr_c2"	 			CName="input_aclr_c2"	 			Type="string" />
+			<Param VName="input_aclr_c3"	 			CName="input_aclr_c3"	 			Type="string" />
+			<Param VName="input_register_a0"	 		CName="input_register_a0"	 		Type="string" />
+			<Param VName="input_register_a1"	 		CName="input_register_a1"	 		Type="string" />
+			<Param VName="input_register_a2"	 		CName="input_register_a2"	 		Type="string" />
+			<Param VName="input_register_a3"	 		CName="input_register_a3"	 		Type="string" />
+			<Param VName="input_register_b0"	 		CName="input_register_b0"	 		Type="string" />
+			<Param VName="input_register_b1"	 		CName="input_register_b1"	 		Type="string" />
+			<Param VName="input_register_b2"	 		CName="input_register_b2"	 		Type="string" />
+			<Param VName="input_register_b3"	 		CName="input_register_b3"	 		Type="string" />
+			<Param VName="input_register_c0"	 		CName="input_register_c0"	 		Type="string" />
+			<Param VName="input_register_c1"	 		CName="input_register_c1"	 		Type="string" />
+			<Param VName="input_register_c2"	 		CName="input_register_c2"	 		Type="string" />	
+			<Param VName="input_register_c3"	 		CName="input_register_c3"	 		Type="string" />								
+			<Param VName="input_source_a0"	 			CName="input_source_a0"	 			Type="string" />
+			<Param VName="input_source_a1"	 			CName="input_source_a1"	 			Type="string" />
+			<Param VName="input_source_a2"	 			CName="input_source_a2"	 			Type="string" />
+			<Param VName="input_source_a3"	 			CName="input_source_a3"	 			Type="string" />
+			<Param VName="input_source_b0"	 			CName="input_source_b0"	 			Type="string" />
+			<Param VName="input_source_b1"	 			CName="input_source_b1"	 			Type="string" />
+			<Param VName="input_source_b2"	 			CName="input_source_b2"	 			Type="string" />
+			<Param VName="input_source_b3"	 			CName="input_source_b3"	 			Type="string" />
+			<Param VName="loadconst_control_aclr"	 			CName="loadconst_control_aclr"	 			Type="string" />
+			<Param VName="loadconst_control_register"	 		CName="loadconst_control_register"	 			Type="string" />
+			<Param VName="loadconst_value"	 			CName="loadconst_value"	 			Type="string" />
+			<Param VName="intended_device_family"	 		CName="intended_device_family"			Type="string" />
+			<Param VName="lpm_hint" CName="lpm_hint" Type="string" />
+			<Param VName="lpm_type"	 				CName="lpm_type"	 			Type="string" />  <!-- no longer used in SIII -->
+			<Param VName="mult01_round_aclr"	 		CName="mult01_round_aclr"	 		Type="string" />
+			<Param VName="mult01_round_register"	 		CName="mult01_round_register"	 		Type="string" />
+			<Param VName="mult01_saturation_aclr"	 		CName="mult01_saturation_aclr"	 		Type="string" />
+			<Param VName="mult01_saturation_register"	 	CName="mult01_saturation_register"	 	Type="string" />
+			<Param VName="mult23_round_aclr"	 		CName="mult23_round_aclr"	 		Type="string" />
+			<Param VName="mult23_round_register"	 		CName="mult23_round_register"	 		Type="string" />
+			<Param VName="mult23_saturation_aclr"	 		CName="mult23_saturation_aclr"			Type="string" />
+			<Param VName="mult23_saturation_register"	 	CName="mult23_saturation_register"		Type="string" />
+			<Param VName="multiplier_aclr0"	 			CName="multiplier_aclr0"	 		Type="string" />
+			<Param VName="multiplier_aclr1"	 			CName="multiplier_aclr1"	 		Type="string" />
+			<Param VName="multiplier_aclr2"	 			CName="multiplier_aclr2"	 		Type="string" />
+			<Param VName="multiplier_aclr3"	 			CName="multiplier_aclr3"	 		Type="string" />
+			<Param VName="multiplier_register0"	 		CName="multiplier_register0"	 		Type="string" />
+			<Param VName="multiplier_register1"	 		CName="multiplier_register1"	 		Type="string" />
+			<Param VName="multiplier_register2"	 		CName="multiplier_register2"	 		Type="string" />
+			<Param VName="multiplier_register3"	 		CName="multiplier_register3"	 		Type="string" />
+			<Param VName="multiplier01_rounding"	 		CName="multiplier01_rounding"	 		Type="string" /> <!-- Parameters keep for backward compatability -->
+			<Param VName="multiplier01_saturation"	 		CName="multiplier01_saturation"			Type="string" /> <!-- Parameters keep for backward compatability -->
+			<Param VName="multiplier1_direction"	 		CName="multiplier1_direction"	 		Type="string" /> <!-- Parameters keep for backward compatability -->
+			<Param VName="multiplier23_rounding"	 		CName="multiplier23_rounding"	 		Type="string" /> <!-- Parameters keep for backward compatability -->
+			<Param VName="multiplier23_saturation"	 		CName="multiplier23_saturation"			Type="string" /> <!-- Parameters keep for backward compatability -->
+			<Param VName="multiplier3_direction"	 		CName="multiplier3_direction"	 		Type="string" /> <!-- Parameters keep for backward compatability -->
+			<Param VName="number_of_multipliers"	 		CName="number_of_multipliers"	 		Type="integer" />
+			<Param VName="output_aclr"	 			CName="output_aclr"	 			Type="string" />
+			<Param VName="output_register"	 			CName="output_register"	 			Type="string" />
+			<Param VName="output_round_aclr"	 		CName="output_round_aclr"	 		Type="string" />
+			<Param VName="output_round_pipeline_aclr"	 	CName="output_round_pipeline_aclr"		Type="string" />
+			<Param VName="output_round_pipeline_register"		CName="output_round_pipeline_register"		Type="string" />
+			<Param VName="output_round_register"	 		CName="output_round_register"	 		Type="string" />
+			<Param VName="output_round_type"	 		CName="output_round_type"	 		Type="string" />
+			<Param VName="output_rounding"	 			CName="output_rounding"	 			Type="string" />
+			<Param VName="output_saturate_aclr"	 		CName="output_saturate_aclr"	 		Type="string" />
+			<Param VName="output_saturate_pipeline_aclr"	 	CName="output_saturate_pipeline_aclr"		Type="string" />
+			<Param VName="output_saturate_pipeline_register"	CName="output_saturate_pipeline_register"	Type="string" />
+			<Param VName="output_saturate_register"	 		CName="output_saturate_register"	 	Type="string" />
+			<Param VName="output_saturate_type"	 		CName="output_saturate_type"	 		Type="string" />
+			<Param VName="output_saturation"	 		CName="output_saturation"	 		Type="string" />
+			<Param VName="port_addnsub1"	 			CName="port_addnsub1"	 			Type="string" />
+			<Param VName="port_addnsub3"	 			CName="port_addnsub3"	 			Type="string" />
+			<Param VName="port_chainout_sat_is_overflow"	 	CName="port_chainout_sat_is_overflow"		Type="string" />
+			<Param VName="port_mult0_is_saturated"	 		CName="port_mult0_is_saturated"			Type="string" /> <!-- no longer used in SIII -->
+			<Param VName="port_mult1_is_saturated"	 		CName="port_mult1_is_saturated"			Type="string" /> <!-- no longer used in SIII -->
+			<Param VName="port_mult2_is_saturated"	 		CName="port_mult2_is_saturated"			Type="string" /> <!-- no longer used in SIII -->
+			<Param VName="port_mult3_is_saturated"	 		CName="port_mult3_is_saturated"			Type="string" /> <!-- no longer used in SIII -->
+			<Param VName="port_output_is_overflow"	 		CName="port_output_is_overflow"			Type="string" />
+			<Param VName="preadder_direction_0"	 			CName="preadder_direction_0"	 		Type="string" />
+			<Param VName="preadder_direction_1"	 			CName="preadder_direction_1"	 		Type="string" />
+			<Param VName="preadder_direction_2"	 			CName="preadder_direction_2"	 		Type="string" />
+			<Param VName="preadder_direction_3"	 			CName="preadder_direction_3"	 		Type="string" />
+			<Param VName="preadder_mode"	 			CName="preadder_mode"	 		Type="string" />
+			<Param VName="port_signa"	 			CName="port_signa"	 			Type="string" />
+			<Param VName="port_signb"	 			CName="port_signb"	 			Type="string" />
+			<Param VName="representation_a"	 			CName="representation_a"	 		Type="string" />
+			<Param VName="representation_b"	 			CName="representation_b"	 		Type="string" />
+			<Param VName="rotate_aclr"	 			CName="rotate_aclr"	 			Type="string" />
+			<Param VName="rotate_output_aclr"	 		CName="rotate_output_aclr"	 		Type="string" />
+			<Param VName="rotate_output_register"	 		CName="rotate_output_register"			Type="string" />
+			<Param VName="rotate_pipeline_aclr"	 		CName="rotate_pipeline_aclr"	 		Type="string" />
+			<Param VName="rotate_pipeline_register"	 		CName="rotate_pipeline_register"		Type="string" />
+			<Param VName="rotate_register"	 			CName="rotate_register"	 			Type="string" />
+			<Param VName="round_fraction_width"	 		CName="round_fraction_width"	 		Type="integer" />
+			<Param VName="saturate_fraction_width"	 		CName="saturate_fraction_width"			Type="integer" />
+			<Param VName="scanouta_aclr"	 			CName="scanouta_aclr"	 			Type="string" />
+			<Param VName="scanouta_register"	 		CName="scanouta_register"	 		Type="string" />
+			<Param VName="shift_mode"	 			CName="shift_mode"	 			Type="string" />
+			<Param VName="shift_right_aclr"	 			CName="shift_right_aclr"	 		Type="string" />
+			<Param VName="shift_right_output_aclr"	 		CName="shift_right_output_aclr"			Type="string" />
+			<Param VName="shift_right_output_register"	 	CName="shift_right_output_register"		Type="string" />
+			<Param VName="shift_right_pipeline_aclr"	 	CName="shift_right_pipeline_aclr"		Type="string" />
+			<Param VName="shift_right_pipeline_register"	 	CName="shift_right_pipeline_register"		Type="string" />
+			<Param VName="shift_right_register"	 		CName="shift_right_register"	 		Type="string" />
+			<Param VName="signed_aclr_a"	 			CName="signed_aclr_a"	 			Type="string" />
+			<Param VName="signed_aclr_b"	 			CName="signed_aclr_b"	 			Type="string" />
+			<Param VName="signed_pipeline_aclr_a"	 		CName="signed_pipeline_aclr_a"			Type="string" />
+			<Param VName="signed_pipeline_aclr_b"	 		CName="signed_pipeline_aclr_b"			Type="string" />
+			<Param VName="signed_pipeline_register_a"	 	CName="signed_pipeline_register_a"		Type="string" />
+			<Param VName="signed_pipeline_register_b"	 	CName="signed_pipeline_register_b"		Type="string" />
+			<Param VName="signed_register_a"	 		CName="signed_register_a"	 		Type="string" />
+			<Param VName="signed_register_b"	 		CName="signed_register_b"	 		Type="string" />
+			<Param VName="systolic_aclr1"	 		CName="systolic_aclr1"	 		Type="string" />
+			<Param VName="systolic_aclr3"	 		CName="systolic_aclr3"	 		Type="string" />
+			<Param VName="systolic_delay1"	 		CName="systolic_delay1"	 		Type="string" />
+			<Param VName="systolic_delay3"	 		CName="systolic_delay3"	 		Type="string" />
+			<Param VName="width_a"	 				CName="width_a"	 				Type="integer" />
+			<Param VName="width_b"	 				CName="width_b"	 				Type="integer" />
+			<Param VName="width_c"	 				CName="width_c"	 				Type="integer" />
+			<Param VName="width_msb"	 			CName="width_msb"	 			Type="integer" />
+			<Param VName="width_saturate_sign"	 		CName="width_saturate_sign"	 		Type="integer" />
+			<Param VName="width_chainin"	 			CName="width_chainin"	 			Type="integer" />
+			<Param VName="width_coef"	 			CName="width_coef"	 			Type="integer" />
+			<Param VName="width_result"	 			CName="width_result"	 			Type="integer" />
+			<Param VName="zero_chainout_output_aclr"	 	CName="zero_chainout_output_aclr"		Type="string" />
+			<Param VName="zero_chainout_output_register"	 	CName="zero_chainout_output_register"		Type="string" />
+			<Param VName="zero_loopback_aclr"	 		CName="zero_loopback_aclr"	 		Type="string" />
+			<Param VName="zero_loopback_output_aclr"	 	CName="zero_loopback_output_aclr"		Type="string" />
+			<Param VName="zero_loopback_output_register"	 	CName="zero_loopback_output_register"		Type="string" />
+			<Param VName="zero_loopback_pipeline_aclr"	 	CName="zero_loopback_pipeline_aclr"		Type="string" />
+			<Param VName="zero_loopback_pipeline_register"		CName="zero_loopback_pipeline_register"		Type="string" />
+			<Param VName="zero_loopback_register"	 		CName="zero_loopback_register"	 		Type="string" />
+		</ParameterSection>
+		<PortSection n_Input="24" n_Output="7" n_Bidir="0" n_Clock="4" clkport="clk">
+			<ClkPort VName="clock0" CName="clock0" Type="bit"/>
+			<ClkPort VName="clock1" CName="clock1" Type="bit"/>
+			<ClkPort VName="clock2" CName="clock2" Type="bit"/>
+			<ClkPort VName="clock3" CName="clock3" Type="bit"/>
+			<InpPort VName="dataa" CName="dataa" Type="unsigned" Width="0"/>
+			<!-- TODO: Computed width -->
+			<InpPort VName="datab" CName="datab" Type="unsigned" Width="0"/>
+			<!-- TODO: Computed width -->
+			<InpPort VName="datac" CName="datac" Type="unsigned" Width="0"/>
+			<InpPort VName="scanina" CName="scanina" Type="unsigned" Width="0"/>
+			<InpPort VName="scaninb" CName="scaninb" Type="unsigned" Width="-1"/>
+			<InpPort VName="sourcea" CName="sourcea" Type="unsigned" Width="-2"/>
+			<InpPort VName="sourceb" CName="sourceb" Type="unsigned" Width="-2"/>
+			<InpPort VName="aclr3" CName="aclr3" Type="bit"/>
+			<InpPort VName="aclr2" CName="aclr2" Type="bit"/>
+			<InpPort VName="aclr1" CName="aclr1" Type="bit"/>
+			<InpPort VName="aclr0" CName="aclr0" Type="bit"/>
+			<InpPort VName="ena3" CName="ena3" Type="bit"/>
+			<InpPort VName="ena2" CName="ena2" Type="bit"/>
+			<InpPort VName="ena1" CName="ena1" Type="bit"/>
+			<InpPort VName="ena0" CName="ena0" Type="bit"/>
+			<InpPort VName="signa" CName="signa" Type="bit"/>
+			<InpPort VName="signb" CName="signb" Type="bit"/>
+			<InpPort VName="addnsub1" CName="addnsub1" Type="bit"/>
+			<InpPort VName="addnsub3" CName="addnsub3" Type="bit"/>
+			<InpPort VName="mult01_round" CName="mult01_round" Type="bit"/>
+			<InpPort VName="mult23_round" CName="mult23_round" Type="bit"/>
+			<InpPort VName="mult01_saturation" CName="mult01_saturation" Type="bit"/>
+			<InpPort VName="mult23_saturation" CName="mult23_saturation" Type="bit"/>
+			<InpPort VName="addnsub1_round" CName="addnsub1_round" Type="bit"/>
+			<InpPort VName="addnsub3_round" CName="addnsub3_round" Type="bit"/>
+			<InpPort VName="coefsel0" CName="coefsel0" Type="unsigned" Width="0"/>
+			<InpPort VName="coefsel1" CName="coefsel1" Type="unsigned" Width="0"/>
+			<InpPort VName="coefsel2" CName="coefsel2" Type="unsigned" Width="0"/>
+			<InpPort VName="coefsel3" CName="coefsel3" Type="unsigned" Width="0"/>
+			<!-- Input ports new in Titan -->
+			<InpPort VName="output_saturate" CName="output_saturate" Type="bit"/>
+			<InpPort VName="output_round" CName="output_round" Type="bit"/>
+			<InpPort VName="chainout_saturate" CName="chainout_saturate" Type="bit"/>
+			<InpPort VName="chainout_round" CName="chainout_round" Type="bit"/>
+			<InpPort VName="zero_chainout" CName="zero_chainout" Type="bit"/>
+			<InpPort VName="zero_loopback" CName="zero_loopback" Type="bit"/>
+			<InpPort VName="accum_sload" CName="accum_sload" Type="bit"/>
+			<InpPort VName="chainin" CName="chainin" Type="unsigned" Width="0"/>
+			<InpPort VName="rotate" CName="rotate" Type="bit"/>
+			<InpPort VName="shift_right" CName="shift_right" Type="bit"/>
+			<OutPort VName="result" CName="result" Type="unsigned" Width="-2"/>
+			<OutPort VName="scanouta" CName="scanouta" Type="unsigned" Width="0"/>
+			<OutPort VName="scanoutb" CName="scanoutb" Type="unsigned" Width="-1"/>
+			<OutPort VName="mult0_is_saturated" CName="mult0_is_saturated" Type="bit"/>
+			<OutPort VName="mult1_is_saturated" CName="mult1_is_saturated" Type="bit"/>
+			<OutPort VName="mult2_is_saturated" CName="mult2_is_saturated" Type="bit"/>
+			<OutPort VName="mult3_is_saturated" CName="mult3_is_saturated" Type="bit"/>
+			<!-- Output ports new in Titan -->
+			<OutPort VName="overflow" CName="overflow" Type="bit"/>
+			<OutPort VName="chainout_sat_overflow" CName="chainout_sat_overflow" Type="bit"/>
+		</PortSection>
+	</Module>
+	<Module VName="a_graycounter" CName="110">
+		<ParameterSection n_Parameters="3">
+			<Param VName="width" CName="width" Type="integer" Default="3"/>
+			<Param VName="pvalue" CName="pvalue" Type="integer" Default="0"/>
+			<Param VName="lpm_hint" CName="lpm_hint" Type="string" Default="UNUSED"/>
+			<Param VName="lpm_type" CName="lpm_type" Type="string" Default="a_graycounter"/>
+		</ParameterSection>
+		<PortSection n_Input="5" n_Output="2" n_Bidir="0" n_Clock="1" clkport="clock">
+			<ClkPort VName="clock" CName="clock" Type="bit"/>
+			<InpPort VName="cnt_en" CName="cnt_en" Type="bit" Default="1"/>
+			<InpPort VName="clk_en" CName="clk_en" Type="bit" Default="1"/>
+			<InpPort VName="updown" CName="updown" Type="bit" Default="0"/>
+			<InpPort VName="aclr" CName="aclr" Type="bit" Default="0"/>
+			<InpPort VName="sclr" CName="sclr" Type="bit" Default="0"/>
+			<OutPort VName="q" CName="q" Type="unsigned" Width="0"/>
+			<OutPort VName="qbin" CName="qbin" Type="unsigned" Width="0"/>
+		</PortSection>
+	</Module>
+	<Module VName="lpm_abs" CName="111">
+		<ParameterSection n_Parameters="3">
+			<Param VName="lpm_width" CName="lpm_width" Type="integer" Default="1"/>
+			<Param VName="lpm_type" CName="lpm_type" Type="string" Default="lpm_abs"/>
+			<Param VName="lpm_hint" CName="lpm_hint" Type="string" Default="UNUSED"/>
+		</ParameterSection>
+		<PortSection n_Input="1" n_Output="2" n_Bidir="0" n_Clock="0">
+			<InpPort VName="data" CName="data" Type="unsigned" Width="0"/>
+			<OutPort VName="result" CName="result" Type="unsigned" Width="0"/>
+			<OutPort VName="overflow" CName="overflow" Type="bit" Width="1"/>
+		</PortSection>
+	</Module>
+	<Module VName="lpm_mux" CName="112">
+		<ParameterSection n_Parameters="6">
+			<Param VName="lpm_width" CName="lpm_width" Type="integer" Default="1"/>
+			<Param VName="lpm_size" CName="lpm_size" Type="integer" Default="2"/>
+			<Param VName="lpm_widths" CName="lpm_widths" Type="integer" Default="1"/>
+			<Param VName="lpm_pipeline" CName="lpm_pipeline" Type="integer" Default="0"/>
+			<Param VName="lpm_type" CName="lpm_type" Type="string" Default="lpm_mux"/>
+			<Param VName="lpm_hint" CName="lpm_hint" Type="string" Default="UNUSED"/>
+		</ParameterSection>
+		<PortSection n_Input="4" n_Output="1" n_Bidir="0" n_Clock="1" clkport="clock">
+			<ClkPort VName="clock" CName="clock" Type="bit"/>
+			<InpPort VName="data" CName="data" Type="unsigned" Width="1"/>
+			<InpPort VName="sel" CName="sel" Type="unsigned" Width="-2"/>
+			<InpPort VName="aclr" CName="aclr" Type="bit" Default="0"/>
+			<InpPort VName="clken" CName="clken" Type="bit" Default="1"/>
+			<OutPort VName="result" CName="result" Type="unsigned"/>
+		</PortSection>
+	</Module>
+	<Module VName="scfifo" CName="113">
+		<ParameterSection n_Parameters="18">
+			<Param VName="lpm_width" CName="lpm_width" Type="integer" Default="1"/>
+			<Param VName="lpm_widthu" CName="lpm_widthu" Type="integer" Default="1"/>
+			<Param VName="lpm_numwords" CName="lpm_numwords" Type="integer" Default="2"/>
+			<Param VName="lpm_showahead" CName="lpm_showahead" Type="string" Default="OFF"/>
+			<Param VName="lpm_type" CName="lpm_type" Type="string" Default="scfifo"/>
+			<Param VName="lpm_hint" CName="lpm_hint" Type="string" Default="USE_EAB=ON"/>
+			<Param VName="intended_device_family" CName="intended_device_family" Type="string" Default="APEX20KE"/>
+			<Param VName="underflow_checking" CName="underflow_checking" Type="string" Default="ON"/>
+			<Param VName="overflow_checking" CName="overflow_checking" Type="string" Default="ON"/>
+			<Param VName="allow_rwcycle_when_full" CName="allow_rwcycle_when_full" Type="string" Default="OFF"/>
+			<Param VName="use_eab" CName="use_eab" Type="string" Default="ON"/>
+			<Param VName="add_ram_output_register" CName="add_ram_output_register" Type="string" Default="OFF"/>
+			<Param VName="almost_full_value" CName="almost_full_value" Type="integer" Default="0"/>
+			<Param VName="almost_empty_value" CName="almost_empty_value" Type="integer" Default="0"/>
+			<Param VName="maximum_depth" CName="maximum_depth" Type="integer" Default="0"/>
+			<Param VName="showahead_area" CName="showahead_area" Type="integer" Default="0"/>
+			<Param VName="showahead_speed" CName="showahead_speed" Type="integer" Default="0"/>
+			<Param VName="legacy_speed" CName="legacy_speed" Type="integer" Default="0"/>
+		</ParameterSection>
+		<PortSection n_Input="5" n_Output="6" n_Bidir="0" n_Clock="1" clkport="clock">
+			<ClkPort VName="clock" CName="clock" Type="bit"/>
+			<InpPort VName="data" CName="data" Type="unsigned" Width="0"/>
+			<InpPort VName="wrreq" CName="wrreq" Type="bit" Width="1"/>
+			<InpPort VName="rdreq" CName="rdreq" Type="bit" Width="1"/>
+			<InpPort VName="aclr" CName="aclr" Type="bit" Width="1"/>
+			<InpPort VName="sclr" CName="sclr" Type="bit" Width="1"/>
+			<OutPort VName="q" CName="q" Type="unsigned" Width="0"/>
+			<OutPort VName="usedw" CName="usedw" Type="unsigned" Width="-1"/>
+			<OutPort VName="full" CName="full" Type="bit" Width="1"/>
+			<OutPort VName="empty" CName="empty" Type="bit" Width="1"/>
+			<OutPort VName="almost_full" CName="almost_full" Type="bit" Width="1"/>
+			<OutPort VName="almost_empty" CName="almost_empty" Type="bit" Width="1"/>
+		</PortSection>
+	</Module>
+	<Module VName="dcfifo" CName="114">
+		<ParameterSection n_Parameters="17">
+			<Param VName="lpm_width" CName="lpm_width" Type="integer" Default="1"/>
+			<Param VName="lpm_widthu" CName="lpm_widthu" Type="integer" Default="1"/>
+			<Param VName="lpm_numwords" CName="lpm_numwords" Type="integer" Default="2"/>
+			<Param VName="delay_rdusedw" CName="delay_rdusedw" Type="integer" Default="1"/>
+			<Param VName="delay_wrusedw" CName="delay_wrusedw" Type="integer" Default="1"/>
+			<Param VName="rdsync_delaypipe" CName="rdsync_delaypipe" Type="integer" Default="3"/>
+			<Param VName="wrsync_delaypipe" CName="wrsync_delaypipe" Type="integer" Default="3"/>
+			<Param VName="intended_device_family" CName="intended_device_family" Type="string" Default="APEX20KE"/>
+			<Param VName="lpm_showahead" CName="lpm_showahead" Type="string" Default="OFF"/>
+			<Param VName="add_usedw_msb_bit" CName="add_usedw_msb_bit" Type="string" Default="OFF"/>
+			<Param VName="write_aclr_synch" CName="write_aclr_synch" Type="string" Default="OFF"/>
+			<Param VName="read_aclr_synch" CName="read_aclr_synch" Type="string" Default="OFF"/>
+			<Param VName="underflow_checking" CName="underflow_checking" Type="string" Default="ON"/>
+			<Param VName="overflow_checking" CName="overflow_checking" Type="string" Default="ON"/>
+			<Param VName="clocks_are_synchronized" CName="clocks_are_synchronized" Type="string" Default="FALSE"/>
+			<Param VName="use_eab" CName="use_eab" Type="string" Default="ON"/>
+			<Param VName="add_ram_output_register" CName="add_ram_output_register" Type="string" Default="OFF"/>
+			<Param VName="add_width" CName="add_width" Type="integer" Default="1"/>
+			<Param VName="lpm_hint" CName="lpm_hint" Type="string" Default="USE_EAB=ON"/>
+			<Param VName="lpm_type" CName="lpm_type" Type="string" Default="dcfifo"/>
+		</ParameterSection>
+		<PortSection n_Input="4" n_Output="7" n_Bidir="0" n_Clock="2" clkport="rdclk,wrclk">
+			<ClkPort VName="rdclk" CName="rdclk" Type="bit"/>
+			<ClkPort VName="wrclk" CName="wrclk" Type="bit"/>
+			<InpPort VName="data" CName="data" Type="unsigned" Width="0"/>
+			<InpPort VName="aclr" CName="aclr" Type="bit" Width="1"/>
+			<InpPort VName="rdreq" CName="rdreq" Type="bit" Width="1"/>
+			<InpPort VName="wrreq" CName="wrreq" Type="bit" Width="1"/>
+			<OutPort VName="rdfull" CName="rdfull" Type="bit" Width="1"/>
+			<OutPort VName="wrfull" CName="wrfull" Type="bit" Width="1"/>
+			<OutPort VName="rdempty" CName="rdempty" Type="bit" Width="1"/>
+			<OutPort VName="wrempty" CName="wrempty" Type="bit" Width="1"/>
+			<OutPort VName="rdusedw" CName="rdusedw" Type="unsigned" Width="-1"/>
+			<OutPort VName="wrusedw" CName="wrusedw" Type="unsigned" Width="-1"/>
+			<OutPort VName="q" CName="q" Type="unsigned" Width="0"/>
+		</PortSection>
+	</Module>	
+</SgateLib>

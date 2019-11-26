@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>32 Tap Serial FIR Filter</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_lib_demo_designs.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body>
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="IIRFilter.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="MAC32FIRFilter.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <a class="WebWorks_Breadcrumb_Link" href="hb_dspb_std_lib_COVER.html#1012568">Section II.&nbsp;DSP Builder Standard Blockset Libraries</a> : <a class="WebWorks_Breadcrumb_Link" href="hb_dspb_std_lib_demo_designs.30.01.html#1012568">26.&nbsp;Design Examples</a> : 32 Tap Serial FIR Filter</div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_block"><a name="1012568">32 Tap Serial FIR Filter</a></div>
+      <div class="B0_body"><a href="matlab:alt_dspbuilder_internal_launch_demo('DesignExamples/Demos/Filters/DA32', 'AltrFir32')" target="external_window" name="1098381">Open this model</a></div>
+      <div class="B0_body"><a name="1012569">This design example illustrates how to implement a low pass 32 tap FIR (finite </a>impulse response) filter with a 4-8 look-up table (LUT) for partial product pre-computation. This design requires the Mathworks Signal Processing ToolBox to calculate the coefficient with the FIR1 function:</div>
+      <div class="C1_code"><a name="1012570">FilterOrder = 32</a><br />InputBitWidth = 8<br />LowPassFreqBand = [0 0.1 0.2 1];<br />LowPassMagnBand = [1 0.9 0.0001 0.0001];<br />FlCoef = &nbsp;&nbsp;firls(FilterOrder,LowPassFreqBand,LowPassMagnBand);<br />CoefBitWidth = InputBitWidth + ceil(log2((max(abs(FlCoef))/min(abs(FlCoef)))))<br />ScalingFactor = (2^(CoefBitWidth-1))-1;<br />FpCoef = fix(ScalingFactor * FlCoef);<br />plot(FpCoef,'o');<br />title('Fixed-point scaled coefficient value');<br />ImpulseData = zeros(1,1000);<br />ImpulseData(1) = 100;<br />h = conv(ImpulseData,FpCoef);<br />fftplot(h);<br />title('FIR Frequency response');<br />FirSamplingPeriod=1;</div>
+      <div class="B0_body"><a name="1073548">The example model is </a><span class="Bold">AltrFir32.mdl</span>.</div>
+    </blockquote>
+  </body>
+</html>

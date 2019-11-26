@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board uniquename="ArriaIIGXEP2AGX125" family="Arria II GX">
+	<displayname>Arria II GX 2AGX125 FPGA Development Kit</displayname>
+
+	<!-- Push-Button Switches -->
+	<component name="PB0" pin="Pin_AK9" />
+	<component name="PB1" pin="Pin_AL7" />
+
+	<!-- CPU Reset Push-Button Switches -->
+	<component name="CPU_RESET" pin="Pin_N10" />
+
+	<!-- DIP Switches -->
+	<component name="DipSwitch4Bit">
+		<pin location="Pin_N2" />
+		<pin location="Pin_U9" />
+		<pin location="Pin_V9" />
+		<pin location="Pin_U4" />
+	</component>
+
+	<!-- LEDs -->
+	<component name="LED0" pin="Pin_G1" />
+	<component name="LED1" pin="Pin_J4" />
+	<component name="LED2" pin="Pin_J5" />
+	<component name="LED3" pin="Pin_R5" />
+
+	<!-- HSMC LEDs -->
+	<component name="LED_TX_HSMC_A" pin="Pin_C29" />
+	<component name="LED_RX_HSMC_A" pin="Pin_N5" />
+
+	<!-- ADCs -->
+	<component name="A2D1_HSMC_A">
+		<pin location="Pin_AF2" />
+		<pin location="Pin_AF3" />
+		<pin location="Pin_Y7" />
+		<pin location="Pin_Y8" />
+		<pin location="Pin_AB9" />
+		<pin location="Pin_AB10" />
+		<pin location="Pin_AH1" />
+		<pin location="Pin_AH2" />
+		<pin location="Pin_Y10" />
+		<pin location="Pin_Y11" />
+		<pin location="Pin_AA9" />
+		<pin location="Pin_AA10" />
+		<pin location="Pin_K1" />
+		<pin location="Pin_L1" />
+	</component>
+	<component name="A2D2_HSMC_A">
+		<pin location="Pin_AB1" />
+		<pin location="Pin_AB2" />
+		<pin location="Pin_AD1" />
+		<pin location="Pin_AC1" />
+		<pin location="Pin_AE1" />
+		<pin location="Pin_AE2" />
+		<pin location="Pin_AG1" />
+		<pin location="Pin_AF1" />
+		<pin location="Pin_AF4" />
+		<pin location="Pin_AE4" />
+		<pin location="Pin_AC4" />
+		<pin location="Pin_AC5" />
+		<pin location="Pin_M1" />
+		<pin location="Pin_R6" />
+	</component>
+
+	<!-- DACs -->
+	<component name="D2A1_HSMC_A">
+		<pin location="Pin_P1" />
+		<pin location="Pin_R2" />
+		<pin location="Pin_T7" />
+		<pin location="Pin_R7" />
+		<pin location="Pin_Y9" />
+		<pin location="Pin_W10" />
+		<pin location="Pin_AC2" />
+		<pin location="Pin_AC3" />
+		<pin location="Pin_AA4" />
+		<pin location="Pin_Y5" />
+		<pin location="Pin_W6" />
+		<pin location="Pin_W7" />
+		<pin location="Pin_Y6" />
+		<pin location="Pin_AA7" />
+	</component>
+	<component name="D2A2_HSMC_A">
+		<pin location="Pin_V7" />
+		<pin location="Pin_U7" />
+		<pin location="Pin_AB5" />
+		<pin location="Pin_AB6" />
+		<pin location="Pin_AB3" />
+		<pin location="Pin_AB4" />
+		<pin location="Pin_Y3" />
+		<pin location="Pin_Y4" />
+		<pin location="Pin_U1" />
+		<pin location="Pin_U2" />
+		<pin location="Pin_W3" />
+		<pin location="Pin_W4" />
+		<pin location="Pin_V1" />
+		<pin location="Pin_V2" />
+	</component>
+
+	<configuration icon="2agx125.bmp" width="166" height="144">
+		<devices jtag-code="0x025030DD">
+			<device name="EP2AGX125EF35I3" />
+		</devices>
+
+		<option name="ClockPinIn" label="Clock Pin In">
+			<pin location="Pin_AJ19" /> <!-- CLKIN_BOT_P -->
+			<pin location="Pin_AK19" /> <!-- CLKIN_BOT_N -->
+			<pin location="Pin_F18" /> <!-- CLKIN_TOP_P -->
+			<pin location="Pin_F17" /> <!-- CLKIN_TOP_N -->
+			<pin location="None" />
+		</option>
+
+		<option name="GlobalResetPin" label="Global Reset Pin">
+			<pin location="Pin_N10" />
+			<pin location="Pin_AK9" />
+			<pin location="Pin_AL7" />
+			<pin location="None" />
+		</option>
+	</configuration>
+</board>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Using Black Boxes for HDL Subsystems</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_blackbox.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_using_sopc_ports.12.6.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_blackbox.13.2.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H0_chapter">8.&nbsp;<a name="998290">Using Black Boxes for HDL Subsystems</a></div>
+      <div class="Body"><a name="999586">The </a><span class="Code">Signal Compiler</span> block converts subsystems with blocks from the DSP&nbsp;Builder block libraries into HDL code. Non-DSP&nbsp;Builder blocks, such as encapsulations of your own pre-existing HDL code, require the <span class="Code">Signal Compiler</span> block to recognize them as black boxes so that the conversion process does not alter them.</div>
+      <div class="Body"><a name="1007140">There are two types of black-box interface in DSP Builder: implicit and explicit.</a></div>
+      <div class="H2_heading"><a name="1009585">Implicit Black Box Interface</a></div>
+      <div class="Body"><a name="1028572">Use the </a><span class="Code">HDL Import</span> block to infer the implicit black-box interface. </div>
+      <div class="Body"><a name="1028632">The </a><span class="Code">Signal Compiler</span> block recognizes the <span class="Code">HDL Import</span> block as a black box and bypasses this block during the HDL translation.</div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1046831">For information about the </a><span class="Code">HDL Import</span> block, <span class="change_bars">refer to</span> the block description in the <span class="Document_title">AltLab Library</span> chapter of the <span class="Link" style="font-style: italic;"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_lib.pdf" target="external_window">DSP Builder Standard Blockset Libraries</a></span> section in volume 2 of the <span class="Document_title">DSP Builder Handbook</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1007154">Explicit Black-Box Interface</a></div>
+      <div class="Body"><a name="1007245">Use the </a><span class="Code">HDL Input</span>, <span class="Code">HDL Output</span>, <span class="Code">HDL Entity</span>, and <span class="Code">Subsystem Builder</span> blocks to specify the explicit black-box interface.</div>
+      <div class="Body"><a name="1028649">Using the </a><span class="Code">HDL Input</span>, <span class="Code">HDL Output</span>, and <span class="Code">HDL Entity</span> blocks prevents <span class="Code">Signal </span><span class="Code">Compiler</span> from translating the subsystem into HDL. You can also use a <span class="Code">Subsystem </span><span class="Code">Builder</span> block to create a new subsystem and then automatically populate its ports using the specified HDL.</div>
+      <div class="Body"><a name="1029307">Typically use the explicit black-box interface to encapsulate non-DSP Builder blocks </a>from the main Simulink blocksets. </div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1028472">For information about the </a><span class="Code">HDL Input</span>, <span class="Code">HDL Output</span>, <span class="Code">HDL Entity</span>, and <span class="Code">Subsystem </span><span class="Code">Builder</span> blocks, <span class="change_bars">refer to</span> the block descriptions in the <span class="Document_title">AltLab Library</span> chapter of the <span class="Link" style="font-style: italic;"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_lib.pdf" target="external_window">DSP Builder Standard Blockset Libraries</a></span> section in volume 2 of the <span class="Document_title">DSP Builder </span><span class="Document_title">Handbook</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

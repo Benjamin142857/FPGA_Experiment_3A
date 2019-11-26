@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Bit Width Design Rule</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_design_rules.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_design_rules.08.04.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_design_rules.08.06.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1101410">Bit Width Design Rule</a></div>
+      <div class="Body"><a name="1101413">You must specify the bit width at the source of the datapath. DSP Builder propagates </a>this bit width from the source to the destination through all intermediate blocks. Some intermediate DSP Builder blocks must have a bit width specified, while others have specific bit width growth rules which are described in the documentation for each block. </div>
+      <div class="Body"><a name="1101415">Some blocks which allow bit widths to be specified optionally, have an </a><span class="Code">Inferred</span> type setting that allows a growth rule to be used. For example, in the amplitude modulation tutorial design (<span class="N_007cLink"><a href="hb_dspb_std_ug_tutorial.07.1.html#1000950" title="Getting Started">Chapter&nbsp;2, Getting Started</a></span>) the <span class="Code">SinIn</span> and <span class="Code">SinDelay</span> blocks have a bit width of 16. Therefore, a bit width of 16 is automatically assigned to the intermediate <span class="Code">Delay</span> block.</div>
+      <div class="H2_heading"><a name="1101641">Data Width Propagation</a></div>
+      <div class="Body"><a name="1101642">You can specify the bit width of many Altera blocks in the Simulink design. However, </a>you do not need to specify the bit width for all blocks. If you do not specify explicitly the bit width, DSP Builder assigns a bit width during the Simulink-to-VHDL conversion by propagating the bit width from the source of a datapath to its destination. </div>
+      <div class="Body"><a name="1101644">Some intermediate DSP Builder blocks must have a specified bit width, while others </a>have specific bit width growth rules that the documentation for each block describes. Some blocks, which allow bit widths to be specified optionally, allow use of a growth rule—the <span class="Code">Inferred</span> type setting.</div>
+      <div class="Body"><span class="N_007cLink"><a href="#1112049" title="Bit Width Design Rule" name="1101645">Figure&nbsp;3–2</a></span> illustrates bit‑width propagation.</div>
+      <div class="TAW_table_anchor_wide"><a name="1112009">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–2.&nbsp;</span><a name="1112049">3-Tap FIR Filter</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1112051"><img class="Default" src="images/FIR3tap_FCA1.jpg" width="506" height="221" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1101655">The </a><span class="Bold">fir3tapsub.mdl</span> design is a 3-tap finite impulse response (FIR) filter and has the following attributes:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101656">The input data signal is an 8-bit signed integer bus</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101657">The output data signal is a 20-bit signed integer bus</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101658">Three </a><span class="Code">Delay</span> blocks build the tapped delay line</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101659">The coefficient values are {1.0000, -5.0000, 1.0000}, a </a><span class="Code">Gain</span> block performs the coefficient multiplication</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1112773" title="Bit Width Design Rule" name="1101663">Figure&nbsp;3–3</a></span> shows the RTL representation of <span class="Bold">fir3tapsub.mdl</span> created by <span class="Code">Signal </span><span class="Code">Compiler</span>.</div>
+      <div class="TAW_table_anchor_wide"><a name="1112734">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–3.&nbsp;</span><a name="1112773">3-Tap FIR Filter in Quartus</a>&nbsp;II RTL View</div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1112775"><img class="Default" src="images/FIR3tap_rtl_view.jpg" width="613" height="115" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H3_heading"><a name="1101670">Tapped Delay Line</a></div>
+      <div class="Body"><a name="1101671">The bit width propagation mechanism starts at the source of the datapath, in this case </a>at the <span class="Code">Input</span> block, which is an 8-bit input bus. This bus feeds the register <span class="Code">U0</span>, which feeds <span class="Code">U1</span>, which feeds <span class="Code">U2</span>. DSP Builder propagates the 8-bit bus in this register chain where each register is eight bits wide (<span class="N_007cLink"><a href="#1113291" title="Bit Width Design Rule">Figure&nbsp;3–4</a></span>).</div>
+      <div class="TAW_table_anchor_wide"><a name="1113259">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–4.&nbsp;</span><a name="1113291">Tap Delay Line in Quartus</a>&nbsp;II Version RTL Viewer</div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1113293"><img class="Default" src="images/FIR3tap_delay_line_rtl_view.jpg" width="587" height="124" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H3_heading"><a name="1101681">Arithmetic Operation</a></div>
+      <div class="Body"><span class="N_007cLink"><a href="#1143372" title="Bit Width Design Rule" name="1101685">Figure&nbsp;3–5</a></span> shows the arithmetic section of the filter, that computes the output <span class="Code">yout</span>:</div>
+      <div class="GA_graphic_anchor"><a name="1129435"><img class="Default" src="images/EqnArithOp.jpg" width="136" height="50" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+      <div class="L1_body"><a name="1101694">where </a><span class="Emphasis">c[i]</span> are the coefficients and <span class="Emphasis">x</span>[<span class="Emphasis">k</span> - <span class="Emphasis">i</span>] are the data.</div>
+      <div class="TAW_table_anchor_wide"><a name="1143378">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–5.&nbsp;</span><a name="1143372">3-Tap FIR Filter Arithmetic Operation in Quartus</a>&nbsp;II Version RTL Viewer</div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1143377"><img class="Default" src="images/FIR3tap_arithmetic_rtl_view.jpg" width="568" height="179" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1143379">This design requires three multipliers and one parallel adder. The arithmetic </a>operations increase the bus width in the following ways:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101702">Multiplying </a><span class="Emphasis">a</span> <span class="Symbol">×</span> <span class="Emphasis">b</span> in SBF format (where <span class="Emphasis">l</span> is left and <span class="Emphasis">r</span> is right) is equal to:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2_body"><a name="1129875">	</a>[<span class="Emphasis">la</span>].[<span class="Emphasis">ra</span>] <span class="Symbol">×</span> [<span class="Emphasis">lb</span>].[<span class="Emphasis">rb</span>]</div>
+      <div class="L1_body"><a name="1129895">The bus width of the resulting signal is:</a></div>
+      <div class="L2_body"><a name="1129904">([</a><span class="Emphasis">la</span>] + [<span class="Emphasis">lb</span>]).([<span class="Emphasis">ra</span>] + [<span class="Emphasis">rb</span>])</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101703">Adding </a><span class="Emphasis">a</span> + <span class="Emphasis">b</span> + <span class="Emphasis">c</span> in SBF format (where <span class="Emphasis">l</span> is left and <span class="Emphasis">r</span> is right) is equal to:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2_body"><a name="1129959">[</a><span class="Emphasis">la</span>].[<span class="Emphasis">ra</span>] + [<span class="Emphasis">lb</span>].[<span class="Emphasis">rb</span>] + [<span class="Emphasis">lc</span>].[<span class="Emphasis">rc</span>]</div>
+      <div class="L1_body"><a name="1129975">The bus width of the resulting signal is: </a></div>
+      <div class="L2_body"><a name="1129992">(max([</a><span class="Emphasis">la</span>], [<span class="Emphasis">lb</span>], [<span class="Emphasis">lc</span>]) + 2).(max([<span class="Emphasis">ra</span>], [<span class="Emphasis">rb</span>], [<span class="Emphasis">rc</span>]))</div>
+      <div class="Body"><a name="1101704">The parallel adder has three input buses of 14, 16, and 14 bits. To perform this </a>addition in binary, DSP Builder automatically sign extends the 14-bit busses to 16 bits. The output bit width of the parallel adder is 18&nbsp;bits, which covers the full resolution.</div>
+      <div class="Body"><a name="1101705">The following options can change the internal bit width resolution and therefore </a>change the size of the hardware required to perform the function that Simulink describes:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101706">Change the bit width of the input data.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101707">Change the bit width of the output data. The VHDL synthesis tool removes any </a>unused logic.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1101708">Insert a </a><span class="Code">Bus Conversion</span> block to change the internal signal bit width.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1114463" title="Bit Width Design Rule" name="1101712">Figure&nbsp;3–6</a></span> shows how you can use <span class="Code">Bus Conversion</span> blocks to control internal bit widths. </div>
+      <div class="TAW_table_anchor_wide"><a name="1114448">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–6.&nbsp;</span><a name="1114463">3-Tap Filter with BusConversion to Control Bit Widths</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1114465"><img class="Default" src="images/FIR3tap_FCA2.jpg" width="537" height="206" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1130184">In </a><span class="N_007cLink"><a href="#1114463" title="Bit Width Design Rule">Figure&nbsp;3–6</a></span>, the output of the <span class="Code">Gain</span> block has 4 bits removed. Port data type display is enabled in this example and shows that the inputs to the <span class="Code">Delay</span> blocks are of type <span class="Code">INT_8</span> but the outputs from the <span class="Code">Bus Conversion</span> blocks are of type <span class="Code">INT_6</span>.</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1130185">You can also achieve bus conversion by inserting an </a><span class="Code">AltBus</span>, <span class="Code">Round</span>, or <span class="Code">Saturate</span> block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1130177">The RTL view illustrates the effect of this truncation. The parallel adder required has a </a>smaller bit width and the synthesis tool reduces the size of the multiplier to have a 9-bit output (<span class="N_007cLink"><a href="#1114834" title="Bit Width Design Rule">Figure&nbsp;3–7</a></span>).</div>
+      <div class="TAW_table_anchor_wide"><a name="1114823">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–7.&nbsp;</span><a name="1114834">3-Tap Filter with BusConversion to Control Bit Widths in Quartus</a>&nbsp;II RTL Viewer</div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1114836"><img class="Default" src="images/FIR3tap_busconversion_rtl_view.jpg" width="586" height="220" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1145092">For more information, refer to </a><span class="N_007cLink"><a href="hb_dspb_std_ug_design_rules.08.04.html#1012586" title="Fixed-Point Notation">“Fixed-Point Notation” on page&nbsp;3–2</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

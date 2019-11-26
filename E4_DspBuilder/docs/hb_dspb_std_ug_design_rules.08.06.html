@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Frequency Design Rules</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_design_rules.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_design_rules.08.05.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_design_rules.08.07.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1058580">Frequency Design Rules</a></div>
+      <div class="Body"><a name="1058582">This section describes the frequency design rules for single and multiple clock </a>domains.</div>
+      <div class="H2_heading"><a name="1012700">Single Clock Domain</a></div>
+      <div class="Body"><a name="1012701">If your design does not contain a </a><span class="Code">PLL</span> block or <span class="Code">Clock_Derived</span> block, DSP Builder uses synchronous design rules to convert a Simulink design into hardware. All DSP Builder registered blocks (such as the <span class="Code">Delay</span> block) operate on the positive edge of the single clock domain, which runs at the system sampling frequency. </div>
+      <div class="Body"><a name="1082077">The clock pin is not graphically displayed in Simulink unless you use the </a><span class="Code">Clock</span> block. However, when DSP Builder converts your design to VHDL it automatically connects the clock pin of the registered blocks (such as the <span class="Code">Delay</span> block) to the single clock domain of the system.</div>
+      <div class="Body"><a name="1096653">The default clock pin is named </a><span class="Code">clock</span> and there is also a default active-low reset pin named <span class="Code">aclr</span>.</div>
+      <div class="Body"><a name="1097290">By default, Simulink does not graphically display the clock enable and reset input </a>pins of the DSP Builder registered blocks. When DSP Builder converts a design to VHDL, it automatically connects these pins. You can access and drive these optional ports by checking the appropriate option in the <span class="Bold">Block Parameters</span> dialog box.</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1097806">Simulink issues a warning if you are using an inappropriate solver for your model. </a>You should set the solver options to fixed-step discrete when you are using a single clock domain. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1097807">For Simulink simulation, all DSP Builder blocks (including registered DSP Builder </a>blocks) use the sampling <span class="change_bars">period specified in the </span><span class="Code">Clock</span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;;"> block. If there is no </span><span class="Code">Clock</span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;;"> </span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;;">block in your design, the DSP Builder blocks use a sampling frequency of 1. You can </span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;;">use the </span><span class="Code">Clock</span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;;"> block to change the Simulink sample period and the hardware clock </span><span class="change_bars" style="font-family: &quot;Microsoft Sans Serif&quot;;">period.</span></div>
+      <div class="H2_heading"><a name="1036582">Multiple Clock Domains</a></div>
+      <div class="Body"><a name="1027641">A DSP Builder model can operate using multiple Simulink sampling periods. You can </a>specify the clock domain in some DSP Builder block sources, such as the <span class="Code">Counter</span> block. You can also specify the clock domain in DSP Builder rate change blocks such as <span class="Code">Tsamp</span>. </div>
+      <div class="Body"><a name="1027739">When using multiple sampling periods, DSP Builder must associate each sampling </a>period to a physical clock domain that can be available from an FPGA PLL or a clock input pin. Therefore, the top-level DSP Builder model must contain DSP Builder rate change blocks such as <span class="Code">PLL</span> or <span class="Code">Clock_Derived</span>. </div>
+      <div class="Body"><a name="1055260">You can use a </a><span class="Code">PLL</span> block to synthesize additional clock signals from a reference clock signal. These internal clock signals are multiples of the system clock frequency. </div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1163863">Refer to </a><span class="N_007cLink"><a href="#1055366" title="Frequency Design Rules">“Using the PLL Block” on page&nbsp;3–14</a></span> for more information.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1082341">If your design contains the </a><span class="Code">PLL</span> block, <span class="Code">Clock</span> or <span class="Code">Clock_Derived</span> blocks, the DSP Builder registered blocks operate on the positive edge of one of the block’s output clocks. </div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1097377">You must set a variable-step discrete solver in Simulink when you are using multiple </a>clock domains. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1042019">To ensure a proper hardware implementation of a DSP Builder design using multiple </a>clock domains, consider the following points:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1027643">Do not use DSP Builder combinational blocks for rate transitions to ensure that the </a>behavior of the DSP Builder Simulink model is identical to the generated RTL representation. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><span class="N_007cLink"><a href="#1115480" title="Frequency Design Rules" name="1130516">Figure&nbsp;3–8</a></span> illustrates an incorrect use of the DSP Builder <span class="Code">Logical Bit </span><span class="Code">Operator</span> (NOT) block.</div>
+      <div class="TAW_table_anchor_wide"><a name="1115472">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–8.&nbsp;</span><a name="1115480">Example of Incorrect Usage: Mixed Sampling Rate on a NOT Block</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1115482"><img class="Default" src="images/example_incorrect_usage_NOT_block.jpg" width="558" height="151" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1027645">Two DSP Builder blocks can operate with two different sampling periods. </a>However for most DSP Builder blocks, the sampling period of each input port and each output port must be identical. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1089567">Although this rule applies most of the DSP Builder blocks, there are some </a>exceptions such as the <span class="Code">Dual-Clock FIFO</span> block where the sampling period of the read input port is expected to be different than the sampling period of the write input port.</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1028304">For a datapath using mixed clock domains, the design may require additional </a>register decoupling around the register that is between the domains.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1047886">This requirement is especially true when the source data rate is higher than the </a>destination register, in other words, when the data of a register is toggling at the higher rate than the register’s clock pin (<span class="N_007cLink"><a href="#1115613" title="Frequency Design Rules">Figure&nbsp;3–9</a></span>). </div>
+      <div class="TAW_table_anchor_wide"><a name="1115596">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–9.&nbsp;</span><a name="1115613">Data Toggling Faster than Clock</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1115615"><img class="Default" src="images/data-toggling.jpg" width="536" height="140" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1_body"><span class="N_007cLink"><a href="#1115826" title="Frequency Design Rules" name="1047848">Figure&nbsp;3–10</a></span> shows a stable hardware implementation.</div>
+      <div class="TAW_table_anchor_wide"><a name="1115794">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–10.&nbsp;</span><a name="1115826">Stable Hardware Implementation</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1115828"><img class="Default" src="images/more-stable.jpg" width="589" height="258" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1055330">Using Clock and Clock_Derived Blocks</a></div>
+      <div class="Body"><a name="1055362">DSP Builder maps the </a><span class="Code">Clock</span> and <span class="Code">Clock_Derived</span> blocks to two hardware device input pins; one for the clock input, and one for the reset input for the clock domain. A design may contain zero or one <span class="Code">Clock</span> block and zero or more <span class="Code">Clock_Derived</span> blocks. </div>
+      <div class="Body"><a name="1101290">If you use </a><span class="Code">Clock_Derived</span> blocks, and there is only one system clock, you must generate an appropriate clock signal for connection to the hardware device input pins for the derived clocks.</div>
+      <div class="Body"><a name="1080174">The </a><span class="Code">Clock</span> block defines the base clock domain, and <span class="Code">Clock_Derived</span> blocks define other clock domains. DSP Builder specifies sample times in terms of the base clock sample time. If there is no <span class="Code">Clock</span> block, DSP Builder uses a default base clock, with a Simulink sample time of 1, and a hardware clock period of 20 <span class="Symbol">μ</span>s.</div>
+      <div class="Body"><a name="1078127">This feature is available across all device families that DSP Builder supports. If no </a><span class="Code">Clock</span> block is present, the design uses a default clock pin named <span class="Code">clock</span> and a default active-low reset pin named <span class="Code">aclr</span>.</div>
+      <div class="Body"><a name="1055331">The </a><span class="Code">Signal Compiler</span> block assigns a clock buffer and a dedicated clock-tree to clock-signal input pin automatically to maintain minimum clock skew. If your design contains more <span class="Code">Clock</span> and <span class="Code">Clock_Derived</span> blocks than there are clock buffers available, non dedicated routing resources route the clock signals.</div>
+      <div class="H2_heading"><a name="1102356">Clock Assignment</a></div>
+      <div class="Body"><a name="1102358">DSP Builder identifies registered DSP Builder blocks such as the </a><span class="Code">Delay</span> block and implicitly connects the clock, clock enable, and reset signals in the VHDL design for synthesis. When your design does not contain a <span class="Code">Clock</span> block, <span class="Code">Clock_Derived</span> block, or <span class="Code">PLL</span> block, all the registered DSP Builder block clock pins connect to a single clock domain (signal clock in VHDL). </div>
+      <div class="Body"><a name="1102359">Define clock domains by the clock source blocks: the </a><span class="Code">Clock</span> block, the <span class="Code">Clock_Derived</span> block and the <span class="Code">PLL</span> block. </div>
+      <div class="Body"><a name="1102360">The </a><span class="Code">Clock</span> block defines the base clock domain. You can specify its Simulink sample time and hardware clock period directly. If there is no <span class="Code">Clock</span> block, there is a default base clock with a Simulink sample time of 1. You can use the <span class="Code">Clock_Derived</span> block to define clock domains in terms of the base clock. DSP Builder specifies the sample time of a derived clock as a multiple and divisor of the base clock sample time.</div>
+      <div class="Body"><a name="1102361">The </a><span class="Code">PLL</span> block maps to a hardware PLL. You can use it to define multiple clock domains with sample times specified in terms of the PLL input clock. Use the PLL input clock either as the base clock or a derived clock.</div>
+      <div class="Body"><a name="1102362">Each clock domain has an associated reset pin. The </a><span class="Code">Clock</span> block and each of the <span class="Code">Clock_Derived</span> blocks have their own reset pin, the name of which is in the block's parameter dialog box. The clock domains of the <span class="Code">PLL</span> block share the reset pin of the <span class="Code">PLL</span> block's input clock.</div>
+      <div class="Body"><a name="1102363">When your design contains clock source blocks, DSP Builder implicitly connects the </a>clock pins of all the registered blocks to the appropriate clock pin or PLL output. DSP Builder also connects the reset pins of the registered blocks to the top-level reset port for the block's clock domain.</div>
+      <div class="Body"><a name="1102365">DSP Builder blocks fall into the following clocking categories:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1102366">Combinational blocks—the output always changes at the same sample time slot as </a>the input.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1102367">Registered blocks—the output changes after a variable number of sample time </a>slots.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1116643" title="Frequency Design Rules" name="1102371">Figure&nbsp;3–11</a></span> illustrates DSP Builder block combinational behavior. </div>
+      <div class="TAW_table_anchor_wide"><a name="1116609">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–11.&nbsp;</span><a name="1116643">Magnitude Block: Combinational Behavior</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1116645"><img class="Default" src="images/magnitude.jpg" width="599" height="229" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1102378">The </a><span class="Code">Magnitude</span> block translates as a combinational signal in VHDL. DSP Builder does not add clock pins to this function.</div>
+      <div class="Body"><span class="N_007cLink"><a href="#1116876" title="Frequency Design Rules" name="1102382">Figure&nbsp;3–12</a></span> illustrates the behavior of a registered DSP block. In the VHDL netlist, DSP Builder adds clock pin inputs to this function. The <span class="Code">Delay</span> block, with the <span class="Bold">Clock </span><span class="Bold">Phase Selection</span> parameter equal to 100, is converted into a VHDL shift register with a decimation of three and an initial value of zero.</div>
+      <div class="TAW_table_anchor_wide"><a name="1116844">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–12.&nbsp;</span><a name="1116876">Delay Block: Registered Behavior</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1116878"><img class="Default" src="images/delay.jpg" width="604" height="252" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1102389">For feedback circuitry (the output of a block fed back into the input of a block), a </a>registered block must be in the feedback loop. Otherwise, DSP Builder creates an unresolved combinational loop (<span class="N_007cLink"><a href="#1117051" title="Frequency Design Rules">Figure&nbsp;3–13</a></span>).</div>
+      <div class="TAW_table_anchor_wide"><a name="1117020">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–13.&nbsp;</span><a name="1117051">Feedback Loop</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1117053"><img class="Default" src="images/SignalCompiler_feedback.jpg" width="611" height="233" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1102399">Use the </a><span class="Code">PLL</span> block and assign different sampling periods on registered DSP Builder blocks to design multirate designs.</div>
+      <div class="Body"><a name="1102400">Alternatively, use a single clock domain with clock enable and the following design </a>rules to design multirate designs without the DSP Builder <span class="Code">PLL</span> block:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1102401">The fastest sample rate is an integer multiple of the slower sample rates. The </a><span class="Bold">Clock </span><span class="Bold">Phase Selection</span> field in the <span class="Bold">Block Parameters</span> dialog box specifies the values for the <span class="Code">Delay</span> block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1164204">The </a><span class="Bold">Clock Phase Selection</span> box accepts a binary pattern string to describe the clock phase selection. DSP Builder processes each digit or bit of this string sequentially on every cycle of the fastest clock. When a bit is equal to one, DSP Builder enables the block; when a bit is equal to zero, DSP Builder disables the block. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><span class="N_007cLink"><a href="#1110930" title="Frequency Design Rules" name="1131040">Table&nbsp;3–2</a></span> shows some examples of typical clock phase selections.</div>
+      <div class="TA_table_anchor"><a name="1110912">&nbsp;</a></div>
+      <table class="Tbl_standard" style="text-align: left; width: 377.31680000000005pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">
+            <span class="N_007cRun-in_heading">Table&nbsp;3–2.&nbsp;</span><a name="1110930">Clock Phase Selection Example</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 49.2501pt;">
+            <div class="TCHC_column_head_center"><a name="1102413">Phase</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 328.0667pt;">
+            <div class="TCHC_column_head_center"><a name="1102415">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1102417">1</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1102419">The </a><span class="Code">Delay</span> block is always enabled and captures all data passing through the block (sampled at the rate 1).</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1102421">10</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1102423">The </a><span class="Code">Delay</span> block is enabled every other phase and every other data (sampled at the rate 1) passes through.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1102425">0100</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1102427">The </a><span class="Code">Delay</span> block is enabled on the 2nd phase out of 4 and only the 2nd data out of 4 (sampled at the rate 1) passes through. The data on phases 1, 3, and 4 does not pass through the <span class="Code">Delay</span> block.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><span class="N_007cLink"><a href="#1117274" title="Frequency Design Rules" name="1102431">Figure&nbsp;3–14</a></span> compares the scopes for the <span class="Code">Delay</span> block operating at a one quarter rate on the <span class="Code">1000</span> and <span class="Code">0100</span> phases, respectively.</div>
+      <div class="TAW_table_anchor_wide"><a name="1117251">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–14.&nbsp;</span><a name="1117274">1000 as Opposed to 0100 Phase Delay</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1117276"><img class="Default" src="images/Signalcompiler_phasedelay.jpg" width="597" height="250" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1055366">Using the PLL Block</a></div>
+      <div class="Body"><a name="1055381">DSP Builder maps the </a><span class="Code">PLL</span> block to the hardware device PLL. The number of PLL internal clock outputs that each device family supports depends on the specific device packaging.</div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1155143">For information about the built-in PLLs, refer to the device handbook for the device </a>family you are targeting.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1117434" title="Frequency Design Rules" name="1080689">Figure&nbsp;3–15</a></span> shows an example of multiple-clock domain support using the <span class="Code">PLL</span> block.</div>
+      <div class="TA_table_anchor"><a name="1117419">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 377pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–15.&nbsp;</span><a name="1117434">MultipleClockDelay.mdl</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 377pt;">
+            <div class="GA_graphic_anchor"><a name="1117436"><img class="Default" src="images/screen_multipleclockdelay.jpg" width="434" height="202" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><span class="N_007cLink"><a href="#1117516" title="Frequency Design Rules" name="1012778">Figure&nbsp;3–16</a></span> shows the clock setting configuration for the <span class="Code">PLL</span> block in the design example <span class="Bold">MultipleClockDelay.mdl</span>. Output clock <span class="Code">PLL_clk0</span> is set to 800&nbsp;ns, and output clock <span class="Code">PLL_clk1</span> is set to 100&nbsp;ns.</div>
+      <div class="TA_table_anchor"><a name="1117496">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–16.&nbsp;</span><a name="1117516">PLL Setting</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1117518"><img class="Default" src="images/pll_setting.jpg" width="382" height="361" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1055490">Datapath A (green in </a><span class="N_007cLink"><a href="#1117434" title="Frequency Design Rules">Figure&nbsp;3–15</a></span>) operates on output clock <span class="Code">PLL_clk0</span> and datapath B (red in <span class="N_007cLink"><a href="#1117434" title="Frequency Design Rules">Figure&nbsp;3–15</a></span>) operates on output clock <span class="Code">PLL_clk1</span>. Specify these clocks by setting the <span class="Bold">Specify Clock</span> option and enter the clock name in the <span class="Bold">Block Parameter</span> dialog box for each input block.</div>
+      <div class="Body"><a name="1055497">In this design, the </a><span class="Bold">Sample time</span> parameters for the <span class="Code">Sine Wave a</span> block and <span class="Code">Sine </span><span class="Code">Wave b</span> block are set explicitly to 1e-006 and 1e-007, so that DSP Builder provides data to the input blocks at the rate at which they sample.</div>
+      <div class="H3_heading"><a name="1012826">Using Advanced PLL Features</a></div>
+      <div class="Body"><a name="1082780">The DSP Builder </a><span class="Code">PLL</span> block supports the fundamental multiplication and division factor for the PLL. If you want to use other PLL features (such as phase&nbsp;shift, duty cycle), use a separate Quartus II project with the following method: </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1089559">Create a new Quartus II project and use the MegaWizard™ Plug-In to configure </a>the <span class="Code">ALTPLL</span> block. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1089563">Add the DSP Builder .</a><span class="Bold">mdl</span> file to the Quartus II project as a source file. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1089564">Create a top-level design that instantiates your ALTPLL variation and your DSP </a>Builder design.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

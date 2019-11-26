@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Using HIL</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_hil.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body style="background-repeat: no-repeat; border-bottom-color: Transparent; border-left-color: Transparent; border-right-color: Transparent; border-top-color: Transparent; border-top-style: solid; border-top-width: thin; margin-bottom: -150px; margin-left: 16px; margin-top: 65px">
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_megacore.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_signaltap.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H0_chapter"><a name="1014958">Using HIL</a></div>
+      <div class="B0_body"><a name="1017189">Adding the </a><span class="Code">HIL</span> block to your Simulink model allows you to cosimulate a Quartus II software design with a physical FPGA board implementing a portion of that design. You define the contents and function of the FPGA by creating and compiling a Quartus&nbsp;II project. A simple JTAG interface between Simulink and the FPGA board links the two.</div>
+      <div class="B0_body"><a name="1014488">The main benefits of using the </a><span class="Code">HIL</span> block are faster simulation and richer instrumentation. The Quartus II project you embed in an FPGA runs faster than a software-only simulation. To further increase simulation speed, the <span class="Code">HIL</span> block offers frame and burst modes of data transfer that are significantly faster than single-step mode when you use it with suitable designs. </div>
+      <div class="B0_body"><a name="1026294">The </a><span class="Code">HIL</span> block also makes available to the hardware a large Simulink library of sinks and sources, such as channel models and spectrum analyzers, which can give you greater control and observability.</div>
+      <div class="B0_body"><a name="1012319">This chapter explains the </a><span class="Code">HIL</span> block design flow, walks through an example using the <span class="Code">HIL</span> block, and discusses the optional burst and frame data transfer modes.</div>
+      <div class="H1_heading"><a name="1012264">HIL Design Flow</a></div>
+      <div class="B0_body"><a name="1012076">The </a><span class="Code">HIL</span> block in AltLab library of the <span class="Bold">Altera DSP Builder</span> <span class="Bold">Blockset</span> enables the HIL functionality. It represents the functions implemented on your FPGA, and works smoothly with the normal DSP Builder/Simulink work flow. </div>
+      <div class="B0_body"><a name="1029537">The HIL design flow comprises the following steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1031598">Create a Quartus II project that defines the functions you want to co</a>‑simulate in hardware and use <span class="Code">Signal Compiler</span> block to compile the Quartus II project through the Quartus II Fitter.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1015917">Add the </a><span class="Code">HIL</span> block to your Simulink model and import the compiled Quartus II project into the <span class="Code">HIL</span> block. You can also connect instrumentation to your <span class="Code">HIL</span> block by adding additional blocks from the Simulink Sinks and Sources libraries.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1051096">If the original design contains a </a><span class="Code">Clock</span> block that defines a period and sample time that is different from the default values, you must add a <span class="Code">Clock</span> block with the same values as the <span class="Code">HIL</span> block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1015922">Specify parameters for the </a><span class="Code">HIL</span> block, including the following options:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_medium">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><a name="1016519">The Quartus II project to define its functionality</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_medium">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><a name="1048888">The clock and reset pins</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_medium">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><a name="1048890">The reset active level</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_medium">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><a name="1016577">The input and output pin characteristics</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_medium">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><a name="1016687">The use of single-step versus burst mode</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1016500">Compile the </a><span class="Code">HIL</span> block to create a programming object file (.<span class="Bold">pof</span>) for hardware cosimulation.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1048891">Scan for JTAG cables and hardware devices connected to the local host or any </a>remotely enabled hosts.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1016822">Program the board that contains your target FPGA.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">7.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030236">Simulate the combined software and hardware system in Simulink. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1050351">When using a </a><span class="Code">HIL</span> block in a Simulink model, set a fixed-step, single tasking solver.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1039989" title="Using HIL" name="1037050">Figure&nbsp;5–1</a></span> shows this system-level design flow using DSP&nbsp;Builder.</div>
+      <div class="TA_table_anchor"><a name="1039982">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;5–1.&nbsp;<span style="color: #000000; font-family: &quot;Microsoft Sans Serif&quot;; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><a name="1039989">System-Level Design Flow</a></span></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1039991"><img class="Default" src="images/hil_system_level_design_flow.jpg" width="599" height="279" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H1_heading"><a name="1029448">HIL Requirements</a></div>
+      <div class="B0_body"><a name="1017295">The </a><span class="Code">HIL</span> block has the following requirements:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1017296">An FPGA board with a JTAG interface (Stratix, Stratix</a>&nbsp;II, Stratix III, Cyclone, Cyclone&nbsp;II, or Cyclone III device).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1017297">A valid Quartus II project that contains a single clock domain from Simulink. DSP </a>Builder creates an internal Quartus II project when you run <span class="Code">Signal Compiler</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1019266">A JTAG download cable (for example, a ByteBlasterMV™, ByteBlaster™</a>&nbsp;II, ByteBlaster, MasterBlaster™, or USB‑Blaster™ cable).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1029353">A maximum of one </a><span class="Code">HIL</span> block for each JTAG download cable.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1050410">HIL Design Example</a></div>
+      <div class="B0_body"><a name="1050412">DSP Builder includes the following design examples in the </a><span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">DSP Builder install </span><span class="Emphasis" style="font-weight: normal">path</span><span class="Bold" style="font-style: normal">&gt;\DesignExamples\Tutorials\HIL</span> directory that demonstrate the use and effectiveness of HIL:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1029551">Imaging edge detection</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1029559">Export example</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1029560">Fast Fourier Transform (FFT)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1058351">Frequency sweep</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1058353">This section shows the frequency sweep design. </a></div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1058359">This tutorial uses the Stratix II hardware device on an Altera Stratix II EP2S60 DSP </a>Development Board. However, you can also use any other supported device and development board.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1050432">To create a frequency sweep design, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1012863">Run MATLAB, and open the model </a><span class="Bold">FreqSweep.mdl</span> in the <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">DSP Builder install </span><span class="Emphasis" style="font-weight: normal">path</span><span class="Bold" style="font-style: normal">&gt;\DesignExamples\Tutorials\HIL\FreqSweep</span> directory. <span class="N_007cLink"><a href="#1040321" title="Using HIL">Figure&nbsp;5–2</a></span> shows the model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1040313">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;5–2.&nbsp;<a name="1040321">Frequency Sweep Model </a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1040323"><img class="Default" src="images/freq-sweep-model.jpg" width="603" height="106" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1012359">Double-click the </a><span class="Code">Signal Compiler</span> block. In the dialog box that appears (<span class="N_007cLink"><a href="#1040354" title="Using HIL">Figure&nbsp;5–3 on page&nbsp;5–4</a></span>), click <span class="Bold">Compile</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><a name="1045904">This action creates a Quartus II project, </a><span class="Bold">FreqSweep.qpf</span>, compiles your model for synthesis, and runs the Quartus II Fitter.</div>
+      <div class="B1_body"><a name="1045902">Progress is indicated by status messages and a scrolling bar at the bottom of the </a>dialog box.</div>
+      <div class="TA_table_anchor"><a name="1040347">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;5–3.&nbsp;<a name="1040354">Signal Compiler Dialog Box, Simple Tab</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1040356"><img class="Default" src="images/DlgSignalCompiler.jpg" width="399" height="510" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030520">Review the Messages, then click </a><span class="Bold">OK</span> to close the <span class="Bold">Signal Compiler</span> dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1013801">Replace the internal functions of the frequency sweep model with an </a><span class="Code">HIL</span> block. Open the model <span class="Bold">FreqSweep_HIL.mdl</span> from the <span class="Bold">FreqSweep</span> directory (step <span class="N_007cLink"><a href="#1012863" title="Using HIL">1</a></span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><span class="N_007cLink"><a href="#1040665" title="Using HIL" name="1030683">Figure&nbsp;5–4</a></span> shows this model, with the <span class="Code">HIL</span> block in place.</div>
+      <div class="TA_table_anchor"><a name="1040634">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;5–4.&nbsp;<a name="1040665">Frequency Sweep Design Model Using the HIL Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1040667"><img class="Default" src="images/freq-sweep-hil.jpg" width="579" height="117" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1020632">Double-click the frequency sweep </a><span class="Code">HIL</span> block to display the <span class="Bold">Hardware in the loop</span> dialog box. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1040744">&nbsp;</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1049299">Select the Quartus II project by browsing into the </a><span class="Bold">FreqSweep_dspbuilder</span> directory to locate the <span class="Bold">FreqSweep.qpf</span> file.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1035959">The full path to this file is visible in the dialog box when you select this file.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">7.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1037242">Select </a><span class="Bold">Clock</span> from the list of available clock pins.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1037269">HIL does not support multiple clock domains and only the specified signal </a>is the HIL clock signal. The HIL treats any other clocks in your design as input signals.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">8.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1049134">Select </a><span class="Bold">aclr</span> from the list of available reset pins.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">9.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1032451">Identify the signed ports:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_medium">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><a name="1050542">Select the </a><span class="Bold">Input</span> port and click <span class="Bold">Unsigned</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2B_bulleted_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_medium">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L2B_bulleted_list_inner"><a name="1036098">Select each output port (</a><span class="Bold">OutputCordic</span> and <span class="Bold">OutputFilter</span>) and click <span class="Bold">Signed</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">10.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1032504">Select the reset level to be </a><span class="Bold">Active_High</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">11.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1049418">Select the mode of operation by turning off </a><span class="Bold">Burst Mode</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">12.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1037358">Click </a><span class="Bold">Next page</span>. to display the second page of the <span class="Bold">Hardware in the loop</span> dialog box. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1041132">&nbsp;</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">13.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1037394">Specify a value for the </a><span class="Bold">FPGA device</span> and click <span class="Bold">Compile with Quartus II</span> to compile the HIL design. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1037460">If no output writes to the MATLAB command window, check that the </a>original Quartus II project is up-to-date and compiles with he same version of the Quartus II software that compiles your Simulink model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">14.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1049562">Click </a><span class="Bold">Scan Jtag</span> to find available cables and hardware devices in the chain.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">15.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1037395">Select the JTAG download cable that references the required FPGA device and </a>click <span class="Bold">Configure FPGA</span> to program the FPGA on the board.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">16.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1031163">Click </a><span class="Bold">Close</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">17.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1012376">Simulate your design in Simulink. </a><span class="N_007cLink"><a href="#1041368" title="Using HIL">Figure&nbsp;5–5</a></span> shows the scope display from the finished design.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1041345">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;5–5.&nbsp;<a name="1041368">Scope Output from the FrequencySweep Model with HIL Block</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1041370"><img class="Default" src="images/scope-hil.jpg" width="613" height="321" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H1_heading"><a name="1014673">Burst Mode</a></div>
+      <div class="B0_body"><a name="1016221">The Quartus II software infrastructure that communicates with the FPGA through </a>JTAG—system-level debugging (SLD)—uses a serial data transfer protocol. </div>
+      <div class="B0_body"><a name="1037500">To maximize the throughput of this data transfer, the </a><span class="Code">HIL</span> block offers a burst mode that buffers the stimulus data and presents it in bursts to the hardware. </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1058867" title="Using HIL" name="1014775">Table&nbsp;5–1</a></span> shows the advantages and disadvantages of using burst mode compared with the normal single-step mode.</div>
+      <div class="TA_table_anchor"><a name="1058894">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 376.7733pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;5–1.&nbsp;<a name="1058867">Comparing Single-Step and Burst Modes</a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 70.0pt">
+            <div class="THC_heading_center"><span class="bold"><a name="1059120">Mode</a></span></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 123.5797pt">
+            <div class="THC_heading_center"><span class="Bold"><a name="1059122">Advantages</a></span></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 183.1936pt">
+            <div class="THC_heading_center"><a name="1059124">Disadvantages</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1059126">Single step</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1059128">Cycle accurate simulation.</a></div>
+            <div class="TBL_body_left"><a name="1059129">Feedback is possible outside of </a>the <span class="Code">HIL</span> block.</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1059131">High SLD overhead.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1059134">Burst</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top">
+            <div class="T1B_bulleted_list_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="T1B_bulleted_list_inner" style="width: 10.8pt; white-space: nowrap">
+                      <span class="N_007cBullet_small">n	</span>
+                    </div>
+                  </td>
+                  <td width="100%">
+                    <div class="T1B_bulleted_list_inner"><a name="1059136">Low SLD overhead. </a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="T1B_bulleted_list_outer" style="margin-left: 0pt">
+              <table border="0" cellspacing="0" cellpadding="0" summary="">
+                <tr style="vertical-align: baseline">
+                  <td>
+                    <div class="T1B_bulleted_list_inner" style="width: 10.8pt; white-space: nowrap">
+                      <span class="N_007cBullet_small">n	</span>
+                    </div>
+                  </td>
+                  <td width="100%">
+                    <div class="T1B_bulleted_list_inner"><a name="1059137">Fast HIL results.</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1059140">A latency is introduced on the output signals of </a>the <span class="Code">HIL</span> block making feedback loop difficult outside the FPGA device.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1058895">Using Burst Mode</a></div>
+      <div class="B0_body"><a name="1058896">To activate burst mode turn on the </a><span class="Bold">Burst Mode</span> option in the <span class="Bold">Hardware in the loop</span> dialog box. </div>
+      <div class="B0_body"><a name="1037603">When you set this option, you can specify the required number of data packets as the </a><span class="Bold">Burst length</span>. The <span class="Code">HIL</span> block sends data to the hardware in bursts of the size you specify.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1034477">DSP Builder determines the size of the packet by the larger of the total input data </a>width or the total output data width. If the packet size multiplied by the <span class="Bold">Burst length</span> exceeds the preset data array, DSP Builder sets the <span class="Bold">Burst length</span> to 1.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1014681">Simulation using burst mode works the same as single clock mode, but DSP Builder </a>introduces a latency of the specific packet size on the output signals of the <span class="Code">HIL</span> blocks. As a consequence, feedback-loops may not work properly unless you enclose them in the <span class="Code">HIL</span> block, and some intervention may be necessary when comparing or visualizing HIL simulation results.</div>
+      <div class="B0_body"><a name="1014683">The </a><span class="Code">HIL</span> block uses software buffers to send and receive from the hardware, so you can change these buffer sizes without recompiling the HIL function.</div>
+      <div class="H1_heading"><a name="1034707">Troubleshooting HIL Designs</a></div>
+      <div class="B0_body"><a name="1034708">This section describes various issues that you may encounter when you are using HIL </a>designs.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1050122">If the top-level of your design changes, compile and reload the Quartus II project into </a>HIL to ensure that all information is up-to-date.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1052025">Fails to Load the Specified Quartus II Project</a></div>
+      <div class="B0_body"><a name="1052026">HIL reads design information, such as clock, reset, and input and output ports, from </a>the specified Quartus II project. However, it can fail to load your project if the project is not compiled with the Quartus II Fitter, there is a Quartus II version mismatch, or the Quartus II project file is not up-to-date.</div>
+      <div class="H2_heading"><a name="1031377">No Inputs Found From the Quartus II Project</a></div>
+      <div class="B0_body"><a name="1031489">This issue occurs if the DSP Builder model file contains only the internally induced </a>signals, such as from a counter, and also does not produce any outputs. However, HIL simulation works correctly.</div>
+      <div class="H2_heading"><a name="1049695">No Outputs Found From the Quartus II Project</a></div>
+      <div class="B0_body"><a name="1049696">This issue occurs if your design does not have any outputs and makes the HIL </a>simulation meaningless.</div>
+      <div class="H2_heading"><a name="1059261">HIL Design Stays in Reset During Simulation</a></div>
+      <div class="B0_body"><a name="1059262">An asynchronous reset is permanently asserted for a HIL design.</a></div>
+      <div class="H4_heading"><a name="1059263">Action: </a></div>
+      <div class="B0_body"><a name="1035782">Check that the reset active level matches the setting in the original design. Recompile </a>the HIL design after you have changed the reset level.</div>
+      <div class="H2_heading"><a name="1035772">HIL Compilation Appears to Hang</a></div>
+      <div class="B0_body"><a name="1032644">After clicking </a><span class="Bold">Compile with Quartus II</span> in the HIL <span class="Bold">Block Parameters</span> dialog box, no output writes to the MATLAB command window. This issue occurs if the original Quartus II project is out-of-date or compiled by a different version of the Quartus II software.</div>
+      <div class="H2_heading"><a name="1052763">Scan JTAG Fails to Find Correct Cable or Device</a></div>
+      <div class="B0_body"><a name="1052773">This issue occurs if you connect the target DSP development board switch it on after </a>you open the HIL dialog box.</div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Bottom">
+          <a href="http://www.altera.com" target="external_window"><img src="banner.gif" border="0" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com" target="external_window"> </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Fax_Bottom">Copyright© 1995-2013 Altera Corporation. Altera, the ALTERA logo and Altera's product names, logos and stylization are registered trademarks or trademarks of Altera Corporation in the United States and other countries.</td>
+      </tr>
+    </table>
+  </body>
+</html>

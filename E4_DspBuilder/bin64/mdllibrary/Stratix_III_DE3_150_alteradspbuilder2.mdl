@@ -1,0 +1,2310 @@
+Library {
+  Name			  "Stratix_III_DE3_150_alteradspbuilder2"
+  Version		  7.6
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  MaxMDLFileLineLength	  120
+  Created		  "Thu Oct 24 04:44:32 2013"
+  Creator		  "swbuild"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "swbuild"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Oct 24 04:44:32 2013"
+  RTWModifiedTimeStamp	  304490672
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.10.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.10.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.10.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.10.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.10.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.10.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.10.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "GenerateSLWebview"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateSLWebview	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		21
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTCodeCoverageTool     "None"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 360, 98, 1240, 728 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+  }
+  System {
+    Name		    "Stratix_III_DE3_150_alteradspbuilder2"
+    Location		    [480, 85, 1016, 386]
+    Open		    off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "39"
+    Block {
+      BlockType		      "S-Function"
+      Name		      "CPU_RESETn"
+      SID		      "2"
+      Ports		      [1, 1]
+      Position		      [60, 192, 100, 238]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:CPU_RESETN');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:CPU_RESETN');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:CPU_RESETN');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 CPU_RESETn AlteraBlockSet"
+      MaskDescription	      "Active-low CPU reset push-button switch.\n\nLOCATION = Pin_U31 (CPU_Reset_n)\n\nStratix I"
+      "II DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:CPU_RESETN').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:CPU_RESETN', 'Spec"
+      "ifyClock', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:CPU_RESETN', { iofile exte"
+      "rnalType get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_CPU%5FRES"
+      "ETn.salt|Inferred|off||Pin_U31"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Dip Switch"
+      SID		      "3"
+      Ports		      [1, 1]
+      Position		      [160, 193, 235, 227]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:DipSwitch');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:DipSwitch');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:DipSwitch');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 Dip Switch AlteraBlockSet"
+      MaskDescription	      "DIP switch.\n\n8-bit unsigned bus [7:0]\n\nPin 7 : Pin_T1\nPin 6 : Pin_T2\nPin 5 : Pin_R1"
+      "\nPin 4 : Pin_P2\nPin 3 : Pin_R3\nPin 2 : Pin_R4\nPin 1 : Pin_P5\nPin 0 : Pin_R12\n\n\nStratix III DE3-150 Devel"
+      "opment Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:DipSwitch').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:DipSwitch', 'Speci"
+      "fyClock', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:DipSwitch', { iofile exter"
+      "nalType get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('dipswitch8bit.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_Dip+Switc"
+      "h.salt|Inferred|off||Pin_R12,Pin_P5,Pin_R4,Pin_R3,Pin_P2,Pin_R1,Pin_T2,Pin_T1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "ExpansionHeader0"
+      SID		      "4"
+      Ports		      [1, 1]
+      Position		      [295, 192, 385, 218]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader0');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader0');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader0');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType direction SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 ExpansionHeader0 AlteraBlockSet"
+      MaskDescription	      "Expansion header.\nStandard 40-pin ribbon cable used for IDE hard drives.\n\nPin_AE32 Pin"
+      "_AE31 Pin_AE19\nPin_AD19 Pin_AL33 Pin_AL32\nPin_AL34 Pin_AH31 Pin_AM34\nPin_AH30 Pin_AK34 Pin_AJ32\nPin_AK33 Pin"
+      "_AJ31 Pin_AH34\nPin_AG32 Pin_AJ34 Pin_AG31\nPin_AF32 Pin_AF31 Pin_AP21\nPin_AG34 Pin_AN21 Pin_AH33\nPin_AL21 Pin"
+      "_AP22 Pin_AK21\nPin_AN22 Pin_AP25 Pin_AP24\nPin_AN25 Pin_AN24 Pin_AM23\nPin_AG21 Pin_AL23 Pin_AF21\n\n\nStratix "
+      "III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:ExpansionHeader0').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Node Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),popup(Input|Output),checkbox,edit,p"
+      "opup(Pin_AE32|Pin_AE31|Pin_AE19|Pin_AD19|Pin_AL33|Pin_AL32|Pin_AL34|Pin_AH31|Pin_AM34|Pin_AH30|Pin_AK34|Pin_AJ32"
+      "|Pin_AK33|Pin_AJ31|Pin_AH34|Pin_AG32|Pin_AJ34|Pin_AG31|Pin_AF32|Pin_AF31|Pin_AP21|Pin_AG34|Pin_AN21|Pin_AH33|Pin"
+      "_AL21|Pin_AP22|Pin_AK21|Pin_AN22|Pin_AP25|Pin_AP24|Pin_AN25|Pin_AN24|Pin_AM23|Pin_AG21|Pin_AL23|Pin_AF21)"
+      MaskVariables	      "iofile=&1;externalType=&2;direction=&3;SpecifyClock=&4;clock=&5;location=&6;"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader0',"
+      " 'direction', 2);|alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader0', 'Specify"
+      "Clock', 3);||"
+      MaskEnableString	      "on,on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader0', { iofil"
+      "e externalType get_param(gcb, 'direction') get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "\n		plot([0 19 20 21 22 21 20 19], [0 0 1 0 0 0 -1 0]);\n		fprintf('expansion\\nheader 0');\n"
+      "	"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_Expansion"
+      "Header0.salt|Inferred|Input|off||Pin_AE32"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "ExpansionHeader1"
+      SID		      "5"
+      Ports		      [1, 1]
+      Position		      [445, 192, 535, 218]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader1');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader1');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader1');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType direction SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 ExpansionHeader1 AlteraBlockSet"
+      MaskDescription	      "Expansion header.\nStandard 40-pin ribbon cable used for IDE hard drives.\n\nPin_AP19 Pin"
+      "_AN19 Pin_AE18\nPin_AD18 Pin_AC26 Pin_AC25\nPin_AE28 Pin_AD27 Pin_AE27\nPin_AD26 Pin_AD29 Pin_AF29\nPin_AD28 Pin"
+      "_AF28 Pin_AB27\nPin_AE30 Pin_AB26 Pin_AE29\nPin_AB25 Pin_AB24 Pin_AM21\nPin_AD31 Pin_AP20 Pin_AD30\nPin_AL22 Pin"
+      "_AJ20 Pin_AM22\nPin_AJ21 Pin_AD21 Pin_AP26\nPin_AE20 Pin_AP23 Pin_AK24\nPin_AE22 Pin_AL25 Pin_AE21\n\n\nStratix "
+      "III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:ExpansionHeader1').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Node Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),popup(Input|Output),checkbox,edit,p"
+      "opup(Pin_AP19|Pin_AN19|Pin_AE18|Pin_AD18|Pin_AC26|Pin_AC25|Pin_AE28|Pin_AD27|Pin_AE27|Pin_AD26|Pin_AD29|Pin_AF29"
+      "|Pin_AD28|Pin_AF28|Pin_AB27|Pin_AE30|Pin_AB26|Pin_AE29|Pin_AB25|Pin_AB24|Pin_AM21|Pin_AD31|Pin_AP20|Pin_AD30|Pin"
+      "_AL22|Pin_AJ20|Pin_AM22|Pin_AJ21|Pin_AD21|Pin_AP26|Pin_AE20|Pin_AP23|Pin_AK24|Pin_AE22|Pin_AL25|Pin_AE21)"
+      MaskVariables	      "iofile=&1;externalType=&2;direction=&3;SpecifyClock=&4;clock=&5;location=&6;"
+      MaskTunableValueString  "on,on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader1',"
+      " 'direction', 2);|alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader1', 'Specify"
+      "Clock', 3);||"
+      MaskEnableString	      "on,on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:ExpansionHeader1', { iofil"
+      "e externalType get_param(gcb, 'direction') get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "\n		plot([0 19 20 21 22 21 20 19], [0 0 1 0 0 0 -1 0]);\n		fprintf('expansion\\nheader 1');\n"
+      "	"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_Expansion"
+      "Header1.salt|Inferred|Input|off||Pin_AP19"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED0"
+      SID		      "6"
+      Ports		      [1, 1]
+      Position		      [595, 194, 640, 206]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED0');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED0');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED0');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LED0 AlteraBlockSet"
+      MaskDescription	      "LED0\n\nLOCATION = Pin_AD1\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LED0').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LED0', { iofile externalTy"
+      "pe location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LED0.capt"
+      "ure|Inferred|Pin_AD1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED1"
+      SID		      "7"
+      Ports		      [1, 1]
+      Position		      [60, 269, 105, 281]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED1');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED1');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED1');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LED1 AlteraBlockSet"
+      MaskDescription	      "LED1\n\nLOCATION = Pin_AC1\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LED1').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LED1', { iofile externalTy"
+      "pe location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LED1.capt"
+      "ure|Inferred|Pin_AC1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED2"
+      SID		      "8"
+      Ports		      [1, 1]
+      Position		      [165, 269, 210, 281]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED2');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED2');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED2');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LED2 AlteraBlockSet"
+      MaskDescription	      "LED2\n\nLOCATION = Pin_AC2\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LED2').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LED2', { iofile externalTy"
+      "pe location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LED2.capt"
+      "ure|Inferred|Pin_AC2"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED3"
+      SID		      "9"
+      Ports		      [1, 1]
+      Position		      [270, 269, 315, 281]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED3');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED3');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED3');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LED3 AlteraBlockSet"
+      MaskDescription	      "LED3\n\nLOCATION = Pin_AB2\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LED3').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LED3', { iofile externalTy"
+      "pe location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LED3.capt"
+      "ure|Inferred|Pin_AB2"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED4"
+      SID		      "10"
+      Ports		      [1, 1]
+      Position		      [375, 269, 420, 281]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED4');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED4');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED4');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LED4 AlteraBlockSet"
+      MaskDescription	      "LED4\n\nLOCATION = Pin_AC4\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LED4').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LED4', { iofile externalTy"
+      "pe location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LED4.capt"
+      "ure|Inferred|Pin_AC4"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED5"
+      SID		      "11"
+      Ports		      [1, 1]
+      Position		      [480, 269, 525, 281]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED5');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED5');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED5');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LED5 AlteraBlockSet"
+      MaskDescription	      "LED5\n\nLOCATION = Pin_AB4\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LED5').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LED5', { iofile externalTy"
+      "pe location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LED5.capt"
+      "ure|Inferred|Pin_AB4"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED6"
+      SID		      "12"
+      Ports		      [1, 1]
+      Position		      [585, 269, 630, 281]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED6');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED6');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED6');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LED6 AlteraBlockSet"
+      MaskDescription	      "LED6\n\nLOCATION = Pin_AA3\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LED6').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LED6', { iofile externalTy"
+      "pe location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LED6.capt"
+      "ure|Inferred|Pin_AA3"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED7"
+      SID		      "13"
+      Ports		      [1, 1]
+      Position		      [60, 314, 105, 326]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED7');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED7');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LED7');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LED7 AlteraBlockSet"
+      MaskDescription	      "LED7\n\nLOCATION = Pin_AB3\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LED7').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LED7', { iofile externalTy"
+      "pe location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LED7.capt"
+      "ure|Inferred|Pin_AB3"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDB0"
+      SID		      "14"
+      Ports		      [1, 1]
+      Position		      [165, 314, 210, 326]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB0');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB0');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB0');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDB0 AlteraBlockSet"
+      MaskDescription	      "LEDBlue0\n\nLOCATION = Pin_AB5\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDB0').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDB0', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDB0.cap"
+      "ture|Inferred|Pin_AB5"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDB1"
+      SID		      "15"
+      Ports		      [1, 1]
+      Position		      [270, 314, 315, 326]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB1');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB1');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB1');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDB1 AlteraBlockSet"
+      MaskDescription	      "LEDBlue1\n\nLOCATION = Pin_AB6\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDB1').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDB1', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDB1.cap"
+      "ture|Inferred|Pin_AB6"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDB2"
+      SID		      "16"
+      Ports		      [1, 1]
+      Position		      [375, 314, 420, 326]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB2');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB2');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB2');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDB2 AlteraBlockSet"
+      MaskDescription	      "LEDBlue2\n\nLOCATION = Pin_A6\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDB2').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDB2', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDB2.cap"
+      "ture|Inferred|Pin_A6"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDB3"
+      SID		      "17"
+      Ports		      [1, 1]
+      Position		      [480, 314, 525, 326]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB3');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB3');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB3');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDB3 AlteraBlockSet"
+      MaskDescription	      "LEDBlue3\n\nLOCATION = Pin_AA7\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDB3').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDB3', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDB3.cap"
+      "ture|Inferred|Pin_AA7"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDB4"
+      SID		      "18"
+      Ports		      [1, 1]
+      Position		      [585, 314, 630, 326]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB4');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB4');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB4');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDB4 AlteraBlockSet"
+      MaskDescription	      "LEDBlue4\n\nLOCATION = Pin_Y7\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDB4').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDB4', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDB4.cap"
+      "ture|Inferred|Pin_Y7"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDB5"
+      SID		      "19"
+      Ports		      [1, 1]
+      Position		      [60, 354, 105, 366]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB5');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB5');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB5');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDB5 AlteraBlockSet"
+      MaskDescription	      "LEDBlue5\n\nLOCATION = Pin_Y8\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDB5').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDB5', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDB5.cap"
+      "ture|Inferred|Pin_Y8"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDB6"
+      SID		      "20"
+      Ports		      [1, 1]
+      Position		      [165, 354, 210, 366]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB6');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB6');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB6');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDB6 AlteraBlockSet"
+      MaskDescription	      "LEDBlue6\n\nLOCATION = Pin_Y9\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDB6').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDB6', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDB6.cap"
+      "ture|Inferred|Pin_Y9"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDB7"
+      SID		      "21"
+      Ports		      [1, 1]
+      Position		      [270, 354, 315, 366]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB7');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB7');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDB7');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDB7 AlteraBlockSet"
+      MaskDescription	      "LEDBlue7\n\nLOCATION = Pin_Y10\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDB7').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDB7', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDB7.cap"
+      "ture|Inferred|Pin_Y10"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDG0"
+      SID		      "22"
+      Ports		      [1, 1]
+      Position		      [375, 354, 420, 366]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG0');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG0');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG0');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDG0 AlteraBlockSet"
+      MaskDescription	      "LEDGreen0\n\nLOCATION = Pin_AB1\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDG0').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDG0', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDG0.cap"
+      "ture|Inferred|Pin_AB1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDG1"
+      SID		      "23"
+      Ports		      [1, 1]
+      Position		      [480, 354, 525, 366]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG1');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG1');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG1');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDG1 AlteraBlockSet"
+      MaskDescription	      "LEDGreen1\n\nLOCATION = Pin_AA1\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDG1').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDG1', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDG1.cap"
+      "ture|Inferred|Pin_AA1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDG2"
+      SID		      "24"
+      Ports		      [1, 1]
+      Position		      [585, 354, 630, 366]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG2');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG2');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG2');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDG2 AlteraBlockSet"
+      MaskDescription	      "LEDGreen2\n\nLOCATION = Pin_Y1\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDG2').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDG2', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDG2.cap"
+      "ture|Inferred|Pin_Y1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDG3"
+      SID		      "25"
+      Ports		      [1, 1]
+      Position		      [60, 394, 105, 406]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG3');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG3');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG3');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDG3 AlteraBlockSet"
+      MaskDescription	      "LEDGreen3\n\nLOCATION = Pin_Y2\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDG3').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDG3', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDG3.cap"
+      "ture|Inferred|Pin_Y2"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDG4"
+      SID		      "26"
+      Ports		      [1, 1]
+      Position		      [165, 394, 210, 406]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG4');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG4');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG4');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDG4 AlteraBlockSet"
+      MaskDescription	      "LEDGreen4\n\nLOCATION = Pin_Y3\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDG4').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDG4', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDG4.cap"
+      "ture|Inferred|Pin_Y3"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDG5"
+      SID		      "27"
+      Ports		      [1, 1]
+      Position		      [270, 394, 315, 406]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG5');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG5');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG5');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDG5 AlteraBlockSet"
+      MaskDescription	      "LEDGreen5\n\nLOCATION = Pin_W3\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDG5').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDG5', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDG5.cap"
+      "ture|Inferred|Pin_W3"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDG6"
+      SID		      "28"
+      Ports		      [1, 1]
+      Position		      [375, 394, 420, 406]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG6');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG6');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG6');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDG6 AlteraBlockSet"
+      MaskDescription	      "LEDGreen6\n\nLOCATION = Pin_AA4\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDG6').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDG6', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDG6.cap"
+      "ture|Inferred|Pin_AA4"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LEDG7"
+      SID		      "29"
+      Ports		      [1, 1]
+      Position		      [480, 394, 525, 406]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG7');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG7');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:LEDG7');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 LEDG7 AlteraBlockSet"
+      MaskDescription	      "LEDGreen7\n\nLOCATION = Pin_Y4\n\nStratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:LEDG7').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:LEDG7', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_LEDG7.cap"
+      "ture|Inferred|Pin_Y4"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "PB0"
+      SID		      "30"
+      Ports		      [1, 1]
+      Position		      [585, 397, 625, 443]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB0');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB0');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB0');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 PB0 AlteraBlockSet"
+      MaskDescription	      "PushButtonSwitch0\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_K1\n\nStra"
+      "tix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:PB0').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:PB0', 'SpecifyCloc"
+      "k', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:PB0', { iofile externalTyp"
+      "e get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_PB0.salt|"
+      "Inferred|off||Pin_K1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "PB1"
+      SID		      "31"
+      Ports		      [1, 1]
+      Position		      [60, 472, 100, 518]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB1');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB1');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB1');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 PB1 AlteraBlockSet"
+      MaskDescription	      "PushButtonSwitch1\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_K2\n\nStra"
+      "tix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:PB1').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:PB1', 'SpecifyCloc"
+      "k', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:PB1', { iofile externalTyp"
+      "e get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_PB1.salt|"
+      "Inferred|off||Pin_K2"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "PB2"
+      SID		      "32"
+      Ports		      [1, 1]
+      Position		      [160, 472, 200, 518]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB2');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB2');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB2');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 PB2 AlteraBlockSet"
+      MaskDescription	      "PushButtonSwitch2\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_M4\n\nStra"
+      "tix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:PB2').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:PB2', 'SpecifyCloc"
+      "k', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:PB2', { iofile externalTyp"
+      "e get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_PB2.salt|"
+      "Inferred|off||Pin_M4"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "PB3"
+      SID		      "33"
+      Ports		      [1, 1]
+      Position		      [260, 472, 300, 518]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB3');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB3');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:PB3');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 PB3 AlteraBlockSet"
+      MaskDescription	      "PushButtonSwitch3\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_M3\n\nStra"
+      "tix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:PB3').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:PB3', 'SpecifyCloc"
+      "k', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:PB3', { iofile externalTyp"
+      "e get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_PB3.salt|"
+      "Inferred|off||Pin_M3"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "SW0"
+      SID		      "34"
+      Ports		      [1, 1]
+      Position		      [360, 472, 400, 518]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW0');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW0');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW0');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 SW0 AlteraBlockSet"
+      MaskDescription	      "SWITCH0\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_W5\n\nStratix III DE"
+      "3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:SW0').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:SW0', 'SpecifyCloc"
+      "k', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:SW0', { iofile externalTyp"
+      "e get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_SW0.salt|"
+      "Inferred|off||Pin_W5"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "SW1"
+      SID		      "35"
+      Ports		      [1, 1]
+      Position		      [460, 472, 500, 518]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW1');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW1');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW1');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 SW1 AlteraBlockSet"
+      MaskDescription	      "SWITCH1\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_W6\n\nStratix III DE"
+      "3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:SW1').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:SW1', 'SpecifyCloc"
+      "k', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:SW1', { iofile externalTyp"
+      "e get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_SW1.salt|"
+      "Inferred|off||Pin_W6"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "SW2"
+      SID		      "36"
+      Ports		      [1, 1]
+      Position		      [560, 472, 600, 518]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW2');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW2');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW2');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 SW2 AlteraBlockSet"
+      MaskDescription	      "SWITCH2\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_W9\n\nStratix III DE"
+      "3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:SW2').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:SW2', 'SpecifyCloc"
+      "k', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:SW2', { iofile externalTyp"
+      "e get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_SW2.salt|"
+      "Inferred|off||Pin_W9"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "SW3"
+      SID		      "37"
+      Ports		      [1, 1]
+      Position		      [60, 547, 100, 593]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW3');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW3');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SW3');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 SW3 AlteraBlockSet"
+      MaskDescription	      "SWITCH3\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_W11\n\nStratix III D"
+      "E3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:SW3').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_III_DE3_150:SW3', 'SpecifyCloc"
+      "k', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:SW3', { iofile externalTyp"
+      "e get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_SW3.salt|"
+      "Inferred|off||Pin_W11"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Seven Segment Display 0"
+      SID		      "38"
+      Ports		      [1, 1]
+      Position		      [160, 548, 200, 602]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SevenSegmentDisplay0');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SevenSegmentDisplay0"
+      "');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SevenSegmentDisplay0');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 Seven Segment Display 0 AlteraBlockSet"
+      MaskDescription	      "7 Segment Display 0\n\n8-Bits Unsigned Bus [7:0]\n\n____0___\n|               |\n5       "
+      "      1\n|___6___ |\n|               |\n4             2\n|___3___ |   .7\n\nPin 7 : Pin_Y6\nPin 6 : Pin_Y5\nPin "
+      "5 : Pin_W7\nPin 4 : Pin_W8\nPin 3 : Pin_W10\nPin 2 : Pin_Y11\nPin 1 : Pin_W12\nPin 0 : Pin_V3\n\n\nStratix III D"
+      "E3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:SevenSegmentDisplay0').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:SevenSegmentDisplay0', { i"
+      "ofile externalType location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('7segmentdisplay.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_Seven+Seg"
+      "ment+Display+0.capture|Inferred|Pin_V3,Pin_W12,Pin_Y11,Pin_W10,Pin_W8,Pin_W7,Pin_Y5,Pin_Y6"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Seven Segment Display 1"
+      SID		      "39"
+      Ports		      [1, 1]
+      Position		      [260, 548, 300, 602]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SevenSegmentDisplay1');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SevenSegmentDisplay1"
+      "');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:SevenSegmentDisplay1');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 Seven Segment Display 1 AlteraBlockSet"
+      MaskDescription	      "7 Segment Display 1\n\n8-Bits Unsigned Bus [7:0]\n\n____0___\n|               |\n5       "
+      "      1\n|___6___ |\n|               |\n4             2\n|___3___ |   .7\n\nPin 7 : Pin_L2\nPin 6 : Pin_L1\nPin "
+      "5 : Pin_M1\nPin 4 : Pin_N1\nPin 3 : Pin_N3\nPin 2 : Pin_N4\nPin 1 : Pin_P3\nPin 0 : Pin_V4\n\n\nStratix III DE3-"
+      "150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:SevenSegmentDisplay1').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:SevenSegmentDisplay1', { i"
+      "ofile externalType location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('7segmentdisplay.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_III_DE3_150_alteradspbuilder2\\\\Stratix%5FIII%5FDE3%5F150%5Falteradspbuilder2_Seven+Seg"
+      "ment+Display+1.capture|Inferred|Pin_V4,Pin_P3,Pin_N4,Pin_N3,Pin_N1,Pin_M1,Pin_L1,Pin_L2"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Stratix III DE3-150 Development Board"
+      SID		      "1"
+      Ports		      []
+      Position		      [60, 20, 226, 164]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:config');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:config');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_III_DE3_150:config');"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sNoOp"
+      Parameters	      "ClockPinIn GlobalResetPin device "
+      EnableBusSupport	      off
+      MaskType		      "StratixIIIDE3150 Configuration AlteraBlockSet"
+      MaskDescription	      "Stratix III DE3-150 Development Board"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_III_DE3_150:config').getHelpFile))"
+      MaskPromptString	      "Clock Pin In|Global Reset Pin|Device"
+      MaskStyleString	      "popup(Pin_T33|Pin_W2|None),popup(Pin_U31|Pin_AE25|Pin_K1|Pin_K2|Pin_M4|Pin_M3|None),popup"
+      "(EP3SL150F1152C2)"
+      MaskVariables	      "ClockPinIn=&1;GlobalResetPin=&2;device=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_III_DE3_150:config', { ClockPinIn Glob"
+      "alResetPin device });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('de3.bmp', 'bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Pin_T33|Pin_U31|EP3SL150F1152C2"
+    }
+  }
+}

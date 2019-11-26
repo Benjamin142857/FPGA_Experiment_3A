@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board uniquename="CycloneIIILSEP3CLS200" family="Cyclone III LS">
+	<displayname>Cyclone III LS 3CLS200 FPGA Development Kit</displayname>
+
+	<!-- Push-Button Switches -->
+	<component name="PB0" pin="Pin_F24" />
+	<component name="PB1" pin="Pin_G17" />
+	<component name="PB2" pin="Pin_E25" />
+	<component name="PB3" pin="Pin_D21" />
+
+	<!-- CPU Reset Push-Button Switches -->
+	<component name="CPU_RESETN" pin="Pin_W27" />
+
+	<!-- DIP Switches -->
+	<component name="DipSwitch4Bit">
+		<pin location="Pin_B2" />
+		<pin location="Pin_B7" />
+		<pin location="Pin_D7" />
+		<pin location="Pin_A13" />
+	</component>
+
+	<!-- LEDs -->
+	<component name="LED0" pin="Pin_E24" />
+	<component name="LED1" pin="Pin_G18" />
+	<component name="LED2" pin="Pin_C21" />
+	<component name="LED3" pin="Pin_C7" />
+
+	<!-- ADCs -->
+	<component name="A2D1_HSMC_A">
+		<pin location="Pin_U26" />
+		<pin location="Pin_U25" />
+		<pin location="Pin_U24" />
+		<pin location="Pin_U23" />
+		<pin location="Pin_R28" />
+		<pin location="Pin_R27" />
+		<pin location="Pin_R24" />
+		<pin location="Pin_R23" />
+		<pin location="Pin_W23" />
+		<pin location="Pin_Y23" />
+		<pin location="Pin_AA24" />
+		<pin location="Pin_AA23" />
+		<pin location="Pin_AD21" />
+		<pin location="Pin_AC22" />
+	</component>
+	<component name="A2D2_HSMC_A">
+		<pin location="Pin_E28" />
+		<pin location="Pin_F28" />
+		<pin location="Pin_E26" />
+		<pin location="Pin_E27" />
+		<pin location="Pin_C28" />
+		<pin location="Pin_D28" />
+		<pin location="Pin_D27" />
+		<pin location="Pin_D26" />
+		<pin location="Pin_G24" />
+		<pin location="Pin_G23" />
+		<pin location="Pin_J24" />
+		<pin location="Pin_K24" />
+		<pin location="Pin_W28" />
+		<pin location="Pin_AC21" />
+	</component>
+
+	<!-- DACs -->
+	<component name="D2A1_HSMC_A">
+		<pin location="Pin_AE28" />
+		<pin location="Pin_AF28" />
+		<pin location="Pin_AB26" />
+		<pin location="Pin_AA25" />
+		<pin location="Pin_AC28" />
+		<pin location="Pin_AD28" />
+		<pin location="Pin_AB28" />
+		<pin location="Pin_AB27" />
+		<pin location="Pin_AA28" />
+		<pin location="Pin_AA27" />
+		<pin location="Pin_Y26" />
+		<pin location="Pin_AA26" />
+		<pin location="Pin_W25" />
+		<pin location="Pin_W24" />
+	</component>
+	<component name="D2A2_HSMC_A">
+		<pin location="Pin_L25" />
+		<pin location="Pin_L24" />
+		<pin location="Pin_K26" />
+		<pin location="Pin_K25" />
+		<pin location="Pin_M27" />
+		<pin location="Pin_M26" />
+		<pin location="Pin_J26" />
+		<pin location="Pin_J25" />
+		<pin location="Pin_K28" />
+		<pin location="Pin_K27" />
+		<pin location="Pin_J28" />
+		<pin location="Pin_J27" />
+		<pin location="Pin_G26" />
+		<pin location="Pin_H26" />
+	</component>
+
+	<configuration icon="3cls200.bmp" width="166" height="144">
+		<devices jtag-code="0x027020DD">
+			<device name="EP3CLS200F780C7" />
+		</devices>
+
+		<option name="ClockPinIn" label="Clock Pin In">
+			<pin location="Pin_B16" /> <!-- CLKIN_66 -->
+			<pin location="None" />
+		</option>
+
+		<option name="GlobalResetPin" label="Global Reset Pin">
+			<pin location="Pin_W27" />
+			<pin location="Pin_F24" />
+			<pin location="Pin_G17" />
+			<pin location="Pin_E25" />
+			<pin location="Pin_D21" />
+			<pin location="None" />
+		</option>
+	</configuration>
+</board>

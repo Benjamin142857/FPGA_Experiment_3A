@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>MegaCore Functions Design Issues</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_megacore.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_megacore.09.5.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_hil.10.1.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1057728">MegaCore Functions Design Issues </a></div>
+      <div class="Body"><a name="1057729">This section describes some of the design issues to consider when using MegaCore </a>functions in a DSP Builder design.</div>
+      <div class="H2_heading"><a name="1057730">Simulink Files Associated with a MegaCore Function</a></div>
+      <div class="Body"><a name="1057731">DSP Builder stores the files that support the configuration and simulation of a </a>MegaCore function variation in a subdirectory of the directory containing your Simulink MDL file <span class="Bold">DSPBuilder_</span><span class="Bold" style="font-style: italic;">&lt;</span><span class="Emphasis" style="font-weight: normal;">design</span><span class="Emphasis" style="font-weight: normal;">&nbsp;</span><span class="Emphasis" style="font-weight: normal;">name</span><span class="Bold">&gt;</span><span class="Bold" style="font-style: normal;">_import</span>. When copying a design from one location to another, make sure that you also copy this subdirectory. </div>
+      <div class="Body"><a name="1057732">DSP Builder needs the following specific files to simulate a MegaCore function </a>variation:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1057733">If your MegaCore function variation is </a><span class="Code">my_function</span>, and generates in VHDL, your design variation is in a <span class="Bold">my_function.vhd</span> file in your design directory. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1057734">If your design is </a><span class="Code">my_design</span>, the simulation information is in a <span class="Bold">DSPBuilder_my_design_import/my_function.vo.simdb</span> file. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1057735">Simulating MegaCore Functions That Have a Reset Port</a></div>
+      <div class="Body"><a name="1057736">MegaCores functions that have a reset port must have a reset cycle at the start of </a>Simulink simulation to produce correct simulation results. The length of this reset cycle must be of sufficient length, and depends on the particular MegaCore function and parameterization.</div>
+      <div class="Body"><a name="1057740">For example, in </a><span class="N_007cLink"><a href="#1057744" title="MegaCore Functions Design Issues">Figure&nbsp;4–11</a></span>, DSP Builder cannot tie the reset to a constant because the simulation does not match hardware. </div>
+      <div class="TAW_table_anchor_wide"><a name="1057750">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;4–11.&nbsp;</span><span style="color: #000000; font-family: &quot;Microsoft Sans Serif&quot;; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><a name="1057744">MegaCore Function Design With a Reset Port</a></span></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1057749"><img class="Default" src="images/MegaCoreSimulation.jpg" width="606" height="242" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1057751">You must simulate an initial reset cycle (with the step input) to replicate hardware </a>behavior. As in hardware, this reset cycle must be sufficiently long to propagate through the core, which may be 50 clock cycles or more for some MegaCore functions such as the FIR Compiler.</div>
+      <div class="Body"><a name="1057752">Additional adjustment of the reset cycles may be necessary when a MegaCore </a>function receives data from other MegaCore functions, to ensure that the blocks leave the reset state in the correct order and DSP Builder delays them by the appropriate number of cycles.</div>
+      <div class="H2_heading"><a name="1057753">Setting the Device Family for MegaCore Functions</a></div>
+      <div class="Body"><a name="1057755">Most of the MegaCore functions available in DSP Builder use the IP Toolbench </a>interface. </div>
+      <div class="Body"><a name="1057756">The CIC MegaCore function uses a MegaWizard user interface. This interface always </a>inherits the device family setting from the <span class="Code">Signal Compiler</span> block. If there is no <span class="Code">Signal Compiler</span> block in your design, DSP Builder uses the Stratix device family by default. </div>
+      <div class="Body"><a name="1057757">MegaCore functions that use IP Toolbench allow you to modify the device family </a>setting in the IP Toolbench interface.</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1057758">The FFT, FIR Compiler, NCO, Reed Solomon Compiler, and Viterbi Compiler </a>MegaCore functions use IP Toolbench.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1057759">If you change the device family in </a><span class="Code">Signal Compiler</span>, you must check that any IP Toolbench MegaCore functions have the correct device family set to ensure that the simulation models and generated hardware are consistent. </div>
+      <div class="N_007cPN_part_number"><a name="1005202">&nbsp;</a></div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Migration of DSP Builder (Standard Blockset) Files to a New Location</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_managing.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_managing.17.6.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_managing.17.8.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1025221">Migration of DSP Builder (Standard Blockset) Files to a New Location</a></div>
+      <div class="Body"><a name="1025222">When moving DSP Builder (standard blockset) projects to a new directory or </a>machine, you can recreate the project by transferring a minimum set of design files. You do not need to copy the entire project directory. However, in some cases, when the relative paths for the design files change in the new location, recreate the auxiliary files to achieve a successful compilation.</div>
+      <div class="Body"><a name="1025223">You require the following minimum set of design files to recreate a project:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025224">DSP Builder model (.</a><span class="Bold">mdl</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025225">HDL source files associated with HDL import blocks (if any)—maintain same </a>relative path to MDL</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025226">HDL wrapper files associated with IP MegaCore function blocks (if any)—</a>maintain same relative path to the .<span class="Bold">mdl</span> file (they should be in the <span class="Bold">DSPBuilder_&lt;</span><span class="Emphasis" style="font-weight: normal;">mdl name</span><span class="Bold" style="font-style: normal;">&gt;_import</span> subdirectory)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025227">Memory initialization .</a><span class="Bold">hex</span> files (if any)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025228">Custom library files (if any)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1025229">To recreate the project in the new location, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025230">If the model contains IP MegaCore function or HDL import blocks, regenerate the </a>auxiliary files (.<span class="Bold">qip</span>, .<span class="Bold">entityimport</span>, .<span class="Bold">simdb</span>) associated with the IP MegaCore function or HDL import block by following these steps:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1025231">HDL import—run the </a><span class="Bold">alt_dspbuilder_refresh_HDLimport</span> script to automatically update all the HDL import blocks in the new location.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap;">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1025232">IP MegaCore functions—run the </a><span class="Bold">alt_dspbuilder_refresh_megacore</span> script to automatically update all the IP MegaCore function blocks in the new location. Successful migration of design with IP MegaCore functions assumes that you install the required MegaCore IP library on the new environment.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1025233">If the </a><span class="Bold">..\DSPBuilder_&lt;</span><span class="Emphasis" style="font-weight: normal;">mdl name</span><span class="Bold" style="font-style: normal;">&gt;_import</span> subdirectory copies and the design files, skip this step.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025234">Re-analyze the model by clicking </a><span class="Bold">Analyze</span> in the Advanced tab of the <span class="Code">Signal </span><span class="Code">Compiler</span> block to regenerate the auxiliary files (.<span class="Bold">mdlxml</span>, .<span class="Bold">qip</span>, .<span class="Bold">ipx</span>) associated with the model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

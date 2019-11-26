@@ -1,0 +1,276 @@
+#include ("alt_license_verilog.txt")
+
+## 
+## Description : Top level for Turbo decoder test bench
+## --
+## -------------------------------------------------------------------------
+## --
+## $Header: $
+## --
+## -------------------------------------------------------------------------
+`timescale 1ns / 1ps
+
+#set ($dollar = "$")
+
+///////////////////////////////////////////////////////////////////////////////
+
+module ${VariationName}_tb;
+
+  localparam TB_IN_WIDTH_c          = $InWidth;
+  localparam TB_OUT_WIDTH_c         = $OutWidth;
+  localparam TB_MAX_BLK_SIZE_c      = 5118; // 5114 + 4(tail bits)
+  localparam NUM_FRAMES_c           = 0;  // 0 for all input frames, # for a number of frames
+  localparam DELAY_g                = 1;
+
+function integer alt_clogb2;
+  input [31:0] value;
+  integer i;
+  begin
+    alt_clogb2 = 32;
+    for (i=31; i>0; i=i-1) begin
+      if (2**i>=value)
+        alt_clogb2 = i;
+    end
+  end
+endfunction
+
+  localparam TB_IT_WIDTH_c = 5;
+
+  // component generics
+  localparam TAIL_BITS_c               = 4;
+  localparam DATAWIDTH_g               = TB_IN_WIDTH_c*3;
+  localparam MIN_BLK_SIZE_c            = 40;
+  localparam VARIABLE_BLKSIZE_c        = 2;  // read from a file
+  localparam ERROR_TEST_c              = 0;
+  localparam REPORT_BLKSIZE_c          = 0; //false;
+  localparam SOURCE_SYMBOLS_PER_BEAT_c = 3;
+  localparam SOURCE_SYMBOL_DELIMETER_c = " ";
+  localparam SOURCE_SYMBOL_DATAWIDTH_c = TB_IN_WIDTH_c;
+  localparam SOURCE_RAND_DELAY_c       = 1;
+  localparam SOURCE_RANDOM_FRAME_DELAY_c = 1;
+
+  // these localparams control the flow of data into the sink
+  localparam SINK_SYMBOLS_PER_BEAT_c = TB_OUT_WIDTH_c;
+  localparam SINK_SYMBOL_DELIMETER_c = "\\n";
+  localparam SINK_SYMBOL_DATAWIDTH_c = 1;
+  // 1 = random intra-block delays in sink data (back-pressure), 0 = no delays
+  localparam SINK_RAND_DELAY_c       = 1;
+  localparam BLK_SIZE_LOG2_c         = alt_clogb2(TB_MAX_BLK_SIZE_c + TAIL_BITS_c);
+  localparam SINK_BLK_SIZE_LOG2_c    = alt_clogb2(TB_MAX_BLK_SIZE_c);
+
+  // component ports
+  reg clk;
+  reg reset_n;
+  wire[BLK_SIZE_LOG2_c-1:0] blk_size;
+  wire[1:0] sink_error;
+  wire sink_valid;
+  wire sink_sop;
+  wire sink_eop;
+  wire sink_ready;
+  wire[SOURCE_SYMBOL_DATAWIDTH_c*SOURCE_SYMBOLS_PER_BEAT_c-1:0] sink_data;
+  wire[SINK_BLK_SIZE_LOG2_c-1:0] sink_blk_size;
+  wire[TB_IT_WIDTH_c - 1:0] sink_iter;
+
+  wire[SINK_BLK_SIZE_LOG2_c-1:0] source_blk_size;
+  wire[SINK_BLK_SIZE_LOG2_c-1:0] output_blk_size;
+  wire source_sop;
+  wire source_eop;
+  wire source_valid;
+  wire[SINK_SYMBOLS_PER_BEAT_c*SINK_SYMBOL_DATAWIDTH_c-1 : 0] source_data;
+  wire source_ready;
+  wire[1:0] source_error;
+
+  localparam NUM_DONE_c = 100;
+  integer  cnt_done;
+  reg   seen_eof;
+  wire  eof;
+
+  reg enable;
+  reg source_model_enable;
+
+  integer frames_in_cnt;
+  integer frames_out_cnt;
+
+  reg end_test;
+  
+  initial
+  begin
+    enable = 1'b0;
+    reset_n  = 1'b1;
+    #2 reset_n  = 1'b0;
+    #30 reset_n  = 1'b1;
+    @(posedge clk) enable = 1'b1;
+  end
+  
+  always
+  begin
+    // seen 10 consecutive deasserted valids
+    if (cnt_done == NUM_DONE_c - 1)
+      begin
+        clk = 1'b0;
+        ${dollar}display ("Done.");
+        ${dollar}stop;
+      end
+    else
+	  begin
+	    #5 clk = 1'b0;
+	    #5 clk = 1'b1;
+	  end
+  end
+
+  // count for NUM_DONE_c after last frame
+  always @(posedge clk or negedge reset_n)
+  begin  // process done_p
+    if (reset_n == 1'b0)
+      cnt_done = 0;
+    else
+      if ((NUM_FRAMES_c != 0 & frames_out_cnt == NUM_FRAMES_c) | 
+      	 (NUM_FRAMES_c == 0 & seen_eof == 1'b1 & frames_out_cnt == frames_in_cnt))
+          cnt_done = cnt_done == NUM_DONE_c-1 ? 0 : cnt_done + 1;
+  end
+
+  // count the number of input frames
+  always @(posedge clk or negedge reset_n)
+  begin  // process cnt_frames_in
+    if (reset_n == 1'b0)
+      begin
+      	frames_in_cnt       = 0;
+        source_model_enable = 1'b0;
+        end_test = 1'b0;
+      end
+    else
+      if (enable == 1'b1 & end_test == 1'b0)
+        begin
+      	  source_model_enable = 1'b1;
+      	  if (sink_eop == 1'b1 & sink_valid == 1'b1 & sink_ready == 1'b1)
+            begin
+              if (NUM_FRAMES_c != 0 & frames_in_cnt == NUM_FRAMES_c - 1)
+                begin
+                  source_model_enable = 1'b0;
+                  end_test = 1'b1;
+                  $display("Source input eof found");
+                end
+              frames_in_cnt = frames_in_cnt + 1;
+            end
+        end
+      else
+        source_model_enable = 1'b0;
+  end
+
+  auk_dspip_avalon_streaming_source_model
+    # (
+      .FILENAME_g            ("ctc_data_input.txt"),
+      .RANDOM_DELAY_g        (SOURCE_RAND_DELAY_c*DELAY_g),
+      .RANDOM_FRAME_DELAY_g  (SOURCE_RANDOM_FRAME_DELAY_c*DELAY_g),
+      .MAX_BLKSIZE_g         (TB_MAX_BLK_SIZE_c + TAIL_BITS_c),
+      .MIN_BLKSIZE_g         (MIN_BLK_SIZE_c + TAIL_BITS_c),
+      .VARIABLE_BLKSIZE_g    (VARIABLE_BLKSIZE_c),
+      .ERROR_TEST_g          (ERROR_TEST_c),
+      .FORMAT_g              ("SIGNED_INTEGER"),
+      .REPORT_BLKSIZE_g      (REPORT_BLKSIZE_c),
+      .BLKSIZE_REPORT_FILE_g (""),
+      .SOP_NUM_DATA_g        (1),
+      .SOP_DATAWIDTH_g       (TB_IT_WIDTH_c),
+      .SYMBOLS_PER_BEAT_g    (SOURCE_SYMBOLS_PER_BEAT_c),
+      .SYMBOL_DELIMETER_g    (SOURCE_SYMBOL_DELIMETER_c),
+      .SYMBOL_DATAWIDTH_g    (SOURCE_SYMBOL_DATAWIDTH_c)
+      )
+      source_model_inst
+    (
+      .clk          (clk),
+      .reset_n      (reset_n),
+      // enables the model
+      .enable       (source_model_enable),
+      // atlantic regs
+      .source_valid (sink_valid),
+      .source_ready (sink_ready),
+      .source_sop   (sink_sop),
+      .source_eop   (sink_eop),
+      // data contains real and imaginary data, imaginary in LSW, real in MSW
+      .source_data  (sink_data),
+      // sideband regs
+      .eof          (eof),
+      .blksize      (blk_size),
+      .sop_data     (sink_iter)
+      );
+
+  assign sink_error    = 2'b0;
+  assign sink_blk_size = blk_size - TAIL_BITS_c;
+
+  // component instantiation
+
+  ${VariationName} DUT (
+      .clk           (clk),
+      .reset_n       (reset_n),
+      .sink_blk_size (sink_blk_size),
+      .sink_iter     (sink_iter),
+      .sink_sop      (sink_sop),
+      .sink_eop      (sink_eop),
+      .sink_valid    (sink_valid),
+      .sink_ready    (sink_ready),
+      .sink_data     (sink_data),
+      .sink_error    (sink_error),
+      .source_error  (source_error),
+      .source_blk_size (source_blk_size),
+      .source_valid  (source_valid),
+      .source_ready  (source_ready),
+      .source_sop    (source_sop),
+      .source_eop    (source_eop),
+      .source_data   (source_data)
+      );
+
+ 
+  assign output_blk_size = source_blk_size/TB_OUT_WIDTH_c;
+  
+  auk_dspip_avalon_streaming_sink_model
+    # (
+      .FILENAME_g         ("ctc_decoded_output.txt"),
+      .RANDOM_DELAY_g     (SINK_RAND_DELAY_c*DELAY_g),
+      .MAX_BLKSIZE_g      (TB_MAX_BLK_SIZE_c),
+      .MIN_BLKSIZE_g      (MIN_BLK_SIZE_c),
+      .VARIABLE_BLKSIZE_g (VARIABLE_BLKSIZE_c),
+      // array (defined in reg list)
+      .ERROR_SEVERITY_g   (0), //failure,
+      .REPORT_AS_g        ("BIN"),
+      .SYMBOLS_PER_BEAT_g (SINK_SYMBOLS_PER_BEAT_c),
+      .SYMBOL_DELIMETER_g (SINK_SYMBOL_DELIMETER_c),
+      .SYMBOL_DATAWIDTH_g (SINK_SYMBOL_DATAWIDTH_c)
+      )
+      sink_model_inst
+      (
+      .clk        (clk),
+      .reset_n    (reset_n),
+      // enables the model
+      .enable     (enable),
+      .blksize    (output_blk_size),
+      // atlantic regs
+      .sink_valid (source_valid),
+      .sink_ready (source_ready),
+      .sink_sop   (source_sop),
+      .sink_eop   (source_eop),
+      .sink_data  (source_data)
+      );
+
+
+  always @(posedge clk or negedge reset_n)
+  begin
+    if (reset_n == 1'b0)
+      frames_out_cnt = 0;
+    else
+      if (source_eop == 1'b1 & source_valid == 1'b1 & source_ready == 1'b1)
+        frames_out_cnt = frames_out_cnt + 1;
+  end
+
+  always @(posedge clk or negedge reset_n)
+  begin
+    if (reset_n == 1'b0)
+      seen_eof = 1'b0;
+    else
+      if (eof == 1'b1 & seen_eof == 1'b0)
+      begin
+      	seen_eof = 1'b1;
+        $display("eof found");
+      end
+  end
+
+endmodule

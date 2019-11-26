@@ -1,0 +1,911 @@
+Model {
+  Name			  "Edge_detector_HIL"
+  Version		  7.0
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.174"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "ed_in_script\n%% DSPBuilder Start\nalt_dspbuilder_update_model(bdroot)\n%% DSPBuilder End\n"
+  StopFcn		  "ed_out_script"
+  Created		  "Tue May 11 18:36:13 2004"
+  Creator		  "lkong"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "lkong"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Oct 02 15:04:07 2008"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:174>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.3.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.3.0"
+	  StartTime		  "0.0"
+	  StopTime		  "307201.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.3.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.3.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.3.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "None"
+	  LoggingUnavailableSignals "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.3.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.3.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.3.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  RTWCompilerOptimization "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.3.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.3.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      ExtraOptions	      "-aInitFltsAndDblsToZero=1 -aInitFltsAndDblsToZero=1 "
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      FixptAsFi		      off
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "Edge_detector_HIL"
+    Location		    [185, 142, 1308, 1087]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      Position		      [45, 180, 75, 210]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      Value		      "50"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant6"
+      Position		      [45, 290, 75, 320]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      Name		      "From\nWorkspace1"
+      Position		      [30, 128, 95, 152]
+      ForegroundColor	      "blue"
+      VariableName	      "simin"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      Name		      "From\nWorkspace2"
+      Position		      [30, 238, 95, 262]
+      ForegroundColor	      "blue"
+      VariableName	      "rst_in"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "HIL"
+      Ports		      [4, 3]
+      Position		      [355, 112, 650, 333]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/HIL"
+      SourceType	      "HardwareInTheLoop AlteraBlockset"
+      entityName	      "Edge_detector_HIL/HIL"
+      inNames		      "in1 threshold rst clken "
+      inBwls		      "8  8  1  1  1  1"
+      inBwrs		      "0  0  0  0  0  0"
+      inTypes		      "u u u u "
+      inDelayed		      "1  1  1  1"
+      outNames		      "pre_thresh datavalid post_thresh "
+      outBwls		      "8  1  8"
+      outBwrs		      "0  0  0"
+      outTypes		      "u u u "
+      resetNames	      "aclr"
+      InputCount	      "6"
+      InputNames	      "in1 Clock threshold rst clken aclr"
+      InputWidth	      "8  1  8  1  1  1"
+      InputRepresentation     "0  0  0  0  0  0"
+      InputExport	      "0  2  0  0  0  3"
+      InputFPP		      "0  0  0  0  0  0"
+      OutputCount	      "3"
+      OutputNames	      "pre_thresh datavalid post_thresh"
+      OutputWidth	      "8  1  8"
+      OutputRepresentation    "0  0  0"
+      OutputExport	      "0  0  0"
+      OutputFPP		      "0  0  0"
+      JtagCable		      "3"
+      JtagDevice	      "1"
+      BurstMode		      on
+      BurstLength	      "1024"
+      FrameMode		      off
+      SOP		      "1"
+      OutValid		      "1"
+      QuartusProject	      "D:\\workspace\\Documentation\\DesignExamples\\Tutorials\\HIL\\EdgeDetection\\Edge_detector_dspbuilder\\Edge_detector.qpf"
+      HilNewConfig	      "off"
+      ClockPinLocation	      "K17"
+      ClockPinSource	      "0"
+      HilDeviceOnBoard	      "EP2S60F1020C5"
+      DR_length		      "24"
+      dspbuilder_reset	      "on"
+      SLD_NODE_INFO	      "10036336"
+      AssertSclrBeforeSimulation "1"
+      SampleTime	      "-1"
+      dspb_ver		      "5.1"
+      ResetLevel	      "Active_High"
+      JtagCableName	      "USB-Blaster [USB-0]"
+      JtagDeviceName	      "@1: EP2S60 (0x120930DD)"
+      ClockNames	      "Clock"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      Position		      [825, 210, 885, 240]
+      ForegroundColor	      "blue"
+      VariableName	      "data_valid"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace2"
+      Position		      [825, 285, 885, 315]
+      ForegroundColor	      "blue"
+      VariableName	      "simout"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace3"
+      Position		      [825, 135, 885, 165]
+      ForegroundColor	      "blue"
+      VariableName	      "simout1"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "clken"
+      Ports		      [1, 1]
+      Position		      [190, 297, 255, 313]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\p4DspbStd81\\P4ws\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\HIL\\EdgeDetection\\tb_Edge_detector_HIL\\Edge%5Fdetector%5FHIL_clken.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "datavalid"
+      Ports		      [1, 1]
+      Position		      [705, 217, 770, 233]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\p4DspbStd81\\P4ws\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\HIL\\EdgeDetection\\tb_Edge_detector_HIL\\Edge%5Fdetector%5FHIL_datavalid.capture"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "in1"
+      Ports		      [1, 1]
+      Position		      [190, 132, 255, 148]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\p4DspbStd81\\P4ws\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\HIL\\EdgeDetection\\tb_Edge_detector_HIL\\Edge%5Fdetector%5FHIL_in1.salt"
+      BusType		      "Unsigned Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "post_thresh"
+      Ports		      [1, 1]
+      Position		      [705, 292, 770, 308]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\p4DspbStd81\\P4ws\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\HIL\\EdgeDetection\\tb_Edge_detector_HIL\\Edge%5Fdetector%5FHIL_post%5Fthresh.capture"
+      BusType		      "Unsigned Integer"
+      bwl		      "8"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "pre_thresh"
+      Ports		      [1, 1]
+      Position		      [705, 142, 770, 158]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\p4DspbStd81\\P4ws\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\HIL\\EdgeDetection\\tb_Edge_detector_HIL\\Edge%5Fdetector%5FHIL_pre%5Fthresh.capture"
+      BusType		      "Unsigned Integer"
+      bwl		      "8"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "rst"
+      Ports		      [1, 1]
+      Position		      [190, 242, 255, 258]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\p4DspbStd81\\P4ws\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\HIL\\EdgeDetection\\tb_Edge_detector_HIL\\Edge%5Fdetector%5FHIL_rst.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "threshold"
+      Ports		      [1, 1]
+      Position		      [190, 187, 255, 203]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\p4DspbStd81\\P4ws\\dsp_builder2\\Documentation\\DesignExamples\\Tutorials\\HIL\\EdgeDetection\\tb_Edge_detector_HIL\\Edge%5Fdetector%5FHIL_threshold.salt"
+      BusType		      "Unsigned Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Line {
+      SrcBlock		      "Constant6"
+      SrcPort		      1
+      DstBlock		      "clken"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "threshold"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From\nWorkspace2"
+      SrcPort		      1
+      DstBlock		      "rst"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From\nWorkspace1"
+      SrcPort		      1
+      DstBlock		      "in1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "datavalid"
+      SrcPort		      1
+      DstBlock		      "To Workspace1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "pre_thresh"
+      SrcPort		      1
+      DstBlock		      "To Workspace3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "post_thresh"
+      SrcPort		      1
+      DstBlock		      "To Workspace2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "clken"
+      SrcPort		      1
+      DstBlock		      "HIL"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "rst"
+      SrcPort		      1
+      DstBlock		      "HIL"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "threshold"
+      SrcPort		      1
+      DstBlock		      "HIL"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "in1"
+      SrcPort		      1
+      DstBlock		      "HIL"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "HIL"
+      SrcPort		      3
+      DstBlock		      "post_thresh"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "HIL"
+      SrcPort		      1
+      DstBlock		      "pre_thresh"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "HIL"
+      SrcPort		      2
+      DstBlock		      "datavalid"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "HIL Edge Detection Design"
+      Position		      [496, 46]
+      ForegroundColor	      "blue"
+      FontName		      "Arial"
+      FontSize		      26
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "(c) 2007 Altera Corporation. All rights reserved.  Altera products are protected under numerous U.S. and foreign patents, maskwork rights, copyrights and other intellectual property laws. \nThis reference design file, and your use thereof, is subject to and governed by the terms and conditions of the applicable Altera Reference Design License Agreement (found at www.altera.com).\nBy using this reference design file, you indicate your acceptance of such terms and conditions between you and Altera Corporation. \nIn the event that you do not agree with such terms and conditions, you may not use the reference design file and please promptly destroy any copies you have made.\nThis reference design file being provided on an \"as-is\" basis and as an accommodation and therefore all warranties, representations or guarantees of any kind (whether express, implied or statutory)\nincluding, without limitation, warranties of merchantability, non-infringement, or fitness for a particular purpose, are specifically disclaimed.\nBy making this reference design file available, Altera expressly does not recommend, suggest or require that this reference design file be used in combination with any other product not provided by Altera"
+      Position		      [31, 846]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+    }
+    Annotation {
+      Name		      "Hardware in the loop design example"
+      Position		      [40, 381]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      FontName		      "Arial"
+      FontSize		      24
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "Edge_detector_HIL.mdl model illustrates how the model Edge_detector.mdl is used in Hardware Cosimulation \n\nWalkthrough:\nStep 1 : Open the Simulink model Edge_detector.mdl\nStep 2 : Using SignalCompiler, compiles Edge_detector into RTL in order created a compiled Quartus II project Edge_detector.qpf \nStep 3 : In the Simulink model Edge_detector_HIL.mdl, double-click on the HIL block\n              3-1 Select the Quartus II project Edge_detector.qpf from Edge_detector_dspbuilder folder\n              3-2 Select the Clock and Reset signals\n              3-3 Leave all inputs and outputs as unsigned\n              3-4 Select the reset active level\n              3-5 Click on Goto page 2/2\n              3-6 Enter the FPGA device value\n              3-7 Compile with Quartus II\n              3-8 Scan JTAG and Select the JTAG cable\n              3-9 Program the FPGA on board\n              3-10 Close the HIL dialog box\n\nStep 4 : Simulate in Simulink"
+      Position		      [41, 580]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      FontName		      "Arial"
+      FontSize		      18
+    }
+    Annotation {
+      Name		      "A note on burst mode simulation: \n\n    Plotted graphes may appear to be shifted\ndue to extra latency in burst mode. The amount \nshifted relates directly to busrt length. \n\n    Please refer to the User Guide for more \ninfomation on HIL burst mode."
+      Position		      [821, 665]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      FontName		      "@Arial Unicode MS"
+      FontSize		      12
+    }
+  }
+}

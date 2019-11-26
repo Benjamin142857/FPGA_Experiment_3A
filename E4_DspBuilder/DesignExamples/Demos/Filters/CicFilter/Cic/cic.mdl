@@ -1,0 +1,2858 @@
+Model {
+  Name			  "cic"
+  Version		  6.3
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.263"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bd"
+"root)\n%% DSPBuilder End\n"
+  Created		  "Wed Jul 24 12:18:53 2002"
+  Creator		  "mjervis"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "LKONG"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jul 09 10:11:51 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:263>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "Warning"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "1000"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Fcn
+      Expr		      "sin(u[1])"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      RandomNumber
+      Mean		      "0"
+      Variance		      "1"
+      Seed		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      FixptAsFi		      off
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "cic"
+    Location		    [15, 93, 1162, 678]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "119"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "CombSection"
+      Ports		      [3, 1]
+      Position		      [395, 141, 470, 309]
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"CombSection"
+	Location		[244, 530, 1257, 1004]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1[16:0]"
+	  Position		  [20, 88, 50, 102]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "en"
+	  Position		  [25, 288, 55, 302]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "clr"
+	  Position		  [25, 328, 55, 342]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [125, 137, 150, 153]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "En"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  Position		  [125, 186, 155, 204]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [270, 187, 295, 203]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "En"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  Position		  [270, 236, 300, 254]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From4"
+	  Position		  [425, 237, 450, 253]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "En"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  Position		  [425, 286, 455, 304]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  Position		  [570, 287, 595, 303]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "En"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From7"
+	  Position		  [570, 336, 600, 354]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From8"
+	  Position		  [720, 337, 745, 353]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "En"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From9"
+	  Position		  [715, 386, 745, 404]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "GotoEn"
+	  Position		  [170, 285, 235, 305]
+	  GotoTag		  "En"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "GotoRst"
+	  Position		  [170, 325, 235, 345]
+	  GotoTag		  "Rst"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "comb"
+	  Ports			  [3, 1]
+	  Position		  [170, 73, 265, 217]
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "comb"
+	    Location		    [201, 386, 830, 708]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data[16:0]"
+	      Position		      [20, 143, 50, 157]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "en"
+	      Position		      [20, 173, 50, 187]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      Position		      [25, 203, 55, 217]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [250, 31, 295, 79]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "10000000"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [4, 1]
+	      Position		      [350, 102, 415, 228]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "-"
+	      use_pipeline	      on
+	      phase_selection	      "10000000"
+	      use_ena		      on
+	      use_aclr		      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cout[16:0]"
+	      Position		      [570, 158, 600, 172]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 65]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      DstBlock		      "cout[16:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "en"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, -125]
+		DstBlock		"Delay"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      Points		      [130, 0]
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			4
+	      }
+	      Branch {
+		Points			[0, -140]
+		DstBlock		"Delay"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "data[16:0]"
+	      SrcPort		      1
+	      Points		      [100, 0]
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -110]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "comb1"
+	  Ports			  [3, 1]
+	  Position		  [315, 123, 410, 267]
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "comb1"
+	    Location		    [668, 243, 1297, 558]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data[17:0]"
+	      Position		      [20, 143, 50, 157]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "en"
+	      Position		      [20, 173, 50, 187]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      Position		      [25, 203, 55, 217]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [250, 31, 295, 79]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "10000000"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [4, 1]
+	      Position		      [350, 102, 415, 228]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "-"
+	      use_pipeline	      on
+	      phase_selection	      "10000000"
+	      use_ena		      on
+	      use_aclr		      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cout[17:0]"
+	      Position		      [570, 158, 600, 172]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 65]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      DstBlock		      "cout[17:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "en"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, -125]
+		DstBlock		"Delay"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      Points		      [130, 0]
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			4
+	      }
+	      Branch {
+		Points			[0, -140]
+		DstBlock		"Delay"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "data[17:0]"
+	      SrcPort		      1
+	      Points		      [100, 0]
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -110]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "comb2"
+	  Ports			  [3, 1]
+	  Position		  [470, 173, 565, 317]
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "comb2"
+	    Location		    [351, 219, 980, 526]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data[18:0]"
+	      Position		      [20, 143, 50, 157]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "en"
+	      Position		      [20, 173, 50, 187]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      Position		      [25, 203, 55, 217]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [250, 31, 295, 79]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "10000000"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [4, 1]
+	      Position		      [350, 102, 415, 228]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "-"
+	      use_pipeline	      on
+	      phase_selection	      "10000000"
+	      use_ena		      on
+	      use_aclr		      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cout[18:0]"
+	      Position		      [570, 158, 600, 172]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "data[18:0]"
+	      SrcPort		      1
+	      Points		      [100, 0]
+	      Branch {
+		Points			[0, -110]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      Points		      [130, 0]
+	      Branch {
+		Points			[0, -140]
+		DstBlock		"Delay"
+		DstPort			3
+	      }
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "en"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      Branch {
+		Points			[0, -125]
+		DstBlock		"Delay"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      DstBlock		      "cout[18:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 65]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "comb3"
+	  Ports			  [3, 1]
+	  Position		  [615, 223, 710, 367]
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "comb3"
+	    Location		    [351, 222, 977, 519]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data[19:0]"
+	      Position		      [20, 143, 50, 157]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "en"
+	      Position		      [20, 173, 50, 187]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      Position		      [25, 203, 55, 217]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [250, 31, 295, 79]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "10000000"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [4, 1]
+	      Position		      [350, 102, 415, 228]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "-"
+	      use_pipeline	      on
+	      phase_selection	      "10000000"
+	      use_ena		      on
+	      use_aclr		      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "combo"
+	      Ports		      [1, 1]
+	      Position		      [455, 157, 520, 173]
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "20"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cout[19:0]"
+	      Position		      [570, 158, 600, 172]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 65]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      DstBlock		      "combo"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "en"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, -125]
+		DstBlock		"Delay"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      Points		      [130, 0]
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			4
+	      }
+	      Branch {
+		Points			[0, -140]
+		DstBlock		"Delay"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "data[19:0]"
+	      SrcPort		      1
+	      Points		      [100, 0]
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -110]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "combo"
+	      SrcPort		      1
+	      DstBlock		      "cout[19:0]"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "comb4"
+	  Ports			  [3, 1]
+	  Position		  [760, 273, 855, 417]
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "comb4"
+	    Location		    [351, 219, 980, 529]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data[20:0]"
+	      Position		      [20, 143, 50, 157]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "en"
+	      Position		      [20, 173, 50, 187]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      Position		      [25, 203, 55, 217]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [250, 31, 295, 79]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "10000000"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [4, 1]
+	      Position		      [350, 102, 415, 228]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "-"
+	      use_pipeline	      on
+	      phase_selection	      "10000000"
+	      use_ena		      on
+	      use_aclr		      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "cout[20:0]"
+	      Position		      [570, 158, 600, 172]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "data[20:0]"
+	      SrcPort		      1
+	      Points		      [100, 0]
+	      Branch {
+		Points			[0, -110]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      Points		      [130, 0]
+	      Branch {
+		Points			[0, -140]
+		DstBlock		"Delay"
+		DstPort			3
+	      }
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "en"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      Branch {
+		Points			[0, -125]
+		DstBlock		"Delay"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Parallel \nAdder Subtractor"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      DstBlock		      "cout[20:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 65]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1[20:0]"
+	  Position		  [965, 338, 995, 352]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "In1[16:0]"
+	  SrcPort		  1
+	  DstBlock		  "comb"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "comb"
+	  SrcPort		  1
+	  DstBlock		  "comb1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "comb1"
+	  SrcPort		  1
+	  DstBlock		  "comb2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "comb2"
+	  SrcPort		  1
+	  DstBlock		  "comb3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "comb3"
+	  SrcPort		  1
+	  DstBlock		  "comb4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "comb4"
+	  SrcPort		  1
+	  DstBlock		  "Out1[20:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "en"
+	  SrcPort		  1
+	  DstBlock		  "GotoEn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "clr"
+	  SrcPort		  1
+	  DstBlock		  "GotoRst"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "comb"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "comb"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From8"
+	  SrcPort		  1
+	  DstBlock		  "comb4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From9"
+	  SrcPort		  1
+	  DstBlock		  "comb4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  DstBlock		  "comb3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From7"
+	  SrcPort		  1
+	  DstBlock		  "comb3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From4"
+	  SrcPort		  1
+	  DstBlock		  "comb2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  DstBlock		  "comb2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  DstBlock		  "comb1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "comb1"
+	  DstPort		  3
+	}
+	Annotation {
+	  Name			  "5 Stages Comb Section"
+	  Position		  [453, 38]
+	  ForegroundColor	  "blue"
+	  UseDisplayTextAsClickCallback	off
+	  FontName		  "Arial"
+	  FontSize		  20
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataIn"
+      Ports		      [1, 1]
+      Position		      [265, 161, 330, 179]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "D:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Filters\\CicFilter\\Cic\\tb_cic\\cic_DataIn.salt"
+      BusType		      "Signed Integer"
+      bwl		      "16"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataOut"
+      Ports		      [1, 1]
+      Position		      [705, 217, 770, 233]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "D:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Filters\\CicFilter\\Cic\\tb_cic\\cic_DataOut.capture"
+      BusType		      "Signed Integer"
+      bwl		      "28"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Enable after 6 cycles"
+      Position		      [175, 210, 205, 240]
+      Time		      "6"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "End reset after 4 cycles"
+      Position		      [175, 265, 205, 295]
+      Time		      "4"
+      Before		      "1"
+      After		      "0"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Fcn
+      Name		      "Fcn1"
+      Position		      [105, 154, 180, 186]
+      ShowName		      off
+      Expr		      "floor(2^15*u)"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "IntegratorSection"
+      Ports		      [3, 1]
+      Position		      [600, 142, 685, 308]
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"IntegratorSection"
+	Location		[54, 235, 1040, 603]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1[19:0]"
+	  Position		  [20, 43, 50, 57]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "en"
+	  Position		  [25, 218, 55, 232]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "clr"
+	  Position		  [25, 263, 55, 277]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [115, 87, 140, 103]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "En"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  Position		  [115, 131, 145, 149]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [270, 132, 295, 148]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "En"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  Position		  [270, 176, 300, 194]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From4"
+	  Position		  [420, 177, 445, 193]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "En"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  Position		  [420, 221, 450, 239]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  Position		  [570, 222, 595, 238]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "En"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From7"
+	  Position		  [570, 266, 600, 284]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From8"
+	  Position		  [715, 267, 740, 283]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "En"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From9"
+	  Position		  [720, 311, 750, 329]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [180, 215, 245, 235]
+	  GotoTag		  "En"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  Position		  [180, 260, 245, 280]
+	  GotoTag		  "Rst"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "int"
+	  Ports			  [3, 1]
+	  Position		  [170, 25, 260, 165]
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "int"
+	    Location		    [69, 159, 849, 674]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data[19:0]"
+	      Position		      [125, 308, 155, 322]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "en"
+	      Position		      [125, 168, 155, 182]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      Position		      [125, 198, 155, 212]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [640, 151, 685, 199]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [2, 1]
+	      Position		      [430, 219, 495, 346]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "+"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "into2"
+	      Ports		      [1, 1]
+	      Position		      [520, 277, 585, 293]
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "20"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "into[19:0]"
+	      Position		      [725, 278, 755, 292]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "data[19:0]"
+	      SrcPort		      1
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      DstBlock		      "into2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "en"
+	      SrcPort		      1
+	      DstBlock		      "Delay"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      Points		      [135, 0; 0, -15]
+	      DstBlock		      "Delay"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -90; -335, 0; 0, 165]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "into2"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		Points			[0, -125]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"into[19:0]"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "int1"
+	  Ports			  [3, 1]
+	  Position		  [315, 70, 405, 210]
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "int1"
+	    Location		    [2, 93, 958, 589]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data[21:0]"
+	      Position		      [155, 308, 185, 322]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "en"
+	      Position		      [130, 153, 160, 167]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      Position		      [130, 183, 160, 197]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [640, 151, 685, 199]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [2, 1]
+	      Position		      [415, 219, 480, 346]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "+"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      on
+	      use_aclr		      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "into2"
+	      Ports		      [1, 1]
+	      Position		      [515, 277, 580, 293]
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "22"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "into[21:0]"
+	      Position		      [885, 278, 915, 292]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -90; -355, 0; 0, 165]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      DstBlock		      "Delay"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "en"
+	      SrcPort		      1
+	      Points		      [125, 0; 0, 15]
+	      DstBlock		      "Delay"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      DstBlock		      "into2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "data[21:0]"
+	      SrcPort		      1
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "into2"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		Points			[0, -125]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"into[21:0]"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "int2"
+	  Ports			  [3, 1]
+	  Position		  [470, 115, 560, 255]
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "int2"
+	    Location		    [69, 159, 849, 674]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data[23:0]"
+	      Position		      [110, 298, 140, 312]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "en"
+	      Position		      [110, 168, 140, 182]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      Position		      [110, 203, 140, 217]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [495, 151, 540, 199]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [2, 1]
+	      Position		      [270, 243, 320, 327]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "+"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      on
+	      use_aclr		      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "into2"
+	      Ports		      [1, 1]
+	      Position		      [365, 275, 435, 295]
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "24"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "into[23:0]"
+	      Position		      [555, 278, 585, 292]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "data[23:0]"
+	      SrcPort		      1
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      DstBlock		      "into2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      Points		      [135, 0; 0, -20]
+	      DstBlock		      "Delay"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -90; -340, 0; 0, 180]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "into2"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      Branch {
+		Points			[0, -125]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"into[23:0]"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "en"
+	      SrcPort		      1
+	      Points		      [335, 0]
+	      DstBlock		      "Delay"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "int3"
+	  Ports			  [3, 1]
+	  Position		  [615, 160, 705, 300]
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "int3"
+	    Location		    [69, 159, 832, 539]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data[25:0]"
+	      Position		      [55, 268, 85, 282]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "en"
+	      Position		      [55, 113, 85, 127]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      Position		      [55, 143, 85, 157]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [450, 111, 495, 159]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [2, 1]
+	      Position		      [215, 179, 280, 306]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "+"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      on
+	      use_aclr		      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "into2"
+	      Ports		      [1, 1]
+	      Position		      [315, 237, 380, 253]
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "26"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "into[25:0]"
+	      Position		      [535, 238, 565, 252]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -90; -350, 0; 0, 165]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Delay"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "en"
+	      SrcPort		      1
+	      Points		      [130, 0; 0, 15]
+	      DstBlock		      "Delay"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "into2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "data[25:0]"
+	      SrcPort		      1
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "into2"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[0, -125]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"into[25:0]"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "int4"
+	  Ports			  [3, 1]
+	  Position		  [765, 205, 855, 345]
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "int4"
+	    Location		    [69, 159, 791, 559]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data[27:0]"
+	      Position		      [65, 273, 95, 287]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "en"
+	      Position		      [60, 118, 90, 132]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      Position		      [60, 148, 90, 162]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [485, 116, 530, 164]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [2, 1]
+	      Position		      [240, 184, 305, 311]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "+"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      on
+	      use_aclr		      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "into2"
+	      Ports		      [1, 1]
+	      Position		      [355, 242, 420, 258]
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "28"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "into[27:0]"
+	      Position		      [570, 243, 600, 257]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "data[27:0]"
+	      SrcPort		      1
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      DstBlock		      "into2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "en"
+	      SrcPort		      1
+	      Points		      [125, 0; 0, 15]
+	      DstBlock		      "Delay"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      DstBlock		      "Delay"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -60; -390, 0; 0, 135]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "into2"
+	      SrcPort		      1
+	      Points		      [0, 0; 35, 0]
+	      Branch {
+		Points			[0, -125]
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"into[27:0]"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1[27:0]"
+	  Position		  [935, 268, 965, 282]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "In1[19:0]"
+	  SrcPort		  1
+	  DstBlock		  "int"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "int"
+	  SrcPort		  1
+	  DstBlock		  "int1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "int1"
+	  SrcPort		  1
+	  DstBlock		  "int2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "int2"
+	  SrcPort		  1
+	  DstBlock		  "int3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "int3"
+	  SrcPort		  1
+	  DstBlock		  "int4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "en"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "clr"
+	  SrcPort		  1
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "int4"
+	  SrcPort		  1
+	  DstBlock		  "Out1[27:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "int"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "int"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From8"
+	  SrcPort		  1
+	  DstBlock		  "int4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From9"
+	  SrcPort		  1
+	  DstBlock		  "int4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  DstBlock		  "int3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From7"
+	  SrcPort		  1
+	  DstBlock		  "int3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From4"
+	  SrcPort		  1
+	  DstBlock		  "int2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  DstBlock		  "int2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  DstBlock		  "int1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "int1"
+	  DstPort		  3
+	}
+	Annotation {
+	  Name			  "5 Stages Integrator Section"
+	  Position		  [663, 33]
+	  ForegroundColor	  "blue"
+	  UseDisplayTextAsClickCallback	off
+	  FontName		  "Arial"
+	  FontSize		  20
+	}
+      }
+    }
+    Block {
+      BlockType		      RandomNumber
+      Name		      "Random\nNumber"
+      Position		      [55, 155, 90, 185]
+      Variance		      "8"
+      SampleTime	      "8"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "Save Input To Workspace"
+      Position		      [830, 85, 890, 115]
+      VariableName	      "input"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "Save Output To Workspace"
+      Position		      [830, 135, 890, 165]
+      VariableName	      "output"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      Ports		      [1]
+      Position		      [830, 208, 860, 242]
+      Floating		      off
+      Location		      [21, 786, 1170, 1025]
+      Open		      on
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      TimeRange		      "1000"
+      YMin		      "-150000000"
+      YMax		      "150000000"
+      SaveName		      "ScopeData2"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Signal Compiler"
+      Ports		      []
+      Position		      [64, 53, 112, 91]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily          "Stratix IV"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "Clock"
+    }
+    Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay"
+      Position		      [195, 154, 230, 186]
+      ShowName		      off
+      SampleTime	      "8"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Up Sampling"
+      Ports		      [1, 1]
+      Position		      [505, 160, 565, 180]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Up Sampling"
+      SourceType	      "Up Sampling AlteraBlockset"
+      rate		      "8"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "enable"
+      Ports		      [1, 1]
+      Position		      [265, 217, 330, 233]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "D:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Filters\\CicFilter\\Cic\\tb_cic\\cic_enable.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "reset"
+      Ports		      [1, 1]
+      Position		      [265, 272, 330, 288]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "D:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Filters\\CicFilter\\Cic\\tb_cic\\cic_reset.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Line {
+      SrcBlock		      "Up Sampling"
+      SrcPort		      1
+      DstBlock		      "IntegratorSection"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "IntegratorSection"
+      SrcPort		      1
+      DstBlock		      "DataOut"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DataOut"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	DstBlock		"Scope"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -75]
+	DstBlock		"Save Output To Workspace"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Random\nNumber"
+      SrcPort		      1
+      DstBlock		      "Fcn1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Unit Delay"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"DataIn"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -70]
+	DstBlock		"Save Input To Workspace"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Fcn1"
+      SrcPort		      1
+      DstBlock		      "Unit Delay"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "CombSection"
+      SrcPort		      1
+      Points		      [0, -55]
+      DstBlock		      "Up Sampling"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Enable after 6 cycles"
+      SrcPort		      1
+      DstBlock		      "enable"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "End reset after 4 cycles"
+      SrcPort		      1
+      DstBlock		      "reset"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DataIn"
+      SrcPort		      1
+      DstBlock		      "CombSection"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "enable"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"CombSection"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 145; 155, 0; 0, -145]
+	DstBlock		"IntegratorSection"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "reset"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	Points			[0, 75; 155, 0; 0, -75]
+	DstBlock		"IntegratorSection"
+	DstPort			3
+      }
+      Branch {
+	DstBlock		"CombSection"
+	DstPort			3
+      }
+    }
+    Annotation {
+      Name		      "8x Interpolating  CIC Filter"
+      Position		      [393, 53]
+      ForegroundColor	      "blue"
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      20
+    }
+    Annotation {
+      Name		      "(c) 2007 Altera Corporation. All rights reserve"
+"d.  Altera products are protected under numerous U.S. and foreign patents, ma"
+"skwork rights, copyrights and other intellectual property laws. \nThis refere"
+"nce design file, and your use thereof, is subject to and governed by the term"
+"s and conditions of the applicable Altera Reference Design License Agreement "
+"(found at www.altera.com).\nBy using this reference design file, you indicate"
+" your acceptance of such terms and conditions between you and Altera Corporat"
+"ion. \nIn the event that you do not agree with such terms and conditions, you"
+" may not use the reference design file and please promptly destroy any copies"
+" you have made.\nThis reference design file being provided on an \"as-is\" ba"
+"sis and as an accommodation and therefore all warranties, representations or "
+"guarantees of any kind (whether express, implied or statutory)\nincluding, wi"
+"thout limitation, warranties of merchantability, non-infringement, or fitness"
+" for a particular purpose, are specifically disclaimed.\nBy making this refer"
+"ence design file available, Altera expressly does not recommend, suggest or r"
+"equire that this reference design file be used in combination with any other "
+"product not provided by Altera"
+      Position		      [23, 435]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      UseDisplayTextAsClickCallback off
+    }
+  }
+}

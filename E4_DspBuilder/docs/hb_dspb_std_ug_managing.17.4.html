@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>MegaCore Functions</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_managing.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_managing.17.3.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_managing.17.5.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1025179">MegaCore Functions</a></div>
+      <div class="Body"><a name="1025180">The MegaCore IP Library always installs in the same parent directory as the Quartus </a>II installation. This directory is not a subdirectory of the <span class="Bold">quartus</span> directory but a relative path to an install directory at the same level as the <span class="Bold">quartus</span> directory. The expected directory structure is:</div>
+      <div class="L1_body" style="color: #000000; font-family: Palatino; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline;"><span class="Bold"><a name="1025181">&lt;</a></span><span class="Emphasis" style="font-weight: normal;">install_path</span><span class="Bold" style="font-style: normal;">&gt;&lt;QUARTUS_ROOTDIR&gt;\..\ip</span></div>
+      <div class="Body"><a name="1028606">This feature allows the Export HDL flow to use relative paths, and improves </a>portability. </div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1028608">Before the Quartus II software version 8.0, it was possible to install previous versions </a>of the MegaCore IP Library in any specified location. If you use an old version of the MegaCore IP Library in your design, there may still be absolute paths in the generated Quartus II IP (.<span class="Bold">qip)</span> files that you must modify when you move projects to a different location. The .<span class="Bold">qip</span> file contains all the assignments and other information that the design requires to process the exported HDL in the Quartus II compiler and generate hardware.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1025185">When moving a design to a new version of the tools or a different location, run the </a><span class="Code">alt_dspbuilder_refresh_megacore</span> script to ensure that the MegaCore function blocks are up-to-date.</div>
+      <div class="Body"><a name="1025186">Successful migration of designs with MegaCore Functions assumes that the new </a>environment has all the required IP installed. It may be necessary to install the MegaCore IP Library and run the <span class="Code">alt_dspbuilder_setup_megacore</span> script.</div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

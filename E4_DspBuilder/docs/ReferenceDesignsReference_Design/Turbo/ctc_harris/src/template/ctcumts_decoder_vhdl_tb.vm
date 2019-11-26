@@ -1,0 +1,389 @@
+#include ("alt_license_vhdl.txt")
+
+## 
+## Description : Top level for Turbo decoder test bench
+## --
+## -------------------------------------------------------------------------
+## --
+## $Header:  1.7 2007/12/10 14:19:37 zpan Exp $
+## --
+## -------------------------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.math_real.all;
+use ieee.numeric_std.all;
+use std.textio.all;
+
+-------------------------------------------------------------------------------
+
+entity ${VariationName}_tb is
+  generic (
+    TB_IN_WIDTH_g    : positive := $InWidth;
+    TB_OUT_WIDTH_g   : positive := $OutWidth;
+    INPUTFILE_DIR_g  : string   := "./";
+    OUTPUTFILE_DIR_g : string   := "./";
+    NUM_FRAMES_g     : natural  := 0;  -- 0 for all input frames, # for a number of frames
+    DELAY_g          : natural  := 0  -- 0 for no delays 1 = random input/inframe/output delays
+    ); 
+end entity ${VariationName}_tb;
+
+architecture tb of ${VariationName}_tb is
+
+  -- Turbo constants.
+  constant TB_IT_WIDTH_c     : positive := 5;
+  constant TB_MAX_BLK_SIZE_c : natural  := 5118;
+  constant TB_MIN_BLK_SIZE_c : natural  := 40;
+  constant TAIL_BITS_c       : natural  := 4;
+
+  -- 0 = random, 1 = constant, 2 = read from a file
+  constant VARIABLE_BLKSIZE_c : natural := 2;
+
+  -- these constants control the flow of data from the source
+  constant SOURCE_SYMBOLS_PER_BEAT_c   : natural := 3;
+  constant SOURCE_SYMBOL_DELIMETER_c   : string  := " ";
+  constant SOURCE_SYMBOL_DATAWIDTH_c   : natural := TB_IN_WIDTH_g;
+  -- 1 = random intra-block delays in source data, 0 = no delays
+  constant SOURCE_RAND_DELAY_c         : natural := 1;
+  -- 1 = random delays between blocks of data, 0 = no delays                                          
+  constant SOURCE_RANDOM_FRAME_DELAY_c : natural := 1;
+
+  -- these constants control the flow of data into the sink
+  constant SINK_SYMBOLS_PER_BEAT_c : natural := TB_OUT_WIDTH_g;
+  constant SINK_SYMBOL_DELIMETER_c : string  := "\n";
+  constant SINK_SYMBOL_DATAWIDTH_c : natural := 1;
+  -- 1 = random intra-block delays in sink data (back-pressure), 0 = no delays
+  constant SINK_RAND_DELAY_c       : natural := 1;
+
+  constant ERROR_TEST_c              : natural := 0;
+  constant REPORT_BLKSIZE_c          : boolean := false;
+
+  constant tclk : time := 10 ns;
+
+  -- component ports
+  signal clk     : std_logic;
+  signal reset_n : std_logic;
+
+  -- ports from avalon streaming source model to the CTCUMTS
+  signal sink_error    : std_logic_vector(1 downto 0);
+  signal sink_valid    : std_logic;
+  signal sink_sop      : std_logic;
+  signal sink_eop      : std_logic;
+  signal sink_ready    : std_logic;
+  signal sink_data     : std_logic_vector(SOURCE_SYMBOL_DATAWIDTH_c*SOURCE_SYMBOLS_PER_BEAT_c - 1 downto 0);
+  signal sink_blk_size : std_logic_vector(integer(ceil(log2(real(TB_MAX_BLK_SIZE_c)))) - 1 downto 0);
+  signal sink_iter     : std_logic_vector(TB_IT_WIDTH_c - 1 downto 0);
+
+  -- ports from the CTCUMTS to the avalon streaming sink model
+  signal source_blk_size : std_logic_vector(integer(ceil(log2(real(TB_MAX_BLK_SIZE_c))))- 1 downto 0);
+  signal source_sop      : std_logic;
+  signal source_eop      : std_logic;
+  signal source_valid    : std_logic;
+  signal source_ready    : std_logic;
+  signal source_error    : std_logic_vector(1 downto 0);
+  signal output_blk_size : std_logic_vector(integer(ceil(log2(real(TB_MAX_BLK_SIZE_c))))- 1 downto 0);
+
+#if ($OutWidth == 1)
+  signal source_data     : std_logic;
+  signal source_data_s   : std_logic_vector(0 downto 0);
+#else
+  signal source_data     : std_logic_vector(SINK_SYMBOLS_PER_BEAT_c*SINK_SYMBOL_DATAWIDTH_c - 1 downto 0);
+#end
+
+  -- blksize read from file includes the tail bits.
+  signal blk_size : std_logic_vector(integer(ceil(log2(real(TB_MAX_BLK_SIZE_c + TAIL_BITS_c))))-1 downto 0);
+
+  -- These signals control the number of frames fed into the source, and automatically stops
+  -- the clk when the same number of frames have been decoded.
+  signal   seen_eof            : std_logic;
+  signal   eof                 : std_logic;
+  signal   end_test            : std_logic;
+  signal   frames_in_cnt       : natural;
+  signal   frames_out_cnt      : natural;
+  signal   enable              : std_logic;
+  signal   source_model_enable : std_logic;
+  -- wait for this many clk cycles after final frame eop.
+  constant NUM_DONE_c          : natural := 100;
+  signal   cnt_done            : natural range 0 to NUM_DONE_c;
+
+
+  component auk_dspip_avalon_streaming_source_model is
+    generic (
+      FILENAME_g            : string;
+      RANDOM_DELAY_g        : natural;
+      RANDOM_FRAME_DELAY_g  : natural;
+      ERROR_TEST_g          : natural;
+      MAX_BLKSIZE_g         : natural;
+      MIN_BLKSIZE_g         : natural;
+      VARIABLE_BLKSIZE_g    : natural;
+      FORMAT_g              : string;
+      REPORT_BLKSIZE_g      : boolean;
+      BLKSIZE_REPORT_FILE_g : string;
+      SOP_NUM_DATA_g        : natural;
+      SOP_DATAWIDTH_g       : natural;
+      SYMBOLS_PER_BEAT_g    : natural;
+      SYMBOL_DELIMETER_g    : string;
+      SYMBOL_DATAWIDTH_g    : natural);
+    port (
+      clk          : in  std_logic;
+      reset_n      : in  std_logic;
+      enable       : in  std_logic;
+      source_valid : out std_logic;
+      source_ready : in  std_logic;
+      source_sop   : out std_logic;
+      source_eop   : out std_logic;
+      source_data  : out std_logic_vector(SYMBOLS_PER_BEAT_g*(SYMBOL_DATAWIDTH_g) - 1 downto 0);
+      blksize      : out std_logic_vector(integer(ceil(log2(real(MAX_BLKSIZE_g))))- 1 downto 0);
+      sop_data     : out std_logic_vector(SOP_DATAWIDTH_g*SOP_NUM_DATA_g -1 downto 0);
+      eof          : out std_logic);
+  end component auk_dspip_avalon_streaming_source_model;
+
+  component ${VariationName} is
+    port (
+      clk             : in  std_logic;
+      reset_n         : in  std_logic;
+      sink_blk_size   : in  std_logic_vector(12 downto 0);
+      sink_iter       : in  std_logic_vector(TB_IT_WIDTH_c - 1 downto 0);
+      sink_sop        : in  std_logic;
+      sink_eop        : in  std_logic;
+      sink_valid      : in  std_logic;
+      sink_ready      : out std_logic;
+      sink_data       : in  std_logic_vector(3*TB_IN_WIDTH_g - 1 downto 0);
+      sink_error      : in  std_logic_vector(1 downto 0);
+      source_error    : out std_logic_vector(1 downto 0);
+      source_blk_size : out std_logic_vector(12 downto 0);
+      source_valid    : out std_logic;
+      source_ready    : in  std_logic;
+      source_sop      : out std_logic;
+      source_eop      : out std_logic;
+#if ($OutWidth == 1)
+      source_data     : out std_logic
+#else
+      source_data     : out std_logic_vector(TB_OUT_WIDTH_g - 1 downto 0)
+#end
+	);
+  end component ${VariationName};
+
+  component auk_dspip_avalon_streaming_sink_model is
+    generic (
+      FILENAME_g         : string;
+      RANDOM_DELAY_g     : natural;
+      MAX_BLKSIZE_g      : natural;
+      MIN_BLKSIZE_g      : natural;
+      VARIABLE_BLKSIZE_g : natural;
+      ERROR_SEVERITY_g   : severity_level;
+      REPORT_AS_g        : string;
+      SYMBOLS_PER_BEAT_g : natural;
+      SYMBOL_DELIMETER_g : string;
+      SYMBOL_DATAWIDTH_g : natural);
+    port (
+      clk        : in  std_logic;
+      reset_n    : in  std_logic;
+      enable     : in  std_logic;
+      blksize    : in  std_logic_vector(integer(ceil(log2(real(MAX_BLKSIZE_g))))- 1 downto 0) := (others => '0');
+      sink_valid : in  std_logic;
+      sink_ready : out std_logic;
+      sink_sop   : in  std_logic;
+      sink_eop   : in  std_logic;
+      sink_data  : in  std_logic_vector(SYMBOLS_PER_BEAT_g*(SYMBOL_DATAWIDTH_g) - 1 downto 0));
+  end component auk_dspip_avalon_streaming_sink_model;
+
+
+  
+begin
+  
+  clkgen : process
+  begin
+    -- seen NUM_DONE_c consecutive deasserted valids, then deassert clk
+    if (cnt_done = NUM_DONE_c - 1) then
+      clk <= '0';
+      report "Done.";
+      wait;
+    else
+      clk <= '0';
+      wait for tclk;
+      clk <= '1';
+      wait for tclk;
+    end if;
+  end process clkgen;
+
+  -- reset generation.
+  resetgen : process
+    variable rand_v     : real     := 0.0;
+    variable rand_int_v : natural  := 0;
+    variable seed1      : positive := 2;
+    variable seed2      : positive := 4;
+
+  begin
+    enable  <= '0';
+    reset_n <= '1';
+    wait for 0.5*tclk;
+    reset_n <= '0';
+    wait for tclk*6.0;
+    reset_n <= '1';
+    wait until clk'event and clk = '1';
+    enable  <= '1';
+    wait;
+  end process resetgen;
+
+  -- count for NUM_DONE_c after last frame
+  done_p : process (clk, reset_n)
+  begin
+    if reset_n = '0' then
+      cnt_done <= 0;
+    elsif rising_edge(clk) then
+      if (NUM_FRAMES_g /= 0 and frames_out_cnt = NUM_FRAMES_g) or
+        (NUM_FRAMES_g = 0 and seen_eof = '1' and frames_out_cnt = frames_in_cnt)then
+        if cnt_done = NUM_DONE_c - 1 then
+          cnt_done <= 0;
+        else
+          cnt_done <= cnt_done + 1;
+        end if;
+      end if;
+    end if;
+  end process done_p;
+
+  -- count the number of input frames, turn off the source when all frames have
+  -- been sent to the CTCUMTS
+  cnt_frames_in : process (clk, reset_n)
+  begin
+    if reset_n = '0' then
+      frames_in_cnt       <= 0;
+      source_model_enable <= '0';
+      end_test            <= '0';
+    elsif rising_edge(clk) then
+      if enable = '1' and end_test = '0' then
+        source_model_enable <= '1';
+        if (sink_eop = '1' and sink_valid = '1' and sink_ready = '1')then
+          if (NUM_FRAMES_g /= 0) and (frames_in_cnt = NUM_FRAMES_g - 1) then
+            source_model_enable <= '0';
+            end_test            <= '1';
+            report "Source input eof found";
+          end if;
+          frames_in_cnt <= frames_in_cnt + 1;
+        end if;
+      else
+        source_model_enable <= '0';
+      end if;
+    end if;
+  end process cnt_frames_in;
+
+
+  -- count the number of output frames frames
+  cnt_frames_out : process (clk, reset_n)
+  begin
+    if reset_n = '0' then
+      frames_out_cnt <= 0;
+    elsif rising_edge(clk) then
+      if source_eop = '1' and source_valid = '1' and source_ready = '1' then
+        frames_out_cnt <= frames_out_cnt + 1;
+      end if;
+    end if;
+  end process cnt_frames_out;
+
+  -- check when we have found the eof
+  seen_eof_p : process (clk, reset_n)
+  begin  -- process done_p
+    if reset_n = '0' then
+      seen_eof <= '0';
+    elsif rising_edge(clk) then
+      if eof = '1' and seen_eof = '0' then
+        seen_eof <= '1';
+      end if;
+    end if;
+  end process seen_eof_p;
+
+  source_model_inst : auk_dspip_avalon_streaming_source_model
+    generic map (
+      FILENAME_g            => "ctc_data_input.txt",
+      RANDOM_DELAY_g        => SOURCE_RAND_DELAY_c*DELAY_g,
+      RANDOM_FRAME_DELAY_g  => SOURCE_RANDOM_FRAME_DELAY_c*DELAY_g,
+      MAX_BLKSIZE_g         => TB_MAX_BLK_SIZE_c + TAIL_BITS_c,
+      MIN_BLKSIZE_g         => TB_MIN_BLK_SIZE_c + TAIL_BITS_c,
+      VARIABLE_BLKSIZE_g    => VARIABLE_BLKSIZE_c,
+      ERROR_TEST_g          => ERROR_TEST_c,
+      FORMAT_g              => "SIGNED_INTEGER",
+      REPORT_BLKSIZE_g      => REPORT_BLKSIZE_c,
+      BLKSIZE_REPORT_FILE_g => "",
+      SOP_NUM_DATA_g        => 1,
+      SOP_DATAWIDTH_g       => TB_IT_WIDTH_c,
+      SYMBOLS_PER_BEAT_g    => SOURCE_SYMBOLS_PER_BEAT_c,
+      SYMBOL_DELIMETER_g    => SOURCE_SYMBOL_DELIMETER_c,
+      SYMBOL_DATAWIDTH_g    => SOURCE_SYMBOL_DATAWIDTH_c)
+    port map (
+      clk          => clk,
+      reset_n      => reset_n,
+      enable       => source_model_enable,
+      source_valid => sink_valid,
+      source_ready => sink_ready,
+      source_sop   => sink_sop,
+      source_eop   => sink_eop,
+      source_data  => sink_data,
+      eof          => eof,
+      blksize      => blk_size,
+      sop_data     => sink_iter
+      );
+
+  sink_error <= (others => '0');
+
+  -- the actual block size is TAIL_BITS_c less than the number of input samples.
+  sink_blk_size <= std_logic_vector(resize(unsigned(blk_size) - TAIL_BITS_c, sink_blk_size'length));
+
+
+  DUT : ${VariationName}
+    port map (
+      clk             => clk,
+      reset_n         => reset_n,
+      sink_blk_size   => sink_blk_size,
+      sink_iter       => sink_iter,
+      sink_sop        => sink_sop,
+      sink_eop        => sink_eop,
+      sink_valid      => sink_valid,
+      sink_ready      => sink_ready,
+      sink_data       => sink_data,
+      sink_error      => sink_error,
+      source_error    => source_error,
+      source_blk_size => source_blk_size,
+      source_valid    => source_valid,
+      source_ready    => source_ready,
+      source_sop      => source_sop,
+      source_eop      => source_eop,
+      source_data     => source_data);
+
+#if ($OutWidth == 1)
+	 source_data_s(0) <= source_data;
+#end
+
+  output_blk_size <= std_logic_vector(unsigned(source_blk_size)/TB_OUT_WIDTH_g);
+
+  sink_model_inst : auk_dspip_avalon_streaming_sink_model
+    generic map (
+      FILENAME_g         => "ctc_decoded_output.txt",
+      RANDOM_DELAY_g     => SINK_RAND_DELAY_c*DELAY_g,
+      MAX_BLKSIZE_g      => TB_MAX_BLK_SIZE_c,
+      MIN_BLKSIZE_g      => TB_MIN_BLK_SIZE_c,
+      VARIABLE_BLKSIZE_g => VARIABLE_BLKSIZE_c,
+      ERROR_SEVERITY_g   => failure,
+      REPORT_AS_g        => "BIN",
+      SYMBOLS_PER_BEAT_g => SINK_SYMBOLS_PER_BEAT_c,
+      SYMBOL_DELIMETER_g => SINK_SYMBOL_DELIMETER_c,
+      SYMBOL_DATAWIDTH_g => SINK_SYMBOL_DATAWIDTH_c)
+    port map (
+      clk        => clk,
+      reset_n    => reset_n,
+      enable     => enable,
+      blksize    => output_blk_size,
+      sink_valid => source_valid,
+      sink_ready => source_ready,
+      sink_sop   => source_sop,
+      sink_eop   => source_eop,
+#if ($OutWidth == 1)
+      sink_data  => source_data_s
+#else
+      sink_data  => source_data
+#end
+	);
+
+
+
+end architecture tb;
+

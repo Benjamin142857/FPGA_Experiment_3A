@@ -1,0 +1,2102 @@
+Library {
+  Name			  "Stratix_IV_EP4SGX530_alteradspbuilder2"
+  Version		  7.6
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  MaxMDLFileLineLength	  120
+  Created		  "Thu Oct 24 04:44:33 2013"
+  Creator		  "swbuild"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "swbuild"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Oct 24 04:44:34 2013"
+  RTWModifiedTimeStamp	  304490674
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.10.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.10.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.10.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.10.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.10.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.10.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.10.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "GenerateSLWebview"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateSLWebview	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		21
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTCodeCoverageTool     "None"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 360, 98, 1240, 728 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+  }
+  System {
+    Name		    "Stratix_IV_EP4SGX530_alteradspbuilder2"
+    Location		    [480, 85, 1016, 386]
+    Open		    off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "34"
+    Block {
+      BlockType		      "S-Function"
+      Name		      "A2D1_HSMC_A 14 Bit Signed"
+      SID		      "2"
+      Ports		      [1, 1]
+      Position		      [60, 195, 105, 235]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D1_HSMC_A');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D1_HSMC_A');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D1_HSMC_A');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 A2D1_HSMC_A 14 Bit Signed AlteraBlockSet"
+      MaskDescription	      "A2D_1 on HSM Connector A\nConnects to the analog-to-digital 14-bit Signed input bus on DS"
+      "P Daughter Card.\n\nPin 13 : Pin_AW10\nPin 12 : Pin_AW7\nPin 11 : Pin_AN9\nPin 10 : Pin_AP9\nPin 9 : Pin_AN7\nPi"
+      "n 8 : Pin_AP7\nPin 7 : Pin_AE13\nPin 6 : Pin_AE12\nPin 5 : Pin_AL8\nPin 4 : Pin_AM8\nPin 3 : Pin_AK9\nPin 2 : Pi"
+      "n_AL9\nPin 1 : Pin_AK8\nPin 0 : Pin_AK7\n\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:A2D1_HSMC_A').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_IV_EP4SGX530:A2D1_HSMC_A', 'Sp"
+      "ecifyClock', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:A2D1_HSMC_A', { iofile ex"
+      "ternalType get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('adda.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_A2D1%5FHS"
+      "MC%5FA+14+Bit+Signed.salt|Inferred|off||Pin_AK7,Pin_AK8,Pin_AL9,Pin_AK9,Pin_AM8,Pin_AL8,Pin_AE12,Pin_AE13,Pin_AP"
+      "7,Pin_AN7,Pin_AP9,Pin_AN9,Pin_AW7,Pin_AW10"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "A2D1_HSMC_B 14 Bit Signed"
+      SID		      "3"
+      Ports		      [1, 1]
+      Position		      [165, 195, 210, 235]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D1_HSMC_B');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D1_HSMC_B');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D1_HSMC_B');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 A2D1_HSMC_B 14 Bit Signed AlteraBlockSet"
+      MaskDescription	      "A2D_1 on HSM Connector B\nConnects to the analog-to-digital 14-bit Signed input bus on DS"
+      "P Daughter Card.\n\nPin 13 : Pin_AP10\nPin 12 : Pin_AW8\nPin 11 : Pin_W12\nPin 10 : Pin_W11\nPin 9 : Pin_V12\nPi"
+      "n 8 : Pin_V11\nPin 7 : Pin_V10\nPin 6 : Pin_V9\nPin 5 : Pin_U10\nPin 4 : Pin_T9\nPin 3 : Pin_T10\nPin 2 : Pin_R1"
+      "0\nPin 1 : Pin_R9\nPin 0 : Pin_R8\n\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:A2D1_HSMC_B').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_IV_EP4SGX530:A2D1_HSMC_B', 'Sp"
+      "ecifyClock', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:A2D1_HSMC_B', { iofile ex"
+      "ternalType get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('adda.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_A2D1%5FHS"
+      "MC%5FB+14+Bit+Signed.salt|Inferred|off||Pin_R8,Pin_R9,Pin_R10,Pin_T10,Pin_T9,Pin_U10,Pin_V9,Pin_V10,Pin_V11,Pin_"
+      "V12,Pin_W11,Pin_W12,Pin_AW8,Pin_AP10"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "A2D2_HSMC_A 14 Bit Signed"
+      SID		      "4"
+      Ports		      [1, 1]
+      Position		      [270, 195, 315, 235]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D2_HSMC_A');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D2_HSMC_A');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D2_HSMC_A');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 A2D2_HSMC_A 14 Bit Signed AlteraBlockSet"
+      MaskDescription	      "A2D_2 on HSM Connector A\nConnects to the analog-to-digital 14-bit Signed input bus on DS"
+      "P Daughter Card.\n\nPin 13 : Pin_AV10\nPin 12 : Pin_AV7\nPin 11 : Pin_AT9\nPin 10 : Pin_AU9\nPin 9 : Pin_AT8\nPi"
+      "n 8 : Pin_AU8\nPin 7 : Pin_AP8\nPin 6 : Pin_AR8\nPin 5 : Pin_AW6\nPin 4 : Pin_AW5\nPin 3 : Pin_AV5\nPin 2 : Pin_"
+      "AW4\nPin 1 : Pin_AT7\nPin 0 : Pin_AU7\n\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:A2D2_HSMC_A').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_IV_EP4SGX530:A2D2_HSMC_A', 'Sp"
+      "ecifyClock', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:A2D2_HSMC_A', { iofile ex"
+      "ternalType get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('adda.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_A2D2%5FHS"
+      "MC%5FA+14+Bit+Signed.salt|Inferred|off||Pin_AU7,Pin_AT7,Pin_AW4,Pin_AV5,Pin_AW5,Pin_AW6,Pin_AR8,Pin_AP8,Pin_AU8,"
+      "Pin_AT8,Pin_AU9,Pin_AT9,Pin_AV7,Pin_AV10"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "A2D2_HSMC_B 14 Bit Signed"
+      SID		      "5"
+      Ports		      [1, 1]
+      Position		      [375, 195, 420, 235]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D2_HSMC_B');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D2_HSMC_B');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:A2D2_HSMC_B');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 A2D2_HSMC_B 14 Bit Signed AlteraBlockSet"
+      MaskDescription	      "A2D_2 on HSM Connector B\nConnects to the analog-to-digital 14-bit Signed input bus on DS"
+      "P Daughter Card.\n\nPin 13 : Pin_AN10\nPin 12 : Pin_AV8\nPin 11 : Pin_W8\nPin 10 : Pin_W7\nPin 9 : Pin_V6\nPin 8"
+      " : Pin_U5\nPin 7 : Pin_R7\nPin 6 : Pin_P6\nPin 5 : Pin_R6\nPin 4 : Pin_R5\nPin 3 : Pin_N6\nPin 2 : Pin_N5\nPin 1"
+      " : Pin_N8\nPin 0 : Pin_N7\n\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:A2D2_HSMC_B').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_IV_EP4SGX530:A2D2_HSMC_B', 'Sp"
+      "ecifyClock', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:A2D2_HSMC_B', { iofile ex"
+      "ternalType get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('adda.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_A2D2%5FHS"
+      "MC%5FB+14+Bit+Signed.salt|Inferred|off||Pin_N7,Pin_N8,Pin_N5,Pin_N6,Pin_R5,Pin_R6,Pin_P6,Pin_R7,Pin_U5,Pin_V6,Pi"
+      "n_W7,Pin_W8,Pin_AV8,Pin_AN10"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "CPU_RESETn"
+      SID		      "6"
+      Ports		      [1, 1]
+      Position		      [480, 192, 520, 238]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:CPU_RESETN');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:CPU_RESETN');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:CPU_RESETN');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 CPU_RESETn AlteraBlockSet"
+      MaskDescription	      "Active-low CPU reset push-button switch.\n\nLOCATION = Pin_V34 (CPU_Reset_n)\n\nStratix I"
+      "V GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:CPU_RESETN').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_IV_EP4SGX530:CPU_RESETN', 'Spe"
+      "cifyClock', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:CPU_RESETN', { iofile ext"
+      "ernalType get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_CPU%5FRES"
+      "ETn.salt|Inferred|off||Pin_V34"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "D2A1_HSMC_A 14 Bit Unsigned"
+      SID		      "7"
+      Ports		      [1, 1]
+      Position		      [580, 195, 625, 235]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A1_HSMC_A');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A1_HSMC_A');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A1_HSMC_A');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 D2A1_HSMC_A 14 Bit Unsigned AlteraBlockSet"
+      MaskDescription	      "D2A_1  on HSM Connector A\n\nConnects to the digital-to-analog 14-bit unsigned output bus"
+      " on DSP Daughter Card.\n\nPin 13 : Pin_AG8\nPin 12 : Pin_AG7\nPin 11 : Pin_AG10\nPin 10 : Pin_AG9\nPin 9 : Pin_A"
+      "F11\nPin 8 : Pin_AF10\nPin 7 : Pin_AD10\nPin 6 : Pin_AD9\nPin 5 : Pin_AE11\nPin 4 : Pin_AE10\nPin 3 : Pin_AD13\n"
+      "Pin 2 : Pin_AD12\nPin 1 : Pin_AB13\nPin 0 : Pin_AB12\n\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Editio"
+      "n"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:D2A1_HSMC_A').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:D2A1_HSMC_A', { iofile ex"
+      "ternalType location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('adda.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_D2A1%5FHS"
+      "MC%5FA+14+Bit+Unsigned.capture|Inferred|Pin_AB12,Pin_AB13,Pin_AD12,Pin_AD13,Pin_AE10,Pin_AE11,Pin_AD9,Pin_AD10,P"
+      "in_AF10,Pin_AF11,Pin_AG9,Pin_AG10,Pin_AG7,Pin_AG8"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "D2A1_HSMC_B 14 Bit Unsigned"
+      SID		      "8"
+      Ports		      [1, 1]
+      Position		      [60, 270, 105, 310]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A1_HSMC_B');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A1_HSMC_B');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A1_HSMC_B');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 D2A1_HSMC_B 14 Bit Unsigned AlteraBlockSet"
+      MaskDescription	      "D2A_1  on HSM Connector B\n\nConnects to the digital-to-analog 14-bit unsigned output bus"
+      " on DSP Daughter Card.\n\nPin 13 : Pin_M8\nPin 12 : Pin_M7\nPin 11 : Pin_L8\nPin 10 : Pin_L7\nPin 9 : Pin_K7\nPi"
+      "n 8 : Pin_J7\nPin 7 : Pin_K9\nPin 6 : Pin_J9\nPin 5 : Pin_H7\nPin 4 : Pin_G7\nPin 3 : Pin_M10\nPin 2 : Pin_L10\n"
+      "Pin 1 : Pin_R12\nPin 0 : Pin_R11\n\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:D2A1_HSMC_B').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:D2A1_HSMC_B', { iofile ex"
+      "ternalType location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('adda.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_D2A1%5FHS"
+      "MC%5FB+14+Bit+Unsigned.capture|Inferred|Pin_R11,Pin_R12,Pin_L10,Pin_M10,Pin_G7,Pin_H7,Pin_J9,Pin_K9,Pin_J7,Pin_K"
+      "7,Pin_L7,Pin_L8,Pin_M7,Pin_M8"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "D2A2_HSMC_A 14 Bit Unsigned"
+      SID		      "9"
+      Ports		      [1, 1]
+      Position		      [165, 270, 210, 310]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A2_HSMC_A');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A2_HSMC_A');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A2_HSMC_A');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 D2A2_HSMC_A 14 Bit Unsigned AlteraBlockSet"
+      MaskDescription	      "D2A_2  on HSM Connector A\n\nConnects to the digital-to-analog 14-bit unsigned output bus"
+      " on DSP Daughter Card.\n\nPin 13 : Pin_AP6\nPin 12 : Pin_AP5\nPin 11 : Pin_AN6\nPin 10 : Pin_AN5\nPin 9 : Pin_AM"
+      "6\nPin 8 : Pin_AM5\nPin 7 : Pin_AL6\nPin 6 : Pin_AL5\nPin 5 : Pin_AK6\nPin 4 : Pin_AK5\nPin 3 : Pin_AJ6\nPin 2 :"
+      " Pin_AJ5\nPin 1 : Pin_AH6\nPin 0 : Pin_AH5\n\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:D2A2_HSMC_A').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:D2A2_HSMC_A', { iofile ex"
+      "ternalType location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('adda.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_D2A2%5FHS"
+      "MC%5FA+14+Bit+Unsigned.capture|Inferred|Pin_AH5,Pin_AH6,Pin_AJ5,Pin_AJ6,Pin_AK5,Pin_AK6,Pin_AL5,Pin_AL6,Pin_AM5,"
+      "Pin_AM6,Pin_AN5,Pin_AN6,Pin_AP5,Pin_AP6"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "D2A2_HSMC_B 14 Bit Unsigned"
+      SID		      "10"
+      Ports		      [1, 1]
+      Position		      [270, 270, 315, 310]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A2_HSMC_B');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A2_HSMC_B');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:D2A2_HSMC_B');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 D2A2_HSMC_B 14 Bit Unsigned AlteraBlockSet"
+      MaskDescription	      "D2A_2  on HSM Connector B\n\nConnects to the digital-to-analog 14-bit unsigned output bus"
+      " on DSP Daughter Card.\n\nPin 13 : Pin_J6\nPin 12 : Pin_J5\nPin 11 : Pin_G8\nPin 10 : Pin_F8\nPin 9 : Pin_G6\nPi"
+      "n 8 : Pin_F6\nPin 7 : Pin_G5\nPin 6 : Pin_F5\nPin 5 : Pin_F7\nPin 4 : Pin_E7\nPin 3 : Pin_G9\nPin 2 : Pin_F9\nPi"
+      "n 1 : Pin_D7\nPin 0 : Pin_C7\n\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:D2A2_HSMC_B').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:D2A2_HSMC_B', { iofile ex"
+      "ternalType location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('adda.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_D2A2%5FHS"
+      "MC%5FB+14+Bit+Unsigned.capture|Inferred|Pin_C7,Pin_D7,Pin_F9,Pin_G9,Pin_E7,Pin_F7,Pin_F5,Pin_G5,Pin_F6,Pin_G6,Pi"
+      "n_F8,Pin_G8,Pin_J5,Pin_J6"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Dip Switch"
+      SID		      "11"
+      Ports		      [1, 1]
+      Position		      [375, 268, 450, 302]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:DipSwitch');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:DipSwitch');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:DipSwitch');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 Dip Switch AlteraBlockSet"
+      MaskDescription	      "DIP switch.\n\n8-bit unsigned bus [7:0]\n\nPin 7 : Pin_AG31\nPin 6 : Pin_AG34\nPin 5 : Pi"
+      "n_K35\nPin 4 : Pin_G33\nPin 3 : Pin_AN35\nPin 2 : Pin_J34\nPin 1 : Pin_AC35\nPin 0 : Pin_AL35\n\n\nStratix IV GX"
+      " 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:DipSwitch').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_IV_EP4SGX530:DipSwitch', 'Spec"
+      "ifyClock', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:DipSwitch', { iofile exte"
+      "rnalType get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('dipswitch8bit.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_Dip+Switc"
+      "h.salt|Inferred|off||Pin_AL35,Pin_AC35,Pin_J34,Pin_AN35,Pin_G33,Pin_K35,Pin_AG34,Pin_AG31"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED0"
+      SID		      "12"
+      Ports		      [1, 1]
+      Position		      [510, 269, 555, 281]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED0');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED0');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED0');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED0 AlteraBlockSet"
+      MaskDescription	      "LED0\n\nLOCATION = Pin_F33\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED0').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED0', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED0.capt"
+      "ure|Inferred|Pin_F33"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED1"
+      SID		      "13"
+      Ports		      [1, 1]
+      Position		      [60, 339, 105, 351]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED1');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED1');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED1');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED1 AlteraBlockSet"
+      MaskDescription	      "LED1\n\nLOCATION = Pin_AK33\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED1').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED1', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED1.capt"
+      "ure|Inferred|Pin_AK33"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED10"
+      SID		      "14"
+      Ports		      [1, 1]
+      Position		      [165, 339, 210, 351]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED10');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED10');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED10');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED10 AlteraBlockSet"
+      MaskDescription	      "LED10\n\nLOCATION = Pin_AE30\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED10').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED10', { iofile external"
+      "Type location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED10.cap"
+      "ture|Inferred|Pin_AE30"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED11"
+      SID		      "15"
+      Ports		      [1, 1]
+      Position		      [270, 339, 315, 351]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED11');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED11');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED11');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED11 AlteraBlockSet"
+      MaskDescription	      "LED11\n\nLOCATION = Pin_V30\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED11').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED11', { iofile external"
+      "Type location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED11.cap"
+      "ture|Inferred|Pin_V30"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED12"
+      SID		      "16"
+      Ports		      [1, 1]
+      Position		      [375, 339, 420, 351]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED12');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED12');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED12');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED12 AlteraBlockSet"
+      MaskDescription	      "LED12\n\nLOCATION = Pin_AG30\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED12').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED12', { iofile external"
+      "Type location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED12.cap"
+      "ture|Inferred|Pin_AG30"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED13"
+      SID		      "17"
+      Ports		      [1, 1]
+      Position		      [480, 339, 525, 351]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED13');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED13');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED13');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED13 AlteraBlockSet"
+      MaskDescription	      "LED13\n\nLOCATION = Pin_AD29\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED13').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED13', { iofile external"
+      "Type location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED13.cap"
+      "ture|Inferred|Pin_AD29"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED14"
+      SID		      "18"
+      Ports		      [1, 1]
+      Position		      [585, 339, 630, 351]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED14');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED14');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED14');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED14 AlteraBlockSet"
+      MaskDescription	      "LED14\n\nLOCATION = Pin_U31\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED14').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED14', { iofile external"
+      "Type location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED14.cap"
+      "ture|Inferred|Pin_U31"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED15"
+      SID		      "19"
+      Ports		      [1, 1]
+      Position		      [60, 384, 105, 396]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED15');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED15');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED15');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED15 AlteraBlockSet"
+      MaskDescription	      "LED15\n\nLOCATION = Pin_U35\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED15').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED15', { iofile external"
+      "Type location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED15.cap"
+      "ture|Inferred|Pin_U35"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED2"
+      SID		      "20"
+      Ports		      [1, 1]
+      Position		      [165, 384, 210, 396]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED2');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED2');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED2');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED2 AlteraBlockSet"
+      MaskDescription	      "LED2\n\nLOCATION = Pin_W28\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED2').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED2', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED2.capt"
+      "ure|Inferred|Pin_W28"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED3"
+      SID		      "21"
+      Ports		      [1, 1]
+      Position		      [270, 384, 315, 396]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED3');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED3');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED3');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED3 AlteraBlockSet"
+      MaskDescription	      "LED3\n\nLOCATION = Pin_L34\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED3').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED3', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED3.capt"
+      "ure|Inferred|Pin_L34"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED4"
+      SID		      "22"
+      Ports		      [1, 1]
+      Position		      [375, 384, 420, 396]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED4');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED4');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED4');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED4 AlteraBlockSet"
+      MaskDescription	      "LED4\n\nLOCATION = Pin_AM34\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED4').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED4', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED4.capt"
+      "ure|Inferred|Pin_AM34"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED5"
+      SID		      "23"
+      Ports		      [1, 1]
+      Position		      [480, 384, 525, 396]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED5');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED5');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED5');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED5 AlteraBlockSet"
+      MaskDescription	      "LED5\n\nLOCATION = Pin_M32\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED5').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED5', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED5.capt"
+      "ure|Inferred|Pin_M32"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED6"
+      SID		      "24"
+      Ports		      [1, 1]
+      Position		      [585, 384, 630, 396]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED6');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED6');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED6');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED6 AlteraBlockSet"
+      MaskDescription	      "LED6\n\nLOCATION = Pin_L35\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED6').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED6', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED6.capt"
+      "ure|Inferred|Pin_L35"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED7"
+      SID		      "25"
+      Ports		      [1, 1]
+      Position		      [60, 424, 105, 436]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED7');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED7');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED7');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED7 AlteraBlockSet"
+      MaskDescription	      "LED7\n\nLOCATION = Pin_AM35\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED7').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED7', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED7.capt"
+      "ure|Inferred|Pin_AM35"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED8"
+      SID		      "26"
+      Ports		      [1, 1]
+      Position		      [165, 424, 210, 436]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED8');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED8');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED8');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED8 AlteraBlockSet"
+      MaskDescription	      "LED8\n\nLOCATION = Pin_N34\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED8').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED8', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED8.capt"
+      "ure|Inferred|Pin_N34"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED9"
+      SID		      "27"
+      Ports		      [1, 1]
+      Position		      [270, 424, 315, 436]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED9');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED9');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED9');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED9 AlteraBlockSet"
+      MaskDescription	      "LED9\n\nLOCATION = Pin_W35\n\nStratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED9').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED9', { iofile externalT"
+      "ype location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED9.capt"
+      "ure|Inferred|Pin_W35"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED_RX_HSMC_A"
+      SID		      "28"
+      Ports		      [1, 1]
+      Position		      [375, 424, 420, 436]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_RX_HSMC_A');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_RX_HSMC_A');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_RX_HSMC_A');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED_RX_HSMC_A AlteraBlockSet"
+      MaskDescription	      "HSMC LED, labeled RX for HSMC port A.\n\nLOCATION = Pin_C6\n\nStratix IV GX 4SGX530 FPGA "
+      "Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED_RX_HSMC_A').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED_RX_HSMC_A', { iofile "
+      "externalType location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED%5FRX%"
+      "5FHSMC%5FA.capture|Inferred|Pin_C6"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED_RX_HSMC_B"
+      SID		      "29"
+      Ports		      [1, 1]
+      Position		      [480, 424, 525, 436]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_RX_HSMC_B');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_RX_HSMC_B');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_RX_HSMC_B');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED_RX_HSMC_B AlteraBlockSet"
+      MaskDescription	      "HSMC LED, labeled RX for HSMC port B.\n\nLOCATION = Pin_AT10\n\nStratix IV GX 4SGX530 FPG"
+      "A Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED_RX_HSMC_B').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED_RX_HSMC_B', { iofile "
+      "externalType location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED%5FRX%"
+      "5FHSMC%5FB.capture|Inferred|Pin_AT10"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED_TX_HSMC_A"
+      SID		      "30"
+      Ports		      [1, 1]
+      Position		      [585, 424, 630, 436]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_TX_HSMC_A');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_TX_HSMC_A');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_TX_HSMC_A');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED_TX_HSMC_A AlteraBlockSet"
+      MaskDescription	      "HSMC LED, labeled TX for HSMC port A.\n\nLOCATION = Pin_D5\n\nStratix IV GX 4SGX530 FPGA "
+      "Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED_TX_HSMC_A').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED_TX_HSMC_A', { iofile "
+      "externalType location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED%5FTX%"
+      "5FHSMC%5FA.capture|Inferred|Pin_D5"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "LED_TX_HSMC_B"
+      SID		      "31"
+      Ports		      [1, 1]
+      Position		      [60, 464, 105, 476]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_TX_HSMC_B');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_TX_HSMC_B');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:LED_TX_HSMC_B');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 LED_TX_HSMC_B AlteraBlockSet"
+      MaskDescription	      "HSMC LED, labeled TX for HSMC port B.\n\nLOCATION = Pin_AH33\n\nStratix IV GX 4SGX530 FPG"
+      "A Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:LED_TX_HSMC_B').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),edit"
+      MaskVariables	      "iofile=&1;externalType=&2;location=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "off,off,off"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:LED_TX_HSMC_B', { iofile "
+      "externalType location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('led.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_LED%5FTX%"
+      "5FHSMC%5FB.capture|Inferred|Pin_AH33"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "PB0"
+      SID		      "32"
+      Ports		      [1, 1]
+      Position		      [165, 467, 205, 513]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:PB0');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:PB0');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:PB0');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 PB0 AlteraBlockSet"
+      MaskDescription	      "PushButtonSwitch0\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_AK35\n\nSt"
+      "ratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:PB0').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_IV_EP4SGX530:PB0', 'SpecifyClo"
+      "ck', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:PB0', { iofile externalTy"
+      "pe get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_PB0.salt|"
+      "Inferred|off||Pin_AK35"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "PB1"
+      SID		      "33"
+      Ports		      [1, 1]
+      Position		      [265, 467, 305, 513]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:PB1');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:PB1');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:PB1');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 PB1 AlteraBlockSet"
+      MaskDescription	      "PushButtonSwitch1\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_W32\n\nStr"
+      "atix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:PB1').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_IV_EP4SGX530:PB1', 'SpecifyClo"
+      "ck', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:PB1', { iofile externalTy"
+      "pe get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_PB1.salt|"
+      "Inferred|off||Pin_W32"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "PB2"
+      SID		      "34"
+      Ports		      [1, 1]
+      Position		      [365, 467, 405, 513]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:PB2');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:PB2');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:PB2');"
+      PreSaveFcn	      "alt_dspbuilder_internal_presave_block(gcb);"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sInOut"
+      Parameters	      "iofile externalType SpecifyClock clock location "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 PB2 AlteraBlockSet"
+      MaskDescription	      "PushButtonSwitch2\n\nConnects to an active-low input switch.\n\nLOCATION = Pin_M34\n\nStr"
+      "atix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:PB2').getHelpFile))"
+      MaskPromptString	      "iofile|External Type|Specify Clock|Clock|Pin Location"
+      MaskStyleString	      "edit,popup(Inferred|Simulink Fixed Point Type|Double),checkbox,edit,edit"
+      MaskVariables	      "iofile=&1;externalType=&2;SpecifyClock=&3;clock=&4;location=&5;"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||alt_dspbuilder_update_gui('ComponentFactory', 'Stratix_IV_EP4SGX530:PB2', 'SpecifyClo"
+      "ck', 2);||"
+      MaskEnableString	      "on,on,on,off,on"
+      MaskVisibilityString    "off,off,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:PB2', { iofile externalTy"
+      "pe get_param(gcb, 'SpecifyClock') clock location });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('switch.bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "d:\\\\SJ\\\\nightly\\\\13.1\\\\162\\\\w64\\\\acds\\\\quartus\\\\dsp_builder\\\\bin64\\\\m"
+      "dllibrary\\\\tb_Stratix_IV_EP4SGX530_alteradspbuilder2\\\\Stratix%5FIV%5FEP4SGX530%5Falteradspbuilder2_PB2.salt|"
+      "Inferred|off||Pin_M34"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "Stratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      SID		      "1"
+      Ports		      []
+      Position		      [60, 20, 226, 164]
+      ForegroundColor	      "blue"
+      CopyFcn		      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:config');"
+      DeleteFcn		      "com.altera.dspbuilder.simulation.Mask.delete(gcb);"
+      UndoDeleteFcn	      "alt_dspbuilder_add_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:config');"
+      LoadFcn		      "alt_dspbuilder_load_block(gcb, 'ComponentFactory', 'Stratix_IV_EP4SGX530:config');"
+      PostSaveFcn	      "alt_dspbuilder_block_saved(gcb);"
+      NameChangeFcn	      "alt_dspbuilder_block_renamed(gcb);"
+      FunctionName	      "sNoOp"
+      Parameters	      "ClockPinIn GlobalResetPin device "
+      EnableBusSupport	      off
+      MaskType		      "StratixIVEP4SGX530 Configuration AlteraBlockSet"
+      MaskDescription	      "Stratix IV GX 4SGX530 FPGA Development Kit, 530 Edition"
+      MaskHelp		      "helpview(char(com.altera.dspbuilder.simulation.Cache.getBlockTemplate('ComponentFactory', 'Stra"
+      "tix_IV_EP4SGX530:config').getHelpFile))"
+      MaskPromptString	      "Clock Pin In|Global Reset Pin|Device"
+      MaskStyleString	      "popup(Pin_AC34|None),popup(Pin_V34|Pin_AK35|Pin_W32|Pin_M34|None),popup(EP4SGX530KH40C2)"
+      MaskVariables	      "ClockPinIn=&1;GlobalResetPin=&2;device=&3;"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "alt_dspbuilder_init('ComponentFactory', 'Stratix_IV_EP4SGX530:config', { ClockPinIn Glo"
+      "balResetPin device });"
+      MaskSelfModifiable      on
+      MaskDisplay	      "image(imread('4sgx530.bmp', 'bmp'))\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Pin_AC34|Pin_V34|EP4SGX530KH40C2"
+    }
+  }
+}

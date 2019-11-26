@@ -1,0 +1,1398 @@
+Model {
+  Name			  "Test3C120Board_Leds"
+  Version		  6.4
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.264"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bd"
+"root)\n%% DSPBuilder End\n"
+  Created		  "Thu Aug 05 16:35:41 2004"
+  Creator		  "lkong"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "lkong"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Apr 25 15:55:13 2008"
+  ModelVersionFormat	  "1.%<AutoIncrement:264>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.2.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.2.0"
+	  StartTime		  "0.0"
+	  StopTime		  "100000.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "1"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.2.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.2.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StrictBusMsg		  "None"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.2.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.2.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant off
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeERTFirstTime     on
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      off
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      ExtraOptions	      "-aInitFltsAndDblsToZero=1 "
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "Test3C120Board_Leds"
+    Location		    [255, 265, 1345, 935]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "And0"
+      Ports		      [2, 1]
+      Position		      [375, 265, 415, 300]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Bitwise Logical Bus"
+" Operator"
+      SourceType	      "Bitwise Logical Bus Operator AlteraBlockset"
+      BusType		      "Inferred"
+      bwl		      "1"
+      bwr		      "0"
+      LogicalOperator	      "AND"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "And1"
+      Ports		      [2, 1]
+      Position		      [640, 305, 680, 340]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Bitwise Logical Bus"
+" Operator"
+      SourceType	      "Bitwise Logical Bus Operator AlteraBlockset"
+      BusType		      "Inferred"
+      bwl		      "1"
+      bwr		      "0"
+      LogicalOperator	      "AND"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "And2"
+      Ports		      [2, 1]
+      Position		      [370, 345, 410, 380]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Bitwise Logical Bus"
+" Operator"
+      SourceType	      "Bitwise Logical Bus Operator AlteraBlockset"
+      BusType		      "Inferred"
+      bwl		      "1"
+      bwr		      "0"
+      LogicalOperator	      "AND"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "And3"
+      Ports		      [2, 1]
+      Position		      [360, 430, 400, 465]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Bitwise Logical Bus"
+" Operator"
+      SourceType	      "Bitwise Logical Bus Operator AlteraBlockset"
+      BusType		      "Inferred"
+      bwl		      "1"
+      bwr		      "0"
+      LogicalOperator	      "AND"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "And4"
+      Ports		      [2, 1]
+      Position		      [365, 520, 405, 555]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Bitwise Logical Bus"
+" Operator"
+      SourceType	      "Bitwise Logical Bus Operator AlteraBlockset"
+      BusType		      "Inferred"
+      bwl		      "1"
+      bwr		      "0"
+      LogicalOperator	      "AND"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "And5"
+      Ports		      [2, 1]
+      Position		      [635, 390, 675, 425]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Bitwise Logical Bus"
+" Operator"
+      SourceType	      "Bitwise Logical Bus Operator AlteraBlockset"
+      BusType		      "Inferred"
+      bwl		      "1"
+      bwr		      "0"
+      LogicalOperator	      "AND"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "And6"
+      Ports		      [2, 1]
+      Position		      [635, 475, 675, 510]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Bitwise Logical Bus"
+" Operator"
+      SourceType	      "Bitwise Logical Bus Operator AlteraBlockset"
+      BusType		      "Inferred"
+      bwl		      "1"
+      bwr		      "0"
+      LogicalOperator	      "AND"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "And7"
+      Ports		      [2, 1]
+      Position		      [630, 565, 670, 600]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Bitwise Logical Bus"
+" Operator"
+      SourceType	      "Bitwise Logical Bus Operator AlteraBlockset"
+      BusType		      "Inferred"
+      bwl		      "1"
+      bwr		      "0"
+      LogicalOperator	      "AND"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Bus Splitter"
+      Ports		      [1, 8]
+      Position		      [245, 134, 290, 226]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Bus Splitter"
+      SourceType	      "Bus Splitter AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Clock"
+      Ports		      []
+      Position		      [50, 115, 100, 133]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Clock"
+      SourceType	      "BaseClock AlteraBlockset"
+      ClockPeriod	      "10"
+      ClockPeriodUnit	      "ns"
+      SampleTime	      "1"
+      SimulationStartCycle    "5"
+      PhaseOffset	      "0"
+      Reset		      "aclr"
+      ResetType		      "Active Low"
+      Export		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Cyclone III EP3C120 FPGA Development Board"
+      Ports		      []
+      Position		      [875, 122, 1000, 202]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/Cyclone I"
+"II EP3C120 FPGA Development Board"
+      SourceType	      "CycloneIIIEP3C120 Configuration AlteraBlockSet"
+      ClockPinIn	      "Pin_AH15"
+      GlobalResetPin	      "Pin_T21"
+      device		      "EP3C120F780C7"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay1"
+      Ports		      [1, 1]
+      Position		      [230, 346, 250, 394]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+      SourceType	      "Delay AlteraBlockset"
+      pipeline		      "1"
+      pipeline_display	      "1"
+      ClockPhase	      "1"
+      use_ena		      off
+      use_sclr		      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_Delay1.fixedpointlog"
+      use_init		      off
+      reset_value	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay2"
+      Ports		      [1, 1]
+      Position		      [230, 521, 250, 569]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+      SourceType	      "Delay AlteraBlockset"
+      pipeline		      "1"
+      pipeline_display	      "1"
+      ClockPhase	      "1"
+      use_ena		      off
+      use_sclr		      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_Delay2.fixedpointlog"
+      use_init		      off
+      reset_value	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay3"
+      Ports		      [1, 1]
+      Position		      [230, 431, 250, 479]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+      SourceType	      "Delay AlteraBlockset"
+      pipeline		      "1"
+      pipeline_display	      "1"
+      ClockPhase	      "1"
+      use_ena		      off
+      use_sclr		      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_Delay3.fixedpointlog"
+      use_init		      off
+      reset_value	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay5"
+      Ports		      [1, 1]
+      Position		      [230, 266, 250, 314]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+      SourceType	      "Delay AlteraBlockset"
+      pipeline		      "1"
+      pipeline_display	      "1"
+      ClockPhase	      "1"
+      use_ena		      off
+      use_sclr		      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_Delay5.fixedpointlog"
+      use_init		      off
+      reset_value	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dip Switch"
+      Ports		      [1, 1]
+      Position		      [140, 163, 215, 197]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/Dip Switc"
+"h"
+      SourceType	      "CycloneIIIEP3C120 Dip Switch AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_Dip+Switch.salt"
+      externalType	      "Inferred"
+      SpecifyClock	      off
+      location		      "Pin_AC14,Pin_AD18,Pin_AG23,Pin_AC19,Pin_AD14,Pi"
+"n_G20,Pin_AB15,Pin_AF25"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "LED0"
+      Ports		      [1, 1]
+      Position		      [435, 279, 480, 291]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/LED0"
+      SourceType	      "CycloneIIIEP3C120 LED0 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_LED0.capture"
+      externalType	      "Inferred"
+      location		      "Pin_AD15"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "LED1"
+      Ports		      [1, 1]
+      Position		      [705, 319, 750, 331]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/LED1"
+      SourceType	      "CycloneIIIEP3C120 LED1 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_LED1.capture"
+      externalType	      "Inferred"
+      location		      "Pin_AE20"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "LED2"
+      Ports		      [1, 1]
+      Position		      [435, 359, 480, 371]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/LED2"
+      SourceType	      "CycloneIIIEP3C120 LED2 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_LED2.capture"
+      externalType	      "Inferred"
+      location		      "Pin_AF18"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "LED3"
+      Ports		      [1, 1]
+      Position		      [705, 404, 750, 416]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/LED3"
+      SourceType	      "CycloneIIIEP3C120 LED3 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_LED3.capture"
+      externalType	      "Inferred"
+      location		      "Pin_AD19"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "LED4"
+      Ports		      [1, 1]
+      Position		      [425, 444, 470, 456]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/LED4"
+      SourceType	      "CycloneIIIEP3C120 LED4 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_LED4.capture"
+      externalType	      "Inferred"
+      location		      "Pin_AE15"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "LED5"
+      Ports		      [1, 1]
+      Position		      [705, 489, 750, 501]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/LED5"
+      SourceType	      "CycloneIIIEP3C120 LED5 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_LED5.capture"
+      externalType	      "Inferred"
+      location		      "Pin_AC17"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "LED6"
+      Ports		      [1, 1]
+      Position		      [425, 534, 470, 546]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/LED6"
+      SourceType	      "CycloneIIIEP3C120 LED6 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_LED6.capture"
+      externalType	      "Inferred"
+      location		      "Pin_AG19"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "LED7"
+      Ports		      [1, 1]
+      Position		      [705, 579, 750, 591]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/LED7"
+      SourceType	      "CycloneIIIEP3C120 LED7 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_LED7.capture"
+      externalType	      "Inferred"
+      location		      "Pin_AF19"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Not0"
+      Ports		      [1, 1]
+      Position		      [515, 319, 570, 341]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operato"
+"r"
+      SourceType	      "Logical Bit Operator AlteraBlockset"
+      LogicalOperator	      "NOT"
+      user_inputs	      "2"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Not1"
+      Ports		      [1, 1]
+      Position		      [520, 404, 575, 426]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operato"
+"r"
+      SourceType	      "Logical Bit Operator AlteraBlockset"
+      LogicalOperator	      "NOT"
+      user_inputs	      "2"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Not2"
+      Ports		      [1, 1]
+      Position		      [520, 489, 575, 511]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operato"
+"r"
+      SourceType	      "Logical Bit Operator AlteraBlockset"
+      LogicalOperator	      "NOT"
+      user_inputs	      "2"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Not3"
+      Ports		      [1, 1]
+      Position		      [520, 579, 575, 601]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operato"
+"r"
+      SourceType	      "Logical Bit Operator AlteraBlockset"
+      LogicalOperator	      "NOT"
+      user_inputs	      "2"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PB0"
+      Ports		      [1, 1]
+      Position		      [155, 267, 195, 313]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/PB0"
+      SourceType	      "CycloneIIIEP3C120 PB0 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_PB0.salt"
+      externalType	      "Inferred"
+      SpecifyClock	      off
+      location		      "Pin_AD7"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PB1"
+      Ports		      [1, 1]
+      Position		      [155, 347, 195, 393]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/PB1"
+      SourceType	      "CycloneIIIEP3C120 PB1 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_PB1.salt"
+      externalType	      "Inferred"
+      SpecifyClock	      off
+      location		      "Pin_AC12"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PB2"
+      Ports		      [1, 1]
+      Position		      [155, 432, 195, 478]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/PB2"
+      SourceType	      "CycloneIIIEP3C120 PB2 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_PB2.salt"
+      externalType	      "Inferred"
+      SpecifyClock	      off
+      location		      "Pin_AH3"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PB3"
+      Ports		      [1, 1]
+      Position		      [155, 522, 195, 568]
+      ForegroundColor	      "blue"
+      SourceBlock	      "Cyclone_III_EP3C120_alteradspbuilder2/PB3"
+      SourceType	      "CycloneIIIEP3C120 PB3 AlteraBlockSet"
+      iofile		      "d:\\ws80\\workspace\\Documentation\\DesignExamp"
+"les\\Demos\\Board\\CycloneIII_DSPBoard_3C120\\tb_Test3C120Board_Leds\\Test3C1"
+"20Board%5FLeds_PB3.salt"
+      externalType	      "Inferred"
+      SpecifyClock	      off
+      location		      "Pin_AA12"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator"
+      Ports		      [0, 1]
+      Position		      [50, 273, 95, 307]
+      Period		      "20000"
+      PulseWidth	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      Ports		      []
+      Position		      [904, 283, 973, 330]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily	      "Cyclone III"
+      DeviceName	      "EP3C120F780C7"
+      EnableSignalTap	      on
+      SignalTapDepth	      "512"
+      UseBoardBlock	      on
+      StpUseDefaultClock      on
+      StpClock		      "Clock"
+      ExportDir		      "D:\\MATLAB\\R2006a\\work"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      Position		      [780, 315, 800, 335]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      Position		      [780, 400, 800, 420]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      Position		      [780, 485, 800, 505]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator32"
+      Position		      [490, 440, 510, 460]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator33"
+      Position		      [500, 275, 520, 295]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator34"
+      Position		      [490, 530, 510, 550]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator35"
+      Position		      [500, 355, 520, 375]
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator4"
+      Position		      [780, 575, 800, 595]
+      ShowName		      off
+    }
+    Line {
+      SrcBlock		      "PB0"
+      SrcPort		      1
+      DstBlock		      "Delay5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PB1"
+      SrcPort		      1
+      DstBlock		      "Delay1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PB2"
+      SrcPort		      1
+      DstBlock		      "Delay3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PB3"
+      SrcPort		      1
+      DstBlock		      "Delay2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay2"
+      SrcPort		      1
+      Points		      [55, 0]
+      Branch {
+	Points			[0, 45]
+	DstBlock		"Not3"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"And4"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Delay3"
+      SrcPort		      1
+      Points		      [55, 0]
+      Branch {
+	Points			[0, 45]
+	DstBlock		"Not2"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"And3"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Delay1"
+      SrcPort		      1
+      Points		      [55, 0]
+      Branch {
+	Points			[0, 45]
+	DstBlock		"Not1"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"And2"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Delay5"
+      SrcPort		      1
+      Points		      [55, 0]
+      Branch {
+	Points			[0, 40]
+	DstBlock		"Not0"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"And0"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "LED4"
+      SrcPort		      1
+      DstBlock		      "Terminator32"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "LED0"
+      SrcPort		      1
+      DstBlock		      "Terminator33"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "LED6"
+      SrcPort		      1
+      DstBlock		      "Terminator34"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "LED2"
+      SrcPort		      1
+      DstBlock		      "Terminator35"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Pulse\nGenerator"
+      SrcPort		      1
+      Points		      [0, 0; 10, 0]
+      Branch {
+	Points			[0, 80]
+	Branch {
+	  Points		  [0, 85]
+	  Branch {
+	    Points		    [0, 90]
+	    DstBlock		    "PB3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "PB2"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  DstBlock		  "PB1"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	DstBlock		"PB0"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -110]
+	DstBlock		"Dip Switch"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "LED1"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "LED3"
+      SrcPort		      1
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "LED5"
+      SrcPort		      1
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "LED7"
+      SrcPort		      1
+      DstBlock		      "Terminator4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Dip Switch"
+      SrcPort		      1
+      DstBlock		      "Bus Splitter"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "And0"
+      SrcPort		      1
+      DstBlock		      "LED0"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Not0"
+      SrcPort		      1
+      DstBlock		      "And1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "And1"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "LED1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "And2"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "LED2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "And3"
+      SrcPort		      1
+      DstBlock		      "LED4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "And4"
+      SrcPort		      1
+      DstBlock		      "LED6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bus Splitter"
+      SrcPort		      1
+      Points		      [325, 0; 0, 170]
+      DstBlock		      "And1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "And5"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "LED3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Not1"
+      SrcPort		      1
+      DstBlock		      "And5"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Bus Splitter"
+      SrcPort		      2
+      Points		      [315, 0; 0, 245]
+      DstBlock		      "And5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "And6"
+      SrcPort		      1
+      DstBlock		      "LED5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Not2"
+      SrcPort		      1
+      DstBlock		      "And6"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "And7"
+      SrcPort		      1
+      DstBlock		      "LED7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bus Splitter"
+      SrcPort		      3
+      Points		      [305, 0; 0, 320]
+      DstBlock		      "And6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bus Splitter"
+      SrcPort		      4
+      Points		      [295, 0; 0, 400]
+      DstBlock		      "And7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Not3"
+      SrcPort		      1
+      DstBlock		      "And7"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Bus Splitter"
+      SrcPort		      8
+      Points		      [25, 0; 0, 315]
+      DstBlock		      "And4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bus Splitter"
+      SrcPort		      7
+      Points		      [35, 0; 0, 235]
+      DstBlock		      "And3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bus Splitter"
+      SrcPort		      6
+      Points		      [45, 0; 0, 160]
+      DstBlock		      "And2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Bus Splitter"
+      SrcPort		      5
+      Points		      [55, 0; 0, 90]
+      DstBlock		      "And0"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "Cyclone III EP3C120 FPGA Development Board LED/"
+"PB Test Design "
+      Position		      [517, 51]
+      ForegroundColor	      "blue"
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      30
+    }
+  }
+}

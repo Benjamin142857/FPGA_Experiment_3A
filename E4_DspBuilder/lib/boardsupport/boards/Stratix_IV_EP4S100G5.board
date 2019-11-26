@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board uniquename="StratixIVEP4S100G5" family="Stratix IV">
+	<displayname>100G Development Kit, Stratix IV GT 4S100G5 Edition</displayname>
+
+	<!-- Push-Button Switches -->
+	<component name="PB0" pin="Pin_AL10" />
+	<component name="PB1" pin="Pin_AL11" />
+	<component name="PB2" pin="Pin_AP6" />
+	<component name="PB3" pin="Pin_AN7" />
+
+	<!-- LEDs -->
+	<component name="LED0" pin="Pin_G6" />
+	<component name="LED1" pin="Pin_N12" />
+	<component name="LED2" pin="Pin_R13" />
+	<component name="LED3" pin="Pin_H6" />
+	<component name="LED4" pin="Pin_J6" />
+	<component name="LED5" pin="Pin_H11" />
+	<component name="LED6" pin="Pin_U15" />
+	<component name="LED7" pin="Pin_J11" />
+
+	<!-- DIP Switches -->
+	<component name="DipSwitch">
+		<pin location="Pin_AD15" />
+		<pin location="Pin_AC15" />
+		<pin location="Pin_T15" />
+		<pin location="Pin_G8" />
+		<pin location="Pin_F9" />
+		<pin location="Pin_P13" />
+		<pin location="Pin_R14" />
+		<pin location="Pin_H10" />
+	</component>
+
+	<configuration icon="4s100g2.bmp" width="166" height="144">
+		<devices jtag-code="0x024230DD">
+			<device name="EP4S100G5F45I1" />
+		</devices>
+
+		<option name="ClockPinIn" label="Clock Pin In">
+			<pin location="Pin_AC39" /> <!-- CLKIN_50_FPGA -->
+			<pin location="None" />
+		</option>
+
+		<option name="GlobalResetPin" label="Global Reset Pin">
+			<pin location="Pin_AL10" />
+			<pin location="Pin_AL11" />
+			<pin location="Pin_AP6" />
+			<pin location="Pin_AN7" />
+			<pin location="None" />
+		</option>
+	</configuration>
+</board>

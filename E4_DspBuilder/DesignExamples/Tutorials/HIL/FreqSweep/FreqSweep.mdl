@@ -1,0 +1,4994 @@
+Model {
+  Name			  "FreqSweep"
+  Version		  7.6
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.315"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  PreLoadFcn		  "close all\nclear all\nFilterOrder = 32\nInputBitWidth = 8\nLowPassFreqBand = [0 0.01 0.2 1];\nLowPass"
+  "MagnBand = [1 0.9 0.0001 0.0001];\n\nFlCoef = firls(FilterOrder,LowPassFreqBand,LowPassMagnBand);\n\nCoefBitWidth = "
+  "InputBitWidth + ceil(log2((max(abs(FlCoef))/min(abs(FlCoef)))))\n\nScalingFactor = (2^(CoefBitWidth-1))-1;\nFpCoef ="
+  " fix(ScalingFactor * FlCoef);\n%plot(FpCoef,'o');\n%title('Fixed-point scaled coefficient value');\nImpulseData = ze"
+  "ros(1,1000);\nImpulseData(1) = 100;\nh = conv(ImpulseData,FpCoef);\n%fftplot(h);\n%title('FIR Frequency response');\n"
+  "FirSamplingPeriod=1;\n\ncordic_precision=20;\nScalingFactor = (2^(cordic_precision-1))-1;\nK=1.0;\nfor i=1:cordic_pr"
+  "ecision\n  cordic_atan_table(i) = round(atan(K)*ScalingFactor);\n  K=0.5*K;\nend;\n%disp(['cordic_precision =' num2s"
+  "tr(cordic_precision)]);\n%disp(['cordic_atan_table =' num2str(cordic_atan_table)]);\n"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  MaxMDLFileLineLength	  120
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bdroot)\n%% DSPBuilder End\n"
+  Created		  "Tue Jan 06 15:21:40 2004"
+  Creator		  "akarapet"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "akarapet"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Jun 18 15:11:58 2013"
+  RTWModifiedTimeStamp	  293468957
+  ModelVersionFormat	  "1.%<AutoIncrement:315>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.10.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.10.0"
+	  StartTime		  "0.0"
+	  StopTime		  "137*20*8*4"
+	  AbsTol		  "auto"
+	  FixedStep		  "1"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  ConcurrentTasks	  off
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.10.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "OptimizeModelRefInitCode"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.10.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "None"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.10.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.10.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.10.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateSLWebview	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		11
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTCodeCoverageTool     "None"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 508, 251, 1388, 881 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SignalSpecification
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Dimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+    }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  System {
+    Name		    "FreqSweep"
+    Location		    [349, 258, 1519, 1077]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    281
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "21"
+    Block {
+      BlockType		      Reference
+      Name		      "Input"
+      SID		      "1"
+      Ports		      [1, 1]
+      Position		      [240, 137, 305, 153]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Input.salt"
+      BusType		      "Unsigned Integer"
+      bwl		      "21"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Input1"
+      SID		      "2"
+      Ports		      [1, 1]
+      Position		      [220, 192, 285, 208]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Input1.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Low PassFilter"
+      SID		      "3"
+      Ports		      [2, 1]
+      Position		      [620, 136, 715, 169]
+      ForegroundColor	      "blue"
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Low PassFilter"
+	Location		[205, 169, 1252, 958]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	167
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"95"
+	SIDHighWatermark	"23"
+	Block {
+	  BlockType		  Inport
+	  Name			  "DataIn[19:0]"
+	  SID			  "3:1"
+	  Position		  [125, 33, 155, 47]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Start1"
+	  SID			  "3:2"
+	  Position		  [195, 98, 225, 112]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit Level \nSum of Product"
+	  SID			  "3:3"
+	  Ports			  [4, 1]
+	  Position		  [785, 13, 845, 82]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bit Level Sum of Products"
+	  SourceType		  "BitSumProducts AlteraBlockset"
+	  number_of_coefficients  "4"
+	  BusType		  "Signed Integer"
+	  bwl			  "9"
+	  bwr			  "0"
+	  coefficients		  "[FpCoef(1:4)]"
+	  register_inputs	  off
+	  pipeline_display	  "0"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Bit+Level+%0ASum+of+Product.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit Level \nSum of Product1"
+	  SID			  "3:4"
+	  Ports			  [8, 1]
+	  Position		  [785, 235, 860, 395]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bit Level Sum of Products"
+	  SourceType		  "BitSumProducts AlteraBlockset"
+	  number_of_coefficients  "8"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  coefficients		  "[FpCoef(9:16)]"
+	  register_inputs	  off
+	  pipeline_display	  "0"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Bit+Level+%0ASum+of+Product1.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit Level \nSum of Product2"
+	  SID			  "3:5"
+	  Ports			  [8, 1]
+	  Position		  [780, 440, 855, 600]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bit Level Sum of Products"
+	  SourceType		  "BitSumProducts AlteraBlockset"
+	  number_of_coefficients  "8"
+	  BusType		  "Signed Integer"
+	  bwl			  "14"
+	  bwr			  "0"
+	  coefficients		  "[FpCoef(17:24)]"
+	  register_inputs	  off
+	  pipeline_display	  "0"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Bit+Level+%0ASum+of+Product2.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit Level \nSum of Product4"
+	  SID			  "3:6"
+	  Ports			  [4, 1]
+	  Position		  [785, 118, 845, 187]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bit Level Sum of Products"
+	  SourceType		  "BitSumProducts AlteraBlockset"
+	  number_of_coefficients  "4"
+	  BusType		  "Signed Integer"
+	  bwl			  "11"
+	  bwr			  "0"
+	  coefficients		  "[FpCoef(5:8)]"
+	  register_inputs	  off
+	  pipeline_display	  "0"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Bit+Level+%0ASum+of+Product4.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit Level \nSum of Product5"
+	  SID			  "3:7"
+	  Ports			  [4, 1]
+	  Position		  [785, 643, 845, 712]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bit Level Sum of Products"
+	  SourceType		  "BitSumProducts AlteraBlockset"
+	  number_of_coefficients  "4"
+	  BusType		  "Signed Integer"
+	  bwl			  "11"
+	  bwr			  "0"
+	  coefficients		  "[FpCoef(25:28)]"
+	  register_inputs	  off
+	  pipeline_display	  "0"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Bit+Level+%0ASum+of+Product5.fixedpointlog"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit Level \nSum of Product6"
+	  SID			  "3:8"
+	  Ports			  [4, 1]
+	  Position		  [785, 752, 845, 828]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bit Level Sum of Products"
+	  SourceType		  "BitSumProducts AlteraBlockset"
+	  number_of_coefficients  "4"
+	  BusType		  "Signed Integer"
+	  bwl			  "9"
+	  bwr			  "0"
+	  coefficients		  "[FpCoef(29:32)]"
+	  register_inputs	  off
+	  pipeline_display	  "0"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Bit+Level+%0ASum+of+Product6.fixedpointlog"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  SID			  "3:9"
+	  Position		  [1102, 400, 1118, 455]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "SyncRst"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GND"
+	  SID			  "3:10"
+	  Ports			  [0, 1]
+	  Position		  [305, 117, 325, 133]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/GND"
+	  SourceType		  "GND AlteraBlockset"
+	  SpecifyClock		  off
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  SID			  "3:11"
+	  Position		  [530, 107, 585, 123]
+	  ShowName		  off
+	  GotoTag		  "SyncRst"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Parallel To Serial"
+	  SID			  "3:12"
+	  Ports			  [3, 1]
+	  Position		  [540, 29, 585, 81]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel To Serial"
+	  SourceType		  "Parallel To Serial AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "20"
+	  bwr			  "0"
+	  msbfirsttext		  "LSB First"
+	  msbfirst		  "0"
+	  repeatlastbit		  on
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Partial Product \nAdder"
+	  SID			  "3:13"
+	  Ports			  [6, 1]
+	  Position		  [980, 279, 1070, 386]
+	  ForegroundColor	  "blue"
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Partial Product \nAdder"
+	    Location		    [204, 230, 1144, 773]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "111"
+	    SIDHighWatermark	    "11"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In[10:0]"
+	      SID		      "3:13:1"
+	      Position		      [95, 83, 125, 97]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1[10:0]"
+	      SID		      "3:13:2"
+	      Position		      [100, 38, 130, 52]
+	      ForegroundColor	      "blue"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2[12:0]"
+	      SID		      "3:13:3"
+	      Position		      [90, 183, 120, 197]
+	      ForegroundColor	      "blue"
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In3[12:0]"
+	      SID		      "3:13:4"
+	      Position		      [95, 243, 125, 257]
+	      ForegroundColor	      "blue"
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In4[16:0]"
+	      SID		      "3:13:5"
+	      Position		      [100, 343, 130, 357]
+	      ForegroundColor	      "blue"
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In5[16:0]"
+	      SID		      "3:13:6"
+	      Position		      [100, 393, 130, 407]
+	      ForegroundColor	      "blue"
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      SID		      "3:13:7"
+	      Ports		      [3, 1]
+	      Position		      [555, 216, 615, 274]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Adder Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "3"
+	      direction		      "++"
+	      use_pipeline	      on
+	      pipeline_display	      "2"
+	      phase_selection	      "1"
+	      use_ena		      off
+	      use_aclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Partial+Product+%0AAdder_Parallel+%0AAdder+Subtracto"
+	      "r.fixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder"
+	      SID		      "3:13:8"
+	      Ports		      [2, 1]
+	      Position		      [285, 50, 400, 90]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "12"
+	      bwr		      "0"
+	      pipeline		      "2"
+	      pipeline_display	      "2"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder1"
+	      SID		      "3:13:9"
+	      Ports		      [2, 1]
+	      Position		      [290, 195, 405, 235]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "14"
+	      bwr		      "0"
+	      pipeline		      "2"
+	      pipeline_display	      "2"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder2"
+	      SID		      "3:13:10"
+	      Ports		      [2, 1]
+	      Position		      [290, 350, 405, 390]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "18"
+	      bwr		      "0"
+	      pipeline		      "2"
+	      pipeline_display	      "2"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out[19:0]"
+	      SID		      "3:13:11"
+	      Position		      [790, 238, 820, 252]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In[10:0]"
+	      SrcPort		      1
+	      Points		      [125, 0; 0, -10]
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In1[10:0]"
+	      SrcPort		      1
+	      Points		      [125, 0; 0, 15]
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In2[12:0]"
+	      SrcPort		      1
+	      Points		      [130, 0; 0, 15]
+	      DstBlock		      "Pipelined Adder1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In3[12:0]"
+	      SrcPort		      1
+	      Points		      [125, 0; 0, -25]
+	      DstBlock		      "Pipelined Adder1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In4[16:0]"
+	      SrcPort		      1
+	      Points		      [115, 0; 0, 10]
+	      DstBlock		      "Pipelined Adder2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In5[16:0]"
+	      SrcPort		      1
+	      Points		      [115, 0; 0, -20]
+	      DstBlock		      "Pipelined Adder2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder"
+	      SrcPort		      1
+	      Points		      [65, 0; 0, 155]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder1"
+	      SrcPort		      1
+	      Points		      [50, 0; 0, 30]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder2"
+	      SrcPort		      1
+	      Points		      [65, 0; 0, -105]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      DstBlock		      "Out[19:0]"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pattern"
+	  SID			  "3:14"
+	  Ports			  [2, 1]
+	  Position		  [350, 94, 495, 136]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Pattern"
+	  SourceType		  "Pattern AlteraBlockset"
+	  Sequence		  "10000000000000000000"
+	  SpecifyClock		  off
+	  use_ena		  on
+	  use_sclr		  on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Scaling Accumulator"
+	  SID			  "3:15"
+	  Ports			  [2, 1]
+	  Position		  [1072, 525, 1123, 600]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  Port {
+	    PortNumber		    1
+	    Name		    "sFirResult"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "Scaling Accumulator"
+	    Location		    [349, 258, 1519, 1056]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "26"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In[19:0]"
+	      SID		      "3:15:1"
+	      Position		      [35, 153, 65, 167]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clr"
+	      SID		      "3:15:2"
+	      Position		      [35, 298, 65, 312]
+	      ForegroundColor	      "blue"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Adder"
+	      SID		      "3:15:3"
+	      Ports		      [4, 2]
+	      Position		      [460, 122, 530, 168]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      on
+	      use_ovl		      on
+	      use_addsub	      on
+	      use_ena		      on
+	      use_aclr		      on
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "BusBuild"
+	      SID		      "3:15:4"
+	      Ports		      [2, 1]
+	      Position		      [185, 174, 220, 221]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Bus Builder"
+	      SourceType	      "BusBuilder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "2"
+	      bwr		      "0"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "BusConcatenation"
+	      SID		      "3:15:5"
+	      Ports		      [2, 1]
+	      Position		      [760, 216, 845, 254]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Bus Concatenation"
+	      SourceType	      "Bus Concatenate AlteraBlockset"
+	      isSigned		      on
+	      awidth		      "20"
+	      bwidth		      "20"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      SID		      "3:15:6"
+	      Ports		      [1, 1]
+	      Position		      [590, 129, 620, 191]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Scaling+Accumulator_Delay.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay4"
+	      SID		      "3:15:7"
+	      Ports		      [3, 1]
+	      Position		      [980, 224, 1010, 286]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Scaling+Accumulator_Delay4.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ExtractBit"
+	      SID		      "3:15:8"
+	      Ports		      [1, 1]
+	      Position		      [590, 214, 630, 236]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Extract Bit"
+	      SourceType	      "Extract Bit AlteraBlockset"
+	      BusType		      "Signed Fractional"
+	      bwl		      "21"
+	      bwr		      "0"
+	      bitToSelect	      "0"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      SID		      "3:15:9"
+	      Position		      [885, 290, 935, 310]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "Sync"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      SID		      "3:15:10"
+	      Position		      [180, 50, 235, 70]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "Sync"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND"
+	      SID		      "3:15:11"
+	      Ports		      [0, 1]
+	      Position		      [640, 257, 660, 273]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND1"
+	      SID		      "3:15:12"
+	      Ports		      [0, 1]
+	      Position		      [945, 267, 965, 283]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND2"
+	      SID		      "3:15:13"
+	      Ports		      [0, 1]
+	      Position		      [250, 102, 270, 118]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      SID		      "3:15:14"
+	      Position		      [255, 296, 310, 314]
+	      ShowName		      off
+	      GotoTag		      "Sync"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Inverse Last\nPartial Product"
+	      SID		      "3:15:15"
+	      Ports		      [2, 1]
+	      Position		      [265, 152, 350, 183]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Bitwise Logical Bus Operator"
+	      SourceType	      "Bitwise Logical Bus Operator AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "20"
+	      bwr		      "0"
+	      LogicalOperator	      "XOR"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Output Resolution\nArea of Interrest"
+	      SID		      "3:15:16"
+	      Ports		      [1, 1]
+	      Position		      [865, 225, 930, 245]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Round"
+	      SourceType	      "Round AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "40"
+	      bwr		      "0"
+	      bitsToRemove	      "10"
+	      roundMode		      "ROUND_UP_SYM"
+	      userRoundMode	      "Round Away From Zero"
+	      pipeline		      off
+	      pipeline_display	      "0"
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipeline \nDelay"
+	      SID		      "3:15:17"
+	      Ports		      [1, 1]
+	      Position		      [120, 141, 140, 179]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Scaling+Accumulator_Pipeline+%0ADelay.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Reset On\nLast Partial Product"
+	      SID		      "3:15:18"
+	      Ports		      [3, 1]
+	      Position		      [290, 48, 325, 122]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+	      SourceType	      "Multiplexer AlteraBlockset"
+	      numInputs		      "2"
+	      pipeline		      "0"
+	      oneHot		      off
+	      pipeline_display	      "0"
+	      use_ena		      off
+	      use_aclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Scaling+Accumulator_Reset+On%0ALast+Partial+Product."
+	      "fixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Serial To Parallel"
+	      SID		      "3:15:19"
+	      Ports		      [3, 1]
+	      Position		      [680, 214, 730, 276]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Serial To Parallel"
+	      SourceType	      "Serial To Parallel AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "20"
+	      bwr		      "0"
+	      msbfirsttext	      "LSB First"
+	      msbfirst		      "0"
+	      use_ena		      on
+	      use_sclr		      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Shift by Two"
+	      SID		      "3:15:20"
+	      Ports		      [1, 1]
+	      Position		      [650, 151, 725, 169]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Bus Conversion"
+	      SourceType	      "Bus Conversion AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      ibwl		      "21"
+	      ibwr		      "0"
+	      bwl		      "20"
+	      bwr		      "0"
+	      bitToConnectToOutputLSB "1"
+	      round		      off
+	      saturate		      off
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Sync Delay"
+	      SID		      "3:15:21"
+	      Ports		      [1, 1]
+	      Position		      [100, 283, 125, 327]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Memory Delay"
+	      SourceType	      "Memory Delay AlteraBlockset"
+	      BusType		      "Inferred"
+	      bwl		      "8"
+	      bwr		      "0"
+	      pipeline		      "5"
+	      pipeline_display	      "5"
+	      ram_type		      "AUTO"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Scaling+Accumulator_Sync+Delay.fixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Sync Delay2"
+	      SID		      "3:15:22"
+	      Ports		      [1, 1]
+	      Position		      [190, 274, 220, 336]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Scaling+Accumulator_Sync+Delay2.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      SID		      "3:15:23"
+	      Position		      [550, 125, 570, 145]
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "VCC1"
+	      SID		      "3:15:24"
+	      Ports		      [0, 1]
+	      Position		      [640, 237, 660, 253]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/VCC"
+	      SourceType	      "VCC AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "VCC2"
+	      SID		      "3:15:25"
+	      Ports		      [0, 1]
+	      Position		      [415, 152, 435, 168]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/VCC"
+	      SourceType	      "VCC AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out[29:0]"
+	      SID		      "3:15:26"
+	      Position		      [1055, 248, 1085, 262]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "clr"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Sync Delay"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In[19:0]"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Pipeline \nDelay"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Shift by Two"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Shift by Two"
+	      SrcPort		      1
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		DstBlock		"BusConcatenation"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[55, 0; 0, -130; -550, 0; 0, 55]
+		DstBlock		"Reset On\nLast Partial Product"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "VCC1"
+	      SrcPort		      1
+	      DstBlock		      "Serial To Parallel"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "GND"
+	      SrcPort		      1
+	      DstBlock		      "Serial To Parallel"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Delay4"
+	      SrcPort		      1
+	      DstBlock		      "Out[29:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GND1"
+	      SrcPort		      1
+	      DstBlock		      "Delay4"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "ExtractBit"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Serial To Parallel"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reset On\nLast Partial Product"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, 45]
+	      DstBlock		      "Adder"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GND2"
+	      SrcPort		      1
+	      DstBlock		      "Reset On\nLast Partial Product"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [0, -45]
+	      DstBlock		      "Delay4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Reset On\nLast Partial Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VCC2"
+	      SrcPort		      1
+	      DstBlock		      "Adder"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Adder"
+	      SrcPort		      2
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 65]
+		DstBlock		"ExtractBit"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sync Delay"
+	      SrcPort		      1
+	      Points		      [0, 0; 35, 0]
+	      Branch {
+		DstBlock		"Sync Delay2"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -50]
+		Branch {
+		  Points		  [0, -45]
+		  Branch {
+		    DstBlock		    "BusBuild"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, -25]
+		    DstBlock		    "BusBuild"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  Points		  [225, 0; 0, -105]
+		  DstBlock		  "Adder"
+		  DstPort		  3
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Inverse Last\nPartial Product"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -30]
+	      DstBlock		      "Adder"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Pipeline \nDelay"
+	      SrcPort		      1
+	      DstBlock		      "Inverse Last\nPartial Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sync Delay2"
+	      SrcPort		      1
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "BusBuild"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -25]
+	      DstBlock		      "Inverse Last\nPartial Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Adder"
+	      SrcPort		      1
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Serial To Parallel"
+	      SrcPort		      1
+	      DstBlock		      "BusConcatenation"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "BusConcatenation"
+	      SrcPort		      1
+	      DstBlock		      "Output Resolution\nArea of Interrest"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Output Resolution\nArea of Interrest"
+	      SrcPort		      1
+	      DstBlock		      "Delay4"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Shift Taps"
+	  SID			  "3:16"
+	  Ports			  [1, 5]
+	  Position		  [650, 18, 705, 92]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Shift Taps"
+	  SourceType		  "Shift Taps AlteraBlockset"
+	  number_of_taps	  "4"
+	  tap_distance		  "20"
+	  use_shiftout		  on
+	  use_ena		  off
+	  use_sclr		  off
+	  use_dedicated_circuitry on
+	  ram_type		  "AUTO"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_te"
+	  "st/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+Pass"
+	  "Filter_Shift+Taps%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation"
+	  "/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps%3A%3At.fixedpointlog,/data"
+	  "/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_F"
+	  "reqSweep/FreqSweep_Low+PassFilter_Shift+Taps%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder"
+	  "/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps"
+	  "%3A%3Ashiftout.fixedpointlog,"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Shift Taps1"
+	  SID			  "3:17"
+	  Ports			  [1, 9]
+	  Position		  [650, 241, 705, 409]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Shift Taps"
+	  SourceType		  "Shift Taps AlteraBlockset"
+	  number_of_taps	  "8"
+	  tap_distance		  "20"
+	  use_shiftout		  on
+	  use_ena		  off
+	  use_sclr		  off
+	  use_dedicated_circuitry on
+	  ram_type		  "AUTO"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps1%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_t"
+	  "est/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+Pas"
+	  "sFilter_Shift+Taps1%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentati"
+	  "on/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps1%3A%3At.fixedpointlog,/d"
+	  "ata/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/t"
+	  "b_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps1%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_bui"
+	  "lder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+"
+	  "Taps1%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamp"
+	  "les/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps1%3A%3At.fixedpointlog,/data/akarapet/q"
+	  "shell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/Fr"
+	  "eqSweep_Low+PassFilter_Shift+Taps1%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_build"
+	  "er2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps1%3A%3At.f"
+	  "ixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/"
+	  "HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps1%3A%3Ashiftout.fixedpointlog,"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Shift Taps2"
+	  SID			  "3:18"
+	  Ports			  [1, 9]
+	  Position		  [650, 446, 705, 614]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Shift Taps"
+	  SourceType		  "Shift Taps AlteraBlockset"
+	  number_of_taps	  "8"
+	  tap_distance		  "20"
+	  use_shiftout		  on
+	  use_ena		  off
+	  use_sclr		  off
+	  use_dedicated_circuitry on
+	  ram_type		  "AUTO"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps2%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_t"
+	  "est/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+Pas"
+	  "sFilter_Shift+Taps2%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentati"
+	  "on/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps2%3A%3At.fixedpointlog,/d"
+	  "ata/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/t"
+	  "b_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps2%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_bui"
+	  "lder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+"
+	  "Taps2%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamp"
+	  "les/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps2%3A%3At.fixedpointlog,/data/akarapet/q"
+	  "shell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/Fr"
+	  "eqSweep_Low+PassFilter_Shift+Taps2%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_build"
+	  "er2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps2%3A%3At.f"
+	  "ixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/"
+	  "HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps2%3A%3Ashiftout.fixedpointlog,"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Shift Taps4"
+	  SID			  "3:19"
+	  Ports			  [1, 5]
+	  Position		  [650, 123, 705, 197]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Shift Taps"
+	  SourceType		  "Shift Taps AlteraBlockset"
+	  number_of_taps	  "4"
+	  tap_distance		  "20"
+	  use_shiftout		  on
+	  use_ena		  off
+	  use_sclr		  off
+	  use_dedicated_circuitry on
+	  ram_type		  "AUTO"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps4%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_t"
+	  "est/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+Pas"
+	  "sFilter_Shift+Taps4%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentati"
+	  "on/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps4%3A%3At.fixedpointlog,/d"
+	  "ata/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/t"
+	  "b_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps4%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_bui"
+	  "lder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+"
+	  "Taps4%3A%3Ashiftout.fixedpointlog,"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Shift Taps5"
+	  SID			  "3:20"
+	  Ports			  [1, 5]
+	  Position		  [650, 648, 705, 722]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Shift Taps"
+	  SourceType		  "Shift Taps AlteraBlockset"
+	  number_of_taps	  "4"
+	  tap_distance		  "20"
+	  use_shiftout		  on
+	  use_ena		  off
+	  use_sclr		  off
+	  use_dedicated_circuitry on
+	  ram_type		  "AUTO"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps5%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_t"
+	  "est/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+Pas"
+	  "sFilter_Shift+Taps5%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentati"
+	  "on/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps5%3A%3At.fixedpointlog,/d"
+	  "ata/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/t"
+	  "b_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps5%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_bui"
+	  "lder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+"
+	  "Taps5%3A%3Ashiftout.fixedpointlog,"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Shift Taps6"
+	  SID			  "3:21"
+	  Ports			  [1, 4]
+	  Position		  [650, 753, 705, 827]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Shift Taps"
+	  SourceType		  "Shift Taps AlteraBlockset"
+	  number_of_taps	  "4"
+	  tap_distance		  "20"
+	  use_shiftout		  off
+	  use_ena		  off
+	  use_sclr		  off
+	  use_dedicated_circuitry on
+	  ram_type		  "AUTO"
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps6%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_t"
+	  "est/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+Pas"
+	  "sFilter_Shift+Taps6%3A%3At.fixedpointlog,/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentati"
+	  "on/DesignExamples/Tutorials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps6%3A%3At.fixedpointlog,/d"
+	  "ata/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/HIL/FreqSweep/t"
+	  "b_FreqSweep/FreqSweep_Low+PassFilter_Shift+Taps6%3A%3At.fixedpointlog,"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "VCC"
+	  SID			  "3:22"
+	  Ports			  [0, 1]
+	  Position		  [505, 47, 525, 63]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/VCC"
+	  SourceType		  "VCC AlteraBlockset"
+	  SpecifyClock		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out[29:0]"
+	  SID			  "3:23"
+	  Position		  [1093, 750, 1107, 780]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "DataIn[19:0]"
+	  SrcPort		  1
+	  DstBlock		  "Parallel To Serial"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps1"
+	  SrcPort		  1
+	  DstBlock		  "Bit Level \nSum of Product1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps1"
+	  SrcPort		  2
+	  DstBlock		  "Bit Level \nSum of Product1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Shift Taps1"
+	  SrcPort		  3
+	  DstBlock		  "Bit Level \nSum of Product1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Shift Taps1"
+	  SrcPort		  4
+	  DstBlock		  "Bit Level \nSum of Product1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Shift Taps1"
+	  SrcPort		  5
+	  DstBlock		  "Bit Level \nSum of Product1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Shift Taps1"
+	  SrcPort		  6
+	  DstBlock		  "Bit Level \nSum of Product1"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Shift Taps1"
+	  SrcPort		  7
+	  DstBlock		  "Bit Level \nSum of Product1"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Shift Taps1"
+	  SrcPort		  8
+	  DstBlock		  "Bit Level \nSum of Product1"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Shift Taps2"
+	  SrcPort		  1
+	  DstBlock		  "Bit Level \nSum of Product2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps2"
+	  SrcPort		  2
+	  DstBlock		  "Bit Level \nSum of Product2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Shift Taps2"
+	  SrcPort		  3
+	  DstBlock		  "Bit Level \nSum of Product2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Shift Taps2"
+	  SrcPort		  4
+	  DstBlock		  "Bit Level \nSum of Product2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Shift Taps2"
+	  SrcPort		  5
+	  DstBlock		  "Bit Level \nSum of Product2"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Shift Taps2"
+	  SrcPort		  6
+	  DstBlock		  "Bit Level \nSum of Product2"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Shift Taps2"
+	  SrcPort		  7
+	  DstBlock		  "Bit Level \nSum of Product2"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Shift Taps2"
+	  SrcPort		  8
+	  DstBlock		  "Bit Level \nSum of Product2"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Shift Taps1"
+	  SrcPort		  9
+	  Points		  [0, 25; -75, 0]
+	  DstBlock		  "Shift Taps2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Parallel To Serial"
+	  SrcPort		  1
+	  DstBlock		  "Shift Taps"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Pattern"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    DstBlock		    "Goto"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -45]
+	    DstBlock		    "Parallel To Serial"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "GND"
+	  SrcPort		  1
+	  DstBlock		  "Pattern"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Scaling Accumulator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  1
+	  DstBlock		  "Bit Level \nSum of Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  2
+	  DstBlock		  "Bit Level \nSum of Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  3
+	  DstBlock		  "Bit Level \nSum of Product"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  4
+	  DstBlock		  "Bit Level \nSum of Product"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Shift Taps4"
+	  SrcPort		  1
+	  DstBlock		  "Bit Level \nSum of Product4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps4"
+	  SrcPort		  2
+	  DstBlock		  "Bit Level \nSum of Product4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Shift Taps4"
+	  SrcPort		  3
+	  DstBlock		  "Bit Level \nSum of Product4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Shift Taps4"
+	  SrcPort		  4
+	  DstBlock		  "Bit Level \nSum of Product4"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  5
+	  Points		  [0, 30; -75, 0]
+	  DstBlock		  "Shift Taps4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps4"
+	  SrcPort		  5
+	  Points		  [5, 0; 0, 25; -80, 0]
+	  DstBlock		  "Shift Taps1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps5"
+	  SrcPort		  1
+	  DstBlock		  "Bit Level \nSum of Product5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps5"
+	  SrcPort		  2
+	  DstBlock		  "Bit Level \nSum of Product5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Shift Taps5"
+	  SrcPort		  3
+	  DstBlock		  "Bit Level \nSum of Product5"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Shift Taps5"
+	  SrcPort		  4
+	  DstBlock		  "Bit Level \nSum of Product5"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Shift Taps6"
+	  SrcPort		  1
+	  DstBlock		  "Bit Level \nSum of Product6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps6"
+	  SrcPort		  2
+	  DstBlock		  "Bit Level \nSum of Product6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Shift Taps6"
+	  SrcPort		  3
+	  DstBlock		  "Bit Level \nSum of Product6"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Shift Taps6"
+	  SrcPort		  4
+	  DstBlock		  "Bit Level \nSum of Product6"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Shift Taps5"
+	  SrcPort		  5
+	  Points		  [0, 30; -75, 0]
+	  DstBlock		  "Shift Taps6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps2"
+	  SrcPort		  9
+	  Points		  [0, 30; -75, 0]
+	  DstBlock		  "Shift Taps5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bit Level \nSum of Product5"
+	  SrcPort		  1
+	  Points		  [75, 0; 0, -340]
+	  DstBlock		  "Partial Product \nAdder"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Bit Level \nSum of Product"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, 245]
+	  DstBlock		  "Partial Product \nAdder"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bit Level \nSum of Product6"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, -480]
+	  DstBlock		  "Partial Product \nAdder"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Bit Level \nSum of Product4"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, 170]
+	  DstBlock		  "Partial Product \nAdder"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Bit Level \nSum of Product1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 40]
+	  DstBlock		  "Partial Product \nAdder"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Bit Level \nSum of Product2"
+	  SrcPort		  1
+	  Points		  [75, 0; 0, -150]
+	  DstBlock		  "Partial Product \nAdder"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "VCC"
+	  SrcPort		  1
+	  DstBlock		  "Parallel To Serial"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "sFirResult"
+	  Labels		  [1, 0]
+	  SrcBlock		  "Scaling Accumulator"
+	  SrcPort		  1
+	  DstBlock		  "Out[29:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Start1"
+	  SrcPort		  1
+	  DstBlock		  "Pattern"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Partial Product \nAdder"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  DstBlock		  "Scaling Accumulator"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "% Model pre-load function\n% Coefficient Generation\nFilterOrder = 32\nInputBitWidth = 8\nLowPassFreqBand"
+	  " = [0 0.01 0.2 1];\nLowPassMagnBand = [1 0.9 0.0001 0.0001];\n\nFlCoef = firls(FilterOrder,LowPassFreqBand,LowPassM"
+	  "agnBand);\n\nCoefBitWidth = InputBitWidth + ceil(log2((max(abs(FlCoef))/min(abs(FlCoef)))))\nScalingFactor = (2^(Co"
+	  "efBitWidth-1))-1;\n\nFpCoef = fix(ScalingFactor * FlCoef);\n\nplot(FpCoef,'o');\ntitle('Coefficient Value');\nImpul"
+	  "seData = zeros(1,1000);\nImpulseData(1) = 100;\nh = conv(ImpulseData,FpCoef);\nfftplot(h);\ntitle('Frequency respon"
+	  "se');\nFirSamplingPeriod=1;"
+	  Position		  [39, 420]
+	  HorizontalAlignment	  "left"
+	  ForegroundColor	  "blue"
+	  DropShadow		  on
+	  FontName		  "Arial"
+	  FontSize		  14
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "OutputCordic"
+      SID		      "4"
+      Ports		      [1, 1]
+      Position		      [740, 207, 805, 223]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_OutputCordic.capture"
+      BusType		      "Signed Integer"
+      bwl		      "21"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"Cordic Sine"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "OutputFilter"
+      SID		      "5"
+      Ports		      [1, 1]
+      Position		      [735, 147, 800, 163]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutor"
+      "ials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_OutputFilter.capture"
+      BusType		      "Signed Integer"
+      bwl		      "30"
+      bwr		      "0"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      Port {
+	PortNumber		1
+	Name			"Filtered Sine"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product"
+      SID		      "6"
+      Ports		      [2, 1]
+      Position		      [170, 126, 215, 159]
+      InputSameDT	      off
+      RndMeth		      "Floor"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ramp"
+      SID		      "7"
+      Ports		      [0, 1]
+      Position		      [20, 130, 50, 160]
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Sources/Ramp"
+      SourceType	      "Ramp"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      slope		      ".01"
+      start		      "0"
+      X0		      "0"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Round"
+      SID		      "8"
+      Ports		      [1, 1]
+      Position		      [505, 135, 570, 155]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Round"
+      SourceType	      "Round AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "21"
+      bwr		      "0"
+      bitsToRemove	      "1"
+      roundMode		      "ROUND_UP_SYM"
+      userRoundMode	      "Round Away From Zero"
+      pipeline		      on
+      pipeline_display	      "1"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "SW_Scope"
+      SID		      "9"
+      Ports		      [2]
+      Position		      [880, 140, 910, 195]
+      Floating		      off
+      Location		      [333, 395, 1485, 864]
+      Open		      off
+      NumInputPorts	      "2"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      YMin		      "-1.1e+006~-550000"
+      YMax		      "1.1e+006~550000"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      Decimation	      "20"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SignalSpecification
+      Name		      "Signal Specification"
+      SID		      "10"
+      Position		      [85, 135, 130, 155]
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      SID		      "11"
+      Ports		      []
+      Position		      [15, 15, 84, 62]
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily	      "Cyclone III"
+      DeviceName	      "EP3C120F780C7"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "Clock"
+      ExportDir		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tu"
+      "torials/HIL/FreqSweep/."
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Sine Wave Cordic"
+      SID		      "12"
+      Ports		      [1, 1]
+      Position		      [330, 120, 455, 170]
+      ForegroundColor	      "blue"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Sine Wave Cordic"
+	Location		[349, 258, 1519, 1077]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"101"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1[20:0]"
+	  SID			  "13"
+	  Position		  [15, 258, 45, 272]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Angle Generation \nPhase Accumulator"
+	  SID			  "14"
+	  Ports			  [1, 3]
+	  Position		  [175, 146, 250, 384]
+	  ForegroundColor	  "blue"
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Angle Generation \nPhase Accumulator"
+	    Location		    [207, 164, 1259, 942]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "23"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1[20:0]"
+	      SID		      "14:1"
+	      Position		      [70, 183, 100, 197]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "BusConversion"
+	      SID		      "14:2"
+	      Ports		      [1, 1]
+	      Position		      [185, 261, 260, 279]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Bus Conversion"
+	      SourceType	      "Bus Conversion AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      ibwl		      "21"
+	      ibwr		      "0"
+	      bwl		      "17"
+	      bwr		      "0"
+	      bitToConnectToOutputLSB "0"
+	      round		      off
+	      saturate		      off
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Comparator"
+	      SID		      "14:3"
+	      Ports		      [2, 1]
+	      Position		      [470, 273, 505, 302]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Comparator"
+	      SourceType	      "Comparator AlteraBlockset"
+	      direction		      "a > b"
+	      pipeline_display	      "0"
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Angle+Generation+%0APhase+Accumulator_Comparator.f"
+	      "ixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Comparator1"
+	      SID		      "14:4"
+	      Ports		      [2, 1]
+	      Position		      [195, 159, 235, 201]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Comparator"
+	      SourceType	      "Comparator AlteraBlockset"
+	      direction		      "a < b"
+	      pipeline_display	      "0"
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Angle+Generation+%0APhase+Accumulator_Comparator1."
+	      "fixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant"
+	      SID		      "14:5"
+	      Ports		      [0, 1]
+	      Position		      [85, 161, 155, 179]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+	      SourceType	      "Constant AlteraBlockset"
+	      mask_cst		      "2^17-+2^16"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      roundMode		      "Truncate"
+	      satMode		      "Wrap"
+	      SpecifyClock	      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Angle+Generation+%0APhase+Accumulator_Constant.fix"
+	      "edpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Counter"
+	      SID		      "14:6"
+	      Ports		      [0, 1]
+	      Position		      [370, 151, 460, 179]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Counter"
+	      SourceType	      "Counter AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "5"
+	      bwr		      "0"
+	      use_modulo	      on
+	      modulo		      "20"
+	      SpecifyClock	      off
+	      direction		      "Increment"
+	      use_sload		      off
+	      use_sset		      off
+	      svalue		      "1"
+	      use_clk_ena	      off
+	      use_ena		      off
+	      use_sclr		      off
+	      pipeline_display	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Decoder"
+	      SID		      "14:7"
+	      Ports		      [1, 1]
+	      Position		      [495, 157, 545, 173]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Decoder"
+	      SourceType	      "Decoder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "5"
+	      bwr		      "0"
+	      registered	      off
+	      pipeline_display	      "0"
+	      value		      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Degree90"
+	      SID		      "14:8"
+	      Ports		      [0, 1]
+	      Position		      [370, 285, 445, 305]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+	      SourceType	      "Constant AlteraBlockset"
+	      mask_cst		      "round(90*pi*ScalingFactor/180)"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      roundMode		      "Truncate"
+	      satMode		      "Wrap"
+	      SpecifyClock	      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Angle+Generation+%0APhase+Accumulator_Degree90.fix"
+	      "edpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Degree90_1"
+	      SID		      "14:9"
+	      Ports		      [0, 1]
+	      Position		      [395, 545, 470, 565]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+	      SourceType	      "Constant AlteraBlockset"
+	      mask_cst		      "round(90*pi*ScalingFactor/180)"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      roundMode		      "Truncate"
+	      satMode		      "Wrap"
+	      SpecifyClock	      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Angle+Generation+%0APhase+Accumulator_Degree90%5F1"
+	      ".fixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      SID		      "14:10"
+	      Ports		      [3, 1]
+	      Position		      [585, 220, 630, 270]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Angle+Generation+%0APhase+Accumulator_Delay.fixedp"
+	      "ointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay1"
+	      SID		      "14:11"
+	      Ports		      [3, 1]
+	      Position		      [795, 365, 840, 415]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "2"
+	      pipeline_display	      "2"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Angle+Generation+%0APhase+Accumulator_Delay1.fixed"
+	      "pointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ExtractBit"
+	      SID		      "14:12"
+	      Ports		      [1, 1]
+	      Position		      [660, 483, 715, 507]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Extract Bit"
+	      SourceType	      "Extract Bit AlteraBlockset"
+	      BusType		      "Signed Fractional"
+	      bwl		      "2"
+	      bwr		      "0"
+	      bitToSelect	      "0"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ExtractBit1"
+	      SID		      "14:13"
+	      Ports		      [1, 1]
+	      Position		      [655, 393, 710, 417]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Extract Bit"
+	      SourceType	      "Extract Bit AlteraBlockset"
+	      BusType		      "Signed Fractional"
+	      bwl		      "2"
+	      bwr		      "0"
+	      bitToSelect	      "1"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND"
+	      SID		      "14:14"
+	      Ports		      [0, 1]
+	      Position		      [515, 407, 535, 423]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND1"
+	      SID		      "14:15"
+	      Ports		      [0, 1]
+	      Position		      [755, 397, 775, 413]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Increment\nDecrement"
+	      SID		      "14:16"
+	      Ports		      [2, 1]
+	      Position		      [560, 383, 615, 427]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Increment Decrement"
+	      SourceType	      "Increment Decrement AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "2"
+	      bwr		      "0"
+	      SpecifyClock	      off
+	      clr_value		      "0"
+	      direction		      "Increment"
+	      phase_selection	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      pipeline_display	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder"
+	      SID		      "14:17"
+	      Ports		      [2, 1]
+	      Position		      [430, 200, 510, 255]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder1"
+	      SID		      "14:18"
+	      Ports		      [2, 1]
+	      Position		      [555, 515, 635, 570]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "SUB"
+	      use_cin		      off
+	      use_ovl		      off
+	      use_addsub	      off
+	      use_ena		      off
+	      use_aclr		      off
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "n-to-1 Multiplexer"
+	      SID		      "14:19"
+	      Ports		      [3, 1]
+	      Position		      [745, 472, 800, 618]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+	      SourceType	      "Multiplexer AlteraBlockset"
+	      numInputs		      "2"
+	      pipeline		      "0"
+	      oneHot		      off
+	      pipeline_display	      "0"
+	      use_ena		      off
+	      use_aclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Angle+Generation+%0APhase+Accumulator_n-to-1+Multi"
+	      "plexer.fixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "n-to-1 Multiplexer1"
+	      SID		      "14:20"
+	      Ports		      [3, 1]
+	      Position		      [285, 191, 335, 289]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+	      SourceType	      "Multiplexer AlteraBlockset"
+	      numInputs		      "2"
+	      pipeline		      "0"
+	      oneHot		      off
+	      pipeline_display	      "0"
+	      use_ena		      off
+	      use_aclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Angle+Generation+%0APhase+Accumulator_n-to-1+Multi"
+	      "plexer1.fixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Angle[20:0]"
+	      SID		      "14:21"
+	      Position		      [930, 538, 960, 552]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Sync"
+	      SID		      "14:22"
+	      Position		      [835, 158, 865, 172]
+	      ForegroundColor	      "blue"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "oNegAngle"
+	      SID		      "14:23"
+	      Position		      [960, 383, 990, 397]
+	      ForegroundColor	      "blue"
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Counter"
+	      SrcPort		      1
+	      DstBlock		      "Decoder"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Decoder"
+	      SrcPort		      1
+	      Points		      [0, 0; 155, 0]
+	      Branch {
+		Points			[-145, 0; 0, 80]
+		DstBlock		"Delay"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 225]
+		DstBlock		"Delay1"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Sync"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder"
+	      SrcPort		      1
+	      DstBlock		      "Delay"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [0, 90; -265, 0]
+	      Branch {
+		Points			[-15, 0; 0, -60]
+		Branch {
+		  Points		  [100, 0]
+		  DstBlock		  "Comparator"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -60]
+		  DstBlock		  "Pipelined Adder"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, 195; 0, 0]
+		Branch {
+		  Points		  [0, 65]
+		  DstBlock		  "n-to-1 Multiplexer"
+		  DstPort		  3
+		}
+		Branch {
+		  DstBlock		  "Pipelined Adder1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Comparator"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"Delay"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, 105]
+		DstBlock		"Increment\nDecrement"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Degree90"
+	      SrcPort		      1
+	      DstBlock		      "Comparator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Increment\nDecrement"
+	      SrcPort		      1
+	      Points		      [0, 0; 10, 0]
+	      Branch {
+		Points			[0, 90]
+		DstBlock		"ExtractBit"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"ExtractBit1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "GND"
+	      SrcPort		      1
+	      DstBlock		      "Increment\nDecrement"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "n-to-1 Multiplexer"
+	      SrcPort		      1
+	      DstBlock		      "Angle[20:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder1"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Degree90_1"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "ExtractBit"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay1"
+	      SrcPort		      1
+	      DstBlock		      "oNegAngle"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GND1"
+	      SrcPort		      1
+	      DstBlock		      "Delay1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "ExtractBit1"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, -30]
+	      DstBlock		      "Delay1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1[20:0]"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      Branch {
+		DstBlock		"Comparator1"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 50]
+		Branch {
+		  DstBlock		  "n-to-1 Multiplexer1"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [0, 30]
+		  DstBlock		  "BusConversion"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Comparator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Comparator1"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, 30]
+	      DstBlock		      "n-to-1 Multiplexer1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "n-to-1 Multiplexer1"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "BusConversion"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer1"
+	      DstPort		      3
+	    }
+	    Annotation {
+	      Name		      "Angle Input Between 0 and + 90 degree\nStepIncrement = round(90*pi*ScalingFactor/180)/6000 = 137\n"
+	      "Sine Wave Frequency = Fs/20/StepIncrement/4"
+	      Position		      [309, 57]
+	      ForegroundColor	      "blue"
+	      FontName		      "Arial"
+	      FontSize		      18
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Cordic Rotator Engine"
+	  SID			  "15"
+	  Ports			  [2, 3]
+	  Position		  [335, 147, 425, 303]
+	  ForegroundColor	  "blue"
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Cordic Rotator Engine"
+	    Location		    [170, 74, 1250, 903]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "92"
+	    SIDHighWatermark	    "55"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Angle[20:0]"
+	      SID		      "15:1"
+	      Position		      [50, 313, 80, 327]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Sync"
+	      SID		      "15:2"
+	      Position		      [30, 163, 60, 177]
+	      ForegroundColor	      "blue"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "AdderX"
+	      SID		      "15:3"
+	      Ports		      [4, 2]
+	      Position		      [395, 667, 450, 768]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      on
+	      use_ovl		      on
+	      use_addsub	      on
+	      use_ena		      on
+	      use_aclr		      on
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "AdderY"
+	      SID		      "15:4"
+	      Ports		      [4, 2]
+	      Position		      [950, 603, 1010, 712]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      on
+	      use_ovl		      on
+	      use_addsub	      on
+	      use_ena		      on
+	      use_aclr		      on
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "AdderZ"
+	      SID		      "15:5"
+	      Ports		      [4, 2]
+	      Position		      [480, 384, 560, 491]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      pipeline		      "0"
+	      pipeline_display	      "0"
+	      AddSubDirection	      "ADD"
+	      use_cin		      on
+	      use_ovl		      on
+	      use_addsub	      on
+	      use_ena		      on
+	      use_aclr		      on
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Barrel Shifter"
+	      SID		      "15:6"
+	      Ports		      [2, 1]
+	      Position		      [960, 535, 1065, 575]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Barrel Shifter"
+	      SourceType	      "BarrelShifter AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      pipeline		      off
+	      infer_distance	      on
+	      distance_length	      "8"
+	      ShiftDirection	      "Shift right"
+	      use_ena		      off
+	      use_aclr		      off
+	      UseDedicatedCircuitry   off
+	      pipeline_display	      "0"
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_Barrel+Shifter.fixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Barrel Shifter1"
+	      SID		      "15:7"
+	      Ports		      [2, 1]
+	      Position		      [370, 610, 475, 650]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Barrel Shifter"
+	      SourceType	      "BarrelShifter AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      pipeline		      off
+	      infer_distance	      on
+	      distance_length	      "8"
+	      ShiftDirection	      "Shift right"
+	      use_ena		      off
+	      use_aclr		      off
+	      UseDedicatedCircuitry   off
+	      pipeline_display	      "0"
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_Barrel+Shifter1.fixedpointlo"
+	      "g"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Cordic ATAN Table "
+	      SID		      "15:8"
+	      Ports		      [1, 1]
+	      Position		      [295, 401, 380, 449]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/LUT"
+	      SourceType	      "LUT AlteraBlockset"
+	      addr_width	      "5"
+	      BusType		      "Signed Integer"
+	      bwl		      "20"
+	      bwr		      "0"
+	      init_array	      "cordic_atan_table"
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_Cordic+ATAN+Table+.fixedpoin"
+	      "tlog"
+	      use_ena		      off
+	      reg_data		      off
+	      use_lpm		      off
+	      reg_addr		      on
+	      ram_type		      "AUTO"
+	      pipeline_display	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Counter"
+	      SID		      "15:9"
+	      Ports		      [5, 1]
+	      Position		      [215, 105, 320, 175]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Counter"
+	      SourceType	      "Counter AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "5"
+	      bwr		      "0"
+	      use_modulo	      on
+	      modulo		      "20"
+	      SpecifyClock	      off
+	      direction		      "Use Direction Port (updown)"
+	      use_sload		      on
+	      use_sset		      off
+	      svalue		      "1"
+	      use_clk_ena	      off
+	      use_ena		      on
+	      use_sclr		      on
+	      pipeline_display	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Decoder"
+	      SID		      "15:10"
+	      Ports		      [1, 1]
+	      Position		      [365, 172, 435, 188]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Decoder"
+	      SourceType	      "Decoder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "5"
+	      bwr		      "0"
+	      registered	      off
+	      pipeline_display	      "0"
+	      value		      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Decoder1"
+	      SID		      "15:11"
+	      Ports		      [1, 1]
+	      Position		      [800, 173, 900, 187]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Decoder"
+	      SourceType	      "Decoder AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "5"
+	      bwr		      "0"
+	      registered	      off
+	      pipeline_display	      "0"
+	      value		      "19"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      SID		      "15:12"
+	      Ports		      [1, 1]
+	      Position		      [1060, 667, 1080, 703]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_Delay.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay1"
+	      SID		      "15:13"
+	      Ports		      [1, 1]
+	      Position		      [495, 727, 515, 763]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_Delay1.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      SID		      "15:14"
+	      Position		      [355, 464, 450, 486]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "decision_zsign"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From10"
+	      SID		      "15:15"
+	      Position		      [860, 634, 925, 656]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "shiftX"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From11"
+	      SID		      "15:16"
+	      Position		      [225, 416, 270, 434]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "Count"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From12"
+	      SID		      "15:17"
+	      Position		      [720, 171, 765, 189]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "Count"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      SID		      "15:18"
+	      Position		      [720, 685, 805, 705]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "decision_zsign"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From3"
+	      SID		      "15:19"
+	      Position		      [265, 743, 355, 767]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "decision_zsign"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From4"
+	      SID		      "15:20"
+	      Position		      [130, 276, 205, 294]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "init"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From5"
+	      SID		      "15:21"
+	      Position		      [625, 581, 700, 599]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "init"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From6"
+	      SID		      "15:22"
+	      Position		      [25, 641, 100, 659]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "init"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From7"
+	      SID		      "15:23"
+	      Position		      [885, 556, 930, 574]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "CountDelay"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From8"
+	      SID		      "15:24"
+	      Position		      [290, 694, 355, 716]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "shiftY"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From9"
+	      SID		      "15:25"
+	      Position		      [280, 630, 330, 650]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "CountDelay"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND"
+	      SID		      "15:26"
+	      Ports		      [0, 1]
+	      Position		      [170, 117, 190, 133]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND1"
+	      SID		      "15:27"
+	      Ports		      [0, 1]
+	      Position		      [340, 722, 360, 738]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND2"
+	      SID		      "15:28"
+	      Ports		      [0, 1]
+	      Position		      [905, 662, 925, 678]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND3"
+	      SID		      "15:29"
+	      Ports		      [0, 1]
+	      Position		      [425, 442, 445, 458]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND4"
+	      SID		      "15:30"
+	      Ports		      [0, 1]
+	      Position		      [680, 612, 700, 628]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      SID		      "15:31"
+	      Position		      [575, 310, 650, 330]
+	      ForegroundColor	      "blue"
+	      GotoTag		      "decision_zsign"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto2"
+	      SID		      "15:32"
+	      Position		      [530, 170, 605, 190]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      GotoTag		      "init"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto3"
+	      SID		      "15:33"
+	      Position		      [530, 90, 605, 110]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      GotoTag		      "Count"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto4"
+	      SID		      "15:34"
+	      Position		      [1095, 545, 1170, 565]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      GotoTag		      "shiftY"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto5"
+	      SID		      "15:35"
+	      Position		      [500, 620, 575, 640]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      GotoTag		      "shiftX"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto6"
+	      SID		      "15:36"
+	      Position		      [530, 120, 605, 140]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      GotoTag		      "CountDelay"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "InitialX"
+	      SID		      "15:37"
+	      Ports		      [0, 1]
+	      Position		      [25, 673, 95, 687]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+	      SourceType	      "Constant AlteraBlockset"
+	      mask_cst		      "round(0.60725293510314*ScalingFactor)"
+	      BusType		      "Signed Integer"
+	      bwl		      "20"
+	      bwr		      "0"
+	      roundMode		      "Truncate"
+	      satMode		      "Wrap"
+	      SpecifyClock	      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_InitialX.fixedpointlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "NOT1"
+	      SID		      "15:38"
+	      Ports		      [1, 1]
+	      Position		      [835, 687, 875, 703]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operator"
+	      SourceType	      "Logical Bit Operator AlteraBlockset"
+	      LogicalOperator	      "NOT"
+	      user_inputs	      "2"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "NOT2"
+	      SID		      "15:39"
+	      Ports		      [1, 1]
+	      Position		      [470, 172, 495, 188]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operator"
+	      SourceType	      "Logical Bit Operator AlteraBlockset"
+	      LogicalOperator	      "NOT"
+	      user_inputs	      "2"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "SignZ"
+	      SID		      "15:40"
+	      Ports		      [1, 1]
+	      Position		      [465, 308, 520, 332]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Extract Bit"
+	      SourceType	      "Extract Bit AlteraBlockset"
+	      BusType		      "Signed Fractional"
+	      bwl		      "21"
+	      bwr		      "0"
+	      bitToSelect	      "20"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      SID		      "15:41"
+	      Position		      [595, 400, 615, 420]
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator1"
+	      SID		      "15:42"
+	      Position		      [490, 685, 510, 705]
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator2"
+	      SID		      "15:43"
+	      Position		      [1050, 620, 1070, 640]
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "VCC"
+	      SID		      "15:44"
+	      Ports		      [0, 1]
+	      Position		      [170, 147, 190, 163]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/VCC"
+	      SourceType	      "VCC AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "X Register"
+	      SID		      "15:45"
+	      Ports		      [1, 1]
+	      Position		      [195, 655, 240, 705]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_X+Register.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Y Register"
+	      SID		      "15:46"
+	      Ports		      [1, 1]
+	      Position		      [795, 595, 840, 645]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_Y+Register.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Z Register"
+	      SID		      "15:47"
+	      Ports		      [1, 1]
+	      Position		      [340, 295, 385, 345]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_Z+Register.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "cdelay"
+	      SID		      "15:48"
+	      Ports		      [1, 1]
+	      Position		      [425, 112, 450, 148]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      pipeline_display	      "1"
+	      ClockPhase	      "1"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_cdelay.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "cdelay1"
+	      SID		      "15:49"
+	      Ports		      [1, 1]
+	      Position		      [940, 162, 965, 198]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "2"
+	      pipeline_display	      "2"
+	      ClockPhase	      "1"
+	      use_ena		      off
+	      use_sclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_cdelay1.fixedpointlog"
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "n-to-1 Multiplexer"
+	      SID		      "15:50"
+	      Ports		      [3, 1]
+	      Position		      [240, 269, 280, 371]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+	      SourceType	      "Multiplexer AlteraBlockset"
+	      numInputs		      "2"
+	      pipeline		      "0"
+	      oneHot		      off
+	      pipeline_display	      "0"
+	      use_ena		      off
+	      use_aclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_n-to-1+Multiplexer.fixedpoin"
+	      "tlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "n-to-1 Multiplexer1"
+	      SID		      "15:51"
+	      Ports		      [3, 1]
+	      Position		      [720, 578, 760, 662]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+	      SourceType	      "Multiplexer AlteraBlockset"
+	      numInputs		      "2"
+	      pipeline		      "0"
+	      oneHot		      off
+	      pipeline_display	      "0"
+	      use_ena		      off
+	      use_aclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_n-to-1+Multiplexer1.fixedpoi"
+	      "ntlog"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "n-to-1 Multiplexer2"
+	      SID		      "15:52"
+	      Ports		      [3, 1]
+	      Position		      [115, 638, 160, 722]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+	      SourceType	      "Multiplexer AlteraBlockset"
+	      numInputs		      "2"
+	      pipeline		      "0"
+	      oneHot		      off
+	      pipeline_display	      "0"
+	      use_ena		      off
+	      use_aclr		      off
+	      allowFloatingPointOverride on
+	      logOutputs	      off
+	      logFile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tut"
+	      "orials/HIL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Cordic+Rotator+Engine_n-to-1+Multiplexer2.fixedpoi"
+	      "ntlog"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Sin[20:0]"
+	      SID		      "15:53"
+	      Position		      [1125, 678, 1155, 692]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Cos[20:0]"
+	      SID		      "15:54"
+	      Position		      [630, 738, 660, 752]
+	      ForegroundColor	      "blue"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "SyncOut"
+	      SID		      "15:55"
+	      Position		      [1095, 173, 1125, 187]
+	      ForegroundColor	      "blue"
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Angle[20:0]"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sync"
+	      SrcPort		      1
+	      DstBlock		      "Counter"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "GND"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		DstBlock		"Counter"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Counter"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "VCC"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		DstBlock		"Counter"
+		DstPort			4
+	      }
+	      Branch {
+		DstBlock		"Counter"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "GND1"
+	      SrcPort		      1
+	      DstBlock		      "AdderX"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "GND2"
+	      SrcPort		      1
+	      DstBlock		      "AdderY"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "AdderX"
+	      SrcPort		      2
+	      Points		      [0, 0; 25, 0]
+	      Branch {
+		Points			[-5, 0; 0, 50; -390, 0; 0, -85]
+		DstBlock		"n-to-1 Multiplexer2"
+		DstPort			3
+	      }
+	      Branch {
+		DstBlock		"Delay1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "AdderY"
+	      SrcPort		      2
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[0, 45; -335, 0; 0, -80]
+		DstBlock		"n-to-1 Multiplexer1"
+		DstPort			3
+	      }
+	      Branch {
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Y Register"
+	      SrcPort		      1
+	      Points		      [10, 0; 5, 0]
+	      Branch {
+		DstBlock		"AdderY"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -75]
+		DstBlock		"Barrel Shifter"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "X Register"
+	      SrcPort		      1
+	      Points		      [5, 0; 10, 0]
+	      Branch {
+		DstBlock		"AdderX"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -60]
+		DstBlock		"Barrel Shifter1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "n-to-1 Multiplexer"
+	      SrcPort		      1
+	      DstBlock		      "Z Register"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GND3"
+	      SrcPort		      1
+	      DstBlock		      "AdderZ"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Z Register"
+	      SrcPort		      1
+	      Points		      [0, 0; 30, 0]
+	      Branch {
+		Points			[0, 80]
+		DstBlock		"AdderZ"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"SignZ"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "SignZ"
+	      SrcPort		      1
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "AdderZ"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "NOT1"
+	      SrcPort		      1
+	      DstBlock		      "AdderY"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      DstBlock		      "NOT1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Decoder"
+	      SrcPort		      1
+	      DstBlock		      "NOT2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From4"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From5"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "n-to-1 Multiplexer1"
+	      SrcPort		      1
+	      DstBlock		      "Y Register"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GND4"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From3"
+	      SrcPort		      1
+	      DstBlock		      "AdderX"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "From6"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "InitialX"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "n-to-1 Multiplexer2"
+	      SrcPort		      1
+	      DstBlock		      "X Register"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From7"
+	      SrcPort		      1
+	      DstBlock		      "Barrel Shifter"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Barrel Shifter"
+	      SrcPort		      1
+	      DstBlock		      "Goto4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From8"
+	      SrcPort		      1
+	      DstBlock		      "AdderX"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From9"
+	      SrcPort		      1
+	      DstBlock		      "Barrel Shifter1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Barrel Shifter1"
+	      SrcPort		      1
+	      DstBlock		      "Goto5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From10"
+	      SrcPort		      1
+	      DstBlock		      "AdderY"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Cordic ATAN Table "
+	      SrcPort		      1
+	      DstBlock		      "AdderZ"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From11"
+	      SrcPort		      1
+	      DstBlock		      "Cordic ATAN Table "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Counter"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		DstBlock		"Decoder"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -10]
+		Branch {
+		  DstBlock		  "cdelay"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -30]
+		  DstBlock		  "Goto3"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "AdderZ"
+	      SrcPort		      2
+	      Points		      [10, 0; 0, 50; -365, 0; 0, -160]
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "NOT2"
+	      SrcPort		      1
+	      DstBlock		      "Goto2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "cdelay"
+	      SrcPort		      1
+	      DstBlock		      "Goto6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Decoder1"
+	      SrcPort		      1
+	      DstBlock		      "cdelay1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "cdelay1"
+	      SrcPort		      1
+	      DstBlock		      "SyncOut"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From12"
+	      SrcPort		      1
+	      DstBlock		      "Decoder1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      DstBlock		      "Sin[20:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay1"
+	      SrcPort		      1
+	      DstBlock		      "Cos[20:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "AdderZ"
+	      SrcPort		      1
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "AdderX"
+	      SrcPort		      1
+	      DstBlock		      "Terminator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "AdderY"
+	      SrcPort		      1
+	      DstBlock		      "Terminator2"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "CORDIC CONTROLLER"
+	      Position		      [141, 51]
+	      ForegroundColor	      "blue"
+	      FontName		      "Arial"
+	      FontSize		      20
+	    }
+	    Annotation {
+	      Name		      "CORDIC PHASE ACCUMULATOR Z-REGISTER UPDATE"
+	      Position		      [291, 241]
+	      ForegroundColor	      "blue"
+	      FontName		      "Arial"
+	      FontSize		      20
+	    }
+	    Annotation {
+	      Name		      "CORDIC X-REGISTER UPDATE"
+	      Position		      [171, 571]
+	      ForegroundColor	      "blue"
+	      FontName		      "Arial"
+	      FontSize		      20
+	    }
+	    Annotation {
+	      Name		      "CORDIC Y-REGISTER UPDATE"
+	      Position		      [781, 496]
+	      ForegroundColor	      "blue"
+	      FontName		      "Arial"
+	      FontSize		      20
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay"
+	  SID			  "16"
+	  Ports			  [1, 1]
+	  Position		  [145, 244, 160, 286]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  pipeline_display	  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  allowFloatingPointOverride on
+	  logOutputs		  off
+	  logFile		  "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Tutorials/H"
+	  "IL/FreqSweep/tb_FreqSweep/FreqSweep_Sine+Wave+Cordic_Delay.fixedpointlog"
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "FullSin"
+	  SID			  "17"
+	  Ports			  [3, 1]
+	  Position		  [560, 169, 655, 201]
+	  ForegroundColor	  "blue"
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "FullSin"
+	    Location		    [349, 258, 1091, 724]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "136"
+	    SIDHighWatermark	    "8"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In[20:0]"
+	      SID		      "17:1"
+	      Position		      [30, 78, 60, 92]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "inAngle"
+	      SID		      "17:2"
+	      Position		      [15, 168, 45, 182]
+	      ForegroundColor	      "blue"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Ena"
+	      SID		      "17:3"
+	      Position		      [20, 233, 50, 247]
+	      ForegroundColor	      "blue"
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GND"
+	      SID		      "17:4"
+	      Ports		      [0, 1]
+	      Position		      [175, 62, 195, 78]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "NOT"
+	      SID		      "17:5"
+	      Ports		      [1, 1]
+	      Position		      [155, 167, 195, 183]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operator"
+	      SourceType	      "Logical Bit Operator AlteraBlockset"
+	      LogicalOperator	      "NOT"
+	      user_inputs	      "2"
+	      pipeline_display	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Pipelined Adder"
+	      SID		      "17:6"
+	      Ports		      [6, 2]
+	      Position		      [275, 62, 360, 153]
+	      ForegroundColor	      "blue"
+	      LibraryVersion	      "1.2"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+	      SourceType	      "Pipelined Adder AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "21"
+	      bwr		      "0"
+	      pipeline		      "2"
+	      pipeline_display	      "2"
+	      AddSubDirection	      "ADD"
+	      use_cin		      on
+	      use_ovl		      on
+	      use_addsub	      on
+	      use_ena		      on
+	      use_aclr		      on
+	      or_aclr_inputs	      on
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      SID		      "17:7"
+	      Position		      [385, 75, 405, 95]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out[20:0]"
+	      SID		      "17:8"
+	      Position		      [500, 123, 530, 137]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "inAngle"
+	      SrcPort		      1
+	      Points		      [90, 0]
+	      Branch {
+		DstBlock		"NOT"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -75]
+		DstBlock		"Pipelined Adder"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "In[20:0]"
+	      SrcPort		      1
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "NOT"
+	      SrcPort		      1
+	      Points		      [0, -60]
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "GND"
+	      SrcPort		      1
+	      Points		      [50, 0]
+	      Branch {
+		DstBlock		"Pipelined Adder"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 75]
+		DstBlock		"Pipelined Adder"
+		DstPort			6
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder"
+	      SrcPort		      2
+	      DstBlock		      "Out[20:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Ena"
+	      SrcPort		      1
+	      Points		      [175, 0; 0, -110]
+	      DstBlock		      "Pipelined Adder"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Pipelined Adder"
+	      SrcPort		      1
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  SID			  "18"
+	  Position		  [445, 215, 465, 235]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Angle[20:0]"
+	  SID			  "19"
+	  Position		  [785, 178, 815, 192]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Cordic Rotator Engine"
+	  SrcPort		  3
+	  Points		  [100, 0; 0, -80]
+	  DstBlock		  "FullSin"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Angle Generation \nPhase Accumulator"
+	  SrcPort		  2
+	  DstBlock		  "Cordic Rotator Engine"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Angle Generation \nPhase Accumulator"
+	  SrcPort		  1
+	  DstBlock		  "Cordic Rotator Engine"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Angle Generation \nPhase Accumulator"
+	  SrcPort		  3
+	  Points		  [240, 0; 0, -160]
+	  DstBlock		  "FullSin"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Cordic Rotator Engine"
+	  SrcPort		  1
+	  DstBlock		  "FullSin"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1[20:0]"
+	  SrcPort		  1
+	  DstBlock		  "Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  DstBlock		  "Angle Generation \nPhase Accumulator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Cordic Rotator Engine"
+	  SrcPort		  2
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "FullSin"
+	  SrcPort		  1
+	  DstBlock		  "Angle[20:0]"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Step1"
+      SID		      "20"
+      Position		      [170, 185, 200, 215]
+      SampleTime	      "1"
+    }
+    Line {
+      SrcBlock		      "Ramp"
+      SrcPort		      1
+      DstBlock		      "Signal Specification"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sine Wave Cordic"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	Points			[0, 0; 0, 70]
+	DstBlock		"OutputCordic"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Round"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Input1"
+      SrcPort		      1
+      Points		      [290, 0; 0, -40]
+      DstBlock		      "Low PassFilter"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Step1"
+      SrcPort		      1
+      DstBlock		      "Input1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Round"
+      SrcPort		      1
+      DstBlock		      "Low PassFilter"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Product"
+      SrcPort		      1
+      DstBlock		      "Input"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Input"
+      SrcPort		      1
+      DstBlock		      "Sine Wave Cordic"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Low PassFilter"
+      SrcPort		      1
+      DstBlock		      "OutputFilter"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Signal Specification"
+      SrcPort		      1
+      Points		      [0, 0; 10, 0]
+      Branch {
+	Points			[0, -10]
+	DstBlock		"Product"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 5]
+	DstBlock		"Product"
+	DstPort			2
+      }
+    }
+    Line {
+      Name		      "Filtered Sine"
+      Labels		      [0, 0]
+      SrcBlock		      "OutputFilter"
+      SrcPort		      1
+      DstBlock		      "SW_Scope"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Cordic Sine"
+      Labels		      [0, 0]
+      SrcBlock		      "OutputCordic"
+      SrcPort		      1
+      Points		      [55, 0]
+      DstBlock		      "SW_Scope"
+      DstPort		      2
+    }
+    Annotation {
+      Name		      "(c) 2007 Altera Corporation. All rights reserved.  Altera products are protected under numerous U.S"
+      ". and foreign patents, maskwork rights, copyrights and other intellectual property laws. \nThis reference design"
+      " file, and your use thereof, is subject to and governed by the terms and conditions of the applicable Altera Ref"
+      "erence Design License Agreement (found at www.altera.com).\nBy using this reference design file, you indicate yo"
+      "ur acceptance of such terms and conditions between you and Altera Corporation. \nIn the event that you do not ag"
+      "ree with such terms and conditions, you may not use the reference design file and please promptly destroy any co"
+      "pies you have made.\nThis reference design file being provided on an \"as-is\" basis and as an accommodation and"
+      " therefore all warranties, representations or guarantees of any kind (whether express, implied or statutory)\nin"
+      "cluding, without limitation, warranties of merchantability, non-infringement, or fitness for a particular purpos"
+      "e, are specifically disclaimed.\nBy making this reference design file available, Altera expressly does not recom"
+      "mend, suggest or require that this reference design file be used in combination with any other product not provi"
+      "ded by Altera"
+      Position		      [6, 326]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+    }
+  }
+}

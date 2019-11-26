@@ -1,0 +1,1280 @@
+Library {
+  Name			  "arithm_alteradspbuilder2"
+  Version		  7.6
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  MaxMDLFileLineLength	  120
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bdroot)\n%% DSPBuilder End\n"
+  Created		  "Thu Oct 24 14:50:27 2013"
+  Creator		  "swbuild"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "swbuild"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Oct 24 14:50:36 2013"
+  RTWModifiedTimeStamp	  304527027
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.10.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.10.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.10.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.10.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.10.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.10.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.10.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "GenerateSLWebview"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateSLWebview	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		21
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTCodeCoverageTool     "None"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 520, 285, 1400, 915 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+  }
+  System {
+    Name		    "arithm_alteradspbuilder2"
+    Location		    [480, 85, 1016, 386]
+    Open		    off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "21"
+    Block {
+      BlockType		      Reference
+      Name		      "Barrel Shifter"
+      SID		      "1"
+      Ports		      [3, 1]
+      Position		      [15, 70, 160, 110]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Barrel Shifter"
+      SourceType	      "BarrelShifter AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      pipeline		      off
+      infer_distance	      on
+      distance_length	      "8"
+      ShiftDirection	      "Use direction input pin"
+      use_ena		      off
+      use_aclr		      off
+      UseDedicatedCircuitry   off
+      pipeline_display	      "0"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Barrel+Shifter.fixedpointlog"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Bit Level Sum Of Products"
+      SID		      "2"
+      Ports		      [4, 1]
+      Position		      [185, 72, 245, 173]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Bit Level Sum of Products"
+      SourceType	      "BitSumProducts AlteraBlockset"
+      number_of_coefficients  "4"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      coefficients	      "[1 2 3 4 5 6 7 8]"
+      register_inputs	      on
+      pipeline_display	      "1"
+      use_ena		      off
+      use_sclr		      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Bit+Level+Sum+Of+Products.fixedpointlog"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Comparator"
+      SID		      "3"
+      Ports		      [2, 1]
+      Position		      [275, 70, 355, 110]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Comparator"
+      SourceType	      "Comparator AlteraBlockset"
+      direction		      "a == b"
+      pipeline_display	      "0"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Comparator.fixedpointlog"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Counter"
+      SID		      "4"
+      Ports		      [0, 1]
+      Position		      [385, 70, 490, 110]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Counter"
+      SourceType	      "Counter AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      use_modulo	      on
+      modulo		      "255"
+      SpecifyClock	      off
+      direction		      "Increment"
+      use_sload		      off
+      use_sset		      off
+      svalue		      "1"
+      use_clk_ena	      off
+      use_ena		      off
+      use_sclr		      off
+      pipeline_display	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DSP Block"
+      SID		      "14"
+      Ports		      [4, 1]
+      Position		      [480, 322, 630, 383]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/DSP Block"
+      SourceType	      "Stratix III DSP Block AlteraBlockset"
+      multipliers	      "2"
+      BusType		      "Signed Integer"
+      bwlA		      "8"
+      bwrA		      "0"
+      inputWidthACalc	      "8"
+      bwlB		      "8"
+      bwrB		      "0"
+      inputWidthBCalc	      "8"
+      shift_mode	      off
+      use_shiftout	      off
+      mult1_direction	      "ADD"
+      mult3_direction	      "ADD"
+      accumulator	      off
+      accum_direction	      "ADD"
+      use_accum_sload	      off
+      okForChainoutCalc	      "0"
+      chainout_adder	      off
+      use_chainout	      off
+      use_zero_chainout	      off
+      full_resolution	      on
+      bwlOutfix		      "8"
+      bwrOutfix		      "0"
+      bwrMultCalc	      "0"
+      bwlMultCalc	      "17"
+      bwrOutCalc	      "0"
+      bwlOutCalc	      "17"
+      outputWidthCalc	      "17"
+      output_msb	      "17"
+      single_dsp_block	      "1"
+      support_rounding_saturation "0"
+      output_lsb	      "0"
+      width_msb		      "17"
+      output_rounding_possible "0"
+      output_round_type	      "None (truncate)"
+      output_rounding	      "0"
+      width_saturate_sign     "0"
+      output_saturation_possible "0"
+      output_saturate_type    "None (wrap)"
+      output_saturation	      "0"
+      use_overflow	      off
+      port_output_is_overflow "0"
+      register_data_inputs    on
+      register_multiplier     on
+      register_adder	      on
+      reg_chainout	      on
+      reg_shiftout	      on
+      model_is_delayed	      "1"
+      use_ena		      off
+      use_aclr		      off
+      or_aclr_inputs	      on
+      pipeline_display	      "3"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Differentiator"
+      SID		      "5"
+      Ports		      [3, 1]
+      Position		      [520, 70, 670, 160]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Differentiator"
+      SourceType	      "Differentiator AlteraBlockset"
+      bwl		      "20"
+      depth		      "1"
+      pipeline_display	      "1"
+      use_ena		      on
+      use_sclr		      on
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Differentiator.fixedpointlog"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Divider"
+      SID		      "6"
+      Ports		      [2, 2]
+      Position		      [15, 200, 155, 280]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Divider"
+      SourceType	      "Divider AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      pipeline		      "0"
+      pipeline_display	      "0"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gain"
+      SID		      "7"
+      Ports		      [1, 1]
+      Position		      [180, 202, 240, 248]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Gain"
+      SourceType	      "Gain AlteraBlockset"
+      vgain		      "2"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      pipeline		      "1"
+      pipeline_display	      "1"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Gain.fixedpointlog"
+      MaskValue		      "1"
+      use_ena		      off
+      use_aclr		      off
+      lpm		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Increment Decrement"
+      SID		      "8"
+      Ports		      [0, 1]
+      Position		      [270, 200, 340, 250]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Increment Decrement"
+      SourceType	      "Increment Decrement AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      SpecifyClock	      off
+      clr_value		      "0"
+      direction		      "Increment"
+      phase_selection	      "1"
+      use_ena		      off
+      use_sclr		      off
+      pipeline_display	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Integrator"
+      SID		      "9"
+      Ports		      [3, 1]
+      Position		      [370, 200, 520, 290]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Integrator"
+      SourceType	      "Integrator AlteraBlockset"
+      bwl		      "20"
+      depth		      "1"
+      pipeline_display	      "1"
+      use_ena		      on
+      use_sclr		      on
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Integrator.fixedpointlog"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Magnitude"
+      SID		      "10"
+      Ports		      [1, 1]
+      Position		      [550, 201, 595, 239]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Magnitude"
+      SourceType	      "Magnitude AlteraBlockset"
+      pipeline_display	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Multiplier"
+      SID		      "11"
+      Ports		      [2, 1]
+      Position		      [15, 322, 95, 378]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Multiplier"
+      SourceType	      "Multiplier AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      pipeline		      "0"
+      pipeline_display	      "0"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Multiplier.fixedpointlog"
+      UseEqualInputWidth      on
+      bbwl		      "8"
+      bbwr		      "0"
+      FullResolution	      on
+      OutputMsb		      "8"
+      OutputLsb		      "0"
+      OutputBwl		      "16"
+      OutputBwr		      "16"
+      UseDedicatedCircuitry   "YES"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Multiply Accumulate"
+      SID		      "12"
+      Ports		      [3, 1]
+      Position		      [120, 320, 270, 380]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Multiply Accumulate"
+      SourceType	      "MultiplyAccumulate AlteraBlockset"
+      BusType		      "Signed Integer"
+      abwl		      "8"
+      abwr		      "0"
+      bbwl		      "8"
+      bbwr		      "0"
+      ywidth		      "8"
+      pipeline_register	      "None"
+      pipeline_display	      "0"
+      direction		      "Add"
+      use_addsub	      off
+      use_ena		      off
+      use_aclr		      off
+      UseDedicatedCircuitry   "YES"
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Multiply+Accumulate.fixedpointlog"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Multiply Add"
+      SID		      "13"
+      Ports		      [4, 1]
+      Position		      [300, 322, 450, 383]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Multiply Add"
+      SourceType	      "MultiplyAdd AlteraBlockset"
+      multipliers	      "2"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      direction		      "Add Add"
+      pipeline_register	      "Inputs Multiplier and Adder"
+      pipeline_display	      "3"
+      use_constants	      off
+      constants		      "[13 -2 0 3]"
+      UseDedicatedCircuitry   on
+      use_ena		      off
+      use_aclr		      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Multiply+Add.fixedpointlog"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Parallel Adder Subtractor"
+      SID		      "16"
+      Ports		      [4, 1]
+      Position		      [190, 412, 225, 488]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Adder Subtractor"
+      SourceType	      "ParallelAdder AlteraBlockset"
+      number_of_inputs	      "4"
+      direction		      "+"
+      use_pipeline	      on
+      pipeline_display	      "2"
+      phase_selection	      "1"
+      use_ena		      off
+      use_aclr		      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Parallel+Adder+Subtractor.fixedpointlog"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Pipelined Adder"
+      SID		      "17"
+      Ports		      [2, 1]
+      Position		      [255, 412, 335, 468]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Pipelined Adder"
+      SourceType	      "Pipelined Adder AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      pipeline		      "2"
+      pipeline_display	      "2"
+      AddSubDirection	      "ADD"
+      use_cin		      off
+      use_ovl		      off
+      use_addsub	      off
+      use_ena		      off
+      use_aclr		      off
+      or_aclr_inputs	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Product"
+      SID		      "18"
+      Ports		      [2, 1]
+      Position		      [365, 412, 445, 468]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Product"
+      SourceType	      "Product AlteraBlockset"
+      BusType		      "Inferred"
+      bwl		      "8"
+      bwr		      "0"
+      pipeline		      "0"
+      pipeline_display	      "0"
+      phase_selection	      "1"
+      use_ena		      off
+      use_aclr		      off
+      UseLPM		      off
+      UseDedicatedCircuitry   on
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_Product.fixedpointlog"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SOP Tap"
+      SID		      "19"
+      Ports		      [3, 2]
+      Position		      [475, 410, 585, 480]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/SOP Tap"
+      SourceType	      "SOP Tap AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      number_of_taps	      "2"
+      pipeline_display	      "2"
+      use_ena		      off
+      use_aclr		      off
+      allowFloatingPointOverride on
+      logOutputs	      off
+      logFile		      "d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartus\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alterads"
+      "pbuilder2\\arithm%5Falteradspbuilder2_SOP+Tap%3A%3Aq.fixedpointlog,d:\\SJ\\nightly\\13.1\\162\\w32\\acds\\quartu"
+      "s\\dsp_builder\\bin\\mdllibrary\\tb_arithm_alteradspbuilder2\\arithm%5Falteradspbuilder2_SOP+Tap%3A%3Adout.fixed"
+      "pointlog,"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Square Root"
+      SID		      "20"
+      Ports		      [1, 1]
+      Position		      [15, 515, 165, 605]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Square Root"
+      SourceType	      "Square Root AlteraBlockset"
+      BusType		      "Unsigned Integer"
+      bwl		      "8"
+      bwr		      "0"
+      pipeline		      "0"
+      pipeline_display	      "0"
+      use_remain	      off
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Sum of Products"
+      SID		      "21"
+      Ports		      [4, 1]
+      Position		      [190, 517, 250, 618]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Sum of Products"
+      SourceType	      "SumOfProducts AlteraBlockset"
+      BusType		      "Signed Integer"
+      InputBwl		      "8"
+      InputBwr		      "0"
+      number_of_coefficients  "4"
+      CoefBwl		      "8"
+      CoefBwr		      "0"
+      coefficients	      "[1 2 3 4 5 6 7 8]"
+      pipeline		      "0"
+      pipeline_display	      "0"
+      full_resolution	      on
+      OutputBwl		      "8"
+      OutputBwr		      "0"
+      TruncateLsb	      "0"
+      implementation	      "Auto"
+      use_ena		      off
+      use_aclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Variable Precision DSP Block"
+      SID		      "15"
+      Ports		      [2, 1]
+      Position		      [15, 410, 165, 470]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "allblocks_alteradspbuilder2/Variable Precision DSP Block"
+      SourceType	      "StratixV ArriaV and CycloneV Variable Precision DSP Block AlteraBlockset"
+      complex_model_delayed   "0"
+      model_delayed	      "0"
+      device_family	      "Stratix V"
+      wysiwyg_device_family   "stratixv"
+      used_mode_stratix	      "Other Modes"
+      used_mode_arria	      "Other Modes"
+      in_25x18_complex_mode   "0"
+      in_18x18plus36_mode     "0"
+      in_other_modes	      "1"
+      number_of_mults	      "1"
+      clock_ena_inputs	      off
+      async_clear_inputs      off
+      or_aclr_inputs	      on
+      bus_type		      "Unsigned Integer"
+      bwl_A		      "8"
+      bwr_A		      "0"
+      width_A		      "8"
+      chain_width	      "64"
+      reg_inputs_A	      on
+      A_inputs_reg_ena	      "ENABLE 0"
+      bwl_B		      "8"
+      bwr_B		      "0"
+      width_B		      "8"
+      reg_inputs_B	      on
+      B_inputs_reg_ena	      "ENABLE 0"
+      bwl_joint_A_B	      "8"
+      bwr_joint_A_B	      "0"
+      reg_joint_A_B_input     on
+      A_B_input_reg_ena	      "ENABLE 0"
+      bwl_A_complex	      "8"
+      bwr_A_complex	      "8"
+      reg_complex_A	      on
+      A_complex_inputs_reg_ena "ENABLE 0"
+      bwl_B_complex	      "8"
+      bwr_B_complex	      "8"
+      reg_complex_B	      on
+      B_complex_inputs_reg_ena "ENABLE 0"
+      all_inputs_registered   "1"
+      no_input_registered     "0"
+      all_inputs_share_same_clocks "1"
+      full_resolution	      off
+      bwl_out		      "16"
+      bwr_out		      "0"
+      bwl_out_complex	      "17"
+      bwr_out_complex	      "16"
+      bwl_18x18_mult	      "16"
+      bwr_18x18_mult	      "0"
+      bwl_out_18x18plus36     "17"
+      bwr_out_18x18plus36     "0"
+      bwl_preadder	      "9"
+      bwr_preadder	      "0"
+      bwl_out_other_modes     "16"
+      bwr_out_other_modes     "0"
+      bwr_out_full	      "0"
+      bwr_out_full_eval	      "0"
+      bwr_out_final	      "0"
+      bwl_out_full	      "16"
+      bwl_out_final	      "16"
+      output_lsb_final	      "0"
+      reg_output	      on
+      output_reg_ena	      "ENABLE 0"
+      systolic_regs_available "0"
+      enable_systolic_regs    off
+      systolic_regs_used      "0"
+      enable_input_pipeline_reg	off
+      input_pipeline_reg_used "0"
+      input_pipeline_reg_ena  "ENABLE 0"
+      basic_struct_ok_for_input_scan "1"
+      input_scan_available    "1"
+      enable_input_scan	      off
+      input_scan_used	      "0"
+      use_scanin_input	      off
+      use_scanout_output      off
+      input_scan_delay_regs_available "0"
+      enable_input_scan_delay_regs off
+      input_scan_delay_regs_used "0"
+      input_scan_delay_ay_reg_used "0"
+      basic_struct_ok_for_coef_rom "1"
+      coef_rom_available      "1"
+      enable_coef_rom	      off
+      coef_rom_used	      "0"
+      basic_struct_ok_for_preadder "1"
+      preadder_available      "0"
+      enable_preadder	      off
+      preadder_used	      "0"
+      preadder_direction      "ADD"
+      square_mode_available   "0"
+      enable_square_mode      off
+      square_mode_used	      "0"
+      upper_limit_9bit	      "9"
+      upper_limit_18bit	      "18"
+      upper_limit_27bit	      "27"
+      in_9x9_mode	      "1"
+      in_18x18_modes	      "1"
+      in_27x27_modes	      "0"
+      in_36x18_modes	      "0"
+      in_36x36_mode	      "0"
+      A_inputs_exist	      "1"
+      B_inputs_exist	      "1"
+      C_inputs_exist	      "0"
+      coef_sel_inputs_exist   "0"
+      mult1_adder_available   "0"
+      mult1_direction	      "ADD"
+      mult3_adder_available   "0"
+      mult3_direction	      "ADD"
+      chainout_adder_available "0"
+      use_chainout_input      off
+      chainout_input_used     "0"
+      use_chainout_output     off
+      chainout_output_used    "0"
+      accum_available	      "0"
+      enable_accum	      off
+      accum_used	      "0"
+      double_accum_available  "0"
+      enable_double_accum     off
+      double_accum_used	      "0"
+      negate_available	      "0"
+      mult_add_operation      "ADD"
+      rounding_constant_available "0"
+      use_rounding_constant   off
+      rounding_constant_used  "0"
+      constant_value	      "0"
+      bwl_C		      "8"
+      bwr_C		      "0"
+      bwl_coef		      "18"
+      bwr_coef		      "0"
+      mult0_coeffs	      "[0, 0, 0, 0, 0, 0, 0, 0]"
+      mult1_coeffs	      "[0, 0, 0, 0, 0, 0, 0, 0]"
+      mult2_coeffs	      "[0, 0, 0, 0, 0, 0, 0, 0]"
+      mult3_coeffs	      "[0, 0, 0, 0, 0, 0, 0, 0]"
+      reg_mult1_op_control    off
+      enable_addnsub1_pipeline_reg off
+      addnsub1_pipeline_reg_used "0"
+      reg_mult3_op_control    off
+      reg_accum_control	      off
+      enable_accum_pipeline_reg	off
+      accum_pipeline_reg_used "0"
+      reg_negate_control      off
+      enable_negate_pipeline_reg off
+      negate_pipeline_reg_used "0"
+      any_control_input_exist "0"
+      control_regs_ena	      "ENABLE 0"
+      control_pipeline_regs_ena	"ENABLE 0"
+      ena0_used		      "1"
+      ena1_used		      "0"
+      ena2_used		      "0"
+    }
+    Annotation {
+      Name		      "Arithmetic Library"
+      Position		      [114, 32]
+      VerticalAlignment	      "top"
+      ForegroundColor	      "blue"
+      FontName		      "Arial"
+      FontSize		      20
+    }
+  }
+}

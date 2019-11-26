@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Exporting HDL</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_managing.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_managing.17.5.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_managing.17.7.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1025191">Exporting HDL</a></div>
+      <div class="Body"><a name="1025193">You can export the DSP Builder-generated synthesizable HDL to a Quartus II project </a>and then use the <span class="Bold">Export</span> tab in the <span class="Code">Signal Compiler</span> block to export them (<span class="N_007cLink"><a href="#1026325" title="Exporting HDL">Figure&nbsp;12–1</a></span>).</div>
+      <div class="TA_table_anchor"><a name="1026331">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;12–1.&nbsp;</span><span style="color: #000000; font-family: &quot;Microsoft Sans Serif&quot;; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><a name="1026325">Export Tab in Signal Compiler</a></span></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1026330"><img class="Default" src="images/DlgSignalCompilerExportHDL.jpg" width="424" height="463" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1025422">You can also export HDL by executing the </a><span class="Code">alt_dspbuilder_exportHDL</span> command in the MATLAB command window.</div>
+      <div class="Body"><a name="1025423">The syntax for the export HDL command is:</a></div>
+      <div class="L1_body"><span class="Bold"><a name="1025424">&lt;</a></span><span class="Emphasis" style="font-weight: normal;">exportDir_value</span><span class="Bold" style="font-style: normal;">&gt; </span><span class="Code" style="font-weight: normal;">alt_dspbuilder_exportHDL</span><span class="Bold" style="font-family: &quot;Microsoft Sans Serif&quot;;">(&lt;</span><span class="Emphasis" style="font-weight: normal;">model</span><span class="Bold" style="font-style: normal;">&gt;, &lt;</span><span class="Emphasis" style="font-weight: normal;">exportDir</span><span class="Bold" style="font-style: normal;">&gt;)</span></div>
+      <div class="Body"><a name="1025425">where:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Emphasis"><a name="1025426">model</a></span> is the name of the .<span class="Bold">mdl</span> file to export. This file is always the top-level name in the exported Quartus II project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Emphasis"><a name="1025427">exportDir</a></span> is the directory that contains the exported files. If you omit this optional argument, DSP Builder uses the default or previous export directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Emphasis"><a name="1025428">exportedDir_value</a></span> is the return string indicating the output directory containing the newly generated files.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1025429">Running this flow creates a set of source files in the export directory, including a .</a><span class="Bold">qip</span> file corresponding to the top-level of your design.</div>
+      <div class="H2_heading"><a name="1025216">Using Exported HDL</a></div>
+      <div class="Body"><a name="1025217">After the Export HDL flow completes, you can create a project using the </a><span class="Bold">New Project </span><span class="Bold">Wizard</span>, which is available on the File menu in the Quartus II software. You should enter the top-level name of the exported project and add the corresponding .<span class="Bold">qip</span> files as the single source file for the project. There may be additional .<span class="Bold">qip</span> files describing the requirements for black-box components. The top-level files sources these files automatically.</div>
+      <div class="Body"><a name="1025478">Use the </a><span class="Bold">Archive Project</span> command in the Quartus II software to archive this project. </div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1025487">When migrating designs that include MegaCore function blocks to a different </a>location, edit their corresponding .<span class="Bold">qip</span> files if they include absolute paths to library components. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1025489">Use the Export HDL flow on a Windows computer to a Linux-based computer to </a>migrate the files generated. However, this act requires adding an additional file to the project. This additional <span class="Bold">alt_dspbuilder_package.vhd</span> file is in the <span class="Bold">&lt;QUARTUS_ROOTDIR&gt;\libraries\vhdl\altera</span> directory on a Windows computer. </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

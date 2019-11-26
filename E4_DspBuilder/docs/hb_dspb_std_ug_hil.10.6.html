@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Troubleshooting HIL Designs</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_hil.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_hil.10.5.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_signaltap.11.1.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1034707">Troubleshooting HIL Designs</a></div>
+      <div class="Body"><a name="1034708">This section describes various issues that you may encounter when you are using HIL </a>designs.</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1050122">If the top-level of your design changes, compile and reload the Quartus II project into </a>HIL to ensure that all information is up-to-date.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1052025">Fails to Load the Specified Quartus II Project</a></div>
+      <div class="Body"><a name="1052026">HIL reads design information, such as clock, reset, and input and output ports, from </a>the specified Quartus II project. However, it can fail to load your project if the project is not compiled with the Quartus II Fitter, there is a Quartus II version mismatch, or the Quartus II project file is not up-to-date.</div>
+      <div class="H2_heading"><a name="1031377">No Inputs Found From the Quartus II Project</a></div>
+      <div class="Body"><a name="1031489">This issue occurs if the DSP Builder model file contains only the internally induced </a>signals, such as from a counter, and also does not produce any outputs. However, HIL simulation works correctly.</div>
+      <div class="H2_heading"><a name="1049695">No Outputs Found From the Quartus II Project</a></div>
+      <div class="Body"><a name="1049696">This issue occurs if your design does not have any outputs and makes the HIL </a>simulation meaningless.</div>
+      <div class="H2_heading"><a name="1059261">HIL Design Stays in Reset During Simulation</a></div>
+      <div class="Body"><a name="1059262">An asynchronous reset is permanently asserted for a HIL design.</a></div>
+      <div class="H4_heading"><a name="1059263">Action: </a></div>
+      <div class="Body"><a name="1035782">Check that the reset active level matches the setting in the original design. Recompile </a>the HIL design after you have changed the reset level.</div>
+      <div class="H2_heading"><a name="1035772">HIL Compilation Appears to Hang</a></div>
+      <div class="Body"><a name="1032644">After clicking </a><span class="Bold">Compile with Quartus II</span> in the HIL <span class="Bold">Block Parameters</span> dialog box, no output writes to the MATLAB command window. This issue occurs if the original Quartus II project is out-of-date or compiled by a different version of the Quartus II software.</div>
+      <div class="H2_heading"><a name="1052763">Scan JTAG Fails to Find Correct Cable or Device</a></div>
+      <div class="Body"><a name="1052773">This issue occurs if you connect the target DSP development board switch it on after </a>you open the HIL dialog box.</div>
+      <div class="N_007cPN_part_number"><a name="1005202">&nbsp;</a></div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

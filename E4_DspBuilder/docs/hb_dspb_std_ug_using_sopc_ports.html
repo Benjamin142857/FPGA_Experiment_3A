@@ -1,0 +1,2536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Using the Interfaces Library</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_using_sopc_ports.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body style="background-repeat: no-repeat; border-bottom-color: Transparent; border-left-color: Transparent; border-right-color: Transparent; border-top-color: Transparent; border-top-style: solid; border-top-width: thin; margin-bottom: -150px; margin-left: 16px; margin-top: 65px">
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_signaltap.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_blackbox.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H0_chapter"><a name="1000950">Using the Interfaces Library</a></div>
+      <div class="B0_body"><a name="1022123">This chapter describes how to use the Avalon-MM blocks in the Interfaces library to </a>create a design that functions as a custom peripheral to SOPC Builder. </div>
+      <div class="B0_body"><a name="1038874">SOPC Builder is a system development tool for creating systems that can contain </a>processors, peripherals, and memories. SOPC Builder automates the task of integrating hardware components into a larger system. </div>
+      <div class="B0_body"><a name="1038788">To integrate a DSP Builder design into your SOPC Builder system, your peripheral </a>must meet the Avalon-MM interface or Avalon-ST interface specification and qualify as a SOPC Builder-ready component. </div>
+      <div class="B0_body"><a name="1044600">The Interfaces library supports peripherals that use the Avalon-MM and Avalon-ST </a>interface specifications.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1044627">The correct version of MATLAB with DSP Builder must be available on your system </a>path to integrate DSP Builder .<span class="Bold">mdl</span> files in SOPC Builder.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1044628">Avalon-MM Interface</a></div>
+      <div class="B0_body"><a name="1022338">The </a><span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/manual/mnl_avalon_spec.pdf" target="external_window">Avalon Interface Specifications</a></span> provide peripheral designers with a basis for describing the address-based read and write interfaces on master (for example, a microprocessor or DMA controller) and slave peripherals (for example, a memory, UART, or timer).</div>
+      <div class="B0_body"><a name="1022289">The </a><span class="Code">Avalon-MM Master</span> and <span class="Code">Avalon-MM Slave</span> blocks in DSP Builder provide a seamless flow for creating a DSP Builder block as a custom peripheral and integrating the block into your SOPC Builder system. These blocks provide you the following benefits: </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1022290">Automates the process of specifying Avalon-MM ports that are compatible with </a>the Avalon-MM bus</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1022291">Supports multiple Avalon-MM master and Avalon-MM slave instantiations</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1022292">Saves time spent hand coding glue logic that connects Avalon</a>‑MM ports to DSP blocks</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1069097">For more information about SOPC Builder, </a><span class="change_bars">refer to</span> the <span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/quartus2/lit-qts-sopc.jsp" target="external_window">Quartus II Handbook Volume 4: SOPC Builder</a></span>; for more information about the Avalon-MM Interface, <span class="change_bars">refer to</span> the <span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/manual/mnl_avalon_spec.pdf" target="external_window">Avalon Interface Specifications</a></span><span class="Emphasis" style="color: #000000">.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1069099">Avalon-MM Interface Blocks</a></div>
+      <div class="B0_body"><a name="1022749">A SOPC Builder component is a design module that SOPC Builder recognizes and can </a>automatically integrate into a system. </div>
+      <div class="B0_body"><a name="1041175">SOPC Builder can recognize a DSP Builder design model if it is in the same working </a>directory as the SOPC Builder project. With the Avalon-MM blocks in the Interfaces library, you can design the DSP function and add an Avalon-MM block that makes it a custom peripheral in the Simulink environment. </div>
+      <div class="B0_body"><a name="1022768">You can instantiate each Avalon-MM block multiple times in a design to implement </a>an SOPC component with multiple master or slave ports. </div>
+      <div class="H2_heading"><a name="1022663">Avalon-MM Slave Block</a></div>
+      <div class="B0_body"><a name="1022664">The </a><span class="Code">Avalon-MM Slave</span> block supports the following signals:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1022666">clock</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1022667">address</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1022668">read</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1022669">readdata</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1022670">write</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1022671">writedata</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1022672">byteenable</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1036180">readyfordata</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1036195">dataavailable</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1036212">endofpacket</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1022676">readdatavalid</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1036239">waitrequest</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1022678">beginbursttransfer</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1036258">burst count</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1022685">irq</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1036285">begintransfer</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1036290">chipselect</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1089437">For more information about these signals, refer to the </a><span class="Link" style="font-style: italic"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_lib.pdf" target="external_window">DSP Builder Standard Blockset Libraries</a></span> section in volume 2 of the <span class="Document_title">DSP Builder Handbook</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1089583" title="Using the Interfaces Library" name="1089579">Figure&nbsp;7–1</a></span> shows a block that describes an Avalon-MM slave interface where all the Avalon-MM signals are enabled. </div>
+      <div class="TA_table_anchor"><a name="1089589">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–1.&nbsp;<span style="color: #000000; font-family: &quot;Microsoft Sans Serif&quot;; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><a name="1089583">Avalon-MM Slave Block Signals</a></span></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1089588"><img class="Default" src="images/SlaveAllPorts.jpg" width="582" height="676" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1089689">Each of the input and output ports of the block correspond to the input and output </a>ports of the pin or bus that <span class="N_007cLink"><a href="#1089583" title="Using the Interfaces Library">Figure&nbsp;7–1</a></span> shows between the ports.</div>
+      <div class="B0_body"><a name="1089693">Inputs to the DSP Builder core display as right pointing bus or pins; outputs from the </a>core display as left pointing pins or busses.</div>
+      <div class="B0_body"><a name="1089694">You can use the opposite end of any pins to provide pass-through test data from the </a>Simulink domain.</div>
+      <div class="H2_heading"><a name="1022585">Avalon-MM Master Block</a></div>
+      <div class="B0_body"><a name="1023395">You may want to use an </a><span class="Code">Avalon-MM Master</span> block (for example, to design a DMA controller) in a design that functions as an Avalon‑MM Master in your SOPC Builder system. </div>
+      <div class="B0_body"><a name="1023454">The </a><span class="Code">Avalon-MM Master</span> block is similar to the <span class="Code">Avalon-MM Slave</span> block and supports the following signals:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023397">clock</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023399">waitrequest</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023400">address</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023401">read</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023402">readdata</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023403">write</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023404">writedata</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1036361">byteenable</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1036368">endofpacket</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023407">readdatavalid</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023408">flush</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023410">burstcount</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1023613">irq</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="Code"><a name="1050239">irqnumber</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1089722">For more information about these signals, refer to the </a><span class="Link" style="font-style: italic"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_lib.pdf" target="external_window">DSP Builder Standard Blockset Libraries</a></span> section in volume 2 of the <span class="Document_title">DSP Builder Handbook</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1089774" title="Using the Interfaces Library" name="1089770">Figure&nbsp;7–2 on page&nbsp;7–5</a></span> shows a block that describes an Avalon-MM master interface where all the Avalon-MM signals are enabled.</div>
+      <div class="TA_table_anchor"><a name="1089780">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–2.&nbsp;<a name="1089774">Avalon-MM Master Block Signals</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1089779"><img class="Default" src="images/MasterAllPorts.jpg" width="573" height="524" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1023964">Wrapped Blocks</a></div>
+      <div class="B0_body"><a name="1023965">The </a><span class="Code">Avalon-MM Master</span> and <span class="Code">Avalon-MM Slave</span> interface blocks allow you to generate a SOPC Builder component in DSP Builder, but they do little to mask the complexities of the interface. The Avalon-MM read and write FIFO blocks in the Interfaces library provide a higher level of abstraction.</div>
+      <div class="B0_body"><a name="1023968">You can implement a typical DSP core that handles data in a streaming manner, with </a>the signals <span class="Code">Data</span>, <span class="Code">Valid,</span> and <span class="Code">Ready</span>. To provide a high level view, DSP Builder provides you with configurable <span class="Code">Avalon-MM Write FIFO</span> and <span class="Code">Avalon-MM Read FIFO</span> blocks for you to map Avalon-MM interface signals to this protocol.</div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1055371" title="Using the Interfaces Library" name="1023970">Figure&nbsp;7–3</a></span> shows an example system with <span class="Code">Avalon-MM Write FIFO</span> and <span class="Code">Avalon-MM </span><span class="Code">Read FIFO</span> blocks.</div>
+      <div class="TA_table_anchor"><a name="1055356">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–3.&nbsp;<a name="1055371">Example System with Avalon-MM Write FIFO and Avalon-MM Read FIFO Blocks</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1055373"><img class="Default" src="images/FIFO_system.jpg" width="601" height="219" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H3_heading"><a name="1033059">Avalon-MM Write FIFO</a></div>
+      <div class="B0_body"><a name="1069326">An </a><span class="Code">Avalon-MM Write FIFO</span> has the following ports:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1069336">TestData</a></span> (input). Connect this port to a Simulink block that provides simulation data to the Avalon-MM Write FIFO. The data passes to the <span class="Code">DataOut</span> port one cycle after the <span class="Code">Ready</span> input port asserts.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1069337">Stall</a></span> (input). Connect this port to a Simulink block. It simulates stall conditions of the Avalon-MM bus and hence underflow to the SOPC Builder component. For any simulation cycle where <span class="Code">Stall</span> asserts, the Avalon-MM Write Test Converter caches the test data and releases in order, one sample per clock, when stall is de-asserted.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1069272">Ready</a></span> (input). Connect this port to a DSP Builder block. It indicates that the downstream hardware is ready for data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1069247">DataOut</a></span> (output). Connect this port to a DSP Builder block that corresponds to the oldest unsent data sample received on the <span class="Code">TestData</span> port.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1033030">DataValid</a></span> (output). Connect this port to a DSP Builder block and assert whenever <span class="Code">DataOut</span> corresponds to real data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1036759">Double-click on an </a><span class="Code">Avalon-MM Write FIFO</span> block to open the <span class="Bold">Block Parameters</span> dialog box so that you can set parameters for the data type, data width and FIFO depth.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1036911">To open the hierarchy below the </a><span class="Code">Avalon-MM Write FIFO</span> block, right-click the block and click <span class="Bold">Look Under Mask</span> on the pop-up menu.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1043746">You can use this design as a template to design new functionality (for example, when </a>you use an Avalon-MM address input to split incoming streams). </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1064793" title="Using the Interfaces Library" name="1036619">Figure&nbsp;7–4</a></span> shows the internal content of an Avalon-MM Write FIFO buffer. </div>
+      <div class="TA_table_anchor"><a name="1064799">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–4.&nbsp;<a name="1064793">Avalon-MM Write FIFO Content</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1064798"><img class="Default" src="images/AvalonWriteFIFOContent.jpg" width="622" height="246" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1064800">The </a><span class="Code">Avalon-MM Write Test Converter</span> block handles caching and conversion of Simulink or MATLAB data into accesses over the Avalon-MM interface. You can use this block to test the functionality of your design. The <span class="Code">Avalon-MM Write Test </span><span class="Code">Converter</span> is simulation only and does not synthesize to HDL.</div>
+      <div class="H3_heading"><a name="1033063">Avalon-MM Read FIFO Buffer</a></div>
+      <div class="B0_body"><a name="1024540">An </a><span class="Code">Avalon-MM read FIFO</span> buffer has the following ports:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1024553">Stall</a></span> (input). Connect this port to a Simulink block. It simulates stall conditions of the Avalon-MM bus and hence backpressure to the SOPC Builder component. For any simulation cycle where <span class="Code">Stall</span> asserts, no Avalon-MM reads take place and the internal FIFO buffer fills. When full, the <span class="Code">Ready</span> output is de-asserted so that you lose no data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1024554">Data</a></span> (input). Connect this port to a DSP Builder block and to outgoing data from the user design.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1024555">DataValid</a></span> (input). Connect this port to a DSP Builder block and assert whenever the signal on the <span class="Code">Data</span> port corresponds to real data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1024556">TestDataOut</a></span> (output). Connect this port to a Simulink block that corresponds to data received over the Avalon-MM bus.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1024557">TestDataValid</a></span> (output). Connect this port to a Simulink block and assert whenever <span class="Code">TestDataOut</span> corresponds to real data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1032881">Ready</a></span> (output). When asserted, indicates that the block is ready to receive data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1036906">Double-clicking on an </a><span class="Code">Avalon-MM Write FIFO</span> block opens the <span class="Bold">Block Parameters</span> dialog box that you can use to set parameters for the data type, data width and FIFO depth.</div>
+      <div class="B0_body"><a name="1089311">You can open the hierarchy below the </a><span class="Code">Avalon-MM Read FIFO</span> block by right-clicking on the block and choosing <span class="Bold">Look Under Mask</span> from the pop-up menu. </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1056284" title="Using the Interfaces Library" name="1089312">Figure&nbsp;7–5</a></span> shows the internal content of an Avalon-MM Read FIFO. </div>
+      <div class="TA_table_anchor"><a name="1056261">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–5.&nbsp;<a name="1056284">Avalon-MM Read FIFO Content</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1056286"><img class="Default" src="images/AvalonReadFIFOContent.jpg" width="596" height="283" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1036897">The </a><span class="Code">Avalon-MM Read Data Converter</span> block handles caching and conversion of Simulink or MATLAB data into accesses over the Avalon-MM interface. You can use this block to test the functionality of your design. The <span class="Code">Avalon-MM Read Data </span><span class="Code">Converter</span> is simulation only and does not synthesize to HDL.</div>
+      <div class="H1_heading"><a name="1029226">Avalon-MM Interface Blocks Design Example</a></div>
+      <div class="B0_body"><a name="1012555">This tutorial describes how to interface a design using the Avalon-MM Blocks as a </a>custom peripheral to the Nios&nbsp;II embedded processor in SOPC Builder. </div>
+      <div class="B0_body"><a name="1041360">The design consists of a 4-tap FIR filter with variable coefficients. You load the </a>coefficients with the Nios II embedded processor while an off-chip source supplies the input data through an analog-to-digital converter. The design sends filtered output data off-chip through a digital-to-analog converter.</div>
+      <div class="H2_heading"><a name="1012571">Adding Avalon-MM Blocks to the Design Example</a></div>
+      <div class="B0_body"><a name="1012572">To complete the design example, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1012573">Click </a><span class="Bold">Open</span> on the File menu in the MATLAB software.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1012574">Browse to the </a><span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">DSP Builder install path</span><span class="Bold" style="font-style: italic">&gt;</span><span class="Bold" style="font-style: normal">\DesignExamples\Tutorials\ </span><span class="Bold" style="font-style: normal">SOPCBuilder\SOPCBlock </span>directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1012575">Select the </a><span class="Bold">new_topavalon.mdl</span> file and click <span class="Bold">Open</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><span class="N_007cLink"><a href="#1056503" title="Using the Interfaces Library" name="1012991">Figure&nbsp;7–6</a></span> shows <span class="Bold">new_topavalon.mdl</span>.</div>
+      <div class="TA_table_anchor"><a name="1056488">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–6.&nbsp;<a name="1056503">new_topavalon.mdl Design Example</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1056505"><img class="Default" src="images/NewTopAvalon.jpg" width="621" height="450" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025109">Rename the file by clicking </a><span class="Bold">Save As</span> on the File menu. Create a new folder <span class="Bold">MySystem</span> and save your new MDL file as <span class="Bold">topavalon.mdl</span> in this folder.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025113">Open the Simulink Library Browser. Expand the </a><span class="Bold">Altera DSP Builder Blockset </span>and select <span class="Bold">Avalon Memory-Mapped</span> in the <span class="Bold">Interfaces</span> library.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1043959">Drag and drop an </a><span class="Code">Avalon-MM Slave</span> block into the top left of your model. Change the block name to <span class="Code">Avalon_MM_Write_Slave</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">7.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1018573">Double-click on the </a><span class="Code">Avalon_MM_Write_Slave</span> block to bring up the <span class="Bold">Block </span><span class="Bold">Parameters</span> dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">8.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025631">Select </a><span class="Bold">Write</span> for the address type, <span class="Bold">Signed Integer</span> for the data type, and specify <span class="Code">8</span> bits for the data width. Turn off the <span class="Bold">Allow Byte Enable</span> option. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">9.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1065217">Click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><a name="1065214">The </a><span class="Code">Avalon_MM_Write_Slave</span> block redraws with three ports: <span class="Code">Address i1:0</span>, <span class="Code">Write</span> <span class="Code">ibit</span>, and <span class="Code">Write Data i7:0</span>.</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">10.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025258">Connect the ports (</a><span class="N_007cLink"><a href="#1056844" title="Using the Interfaces Library">Figure&nbsp;7–7</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1043997">You can re-size a block by dragging the resize handles at each corner.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1056829">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–7.&nbsp;<a name="1056844">topavalon.mdl Design Example</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1056846"><img class="Default" src="images/TopAvalon.jpg" width="609" height="376" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">11.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1065390">Drag and drop another </a><span class="Code">Avalon-MM Slave</span> block into the top right of your model and change the name of this block instance to <span class="Code">Avalon_MM_Read_Slave.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">12.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1065391">Double-click on the </a><span class="Code">Avalon_MM_Read_Slave</span> block to bring up the <span class="Bold">Block </span><span class="Bold">Parameters</span> dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">13.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1065392">Select </a><span class="Bold">Read </span>for the address type, <span class="Code">Signed Integer</span> for the data type, and specify <span class="Code">8</span> bits for the data width. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">14.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1065393">Click </a><span class="Bold">OK </span>and<span class="Bold"> </span>notice that the <span class="Code">Avalon_MM_Read_Slave</span> block redraws with three ports: <span class="Code">Address i1:0</span>, <span class="Code">Read ibit</span>, and <span class="Code">Read Data o7:0</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">15.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1065394">Complete your design by connecting the </a><span class="Code">Avalon_MM_Read_Slave</span> ports (<span class="N_007cLink"><a href="#1056844" title="Using the Interfaces Library">Figure&nbsp;7–7</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AR1_reference_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR1_reference_inner" style="width: 30pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR1_reference_inner"><a name="1090766">The default design example uses the Stratix II EP2S60 DSP Development </a>Board. If you have a different board (such as the Cyclone II EP2C35 Development Board), you must replace the board block and analog-to-digital converter blocks by corresponding blocks for the appropriate board. For more information, refer to the <span class="Document_title">Boards Library</span> chapter in the <span class="Link" style="font-style: italic"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_lib.pdf" target="external_window">DSP Builder Standard Blockset Libraries</a></span> section in volume 2 of the <span class="Document_title">DSP </span><span class="Document_title">Builder Handbook</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">16.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1065330">Add oscilloscope probes to monitor the signals on the DSP development board.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">17.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1074913">Click </a><span class="Bold">Save</span> on the File menu in your model window to save your model. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">18.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1075204">Run a simulation and observe the results on the oscilloscope probes. Coefficient </a>values 1 0 0 0 load into the filter.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1026869">Verifying the Design</a></div>
+      <div class="B0_body"><a name="1041670">Before using your design in SOPC Builder, use the </a><span class="Code">TestBench</span> block to verify your design. To verify your design, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1012589">Double-click the </a><span class="Code">TestBench</span> block to display the <span class="Bold">TestBench Generator </span>dialog box (<span class="N_007cLink"><a href="#1056914" title="Using the Interfaces Library">Figure&nbsp;7–8</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1056907">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–8.&nbsp;<a name="1056914">TestBench Dialog Box</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1056916"><img class="Default" src="images/DlgTestBench.jpg" width="424" height="509" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1090894">Click </a><span class="Bold">Compare against HDL</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><a name="1090981">This process generates HDL, runs Simulink and ModelSim, and then compares the </a>simulation results. Progress messages issue in the dialog box and completes with a message “<span class="Code">Exact Match</span>”.</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1090870">Click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1079056">Running Signal Compiler</a></div>
+      <div class="B0_body"><a name="1079057">To generate all the hardware and files required by the Quartus II software, follow </a>these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1079058">Double-click on the </a><span class="Code">Signal Compiler</span> block to display the <span class="Bold">Signal Compiler</span> dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1079062">Verify that the </a><span class="Bold">Device</span> is set to match your target development kit and click <span class="Bold">Compile</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1079073">When the compilation has completed successfully, click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1012613">Instantiating the Design in SOPC Builder</a></div>
+      <div class="B0_body"><a name="1012614">To instantiate your design as a custom peripheral to the Nios</a>&nbsp;II embedded processor in SOPC Builder, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1012615">Start the Quartus</a><span class="Superscript">®</span>&nbsp;II software.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1026443">On the File menu in the Quartus</a>&nbsp;II software, click <span class="Bold">New Project Wizard</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1012616">Specify the working directory for your project by browsing to </a><span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">DSP Builder </span><span class="Emphasis" style="font-weight: normal">install path</span><span class="Bold" style="font-style: italic">&gt;</span><span class="Bold" style="font-style: normal">\DesignExamples\Tutorials\SOPCBuilder\SOPCBlock\ </span><span class="Bold" style="font-style: normal">MySystem</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1042083">Specify a name for your project. This tutorial uses </a><span class="Code">SOPC</span><span class="Bold" style="font-family: &quot;Microsoft Sans Serif&quot;"> </span>for the project name.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1042081">The Quartus II software automatically specifies a top-level design entity </a>that has the same name as the project. This tutorial assumes that the names are the same. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1042121">Click </a><span class="Bold">Next</span> in the <span class="Bold">New Project Wizard</span>, until you get to the <span class="Bold">Family and Device </span><span class="Bold">Settings</span> page. Verify that the selected device matches the FPGA on your DSP development board (if applicable).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">d.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1075645">Click </a><span class="Bold">Finish </span>to create the Quartus II project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1012618">On the Tools menu, click </a><span class="Bold">Tcl Scripts</span> and follow these steps: </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1065834">Select </a><span class="Bold">topavalon_add.tcl</span> in the Project folder.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1065862">Click </a><span class="Bold">Run</span> to load your .<span class="Bold">mdl</span> file and other required files into the Quartus II project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1042135">On the Tools menu, click </a><span class="Bold">SOPC Builder</span> and set the following parameters in the <span class="Bold">Create New System</span> dialog box:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1065599">Specify </a><span class="Code">SOPC</span> as the system name.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1065611">Select </a><span class="Bold">VHDL</span> for the target HDL.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1065616">Click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1044301">Click the </a><span class="Bold">System Contents</span> tab in SOPC Builder and set the following options:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1065863">Expand </a><span class="Bold">Memories and Memory Controllers</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066226">Expand </a><span class="Bold">On-Chip</span> and double-click <span class="Bold">On-Chip Memory (RAM or ROM)</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1075693">Specify </a><span class="Bold">30 KBytes</span> for the <span class="Bold">Total Memory</span> <span class="Bold">size</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">d.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1065869">Click </a><span class="Bold">Finish</span> to add an on-chip RAM device to the system.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">e.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1044739">Double-click </a><span class="Bold">Nios II Processor</span> in the <span class="Bold">System Contents</span> tab to display the MegaWizard interface.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">f.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1065903">Set the reset and exception vectors to use </a><span class="Bold">onchip_mem</span> and click <span class="Bold">Finish</span> to add the processor to your system with all other parameters set to their default values.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">g.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1075990">Expand </a><span class="Bold">Peripherals</span> and <span class="Bold">Debug and Performance</span>. Double-click on <span class="Bold">System ID </span><span class="Bold">Peripheral</span> and click <span class="Bold">Finish</span> to accept the default settings.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">h.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1075974">Expand </a><span class="Bold">Interface Protocols</span> and <span class="Bold">Serial</span>. Double-click on <span class="Bold">JTAG UART</span> and click <span class="Bold">Finish</span> to accept the default settings.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">i.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1065888">Expand </a><span class="Bold">DSPBuilder Systems</span> and double-click the <span class="Bold">topavalon_interface</span> module to include it in your Nios&nbsp;II system (<span class="N_007cLink"><a href="#1057463" title="Using the Interfaces Library">Figure&nbsp;7–9</a></span>). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1057448">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–9.&nbsp;<a name="1057463">Including Your DSP</a>&nbsp;Builder Design Module in SOPC Builder</div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1057465"><img class="Default" src="images/incl-dspb-sopc.jpg" width="615" height="418" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1044350">If the memory device, Nios II processor, debug peripheral, interface </a>protocol, and DSP Builder system add in this order, you should not need to set a base address. However, you can click <span class="Bold">Auto-Assign Base Addresses</span> on the System menu to automatically add a base address if necessary.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1044348">Click </a><span class="Bold">Generate</span> to generate the SOPC Builder system. The system generation may take several minutes.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1076508">After the system generation in SOPC Builder completes, you can design the rest of </a>your Nios&nbsp;II embedded processor system using the standard Nios&nbsp;II embedded processor design flow. Continue with this tutorial to exercise the system from software using the Nios II processor.</div>
+      <div class="H2_heading"><a name="1076295">Compiling the Quartus II Project</a></div>
+      <div class="B0_body"><a name="1076442">To compile the Quartus II project, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1076523">On the Assignments menu in the Quartus II software, click </a><span class="Bold">Device</span> to display the Device page of the Settings dialog box and create the basic pin settings as follows:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1076521">In the </a><span class="Bold">Settings</span> dialog box, click <span class="Bold">Device and Pin Options</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1076547">In the </a><span class="Bold">Device and Pin Options</span> dialog box, click the <span class="Bold">Unused Pins</span> tab, select <span class="Bold">As </span><span class="Bold">input tri-stated</span> and click <span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1076587">Click </a><span class="Bold">OK</span> to close the <span class="Bold">Settings</span> dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1076579">On the Assignments menu, click </a><span class="Bold">Pins</span> to open the <span class="Bold">Pin Planner</span> and make pin assignments for <span class="Code">clk</span> and <span class="Code">reset_n</span> (<span class="N_007cLink"><a href="#1076615" title="Using the Interfaces Library">Table&nbsp;7–1</a></span>) (depending on which development board you are using).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1080393">If the </a><span class="Bold">Location</span> column does not display, right-click in the pin assignments table and click <span class="Bold">Customize Columns</span> to change the table display.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><a name="1076714">You can ignore all other pin assignments for this tutorial.</a></div>
+      <div class="TA_table_anchor"><a name="1076609">&nbsp;</a></div>
+      <table class="Table" style="text-align: left; width: 373.41089999999997pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">Table&nbsp;7–1.&nbsp;<a name="1076615">Pin Assignments for the Stratix II and Cyclone II Development Boards</a></div>
+        </caption>
+        <tr>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 93.4109pt">
+            <div class="THL_heading_left"><a name="1076619">Node Name</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 140.0pt">
+            <div class="THL_heading_left"><a name="1076621">Direction</a></div>
+          </td>
+          <td style="background-color: Transparent; border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle; width: 140.0pt">
+            <div class="THL_heading_left"><a name="1076652">Location</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1.5pt; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle" colspan="3">
+            <div class="THL_heading_left"><a name="1076623">Stratix II EP2S60 or EP2S60ES DSP Development Board</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076627">clk</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076629">Input</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076656">PIN_AM17</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076631">reset_n</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076633">Input</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076658">PIN_AG19</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle" colspan="3">
+            <div class="THL_heading_left"><a name="1076635">Cyclone II EP2C35 DSP Development Board</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076692">clk</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076696">Input</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076662">PIN_N2</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076694">reset_n</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076698">Input</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: middle">
+            <div class="TBL_body_left"><a name="1076664">PIN_A14</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1076604">Close the </a><span class="Bold">Pin Planner</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1076605">On the Processing menu, click </a><span class="Bold">Start Compilation</span> to compile the Quartus II project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1076757">When the compilation completes, click </a><span class="Bold">Programmer</span> on the Tools menu and click <span class="Bold">Start</span> in the <span class="Bold">Quartus II Programmer</span> to program the FPGA device on your development board.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1076765">Close the </a><span class="Bold">Quartus II Programmer</span> window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1076780">Testing the DSP Builder Block from Software</a></div>
+      <div class="B0_body"><a name="1076784">Altera provides a C program that loads a set of four coefficient into the filter, reads </a>them back, and then repeats the process. To use this program, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1076790">On the Nios II menu in SOPC Builder, click </a><span class="Bold">Nios II IDE</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1076797">Create a new Nios II C/C++ application as follows:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1076802">On the File menu in the Nios II IDE, point to </a><span class="Bold">New</span> and click <span class="Bold">Project</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><span class="Bold"><a name="1079292">Nios II C/C++ Application</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1076815">In the </a><span class="Bold">New Project</span> wizard, select <span class="Bold">Nios II C/C++ Application</span> and click <span class="Bold">Next</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">d.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1079296">Type </a><span class="Code">test_DSP_Block</span> for the <span class="Bold">Name</span> of the project and select the <span class="Bold">Blank Project</span> template.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">e.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1076840">Turn on </a><span class="Bold">Specify Location</span> and browse to the directory <span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">DSP Builder install </span><span class="Emphasis" style="font-weight: normal">path</span><span class="Bold" style="font-style: italic">&gt;</span><span class="Bold" style="font-style: normal">\DesignExamples\Tutorials\SOPCBuilder\SOPCBlock\MySystem</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">f.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1079450">Click on </a><span class="Bold">Make a New Folder</span> and create a <span class="Bold">software</span> subdirectory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">g.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1079457">Click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">h.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1079476">Browse to the System PTF file </a><span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">DSP Builder install path</span><span class="Bold" style="font-style: italic">&gt;</span><span class="Bold" style="font-style: normal">\DesignExamples\ </span><span class="Bold" style="font-style: normal">Tutorials\SOPCBuilder\SOPCBlock\MySystem\SOPC.ptf</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">i.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1079432">Click </a><span class="Bold">Finish</span> in the <span class="Bold">New Project</span> wizard.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">j.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1079469">Verify that the application project </a><span class="Code">test_DSP_Block</span> appears in the <span class="Bold">Nios II </span><span class="Bold">C/C++ Projects</span> list.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1076798">Add the test software to the new project as follows:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1077084">Locate the file </a><span class="Bold">test_DSP_Block.c</span> in your file system. (<span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">DSP Builder install </span><span class="Emphasis" style="font-weight: normal">path</span><span class="Bold" style="font-style: normal">&gt;\DesignExamples\Tutorials\SOPCBuilder\SOPCBlock\</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1077100">Right-click on the </a><span class="Bold">test_DSP_Block.c</span> file and click <span class="Bold">Copy</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1077108">Select the </a><span class="Bold">test_DSP_Block</span> project folder in the <span class="Bold">Nios II IDE</span> and paste the <span class="Bold">test_DSP_Block.c</span> file into the project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1077124">Set some of the reduced code footprint options in the Nios II IDE as follows:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1077125">Right-click on the Nios II IDE application project, </a><span class="Bold">test_DSP_Block</span>, and click <span class="Bold">Properties</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1077230">In the </a><span class="Bold">Properties</span> dialog box click <span class="Bold">System Library</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1077245">Turn on </a><span class="Bold">Reduced device drivers</span> and <span class="Bold">Small C library</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">d.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1077127">Turn off </a><span class="Bold">Support C++</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">e.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1077268">Click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1077119">Run the test_DSP_Block software project in the Nios II IDE by right-clicking on </a><span class="Bold">test_DSP_Block</span> and clicking <span class="Bold">Run As Nios II Hardware</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B1_body"><a name="1077317">The project compiles and the application code runs on the development board. </a>Observe the following results in the <span class="Bold">Nios II IDE Console</span>:</div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1077326">LOADING...</a></span></div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1077328">Coefficient 1 = 1</a></span></div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1077329">Coefficient 2 = 0</a></span></div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1077330">Coefficient 3 = 0</a></span></div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1077331">Coefficient 4 = 0</a></span></div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1077333">RELOADING...</a></span></div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1077335">Coefficient 1 = 0</a></span></div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1077336">Coefficient 2 = 0</a></span></div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1077337">Coefficient 3 = 1</a></span></div>
+      <div class="C1_code" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><span class="Code"><a name="1077338">Coefficient 4 = 0</a></span></div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1026323">For information about using SOPC Builder to create a custom Nios</a>&nbsp;II embedded processor, refer to <span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/an/an351.pdf" target="external_window">AN 351: Simulating Nios II Embedded Processor Designs</a></span><span class="Document_title" style="color: #000000">.</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1044896">Completed versions of the </a><span class="Bold">topavalon.mdl</span> design for the Cyclone II EP2C35 and Stratix II EP2S60 DSP development boards are available in the <span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">DSP Builder install </span><span class="Emphasis" style="font-weight: normal">path</span><span class="Bold" style="font-style: italic">&gt;</span><span class="Bold" style="font-style: normal">\DesignExamples\Tutorials\SOPCBuilder\SOPCBlock\Finished Examples </span>directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1029956">Avalon-MM FIFO Design Example</a></div>
+      <div class="B0_body"><a name="1029957">This tutorial describes how to interface a design built using the </a><span class="Code">Avalon-MM FIFO</span> block as a custom peripheral to the Nios<span class="Superscript">®</span>&nbsp;II embedded processor in SOPC Builder. </div>
+      <div class="B0_body"><a name="1030329">The design consists of a Prewitt edge detector with one Avalon-MM write FIFO buffer </a>and one Avalon-MM read FIFO buffer. The design uses an additional slave port as a control port. </div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1030221">For a full description of the Prewitt edge detector design, refer to </a><span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/an/an364.pdf" target="external_window">AN364: Edge Detection Reference Design</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1030222">For this hardware implementation, DSP Builder stores the image in the compact flash </a>and loads it in DMA with a Nios II embedded processor. DSP Builder outputs the edge detected image through a VGA controller. The DSP Builder model uses Simulink to read in the original image and to capture the edge detected result.</div>
+      <div class="H2_heading"><a name="1029973">Opening the Design Example</a></div>
+      <div class="B0_body"><a name="1029974">To open the design example, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029975">Click </a><span class="Bold">Open</span> on the File menu in the MATLAB software.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029976">Browse to the </a><span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">DSP Builder install path</span><span class="Bold" style="font-style: italic">&gt;</span><span class="Bold" style="font-style: normal">\DesignExamples\Tutorials\ </span><span class="Bold" style="font-style: normal">SOPCBuilder\AvalonFIFO</span> directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029977">Select the </a><span class="Bold">sopc_edge_detector.mdl</span> file and click <span class="Bold">Open</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1057731" title="Using the Interfaces Library" name="1029981">Figure&nbsp;7–10</a></span> shows <span class="Bold">sopc_edge_detector.mdl</span>.</div>
+      <div class="TA_table_anchor"><a name="1057723">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–10.&nbsp;<a name="1057731">sopc_edge_detector.mdl Design Example</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1057733"><img class="Default" src="images/AvalonFIFOExample.jpg" width="604" height="213" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1029989">Compiling the Design</a></div>
+      <div class="B0_body"><a name="1070366">In this example, you use the </a><span class="Code">Signal Compiler</span> block to verify that your design generates valid HDL.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1070556">Alternatively, use the </a><span class="Code">TestBench</span> block (<span class="N_007cLink"><a href="#1029226" title="Using the Interfaces Library">“Avalon-MM Interface Blocks Design Example”</a></span> in <span class="N_007cLink"><a href="#1026869" title="Using the Interfaces Library">“Verifying the Design” on page&nbsp;7–11</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1070561">To verify your design, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1070562">Double-click the </a><span class="Code">Signal Compiler</span> block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045170">Select the family and device for the DSP Development board you are using. The </a>design example is configured for a Stratix 1S25 board (<span class="N_007cLink"><a href="#1057815" title="Using the Interfaces Library">Figure&nbsp;7–11</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1071121">Click </a><span class="Bold">Compile</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TA_table_anchor"><a name="1057808">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–11.&nbsp;<a name="1057815">Signal Compiler Dialog Box</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1057817"><img class="Default" src="images/DlgSignalCompilerSopcEdge.jpg" width="424" height="594" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029999">When the compilation completes successfully, click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1030439">The Avalon-MM read and write converter is simulation only and does not synthesize </a>to HDL.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1030441">Instantiating the Design in SOPC Builder</a></div>
+      <div class="B0_body"><a name="1030004">To instantiate your design as a custom peripheral to the Nios II embedded processor </a>in SOPC Builder, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030005">Start the Quartus</a>&nbsp;II software. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1042857">On the File menu in the Quartus</a>&nbsp;II software, click <span class="Bold">New Project Wizard</span> and set the following options:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1042858">Specify the working directory for your project by browsing to </a><span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">DSP Builder </span><span class="Emphasis" style="font-weight: normal">install path</span><span class="Bold" style="font-style: italic">&gt;</span><span class="Bold" style="font-style: normal">\DesignExamples\Tutorials\SOPCBuilder\AvalonFIFO</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1042859">Specify a name for your project. This tutorial uses </a><span class="Code">FIFO </span>for the project name.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1042860">The Quartus II software automatically specifies a top-level design entity </a>that has the same name as the project. This tutorial assumes that the names are the same. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1042861">Click </a><span class="Bold">Finish </span>to create the Quartus II project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1042862">On the Tools menu, click </a><span class="Bold">Tcl Scripts</span> and set the following options:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066116">Load your design by selecting </a><span class="Bold">sopc_edge_detector_add.tcl</span> in the Project folder.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066136">Click </a><span class="Bold">Run</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045289">On the Tools menu, click </a><span class="Bold">SOPC Builder</span> to display the <span class="Bold">Create New System</span> dialog box. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066147">Specify </a><span class="Code">AvalonFIFO</span><span class="Bold" style="font-family: &quot;Microsoft Sans Serif&quot;"> </span>as the system name.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066151">Select </a><span class="Bold">VHDL</span> for the target HDL.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066152">Click </a><span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045336">Click the </a><span class="Bold">System Contents</span> tab in SOPC Builder and set the following options:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066189">Expand </a><span class="Bold">Memories and Memory Controllers</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066233">Expand </a><span class="Bold">On-Chip</span> and double-click <span class="Bold">On Chip Memory (RAM or ROM)</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">c.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1066212">Click </a><span class="Bold">Finish</span> to add an on-chip RAM device with default parameters.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045337">Double-click the </a><span class="Bold">Nios II Processor</span><span class="Code" style="font-weight: normal"> </span>module in the <span class="Bold">System Contents</span> tab to display the MegaWizard interface. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">7.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045321">Set the reset and exception vectors to use </a><span class="Bold">onchip_memory2_0</span> and click <span class="Bold">Finish</span> to add the processor to your system with all other parameters set to their default values.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">8.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1045356">Expand </a><span class="Bold">DSPBuilder Systems</span> in the <span class="Bold">System Contents</span> tab and double-click the <span class="Bold">sopc_edge_detector_interface</span> module to include it in your Nios&nbsp;II system.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1030024">You can now design the rest of your NIOS embedded processor with the standard </a>SOPC Builder design flow.</div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1074061">For more detailed instructions, refer to </a><span class="N_007cLink"><a href="#1012613" title="Using the Interfaces Library">“Instantiating the Design in SOPC Builder” on page&nbsp;7–12</a></span> in the <span class="N_007cLink"><a href="#1029226" title="Using the Interfaces Library">“Avalon-MM Interface Blocks Design Example”</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1049700">Avalon-ST Interface</a></div>
+      <div class="B0_body"><a name="1070811">All DSP MegaCore</a><span class="Superscript"> </span>functions in the DSP Builder MegaCore Functions library have interfaces that comply with the <span class="Link" style="font-style: italic"><a href="http://www.altera.com/literature/manual/mnl_avalon_spec.pdf" target="external_window">Avalon Interface Specifications</a></span>. You can combine multiple MegaCore functions easily because they use a common interface. This section summarizes the features of the Avalon-ST interface.</div>
+      <div class="B0_body"><a name="1049719">The </a><span class="Link" style="font-style: italic"><a href="http://www.altera.com/literature/manual/mnl_avalon_spec.pdf" target="external_window">Avalon Interface Specifications</a></span> define how to convey data between a source interface and a sink interface. The interface indicates the integrity of the data by a feed forward signal, <span class="Code">valid</span>. The specification also defines how the MegaCore functions may stall other blocks (backpressure) or regulate the rate at which you provide data with a feedback sideband signal, <span class="Code">ready</span>. </div>
+      <div class="B0_body"><a name="1049720">You can configure the DSP Builder </a><span class="Code">Avalon-ST Source</span> and <span class="Code">Avalon-ST Sink</span> blocks with a ready&nbsp;latency of 0 or 1. The ready latency is the number of cycles that a source must wait after a sink asserts ready so that a data transfer is possible. The source interface provides valid data at the earliest time possible, and it holds that data until sink asserts ready. The <span class="Code">ready</span> signal notifies the source interface that it has sampled the data on that clock cycle.</div>
+      <div class="B0_body"><a name="1049874">For the </a><span class="Emphasis">ready_latency</span> = 0 mode, <span class="N_007cLink"><a href="#1058363" title="Using the Interfaces Library">Figure&nbsp;7–12</a></span> shows the interaction that occurs between the source interface <span class="Code">valid</span> signal and the sink interface <span class="Code">ready</span> signal. </div>
+      <div class="TA_table_anchor"><a name="1058348">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–12.&nbsp;<a name="1058363">Avalon-ST Interface Timing for ready-latency=0</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1058365"><img class="Default" src="images/AvalonST_timing.jpg" width="447" height="197" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1049882">On cycle one, the source provides data and asserts </a><span class="Code">valid</span> even though the sink is not <span class="Code">ready</span>. The source waits until cycle two and the sink acknowledges that it samples the data by asserting <span class="Code">ready</span>. On cycle three, the source happens to provide data on the same cycle that the sink is ready to receive it and so the transfer occurs immediately. On the fourth cycle, the sink is ready but because the source does not provide any valid data, the data bus is not sampled.</div>
+      <div class="B0_body"><a name="1049972">A beat is the transfer of one unit of data between a source and sink interface. This unit </a>of data may consist of one or more symbols, so it can support modules that convey more than one piece of information on each valid cycle. Some modules have parallel input interfaces and other instances require serial input interfaces. For example, when conveying an in-phase and quadrature component on the same clock cycle. The choice depends on the algorithm, optimization technique, and throughput requirements. </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1058457" title="Using the Interfaces Library" name="1049983">Figure&nbsp;7–13</a></span> gives an example of a data transfer where two symbols are conveyed on each beat—an in phase symbol I and a quadrature symbol Q. In this example, each symbol is eight bits wide.</div>
+      <div class="TA_table_anchor"><a name="1058447">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 377.0001pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–13.&nbsp;<a name="1058457">Packetized Data Transfer</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 377.0001pt">
+            <div class="N_007cFA_frame_anchor"><a name="1058459"><img class="Default" src="images/AvalonST_packetized_data.jpg" width="432" height="237" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1050029">The </a><span class="Link" style="font-style: italic"><a href="http://www.altera.com/literature/manual/mnl_avalon_spec.pdf" target="external_window">Avalon Interface Specifications</a></span> also describe several mechanisms to support the transfer of data associated with multiple channels. Altera recommends that you achieve this mechanism with packet based transfers where each packet has a deterministic format and each channel is allocated a specific field (time slot in a packet). </div>
+      <div class="B0_body"><a name="1050100">Packet transfers require two additional signals that mark the start and the end of the </a>packet. The MegaCore functions have internal counters that count the samples in a packet so they know which channel a particular sample is associated with and synchronize appropriately with the start and end of packet signals. In <span class="N_007cLink"><a href="#1058457" title="Using the Interfaces Library">Figure&nbsp;7–13</a></span>, the in phase and quadrature components associated with three different channels convey between two MegaCore functions.</div>
+      <div class="H2_heading"><a name="1050111">Avalon-ST Packet Formats</a></div>
+      <div class="B0_body"><a name="1050112">You can allocate the data associated with each channel a field in a packet. To describe </a>the relationship between the input and the output interfaces of a MegaCore function, you must define the packets associated with each interface. </div>
+      <div class="B0_body"><a name="1050149">Two parameters describe the basic format of a packet: </a><span class="Code">SymbolsPerBeat</span>, and <span class="Code">PacketDescription</span>. The <span class="Code">SymbolsPerBeat</span> parameter defines the number of symbols that DSP Builder presents in parallel on every valid cycle. The <span class="Code">PacketDescription</span> is a string description of the fields in the packet.</div>
+      <div class="B0_body"><a name="1050113">A basic </a><span class="Code">PacketDescription</span> is a comma-separated list of field names, where a field name starts with a letter and may include the characters <span class="Code">a-zA-Z0-9_</span>. Typical field names include <span class="Code">Channel1</span>, <span class="Code">Channel2</span>, and <span class="Code">Q</span>. Field names are case sensitive and white space is not permitted.</div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1058522" title="Using the Interfaces Library" name="1050117">Figure&nbsp;7–14</a></span> shows an example of a generic function that has two input interfaces and performs a transformation on the two input streams.</div>
+      <div class="TA_table_anchor"><a name="1058515">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;7–14.&nbsp;<a name="1058522">Generic Function</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1058524"><img class="Default" src="images/AvalonST_generic_packet.jpg" width="489" height="171" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1050124">Avalon-ST Packet Format Converter</a></div>
+      <div class="B0_body"><a name="1050125">The packet format converter (PFC) is a flexible, multipurpose component that </a>transforms packets that are received from one function into a packet format that is supported by another function.</div>
+      <div class="B0_body"><a name="1050156">The PFC takes packet data from one or more input interfaces, and provides field </a>reassignment in time and space to one or more output packet interfaces. You can specify the input packet format and the desired output packet format. The appropriate control logic is automatically generated.</div>
+      <div class="B0_body"><a name="1050126">Each input interface has Avalon-ST </a><span class="Code">ready</span>, <span class="Code">valid</span>, <span class="Code">startofpacket</span>, <span class="Code">endofpacket</span>, <span class="Code">empty</span>, and <span class="Code">data</span> signals. Each output interface has an additional <span class="Code">error</span> bit, which asserts to indicate a frame delineation error.</div>
+      <div class="B0_body"><a name="1050127">The PFC performs data mapping on a packet by packet basis, so that there is exactly </a>one input packet on each input interface for each output packet on each output interface. The interface limits the packet rate of the converter with the longest packet. When the PFC has multiple output interfaces, DSP Builder aligns the packets on each output interface so that the <span class="Code">startofpacket</span> signal presents on the same clock cycle.</div>
+      <div class="B0_body"><a name="1050128">If each interface supports fixed-length packets, you can select the multipacket </a>mapping option, and the PFC can map fields from multiple input packets to multiple output packets. </div>
+      <div class="AR0_reference_outer" style="margin-left: -18pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AR0_reference_inner" style="width: 33pt; white-space: nowrap">
+                <img src="feet_para.jpg" alt="*" border="0" width="35" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR0_reference_inner"><a name="1049812">For a complete description of the Avalon-ST interface, refer to the </a><span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/manual/mnl_avalon_spec.pdf" target="external_window">Avalon Interface Specifications</a></span>. For an example of a design that uses Avalon-ST interfaces and the Packet Format Converter blocks, refer to <span class="Document_title" style="color: #3f7f3f"><a href="http://www.altera.com/literature/an/an442.pdf" target="external_window">AN442: Tool Flow for Design of Digital IF for Wireless Systems</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Bottom">
+          <a href="http://www.altera.com" target="external_window"><img src="banner.gif" border="0" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com" target="external_window"> </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Fax_Bottom">Copyright© 1995-2013 Altera Corporation. Altera, the ALTERA logo and Altera's product names, logos and stylization are registered trademarks or trademarks of Altera Corporation in the United States and other countries.</td>
+      </tr>
+    </table>
+  </body>
+</html>

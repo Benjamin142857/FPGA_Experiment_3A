@@ -1,0 +1,4111 @@
+Model {
+  Name			  "sopc_edge_detector"
+  Version		  6.3
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.355"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "ed_in_script\n%% DSPBuilder Start\nalt_dspbuilder_u"
+"pdate_model(bdroot)\n%% DSPBuilder End\n"
+  StopFcn		  "ed_out_script"
+  Created		  "Tue May 11 18:36:13 2004"
+  Creator		  "sichou"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "LKONG"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jul 09 15:20:58 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:355>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "Warning"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "307201.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "none"
+	  ArtificialAlgebraicLoopMsg "none"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg on
+	  CheckExecutionContextRuntimeOutputMsg	on
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "32-bit Generic"
+	  TargetUnknown		  off
+	  ProdEqTarget		  off
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Diagnostics"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Ground
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      ToFile
+      Filename		      "untitled.mat"
+      MatrixName	      "ans"
+      Decimation	      "1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      FixptAsFi		      off
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "sopc_edge_detector"
+    Location		    [476, 180, 1483, 618]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Avalon Control Port"
+      Ports		      [0, 2]
+      Position		      [365, 45, 500, 105]
+      ForegroundColor	      "blue"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Avalon Control Port"
+	Location		[521, 134, 1517, 786]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Avalon Control Slave"
+	  Ports			  [3, 3]
+	  Position		  [90, 133, 230, 297]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Avalon-MM Slave"
+	  SourceType		  "Avalon-MM Slave AlteraBlockset"
+	  iofile		  "d:\\wsTrunk\\workspace\\Documentation\\Desi"
+"gnExamples\\Tutorials\\SOPCBuilder\\AvalonFIFO\\tb_sopc_edge_detector\\sopc_e"
+"dge_detector_Avalon+Control+Port_Avalon+Control+Slave_address.salt,d:\\wsTrun"
+"k\\workspace\\Documentation\\DesignExamples\\Tutorials\\SOPCBuilder\\AvalonFI"
+"FO\\tb_sopc_edge_detector\\sopc_edge_detector_Avalon+Control+Port_Avalon+Cont"
+"rol+Slave_write.salt,d:\\wsTrunk\\workspace\\Documentation\\DesignExamples\\T"
+"utorials\\SOPCBuilder\\AvalonFIFO\\tb_sopc_edge_detector\\sopc_edge_detector_"
+"Avalon+Control+Port_Avalon+Control+Slave_writedata.salt,"
+	  SpecifyClock		  off
+	  clock			  "clock"
+	  addrWidth		  "1"
+	  addrAlignment		  "Dynamic"
+	  addrType		  "Write"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "8"
+	  bwr			  "0"
+	  byteEnable		  off
+	  flowCtrl		  off
+	  pipeline		  off
+	  waitStateFormat	  "Fixed"
+	  readWaitStateCycles	  "1"
+	  writeWaitStateCycles	  "0"
+	  readLatencyFormat	  "Fixed"
+	  readLatencyCycles	  "0"
+	  burst			  off
+	  maxBurst		  "8"
+	  irq			  off
+	  receiveBeginTransfer	  off
+	  useChipSelect		  off
+	  PORTTYPE		  "Output"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [15, 145, 45, 175]
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical\nBit Operator1"
+	  Ports			  [2, 1]
+	  Position		  [360, 89, 405, 131]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "AND"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical\nBit Operator2"
+	  Ports			  [2, 1]
+	  Position		  [360, 319, 405, 361]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "AND"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "NOT"
+	  Ports			  [1, 1]
+	  Position		  [320, 91, 345, 109]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Set Threshold"
+	  Ports			  [2, 1]
+	  Position		  [450, 139, 610, 201]
+	  ForegroundColor	  "blue"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Set Threshold"
+	    Location		    [645, 507, 1427, 751]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "write"
+	      Position		      [40, 33, 70, 47]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "new_threshold[7:0]"
+	      Position		      [40, 138, 70, 152]
+	      ForegroundColor	      "blue"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant"
+	      Ports		      [0, 1]
+	      Position		      [235, 101, 285, 119]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+	      SourceType	      "Constant AlteraBlockset"
+	      mask_cst		      "50"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "8"
+	      bwr		      "0"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GlobalRst"
+	      Ports		      [0, 1]
+	      Position		      [185, 46, 230, 64]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      SourceBlock	      "allblocks_alteradspbuilder2/Global Rese"
+"t"
+	      SourceType	      "GlobalReset AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Override Default"
+	      Ports		      [3, 1]
+	      Position		      [250, 15, 295, 65]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "VCC1"
+	      Ports		      [0, 1]
+	      Position		      [185, 17, 200, 33]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      SourceBlock	      "allblocks_alteradspbuilder2/VCC"
+	      SourceType	      "VCC AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "iwrite"
+	      Ports		      [1, 1]
+	      Position		      [115, 32, 180, 48]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Single Bit"
+	      bwl		      "1"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "n-to-1 Multiplexer"
+	      Ports		      [3, 1]
+	      Position		      [330, 77, 380, 143]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+	      SourceType	      "Multiplexer AlteraBlockset"
+	      numInputs		      "2"
+	      pipeline		      "0"
+	      oneHot		      off
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "new_threshold"
+	      Ports		      [1, 1]
+	      Position		      [115, 137, 180, 153]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "8"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "threshold"
+	      Ports		      [1, 1]
+	      Position		      [400, 102, 465, 118]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "8"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "threshold[7:0]"
+	      Position		      [495, 103, 525, 117]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "threshold"
+	      SrcPort		      1
+	      DstBlock		      "threshold[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "new_threshold[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "new_threshold"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "write"
+	      SrcPort		      1
+	      DstBlock		      "iwrite"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Override Default"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "new_threshold"
+	      SrcPort		      1
+	      Points		      [130, 0]
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "n-to-1 Multiplexer"
+	      SrcPort		      1
+	      DstBlock		      "threshold"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "VCC1"
+	      SrcPort		      1
+	      DstBlock		      "Override Default"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "iwrite"
+	      SrcPort		      1
+	      DstBlock		      "Override Default"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "GlobalRst"
+	      SrcPort		      1
+	      DstBlock		      "Override Default"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Set use_pre_thresh"
+	  Ports			  [2, 1]
+	  Position		  [450, 245, 610, 305]
+	  ForegroundColor	  "blue"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Set use_pre_thresh"
+	    Location		    [798, 422, 1357, 619]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "new_val"
+	      Position		      [45, 133, 75, 147]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "write"
+	      Position		      [45, 33, 75, 47]
+	      ForegroundColor	      "blue"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Constant"
+	      Ports		      [0, 1]
+	      Position		      [230, 101, 280, 119]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+	      SourceType	      "Constant AlteraBlockset"
+	      mask_cst		      "0"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "1"
+	      bwr		      "0"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "GlobalRst"
+	      Ports		      [0, 1]
+	      Position		      [170, 46, 215, 64]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      SourceBlock	      "allblocks_alteradspbuilder2/Global Rese"
+"t"
+	      SourceType	      "GlobalReset AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Override Default"
+	      Ports		      [3, 1]
+	      Position		      [235, 15, 280, 65]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "VCC1"
+	      Ports		      [0, 1]
+	      Position		      [170, 17, 185, 33]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      SourceBlock	      "allblocks_alteradspbuilder2/VCC"
+	      SourceType	      "VCC AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "inew_val"
+	      Ports		      [1, 1]
+	      Position		      [100, 132, 165, 148]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Single Bit"
+	      bwl		      "1"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "iwrite"
+	      Ports		      [1, 1]
+	      Position		      [100, 32, 165, 48]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Single Bit"
+	      bwl		      "1"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "n-to-1 Multiplexer"
+	      Ports		      [3, 1]
+	      Position		      [325, 87, 375, 153]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+	      SourceType	      "Multiplexer AlteraBlockset"
+	      numInputs		      "2"
+	      pipeline		      "0"
+	      oneHot		      off
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "threshold"
+	      Ports		      [1, 1]
+	      Position		      [395, 112, 460, 128]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/AltBus"
+	      SourceType	      "AltBus AlteraBlockset"
+	      BusType		      "Signed Integer"
+	      bwl		      "8"
+	      bwr		      "0"
+	      saturate		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "threshold[7:0]"
+	      Position		      [490, 113, 520, 127]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "GlobalRst"
+	      SrcPort		      1
+	      DstBlock		      "Override Default"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "iwrite"
+	      SrcPort		      1
+	      DstBlock		      "Override Default"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "VCC1"
+	      SrcPort		      1
+	      DstBlock		      "Override Default"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "n-to-1 Multiplexer"
+	      SrcPort		      1
+	      DstBlock		      "threshold"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "inew_val"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Override Default"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 60]
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "write"
+	      SrcPort		      1
+	      DstBlock		      "iwrite"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "new_val"
+	      SrcPort		      1
+	      DstBlock		      "inew_val"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "threshold"
+	      SrcPort		      1
+	      DstBlock		      "threshold[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "one-to-n Demux"
+	  Ports			  [3, 2]
+	  Position		  [360, 136, 415, 284]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Demultiplexer"
+	  SourceType		  "Demultiplexer AlteraBlockset"
+	  numOutputs		  "2"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ouse_pre_thresh"
+	  Ports			  [1, 1]
+	  Position		  [655, 267, 720, 283]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/AltBus"
+	  SourceType		  "AltBus AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "8"
+	  bwr			  "0"
+	  saturate		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "threshold"
+	  Ports			  [1, 1]
+	  Position		  [655, 162, 720, 178]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/AltBus"
+	  SourceType		  "AltBus AlteraBlockset"
+	  BusType		  "Signed Integer"
+	  bwl			  "8"
+	  bwr			  "0"
+	  saturate		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "threshold[7:0]"
+	  Position		  [750, 163, 780, 177]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "use_pre_thresh[7:0]"
+	  Position		  [750, 268, 780, 282]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "ouse_pre_thresh"
+	  SrcPort		  1
+	  DstBlock		  "use_pre_thresh[7:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Avalon Control Slave"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    Points		    [0, 50]
+	    Branch {
+	      DstBlock		      "one-to-n Demux"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 140]
+	      DstBlock		      "Logical\nBit Operator2"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -60]
+	    DstBlock		    "NOT"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Avalon Control Slave"
+	  SrcPort		  2
+	  Points		  [50, 0; 0, 25]
+	  Branch {
+	    Points		    [0, -120]
+	    DstBlock		    "Logical\nBit Operator1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [60, 0]
+	    DstBlock		    "one-to-n Demux"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 90]
+	    DstBlock		    "Logical\nBit Operator2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Avalon Control Slave"
+	  SrcPort		  3
+	  Points		  [100, 0; 0, -110]
+	  DstBlock		  "one-to-n Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "one-to-n Demux"
+	  SrcPort		  1
+	  Points		  [0, 10]
+	  DstBlock		  "Set Threshold"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Set use_pre_thresh"
+	  SrcPort		  1
+	  DstBlock		  "ouse_pre_thresh"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "NOT"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nBit Operator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nBit Operator1"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "Set Threshold"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nBit Operator2"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "Set use_pre_thresh"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "one-to-n Demux"
+	  SrcPort		  2
+	  Points		  [0, 10]
+	  DstBlock		  "Set use_pre_thresh"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "threshold"
+	  SrcPort		  1
+	  DstBlock		  "threshold[7:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Set Threshold"
+	  SrcPort		  1
+	  DstBlock		  "threshold"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Avalon Control Slave"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 55]
+	    Branch {
+	      DstBlock		      "Avalon Control Slave"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 55]
+	      DstBlock		      "Avalon Control Slave"
+	      DstPort		      3
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Avalon-MM Read FIFO"
+      Ports		      [3, 3]
+      Position		      [650, 150, 800, 230]
+      ForegroundColor	      "blue"
+      CopyFcn		      "set_param(gcbh,'LinkStatus','none');"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Avalon-MM Read FIFO AlteraBlockSet"
+      MaskDescription	      "Avalon-MM Read FIFO\n\nImplements a FIFO with A"
+"valon-MM connectivity. Accessed by other Avalon-MM peripherals to obtain data"
+"when connected in SOPC Builder.\n\nInputs:\nStall - Connect to Simulink block"
+"s.\n	Used to simulate stall conditions of the Avalon-MM bus.\nData - C"
+"onnect to DSP Builder blocks.\n	Used to collect outgoing data from the"
+" user design.\nDataValid - Connect to DSP Builder blocks.\n	Should be "
+"asserted whenever the signal on the Data port corresponds to real data.\n\nOu"
+"tputs:\nTestDataOut - Connect to Simulink blocks.\n	Corresponds to the"
+" data received over the Avalon-MM bus.\nTestDataValid - Connect to Simulink b"
+"locks.\n	Asserted whenever TestDataOut corresponds to real data.\nRead"
+"y	- Connect to DSP Builder blocks.\n	Used to indicate that the "
+"block is ready to receive data.\n"
+      MaskHelp		      "helpview(fullfile(alt_dspbuilder_get_quartus_ro"
+"otdir, 'dsp_builder', 'docs', 'AvalonReadFIFO.html'))"
+      MaskPromptString	      "Data Type|[number of bits].[]|[].[number of bit"
+"s]|FIFO Depth|Max Burst"
+      MaskStyleString	      "popup(Signed Integer|Signed Fractional|Unsigned"
+" Integer),edit,edit,edit,edit"
+      MaskTunableValueString  "off,off,off,off,off"
+      MaskCallbackString      "alt_dspbuilder_internal_AvalonFIFO_Init(gcb,1,0"
+");||||"
+      MaskEnableString	      "on,on,off,on,on"
+      MaskVisibilityString    "on,on,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "sgn=@1;bwl=@2;bwr=@3;depth=@4;burst=@5;"
+      MaskInitialization      "alt_dspbuilder_internal_AvalonFIFO_Init(gcb,1,1"
+", bwl,bwr,depth,burst);"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Unsigned Integer|8|0|16|8"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"Avalon-MM Read FIFO"
+	Location		[327, 320, 1283, 862]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Stall"
+	  Position		  [15, 18, 45, 32]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Data"
+	  Position		  [15, 148, 45, 162]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "DataValid"
+	  Position		  [15, 198, 45, 212]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Avalon Read Slave"
+	  Ports			  [5, 5]
+	  Position		  [375, 53, 520, 247]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Avalon-MM Slave"
+	  SourceType		  "Avalon-MM Slave AlteraBlockset"
+	  iofile		  "d:\\wsTrunk\\workspace\\Documentation\\Desi"
+"gnExamples\\Tutorials\\SOPCBuilder\\AvalonFIFO\\tb_sopc_edge_detector\\sopc_e"
+"dge_detector_Avalon-MM+Read+FIFO_Avalon+Read+Slave_address.salt,d:\\wsTrunk\\"
+"workspace\\Documentation\\DesignExamples\\Tutorials\\SOPCBuilder\\AvalonFIFO"
+"\\tb_sopc_edge_detector\\sopc_edge_detector_Avalon-MM+Read+FIFO_Avalon+Read+S"
+"lave_read.salt,d:\\wsTrunk\\workspace\\Documentation\\DesignExamples\\Tutoria"
+"ls\\SOPCBuilder\\AvalonFIFO\\tb_sopc_edge_detector\\sopc_edge_detector_Avalon"
+"-MM+Read+FIFO_Avalon+Read+Slave_readdata.capture,d:\\wsTrunk\\workspace\\Docu"
+"mentation\\DesignExamples\\Tutorials\\SOPCBuilder\\AvalonFIFO\\tb_sopc_edge_d"
+"etector\\sopc_edge_detector_Avalon-MM+Read+FIFO_Avalon+Read+Slave_dataavailab"
+"le.capture,d:\\wsTrunk\\workspace\\Documentation\\DesignExamples\\Tutorials\\"
+"SOPCBuilder\\AvalonFIFO\\tb_sopc_edge_detector\\sopc_edge_detector_Avalon-MM+"
+"Read+FIFO_Avalon+Read+Slave_endofpacket.capture,"
+	  SpecifyClock		  off
+	  clock			  "clock"
+	  addrWidth		  "2"
+	  addrAlignment		  "Dynamic"
+	  addrType		  "Read"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "bwl"
+	  bwr			  "bwr"
+	  byteEnable		  off
+	  flowCtrl		  on
+	  pipeline		  off
+	  waitStateFormat	  "Fixed"
+	  readWaitStateCycles	  "0"
+	  writeWaitStateCycles	  "0"
+	  readLatencyFormat	  "Fixed"
+	  readLatencyCycles	  "0"
+	  burst			  off
+	  maxBurst		  "burst"
+	  irq			  off
+	  receiveBeginTransfer	  off
+	  useChipSelect		  off
+	  PORTTYPE		  "Output"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Comparator"
+	  Ports			  [2, 1]
+	  Position		  [315, 313, 350, 342]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Comparator"
+	  SourceType		  "Comparator AlteraBlockset"
+	  direction		  "a < b"
+	  Port {
+	    PortNumber		    1
+	    Name		    "notfull"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant0"
+	  Ports			  [0, 1]
+	  Position		  [310, 221, 360, 239]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "0"
+	  BusType		  "Single Bit"
+	  bwl			  "1"
+	  bwr			  "0"
+	  SpecifyClock		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "FIFO"
+	  Ports			  [3, 4]
+	  Position		  [185, 140, 290, 220]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/FIFO"
+	  SourceType		  "FIFO AlteraBlockset"
+	  numwords		  "depth"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "bwl"
+	  bwr			  "bwr"
+	  ram_type		  "AUTO"
+	  use_sclr		  off
+	  use_les_only		  off
+	  showahead_mode	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "FIFOSize"
+	  Ports			  [0, 1]
+	  Position		  [230, 326, 280, 344]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "depth - 2"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "ceil(log2(depth -1))"
+	  bwr			  "0"
+	  SpecifyClock		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "NOT"
+	  Ports			  [1, 1]
+	  Position		  [310, 182, 350, 198]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Streaming Avalon Read Converter"
+	  Ports			  [3, 3]
+	  Position		  [620, 131, 765, 249]
+	  FunctionName		  "alt_dspbuilder_internal_sStream2Matlab"
+	  Parameters		  "-1"
+	  MaskDisplay		  "port_label('input', 1, 'ReadData');\nport_l"
+"abel('input', 2, 'DataAvailable');\nport_label('input', 3, 'Stall');\nport_la"
+"bel('output', 1, 'Read');\nport_label('output', 2, 'TestData');\nport_label('"
+"output', 3, 'TestDataValid');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [540, 220, 560, 240]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  Position		  [340, 160, 360, 180]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator2"
+	  Position		  [535, 60, 555, 80]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "TestDataOut"
+	  Position		  [840, 183, 870, 197]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "TestDataValid"
+	  Position		  [840, 223, 870, 237]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ready"
+	  Position		  [840, 323, 870, 337]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "DataValid"
+	  SrcPort		  1
+	  DstBlock		  "FIFO"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  3
+	  DstBlock		  "NOT"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "NOT"
+	  SrcPort		  1
+	  DstBlock		  "Avalon Read Slave"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Data"
+	  SrcPort		  1
+	  DstBlock		  "FIFO"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  1
+	  DstBlock		  "Avalon Read Slave"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Avalon Read Slave"
+	  SrcPort		  2
+	  Points		  [50, 0; 0, -70; -410, 0; 0, 140]
+	  DstBlock		  "FIFO"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Streaming Avalon Read Converter"
+	  SrcPort		  2
+	  DstBlock		  "TestDataOut"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Streaming Avalon Read Converter"
+	  SrcPort		  3
+	  DstBlock		  "TestDataValid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Streaming Avalon Read Converter"
+	  SrcPort		  1
+	  Points		  [0, -140; -410, 0]
+	  DstBlock		  "Avalon Read Slave"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Avalon Read Slave"
+	  SrcPort		  3
+	  DstBlock		  "Streaming Avalon Read Converter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant0"
+	  SrcPort		  1
+	  DstBlock		  "Avalon Read Slave"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  4
+	  Points		  [5, 0]
+	  DstBlock		  "Comparator"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "notfull"
+	  Labels		  [0, 1]
+	  SrcBlock		  "Comparator"
+	  SrcPort		  1
+	  DstBlock		  "Ready"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Stall"
+	  SrcPort		  1
+	  Points		  [540, 0; 0, 205]
+	  DstBlock		  "Streaming Avalon Read Converter"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Avalon Read Slave"
+	  SrcPort		  4
+	  DstBlock		  "Streaming Avalon Read Converter"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Avalon Read Slave"
+	  SrcPort		  5
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "FIFOSize"
+	  SrcPort		  1
+	  DstBlock		  "Comparator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  2
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Avalon Read Slave"
+	  SrcPort		  1
+	  DstBlock		  "Terminator2"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [242, 338]
+	  UseDisplayTextAsClickCallback	off
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Avalon-MM Write FIFO"
+      Ports		      [3, 2]
+      Position		      [135, 175, 270, 255]
+      ForegroundColor	      "blue"
+      CopyFcn		      "set_param(gcbh,'LinkStatus','none');"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Avalon-MM Write FIFO AlteraBlockSet"
+      MaskDescription	      "Avalon-MM Write FIFO\n\nImplements a FIFO with "
+"Avalon-MM connectivity. Used to receive data from other Avalon-MM peripherals"
+"when connected in SOPC Builder.\n\nInputs:\nTestData - Connect to Simulink bl"
+"ocks.\n	Used to provide simulation data to the Avalon-MM Write FIFO.\n"
+"Stall - Connect to Simulink blocks.\n	Used to simulate stall condition"
+"s of the Avalon-MM bus.\nReady - Connect to DSP Builder blocks.\n	Used"
+" to indicate that the downstream hardware is ready for data.\n\nOutputs:\nDat"
+"aOut - Connect to DSP Builder blocks.\n	Corresponds to the oldest unse"
+"nt data sample received on the TestData port.\nDataValid - Connect to DSP Bui"
+"lder blocks.\n	Asserted whenever DataOut corresponds to real data.\n"
+      MaskHelp		      "helpview(fullfile(alt_dspbuilder_get_quartus_ro"
+"otdir, 'dsp_builder', 'docs', 'AvalonWriteFifo.html'))"
+      MaskPromptString	      "Data Type|[number of bits].[]|[].[number of bit"
+"s]|FIFO Depth|Maximum Burst Size"
+      MaskStyleString	      "popup(Signed Integer|Signed Fractional|Unsigned"
+" Integer),edit,edit,edit,edit"
+      MaskTunableValueString  "off,off,off,off,off"
+      MaskCallbackString      "alt_dspbuilder_internal_AvalonFIFO_Init(gcb,0,0"
+");||||"
+      MaskEnableString	      "on,on,off,on,on"
+      MaskVisibilityString    "on,on,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "sgn=@1;bwl=@2;bwr=@3;depth=@4;burst=@5;"
+      MaskInitialization      "alt_dspbuilder_internal_AvalonFIFO_Init(gcb,0,1"
+", bwl,bwr,depth,burst);"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Unsigned Integer|8|0|16|8"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"Avalon-MM Write FIFO"
+	Location		[131, 288, 1349, 918]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "TestData"
+	  Position		  [25, 58, 55, 72]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Stall"
+	  Position		  [25, 98, 55, 112]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ready"
+	  Position		  [25, 23, 55, 37]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Avalon-MM Write Slave"
+	  Ports			  [5, 5]
+	  Position		  [235, 38, 375, 202]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Avalon-MM Slave"
+	  SourceType		  "Avalon-MM Slave AlteraBlockset"
+	  iofile		  "d:\\wsTrunk\\workspace\\Documentation\\Desi"
+"gnExamples\\Tutorials\\SOPCBuilder\\AvalonFIFO\\tb_sopc_edge_detector\\sopc_e"
+"dge_detector_Avalon-MM+Write+FIFO_Avalon-MM+Write+Slave_address.salt,d:\\wsTr"
+"unk\\workspace\\Documentation\\DesignExamples\\Tutorials\\SOPCBuilder\\Avalon"
+"FIFO\\tb_sopc_edge_detector\\sopc_edge_detector_Avalon-MM+Write+FIFO_Avalon-M"
+"M+Write+Slave_write.salt,d:\\wsTrunk\\workspace\\Documentation\\DesignExample"
+"s\\Tutorials\\SOPCBuilder\\AvalonFIFO\\tb_sopc_edge_detector\\sopc_edge_detec"
+"tor_Avalon-MM+Write+FIFO_Avalon-MM+Write+Slave_writedata.salt,d:\\wsTrunk\\wo"
+"rkspace\\Documentation\\DesignExamples\\Tutorials\\SOPCBuilder\\AvalonFIFO\\t"
+"b_sopc_edge_detector\\sopc_edge_detector_Avalon-MM+Write+FIFO_Avalon-MM+Write"
+"+Slave_readyfordata.capture,d:\\wsTrunk\\workspace\\Documentation\\DesignExam"
+"ples\\Tutorials\\SOPCBuilder\\AvalonFIFO\\tb_sopc_edge_detector\\sopc_edge_de"
+"tector_Avalon-MM+Write+FIFO_Avalon-MM+Write+Slave_endofpacket.capture,"
+	  SpecifyClock		  off
+	  clock			  "clock"
+	  addrWidth		  "2"
+	  addrAlignment		  "Dynamic"
+	  addrType		  "Write"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "bwl"
+	  bwr			  "bwr"
+	  byteEnable		  off
+	  flowCtrl		  on
+	  pipeline		  off
+	  waitStateFormat	  "Fixed"
+	  readWaitStateCycles	  "0"
+	  writeWaitStateCycles	  "0"
+	  readLatencyFormat	  "Fixed"
+	  readLatencyCycles	  "0"
+	  burst			  off
+	  maxBurst		  "burst"
+	  irq			  off
+	  receiveBeginTransfer	  off
+	  useChipSelect		  off
+	  PORTTYPE		  "Output"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Avalon-MM Write Test Converter"
+	  Ports			  [3, 2]
+	  Position		  [100, 76, 200, 134]
+	  FunctionName		  "alt_dspbuilder_internal_sMatlab2Stream"
+	  Parameters		  "-1 1000000"
+	  MaskDisplay		  "port_label('input', 1, 'TestData');\nport_l"
+"abel('input', 2, 'Stall');\nport_label('input', 3, 'Ready');\nport_label('out"
+"put', 1, 'Write');\nport_label('output', 2, 'WriteData');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Comparator"
+	  Ports			  [2, 1]
+	  Position		  [650, 218, 685, 247]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Comparator"
+	  SourceType		  "Comparator AlteraBlockset"
+	  direction		  "a < b"
+	  Port {
+	    PortNumber		    1
+	    Name		    "notfull"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay"
+	  Ports			  [1, 1]
+	  Position		  [515, 145, 550, 185]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "FIFO"
+	  Ports			  [3, 4]
+	  Position		  [510, 35, 615, 125]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/FIFO"
+	  SourceType		  "FIFO AlteraBlockset"
+	  numwords		  "depth"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "bwl"
+	  bwr			  "bwr"
+	  ram_type		  "AUTO"
+	  use_sclr		  off
+	  use_les_only		  off
+	  showahead_mode	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "FIFOSize"
+	  Ports			  [0, 1]
+	  Position		  [565, 231, 615, 249]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "depth -2 "
+	  BusType		  "Unsigned Integer"
+	  bwl			  "ceil(log2(depth-1))"
+	  bwr			  "0"
+	  SpecifyClock		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "GND"
+	  Ports			  [0, 1]
+	  Position		  [140, 172, 155, 188]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/GND"
+	  SourceType		  "GND AlteraBlockset"
+	  SpecifyClock		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical\nBit Operator1"
+	  Ports			  [2, 1]
+	  Position		  [430, 54, 460, 81]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "AND"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "NOT"
+	  Ports			  [1, 1]
+	  Position		  [635, 82, 675, 98]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	  Port {
+	    PortNumber		    1
+	    Name		    "notempty"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [395, 170, 415, 190]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "iReady"
+	  Ports			  [1, 1]
+	  Position		  [80, 21, 125, 39]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/AltBus"
+	  SourceType		  "AltBus AlteraBlockset"
+	  BusType		  "Single Bit"
+	  bwl			  "1"
+	  bwr			  "0"
+	  saturate		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DataOut"
+	  Position		  [880, 43, 910, 57]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DataValid"
+	  Position		  [880, 158, 910, 172]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Ready"
+	  SrcPort		  1
+	  DstBlock		  "iReady"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Avalon-MM Write Slave"
+	  SrcPort		  3
+	  Points		  [10, 0; 0, -70]
+	  DstBlock		  "FIFO"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Avalon-MM Write Slave"
+	  SrcPort		  2
+	  Points		  [115, 0]
+	  DstBlock		  "FIFO"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  3
+	  DstBlock		  "NOT"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  1
+	  DstBlock		  "DataOut"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Avalon-MM Write Test Converter"
+	  SrcPort		  1
+	  DstBlock		  "Avalon-MM Write Slave"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Avalon-MM Write Slave"
+	  SrcPort		  4
+	  Points		  [45, 0; 0, 80; -360, 0; 0, -105]
+	  DstBlock		  "Avalon-MM Write Test Converter"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "TestData"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 20]
+	  DstBlock		  "Avalon-MM Write Test Converter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "GND"
+	  SrcPort		  1
+	  DstBlock		  "Avalon-MM Write Slave"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "notempty"
+	  Labels		  [0, 0]
+	  SrcBlock		  "NOT"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -60; -270, 0]
+	  DstBlock		  "Logical\nBit Operator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "iReady"
+	  SrcPort		  1
+	  Points		  [275, 0; 0, 45]
+	  DstBlock		  "Logical\nBit Operator1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  DstBlock		  "DataValid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Avalon-MM Write Test Converter"
+	  SrcPort		  2
+	  DstBlock		  "Avalon-MM Write Slave"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Stall"
+	  SrcPort		  1
+	  DstBlock		  "Avalon-MM Write Test Converter"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Avalon-MM Write Slave"
+	  SrcPort		  5
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "notfull"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Comparator"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 55; -525, 0; 0, -140]
+	  DstBlock		  "Avalon-MM Write Slave"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "FIFOSize"
+	  SrcPort		  1
+	  DstBlock		  "Comparator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  4
+	  Points		  [15, 0]
+	  DstBlock		  "Comparator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nBit Operator1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 10]
+	  Branch {
+	    DstBlock		    "FIFO"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 85]
+	    DstBlock		    "Delay"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Clock"
+      Ports		      []
+      Position		      [19, 120, 69, 138]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Clock"
+      SourceType	      "BaseClock AlteraBlockset"
+      ClockPeriod	      "100"
+      ClockPeriodUnit	      "ns"
+      SampleTime	      "1"
+      SimulationStartCycle    "5"
+      PhaseOffset	      "0"
+      Reset		      "aclr"
+      ResetType		      "Active Low"
+      Export		      off
+    }
+    Block {
+      BlockType		      FromWorkspace
+      Name		      "From\nWorkspace"
+      Position		      [15, 178, 80, 202]
+      VariableName	      "simin"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From1"
+      Position		      [285, 267, 340, 283]
+      ShowName		      off
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "threshold"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "GlobalRst"
+      Ports		      [0, 1]
+      Position		      [290, 146, 335, 164]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Global Reset"
+      SourceType	      "GlobalReset AlteraBlockset"
+      SpecifyClock	      off
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto1"
+      Position		      [525, 51, 585, 69]
+      ShowName		      off
+      GotoTag		      "threshold"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Ground
+      Name		      "Ground1"
+      Position		      [610, 155, 630, 175]
+    }
+    Block {
+      BlockType		      Ground
+      Name		      "Ground2"
+      Position		      [100, 205, 120, 225]
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      Ports		      []
+      Position		      [669, 23, 738, 70]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily	      "Stratix III"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "Clock"
+    }
+    Block {
+      BlockType		      ToFile
+      Name		      "To File"
+      Position		      [910, 125, 970, 155]
+      Filename		      "simout.mat"
+      MatrixName	      "simout"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      Position		      [910, 175, 970, 205]
+      VariableName	      "data_valid1"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "edge_prewitt"
+      Ports		      [4, 2]
+      Position		      [360, 138, 510, 292]
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"edge_prewitt"
+	Location		[174, 140, 1014, 741]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "reset"
+	  Position		  [55, 198, 85, 212]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "data_in[15:0]"
+	  Position		  [55, 98, 85, 112]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "clock_en"
+	  Position		  [55, 148, 85, 162]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "threshold[7:0]"
+	  Position		  [55, 243, 85, 257]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Combine"
+	  Ports			  [2, 1]
+	  Position		  [355, 322, 390, 398]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Parallel Adder "
+"Subtractor"
+	  SourceType		  "ParallelAdder AlteraBlockset"
+	  number_of_inputs	  "2"
+	  direction		  "+"
+	  use_pipeline		  off
+	  phase_selection	  "1"
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  Position		  [360, 427, 400, 443]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "thresh"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From10"
+	  Position		  [50, 467, 90, 483]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r3_c1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From11"
+	  Position		  [50, 482, 90, 498]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r3_c2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From12"
+	  Position		  [50, 497, 90, 513]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r3_c3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From21"
+	  Position		  [50, 292, 90, 308]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r1_c3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From22"
+	  Position		  [50, 307, 90, 323]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r2_c3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From23"
+	  Position		  [50, 322, 90, 338]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r3_c3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From24"
+	  Position		  [50, 337, 90, 353]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r1_c1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From25"
+	  Position		  [50, 352, 90, 368]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r2_c1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From26"
+	  Position		  [50, 367, 90, 383]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r3_c1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  Position		  [50, 422, 90, 438]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r1_c1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  Position		  [50, 437, 90, 453]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r1_c2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From9"
+	  Position		  [50, 452, 90, 468]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "r1_c3"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  Position		  [205, 242, 245, 258]
+	  ShowName		  off
+	  GotoTag		  "thresh"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto10"
+	  Position		  [440, 217, 480, 233]
+	  ShowName		  off
+	  GotoTag		  "r3_c3"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto3"
+	  Position		  [440, 77, 480, 93]
+	  ShowName		  off
+	  GotoTag		  "r1_c1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto4"
+	  Position		  [440, 97, 480, 113]
+	  ShowName		  off
+	  GotoTag		  "r2_c1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto5"
+	  Position		  [440, 117, 480, 133]
+	  ShowName		  off
+	  GotoTag		  "r3_c1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto6"
+	  Position		  [440, 137, 480, 153]
+	  ShowName		  off
+	  GotoTag		  "r1_c2"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto7"
+	  Position		  [440, 177, 480, 193]
+	  ShowName		  off
+	  GotoTag		  "r1_c3"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto8"
+	  Position		  [440, 197, 480, 213]
+	  ShowName		  off
+	  GotoTag		  "r2_c3"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto9"
+	  Position		  [440, 157, 480, 173]
+	  ShowName		  off
+	  GotoTag		  "r3_c2"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "apply_threshold"
+	  Ports			  [2, 2]
+	  Position		  [435, 345, 565, 405]
+	  ForegroundColor	  "blue"
+	  DropShadow		  on
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "apply_threshold"
+	    Location		    [98, 423, 875, 662]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "edge_combined[10:0]"
+	      Position		      [50, 58, 80, 72]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "threshold[7:0]"
+	      Position		      [50, 123, 80, 137]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Black"
+	      Ports		      [0, 1]
+	      Position		      [455, 167, 475, 183]
+	      SourceBlock	      "allblocks_alteradspbuilder2/GND"
+	      SourceType	      "GND AlteraBlockset"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "BusConversion1"
+	      Ports		      [1, 1]
+	      Position		      [215, 56, 290, 74]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Bus Convers"
+"ion"
+	      SourceType	      "Bus Conversion AlteraBlockset"
+	      BusType		      "Unsigned Integer"
+	      ibwl		      "11"
+	      ibwr		      "0"
+	      bwl		      "8"
+	      bwr		      "0"
+	      bitToConnectToOutputLSB "0"
+	      round		      off
+	      saturate		      on
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Comparator"
+	      Ports		      [2, 1]
+	      Position		      [350, 108, 385, 137]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Comparator"
+	      SourceType	      "Comparator AlteraBlockset"
+	      direction		      "a < b"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "White"
+	      Ports		      [0, 1]
+	      Position		      [405, 141, 455, 159]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Constant"
+	      SourceType	      "Constant AlteraBlockset"
+	      mask_cst		      "255"
+	      BusType		      "Unsigned Integer"
+	      bwl		      "8"
+	      bwr		      "0"
+	      SpecifyClock	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "n-to-1 Multiplexer"
+	      Ports		      [3, 1]
+	      Position		      [500, 113, 550, 187]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+	      SourceType	      "Multiplexer AlteraBlockset"
+	      numInputs		      "2"
+	      pipeline		      "0"
+	      oneHot		      off
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "post[7:0]"
+	      Position		      [680, 143, 710, 157]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "pre[7:0]"
+	      Position		      [680, 58, 710, 72]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Black"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "White"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "n-to-1 Multiplexer"
+	      SrcPort		      1
+	      DstBlock		      "post[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "edge_combined[10:0]"
+	      SrcPort		      1
+	      DstBlock		      "BusConversion1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "BusConversion1"
+	      SrcPort		      1
+	      Points		      [0, 0; 25, 0]
+	      Branch {
+		Points			[0, 50]
+		DstBlock		"Comparator"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"pre[7:0]"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Comparator"
+	      SrcPort		      1
+	      DstBlock		      "n-to-1 Multiplexer"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "threshold[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Comparator"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Name		      "Edge Detection Threshold Circuit"
+	      Position		      [395, 16]
+	      UseDisplayTextAsClickCallback off
+	      FontName		      "Arial"
+	      FontSize		      14
+	      FontWeight	      "bold"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "edge_detect_h"
+	  Ports			  [6, 1]
+	  Position		  [145, 417, 280, 518]
+	  ForegroundColor	  "blue"
+	  DropShadow		  on
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "edge_detect_h"
+	    Location		    [268, 513, 937, 779]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "pos1[7:0]"
+	      Position		      [25, 28, 55, 42]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "pos2[7:0]"
+	      Position		      [25, 63, 55, 77]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "pos3[7:0]"
+	      Position		      [25, 98, 55, 112]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "neg1[7:0]"
+	      Position		      [25, 138, 55, 152]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "neg2[7:0]"
+	      Position		      [25, 173, 55, 187]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "neg3[7:0]"
+	      Position		      [25, 208, 55, 222]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Magnitude"
+	      Ports		      [1, 1]
+	      Position		      [425, 101, 470, 139]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Magnitude"
+	      SourceType	      "Magnitude AlteraBlockset"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [3, 1]
+	      Position		      [180, 32, 215, 108]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "3"
+	      direction		      "+"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor1"
+	      Ports		      [3, 1]
+	      Position		      [180, 142, 215, 218]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "3"
+	      direction		      "+"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor2"
+	      Ports		      [2, 1]
+	      Position		      [325, 82, 360, 158]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "+-"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out[10:0]"
+	      Position		      [610, 113, 640, 127]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor2"
+	      SrcPort		      1
+	      DstBlock		      "Magnitude"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, 30]
+	      DstBlock		      "Parallel \nAdder Subtractor2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor1"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, -40]
+	      DstBlock		      "Parallel \nAdder Subtractor2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "pos1[7:0]"
+	      SrcPort		      1
+	      Points		      [95, 0; 0, 10]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "pos2[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "pos3[7:0]"
+	      SrcPort		      1
+	      Points		      [95, 0; 0, -10]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "neg1[7:0]"
+	      SrcPort		      1
+	      Points		      [95, 0; 0, 10]
+	      DstBlock		      "Parallel \nAdder Subtractor1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "neg2[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Parallel \nAdder Subtractor1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "neg3[7:0]"
+	      SrcPort		      1
+	      Points		      [95, 0; 0, -10]
+	      DstBlock		      "Parallel \nAdder Subtractor1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Magnitude"
+	      SrcPort		      1
+	      DstBlock		      "Out[10:0]"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "edge_detect_v"
+	  Ports			  [6, 1]
+	  Position		  [145, 287, 280, 388]
+	  ForegroundColor	  "blue"
+	  DropShadow		  on
+	  AncestorBlock		  "ALTELINK/AltLab/HDL SubSystem"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "edge_detect_v"
+	    Location		    [346, 263, 1026, 530]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "pos1[7:0]"
+	      Position		      [40, 28, 70, 42]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "pos2[7:0]"
+	      Position		      [40, 63, 70, 77]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "pos3[7:0]"
+	      Position		      [40, 98, 70, 112]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "neg1[7:0]"
+	      Position		      [40, 138, 70, 152]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "neg2[7:0]"
+	      Position		      [40, 173, 70, 187]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "neg3[7:0]"
+	      Position		      [40, 208, 70, 222]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Magnitude"
+	      Ports		      [1, 1]
+	      Position		      [425, 101, 470, 139]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Magnitude"
+	      SourceType	      "Magnitude AlteraBlockset"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor"
+	      Ports		      [3, 1]
+	      Position		      [180, 32, 215, 108]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "3"
+	      direction		      "+"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor1"
+	      Ports		      [3, 1]
+	      Position		      [180, 142, 215, 218]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "3"
+	      direction		      "+"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Parallel \nAdder Subtractor2"
+	      Ports		      [2, 1]
+	      Position		      [325, 82, 360, 158]
+	      ForegroundColor	      "blue"
+	      SourceBlock	      "allblocks_alteradspbuilder2/Parallel Ad"
+"der Subtractor"
+	      SourceType	      "ParallelAdder AlteraBlockset"
+	      number_of_inputs	      "2"
+	      direction		      "+-"
+	      use_pipeline	      off
+	      phase_selection	      "1"
+	      use_ena		      off
+	      use_aclr		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out[10:0]"
+	      Position		      [550, 113, 580, 127]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Magnitude"
+	      SrcPort		      1
+	      DstBlock		      "Out[10:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "neg3[7:0]"
+	      SrcPort		      1
+	      Points		      [80, 0; 0, -10]
+	      DstBlock		      "Parallel \nAdder Subtractor1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "neg2[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Parallel \nAdder Subtractor1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "neg1[7:0]"
+	      SrcPort		      1
+	      Points		      [80, 0; 0, 10]
+	      DstBlock		      "Parallel \nAdder Subtractor1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "pos3[7:0]"
+	      SrcPort		      1
+	      Points		      [80, 0; 0, -10]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "pos2[7:0]"
+	      SrcPort		      1
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "pos1[7:0]"
+	      SrcPort		      1
+	      Points		      [80, 0; 0, 10]
+	      DstBlock		      "Parallel \nAdder Subtractor"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor1"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, -40]
+	      DstBlock		      "Parallel \nAdder Subtractor2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, 30]
+	      DstBlock		      "Parallel \nAdder Subtractor2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Parallel \nAdder Subtractor2"
+	      SrcPort		      1
+	      DstBlock		      "Magnitude"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "identify_kernel"
+	  Ports			  [3, 8]
+	  Position		  [235, 80, 400, 230]
+	  ForegroundColor	  "blue"
+	  DropShadow		  on
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskHideContents	  off
+	  MaskType		  "SubSystem AlteraBlockSet"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "identify_kernel"
+	    Location		    [479, 298, 1204, 904]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "data_in[7:0]"
+	      Position		      [50, 98, 80, 112]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "clock_en"
+	      Position		      [50, 148, 80, 162]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "reset"
+	      Position		      [50, 188, 80, 202]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      Ports		      [3, 1]
+	      Position		      [415, 94, 460, 146]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay2"
+	      Ports		      [3, 1]
+	      Position		      [415, 289, 465, 341]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay3"
+	      Ports		      [3, 1]
+	      Position		      [540, 110, 590, 160]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay4"
+	      Ports		      [3, 1]
+	      Position		      [540, 194, 590, 246]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "2"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay5"
+	      Ports		      [3, 1]
+	      Position		      [540, 308, 590, 362]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+	      SourceType	      "Delay AlteraBlockset"
+	      pipeline		      "1"
+	      ClockPhase	      "1"
+	      use_ena		      on
+	      use_sclr		      on
+	      use_init		      off
+	      reset_value	      "1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      Position		      [370, 112, 400, 128]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      Position		      [490, 127, 520, 143]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From10"
+	      Position		      [490, 347, 520, 363]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From11"
+	      Position		      [370, 322, 400, 338]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From12"
+	      Position		      [40, 437, 80, 453]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From13"
+	      Position		      [40, 472, 80, 488]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r3"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From14"
+	      Position		      [255, 402, 295, 418]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r1_d1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From15"
+	      Position		      [500, 402, 540, 418]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r1_d2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From16"
+	      Position		      [500, 437, 540, 453]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r2_d2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From17"
+	      Position		      [255, 472, 295, 488]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r3_d1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From18"
+	      Position		      [500, 472, 540, 488]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r3_d2"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From2"
+	      Position		      [490, 212, 520, 228]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From26"
+	      Position		      [40, 402, 80, 418]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "r1"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From3"
+	      Position		      [490, 327, 520, 343]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From4"
+	      Position		      [370, 307, 400, 323]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From5"
+	      Position		      [185, 212, 220, 228]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From6"
+	      Position		      [250, 307, 280, 323]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "clken"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From7"
+	      Position		      [370, 127, 400, 143]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From8"
+	      Position		      [490, 142, 520, 158]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From9"
+	      Position		      [490, 227, 520, 243]
+	      ShowName		      off
+	      CloseFcn		      "tagdialog Close"
+	      GotoTag		      "rst"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      Position		      [155, 146, 205, 164]
+	      ShowName		      off
+	      GotoTag		      "clken"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      Position		      [160, 187, 200, 203]
+	      ShowName		      off
+	      GotoTag		      "rst"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto10"
+	      Position		      [390, 266, 440, 284]
+	      ShowName		      off
+	      GotoTag		      "r3"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto3"
+	      Position		      [625, 126, 675, 144]
+	      ShowName		      off
+	      GotoTag		      "r1_d2"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto4"
+	      Position		      [235, 131, 285, 149]
+	      ShowName		      off
+	      GotoTag		      "r1"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto5"
+	      Position		      [505, 81, 555, 99]
+	      ShowName		      off
+	      GotoTag		      "r1_d1"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto6"
+	      Position		      [310, 236, 360, 254]
+	      ShowName		      off
+	      GotoTag		      "r2"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto7"
+	      Position		      [625, 211, 675, 229]
+	      ShowName		      off
+	      GotoTag		      "r2_d2"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto8"
+	      Position		      [625, 326, 675, 344]
+	      ShowName		      off
+	      GotoTag		      "r3_d2"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto9"
+	      Position		      [510, 276, 560, 294]
+	      ShowName		      off
+	      GotoTag		      "r3_d1"
+	      TagVisibility	      "local"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Memory Delay"
+	      Ports		      [2, 1]
+	      Position		      [240, 177, 280, 233]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Memory Dela"
+"y"
+	      SourceType	      "Memory Delay AlteraBlockset"
+	      BusType		      "Inferred"
+	      bwl		      "8"
+	      bwr		      "0"
+	      pipeline		      "640"
+	      ram_type		      "AUTO"
+	      use_ena		      on
+	      use_sclr		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Memory Delay1"
+	      Ports		      [2, 1]
+	      Position		      [310, 272, 350, 328]
+	      SourceBlock	      "allblocks_alteradspbuilder2/Memory Dela"
+"y"
+	      SourceType	      "Memory Delay AlteraBlockset"
+	      BusType		      "Inferred"
+	      bwl		      "8"
+	      bwr		      "0"
+	      pipeline		      "640"
+	      ram_type		      "AUTO"
+	      use_ena		      on
+	      use_sclr		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "r1_c1[7:0]"
+	      Position		      [190, 403, 220, 417]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "r2_c1[7:0]"
+	      Position		      [190, 438, 220, 452]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "r3_c1[7:0]"
+	      Position		      [190, 473, 220, 487]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "r1_c2[7:0]"
+	      Position		      [370, 403, 400, 417]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "r3_c2[7:0]"
+	      Position		      [370, 473, 400, 487]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "r1_c3[7:0]"
+	      Position		      [675, 403, 705, 417]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "r2_c3[7:0]"
+	      Position		      [675, 438, 705, 452]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "r3_c3[7:0]"
+	      Position		      [675, 473, 705, 487]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "From18"
+	      SrcPort		      1
+	      DstBlock		      "r3_c3[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From17"
+	      SrcPort		      1
+	      DstBlock		      "r3_c2[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From16"
+	      SrcPort		      1
+	      DstBlock		      "r2_c3[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From15"
+	      SrcPort		      1
+	      DstBlock		      "r1_c3[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From14"
+	      SrcPort		      1
+	      DstBlock		      "r1_c2[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From13"
+	      SrcPort		      1
+	      DstBlock		      "r3_c1[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From12"
+	      SrcPort		      1
+	      DstBlock		      "r2_c1[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From26"
+	      SrcPort		      1
+	      DstBlock		      "r1_c1[7:0]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "reset"
+	      SrcPort		      1
+	      DstBlock		      "Goto1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "clock_en"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay5"
+	      SrcPort		      1
+	      DstBlock		      "Goto8"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay4"
+	      SrcPort		      1
+	      DstBlock		      "Goto7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Delay3"
+	      SrcPort		      1
+	      DstBlock		      "Goto3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "data_in[7:0]"
+	      SrcPort		      1
+	      Points		      [125, 0]
+	      Branch {
+		DstBlock		"Delay"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 35]
+		Branch {
+		  Points		  [0, 50]
+		  DstBlock		  "Memory Delay"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Goto4"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Delay2"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"Goto9"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Delay5"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      Points		      [0, 0; 10, 0]
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"Goto5"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Delay3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "From10"
+	      SrcPort		      1
+	      DstBlock		      "Delay5"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From9"
+	      SrcPort		      1
+	      DstBlock		      "Delay4"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From11"
+	      SrcPort		      1
+	      DstBlock		      "Delay2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From8"
+	      SrcPort		      1
+	      DstBlock		      "Delay3"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From7"
+	      SrcPort		      1
+	      DstBlock		      "Delay"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From6"
+	      SrcPort		      1
+	      DstBlock		      "Memory Delay1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From5"
+	      SrcPort		      1
+	      DstBlock		      "Memory Delay"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From4"
+	      SrcPort		      1
+	      DstBlock		      "Delay2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From3"
+	      SrcPort		      1
+	      DstBlock		      "Delay5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From2"
+	      SrcPort		      1
+	      DstBlock		      "Delay4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      DstBlock		      "Delay3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "Delay"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Memory Delay1"
+	      SrcPort		      1
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		Points			[0, -25]
+		DstBlock		"Goto10"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Delay2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Memory Delay"
+	      SrcPort		      1
+	      Points		      [-25, 0; 30, 0]
+	      Branch {
+		Points			[0, 35]
+		Branch {
+		  Points		  [0, 5]
+		  DstBlock		  "Goto6"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 45]
+		  DstBlock		  "Memory Delay1"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Labels			[1, 0]
+		DstBlock		"Delay4"
+		DstPort			1
+	      }
+	    }
+	    Annotation {
+	      Name		      "Kenel Identification Circuit"
+	      Position		      [355, 31]
+	      UseDisplayTextAsClickCallback off
+	      FontName		      "Arial"
+	      FontSize		      14
+	      FontWeight	      "bold"
+	    }
+	    Annotation {
+	      Name		      "Shift incoming image pixel through line"
+" buffers to create a delay line.  Buffer depth depends on the number of pixel"
+"s\nin each line.  Number of buffer lines depend on the size of the convolutio"
+"nal kernel."
+	      Position		      [362, 54]
+	      UseDisplayTextAsClickCallback off
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "post[7:0]"
+	  Position		  [655, 353, 685, 367]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pre[7:0]"
+	  Position		  [655, 383, 685, 397]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "clock_en"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "identify_kernel"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "data_in[15:0]"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "identify_kernel"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "reset"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "identify_kernel"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "apply_threshold"
+	  SrcPort		  1
+	  DstBlock		  "post[7:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "identify_kernel"
+	  SrcPort		  8
+	  Points		  [20, 0]
+	  DstBlock		  "Goto10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "identify_kernel"
+	  SrcPort		  5
+	  Points		  [20, 0]
+	  DstBlock		  "Goto9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "identify_kernel"
+	  SrcPort		  7
+	  Points		  [20, 0]
+	  DstBlock		  "Goto8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "identify_kernel"
+	  SrcPort		  6
+	  Points		  [20, 0]
+	  DstBlock		  "Goto7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "identify_kernel"
+	  SrcPort		  4
+	  Points		  [20, 0]
+	  DstBlock		  "Goto6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "identify_kernel"
+	  SrcPort		  3
+	  Points		  [20, 0]
+	  DstBlock		  "Goto5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "identify_kernel"
+	  SrcPort		  2
+	  Points		  [20, 0]
+	  DstBlock		  "Goto4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "identify_kernel"
+	  SrcPort		  1
+	  DstBlock		  "Goto3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From26"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_v"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "From25"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_v"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From24"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_v"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "From23"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_v"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From22"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_v"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From21"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_v"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "apply_threshold"
+	  SrcPort		  2
+	  DstBlock		  "pre[7:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From12"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_h"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "From11"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_h"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From10"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_h"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "From9"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_h"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_h"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "edge_detect_h"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Combine"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "apply_threshold"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "edge_detect_v"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  DstBlock		  "Combine"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "edge_detect_h"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -90]
+	  DstBlock		  "Combine"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "threshold[7:0]"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  Points		  [0, -45]
+	  DstBlock		  "apply_threshold"
+	  DstPort		  2
+	}
+	Annotation {
+	  Name			  "Buffer 2 lines of samples.\nPerform Prewitt"
+" edge detection on 3x3 kernel"
+	  Position		  [347, 39]
+	  UseDisplayTextAsClickCallback	off
+	}
+	Annotation {
+	  Name			  "DSPBuilder Edge Detection Core"
+	  Position		  [340, 16]
+	  UseDisplayTextAsClickCallback	off
+	  FontName		  "Arial"
+	  FontSize		  14
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "n-to-1 Multiplexer"
+      Ports		      [3, 1]
+      Position		      [545, 107, 600, 273]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Multiplexer"
+      SourceType	      "Multiplexer AlteraBlockset"
+      numInputs		      "2"
+      pipeline		      "0"
+      oneHot		      off
+      use_ena		      off
+      use_aclr		      off
+    }
+    Line {
+      SrcBlock		      "Avalon-MM Write FIFO"
+      SrcPort		      1
+      DstBlock		      "edge_prewitt"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Avalon-MM Write FIFO"
+      SrcPort		      2
+      Points		      [0, 0]
+      Branch {
+	DstBlock		"edge_prewitt"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 85; 350, 0; 0, -105]
+	DstBlock		"Avalon-MM Read FIFO"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "Avalon-MM Read FIFO"
+      SrcPort		      3
+      Points		      [70, 0; 0, 125; -765, 0; 0, -100]
+      DstBlock		      "Avalon-MM Write FIFO"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "GlobalRst"
+      SrcPort		      1
+      DstBlock		      "edge_prewitt"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Ground2"
+      SrcPort		      1
+      DstBlock		      "Avalon-MM Write FIFO"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From\nWorkspace"
+      SrcPort		      1
+      DstBlock		      "Avalon-MM Write FIFO"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "edge_prewitt"
+      SrcPort		      1
+      Points		      [5, 0; 0, 10]
+      DstBlock		      "n-to-1 Multiplexer"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Ground1"
+      SrcPort		      1
+      DstBlock		      "Avalon-MM Read FIFO"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Avalon-MM Read FIFO"
+      SrcPort		      1
+      Points		      [90, 0]
+      DstBlock		      "To File"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Avalon-MM Read FIFO"
+      SrcPort		      2
+      DstBlock		      "To Workspace1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Avalon Control Port"
+      SrcPort		      2
+      Points		      [15, 0; 0, 45]
+      DstBlock		      "n-to-1 Multiplexer"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "n-to-1 Multiplexer"
+      SrcPort		      1
+      DstBlock		      "Avalon-MM Read FIFO"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "edge_prewitt"
+      SrcPort		      2
+      Points		      [5, 0; 0, -10]
+      DstBlock		      "n-to-1 Multiplexer"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Avalon Control Port"
+      SrcPort		      1
+      DstBlock		      "Goto1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From1"
+      SrcPort		      1
+      DstBlock		      "edge_prewitt"
+      DstPort		      4
+    }
+    Annotation {
+      Name		      "Edge Detection Co-Processor\nwith Avalon Interf"
+"ace"
+      Position		      [181, 31]
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "This design consists of a Prewitt edge detector"
+" with one Avalon-MM \nWrite FIFO and one Avalon-MM Read FIFO.  An additional "
+"slave port \nis used as a control port."
+      Position		      [181, 80]
+      UseDisplayTextAsClickCallback off
+    }
+  }
+}

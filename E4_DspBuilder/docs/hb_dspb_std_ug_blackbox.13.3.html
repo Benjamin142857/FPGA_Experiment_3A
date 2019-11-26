@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Subsystem Builder Design Example</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_blackbox.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_blackbox.13.2.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_custom_blocks.14.1.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1029517">Subsystem Builder Design Example</a></div>
+      <div class="Body"><a name="1029518">The </a><span class="Code">Subsystem Builder</span> block makes it easy for you to import the input and output signals for a VHDL or Verilog HDL design into a Simulink subsystem. </div>
+      <div class="Body"><a name="1010146">If your HDL design contains any LPM or megafunctions that the </a><span class="Code">HDL Import</span> block does not support, use the <span class="Code">Subsystem Builder</span> block. The <span class="Code">Subsystem Builder</span> block also allows you to create your own Simulink simulation model from non-DSP Builder blocks for faster simulation speed. </div>
+      <div class="Body"><a name="1010120">Unlike the </a><span class="Code">HDL Import</span> block, the <span class="Code">Subsystem Builder</span> block does not create a Simulink simulation model for the imported HDL design.</div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1047251">For more information about the </a><span class="Code">Subsystem Builder</span> block, <span class="change_bars">refer to</span> the block description<span class="Document_title"> </span>in the <span class="Document_title">AltLab Library</span> chapter in the <span class="Link" style="font-style: italic;"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_lib.pdf" target="external_window">DSP Builder Standard Blockset Libraries</a></span> section in volume 2 of the <span class="Document_title">DSP Builder Handbook</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="999840">In addition to porting the HDL design to a Simulink subsystem, you must create the </a>Simulink simulation model for the block. The simulation models describes the functionality of the particular HDL subsystem. The following options are available to create Simulink simulation models:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="999848">Simulink generic library</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="999852">Simulink blocksets (such as the DSP and Communications blocksets)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="999853">DSP</a>&nbsp;Builder blockset</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="999854">MATLAB functions</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="999855">S-functions</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1028798">You must add a </a><span class="Code">Non-synthesizable Input</span> block and a <span class="Code">Non-synthesizable </span><span class="Code">Output</span> block around any DSP Builder blocks in the subsystem.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1000003">The following section shows an example that uses an S-function to describe the </a>simulation models of the HDL code. </div>
+      <div class="H2_heading"><a name="1010470">Creating a Black Box System</a></div>
+      <div class="Body"><a name="1010471">To create a black-box system, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1010499">In MATLAB, change the current directory to: </a><span class="Bold" style="font-style: italic;">&lt;</span><span class="Emphasis" style="font-weight: normal;">DSP Builder install path</span><span class="Bold">&gt; </span><span class="Bold" style="font-style: normal;">\DesignExamples\Tutorials\BlackBox\SubSystemBuilder</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1010485">Click </a><span class="Bold">Open</span> on the File menu. Select the <span class="Bold">filter8tap.mdl</span> file and click <span class="Bold">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1029824">Open the Simulink Library Browser and expand the </a><span class="Bold">AltLab</span> library under the <span class="Bold">Altera DSP</span><span class="Bold">&nbsp;</span><span class="Bold">Builder blockset</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1000062">Drag a </a><span class="Code">Subsystem Builder</span> block into your model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1000063">Double-click the </a><span class="Code">Subsystem Builder</span> block. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1041726">The </a><span class="Bold">Subsystem Builder</span> dialog box displays (<span class="N_007cLink"><a href="#1035732" title="Subsystem Builder Design Example">Figure&nbsp;8–5</a></span>).</div>
+      <div class="TA_table_anchor"><a name="1035725">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;8–5.&nbsp;</span><a name="1035732">Subsystem Builder Dialog Box</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1035734"><img class="Default" src="images/subsystem_builder_window.jpg" width="264" height="332" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030531">In the dialog box, browse for the </a><span class="Bold">fir_vhdl.vhd </span>file and click <span class="Bold">Build</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1041761">This action builds the subsystem and adds the signals for the </a><span class="Code">fir_vhdl</span> subsystem to the symbol in your <span class="Bold">filter8tap.mdl</span> model. The <span class="Bold">Subsystem Builder</span> dialog box automatically closes.</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">7.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030535">Connect the ports (</a><span class="N_007cLink"><a href="#1035793" title="Subsystem Builder Design Example">Figure&nbsp;8–6</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TAW_table_anchor_wide"><a name="1035782">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;8–6.&nbsp;</span><a name="1035793">filter8tap Design</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1035795"><img class="Default" src="images/BBLibraryMyFilter.jpg" width="604" height="145" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">8.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1000120">Double-click on the </a><span class="Code">fir_vhdl</span> symbol. The <span class="Bold">filter8tap/fir_vhdl</span> subsystem opens (<span class="N_007cLink"><a href="#1035859" title="Subsystem Builder Design Example">Figure&nbsp;8–7</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TAW_table_anchor_wide"><a name="1035844">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;8–7.&nbsp;</span><a name="1035859">Library: filter8tap/fir_vhdl Window</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1035861"><img class="Default" src="images/BBMyFilterFir_vhdl.jpg" width="553" height="128" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1_body"><a name="1000127">The subsystem contains two </a><span class="Code">HDL Input</span> blocks (<span class="Code">simulink_sclr</span> and <span class="Code">data_in)</span> and a <span class="Code">HDL Output</span> block (<span class="Code">data_out</span>). Each of these blocks in turn connects to a subsystem input or output. DSP Builder also creates a <span class="Code">HDL Entity</span> block to store the name of the HDL file and the names of the clock and reset ports. </div>
+      <div class="AI1_information_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1030128">The clock is handled implicitly and no port is explicitly created in the </a>subsystem.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">9.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1028860">Leave your model window open for use in the next section.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1002406">In the next section, you build the simulation model that represents the </a>functionality of this block in your Simulink simulations.</div>
+      <div class="H2_heading"><a name="1000166">Building the Black-Box SubSystem Simulation Model</a></div>
+      <div class="Body"><a name="1000185">For this example, you use a S-function C++ simulation model to represent the 8-tap </a>FIR filter block. To create your model, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030210">In the Simulink Library Browser, expand the </a><span class="Bold">Simulink</span> folder.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030211">From the </a><span class="Bold">User-Defined Functions</span> library, drag and drop a <span class="Code">S</span><span class="Code">‑</span><span class="Code">Function</span> block into your model window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1000216">Double-click the </a><span class="Code">S-Function</span> block to display the <span class="Bold">Function Block Parameters: </span><span class="Bold">S</span><span class="Bold">‑</span><span class="Bold">Function</span> dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1041883">In the </a><span class="Bold">Block Parameters</span> dialog box, change the <span class="Bold">S-Function name</span> to <span class="Code">Sfir8tap</span> and enter the parameters <span class="Code">-1 3962 4817 5420 5733 5733 5420 4817 3962</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1041884">The </a><span class="Code">Sfir8tap</span> function is a C++ Simulink S-Function simulation model for the 8-tap Fir filter block.</div>
+      <div class="L1_body"><a name="1041936">The first parameter refers to the sampling rate (-1 indicates it inherits the sampling </a>rate from the preceding block) and the rest of the parameters represent the eight filter coefficients.</div>
+      <div class="AI1_information_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1041904">Leave the </a><span class="Bold">S-function modules</span> parameter with its default value.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">5.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1011427">Click the </a><span class="Bold">Edit</span> button to view the code that describes the S-Function. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1030302">If the code does not appear automatically, click </a><span class="Bold">Browse</span> and select the <span class="Bold">Sfir8tap.CPP </span>file.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">6.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030299">Scroll down in the </a><span class="Bold">Sfir8tap.CPP </span>file to the S-function methods section. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1012357">The following code shows the Simulink C++ S-Mex function code that designs a </a>Simulink filter simulation model:</div>
+      <div class="CO_code"><a name="1030994">/*====================*</a></div>
+      <div class="CO_code"><a name="1042061">* S-function methods *</a></div>
+      <div class="CO_code"><a name="1042071">*====================*/</a></div>
+      <div class="CO_code"><a name="1042081">/* Function: mdlInitializeSizes=======================================</a></div>
+      <div class="CO_code"><a name="1042095">* Abstract:</a></div>
+      <div class="CO_code"><a name="1042111">* The sizes information is used by Simulink to determine the S-function</a></div>
+      <div class="CO_code"><a name="1042118">* block's characteristics (number of inputs, outputs, states, etc.).</a></div>
+      <div class="CO_code"><a name="1042123">*/</a></div>
+      <div class="CO_code"><a name="1042128">static void mdlInitializeSizes(SimStruct *S)</a></div>
+      <div class="CO_code"><a name="1042145">{</a></div>
+      <div class="CO_code"><a name="1042157">	</a>/* See sfuntmpl.doc for more details on the macros below */</div>
+      <div class="CO_code"><a name="1042166">	</a>ssSetNumSFcnParams(S, 9);  /* Number of expected parameters */</div>
+      <div class="CO_code"><a name="1042171">	</a>if (ssGetNumSFcnParams(S) != ssGetSFcnParamsCount(S)) {</div>
+      <div class="CO_code"><a name="1042184">	</a>/* Return if number of expected != number of actual parameters */</div>
+      <div class="CO_code"><a name="1042197">	</a>	return;</div>
+      <div class="CO_code"><a name="1042210">	</a>}<br />	// Set DialogParameters not tunable</div>
+      <div class="CO_code"><a name="1042216">	</a>const int iMaxssGetSFcnParamsCount = ssGetSFcnParamsCount(S);</div>
+      <div class="CO_code"><a name="1042221">	</a>for (int p=0;p&lt;iMaxssGetSFcnParamsCount;p++)</div>
+      <div class="CO_code"><a name="1043250">	</a>{</div>
+      <div class="CO_code"><a name="1043252">	</a>	ssSetSFcnParamTunable(S, p,  0);</div>
+      <div class="CO_code"><a name="1043253">	</a>}</div>
+      <div class="CO_code"><a name="1042269">	</a>if (!ssSetNumInputPorts(S, 1)) return;</div>
+      <div class="CO_code"><a name="1042278">	</a>ssSetInputPortWidth(S, 0, 1);</div>
+      <div class="CO_code"><a name="1042283">	</a>ssSetInputPortDataType(S,  0, SS_DOUBLE);</div>
+      <div class="CO_code"><a name="1042376">	</a>if (!ssSetNumOutputPorts(S, 1)) return;</div>
+      <div class="CO_code"><a name="1042314">	</a>ssSetOutputPortWidth(S, 0, 1);</div>
+      <div class="CO_code"><a name="1042318">	</a>ssSetOutputPortDataType(S, 0, SS_DOUBLE);</div>
+      <div class="CO_code"><a name="1042320">	</a>ssSetNumContStates(S, 0);</div>
+      <div class="CO_code"><a name="1042329">	</a>ssSetNumDiscStates(S, 1);</div>
+      <div class="CO_code"><a name="1042331">	</a>ssSetNumSampleTimes(S, 1);</div>
+      <div class="CO_code"><a name="1042340">	</a>ssSetNumRWork(S, 0);</div>
+      <div class="CO_code"><a name="1042345">	</a>ssSetNumIWork(S, 0);</div>
+      <div class="CO_code"><a name="1042350">	</a>ssSetNumDWork(S, DYNAMICALLY_SIZED); // reserve element in the </div>
+      <div class="CO_code"><a name="1042352">	</a>ssSetNumModes(S, 0); 								// pointers vector to store a C++ object</div>
+      <div class="CO_code"><a name="1042360">	</a>ssSetNumNonsampledZCs(S, 0);</div>
+      <div class="CO_code"><a name="1042365">	</a>ssSetOptions(S, 0);</div>
+      <div class="CO_code"><a name="1042367">}</a></div>
+      <div class="Body"><a name="1000359">During simulation, Simulink invokes certain callback methods from the S-function. </a>The callback methods are subfunctions that initialize, update discrete states, and calculate output. <span class="N_007cLink"><a href="#1034722" title="Subsystem Builder Design Example">Table&nbsp;8–1</a></span> shows the design example callback methods.</div>
+      <div class="TA_table_anchor"><a name="1034708">&nbsp;</a></div>
+      <table class="Tbl_standard" style="text-align: left; width: 378.0002pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HT_table_heading">
+            <span class="N_007cRun-in_heading">Table&nbsp;8–1.&nbsp;</span><a name="1034722">S</a>‑Function Callback Methods </div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 145pt;">
+            <div class="TCHC_column_head_center"><a name="1011529">Callback Method</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1.5pt; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: bottom; width: 233.0002pt;">
+            <div class="TCHC_column_head_center"><a name="1011531">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left" style="color: #000000; font-family: Courier; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Code"><a name="1011533">mdlInitializeSizes</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1011535">Specify the number of inputs, outputs, states, parameters, </a>and other characteristics of the S‑function.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left" style="color: #000000; font-family: Courier; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Code"><a name="1011537">mdlInitializeSampleTimes</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1011539">Specify the sample rates at which this S</a>‑function operates.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left" style="color: #000000; font-family: Courier; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Code"><a name="1011541">mdlStart</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1011543">Initialize the vectors of this S</a>‑function.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left" style="color: #000000; font-family: Courier; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Code"><a name="1011545">mdlOutputs</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1011547">Compute the signals that this block emits.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left" style="color: #000000; font-family: Courier; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Code"><a name="1011549">mdlUpdate</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1011551">Update the states of the block.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left" style="color: #000000; font-family: Courier; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><span class="Code"><a name="1011553">mdlTerminate</a></span></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-left-color: #000000; border-left-style: solid; border-left-width: 1px; border-right-color: #000000; border-right-style: solid; border-right-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 2pt; padding-left: 4pt; padding-right: 4pt; padding-top: 4pt; vertical-align: top;">
+            <div class="TCBL_cell_body_left"><a name="1011555">Perform any actions required at termination of simulation.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1000820">At the MATLAB command prompt, type:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><span class="Code"><a name="1030452">mex Sfir8tap.CPP</a></span> <span class="Return_002fCheckmark_Symbols">r</span></div>
+      <div class="L1_body"><a name="1030434">The </a><span class="Code">mex</span> command compiles and links the source file into a shared library executable in MATLAB, <span class="Bold">Sfir8tap.mexw32</span>. The extension is specific to 32-bit version of MATLAB run in Windows.</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030548">Close the editor window and click on </a><span class="Bold">OK</span> to close the <span class="Bold">Function Block Parameters</span> dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1030549">In the </a><span class="Bold">filter8tap/fir_vhdl</span> window, connect the input port of the S‑function block to the <span class="Code">data_in</span> block, and connect the output port of the <span class="Bold">S-function</span> block to the <span class="Code">data_out</span> block (<span class="N_007cLink"><a href="#1036236" title="Subsystem Builder Design Example">Figure&nbsp;8–8</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TAW_table_anchor_wide"><a name="1036229">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;8–8.&nbsp;</span><a name="1036236">S-Function Block Connection</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1036238"><img class="Default" src="images/BBSubSystemSfunctionConnect.jpg" width="547" height="108" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AI1_information_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1030740">You do not need to connect the </a><span class="Code">simulink_sclr</span> block. The <span class="Code">HDL Entity</span> block automatically maps any input ports named <span class="Code">simulink_clock</span> in the VHDL entity to the global clock signal, and any input ports named <span class="Code">simulink_sclr</span> to the global synchronous clear signal.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">4.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1001011">Click </a><span class="Bold">Save</span> on the File menu to save the <span class="Bold">filter8tap.mdl</span> file.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1001021">Simulating the Subsystem Builder Model</a></div>
+      <div class="Body"><a name="1001025">To run the Simulink simulation, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1001095">Click </a><span class="Bold">Start</span> on the Simulation menu in the <span class="Bold">filter8tap.mdl</span> window to begin the simulation.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1001130">Double-click the </a><span class="Code">Scope</span> block to view the simulation results. Click <span class="Bold">Autoscale</span> to resize the scope. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1011706">Click the </a><span class="Bold">Zoom X-axis</span> icon and use the cursor to zoom in on the first 22 x-axis time units.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><span class="N_007cLink"><a href="#1036307" title="Subsystem Builder Design Example" name="1011019">Figure&nbsp;8–9</a></span> shows the simulation results.</div>
+      <div class="TA_table_anchor"><a name="1036300">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;8–9.&nbsp;</span><a name="1036307">Simulink Simulation Results of 8-Tap FIR Filter, Scope Window</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1036309"><img class="Default" src="images/BBSimulinkSimRes.jpg" width="272" height="194" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1001159">Because the input is a pulse, the simulation results show the impulse response of the </a>8-tap FIR filter, which translates to the eight coefficient values. You can change the input stimulus to verify the step and random response of the filter.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1031205">Adding VHDL Dependencies to the Quartus II Project and ModelSim</a></div>
+      <div class="Body"><a name="1031206">The VHDL file is dependent on two other VHDL files. The Quartus II software or </a>ModelSim do not examine these two files, and compilation either fails or gives unexpected results. To resolve this issue, follow these steps:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1031207">Double-click on the </a><span class="Code">Signal Compiler</span> block and click <span class="Bold">Compile</span>. Ignore the result for now. This action creates a <span class="Bold">DSPBuilder_filter8tap_import</span> directory in the directory containing your design.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 15pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1031209">Alternatively, you can create the directory </a><span class="Bold">DSPBuilder_filter8tap_import</span> directly.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1031210">Copy the </a><span class="Bold">extra_add.tcl</span> and <span class="Bold">extra_add_msim.tcl</span> files from the original design directory to the <span class="Bold">DSPBuilder_filter8tap_import</span> directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1031211">The </a><span class="Bold">extra_add.tcl</span> file adds <span class="Bold">final_add.vhd</span> and <span class="Bold">four_mult_add.vhd</span> to the Quartus II project, while <span class="Bold">extra_add_msim.tcl</span> compiles them in ModelSim when your design is run using the <span class="Code">TestBench</span> block. The Quartus II software executes any files ending with <span class="Bold">_add.tcl</span> when it creates the project. ModelSim executes files ending with <span class="Bold">_add_msim.tcl</span> when it compiles your design testbench.</div>
+      <div class="H2_heading"><a name="1031269">Simulate the Design in ModelSim</a></div>
+      <div class="Body"><a name="1031270">To test the simulation model against the HDL in ModelSim, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1031271">In the Simulink Library Browser, expand </a><span class="Bold">AltLab</span> library under <span class="Bold">Altera DSP </span><span class="Bold">Builder Blockset</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1031272">Drag a </a><span class="Code">TestBench</span> block into your model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap;">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1031273">Double-click on the </a><span class="Code">TestBench</span> block and click <span class="Bold">Compare against HDL</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1_body"><a name="1042468">When the comparison completes successfully an </a><span class="Code">Exact Match</span> message issues in the <span class="Bold">TestBench Generator</span> dialog box.</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1042469">If you want to use ModelSim directly, click on the </a><span class="Bold">Advanced</span> tab, turn on the <span class="Bold">Launch </span><span class="Bold">GUI</span> option, and then click <span class="Bold">Run ModelSim</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1042470">This completes the Subsystem Builder tutorial. You can optionally compile your </a>model for synthesis (<span class="N_007cLink"><a href="hb_dspb_std_ug_tutorial.07.1.html#1000950" title="Getting Started">“Getting Started”</a></span>).</div>
+      <div class="N_007cPN_part_number"><a name="999522">&nbsp;</a></div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

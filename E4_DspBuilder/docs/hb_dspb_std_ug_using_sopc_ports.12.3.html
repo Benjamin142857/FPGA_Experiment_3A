@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Avalon-MM Interface Blocks</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_using_sopc_ports.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_using_sopc_ports.12.2.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_using_sopc_ports.12.4.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1069099">Avalon-MM Interface Blocks</a></div>
+      <div class="Body"><a name="1022749">A SOPC Builder component is a design module that SOPC Builder recognizes and can </a>automatically integrate into a system. </div>
+      <div class="Body"><a name="1041175">SOPC Builder can recognize a DSP Builder design model if it is in the same working </a>directory as the SOPC Builder project. With the Avalon-MM blocks in the Interfaces library, you can design the DSP function and add an Avalon-MM block that makes it a custom peripheral in the Simulink environment. </div>
+      <div class="Body"><a name="1022768">You can instantiate each Avalon-MM block multiple times in a design to implement </a>an SOPC component with multiple master or slave ports. </div>
+      <div class="H2_heading"><a name="1022663">Avalon-MM Slave Block</a></div>
+      <div class="Body"><a name="1022664">The </a><span class="Code">Avalon-MM Slave</span> block supports the following signals:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1022666">clock</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1022667">address</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1022668">read</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1022669">readdata</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1022670">write</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1022671">writedata</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1022672">byteenable</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1036180">readyfordata</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1036195">dataavailable</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1036212">endofpacket</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1022676">readdatavalid</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1036239">waitrequest</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1022678">beginbursttransfer</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1036258">burst count</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1022685">irq</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1036285">begintransfer</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1036290">chipselect</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1089437">For more information about these signals, refer to the </a><span class="Link" style="font-style: italic;"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_lib.pdf" target="external_window">DSP Builder Standard Blockset Libraries</a></span> section in volume 2 of the <span class="Document_title">DSP Builder Handbook</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1089583" title="Avalon-MM Interface Blocks" name="1089579">Figure&nbsp;7–1</a></span> shows a block that describes an Avalon-MM slave interface where all the Avalon-MM signals are enabled. </div>
+      <div class="TAW_table_anchor_wide"><a name="1089589">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;7–1.&nbsp;</span><span style="color: #000000; font-family: &quot;Microsoft Sans Serif&quot;; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline;"><a name="1089583">Avalon-MM Slave Block Signals</a></span></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1089588"><img class="Default" src="images/SlaveAllPorts.jpg" width="582" height="676" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1089689">Each of the input and output ports of the block correspond to the input and output </a>ports of the pin or bus that <span class="N_007cLink"><a href="#1089583" title="Avalon-MM Interface Blocks">Figure&nbsp;7–1</a></span> shows between the ports.</div>
+      <div class="Body"><a name="1089693">Inputs to the DSP Builder core display as right pointing bus or pins; outputs from the </a>core display as left pointing pins or busses.</div>
+      <div class="Body"><a name="1089694">You can use the opposite end of any pins to provide pass-through test data from the </a>Simulink domain.</div>
+      <div class="H2_heading"><a name="1022585">Avalon-MM Master Block</a></div>
+      <div class="Body"><a name="1023395">You may want to use an </a><span class="Code">Avalon-MM Master</span> block (for example, to design a DMA controller) in a design that functions as an Avalon‑MM Master in your SOPC Builder system. </div>
+      <div class="Body"><a name="1023454">The </a><span class="Code">Avalon-MM Master</span> block is similar to the <span class="Code">Avalon-MM Slave</span> block and supports the following signals:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023397">clock</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023399">waitrequest</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023400">address</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023401">read</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023402">readdata</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023403">write</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023404">writedata</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1036361">byteenable</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1036368">endofpacket</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023407">readdatavalid</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023408">flush</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023410">burstcount</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1023613">irq</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;vertical-align: baseline;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner" style="color: #000000; font-family: Courier; font-size: 10.0pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none;"><span class="Code"><a name="1050239">irqnumber</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1089722">For more information about these signals, refer to the </a><span class="Link" style="font-style: italic;"><a href="http://www.altera.com/literature/hb/dspb/hb_dspb_std_lib.pdf" target="external_window">DSP Builder Standard Blockset Libraries</a></span> section in volume 2 of the <span class="Document_title">DSP Builder Handbook</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1089774" title="Avalon-MM Interface Blocks" name="1089770">Figure&nbsp;7–2 on page&nbsp;7–5</a></span> shows a block that describes an Avalon-MM master interface where all the Avalon-MM signals are enabled.</div>
+      <div class="TAW_table_anchor_wide"><a name="1089780">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;7–2.&nbsp;</span><a name="1089774">Avalon-MM Master Block Signals</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1089779"><img class="Default" src="images/MasterAllPorts.jpg" width="573" height="524" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1023964">Wrapped Blocks</a></div>
+      <div class="Body"><a name="1023965">The </a><span class="Code">Avalon-MM Master</span> and <span class="Code">Avalon-MM Slave</span> interface blocks allow you to generate a SOPC Builder component in DSP Builder, but they do little to mask the complexities of the interface. The Avalon-MM read and write FIFO blocks in the Interfaces library provide a higher level of abstraction.</div>
+      <div class="Body"><a name="1023968">You can implement a typical DSP core that handles data in a streaming manner, with </a>the signals <span class="Code">Data</span>, <span class="Code">Valid,</span> and <span class="Code">Ready</span>. To provide a high level view, DSP Builder provides you with configurable <span class="Code">Avalon-MM Write FIFO</span> and <span class="Code">Avalon-MM Read </span><span class="Code">FIFO</span> blocks for you to map Avalon-MM interface signals to this protocol.</div>
+      <div class="Body"><span class="N_007cLink"><a href="#1055371" title="Avalon-MM Interface Blocks" name="1023970">Figure&nbsp;7–3</a></span> shows an example system with <span class="Code">Avalon-MM Write FIFO</span> and <span class="Code">Avalon-MM Read FIFO</span> blocks.</div>
+      <div class="TAW_table_anchor_wide"><a name="1055356">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;7–3.&nbsp;</span><a name="1055371">Example System with Avalon-MM Write FIFO and Avalon-MM Read FIFO Blocks</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1055373"><img class="Default" src="images/FIFO_system.jpg" width="601" height="219" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H3_heading"><a name="1033059">Avalon-MM Write FIFO</a></div>
+      <div class="Body"><a name="1069326">An </a><span class="Code">Avalon-MM Write FIFO</span> has the following ports:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1069336">TestData</a></span> (input). Connect this port to a Simulink block that provides simulation data to the Avalon-MM Write FIFO. The data passes to the <span class="Code">DataOut</span> port one cycle after the <span class="Code">Ready</span> input port asserts.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1069337">Stall</a></span> (input). Connect this port to a Simulink block. It simulates stall conditions of the Avalon-MM bus and hence underflow to the SOPC Builder component. For any simulation cycle where <span class="Code">Stall</span> asserts, the Avalon-MM Write Test Converter caches the test data and releases in order, one sample per clock, when stall is de-asserted.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1069272">Ready</a></span> (input). Connect this port to a DSP Builder block. It indicates that the downstream hardware is ready for data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1069247">DataOut</a></span> (output). Connect this port to a DSP Builder block that corresponds to the oldest unsent data sample received on the <span class="Code">TestData</span> port.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1033030">DataValid</a></span> (output). Connect this port to a DSP Builder block and assert whenever <span class="Code">DataOut</span> corresponds to real data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1036759">Double-click on an </a><span class="Code">Avalon-MM Write FIFO</span> block to open the <span class="Bold">Block Parameters</span> dialog box so that you can set parameters for the data type, data width and FIFO depth.</div>
+      <div class="AI_information_outer" style="margin-left: 60pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AI_information_inner" style="width: 30pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI_information_inner"><a name="1036911">To open the hierarchy below the </a><span class="Code">Avalon-MM Write FIFO</span> block, right-click the block and click <span class="Bold">Look Under Mask</span> on the pop-up menu.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1043746">You can use this design as a template to design new functionality (for example, when </a>you use an Avalon-MM address input to split incoming streams). </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1064793" title="Avalon-MM Interface Blocks" name="1036619">Figure&nbsp;7–4</a></span> shows the internal content of an Avalon-MM Write FIFO buffer. </div>
+      <div class="TAW_table_anchor_wide"><a name="1064799">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;7–4.&nbsp;</span><a name="1064793">Avalon-MM Write FIFO Content</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1064798"><img class="Default" src="images/AvalonWriteFIFOContent.jpg" width="622" height="246" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1064800">The </a><span class="Code">Avalon-MM Write Test Converter</span> block handles caching and conversion of Simulink or MATLAB data into accesses over the Avalon-MM interface. You can use this block to test the functionality of your design. The <span class="Code">Avalon-MM Write Test </span><span class="Code">Converter</span> is simulation only and does not synthesize to HDL.</div>
+      <div class="H3_heading"><a name="1033063">Avalon-MM Read FIFO Buffer</a></div>
+      <div class="Body"><a name="1024540">An </a><span class="Code">Avalon-MM read FIFO</span> buffer has the following ports:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1024553">Stall</a></span> (input). Connect this port to a Simulink block. It simulates stall conditions of the Avalon-MM bus and hence backpressure to the SOPC Builder component. For any simulation cycle where <span class="Code">Stall</span> asserts, no Avalon-MM reads take place and the internal FIFO buffer fills. When full, the <span class="Code">Ready</span> output is de-asserted so that you lose no data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1024554">Data</a></span> (input). Connect this port to a DSP Builder block and to outgoing data from the user design.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1024555">DataValid</a></span> (input). Connect this port to a DSP Builder block and assert whenever the signal on the <span class="Code">Data</span> port corresponds to real data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1024556">TestDataOut</a></span> (output). Connect this port to a Simulink block that corresponds to data received over the Avalon-MM bus.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1024557">TestDataValid</a></span> (output). Connect this port to a Simulink block and assert whenever <span class="Code">TestDataOut</span> corresponds to real data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Code"><a name="1032881">Ready</a></span> (output). When asserted, indicates that the block is ready to receive data.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1036906">Double-clicking on an </a><span class="Code">Avalon-MM Write FIFO</span> block opens the <span class="Bold">Block Parameters</span> dialog box that you can use to set parameters for the data type, data width and FIFO depth.</div>
+      <div class="Body"><a name="1089311">You can open the hierarchy below the </a><span class="Code">Avalon-MM Read FIFO</span> block by right-clicking on the block and choosing <span class="Bold">Look Under Mask</span> from the pop-up menu. </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1056284" title="Avalon-MM Interface Blocks" name="1089312">Figure&nbsp;7–5</a></span> shows the internal content of an Avalon-MM Read FIFO. </div>
+      <div class="TAW_table_anchor_wide"><a name="1056261">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;7–5.&nbsp;</span><a name="1056284">Avalon-MM Read FIFO Content</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1056286"><img class="Default" src="images/AvalonReadFIFOContent.jpg" width="596" height="283" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1036897">The </a><span class="Code">Avalon-MM Read Data Converter</span> block handles caching and conversion of Simulink or MATLAB data into accesses over the Avalon-MM interface. You can use this block to test the functionality of your design. The <span class="Code">Avalon-MM Read Data </span><span class="Code">Converter</span> is simulation only and does not synthesize to HDL.</div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

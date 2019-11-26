@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board uniquename="StratixIVEP4SGX230" family="Stratix IV">
+	<displayname>Stratix IV GX FPGA Development Board </displayname>
+
+	<!-- 16 Green LEDs -->
+	<component name="LED0" pin="Pin_F33" />
+	<component name="LED1" pin="Pin_AK33" />
+	<component name="LED2" pin="Pin_W28" />
+	<component name="LED3" pin="Pin_L34" />
+	<component name="LED4" pin="Pin_AM34" />
+	<component name="LED5" pin="Pin_M32" />
+	<component name="LED6" pin="Pin_L35" />
+	<component name="LED7" pin="Pin_AM35" />
+	<component name="LED8" pin="Pin_N34" />
+	<component name="LED9" pin="Pin_W35" />
+	<component name="LED10" pin="Pin_AE30" />
+	<component name="LED11" pin="Pin_V30" />
+	<component name="LED12" pin="Pin_AG30" />
+	<component name="LED13" pin="Pin_AD29" />
+	<component name="LED14" pin="Pin_U31" />
+	<component name="LED15" pin="Pin_U35" />
+
+	<!-- DIP Switches -->
+	<component name="DipSwitch" label="S6">
+		<pin location="Pin_AL35" />
+		<pin location="Pin_AC35" />
+		<pin location="Pin_J34" />
+		<pin location="Pin_AN35" />
+		<pin location="Pin_G33" />
+		<pin location="Pin_K35" />
+		<pin location="Pin_AG34" />
+		<pin location="Pin_AG31" />
+	</component>
+
+	<!-- 4 Push-button Switches -->
+	<component name="PB0" pin="Pin_AK35" />
+	<component name="PB1" pin="Pin_W32" />
+	<component name="PB2" pin="Pin_M34" />
+
+	<!-- User CPU_Reset -->
+	<component name="CPU_RESETN" pin="Pin_V34" />
+
+	<configuration icon="4sgx230.bmp" width="166" height="144">
+		<devices jtag-code="0x024090DD">
+			<device name="EP4SGX230KF40C2" />
+		</devices>
+
+		<!-- Input clock selection list -->
+		<option name="ClockPinIn" label="Clock Pin In">
+			<pin location="Pin_AF34" />
+			<pin location="Pin_AC34" />
+			<pin location="None" />
+		</option>
+
+		<!-- Global Reset Pin -->
+		<option name="GlobalResetPin" label="Global Reset Pin">
+			<pin location="Pin_V34" />
+			<pin location="Pin_M34" />
+			<pin location="Pin_W32" />
+			<pin location="Pin_AK35" />
+			<pin location="None" />
+		</option>
+	</configuration>
+</board>

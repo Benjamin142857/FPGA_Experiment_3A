@@ -1,0 +1,1 @@
+@start /B /D"%~d1%~p1" "DSP Builder" "S:\tools\matlab\R2010b\windows64\bin\matlab.exe"  -r open('%~f1') 

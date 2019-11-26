@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Managing Projects and Files</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_managing.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body style="background-repeat: no-repeat; border-bottom-color: Transparent; border-left-color: Transparent; border-right-color: Transparent; border-top-color: Transparent; border-top-style: solid; border-top-width: thin; margin-bottom: -150px; margin-left: 16px; margin-top: 65px">
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_using_state_machine.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_troubleshooting.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H0_chapter"><a name="1021345">Managing Projects and Files</a></div>
+      <div class="B0_body"><a name="1025157">DSP Builder design requires the following files to store all the components:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025158">The top-level Simulink model </a><span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">top_level_name</span><span class="Bold" style="font-style: normal">&gt;.mdl</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025159">The import directory </a><span class="Bold">DSPBuilder_&lt;</span><span class="Emphasis" style="font-weight: normal">top_level_name</span><span class="Bold" style="font-style: normal">&gt;_import </span>and<span class="Bold"> </span>its contents.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025160">Any source files for imported HDL.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025161">Any Intel format hexadecimal memory initialization (.</a><span class="Bold">hex</span>) files.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025162">Any referenced custom library files.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026019">The analyzed Simulink model file </a><span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">top_level_name</span><span class="Bold" style="font-style: normal">&gt;.mdlxml</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1026047">When you include the .</a><span class="Bold">mdlxml</span> file in a Quartus II project, you do not need to call MATLAB to synthesize the design. You can still synthesize a project without the .<span class="Bold">mdlxml</span> file, but you must call MATLAB as part of the generation flow. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1028372">If you do not want Quartus II synthesis to call MATLAB, or are passing the design a </a>user without access to MATLAB, follow one of these steps:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026168">Include both the .</a><span class="Bold">mdl</span> and corresponding .<span class="Bold">mdlxml</span> files in the project,</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1026221">Export HDL and specify the exported HDL as the source with no references to the </a>.<span class="Bold">mdl</span> or .<span class="Bold">mdlxml</span> files in the project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1025163">Any design that includes HDL Import, State Machine Editor or MegaCore functions </a>requires the import directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1025164">Integration with Source Control Systems</a></div>
+      <div class="B0_body"><a name="1025166">Altera recommends that you store Quartus II archive (.</a><span class="Bold">qar</span>) files rather than individual HDL files for source control purposes. </div>
+      <div class="B0_body"><a name="1025167">To create a .</a><span class="Bold">qar</span> file, follow these steps in the Quartus II software:</div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025168">Create a Quartus II project that sources the top-level Quartus II IP (.</a><span class="Bold">qip</span>) file that the DSP Builder Export HDL flow generates (<span class="N_007cLink"><a href="#1025191" title="Managing Projects and Files">“Exporting HDL” on page&nbsp;12–3</a></span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025172">Perform analysis and elaboration to ensure the design incorporates any black-box </a>system files. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">3.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025173">Archive the project by clicking </a><span class="Bold">Archive Project</span> on the project menu in the Quartus&nbsp;II software) to generate the .<span class="Bold">qar</span> file.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1025174">Any HDL elements that you introduce into DSP Builder with custom library blocks </a>may require their own source control. Additional .<span class="Bold">qip</span> files, which are referenced in the "# Imported IP files" section of the top-level .<span class="Bold">qip</span> file, list the required files.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1025175">HDL Import</a></div>
+      <div class="B0_body"><a name="1025176">In general, source files that you import with HDL Import are not part of a DSP Builder </a>project. DSP Builder references them in projects that generate with the Export HDL flow as external files, with absolute paths.</div>
+      <div class="B0_body"><a name="1025177">When you move a design to a new version of the tools or to a location on a different </a>computer, run the <span class="Code">alt_dspbuilder_refresh_HDLimport</span> script to ensure the HDL Import blocks are up-to-date.</div>
+      <div class="B0_body"><a name="1025178">When migrating to a new computer, re-import the HDL to enable hardware </a>generation (although simulation in Simulink may be possible without this step).</div>
+      <div class="H1_heading"><a name="1025179">MegaCore Functions</a></div>
+      <div class="B0_body"><a name="1025180">The MegaCore IP Library always installs in the same parent directory as the Quartus </a>II installation. This directory is not a subdirectory of the <span class="Bold">quartus</span> directory but a relative path to an install directory at the same level as the <span class="Bold">quartus</span> directory. The expected directory structure is:</div>
+      <div class="B1_body"><span class="Bold"><a name="1025181">&lt;</a></span><span class="Emphasis" style="font-weight: normal">install_path</span><span class="Bold" style="font-style: normal">&gt;&lt;QUARTUS_ROOTDIR&gt;\..\ip</span></div>
+      <div class="B0_body"><a name="1028606">This feature allows the Export HDL flow to use relative paths, and improves </a>portability. </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1028608">Before the Quartus II software version 8.0, it was possible to install previous versions </a>of the MegaCore IP Library in any specified location. If you use an old version of the MegaCore IP Library in your design, there may still be absolute paths in the generated Quartus II IP (.<span class="Bold">qip)</span> files that you must modify when you move projects to a different location. The .<span class="Bold">qip</span> file contains all the assignments and other information that the design requires to process the exported HDL in the Quartus II compiler and generate hardware.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1025185">When moving a design to a new version of the tools or a different location, run the </a><span class="Code">alt_dspbuilder_refresh_megacore</span> script to ensure that the MegaCore function blocks are up-to-date.</div>
+      <div class="B0_body"><a name="1025186">Successful migration of designs with MegaCore Functions assumes that the new </a>environment has all the required IP installed. It may be necessary to install the MegaCore IP Library and run the <span class="Code">alt_dspbuilder_setup_megacore</span> script.</div>
+      <div class="H1_heading"><a name="1025188">Memory Initialization Files</a></div>
+      <div class="B0_body"><a name="1025189">Intel-format hexadecimal (.</a><span class="Bold">hex</span>) files are required for memory initialization in simulation and hardware generation. If they are generated by HDL Import or MegaCore function blocks, ensure that they are in the import directory. This fact is generally not the case if you generate the files with HDL Import.</div>
+      <div class="H1_heading"><a name="1025191">Exporting HDL</a></div>
+      <div class="B0_body"><a name="1025193">You can export the DSP Builder-generated synthesizable HDL to a Quartus II project </a>and then use the <span class="Bold">Export</span> tab in the <span class="Code">Signal Compiler</span> block to export them (<span class="N_007cLink"><a href="#1026325" title="Managing Projects and Files">Figure&nbsp;12–1</a></span>).</div>
+      <div class="TA_table_anchor"><a name="1026331">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;12–1.&nbsp;<span style="color: #000000; font-family: &quot;Microsoft Sans Serif&quot;; font-size: 9.5pt; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none; vertical-align: baseline"><a name="1026325">Export Tab in Signal Compiler</a></span></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt">
+            <div class="N_007cFA_frame_anchor"><a name="1026330"><img class="Default" src="images/DlgSignalCompilerExportHDL.jpg" width="424" height="463" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="B0_body"><a name="1025422">You can also export HDL by executing the </a><span class="Code">alt_dspbuilder_exportHDL</span> command in the MATLAB command window.</div>
+      <div class="B0_body"><a name="1025423">The syntax for the export HDL command is:</a></div>
+      <div class="B1_body"><span class="Bold"><a name="1025424">&lt;</a></span><span class="Emphasis" style="font-weight: normal">exportDir_value</span><span class="Bold" style="font-style: normal">&gt; </span><span class="Code" style="font-style: normal; font-weight: normal">alt_dspbuilder_exportHDL</span><span class="Bold" style="font-family: &quot;Microsoft Sans Serif&quot;; font-style: normal">(&lt;</span><span class="Emphasis" style="font-family: &quot;Microsoft Sans Serif&quot;; font-weight: normal">model</span><span class="Bold" style="font-family: &quot;Microsoft Sans Serif&quot;; font-style: normal">&gt;, &lt;</span><span class="Emphasis" style="font-family: &quot;Microsoft Sans Serif&quot;; font-weight: normal">exportDir</span><span class="Bold" style="font-family: &quot;Microsoft Sans Serif&quot;; font-style: normal">&gt;)</span></div>
+      <div class="B0_body"><a name="1025425">where:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Emphasis"><a name="1025426">model</a></span> is the name of the .<span class="Bold">mdl</span> file to export. This file is always the top-level name in the exported Quartus II project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Emphasis"><a name="1025427">exportDir</a></span> is the directory that contains the exported files. If you omit this optional argument, DSP Builder uses the default or previous export directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Emphasis"><a name="1025428">exportedDir_value</a></span> is the return string indicating the output directory containing the newly generated files.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1025429">Running this flow creates a set of source files in the export directory, including a .</a><span class="Bold">qip</span> file corresponding to the top-level of your design.</div>
+      <div class="H2_heading"><a name="1025216">Using Exported HDL</a></div>
+      <div class="B0_body"><a name="1025217">After the Export HDL flow completes, you can create a project using the </a><span class="Bold">New Project </span><span class="Bold">Wizard</span>, which is available on the File menu in the Quartus II software. You should enter the top-level name of the exported project and add the corresponding .<span class="Bold">qip</span> files as the single source file for the project. There may be additional .<span class="Bold">qip</span> files describing the requirements for black-box components. The top-level files sources these files automatically.</div>
+      <div class="B0_body"><a name="1025478">Use the </a><span class="Bold">Archive Project</span> command in the Quartus II software to archive this project. </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1025487">When migrating designs that include MegaCore function blocks to a different </a>location, edit their corresponding .<span class="Bold">qip</span> files if they include absolute paths to library components. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1025489">Use the Export HDL flow on a Windows computer to a Linux-based computer to </a>migrate the files generated. However, this act requires adding an additional file to the project. This additional <span class="Bold">alt_dspbuilder_package.vhd</span> file is in the <span class="Bold">&lt;QUARTUS_ROOTDIR&gt;\libraries\vhdl\altera</span> directory on a Windows computer. </div>
+      <div class="H1_heading"><a name="1025221">Migration of DSP Builder (Standard Blockset) Files to a New Location</a></div>
+      <div class="B0_body"><a name="1025222">When moving DSP Builder (standard blockset) projects to a new directory or </a>machine, you can recreate the project by transferring a minimum set of design files. You do not need to copy the entire project directory. However, in some cases, when the relative paths for the design files change in the new location, recreate the auxiliary files to achieve a successful compilation.</div>
+      <div class="B0_body"><a name="1025223">You require the following minimum set of design files to recreate a project:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025224">DSP Builder model (.</a><span class="Bold">mdl</span>)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025225">HDL source files associated with HDL import blocks (if any)—maintain same </a>relative path to MDL</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025226">HDL wrapper files associated with IP MegaCore function blocks (if any)—</a>maintain same relative path to the .<span class="Bold">mdl</span> file (they should be in the <span class="Bold">DSPBuilder_&lt;</span><span class="Emphasis" style="font-weight: normal">mdl name</span><span class="Bold" style="font-style: normal">&gt;_import</span> subdirectory)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025227">Memory initialization .</a><span class="Bold">hex</span> files (if any)</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1025228">Custom library files (if any)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1025229">To recreate the project in the new location, follow these steps:</a></div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">1.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025230">If the model contains IP MegaCore function or HDL import blocks, regenerate the </a>auxiliary files (.<span class="Bold">qip</span>, .<span class="Bold">entityimport</span>, .<span class="Bold">simdb</span>) associated with the IP MegaCore function or HDL import block by following these steps:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">a.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1025231">HDL import—run the </a><span class="Bold">alt_dspbuilder_refresh_HDLimport</span> script to automatically update all the HDL import blocks in the new location.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L2A_alpha_list_outer" style="margin-left: 15px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L2A_alpha_list_inner" style="width: 15pt; white-space: nowrap">b.	</div>
+            </td>
+            <td width="100%">
+              <div class="L2A_alpha_list_inner"><a name="1025232">IP MegaCore functions—run the </a><span class="Bold">alt_dspbuilder_refresh_megacore</span> script to automatically update all the IP MegaCore function blocks in the new location. Successful migration of design with IP MegaCore functions assumes that you install the required MegaCore IP library on the new environment.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="AI1_information_outer" style="margin-left: 16pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI1_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI1_information_inner"><a name="1025233">If the </a><span class="Bold">..\DSPBuilder_&lt;</span><span class="Emphasis" style="font-weight: normal">mdl name</span><span class="Bold" style="font-style: normal">&gt;_import</span> subdirectory copies and the design files, skip this step.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1N_numbered_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1N_numbered_list_inner" style="width: 15pt; white-space: nowrap">2.	</div>
+            </td>
+            <td width="100%">
+              <div class="L1N_numbered_list_inner"><a name="1025234">Re-analyze the model by clicking </a><span class="Bold">Analyze</span> in the Advanced tab of the <span class="Code">Signal </span><span class="Code">Compiler</span> block to regenerate the auxiliary files (.<span class="Bold">mdlxml</span>, .<span class="Bold">qip</span>, .<span class="Bold">ipx</span>) associated with the model.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H1_heading"><a name="1025235">Integration of Multiple Models in a Top-Level Quartus II Project</a></div>
+      <div class="B0_body"><a name="1025236">To integrate multiple DSP Builder (standard blockset) designs in a top-level </a>Quartus&nbsp;II project, you need the .<span class="Bold">mdl</span> and .<span class="Bold">ipx</span> files.</div>
+      <div class="B0_body"><a name="1025237">Use the Quartus II IP (.</a><span class="Bold">qip</span>) file as the single source file for each DSP Builder model. The .<span class="Bold">qip</span> file is a single file that contains paths for all the files for an IP design. The .<span class="Bold">qip</span> file allows you to add an IP design to the project by adding only one file, rather than adding all the necessary files individually. You only need the .<span class="Bold">qip</span> file for Quartus II archiving for DSP Builder, which does not use it for generation.</div>
+      <div class="B0_body"><a name="1030069">If the multiple .</a><span class="Bold">mdl</span> files uses the same IP cores, the .<span class="Bold">qip</span> references the IP libraries and the Quartus II software reports conflicts when resolving the libraries. You must edit the .<span class="Bold">qip</span> to remove any redundant libraries.</div>
+      <div class="B0_body"><a name="1025238">If the DSP Builder design includes HDL import or IP MegaCore functions, the </a>top-level .<span class="Bold">qip</span> may reference embedded .<span class="Bold">qip</span> file(s). Also, some older versions of IP MegaCore functions (before v8.0) and HDL import blocks may have absolute paths in the generated .<span class="Bold">qip</span> files. If you migrate the files from a different location, it may be necessary to manually edit their corresponding .<span class="Bold">qip</span> files to reflect the new environment. By running the <span class="Bold">Analyze</span> process from the <span class="Code">Signal Compiler</span> block in the new location, the .<span class="Bold">qip</span> file updates automatically with the new path settings. These embedded .<span class="Bold">qip</span> file(s) contain the information concerning the projects, libraries and source HDL required by the Quartus II software for successful integration of these external entities into DSP Builder.</div>
+      <div class="B0_body"><a name="1025239">In addition to the .</a><span class="Bold">qip</span> source files, the top-level project also requires an IP Index (.<span class="Bold">ipx</span>) file that specifies additional paths to find components. Specifically for DSP Builder designs, the Quartus II software needs the .<span class="Bold">ipx</span> file for the HDL import and IP MegaCore function blocks that your model uses. Essentially, the DSP Builder system is an entity composed of DSP Builder blocks, (which are entities but are easily discoverable), and non-native entities like HDL import and MegaCore functions. </div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1025240">The DSP Builder specifies the main entities in the main Quartus II .</a><span class="Bold">ipx</span> file and need no special action—you just need to add the extra HDL import and MegaCore function entities. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1025241">To update the IP library search path for the top-level Quartus II project, create an </a>additional directory <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">project directory</span><span class="Bold" style="font-style: normal">&gt;/ip/&lt;</span><span class="Emphasis" style="font-weight: normal">module name</span><span class="Bold" style="font-style: normal">&gt; </span>and create a file <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">module </span><span class="Emphasis" style="font-weight: normal">name</span><span class="Bold" style="font-style: normal">&gt;</span>.<span class="Bold">ipx</span> in that subdirectory.</div>
+      <div class="B0_body"><a name="1025242">The .</a><span class="Bold">ipx</span> file has the following contents:</div>
+      <div class="C1_code"><a name="1025243">&lt;library&gt;</a></div>
+      <div class="C1_code"><a name="1025244">	</a>&lt;path path='../../../&lt;<span class="Emphasis">module name</span>&gt;/**/*'/&gt;</div>
+      <div class="C1_code"><a name="1025245">&lt;/library&gt;</a></div>
+      <div class="B0_body"><a name="1025246">These statements specify the relative path to the directory where to locate the .</a><span class="Bold">mdl</span> file and where to search for directories containing further .<span class="Bold">ipx</span> files. The ** means search recursively, and the final * locates all identifiable elements there.</div>
+      <div class="B0_body"><a name="1025247">You can combine all the search paths into a single .</a><span class="Bold">ipx</span> file. For example: </div>
+      <div class="C1_code"><a name="1025248">&lt;library&gt;</a></div>
+      <div class="C1_code"><a name="1025249">&lt;path path='../../../&lt;</a><span class="Emphasis">module name1</span>&gt;/**/*'/&gt;</div>
+      <div class="C1_code"><a name="1025250">&lt;path path='../../../&lt;</a><span class="Emphasis">module name2</span>&gt;/**/*'/&gt;</div>
+      <div class="C1_code"><a name="1025251">...</a></div>
+      <div class="C1_code"><a name="1025252">&lt;/library&gt;</a></div>
+      <div class="B0_body"><a name="1025253">You can also specify a path to a specific .</a><span class="Bold">ipx</span> file using:</div>
+      <div class="C1_code"><a name="1025254">&lt;index file='../../../blockdemo.ipx'/&gt;</a></div>
+      <div class="H2_heading"><a name="1025255">Design Example</a></div>
+      <div class="B0_body"><a name="1025256">The following example shows how you can integrate multiple DSP Builder designs </a>into a top-level Quartus II project.  Suppose your top-level design consists of the following three DSP Builder models:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025257">fir1.mdl</a></span>—containing two Avalon-MM slave interfaces</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025258">fir2.mdl</a></span>—containing multiple HDL import blocks</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025259">fir3.mdl</a></span>—containing one IP MegaCore function block with two Avalon-ST interfaces</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1025260">In the top-level Quartus II project, there are the following four design files:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025261">top.vhd</a></span>—Top-level wrapper that instantiates the three separate models</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025262">fir1.qip</a></span>—Quartus IP file for <span class="Bold">fir1.mdl</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025263">fir2.qip</a></span>—Quartus IP file for <span class="Bold">fir2.mdl</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1025264">fir3.qip</a></span>—Quartus IP file for <span class="Bold">fir3.mdl</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><span class="N_007cLink"><a href="#1025671" title="Managing Projects and Files" name="1025658">Figure&nbsp;12–2 on page&nbsp;12–7</a></span> shows the design example in the Quartus II <span class="Bold">Project </span><span class="Bold">Navigator</span> window.</div>
+      <div class="AI0_information_outer" style="margin-left: -25px">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="AI0_information_inner" style="width: 30pt; white-space: nowrap">
+                <img src="hand_para.jpg" alt="*" border="0" width="31" height="15" />
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AI0_information_inner"><a name="1026394">In this example, </a><span class="Bold">fir2.qip</span> has an embedded .<span class="Bold">qip</span> associated with the HDL import block and <span class="Bold">fir3.qip</span> has an embedded .<span class="Bold">qip</span> associated with the IP MegaCore function block.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1026395">To update the IP Librarian search path, create additional directories </a><span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal">project </span><span class="Emphasis" style="font-weight: normal">directory</span><span class="Bold" style="font-style: normal">&gt;/ip/&lt;</span><span class="Emphasis" style="font-weight: normal">module name</span><span class="Bold" style="font-style: normal">&gt;</span> and create an .<span class="Bold">ipx</span> file in each subdirectory.</div>
+      <div class="B0_body"><a name="1026396">Thus in this design example, create the following directories:</a></div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1026397">../</a></span><span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">project directory</span><span class="Bold" style="font-style: normal">&gt;/ip/fir1</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1026398">../</a></span><span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">project directory</span><span class="Bold" style="font-style: normal">&gt;/ip/fir2</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: -19pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap">
+                <span class="N_007cBullet_large">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><span class="Bold"><a name="1026399">../</a></span><span class="Bold" style="font-style: italic">&lt;</span><span class="Emphasis" style="font-weight: normal">project directory</span><span class="Bold" style="font-style: normal">&gt;/ip/fir3</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B0_body"><a name="1026400">and in each subdirectory, create a text file &lt;</a><span class="Emphasis">module name</span><span class="Bold" style="font-style: normal">&gt;.ipx</span> with the following contents:</div>
+      <div class="C1_code"><a name="1026401">&lt;library&gt;</a></div>
+      <div class="C1_code"><a name="1026402">            &lt;path path='../../../&lt;</a><span class="Emphasis">module name</span>&gt;/**/*'/&gt;</div>
+      <div class="C1_code"><a name="1026403">&lt;/library&gt;</a></div>
+      <div class="B0_body"><a name="1026404">These .</a><span class="Bold">ipx</span> files specify the relative path to the directory, where the .<span class="Bold">mdl</span> file is located and tell the IP Librarian where to look for the components. </div>
+      <div class="TA_table_anchor"><a name="1025665">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">Figure&nbsp;12–2.&nbsp;<a name="1025671">Project Navigator Window in the Quartus II Software</a></div>
+        </caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #000000; border-top-style: solid; border-top-width: 1px; padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt">
+            <div class="N_007cFA_frame_anchor"><a name="1025673"><img class="Default" src="images/ProjectNavigator.png" width="599" height="470" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+    <hr align="left" />
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Bottom">
+          <a href="http://www.altera.com" target="external_window"><img src="banner.gif" border="0" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com" target="external_window"> </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="WebWorks_Company_Fax_Bottom">Copyright© 1995-2013 Altera Corporation. Altera, the ALTERA logo and Altera's product names, logos and stylization are registered trademarks or trademarks of Altera Corporation in the United States and other countries.</td>
+      </tr>
+    </table>
+  </body>
+</html>

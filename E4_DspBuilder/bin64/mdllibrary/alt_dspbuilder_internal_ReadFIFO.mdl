@@ -1,0 +1,934 @@
+Model {
+  Name			  "alt_dspbuilder_internal_ReadFIFO"
+  Version		  6.3
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.44"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bd"
+"root)\n%% DSPBuilder End\n"
+  Created		  "Wed Mar 07 10:21:23 2007"
+  Creator		  "cpurcell"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "cpurcell"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Mar 29 17:29:37 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:44>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.2.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.2.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.2.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.2.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "none"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StrictBusMsg		  "Warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.2.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.2.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		13
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "tp293677"
+    Location		    [61, 160, 1358, 900]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Avalon-MM Read FIFO"
+      Ports		      [3, 3]
+      Position		      [450, 213, 645, 317]
+      ForegroundColor	      "blue"
+      CopyFcn		      "set_param(gcbh,'LinkStatus','none');"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Avalon-MM Read FIFO AlteraBlockSet"
+      MaskDescription	      "Avalon-MM Read FIFO\n\nImplements a FIFO with A"
+"valon-MM connectivity. Accessed by other Avalon-MM peripherals to obtain data"
+"when connected in SOPC Builder.\n\nInputs:\nStall - Connect to Simulink block"
+"s.\n	Used to simulate stall conditions of the Avalon-MM bus.\nData - C"
+"onnect to DSP Builder blocks.\n	Used to collect outgoing data from the"
+" user design.\nDataValid - Connect to DSP Builder blocks.\n	Should be "
+"asserted whenever the signal on the Data port corresponds to real data.\n\nOu"
+"tputs:\nTestDataOut - Connect to Simulink blocks.\n	Corresponds to the"
+" data received over the Avalon-MM bus.\nTestDataValid - Connect to Simulink b"
+"locks.\n	Asserted whenever TestDataOut corresponds to real data.\nRead"
+"y	- Connect to DSP Builder blocks.\n	Used to indicate that the "
+"block is ready to receive data.\n"
+      MaskHelp		      "helpview(fullfile(alt_dspbuilder_get_quartus_ro"
+"otdir, 'dsp_builder', 'docs', 'AvalonReadFIFO.html'))"
+      MaskPromptString	      "Data Type|[number of bits].[]|[].[number of bit"
+"s]|FIFO Depth|Max Burst"
+      MaskStyleString	      "popup(Signed Integer|Signed Fractional|Unsigned"
+" Integer),edit,edit,edit,edit"
+      MaskTunableValueString  "off,off,off,off,off"
+      MaskCallbackString      "alt_dspbuilder_internal_AvalonFIFO_Init(gcb,1,0"
+");||||"
+      MaskEnableString	      "on,on,off,on,on"
+      MaskVisibilityString    "on,on,on,on,off"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "sgn=@1;bwl=@2;bwr=@3;depth=@4;burst=@5;"
+      MaskInitialization      "alt_dspbuilder_internal_AvalonFIFO_Init(gcb,1,1"
+", bwl,bwr,depth,burst);"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Signed Integer|8|3|11|0"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"Avalon-MM Read FIFO"
+	Location		[327, 320, 1283, 862]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Stall"
+	  Position		  [15, 18, 45, 32]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Data"
+	  Position		  [15, 148, 45, 162]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "DataValid"
+	  Position		  [15, 198, 45, 212]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+
+	  BlockType		  Reference
+	  Name			  "Avalon Read Slave"
+	  Ports			  [5, 5]
+	  Position		  [375, 53, 520, 247]
+	  ForegroundColor	  "blue"
+	SourceBlock	"allblocks_alteradspbuilder2/Avalon-MM Slave"
+	  SourceType		  "Avalon-MM Slave AlteraBlockset"
+	  iofile		  "C:\\DOCUME~1\\cpurcell\\LOCALS~1\\Temp\\tb_"
+"tp293677\\tp293677_Avalon-MM+Read+FIFO_Avalon+Read+Slave_address.salt,C:\\DOC"
+"UME~1\\cpurcell\\LOCALS~1\\Temp\\tb_tp293677\\tp293677_Avalon-MM+Read+FIFO_Av"
+"alon+Read+Slave_read.salt,C:\\DOCUME~1\\cpurcell\\LOCALS~1\\Temp\\tb_tp293677"
+"\\tp293677_Avalon-MM+Read+FIFO_Avalon+Read+Slave_readdata.capture,C:\\DOCUME~"
+"1\\cpurcell\\LOCALS~1\\Temp\\tb_tp293677\\tp293677_Avalon-MM+Read+FIFO_Avalon"
+"+Read+Slave_dataavailable.capture,C:\\DOCUME~1\\cpurcell\\LOCALS~1\\Temp\\tb_"
+"tp293677\\tp293677_Avalon-MM+Read+FIFO_Avalon+Read+Slave_endofpacket.capture,"
+	  SpecifyClock		  off
+	  clock			  "clock"
+	  addrWidth		  "2"
+	  addrAlignment		  "Dynamic"
+	  addrType		  "Read"
+	  BusType		  "Signed Integer"
+	  bwl			  "bwl"
+	  bwr			  "bwr"
+	  byteEnable		  off
+	  flowCtrl		  on
+	  pipeline		  off
+	  waitStateFormat	  "Fixed"
+	  readWaitStateCycles	  "0"
+	  writeWaitStateCycles	  "0"
+	  readLatencyFormat	  "Fixed"
+	  readLatencyCycles	  "0"
+	  burst			  off
+	  maxBurst		  "burst"
+	  irq			  off
+	  receiveBeginTransfer	  off
+	  useChipSelect		  off
+	  PORTTYPE		  "Output"
+	}
+	Block {
+
+	  BlockType		  Reference
+	  Name			  "Comparator"
+	  Ports			  [2, 1]
+	  Position		  [315, 313, 350, 342]
+	  ForegroundColor	  "blue"
+	SourceBlock	"allblocks_alteradspbuilder2/Comparator"
+	  SourceType		  "Comparator AlteraBlockset"
+	  direction		  "a < b"
+	  Port {
+	    PortNumber		    1
+	    Name		    "notfull"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+
+	  BlockType		  Reference
+	  Name			  "Constant0"
+	  Ports			  [0, 1]
+	  Position		  [310, 221, 360, 239]
+	  ForegroundColor	  "blue"
+	SourceBlock	"allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "0"
+	  BusType		  "Single Bit"
+	  bwl			  "1"
+	  bwr			  "0"
+	  SpecifyClock		  off
+	}
+	Block {
+
+	  BlockType		  Reference
+	  Name			  "FIFO"
+	  Ports			  [3, 4]
+	  Position		  [185, 140, 290, 220]
+	  ForegroundColor	  "blue"
+	SourceBlock	"allblocks_alteradspbuilder2/FIFO"
+	  SourceType		  "FIFO AlteraBlockset"
+	  numwords		  "depth"
+	  BusType		  "Signed Integer"
+	  bwl			  "bwl"
+	  bwr			  "bwr"
+	  ram_type		  "AUTO"
+	  use_sclr		  off
+	  use_les_only		  off
+	  showahead_mode	  off
+	}
+	Block {
+
+	  BlockType		  Reference
+	  Name			  "FIFOSize"
+	  Ports			  [0, 1]
+	  Position		  [230, 326, 280, 344]
+	  ForegroundColor	  "blue"
+	SourceBlock	"allblocks_alteradspbuilder2/Constant"
+	  SourceType		  "Constant AlteraBlockset"
+	  mask_cst		  "depth - 2"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "ceil(log2(depth -1))"
+	  bwr			  "0"
+	  SpecifyClock		  off
+	}
+	Block {
+
+	  BlockType		  Reference
+	  Name			  "NOT"
+	  Ports			  [1, 1]
+	  Position		  [310, 182, 350, 198]
+	  ForegroundColor	  "blue"
+	SourceBlock	"allblocks_alteradspbuilder2/Logical Bit Operator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Streaming Avalon Read Converter"
+	  Ports			  [3, 3]
+	  Position		  [620, 131, 765, 249]
+	  FunctionName		  "alt_dspbuilder_internal_sStream2Matlab"
+	  Parameters		  "-1"
+	  MaskDisplay		  "port_label('input', 1, 'ReadData');\nport_l"
+"abel('input', 2, 'DataAvailable');\nport_label('input', 3, 'Stall');\nport_la"
+"bel('output', 1, 'Read');\nport_label('output', 2, 'TestData');\nport_label('"
+"output', 3, 'TestDataValid');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [540, 220, 560, 240]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  Position		  [340, 160, 360, 180]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator2"
+	  Position		  [535, 60, 555, 80]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "TestDataOut"
+	  Position		  [840, 183, 870, 197]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "TestDataValid"
+	  Position		  [840, 223, 870, 237]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ready"
+	  Position		  [840, 323, 870, 337]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "DataValid"
+	  SrcPort		  1
+	  DstBlock		  "FIFO"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  3
+	  DstBlock		  "NOT"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "NOT"
+	  SrcPort		  1
+	  DstBlock		  "Avalon Read Slave"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Data"
+	  SrcPort		  1
+	  DstBlock		  "FIFO"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  1
+	  DstBlock		  "Avalon Read Slave"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Avalon Read Slave"
+	  SrcPort		  2
+	  Points		  [50, 0; 0, -70; -410, 0; 0, 140]
+	  DstBlock		  "FIFO"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Streaming Avalon Read Converter"
+	  SrcPort		  2
+	  DstBlock		  "TestDataOut"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Streaming Avalon Read Converter"
+	  SrcPort		  3
+	  DstBlock		  "TestDataValid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Streaming Avalon Read Converter"
+	  SrcPort		  1
+	  Points		  [0, -140; -410, 0]
+	  DstBlock		  "Avalon Read Slave"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Avalon Read Slave"
+	  SrcPort		  3
+	  DstBlock		  "Streaming Avalon Read Converter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant0"
+	  SrcPort		  1
+	  DstBlock		  "Avalon Read Slave"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  4
+	  Points		  [5, 0]
+	  DstBlock		  "Comparator"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "notfull"
+	  Labels		  [0, 1]
+	  SrcBlock		  "Comparator"
+	  SrcPort		  1
+	  DstBlock		  "Ready"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Stall"
+	  SrcPort		  1
+	  Points		  [540, 0; 0, 205]
+	  DstBlock		  "Streaming Avalon Read Converter"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Avalon Read Slave"
+	  SrcPort		  4
+	  DstBlock		  "Streaming Avalon Read Converter"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Avalon Read Slave"
+	  SrcPort		  5
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "FIFOSize"
+	  SrcPort		  1
+	  DstBlock		  "Comparator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "FIFO"
+	  SrcPort		  2
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Avalon Read Slave"
+	  SrcPort		  1
+	  DstBlock		  "Terminator2"
+	  DstPort		  1
+	}
+	Annotation {
+	  Position		  [242, 338]
+	}
+      }
+    }
+  }
+}

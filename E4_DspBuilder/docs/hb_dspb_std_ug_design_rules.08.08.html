@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Signal Compiler and TestBench Blocks</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_design_rules.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_design_rules.08.07.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_design_rules.08.09.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1055926">Signal Compiler and TestBench Blocks</a></div>
+      <div class="Body"><a name="1056023">The </a><span class="Code">Signal Compiler</span> block uses Quartus II synthesis to convert a Simulink design into synthesizable VHDL including generation of a VHDL testbench and other supporting files for simulation and synthesis.</div>
+      <div class="Body"><span class="Code"><a name="1056269">Signal Compiler</a></span> assumes that your design complies with the Simulink rules and that any variables and inherited variables propagate through the whole design.</div>
+      <div class="Body"><a name="1056139">You should always run a simulation in Simulink before running </a><span class="Code">Signal Compiler</span>. The simulation updates all variables in your design (including workspace variables and inherited parameters), sets up certain blocks (such as the memory blocks, and inputs from and outputs to workspace blocks), and also traps any design errors that do not comply with Simulink rules.</div>
+      <div class="Body"><a name="1056413">The </a><span class="Code">Input</span> and <span class="Code">Output</span> blocks map to input and output ports in VHDL and mark the edge of the generated system. Typically, you connect these blocks to the Simulink simulation blocks for your testbench. An <span class="Code">Output</span> block should not connect to another Altera block. If you connect more Altera blocks (that map to HDL), empty ports are created and the HDL does not compile for synthesis.</div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1056432">For more information about the </a><span class="Code">Input</span> and <span class="Code">Output</span> blocks, refer to the <span class="Document_title">IO &amp; Bus </span><span class="Document_title">Library</span> chapter of the <span class="Document_title" style="color: #3f7f3f;"><a href="http://www.altera.com/literature/manual/mnl_dsp_builder.pdf" target="external_window">DSP Builder Reference Manual</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H2_heading"><a name="1056430">Design Flows for Synthesis, Compilation and Simulation</a></div>
+      <div class="Body"><a name="1056463">You can use the </a><span class="Code">Signal Compiler</span> and <span class="Code">Testbench</span> blocks to control your design flow for synthesis, compilation, and simulation. DSP Builder supports the following flows:</div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1056466">Automatic flow—allows you to control the entire design process in the MATLAB </a>or Simulink environment with the <span class="Code">Signal Compiler</span> block. With this flow, your design compiles inside a temporary Quartus II project. The results of the synthesis and compilation display in the Signal Compiler Messages box. You can also use the automatic flow to download your design into supported development boards.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1056531">Manual flow—you can also add the .</a><span class="Bold">mdl</span> file to an existing Quartus II project using the <span class="Bold">&lt;</span><span class="Emphasis" style="font-weight: normal;">model name</span><span class="Bold" style="font-style: normal;">&gt;_add.tcl</span> script. This script is generated whenever the <span class="Code">Signal Compiler</span> or <span class="Code">TestBench</span> block is run. You can use the script to add the .<span class="Bold">mdl</span> file and any imported HDL to your project. You can then instantiate your design in HDL.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="L1B_bulleted_list_outer" style="margin-left: 0pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="L1B_bulleted_list_inner" style="width: 15pt; white-space: nowrap;">
+                <span class="N_007cBB_bullet_body">n	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="L1B_bulleted_list_inner"><a name="1056468">Simulation flow—if the ModelSim executable (</a><span class="Bold">vsim.exe</span>) is on your path, you can use the <span class="Code">TestBench</span> block to compile your design for ModelSim simulation. You can then automatically compare the Simulink and ModelSim simulation results. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="1146193">For an example that uses the </a><span class="Code">Signal Compiler</span> blocker, refer to <span class="N_007cLink"><a href="hb_dspb_std_ug_tutorial.07.3.html#1020256" title="Creating the Amplitude Modulation Model">page&nbsp;2–14</a></span> of the <span class="N_007cLink"><a href="hb_dspb_std_ug_tutorial.07.1.html#1000950" title="Getting Started">“Getting Started”</a></span>.</div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1055988">For information about the parameters for the </a><span class="Code">Signal Compiler</span> and <span class="Code">TestBench</span> blocks, refer to the <span class="Document_title">AltLab Library</span> chapter of the <span class="Document_title" style="color: #3f7f3f;"><a href="http://www.altera.com/literature/manual/mnl_dsp_builder.pdf" target="external_window">DSP Builder Reference Manual</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,1417 @@
+Model {
+  Name			  "blockdemo"
+  Version		  6.3
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.44"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  on
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bd"
+"root)\n%% DSPBuilder End\n"
+  Created		  "Wed Apr 04 19:11:19 2007"
+  Creator		  "cpurcell"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "delphick"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Apr 18 14:32:42 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:44>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "Warning"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "2e-6"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		13
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      ShowOutputPort	      off
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "blockdemo"
+    Location		    [423, 456, 1177, 744]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "Clock_Sink"
+      Ports		      []
+      Position		      [475, 15, 525, 33]
+      SourceBlock	      "allblocks_alteradspbuilder2/Clock_Derived"
+      SourceType	      "Clock AlteraBlockset"
+      ClockNumerator	      "1"
+      ClockDenominator	      "2"
+      SimulationStartCycle    "5"
+      PhaseOffset	      "0"
+      Reset		      "aclr_sink"
+      Export		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Clock_Source"
+      Ports		      []
+      Position		      [230, 15, 280, 33]
+      SourceBlock	      "allblocks_alteradspbuilder2/Clock"
+      SourceType	      "BaseClock AlteraBlockset"
+      ClockPeriod	      "20"
+      ClockPeriodUnit	      "ns"
+      SampleTime	      "20e-9"
+      SimulationStartCycle    "5"
+      PhaseOffset	      "0"
+      Reset		      "aclr_source"
+      Export		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Data_in"
+      Ports		      [1, 1]
+      Position		      [105, 97, 170, 113]
+      NamePlacement	      "alternate"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\RateChange\\MultiRateDFF\\tb_blockdemo\\blockdemo"
+"_Data_in.salt"
+      BusType		      "Single Bit"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Data_out"
+      Ports		      [1, 1]
+      Position		      [585, 77, 650, 93]
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\RateChange\\MultiRateDFF\\tb_blockdemo\\blockdemo"
+"_Data_out.capture"
+      BusType		      "Single Bit"
+      bwl		      "8"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay"
+      Ports		      [1, 1]
+      Position		      [405, 204, 425, 256]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+      SourceType	      "Delay AlteraBlockset"
+      pipeline		      "1"
+      ClockPhase	      "1"
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay1"
+      Ports		      [1, 1]
+      Position		      [325, 139, 345, 191]
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+      SourceType	      "Delay AlteraBlockset"
+      pipeline		      "1"
+      ClockPhase	      "1"
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay2"
+      Ports		      [1, 1]
+      Position		      [325, 69, 345, 121]
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Delay"
+      SourceType	      "Delay AlteraBlockset"
+      pipeline		      "1"
+      ClockPhase	      "1"
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Multi-Rate DFF1"
+      Ports		      [1, 1]
+      Position		      [325, 204, 380, 256]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Multi-Rate DFF"
+      SourceType	      "Multi-Rate DFF AlteraBlockSet"
+      pipeline		      "2"
+      UseBaseClock	      off
+      clock		      "Clock_Source"
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Multi-Rate DFF2"
+      Ports		      [1, 1]
+      Position		      [370, 139, 425, 191]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Multi-Rate DFF"
+      SourceType	      "Multi-Rate DFF AlteraBlockSet"
+      pipeline		      "2"
+      UseBaseClock	      off
+      clock		      "Clock_Sink"
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Multi-Rate DFF3"
+      Ports		      [1, 1]
+      Position		      [370, 69, 425, 121]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Multi-Rate DFF"
+      SourceType	      "Multi-Rate DFF AlteraBlockSet"
+      pipeline		      "2"
+      UseBaseClock	      off
+      clock		      "Clock_Sink"
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ready"
+      Ports		      [1, 1]
+      Position		      [105, 132, 170, 148]
+      Orientation	      "left"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\RateChange\\MultiRateDFF\\tb_blockdemo\\blockdemo"
+"_Ready.capture"
+      BusType		      "Single Bit"
+      bwl		      "8"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Signal Compiler"
+      Ports		      []
+      Position		      [50, 210, 119, 257]
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily          "Stratix IV"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "clock"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Sink"
+      Ports		      [2]
+      Position		      [695, 62, 730, 153]
+      Floating		      off
+      Location		      [835, 788, 1595, 1068]
+      Open		      on
+      NumInputPorts	      "2"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      YMin		      "-0.5~-0.5"
+      YMax		      "1.5~1.5"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Sink control logic"
+      Ports		      [2, 3]
+      Position		      [470, 61, 535, 199]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      System {
+	Name			"Sink control logic"
+	Location		[1752, 869, 2072, 1042]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "is_one"
+	  Position		  [70, 15, 100, 30]
+	  Orientation		  "down"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "is_zero"
+	  Position		  [50, 35, 80, 50]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay6"
+	  Ports			  [1, 1]
+	  Position		  [135, 94, 145, 146]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical Bit Operator"
+	  Ports			  [2, 1]
+	  Position		  [56, 75, 94, 105]
+	  Orientation		  "down"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "OR"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical Bit Operator6"
+	  Ports			  [1, 1]
+	  Position		  [165, 108, 195, 132]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical Bit Operator7"
+	  Ports			  [2, 1]
+	  Position		  [215, 62, 240, 138]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "AND"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Data"
+	  Position		  [260, 38, 290, 52]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Valid"
+	  Position		  [265, 93, 295, 107]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ack"
+	  Position		  [25, 113, 55, 127]
+	  Orientation		  "left"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Logical Bit Operator6"
+	  SrcPort		  1
+	  DstBlock		  "Logical Bit Operator7"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Delay6"
+	  SrcPort		  1
+	  DstBlock		  "Logical Bit Operator6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical Bit Operator"
+	  SrcPort		  1
+	  Points		  [0, 10]
+	  Branch {
+	    Points		    [35, 0]
+	    Branch {
+	      DstBlock		      "Delay6"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -40]
+	      DstBlock		      "Logical Bit Operator7"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "ack"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "is_one"
+	  SrcPort		  1
+	  Points		  [0, 10]
+	  Branch {
+	    DstBlock		    "Logical Bit Operator"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Data"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "is_zero"
+	  SrcPort		  1
+	  DstBlock		  "Logical Bit Operator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical Bit Operator7"
+	  SrcPort		  1
+	  DstBlock		  "Valid"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Source"
+      Ports		      [0, 1, 1]
+      Position		      [15, 90, 70, 120]
+      NamePlacement	      "alternate"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      System {
+	Name			"Source"
+	Location		[629, 475, 971, 724]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  EnablePort
+	  Name			  "Enable"
+	  Ports			  []
+	  Position		  [65, 110, 85, 130]
+	}
+	Block {
+	  BlockType		  DiscretePulseGenerator
+	  Name			  "Pulse\nGenerator"
+	  Ports			  [0, 1]
+	  Position		  [25, 28, 70, 62]
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "data"
+	  Position		  [95, 38, 125, 52]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Pulse\nGenerator"
+	  SrcPort		  1
+	  DstBlock		  "data"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Source control logic"
+      Ports		      [2, 3]
+      Position		      [220, 78, 290, 182]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      System {
+	Name			"Source control logic"
+	Location		[1758, 504, 2158, 759]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Data"
+	  Position		  [60, 48, 90, 62]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "ack"
+	  Position		  [260, 178, 290, 192]
+	  Orientation		  "left"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay3"
+	  Ports			  [1, 1]
+	  Position		  [214, 155, 266, 165]
+	  Orientation		  "up"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay4"
+	  Ports			  [2, 1]
+	  Position		  [115, 36, 150, 109]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay5"
+	  Ports			  [1, 1]
+	  Position		  [110, 159, 120, 211]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical Bit Operator1"
+	  Ports			  [2, 1]
+	  Position		  [270, 101, 320, 139]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOR"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical Bit Operator2"
+	  Ports			  [2, 1]
+	  Position		  [270, 31, 320, 69]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOR"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical Bit Operator3"
+	  Ports			  [1, 1]
+	  Position		  [205, 28, 235, 52]
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical Bit Operator4"
+	  Ports			  [1, 1]
+	  Position		  [145, 173, 175, 197]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Logical Bit Operator5"
+	  Ports			  [2, 1]
+	  Position		  [56, 110, 94, 160]
+	  Orientation		  "up"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOR"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "is_one"
+	  Position		  [345, 43, 375, 57]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "is_zero"
+	  Position		  [345, 113, 375, 127]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ready"
+	  Position		  [15, 83, 45, 97]
+	  Orientation		  "left"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Delay3"
+	  SrcPort		  1
+	  Points		  [0, -20]
+	  Branch {
+	    DstBlock		    "Logical Bit Operator1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -70]
+	    DstBlock		    "Logical Bit Operator2"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "ack"
+	  SrcPort		  1
+	  Points		  [-15, 0]
+	  Branch {
+	    Points		    [-40, 0]
+	    Branch {
+	      Points		      [0, 45; -115, 0]
+	      DstBlock		      "Logical Bit Operator5"
+	      DstPort		      2
+	    }
+	    Branch {
+	      DstBlock		      "Logical Bit Operator4"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Delay3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical Bit Operator3"
+	  SrcPort		  1
+	  DstBlock		  "Logical Bit Operator2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay5"
+	  SrcPort		  1
+	  Points		  [-40, 0]
+	  DstBlock		  "Logical Bit Operator5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical Bit Operator5"
+	  SrcPort		  1
+	  Points		  [0, -15]
+	  Branch {
+	    DstBlock		    "Delay4"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Ready"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical Bit Operator4"
+	  SrcPort		  1
+	  DstBlock		  "Delay5"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [1, 0]
+	  SrcBlock		  "Delay4"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [0, -35]
+	    DstBlock		    "Logical Bit Operator3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "Logical Bit Operator1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical Bit Operator2"
+	  SrcPort		  1
+	  DstBlock		  "is_one"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Data"
+	  SrcPort		  1
+	  DstBlock		  "Delay4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical Bit Operator1"
+	  SrcPort		  1
+	  DstBlock		  "is_zero"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "TestBench"
+      Ports		      []
+      Position		      [664, 220, 719, 258]
+      SourceBlock	      "allblocks_alteradspbuilder2/TestBench"
+      SourceType	      "TestBench AlteraBlockset"
+      enable		      on
+      advancedMode	      off
+      modelSimGui	      on
+      simdatafile	      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\RateChange\\MultiRateDFF\\tb_blockdemo\\blockdemo"
+".simdata.tcl"
+    }
+    Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay"
+      Position		      [60, 123, 85, 157]
+      Orientation	      "left"
+      ShowName		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Valid"
+      Ports		      [1, 1]
+      Position		      [585, 122, 650, 138]
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\RateChange\\MultiRateDFF\\tb_blockdemo\\blockdemo"
+"_Valid.capture"
+      BusType		      "Single Bit"
+      bwl		      "8"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Line {
+      SrcBlock		      "Delay1"
+      SrcPort		      1
+      DstBlock		      "Multi-Rate DFF2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay"
+      SrcPort		      1
+      DstBlock		      "Multi-Rate DFF1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay2"
+      SrcPort		      1
+      DstBlock		      "Multi-Rate DFF3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Multi-Rate DFF2"
+      SrcPort		      1
+      DstBlock		      "Sink control logic"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Multi-Rate DFF3"
+      SrcPort		      1
+      DstBlock		      "Sink control logic"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Data_in"
+      SrcPort		      1
+      DstBlock		      "Source control logic"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sink control logic"
+      SrcPort		      2
+      DstBlock		      "Valid"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Source"
+      SrcPort		      1
+      DstBlock		      "Data_in"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Ready"
+      SrcPort		      1
+      DstBlock		      "Unit Delay"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Unit Delay"
+      SrcPort		      1
+      Points		      [-15, 0]
+      DstBlock		      "Source"
+      DstPort		      enable
+    }
+    Line {
+      Labels		      [0, 0]
+      SrcBlock		      "Multi-Rate DFF1"
+      SrcPort		      1
+      Points		      [-115, 0]
+      DstBlock		      "Source control logic"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Source control logic"
+      SrcPort		      1
+      DstBlock		      "Delay2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Source control logic"
+      SrcPort		      2
+      Points		      [15, 0]
+      DstBlock		      "Delay1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Source control logic"
+      SrcPort		      3
+      Points		      [10, 0; 0, 40; -120, 0]
+      DstBlock		      "Ready"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sink control logic"
+      SrcPort		      3
+      Points		      [20, 0; 0, 55]
+      DstBlock		      "Delay"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sink control logic"
+      SrcPort		      1
+      DstBlock		      "Data_out"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Data_out"
+      SrcPort		      1
+      DstBlock		      "Sink"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Valid"
+      SrcPort		      1
+      DstBlock		      "Sink"
+      DstPort		      2
+    }
+  }
+}

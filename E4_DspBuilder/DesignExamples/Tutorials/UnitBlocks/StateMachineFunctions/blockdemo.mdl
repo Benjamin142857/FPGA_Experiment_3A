@@ -1,0 +1,1050 @@
+Model {
+  Name			  "blockdemo"
+  Version		  6.3
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.34"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bd"
+"root)\n%% DSPBuilder End\n"
+  Created		  "Thu Mar 15 10:29:59 2007"
+  Creator		  "mjervis"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "delphick"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Apr 18 14:35:27 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:34>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "Warning"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "50"
+	  AbsTol		  "auto"
+	  FixedStep		  "1"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		13
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Clock
+      DisplayTime	      off
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "blockdemo"
+    Location		    [23, 220, 728, 545]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "A"
+      Ports		      [1, 1]
+      Position		      [80, 192, 145, 208]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\StateMachineFunctions\\tb_blockdemo\\blockdemo_A."
+"salt"
+      BusType		      "Signed Integer"
+      bwl		      "3"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      Port {
+	PortNumber		1
+	Name			"A"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "B"
+      Ports		      [1, 1]
+      Position		      [80, 237, 145, 253]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\StateMachineFunctions\\tb_blockdemo\\blockdemo_B."
+"salt"
+      BusType		      "Signed Integer"
+      bwl		      "4"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      Port {
+	PortNumber		1
+	Name			"B"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      Position		      [25, 185, 55, 215]
+      Value		      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Lesser_greater_signed"
+      Ports		      [3, 4]
+      Position		      [280, 131, 420, 264]
+      ForegroundColor	      "blue"
+      FontSize		      12
+      SourceBlock	      "allblocks_alteradspbuilder2/State Machine"
+      SourceType	      "State Machine AlteraBlockset"
+      Inputs		      "3"
+      States		      "4"
+      port_names	      "huh"
+      parent_dir	      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\StateMachineFunctions"
+      db_dir		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\StateMachineFunctions\\DSPBuilder_blockdemo"
+      in_port1		      "reset"
+      in_port2		      "A"
+      in_port3		      "B"
+      in_port4		      "reset"
+      in_port5		      "reset"
+      in_port6		      "reset"
+      in_port7		      "reset"
+      in_port8		      "reset"
+      in_port9		      "reset"
+      in_port10		      "reset"
+      out_port1		      "equal"
+      out_port2		      "A_gt_B"
+      out_port3		      "A_lt_B"
+      out_port4		      "rst"
+      out_port5		      "equal"
+      out_port6		      "equal"
+      out_port7		      "equal"
+      out_port8		      "equal"
+      out_port9		      "equal"
+      out_port10	      "equal"
+      Outputs		      "4"
+      db_entity		      "Lesser_greater_signed"
+      table		      "1"
+      inputs_edited	      "1110000000"
+      outputs_edited	      "1111000000"
+      VHDL_ARCHITECTURE	      "TYPE              \nSTATE_TYPE        \nIS     "
+"           \n(equal_st,        \nA_gt_B_st,        \nA_lt_B_st,        \nrst_"
+"st);          \nSIGNAL            \ncurrent_state,    \nnext_state        \n:"
+"                 \nSTATE_TYPE;       \nSIGNAL            \nreset_sig         "
+"\n:                 \nINTEGER;          \nSIGNAL            \nA_sig          "
+"   \n:                 \nINTEGER;          \nSIGNAL            \nB_sig       "
+"      \n:                 \nINTEGER;          \nBEGIN             \nreset_sig"
+"         \n<=                \nconv_integer      \n(reset_input      \nor    "
+"            \naclr              \n);                \nA_sig             \n<= "
+"               \nconv_integer      \n(                 \nsigned            \n"
+"(input0)          \n);                \nB_sig             \n<=               "
+" \nconv_integer      \n(                 \nsigned            \n(input1)      "
+"    \n);                \nPROCESS           \n(clock,           \nreset_sig) "
+"       \nBEGIN             \nIF                \n(reset_sig=1)     \nTHEN    "
+"          \ncurrent_state     \n<=                \nrst_st;           \nELSIF"
+"             \nrising_edge(clock)\nTHEN              \ncurrent_state     \n<="
+"                \nnext_state;       \nEND               \nIF;               "
+"\nEND               \nPROCESS;          \nPROCESS           \n(current_state,"
+"   \nA_sig,            \nB_sig)            \nBEGIN             \nCASE        "
+"      \ncurrent_state     \nIS                \nWHEN              \nequal_st="
+">        \nIF                \n(A_sig>B_sig)     \nTHEN              \nnext_s"
+"tate        \n<=                \nA_gt_B_st;        \nELSIF             \n(A_"
+"sig<B_sig)     \nTHEN              \nnext_state        \n<=                \n"
+"A_lt_B_st;        \nELSIF             \n(A_sig=B_sig)     \nTHEN             "
+" \nnext_state        \n<=                \nequal_st;         \nELSE          "
+"    \nnext_state        \n<=                \nequal_st;         \nEND        "
+"       \nIF;               \nWHEN              \nA_gt_B_st=>       \nIF      "
+"          \n(A_sig=B_sig)     \nTHEN              \nnext_state        \n<=   "
+"             \nequal_st;         \nELSIF             \n(A_sig>B_sig)     \nTH"
+"EN              \nnext_state        \n<=                \nA_gt_B_st;        "
+"\nELSIF             \n(A_sig<B_sig)     \nTHEN              \nnext_state     "
+"   \n<=                \nA_lt_B_st;        \nELSE              \nnext_state  "
+"      \n<=                \nA_gt_B_st;        \nEND               \nIF;      "
+"         \nWHEN              \nA_lt_B_st=>       \nIF                \n(A_sig"
+"=B_sig)     \nTHEN              \nnext_state        \n<=                \nequ"
+"al_st;         \nELSIF             \n(A_sig<B_sig)     \nTHEN              \n"
+"next_state        \n<=                \nA_lt_B_st;        \nELSIF            "
+" \n(A_sig>B_sig)     \nTHEN              \nnext_state        \n<=            "
+"    \nA_gt_B_st;        \nELSE              \nnext_state        \n<=         "
+"       \nA_lt_B_st;        \nEND               \nIF;               \nWHEN    "
+"          \nrst_st=>          \nIF                \n(A_sig=B_sig)     \nTHEN "
+"             \nnext_state        \n<=                \nequal_st;         \nEL"
+"SIF             \n(A_sig<B_sig)     \nTHEN              \nnext_state        "
+"\n<=                \nA_lt_B_st;        \nELSIF             \n(A_sig>B_sig)  "
+"   \nTHEN              \nnext_state        \n<=                \nA_gt_B_st;  "
+"      \nELSE              \nnext_state        \n<=                \nrst_st;  "
+"         \nEND               \nIF;               \nEND               \nCASE; "
+"            \nEND               \nPROCESS;          \noutput1           \n<= "
+"               \n'1'               \nWHEN              \ncurrent_state     \n"
+"=                 \nequal_st          \nELSE              \n'0';             "
+" \noutput2           \n<=                \n'1'               \nWHEN          "
+"    \ncurrent_state     \n=                 \nA_gt_B_st         \nELSE       "
+"       \n'0';              \noutput3           \n<=                \n'1'     "
+"          \nWHEN              \ncurrent_state     \n=                 \nA_lt_"
+"B_st         \nELSE              \n'0';              \noutput4           \n<="
+"                \n'1'               \nWHEN              \ncurrent_state     "
+"\n=                 \nrst_st            \nELSE              \n'0';           "
+"   \nEND               \na;                "
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse"
+      Ports		      [0, 1]
+      Position		      [25, 140, 55, 170]
+      Period		      "100"
+      PulseWidth	      "5"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ramp"
+      Ports		      [0, 1]
+      Position		      [25, 230, 55, 260]
+      SourceBlock	      "simulink/Sources/Ramp"
+      SourceType	      "Ramp"
+      ShowPortLabels	      on
+      slope		      "1"
+      start		      "0"
+      X0		      "0"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      Ports		      [7]
+      Position		      [610, 15, 675, 275]
+      Floating		      off
+      Location		      [740, 195, 1175, 880]
+      Open		      off
+      NumInputPorts	      "7"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+	axes6			"%<SignalLabel>"
+	axes7			"%<SignalLabel>"
+      }
+      YMin		      "-0.5~-0.5~-10~-0.5~-0.5~-0.5~-0.5"
+      YMax		      "1.5~2.5~10~1.5~1.5~1.5~1.5"
+      DataFormat	      "StructureWithTime"
+      SampleInput	      on
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      Ports		      []
+      Position		      [84, 48, 153, 95]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily          "Stratix IV"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "clock"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "equal"
+      Ports		      [1, 1]
+      Position		      [455, 137, 520, 153]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\StateMachineFunctions\\tb_blockdemo\\blockdemo_eq"
+"ual.capture"
+      BusType		      "Single Bit"
+      bwl		      "8"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+      Port {
+	PortNumber		1
+	Name			"AequalB"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "gt"
+      Ports		      [1, 1]
+      Position		      [455, 172, 520, 188]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\StateMachineFunctions\\tb_blockdemo\\blockdemo_gt"
+".capture"
+      BusType		      "Single Bit"
+      bwl		      "8"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+      Port {
+	PortNumber		1
+	Name			"AgtB"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "lt"
+      Ports		      [1, 1]
+      Position		      [455, 207, 520, 223]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\StateMachineFunctions\\tb_blockdemo\\blockdemo_lt"
+".capture"
+      BusType		      "Single Bit"
+      bwl		      "8"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+      Port {
+	PortNumber		1
+	Name			"AltB"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "resetOut"
+      Ports		      [1, 1]
+      Position		      [455, 242, 520, 258]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\StateMachineFunctions\\tb_blockdemo\\blockdemo_re"
+"setOut.capture"
+      BusType		      "Single Bit"
+      bwl		      "8"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+      Port {
+	PortNumber		1
+	Name			"resetOut"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "user_reset"
+      Ports		      [1, 1]
+      Position		      [80, 147, 145, 163]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UnitBlocks\\StateMachineFunctions\\tb_blockdemo\\blockdemo_us"
+"er_reset.salt"
+      BusType		      "Single Bit"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      Port {
+	PortNumber		1
+	Name			"resetIn"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Line {
+      Name		      "resetIn"
+      SrcBlock		      "user_reset"
+      SrcPort		      1
+      Points		      [75, 0]
+      Branch {
+	DstBlock		"Lesser_greater_signed"
+	DstPort			1
+      }
+      Branch {
+	Labels			[-1, 1]
+	Points			[0, -115]
+	DstBlock		"Scope"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "A"
+      SrcBlock		      "A"
+      SrcPort		      1
+      Points		      [90, 0]
+      Branch {
+	DstBlock		"Lesser_greater_signed"
+	DstPort			2
+      }
+      Branch {
+	Labels			[-1, 1]
+	Points			[0, -125]
+	DstBlock		"Scope"
+	DstPort			2
+      }
+    }
+    Line {
+      Name		      "B"
+      SrcBlock		      "B"
+      SrcPort		      1
+      Points		      [105, 0]
+      Branch {
+	DstBlock		"Lesser_greater_signed"
+	DstPort			3
+      }
+      Branch {
+	Labels			[-1, 1]
+	Points			[0, -135]
+	DstBlock		"Scope"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "Pulse"
+      SrcPort		      1
+      DstBlock		      "user_reset"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Lesser_greater_signed"
+      SrcPort		      1
+      DstBlock		      "equal"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Lesser_greater_signed"
+      SrcPort		      2
+      DstBlock		      "gt"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Lesser_greater_signed"
+      SrcPort		      3
+      DstBlock		      "lt"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Lesser_greater_signed"
+      SrcPort		      4
+      DstBlock		      "resetOut"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Ramp"
+      SrcPort		      1
+      DstBlock		      "B"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "A"
+      DstPort		      1
+    }
+    Line {
+      Name		      "AequalB"
+      Labels		      [-1, 1]
+      SrcBlock		      "equal"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      4
+    }
+    Line {
+      Name		      "AgtB"
+      Labels		      [-1, 1]
+      SrcBlock		      "gt"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      5
+    }
+    Line {
+      Name		      "AltB"
+      Labels		      [-1, 1]
+      SrcBlock		      "lt"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      6
+    }
+    Line {
+      Name		      "resetOut"
+      Labels		      [-1, 1]
+      SrcBlock		      "resetOut"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      7
+    }
+    Annotation {
+      Name		      "This State Machine implements a comparator as a"
+"n example.  "
+      Position		      [346, 308]
+      UseDisplayTextAsClickCallback off
+      FontSize		      12
+    }
+  }
+}

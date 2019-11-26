@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Avalon-ST Interface</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_using_sopc_ports.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_using_sopc_ports.12.5.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_blackbox.13.1.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1049700">Avalon-ST Interface</a></div>
+      <div class="Body"><a name="1070811">All DSP MegaCore</a><span class="Superscript"> </span>functions in the DSP Builder MegaCore Functions library have interfaces that comply with the <span class="Link" style="font-style: italic;"><a href="http://www.altera.com/literature/manual/mnl_avalon_spec.pdf" target="external_window">Avalon Interface Specifications</a></span>. You can combine multiple MegaCore functions easily because they use a common interface. This section summarizes the features of the Avalon-ST interface.</div>
+      <div class="Body"><a name="1049719">The </a><span class="Link" style="font-style: italic;"><a href="http://www.altera.com/literature/manual/mnl_avalon_spec.pdf" target="external_window">Avalon Interface Specifications</a></span> define how to convey data between a source interface and a sink interface. The interface indicates the integrity of the data by a feed forward signal, <span class="Code">valid</span>. The specification also defines how the MegaCore functions may stall other blocks (backpressure) or regulate the rate at which you provide data with a feedback sideband signal, <span class="Code">ready</span>. </div>
+      <div class="Body"><a name="1049720">You can configure the DSP Builder </a><span class="Code">Avalon-ST Source</span> and <span class="Code">Avalon-ST Sink</span> blocks with a ready&nbsp;latency of 0 or 1. The ready latency is the number of cycles that a source must wait after a sink asserts ready so that a data transfer is possible. The source interface provides valid data at the earliest time possible, and it holds that data until sink asserts ready. The <span class="Code">ready</span> signal notifies the source interface that it has sampled the data on that clock cycle.</div>
+      <div class="Body"><a name="1049874">For the </a><span class="Emphasis">ready_latency</span> = 0 mode, <span class="N_007cLink"><a href="#1058363" title="Avalon-ST Interface">Figure&nbsp;7–12</a></span> shows the interaction that occurs between the source interface <span class="Code">valid</span> signal and the sink interface <span class="Code">ready</span> signal. </div>
+      <div class="TA_table_anchor"><a name="1058348">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;7–12.&nbsp;</span><a name="1058363">Avalon-ST Interface Timing for ready-latency=0</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1058365"><img class="Default" src="images/AvalonST_timing.jpg" width="447" height="197" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1049882">On cycle one, the source provides data and asserts </a><span class="Code">valid</span> even though the sink is not <span class="Code">ready</span>. The source waits until cycle two and the sink acknowledges that it samples the data by asserting <span class="Code">ready</span>. On cycle three, the source happens to provide data on the same cycle that the sink is ready to receive it and so the transfer occurs immediately. On the fourth cycle, the sink is ready but because the source does not provide any valid data, the data bus is not sampled.</div>
+      <div class="Body"><a name="1049972">A beat is the transfer of one unit of data between a source and sink interface. This unit </a>of data may consist of one or more symbols, so it can support modules that convey more than one piece of information on each valid cycle. Some modules have parallel input interfaces and other instances require serial input interfaces. For example, when conveying an in-phase and quadrature component on the same clock cycle. The choice depends on the algorithm, optimization technique, and throughput requirements. </div>
+      <div class="Body"><span class="N_007cLink"><a href="#1058457" title="Avalon-ST Interface" name="1049983">Figure&nbsp;7–13</a></span> gives an example of a data transfer where two symbols are conveyed on each beat—an in phase symbol I and a quadrature symbol Q. In this example, each symbol is eight bits wide.</div>
+      <div class="TA_table_anchor"><a name="1058447">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 377.0001pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;7–13.&nbsp;</span><a name="1058457">Packetized Data Transfer</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 377.0001pt;">
+            <div class="GA_graphic_anchor"><a name="1058459"><img class="Default" src="images/AvalonST_packetized_data.jpg" width="432" height="237" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1050029">The </a><span class="Link" style="font-style: italic;"><a href="http://www.altera.com/literature/manual/mnl_avalon_spec.pdf" target="external_window">Avalon Interface Specifications</a></span> also describe several mechanisms to support the transfer of data associated with multiple channels. Altera recommends that you achieve this mechanism with packet based transfers where each packet has a deterministic format and each channel is allocated a specific field (time slot in a packet). </div>
+      <div class="Body"><a name="1050100">Packet transfers require two additional signals that mark the start and the end of the </a>packet. The MegaCore functions have internal counters that count the samples in a packet so they know which channel a particular sample is associated with and synchronize appropriately with the start and end of packet signals. In <span class="N_007cLink"><a href="#1058457" title="Avalon-ST Interface">Figure&nbsp;7–13</a></span>, the in phase and quadrature components associated with three different channels convey between two MegaCore functions.</div>
+      <div class="H2_heading"><a name="1050111">Avalon-ST Packet Formats</a></div>
+      <div class="Body"><a name="1050112">You can allocate the data associated with each channel a field in a packet. To describe </a>the relationship between the input and the output interfaces of a MegaCore function, you must define the packets associated with each interface. </div>
+      <div class="Body"><a name="1050149">Two parameters describe the basic format of a packet: </a><span class="Code">SymbolsPerBeat</span>, and <span class="Code">PacketDescription</span>. The <span class="Code">SymbolsPerBeat</span> parameter defines the number of symbols that DSP Builder presents in parallel on every valid cycle. The <span class="Code">PacketDescription</span> is a string description of the fields in the packet.</div>
+      <div class="Body"><a name="1050113">A basic </a><span class="Code">PacketDescription</span> is a comma-separated list of field names, where a field name starts with a letter and may include the characters <span class="Code">a-zA-Z0-9_</span>. Typical field names include <span class="Code">Channel1</span>, <span class="Code">Channel2</span>, and <span class="Code">Q</span>. Field names are case sensitive and white space is not permitted.</div>
+      <div class="Body"><span class="N_007cLink"><a href="#1058522" title="Avalon-ST Interface" name="1050117">Figure&nbsp;7–14</a></span> shows an example of a generic function that has two input interfaces and performs a transformation on the two input streams.</div>
+      <div class="TA_table_anchor"><a name="1058515">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;7–14.&nbsp;</span><a name="1058522">Generic Function</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1058524"><img class="Default" src="images/AvalonST_generic_packet.jpg" width="489" height="171" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="H2_heading"><a name="1050124">Avalon-ST Packet Format Converter</a></div>
+      <div class="Body"><a name="1050125">The packet format converter (PFC) is a flexible, multipurpose component that </a>transforms packets that are received from one function into a packet format that is supported by another function.</div>
+      <div class="Body"><a name="1050156">The PFC takes packet data from one or more input interfaces, and provides field </a>reassignment in time and space to one or more output packet interfaces. You can specify the input packet format and the desired output packet format. The appropriate control logic is automatically generated.</div>
+      <div class="Body"><a name="1050126">Each input interface has Avalon-ST </a><span class="Code">ready</span>, <span class="Code">valid</span>, <span class="Code">startofpacket</span>, <span class="Code">endofpacket</span>, <span class="Code">empty</span>, and <span class="Code">data</span> signals. Each output interface has an additional <span class="Code">error</span> bit, which asserts to indicate a frame delineation error.</div>
+      <div class="Body"><a name="1050127">The PFC performs data mapping on a packet by packet basis, so that there is exactly </a>one input packet on each input interface for each output packet on each output interface. The interface limits the packet rate of the converter with the longest packet. When the PFC has multiple output interfaces, DSP Builder aligns the packets on each output interface so that the <span class="Code">startofpacket</span> signal presents on the same clock cycle.</div>
+      <div class="Body"><a name="1050128">If each interface supports fixed-length packets, you can select the multipacket </a>mapping option, and the PFC can map fields from multiple input packets to multiple output packets. </div>
+      <div class="AR_reference_outer" style="margin-left: 54pt;">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr style="vertical-align: baseline;">
+            <td>
+              <div class="AR_reference_inner" style="width: 36pt; white-space: nowrap;">
+                <span class="N_007cAltera_alerts">f	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="AR_reference_inner"><a name="1049812">For a complete description of the Avalon-ST interface, refer to the </a><span class="Document_title" style="color: #3f7f3f;"><a href="http://www.altera.com/literature/manual/mnl_avalon_spec.pdf" target="external_window">Avalon Interface Specifications</a></span>. For an example of a design that uses Avalon-ST interfaces and the Packet Format Converter blocks, refer to <span class="Document_title" style="color: #3f7f3f;"><a href="http://www.altera.com/literature/an/an442.pdf" target="external_window">AN442: Tool Flow for Design of Digital IF for Wireless Systems</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="N_007cPN_part_number"><a name="1003332">&nbsp;</a></div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

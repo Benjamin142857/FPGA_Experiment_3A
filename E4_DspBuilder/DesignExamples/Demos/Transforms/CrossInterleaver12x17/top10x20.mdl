@@ -1,0 +1,4202 @@
+Model {
+  Name			  "top10x20"
+  Version		  6.3
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.249"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  PreLoadFcn		  "disp('Convolutional Interleaver 10x20')\ndisp(' 10"
+" Branches')\ndisp(' FifoDepth = 20')\n\nFifoDepth=20;\nSymbolWidth = 8;"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "\n%% DSPBuilder Start\nalt_dspbuilder_update_model"
+"(bdroot)\n%% DSPBuilder End\n"
+  Created		  "Thu Jan 23 16:33:17 2003"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "LKONG"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jul 09 14:20:53 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:249>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "3000"
+	  AbsTol		  "auto"
+	  FixedStep		  "1"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Clock
+      DisplayTime	      off
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "top10x20"
+    Location		    [243, 109, 1464, 972]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    212
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "Branch0"
+      Ports		      [1, 1]
+      Position		      [430, 257, 495, 273]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Transforms\\CrossInterleaver12x17\\tb_top10x20\\top10x20_Branc"
+"h0.capture"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+      Port {
+	PortNumber		1
+	Name			"sbranch0"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Branch01"
+      Ports		      [1, 1]
+      Position		      [435, 452, 500, 468]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Transforms\\CrossInterleaver12x17\\tb_top10x20\\top10x20_Branc"
+"h01.capture"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Clock"
+      Ports		      []
+      Position		      [35, 119, 85, 137]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Clock"
+      SourceType	      "BaseClock AlteraBlockset"
+      ClockPeriod	      "100"
+      ClockPeriodUnit	      "ns"
+      SampleTime	      "1"
+      SimulationStartCycle    "5"
+      PhaseOffset	      "0"
+      Reset		      "aclr"
+      ResetType		      "Active Low"
+      Export		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "DeIntvl10x20"
+      Ports		      [3, 3]
+      Position		      [315, 406, 395, 514]
+      ForegroundColor	      "blue"
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"DeIntvl10x20"
+	Location		[25, 85, 1223, 948]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "InDin[7:0]"
+	  Position		  [35, 33, 65, 47]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "InEna"
+	  Position		  [35, 63, 65, 77]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "InRst"
+	  Position		  [40, 98, 70, 112]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BranchCount"
+	  Ports			  [2, 1]
+	  Position		  [110, 254, 175, 301]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Increment Decre"
+"ment"
+	  SourceType		  "Increment Decrement AlteraBlockset"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "4"
+	  bwr			  "0"
+	  SpecifyClock		  off
+	  clr_value		  "0"
+	  direction		  "Increment"
+	  phase_selection	  "1"
+	  use_ena		  on
+	  use_sclr		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion"
+	  Ports			  [1, 1]
+	  Position		  [660, 31, 735, 49]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bus Conversion"
+	  SourceType		  "Bus Conversion AlteraBlockset"
+	  BusType		  "Unsigned Integer"
+	  ibwl			  "4"
+	  ibwr			  "0"
+	  bwl			  "2"
+	  bwr			  "0"
+	  bitToConnectToOutputLSB "2"
+	  round			  off
+	  saturate		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion2"
+	  Ports			  [1, 1]
+	  Position		  [645, 81, 720, 99]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bus Conversion"
+	  SourceType		  "Bus Conversion AlteraBlockset"
+	  BusType		  "Unsigned Integer"
+	  ibwl			  "4"
+	  ibwr			  "0"
+	  bwl			  "2"
+	  bwr			  "0"
+	  bitToConnectToOutputLSB "0"
+	  round			  off
+	  saturate		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo12"
+	  Ports			  [1, 1]
+	  Position		  [905, 222, 920, 258]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo13"
+	  Ports			  [1, 1]
+	  Position		  [905, 162, 920, 198]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo14"
+	  Ports			  [1, 1]
+	  Position		  [1030, 212, 1055, 248]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo15"
+	  Ports			  [1, 1]
+	  Position		  [905, 22, 920, 58]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo16"
+	  Ports			  [1, 1]
+	  Position		  [960, 562, 975, 598]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "2"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo17"
+	  Ports			  [1, 1]
+	  Position		  [905, 292, 920, 328]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo18"
+	  Ports			  [1, 1]
+	  Position		  [965, 667, 980, 703]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "2"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From12"
+	  Position		  [115, 694, 155, 706]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From14"
+	  Position		  [115, 784, 155, 796]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From15"
+	  Position		  [435, 439, 475, 451]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From17"
+	  Position		  [275, 272, 300, 288]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Ena"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [535, 81, 620, 99]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CntBranch"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From21"
+	  Position		  [435, 524, 475, 536]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From22"
+	  Position		  [830, 571, 915, 589]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ValidBranch"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From23"
+	  Position		  [435, 614, 475, 626]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From26"
+	  Position		  [435, 719, 475, 731]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From27"
+	  Position		  [80, 421, 165, 439]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch8"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From29"
+	  Position		  [75, 516, 160, 534]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch7"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From30"
+	  Position		  [75, 616, 160, 634]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch6"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From31"
+	  Position		  [70, 716, 155, 734]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch5"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From32"
+	  Position		  [60, 806, 145, 824]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch4"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From33"
+	  Position		  [380, 461, 465, 479]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From34"
+	  Position		  [375, 546, 460, 564]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From35"
+	  Position		  [375, 636, 460, 654]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From36"
+	  Position		  [375, 741, 460, 759]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From4"
+	  Position		  [115, 399, 155, 411]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  Position		  [850, 667, 875, 683]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Ena"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From51"
+	  Position		  [15, 277, 40, 293]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From52"
+	  Position		  [15, 257, 40, 273]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Ena"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From53"
+	  Position		  [745, 106, 790, 124]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout0"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From54"
+	  Position		  [745, 131, 790, 149]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From55"
+	  Position		  [745, 156, 790, 174]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From56"
+	  Position		  [745, 181, 790, 199]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From57"
+	  Position		  [745, 256, 790, 274]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout4"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From58"
+	  Position		  [745, 281, 790, 299]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout5"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From59"
+	  Position		  [745, 306, 790, 324]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout6"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  Position		  [115, 494, 155, 506]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From60"
+	  Position		  [745, 331, 790, 349]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout7"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From61"
+	  Position		  [745, 416, 790, 434]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout8"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From64"
+	  Position		  [745, 441, 790, 459]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From7"
+	  Position		  [275, 292, 300, 308]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From8"
+	  Position		  [805, 687, 830, 703]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From9"
+	  Position		  [115, 594, 155, 606]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [210, 98, 260, 112]
+	  GotoTag		  "Rst"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  Position		  [210, 63, 260, 77]
+	  GotoTag		  "Ena"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto10"
+	  Position		  [610, 628, 660, 642]
+	  ShowName		  off
+	  GotoTag		  "Dout1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto11"
+	  Position		  [610, 733, 660, 747]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  GotoTag		  "Dout0"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto15"
+	  Position		  [500, 172, 610, 188]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto16"
+	  Position		  [500, 202, 610, 218]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto17"
+	  Position		  [500, 217, 610, 233]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch2"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto18"
+	  Position		  [500, 232, 610, 248]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch3"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto19"
+	  Position		  [500, 247, 610, 263]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch4"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  Position		  [270, 413, 320, 427]
+	  ShowName		  off
+	  GotoTag		  "Dout8"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto20"
+	  Position		  [500, 262, 610, 278]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch5"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto21"
+	  Position		  [500, 277, 610, 293]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch6"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto22"
+	  Position		  [500, 292, 610, 308]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch7"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto23"
+	  Position		  [500, 307, 610, 323]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch8"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto27"
+	  Position		  [500, 147, 610, 163]
+	  ShowName		  off
+	  GotoTag		  "CntBranch"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto28"
+	  Position		  [495, 357, 605, 373]
+	  ShowName		  off
+	  GotoTag		  "ValidBranch"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto3"
+	  Position		  [270, 508, 320, 522]
+	  ShowName		  off
+	  GotoTag		  "Dout7"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto4"
+	  Position		  [265, 603, 315, 617]
+	  ShowName		  off
+	  GotoTag		  "Dout6"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto5"
+	  Position		  [210, 33, 260, 47]
+	  GotoTag		  "DinSrc"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto6"
+	  Position		  [260, 708, 310, 722]
+	  ShowName		  off
+	  GotoTag		  "Dout5"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto7"
+	  Position		  [260, 798, 310, 812]
+	  ShowName		  off
+	  GotoTag		  "Dout4"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto8"
+	  Position		  [615, 453, 665, 467]
+	  ShowName		  off
+	  GotoTag		  "Dout3"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto9"
+	  Position		  [605, 538, 655, 552]
+	  ShowName		  off
+	  GotoTag		  "Dout2"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay"
+	  Ports			  [2, 1]
+	  Position		  [180, 390, 245, 445]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "20"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay1"
+	  Ports			  [2, 1]
+	  Position		  [180, 485, 245, 540]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "40"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay2"
+	  Ports			  [2, 1]
+	  Position		  [180, 580, 245, 635]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "60"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay3"
+	  Ports			  [2, 1]
+	  Position		  [180, 685, 245, 740]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "80"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay4"
+	  Ports			  [2, 1]
+	  Position		  [175, 775, 240, 830]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "100"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay5"
+	  Ports			  [2, 1]
+	  Position		  [495, 430, 560, 485]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "120"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay6"
+	  Ports			  [2, 1]
+	  Position		  [500, 515, 565, 570]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "140"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay7"
+	  Ports			  [2, 1]
+	  Position		  [500, 605, 565, 660]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "160"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay8"
+	  Ports			  [2, 1]
+	  Position		  [500, 710, 565, 765]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "180"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux1"
+	  Ports			  [5, 1]
+	  Position		  [810, 79, 865, 201]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "4"
+	  pipeline		  "0"
+	  oneHot		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux2"
+	  Ports			  [3, 1]
+	  Position		  [815, 385, 870, 465]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "2"
+	  pipeline		  "0"
+	  oneHot		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux3"
+	  Ports			  [4, 1]
+	  Position		  [970, 190, 1010, 270]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "3"
+	  pipeline		  "0"
+	  oneHot		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux5"
+	  Ports			  [5, 1]
+	  Position		  [815, 229, 870, 351]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "4"
+	  pipeline		  "0"
+	  oneHot		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Shift Taps"
+	  Ports			  [1, 8]
+	  Position		  [415, 194, 470, 331]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Shift Taps"
+	  SourceType		  "Shift Taps AlteraBlockset"
+	  number_of_taps	  "8"
+	  tap_distance		  "1"
+	  use_shiftout		  off
+	  use_ena		  off
+	  use_sclr		  off
+	  use_dedicated_circuitry on
+	  ram_type		  "AUTO"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "WrDecode"
+	  Ports			  [1, 2]
+	  Position		  [195, 246, 225, 299]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Case Statement"
+	  SourceType		  "Case Statement AlteraBlockset"
+	  numOutputs		  "2"
+	  case_expression	  "0,9"
+	  formatted_case_expression "00000000,00001001"
+	  BusType		  "Signed Integer"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  off
+	  hasDefault		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "and1"
+	  Ports			  [2, 1]
+	  Position		  [915, 664, 945, 706]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "AND"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "and3"
+	  Ports			  [3, 1]
+	  Position		  [365, 264, 395, 306]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "AND"
+	  user_inputs		  "3"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "rstor1"
+	  Ports			  [1, 1]
+	  Position		  [315, 291, 350, 309]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "rstor2"
+	  Ports			  [1, 1]
+	  Position		  [850, 686, 885, 704]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "rstor3"
+	  Ports			  [2, 1]
+	  Position		  [55, 275, 90, 310]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "OR"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1[7:0]"
+	  Position		  [1080, 223, 1110, 237]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "B0"
+	  Position		  [1030, 573, 1060, 587]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Sync"
+	  Position		  [1030, 678, 1060, 692]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "and1"
+	  SrcPort		  1
+	  DstBlock		  "DelayFifo18"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rstor2"
+	  SrcPort		  1
+	  DstBlock		  "and1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  DstBlock		  "and1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From8"
+	  SrcPort		  1
+	  DstBlock		  "rstor2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DelayFifo18"
+	  SrcPort		  1
+	  DstBlock		  "Sync"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion2"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    Points		    [0, 150]
+	    Branch {
+	      Points		      [0, 160]
+	      DstBlock		      "Mux2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Mux5"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Mux1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    Points		    [0, -50]
+	    DstBlock		    "BusConversion"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "BusConversion2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -115]
+	  DstBlock		  "DelayFifo17"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux5"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -50]
+	  DstBlock		  "DelayFifo12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DelayFifo17"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -50]
+	  DstBlock		  "Mux3"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "DelayFifo12"
+	  SrcPort		  1
+	  DstBlock		  "Mux3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 40]
+	  DstBlock		  "DelayFifo13"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DelayFifo16"
+	  SrcPort		  1
+	  DstBlock		  "B0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From22"
+	  SrcPort		  1
+	  DstBlock		  "DelayFifo16"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rstor1"
+	  SrcPort		  1
+	  DstBlock		  "and3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From17"
+	  SrcPort		  1
+	  Points		  [0, 5]
+	  DstBlock		  "and3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From7"
+	  SrcPort		  1
+	  DstBlock		  "rstor1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "and3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [0, 80]
+	    DstBlock		    "Goto28"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Shift Taps"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "DelayFifo15"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 160]
+	  DstBlock		  "Mux3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "WrDecode"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -20; 5, 0]
+	  Branch {
+	    Points		    [30, 0; 0, 30]
+	    DstBlock		    "and3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -60]
+	    DstBlock		    "Goto15"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "DelayFifo13"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 40]
+	  DstBlock		  "Mux3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From64"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From61"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From60"
+	  SrcPort		  1
+	  DstBlock		  "Mux5"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From59"
+	  SrcPort		  1
+	  DstBlock		  "Mux5"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "From58"
+	  SrcPort		  1
+	  DstBlock		  "Mux5"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From57"
+	  SrcPort		  1
+	  DstBlock		  "Mux5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From56"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From55"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "From54"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From53"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "BusConversion"
+	  SrcPort		  1
+	  DstBlock		  "DelayFifo15"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux3"
+	  SrcPort		  1
+	  DstBlock		  "DelayFifo14"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  1
+	  DstBlock		  "Goto16"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  2
+	  DstBlock		  "Goto17"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  3
+	  DstBlock		  "Goto18"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  4
+	  DstBlock		  "Goto19"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  5
+	  DstBlock		  "Goto20"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  6
+	  DstBlock		  "Goto21"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  7
+	  DstBlock		  "Goto22"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Shift Taps"
+	  SrcPort		  8
+	  DstBlock		  "Goto23"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From52"
+	  SrcPort		  1
+	  DstBlock		  "BranchCount"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From51"
+	  SrcPort		  1
+	  DstBlock		  "rstor3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rstor3"
+	  SrcPort		  1
+	  DstBlock		  "BranchCount"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "WrDecode"
+	  SrcPort		  2
+	  Points		  [20, 0; 0, 55; -220, 0; 0, -40]
+	  DstBlock		  "rstor3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "BranchCount"
+	  SrcPort		  1
+	  Points		  [0, -15]
+	  Branch {
+	    DstBlock		    "WrDecode"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -110]
+	    DstBlock		    "Goto27"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "DelayFifo14"
+	  SrcPort		  1
+	  DstBlock		  "Out1[7:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From34"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From35"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay7"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From36"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay8"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From33"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From32"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From31"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From30"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From29"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From27"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Memory Delay8"
+	  SrcPort		  1
+	  DstBlock		  "Goto11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay7"
+	  SrcPort		  1
+	  DstBlock		  "Goto10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay6"
+	  SrcPort		  1
+	  DstBlock		  "Goto9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay5"
+	  SrcPort		  1
+	  DstBlock		  "Goto8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay4"
+	  SrcPort		  1
+	  DstBlock		  "Goto7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay3"
+	  SrcPort		  1
+	  DstBlock		  "Goto6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay2"
+	  SrcPort		  1
+	  DstBlock		  "Goto4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay1"
+	  SrcPort		  1
+	  DstBlock		  "Goto3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay"
+	  SrcPort		  1
+	  DstBlock		  "Goto2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From26"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From23"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From21"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From15"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From14"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From12"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From9"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "Memory Delay2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From4"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "InRst"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "InEna"
+	  SrcPort		  1
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "InDin[7:0]"
+	  SrcPort		  1
+	  DstBlock		  "Goto5"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dout"
+      Ports		      [1, 1]
+      Position		      [425, 222, 490, 238]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Transforms\\CrossInterleaver12x17\\tb_top10x20\\top10x20_Dout."
+"capture"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+      Port {
+	PortNumber		1
+	Name			"sdout"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dout1"
+      Ports		      [1, 1]
+      Position		      [430, 417, 495, 433]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Transforms\\CrossInterleaver12x17\\tb_top10x20\\top10x20_Dout1"
+".capture"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+      Port {
+	PortNumber		1
+	Name			"sDout1"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ena"
+      Ports		      [1, 1]
+      Position		      [105, 257, 170, 273]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Transforms\\CrossInterleaver12x17\\tb_top10x20\\top10x20_Ena.s"
+"alt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Intvl10x20"
+      Ports		      [3, 3]
+      Position		      [310, 211, 390, 319]
+      ForegroundColor	      "blue"
+      AncestorBlock	      "ALTELINK/AltLab/HDL SubSystem"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "SubSystem AlteraBlockSet"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Intvl10x20"
+	Location		[243, 109, 1464, 972]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	212
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "InDin[7:0]"
+	  Position		  [35, 33, 65, 47]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "InEna"
+	  Position		  [35, 63, 65, 77]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "InRst"
+	  Position		  [40, 98, 70, 112]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BranchCount"
+	  Ports			  [2, 1]
+	  Position		  [115, 254, 175, 296]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Increment Decre"
+"ment"
+	  SourceType		  "Increment Decrement AlteraBlockset"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "4"
+	  bwr			  "0"
+	  SpecifyClock		  off
+	  clr_value		  "0"
+	  direction		  "Increment"
+	  phase_selection	  "1"
+	  use_ena		  on
+	  use_sclr		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion"
+	  Ports			  [1, 1]
+	  Position		  [680, 31, 755, 49]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bus Conversion"
+	  SourceType		  "Bus Conversion AlteraBlockset"
+	  BusType		  "Unsigned Integer"
+	  ibwl			  "4"
+	  ibwr			  "0"
+	  bwl			  "2"
+	  bwr			  "0"
+	  bitToConnectToOutputLSB "2"
+	  round			  off
+	  saturate		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "BusConversion2"
+	  Ports			  [1, 1]
+	  Position		  [670, 81, 745, 99]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Bus Conversion"
+	  SourceType		  "Bus Conversion AlteraBlockset"
+	  BusType		  "Unsigned Integer"
+	  ibwl			  "4"
+	  ibwr			  "0"
+	  bwl			  "2"
+	  bwr			  "0"
+	  bitToConnectToOutputLSB "0"
+	  round			  off
+	  saturate		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo12"
+	  Ports			  [1, 1]
+	  Position		  [925, 222, 940, 258]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo13"
+	  Ports			  [1, 1]
+	  Position		  [925, 162, 940, 198]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo14"
+	  Ports			  [1, 1]
+	  Position		  [1050, 212, 1075, 248]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo15"
+	  Ports			  [1, 1]
+	  Position		  [925, 22, 940, 58]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo16"
+	  Ports			  [1, 1]
+	  Position		  [950, 562, 965, 598]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "2"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo17"
+	  Ports			  [1, 1]
+	  Position		  [925, 292, 940, 328]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "1"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DelayFifo18"
+	  Ports			  [1, 1]
+	  Position		  [965, 667, 980, 703]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Delay"
+	  SourceType		  "Delay AlteraBlockset"
+	  pipeline		  "2"
+	  ClockPhase		  "1"
+	  use_ena		  off
+	  use_sclr		  off
+	  use_init		  off
+	  reset_value		  "1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From12"
+	  Position		  [115, 679, 155, 691]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From14"
+	  Position		  [115, 769, 155, 781]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From15"
+	  Position		  [460, 469, 500, 481]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From17"
+	  Position		  [275, 272, 300, 288]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Ena"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [560, 81, 645, 99]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "CntBranch"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From21"
+	  Position		  [460, 554, 500, 566]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From22"
+	  Position		  [820, 571, 905, 589]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "ValidBranch"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From23"
+	  Position		  [460, 644, 500, 656]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From26"
+	  Position		  [460, 749, 500, 761]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From27"
+	  Position		  [80, 411, 165, 429]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From29"
+	  Position		  [75, 506, 160, 524]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From30"
+	  Position		  [75, 606, 160, 624]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From31"
+	  Position		  [70, 706, 155, 724]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch4"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From32"
+	  Position		  [60, 796, 145, 814]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch5"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From33"
+	  Position		  [420, 496, 505, 514]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch6"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From34"
+	  Position		  [400, 581, 485, 599]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch7"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From35"
+	  Position		  [400, 671, 485, 689]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch8"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From36"
+	  Position		  [400, 776, 485, 794]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "EnaBranch9"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From4"
+	  Position		  [115, 384, 155, 396]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  Position		  [850, 667, 875, 683]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Ena"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From51"
+	  Position		  [15, 277, 40, 293]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From52"
+	  Position		  [15, 257, 40, 273]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Ena"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From53"
+	  Position		  [770, 106, 815, 124]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From54"
+	  Position		  [770, 131, 815, 149]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From55"
+	  Position		  [770, 156, 815, 174]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From56"
+	  Position		  [770, 181, 815, 199]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From57"
+	  Position		  [770, 256, 815, 274]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout4"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From58"
+	  Position		  [770, 281, 815, 299]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout5"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From59"
+	  Position		  [770, 306, 815, 324]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout6"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  Position		  [115, 479, 155, 491]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From60"
+	  Position		  [770, 331, 815, 349]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout7"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From61"
+	  Position		  [770, 411, 815, 429]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout8"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From62"
+	  Position		  [770, 436, 815, 454]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Dout9"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From7"
+	  Position		  [275, 292, 300, 308]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From8"
+	  Position		  [805, 687, 830, 703]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "Rst"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From9"
+	  Position		  [115, 579, 155, 591]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "DinSrc"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [210, 98, 260, 112]
+	  ShowName		  off
+	  GotoTag		  "Rst"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  Position		  [210, 63, 260, 77]
+	  ShowName		  off
+	  GotoTag		  "Ena"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto10"
+	  Position		  [635, 658, 685, 672]
+	  ShowName		  off
+	  GotoTag		  "Dout8"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto11"
+	  Position		  [635, 763, 685, 777]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  GotoTag		  "Dout9"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto16"
+	  Position		  [500, 202, 610, 218]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto17"
+	  Position		  [500, 217, 610, 233]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch2"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto18"
+	  Position		  [500, 232, 610, 248]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch3"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto19"
+	  Position		  [500, 247, 610, 263]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch4"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  Position		  [285, 398, 335, 412]
+	  ShowName		  off
+	  GotoTag		  "Dout1"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto20"
+	  Position		  [500, 262, 610, 278]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch5"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto21"
+	  Position		  [500, 277, 610, 293]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch6"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto22"
+	  Position		  [500, 292, 610, 308]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch7"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto23"
+	  Position		  [500, 307, 610, 323]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch8"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto24"
+	  Position		  [500, 322, 610, 338]
+	  ShowName		  off
+	  GotoTag		  "EnaBranch9"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto27"
+	  Position		  [500, 177, 610, 193]
+	  ShowName		  off
+	  GotoTag		  "CntBranch"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto28"
+	  Position		  [495, 377, 605, 393]
+	  ShowName		  off
+	  GotoTag		  "ValidBranch"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto3"
+	  Position		  [265, 493, 315, 507]
+	  ShowName		  off
+	  GotoTag		  "Dout2"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto4"
+	  Position		  [265, 593, 315, 607]
+	  ShowName		  off
+	  GotoTag		  "Dout3"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto5"
+	  Position		  [210, 33, 260, 47]
+	  ShowName		  off
+	  GotoTag		  "DinSrc"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto6"
+	  Position		  [260, 693, 310, 707]
+	  ShowName		  off
+	  GotoTag		  "Dout4"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto7"
+	  Position		  [260, 783, 310, 797]
+	  ShowName		  off
+	  GotoTag		  "Dout5"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto8"
+	  Position		  [640, 483, 690, 497]
+	  ShowName		  off
+	  GotoTag		  "Dout6"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto9"
+	  Position		  [630, 568, 680, 582]
+	  ShowName		  off
+	  GotoTag		  "Dout7"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Int_ShiftTap"
+	  Ports			  [1, 9]
+	  Position		  [420, 202, 470, 338]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Shift Taps"
+	  SourceType		  "Shift Taps AlteraBlockset"
+	  number_of_taps	  "9"
+	  tap_distance		  "1"
+	  use_shiftout		  off
+	  use_ena		  off
+	  use_sclr		  off
+	  use_dedicated_circuitry on
+	  ram_type		  "AUTO"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay"
+	  Ports			  [2, 1]
+	  Position		  [210, 377, 250, 433]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "20"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay1"
+	  Ports			  [2, 1]
+	  Position		  [200, 472, 240, 528]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "40"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay2"
+	  Ports			  [2, 1]
+	  Position		  [200, 572, 240, 628]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "60"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay3"
+	  Ports			  [2, 1]
+	  Position		  [200, 672, 240, 728]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "80"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay4"
+	  Ports			  [2, 1]
+	  Position		  [200, 762, 240, 818]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "100"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay5"
+	  Ports			  [2, 1]
+	  Position		  [545, 462, 585, 518]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "120"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay6"
+	  Ports			  [2, 1]
+	  Position		  [540, 547, 580, 603]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "140"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay7"
+	  Ports			  [2, 1]
+	  Position		  [535, 637, 575, 693]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "160"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Memory Delay8"
+	  Ports			  [2, 1]
+	  Position		  [540, 742, 580, 798]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Memory Delay"
+	  SourceType		  "Memory Delay AlteraBlockset"
+	  BusType		  "Inferred"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  "180"
+	  ram_type		  "AUTO"
+	  use_ena		  on
+	  use_sclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux1"
+	  Ports			  [5, 1]
+	  Position		  [835, 79, 890, 201]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "4"
+	  pipeline		  "0"
+	  oneHot		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux2"
+	  Ports			  [3, 1]
+	  Position		  [840, 388, 880, 452]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "2"
+	  pipeline		  "0"
+	  oneHot		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux3"
+	  Ports			  [4, 1]
+	  Position		  [990, 190, 1030, 270]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "3"
+	  pipeline		  "0"
+	  oneHot		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mux5"
+	  Ports			  [5, 1]
+	  Position		  [840, 229, 895, 351]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Multiplexer"
+	  SourceType		  "Multiplexer AlteraBlockset"
+	  numInputs		  "4"
+	  pipeline		  "0"
+	  oneHot		  off
+	  use_ena		  off
+	  use_aclr		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "WrDecode"
+	  Ports			  [1, 2]
+	  Position		  [200, 246, 230, 299]
+	  ForegroundColor	  "blue"
+	  SourceBlock		  "allblocks_alteradspbuilder2/Case Statement"
+	  SourceType		  "Case Statement AlteraBlockset"
+	  numOutputs		  "2"
+	  case_expression	  "0,9"
+	  formatted_case_expression "00000000,00001001"
+	  BusType		  "Signed Integer"
+	  bwl			  "8"
+	  bwr			  "0"
+	  pipeline		  off
+	  hasDefault		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "and1"
+	  Ports			  [2, 1]
+	  Position		  [915, 664, 945, 706]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "AND"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "and3"
+	  Ports			  [3, 1]
+	  Position		  [365, 264, 395, 306]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "AND"
+	  user_inputs		  "3"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "rstor1"
+	  Ports			  [1, 1]
+	  Position		  [315, 291, 350, 309]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "rstor2"
+	  Ports			  [1, 1]
+	  Position		  [850, 686, 885, 704]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "NOT"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "rstor3"
+	  Ports			  [2, 1]
+	  Position		  [55, 275, 90, 310]
+	  ForegroundColor	  "blue"
+	  ShowName		  off
+	  SourceBlock		  "allblocks_alteradspbuilder2/Logical Bit Ope"
+"rator"
+	  SourceType		  "Logical Bit Operator AlteraBlockset"
+	  LogicalOperator	  "OR"
+	  user_inputs		  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1[7:0]"
+	  Position		  [1110, 223, 1140, 237]
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "B0"
+	  Position		  [1040, 573, 1070, 587]
+	  ForegroundColor	  "blue"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Sync"
+	  Position		  [1030, 678, 1060, 692]
+	  ForegroundColor	  "blue"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "and1"
+	  SrcPort		  1
+	  DstBlock		  "DelayFifo18"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rstor2"
+	  SrcPort		  1
+	  DstBlock		  "and1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  DstBlock		  "and1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From8"
+	  SrcPort		  1
+	  DstBlock		  "rstor2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DelayFifo18"
+	  SrcPort		  1
+	  DstBlock		  "Sync"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "BusConversion2"
+	  SrcPort		  1
+	  Points		  [0, 0; 10, 0]
+	  Branch {
+	    Points		    [0, 150]
+	    Branch {
+	      Points		      [0, 160]
+	      DstBlock		      "Mux2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Mux5"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Mux1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  Points		  [0, 0; 5, 0]
+	  Branch {
+	    Points		    [0, -50]
+	    DstBlock		    "BusConversion"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "BusConversion2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  DstBlock		  "DelayFifo17"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux5"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -50]
+	  DstBlock		  "DelayFifo12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DelayFifo17"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -50]
+	  DstBlock		  "Mux3"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "DelayFifo12"
+	  SrcPort		  1
+	  DstBlock		  "Mux3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 40]
+	  DstBlock		  "DelayFifo13"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DelayFifo16"
+	  SrcPort		  1
+	  DstBlock		  "B0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From22"
+	  SrcPort		  1
+	  DstBlock		  "DelayFifo16"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rstor1"
+	  SrcPort		  1
+	  DstBlock		  "and3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From17"
+	  SrcPort		  1
+	  Points		  [0, 5]
+	  DstBlock		  "and3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From7"
+	  SrcPort		  1
+	  DstBlock		  "rstor1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "and3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [0, 100]
+	    DstBlock		    "Goto28"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -15]
+	    DstBlock		    "Int_ShiftTap"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "DelayFifo15"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 160]
+	  DstBlock		  "Mux3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "WrDecode"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -20; 105, 0]
+	  DstBlock		  "and3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DelayFifo13"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 40]
+	  DstBlock		  "Mux3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From62"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "Mux2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From61"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From60"
+	  SrcPort		  1
+	  DstBlock		  "Mux5"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From59"
+	  SrcPort		  1
+	  DstBlock		  "Mux5"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "From58"
+	  SrcPort		  1
+	  DstBlock		  "Mux5"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From57"
+	  SrcPort		  1
+	  DstBlock		  "Mux5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From56"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From55"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "From54"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From53"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "BusConversion"
+	  SrcPort		  1
+	  DstBlock		  "DelayFifo15"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux3"
+	  SrcPort		  1
+	  DstBlock		  "DelayFifo14"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Int_ShiftTap"
+	  SrcPort		  1
+	  DstBlock		  "Goto16"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Int_ShiftTap"
+	  SrcPort		  2
+	  DstBlock		  "Goto17"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Int_ShiftTap"
+	  SrcPort		  3
+	  DstBlock		  "Goto18"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Int_ShiftTap"
+	  SrcPort		  4
+	  DstBlock		  "Goto19"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Int_ShiftTap"
+	  SrcPort		  5
+	  DstBlock		  "Goto20"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Int_ShiftTap"
+	  SrcPort		  6
+	  DstBlock		  "Goto21"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Int_ShiftTap"
+	  SrcPort		  7
+	  DstBlock		  "Goto22"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Int_ShiftTap"
+	  SrcPort		  8
+	  DstBlock		  "Goto23"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Int_ShiftTap"
+	  SrcPort		  9
+	  DstBlock		  "Goto24"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From52"
+	  SrcPort		  1
+	  DstBlock		  "BranchCount"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From51"
+	  SrcPort		  1
+	  DstBlock		  "rstor3"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "rstor3"
+	  SrcPort		  1
+	  Points		  [0, -10]
+	  DstBlock		  "BranchCount"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "WrDecode"
+	  SrcPort		  2
+	  Points		  [10, 0; 0, 40; -205, 0]
+	  DstBlock		  "rstor3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "BranchCount"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [0, -90]
+	    DstBlock		    "Goto27"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "WrDecode"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "DelayFifo14"
+	  SrcPort		  1
+	  DstBlock		  "Out1[7:0]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From34"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From35"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay7"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From36"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay8"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From33"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From32"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From31"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From30"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From29"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From27"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Memory Delay8"
+	  SrcPort		  1
+	  DstBlock		  "Goto11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay7"
+	  SrcPort		  1
+	  DstBlock		  "Goto10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay6"
+	  SrcPort		  1
+	  DstBlock		  "Goto9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay5"
+	  SrcPort		  1
+	  DstBlock		  "Goto8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay4"
+	  SrcPort		  1
+	  DstBlock		  "Goto7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay3"
+	  SrcPort		  1
+	  DstBlock		  "Goto6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay2"
+	  SrcPort		  1
+	  DstBlock		  "Goto4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay1"
+	  SrcPort		  1
+	  DstBlock		  "Goto3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory Delay"
+	  SrcPort		  1
+	  DstBlock		  "Goto2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From26"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From23"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From21"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From15"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From14"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From12"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From9"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From4"
+	  SrcPort		  1
+	  DstBlock		  "Memory Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "InRst"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "InEna"
+	  SrcPort		  1
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "InDin[7:0]"
+	  SrcPort		  1
+	  DstBlock		  "Goto5"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ramp"
+      Ports		      [0, 1]
+      Position		      [35, 190, 65, 220]
+      SourceBlock	      "simulink/Sources/Ramp"
+      SourceType	      "Ramp"
+      ShowPortLabels	      on
+      slope		      "1"
+      start		      "0"
+      X0		      "3"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope1"
+      Ports		      [2]
+      Position		      [650, 160, 685, 275]
+      Floating		      off
+      Location		      [1034, 319, 1533, 884]
+      Open		      off
+      NumInputPorts	      "2"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      YMin		      "-5~-5"
+      YMax		      "5~5"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      Ports		      []
+      Position		      [34, 18, 103, 65]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily          "Cyclone IV GX"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "Clock"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Step1"
+      Position		      [35, 300, 65, 330]
+      Time		      "3"
+      Before		      "1"
+      After		      "0"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Step2"
+      Position		      [35, 250, 65, 280]
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SyncOut"
+      Ports		      [1, 1]
+      Position		      [430, 292, 495, 308]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Transforms\\CrossInterleaver12x17\\tb_top10x20\\top10x20_SyncO"
+"ut.capture"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+      Port {
+	PortNumber		1
+	Name			"ssyncout"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SyncOut1"
+      Ports		      [1, 1]
+      Position		      [435, 487, 500, 503]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Transforms\\CrossInterleaver12x17\\tb_top10x20\\top10x20_SyncO"
+"ut1.capture"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [555, 450, 575, 470]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      Position		      [555, 485, 575, 505]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      Position		      [560, 290, 580, 310]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      Position		      [555, 255, 575, 275]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator4"
+      Position		      [560, 220, 580, 240]
+    }
+    Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay"
+      Position		      [85, 185, 115, 225]
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "bDin"
+      Ports		      [1, 1]
+      Position		      [135, 197, 200, 213]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Transforms\\CrossInterleaver12x17\\tb_top10x20\\top10x20_bDin."
+"salt"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      Port {
+	PortNumber		1
+	Name			"din"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "bRst"
+      Ports		      [1, 1]
+      Position		      [120, 307, 185, 323]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "d:\\wsTrunk\\workspace\\Documentation\\DesignEx"
+"amples\\Demos\\Transforms\\CrossInterleaver12x17\\tb_top10x20\\top10x20_bRst."
+"salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "0"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      Port {
+	PortNumber		1
+	Name			"rst"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "rstor2"
+      Ports		      [1, 1]
+      Position		      [250, 486, 285, 504]
+      ForegroundColor	      "blue"
+      ShowName		      off
+      SourceBlock	      "allblocks_alteradspbuilder2/Logical Bit Operato"
+"r"
+      SourceType	      "Logical Bit Operator AlteraBlockset"
+      LogicalOperator	      "NOT"
+      user_inputs	      "2"
+    }
+    Line {
+      SrcBlock		      "Intvl10x20"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"Dout"
+	DstPort			1
+      }
+      Branch {
+	Points			[5, 0; 0, 170; -110, 0]
+	DstBlock		"DeIntvl10x20"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "din"
+      Labels		      [0, 0]
+      SrcBlock		      "bDin"
+      SrcPort		      1
+      Points		      [0, 0; 50, 0]
+      Branch {
+	Points			[0, -15]
+	DstBlock		"Scope1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 25]
+	DstBlock		"Intvl10x20"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Ena"
+      SrcPort		      1
+      Points		      [0, 0; 75, 0]
+      Branch {
+	Points			[0, 195]
+	DstBlock		"DeIntvl10x20"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Intvl10x20"
+	DstPort			2
+      }
+    }
+    Line {
+      Name		      "rst"
+      Labels		      [0, 0]
+      SrcBlock		      "bRst"
+      SrcPort		      1
+      Points		      [105, 0]
+      DstBlock		      "Intvl10x20"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Ramp"
+      SrcPort		      1
+      DstBlock		      "Unit Delay"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Step1"
+      SrcPort		      1
+      DstBlock		      "bRst"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Step2"
+      SrcPort		      1
+      DstBlock		      "Ena"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Intvl10x20"
+      SrcPort		      2
+      DstBlock		      "Branch0"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Intvl10x20"
+      SrcPort		      3
+      Points		      [0, 0]
+      Branch {
+	DstBlock		"SyncOut"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 75; -185, 0; 0, 120]
+	DstBlock		"rstor2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Unit Delay"
+      SrcPort		      1
+      DstBlock		      "bDin"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "rstor2"
+      SrcPort		      1
+      DstBlock		      "DeIntvl10x20"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "DeIntvl10x20"
+      SrcPort		      1
+      DstBlock		      "Dout1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DeIntvl10x20"
+      SrcPort		      2
+      DstBlock		      "Branch01"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DeIntvl10x20"
+      SrcPort		      3
+      DstBlock		      "SyncOut1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "sDout1"
+      Labels		      [0, 0]
+      SrcBlock		      "Dout1"
+      SrcPort		      1
+      Points		      [125, 0; 0, -180]
+      DstBlock		      "Scope1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Branch01"
+      SrcPort		      1
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "SyncOut1"
+      SrcPort		      1
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "ssyncout"
+      Labels		      [0, 0]
+      SrcBlock		      "SyncOut"
+      SrcPort		      1
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "sbranch0"
+      Labels		      [0, 1]
+      SrcBlock		      "Branch0"
+      SrcPort		      1
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "sdout"
+      Labels		      [0, 0]
+      SrcBlock		      "Dout"
+      SrcPort		      1
+      DstBlock		      "Terminator4"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "(c) 2007 Altera Corporation. All rights reserve"
+"d.  Altera products are protected under numerous U.S. and foreign patents, ma"
+"skwork rights, copyrights and other intellectual property laws. \nThis refere"
+"nce design file, and your use thereof, is subject to and governed by the term"
+"s and conditions of the applicable Altera Reference Design License Agreement "
+"(found at www.altera.com).\nBy using this reference design file, you indicate"
+" your acceptance of such terms and conditions between you and Altera Corporat"
+"ion. \nIn the event that you do not agree with such terms and conditions, you"
+" may not use the reference design file and please promptly destroy any copies"
+" you have made.\nThis reference design file being provided on an \"as-is\" ba"
+"sis and as an accommodation and therefore all warranties, representations or "
+"guarantees of any kind (whether express, implied or statutory)\nincluding, wi"
+"thout limitation, warranties of merchantability, non-infringement, or fitness"
+" for a particular purpose, are specifically disclaimed.\nBy making this refer"
+"ence design file available, Altera expressly does not recommend, suggest or r"
+"equire that this reference design file be used in combination with any other "
+"product not provided by Altera"
+      Position		      [31, 616]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      UseDisplayTextAsClickCallback off
+    }
+    Annotation {
+      Name		      "IO Description :\n\nInputs\n           Din    :"
+" Input Data\n           Ena   : Enable Data\n           Rst    : Reset\n\nOut"
+"puts\n          Dout        : Output Data\n          Branch0 : Goes High when"
+" Data appears from branch 0\n          SyncOut : Goes high and stay high on f"
+"irst valid data "
+      Position		      [656, 451]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      DropShadow	      on
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "Convolutional Interleaver\nSymbol Width = 8\nNu"
+"mber of Branches = 10\nFifo Depth = 20 "
+      Position		      [161, 76]
+      HorizontalAlignment     "left"
+      ForegroundColor	      "blue"
+      UseDisplayTextAsClickCallback off
+      FontName		      "Arial"
+      FontSize		      20
+      FontWeight	      "bold"
+    }
+  }
+}

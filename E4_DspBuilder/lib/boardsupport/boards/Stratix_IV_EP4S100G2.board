@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board uniquename="StratixIVEP4S100G2" family="Stratix IV">
+	<displayname>Transceiver Signal Integrity Development Kit, Stratix IV GT 4S100G2 Edition</displayname>
+
+	<!-- Push-Button Switches -->
+	<component name="PB0" pin="Pin_AW28" />
+	<component name="PB1" pin="Pin_AV28" />
+	<component name="PB2" pin="Pin_AU28" />
+	<component name="PB3" pin="Pin_AT28" />
+	<component name="PB4" pin="Pin_AR28" />
+	<component name="PB5" pin="Pin_AP28" />
+
+	<!-- CPU Reset Push-Button Switches -->
+	<component name="CPU_RESETN" pin="Pin_AW18" />
+
+	<!-- LEDs -->
+	<component name="LED0" pin="Pin_AW29" />
+	<component name="LED1" pin="Pin_AV29" />
+	<component name="LED2" pin="Pin_AU29" />
+	<component name="LED3" pin="Pin_AT29" />
+	<component name="LED4" pin="Pin_AW30" />
+	<component name="LED5" pin="Pin_AT30" />
+	<component name="LED6" pin="Pin_AP30" />
+	<component name="LED7" pin="Pin_AN30" />
+
+	<!-- DIP Switches -->
+	<component name="DipSwitch">
+		<pin location="Pin_AW27" />
+		<pin location="Pin_AU27" />
+		<pin location="Pin_AT27" />
+		<pin location="Pin_AP27" />
+		<pin location="Pin_AN27" />
+		<pin location="Pin_AP26" />
+		<pin location="Pin_AN26" />
+		<pin location="Pin_AM26" />
+	</component>
+
+	<configuration icon="4s100g2.bmp" width="166" height="144">
+		<devices jtag-code="0x024410DD">
+			<device name="EP4S100G2F40I1" />
+		</devices>
+
+		<option name="ClockPinIn" label="Clock Pin In">
+			<pin location="Pin_AR22" /> <!-- S4GT_50M_CLK4P -->
+			<pin location="Pin_AV22" /> <!-- S4GT_EXT_CLK5P -->
+			<pin location="Pin_AW22" /> <!-- S4GT_EXT_CLK5N -->
+			<pin location="None" />
+		</option>
+
+		<option name="GlobalResetPin" label="Global Reset Pin">
+			<pin location="Pin_AW18" />
+			<pin location="Pin_AW28" />
+			<pin location="Pin_AV28" />
+			<pin location="Pin_AU28" />
+			<pin location="Pin_AT28" />
+			<pin location="Pin_AR28" />
+			<pin location="Pin_AP28" />
+			<pin location="None" />
+		</option>
+	</configuration>
+</board>

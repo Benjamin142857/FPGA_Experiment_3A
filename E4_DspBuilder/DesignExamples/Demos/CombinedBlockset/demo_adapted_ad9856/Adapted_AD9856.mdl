@@ -1,0 +1,6687 @@
+Model {
+  Name			  "Adapted_AD9856"
+  Version		  7.6
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.32"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  PreLoadFcn		  "setup_Adapted_AD9856;"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  MaxMDLFileLineLength	  120
+  InitFcn		  "setup_Adapted_AD9856;\n%% DSPBuilder Start\nalt_dspbuilder_update_model(bdroot)\n%% DSPBuilder End\n"
+  Created		  "Mon Feb 09 10:59:22 2009"
+  Creator		  "lkong"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "akarapet"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Jun 14 14:22:26 2013"
+  RTWModifiedTimeStamp	  293119983
+  ModelVersionFormat	  "1.%<AutoIncrement:32>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.10.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.10.0"
+	  StartTime		  "0.0"
+	  StopTime		  "20000 * SampleTime"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  ConcurrentTasks	  off
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.10.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "OptimizeModelRefInitCode"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.10.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "Warning"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.10.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.10.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.10.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    2
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateSLWebview	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		14
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"PortableWordSizes"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTCodeCoverageTool     "None"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 509, 251, 1389, 881 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      RandomNumber
+      Mean		      "0"
+      Variance		      "1"
+      Seed		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+  }
+  System {
+    Name		    "Adapted_AD9856"
+    Location		    [121, 171, 1367, 881]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "201"
+    Block {
+      BlockType		      SubSystem
+      Name		      "AdvancedBlockset"
+      SID		      "1"
+      Ports		      [3, 2]
+      Position		      [715, 337, 850, 593]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"AdvancedBlockset"
+	Location		[133, 203, 852, 653]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "data"
+	  SID			  "2"
+	  Position		  [60, 68, 90, 82]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "valid"
+	  SID			  "3"
+	  Position		  [60, 138, 90, 152]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "channel"
+	  SID			  "4"
+	  Position		  [60, 208, 90, 222]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "DSPBA"
+	  SID			  "5"
+	  Ports			  [3, 2]
+	  Position		  [245, 42, 380, 248]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "DSPBA"
+	    Location		    [915, 246, 1537, 756]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "DataIn"
+	      SID		      "6"
+	      Position		      [50, 93, 80, 107]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "ValidIn"
+	      SID		      "7"
+	      Position		      [50, 223, 80, 237]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "ChannelIn"
+	      SID		      "8"
+	      Position		      [50, 353, 80, 367]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "AD9856"
+	      SID		      "9"
+	      Ports		      [3, 9]
+	      Position		      [155, 36, 245, 424]
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"AD9856"
+		Location		[581, 255, 1553, 1031]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Ind"
+		  SID			  "10"
+		  Position		  [225, 108, 255, 122]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Inv"
+		  SID			  "11"
+		  Position		  [225, 198, 255, 212]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Inc"
+		  SID			  "12"
+		  Position		  [225, 288, 255, 302]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  SID			  "13"
+		  Position		  [300, 370, 350, 400]
+		  Value			  "0"
+		  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+		  SampleTime		  "SampleTime"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  SID			  "14"
+		  Position		  [300, 460, 350, 490]
+		  Value			  "0"
+		  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+		  SampleTime		  "SampleTime"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "DUCIQ"
+		  SID			  "15"
+		  Ports			  [5, 9]
+		  Position		  [435, 63, 570, 527]
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "DUCIQ"
+		    Location		    [233, 283, 1812, 853]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "50"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Ind"
+		    SID			    "16"
+		    Position		    [15, 248, 45, 262]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Inv"
+		    SID			    "17"
+		    Position		    [15, 308, 45, 322]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Inc"
+		    SID			    "18"
+		    Position		    [15, 368, 45, 382]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "PhaseOffset"
+		    SID			    "19"
+		    Position		    [1835, 658, 1865, 672]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "SYnc"
+		    SID			    "20"
+		    Position		    [1835, 738, 1865, 752]
+		    Port		    "5"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "CICScale"
+		    SID			    "21"
+		    Ports		    [4, 4]
+		    Position		    [1670, 223, 1765, 547]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/Scale"
+		    SourceType		    "DSP Builder Advanced Blockset Scale"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[-7 -8]"
+		    latency		    "5"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "CIC_Scopes"
+		    SID			    "22"
+		    Ports		    [3, 1]
+		    Position		    [1806, 165, 1834, 200]
+		    BlockRotation	    270
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    Port {
+		    PortNumber		    1
+		    Name		    "CIC"
+		    PropagatedSignals	    "I, Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    System {
+		    Name		    "CIC_Scopes"
+		    Location		    [160, 399, 1034, 930]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "d0"
+		    SID			    "23"
+		    Position		    [25, 148, 55, 162]
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "data"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "v"
+		    SID			    "24"
+		    Position		    [25, 208, 55, 222]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "c"
+		    SID			    "25"
+		    Position		    [25, 268, 55, 282]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "channel"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "All_Scope"
+		    SID			    "26"
+		    Ports		    [3]
+		    Position		    [56, 35, 164, 75]
+		    BlockRotation	    270
+		    Floating		    off
+		    Location		    [7, 263, 1653, 968]
+		    Open		    off
+		    NumInputPorts	    "3"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    axes3		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~0~0"
+		    YMax		    "0.125~1~1"
+		    SaveName		    "ScopeData29"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "ChanView"
+		    SID			    "27"
+		    Ports		    [3, 2]
+		    Position		    [235, 122, 330, 308]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/ChanView"
+		    SourceType		    "DSP Builder Advanced Blockset Channel Viewer"
+		    nchans		    "16"
+		    chan_vector		    "[0 1]"
+		    outsvalid		    off
+		    latency		    "2"
+		    version		    "20090407"
+		    Port {
+		    PortNumber		    1
+		    Name		    "I"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    2
+		    Name		    "Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "Channel_Scope"
+		    SID			    "28"
+		    Ports		    [2]
+		    Position		    [650, 120, 690, 315]
+		    Floating		    off
+		    Location		    [703, 505, 1501, 880]
+		    Open		    off
+		    NumInputPorts	    "2"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~-0.075"
+		    YMax		    "0.125~0.075"
+		    SaveName		    "chanFiltData"
+		    DataFormat		    "Array"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux10"
+		    SID			    "29"
+		    Ports		    [2, 1]
+		    Position		    [440, 192, 445, 243]
+		    NamePlacement	    "alternate"
+		    Inputs		    "2"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "q0"
+		    SID			    "30"
+		    Position		    [535, 213, 565, 227]
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "data"
+		    Labels		    [0, 0]
+		    SrcBlock		    "d0"
+		    SrcPort		    1
+		    Points		    [0, 0; 15, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "valid"
+		    Labels		    [0, 0]
+		    SrcBlock		    "v"
+		    SrcPort		    1
+		    Points		    [0, 0; 50, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "channel"
+		    Labels		    [0, 0]
+		    SrcBlock		    "c"
+		    SrcPort		    1
+		    Points		    [0, 0; 85, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    Name		    "Q"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    2
+		    Points		    [80, 0]
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Mux10"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Mux10"
+		    SrcPort		    1
+		    DstBlock		    "q0"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "I"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    1
+		    Points		    [80, 0]
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Mux10"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Const"
+		    SID			    "31"
+		    Ports		    [0, 1]
+		    Position		    [280, 424, 315, 446]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Const"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "const"
+		    nInputs		    "0"
+		    nOutputs		    "1"
+		    omode		    "Specify via dialog"
+		    otype		    "ufix(1)"
+		    scale		    "2^-0"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "['+'; '+';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('%g', value);"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    floatPrecision	    "float32_m23"
+		    version		    "20120820"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Const1"
+		    SID			    "32"
+		    Ports		    [0, 1]
+		    Position		    [720, 424, 755, 446]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Const"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "const"
+		    nInputs		    "0"
+		    nOutputs		    "1"
+		    omode		    "Specify via dialog"
+		    otype		    "ufix(1)"
+		    scale		    "2^-0"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "['+'; '+';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('%g', value);"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    floatPrecision	    "float32_m23"
+		    version		    "20120820"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Const2"
+		    SID			    "33"
+		    Ports		    [0, 1]
+		    Position		    [1595, 494, 1630, 516]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Const"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "const"
+		    nInputs		    "0"
+		    nOutputs		    "1"
+		    omode		    "Specify via dialog"
+		    otype		    "ufix(1)"
+		    scale		    "2^-0"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "['+'; '+';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('%g', value);"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    floatPrecision	    "float32_m23"
+		    version		    "20120820"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Const3"
+		    SID			    "34"
+		    Ports		    [0, 1]
+		    Position		    [1430, 424, 1465, 446]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Const"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "const"
+		    nInputs		    "0"
+		    nOutputs		    "1"
+		    omode		    "boolean"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "['+'; '+';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('%g', value);"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    floatPrecision	    "float32_m23"
+		    version		    "20120820"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Const4"
+		    SID			    "35"
+		    Ports		    [0, 1]
+		    Position		    [1165, 424, 1200, 446]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Const"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "const"
+		    nInputs		    "0"
+		    nOutputs		    "1"
+		    omode		    "Specify via dialog"
+		    otype		    "ufix(1)"
+		    scale		    "2^-0"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "['+'; '+';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('%g', value);"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    floatPrecision	    "float32_m23"
+		    version		    "20120820"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Const5"
+		    SID			    "36"
+		    Ports		    [0, 1]
+		    Position		    [2770, 684, 2805, 706]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Const"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "const"
+		    nInputs		    "0"
+		    nOutputs		    "1"
+		    omode		    "Specify via dialog"
+		    otype		    "ufix(1)"
+		    scale		    "2^-0"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "['+'; '+';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('%g', value);"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    floatPrecision	    "float32_m23"
+		    version		    "20120820"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Const6"
+		    SID			    "37"
+		    Ports		    [0, 1]
+		    Position		    [2340, 684, 2375, 706]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Const"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "const"
+		    nInputs		    "0"
+		    nOutputs		    "1"
+		    omode		    "Specify via dialog"
+		    otype		    "ufix(1)"
+		    scale		    "2^-0"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "['+'; '+';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('%g', value);"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    floatPrecision	    "float32_m23"
+		    version		    "20120820"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "HB1"
+		    SID			    "38"
+		    Ports		    [3, 3]
+		    Position		    [160, 221, 280, 409]
+		    LibraryVersion	    "1.44"
+		    SourceBlock		    "DSPBAFilters/InterpolatingFIR"
+		    SourceType		    "DSP Builder Advanced Blockset Interpolating FIR"
+		    nInputRate		    "SampleRate"
+		    interp		    "2"
+		    nchan		    "2"
+		    symmetry		    "Symmetrical"
+		    coef		    "fi(firhalfband(46, 0.35 ),1,16,15) "
+		    addr		    "512"
+		    rwmode		    "Read/Write"
+		    nband		    "Use All Taps"
+		    exposebus		    off
+		    latency		    "34"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "HB1Scale"
+		    SID			    "39"
+		    Ports		    [4, 4]
+		    Position		    [370, 224, 465, 466]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/Scale"
+		    SourceType		    "DSP Builder Advanced Blockset Scale"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "0"
+		    latency		    "3"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "HB1_Scopes"
+		    SID			    "40"
+		    Ports		    [3, 1]
+		    Position		    [501, 155, 529, 190]
+		    BlockRotation	    270
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    Port {
+		    PortNumber		    1
+		    Name		    "HB1"
+		    PropagatedSignals	    "I, Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    System {
+		    Name		    "HB1_Scopes"
+		    Location		    [160, 399, 1034, 930]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "d0"
+		    SID			    "41"
+		    Position		    [25, 148, 55, 162]
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "data"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "v"
+		    SID			    "42"
+		    Position		    [25, 208, 55, 222]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "c"
+		    SID			    "43"
+		    Position		    [25, 268, 55, 282]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "channel"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "All_Scope"
+		    SID			    "44"
+		    Ports		    [3]
+		    Position		    [56, 35, 164, 75]
+		    BlockRotation	    270
+		    Floating		    off
+		    Location		    [7, 263, 1653, 968]
+		    Open		    off
+		    NumInputPorts	    "3"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    axes3		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~0~0"
+		    YMax		    "0.125~1~1"
+		    SaveName		    "ScopeData29"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "ChanView"
+		    SID			    "45"
+		    Ports		    [3, 2]
+		    Position		    [235, 122, 330, 308]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/ChanView"
+		    SourceType		    "DSP Builder Advanced Blockset Channel Viewer"
+		    nchans		    "16"
+		    chan_vector		    "[0 1]"
+		    outsvalid		    off
+		    latency		    "2"
+		    version		    "20090407"
+		    Port {
+		    PortNumber		    1
+		    Name		    "I"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    2
+		    Name		    "Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "Channel_Scope"
+		    SID			    "46"
+		    Ports		    [2]
+		    Position		    [650, 120, 690, 315]
+		    Floating		    off
+		    Location		    [703, 505, 1501, 880]
+		    Open		    off
+		    NumInputPorts	    "2"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~-0.075"
+		    YMax		    "0.125~0.075"
+		    SaveName		    "chanFiltData"
+		    DataFormat		    "Array"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux10"
+		    SID			    "47"
+		    Ports		    [2, 1]
+		    Position		    [440, 192, 445, 243]
+		    NamePlacement	    "alternate"
+		    Inputs		    "2"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "q0"
+		    SID			    "48"
+		    Position		    [535, 213, 565, 227]
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "Mux10"
+		    SrcPort		    1
+		    DstBlock		    "q0"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Q"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    2
+		    Points		    [80, 0]
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Mux10"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "channel"
+		    Labels		    [0, 0]
+		    SrcBlock		    "c"
+		    SrcPort		    1
+		    Points		    [0, 0; 85, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    Name		    "valid"
+		    Labels		    [0, 0]
+		    SrcBlock		    "v"
+		    SrcPort		    1
+		    Points		    [0, 0; 50, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "data"
+		    Labels		    [0, 0]
+		    SrcBlock		    "d0"
+		    SrcPort		    1
+		    Points		    [0, 0; 15, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "I"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    1
+		    Points		    [75, 0]
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Mux10"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "HB2"
+		    SID			    "49"
+		    Ports		    [3, 3]
+		    Position		    [565, 221, 685, 409]
+		    LibraryVersion	    "1.44"
+		    SourceBlock		    "DSPBAFilters/InterpolatingFIR"
+		    SourceType		    "DSP Builder Advanced Blockset Interpolating FIR"
+		    nInputRate		    "SampleRate * 2"
+		    interp		    "2"
+		    nchan		    "2"
+		    symmetry		    "Symmetrical"
+		    coef		    "fi(firhalfband(38, 0.25 ),1,16,15) "
+		    addr		    "1024"
+		    rwmode		    "Read/Write"
+		    nband		    "Use All Taps"
+		    exposebus		    off
+		    latency		    "30"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "HB2Scale"
+		    SID			    "50"
+		    Ports		    [4, 4]
+		    Position		    [790, 224, 885, 466]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/Scale"
+		    SourceType		    "DSP Builder Advanced Blockset Scale"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[1 1]"
+		    latency		    "5"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "HB2_Scopes"
+		    SID			    "51"
+		    Ports		    [3, 1]
+		    Position		    [936, 155, 964, 190]
+		    BlockRotation	    270
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    Port {
+		    PortNumber		    1
+		    Name		    "HB2"
+		    PropagatedSignals	    "I, Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    System {
+		    Name		    "HB2_Scopes"
+		    Location		    [160, 399, 1034, 930]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "d0"
+		    SID			    "52"
+		    Position		    [25, 148, 55, 162]
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "data"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "v"
+		    SID			    "53"
+		    Position		    [25, 208, 55, 222]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "c"
+		    SID			    "54"
+		    Position		    [25, 268, 55, 282]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "channel"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "All_Scope"
+		    SID			    "55"
+		    Ports		    [3]
+		    Position		    [56, 35, 164, 75]
+		    BlockRotation	    270
+		    Floating		    off
+		    Location		    [7, 263, 1653, 968]
+		    Open		    off
+		    NumInputPorts	    "3"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    axes3		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~0~0"
+		    YMax		    "0.125~1~1"
+		    SaveName		    "ScopeData29"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "ChanView"
+		    SID			    "56"
+		    Ports		    [3, 2]
+		    Position		    [235, 122, 330, 308]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/ChanView"
+		    SourceType		    "DSP Builder Advanced Blockset Channel Viewer"
+		    nchans		    "16"
+		    chan_vector		    "[0 1]"
+		    outsvalid		    off
+		    latency		    "2"
+		    version		    "20090407"
+		    Port {
+		    PortNumber		    1
+		    Name		    "I"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    2
+		    Name		    "Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "Channel_Scope"
+		    SID			    "57"
+		    Ports		    [2]
+		    Position		    [650, 120, 690, 315]
+		    Floating		    off
+		    Location		    [703, 505, 1501, 880]
+		    Open		    off
+		    NumInputPorts	    "2"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~-0.075"
+		    YMax		    "0.125~0.075"
+		    SaveName		    "chanFiltData"
+		    DataFormat		    "Array"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux10"
+		    SID			    "58"
+		    Ports		    [2, 1]
+		    Position		    [440, 192, 445, 243]
+		    NamePlacement	    "alternate"
+		    Inputs		    "2"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "q0"
+		    SID			    "59"
+		    Position		    [535, 213, 565, 227]
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "data"
+		    Labels		    [0, 0]
+		    SrcBlock		    "d0"
+		    SrcPort		    1
+		    Points		    [0, 0; 15, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "valid"
+		    Labels		    [0, 0]
+		    SrcBlock		    "v"
+		    SrcPort		    1
+		    Points		    [0, 0; 50, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "channel"
+		    Labels		    [0, 0]
+		    SrcBlock		    "c"
+		    SrcPort		    1
+		    Points		    [0, 0; 85, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    Name		    "Q"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    2
+		    Points		    [80, 0]
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Mux10"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Mux10"
+		    SrcPort		    1
+		    DstBlock		    "q0"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "I"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    1
+		    Points		    [75, 0]
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Mux10"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "HB3"
+		    SID			    "60"
+		    Ports		    [3, 3]
+		    Position		    [1010, 221, 1130, 409]
+		    LibraryVersion	    "1.44"
+		    SourceBlock		    "DSPBAFilters/InterpolatingFIR"
+		    SourceType		    "DSP Builder Advanced Blockset Interpolating FIR"
+		    nInputRate		    "SampleRate * 4"
+		    interp		    "2"
+		    nchan		    "2"
+		    symmetry		    "Symmetrical"
+		    coef		    "fi(firhalfband(18, 0.21 ),1,16,15) "
+		    addr		    "1536"
+		    rwmode		    "Read/Write"
+		    nband		    "Use All Taps"
+		    exposebus		    off
+		    latency		    "20"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "HB3Scale"
+		    SID			    "61"
+		    Ports		    [4, 4]
+		    Position		    [1235, 224, 1330, 466]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/Scale"
+		    SourceType		    "DSP Builder Advanced Blockset Scale"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[1 1]"
+		    latency		    "5"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "HB3_Scopes"
+		    SID			    "62"
+		    Ports		    [3, 1]
+		    Position		    [1371, 155, 1399, 190]
+		    BlockRotation	    270
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    Port {
+		    PortNumber		    1
+		    Name		    "HB3"
+		    PropagatedSignals	    "I, Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    System {
+		    Name		    "HB3_Scopes"
+		    Location		    [160, 399, 1034, 930]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "d0"
+		    SID			    "63"
+		    Position		    [25, 148, 55, 162]
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "data"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "v"
+		    SID			    "64"
+		    Position		    [25, 208, 55, 222]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "c"
+		    SID			    "65"
+		    Position		    [25, 268, 55, 282]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "channel"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "All_Scope"
+		    SID			    "66"
+		    Ports		    [3]
+		    Position		    [56, 35, 164, 75]
+		    BlockRotation	    270
+		    Floating		    off
+		    Location		    [5, 263, 1289, 968]
+		    Open		    off
+		    NumInputPorts	    "3"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    axes3		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~0~0"
+		    YMax		    "0.125~1~1"
+		    SaveName		    "ScopeData29"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "ChanView"
+		    SID			    "67"
+		    Ports		    [3, 2]
+		    Position		    [235, 122, 330, 308]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/ChanView"
+		    SourceType		    "DSP Builder Advanced Blockset Channel Viewer"
+		    nchans		    "16"
+		    chan_vector		    "[0 1]"
+		    outsvalid		    off
+		    latency		    "2"
+		    version		    "20090407"
+		    Port {
+		    PortNumber		    1
+		    Name		    "I"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    2
+		    Name		    "Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "Channel_Scope"
+		    SID			    "68"
+		    Ports		    [2]
+		    Position		    [650, 120, 690, 315]
+		    Floating		    off
+		    Location		    [703, 505, 1501, 880]
+		    Open		    off
+		    NumInputPorts	    "2"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~-0.075"
+		    YMax		    "0.125~0.075"
+		    SaveName		    "chanFiltData"
+		    DataFormat		    "Array"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux10"
+		    SID			    "69"
+		    Ports		    [2, 1]
+		    Position		    [440, 192, 445, 243]
+		    NamePlacement	    "alternate"
+		    Inputs		    "2"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "q0"
+		    SID			    "70"
+		    Position		    [535, 213, 565, 227]
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "Mux10"
+		    SrcPort		    1
+		    DstBlock		    "q0"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Q"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    2
+		    Points		    [80, 0]
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Mux10"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "I"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    1
+		    Points		    [80, 0]
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Mux10"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "channel"
+		    Labels		    [0, 0]
+		    SrcBlock		    "c"
+		    SrcPort		    1
+		    Points		    [0, 0; 85, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    Name		    "valid"
+		    Labels		    [0, 0]
+		    SrcBlock		    "v"
+		    SrcPort		    1
+		    Points		    [0, 0; 50, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "data"
+		    Labels		    [0, 0]
+		    SrcBlock		    "d0"
+		    SrcPort		    1
+		    Points		    [0, 0; 15, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "ISFScale"
+		    SID			    "71"
+		    Ports		    [4, 4]
+		    Position		    [2845, 224, 2940, 761]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/Scale"
+		    SourceType		    "DSP Builder Advanced Blockset Scale"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "0"
+		    latency		    "3"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "ISF_Scopes"
+		    SID			    "72"
+		    Ports		    [3, 1]
+		    Position		    [3036, 780, 3064, 815]
+		    BlockRotation	    270
+		    BlockMirror		    on
+		    NamePlacement	    "alternate"
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    Port {
+		    PortNumber		    1
+		    Name		    "ISF"
+		    PropagatedSignals	    "I, Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    System {
+		    Name		    "ISF_Scopes"
+		    Location		    [160, 399, 1034, 930]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "d0"
+		    SID			    "73"
+		    Position		    [25, 148, 55, 162]
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "data"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "v"
+		    SID			    "74"
+		    Position		    [25, 208, 55, 222]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "c"
+		    SID			    "75"
+		    Position		    [25, 268, 55, 282]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "channel"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "All_Scope"
+		    SID			    "76"
+		    Ports		    [3]
+		    Position		    [56, 35, 164, 75]
+		    BlockRotation	    270
+		    Floating		    off
+		    Location		    [5, 263, 1289, 968]
+		    Open		    off
+		    NumInputPorts	    "3"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    axes3		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~0~0"
+		    YMax		    "0.125~1~1"
+		    SaveName		    "ScopeData29"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "ChanView"
+		    SID			    "77"
+		    Ports		    [3, 2]
+		    Position		    [235, 122, 330, 308]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/ChanView"
+		    SourceType		    "DSP Builder Advanced Blockset Channel Viewer"
+		    nchans		    "16"
+		    chan_vector		    "[0 1]"
+		    outsvalid		    off
+		    latency		    "2"
+		    version		    "20090407"
+		    Port {
+		    PortNumber		    1
+		    Name		    "I"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    2
+		    Name		    "Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "Channel_Scope"
+		    SID			    "78"
+		    Ports		    [2]
+		    Position		    [650, 120, 690, 315]
+		    Floating		    off
+		    Location		    [703, 505, 1501, 880]
+		    Open		    off
+		    NumInputPorts	    "2"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~-0.075"
+		    YMax		    "0.125~0.075"
+		    SaveName		    "chanFiltData"
+		    DataFormat		    "Array"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux10"
+		    SID			    "79"
+		    Ports		    [2, 1]
+		    Position		    [440, 192, 445, 243]
+		    NamePlacement	    "alternate"
+		    Inputs		    "2"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "q0"
+		    SID			    "80"
+		    Position		    [535, 213, 565, 227]
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "data"
+		    Labels		    [0, 0]
+		    SrcBlock		    "d0"
+		    SrcPort		    1
+		    Points		    [0, 0; 15, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "valid"
+		    Labels		    [0, 0]
+		    SrcBlock		    "v"
+		    SrcPort		    1
+		    Points		    [0, 0; 50, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "channel"
+		    Labels		    [0, 0]
+		    SrcBlock		    "c"
+		    SrcPort		    1
+		    Points		    [0, 0; 85, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    Name		    "Q"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    2
+		    Points		    [80, 0]
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Mux10"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Mux10"
+		    SrcPort		    1
+		    DstBlock		    "q0"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "I"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Mux10"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Input_Scopes"
+		    SID			    "81"
+		    Ports		    [3, 1]
+		    Position		    [66, 155, 94, 190]
+		    BlockRotation	    270
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    Port {
+		    PortNumber		    1
+		    Name		    "input"
+		    PropagatedSignals	    "I, Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    System {
+		    Name		    "Input_Scopes"
+		    Location		    [160, 399, 1034, 930]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "d0"
+		    SID			    "82"
+		    Position		    [25, 148, 55, 162]
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "data"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "v"
+		    SID			    "83"
+		    Position		    [25, 208, 55, 222]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "c"
+		    SID			    "84"
+		    Position		    [25, 268, 55, 282]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "channel"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "All_Scope"
+		    SID			    "85"
+		    Ports		    [3]
+		    Position		    [56, 35, 164, 75]
+		    BlockRotation	    270
+		    Floating		    off
+		    Location		    [7, 263, 1653, 968]
+		    Open		    off
+		    NumInputPorts	    "3"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    axes3		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~0~0"
+		    YMax		    "0.125~1~1"
+		    SaveName		    "ScopeData29"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "ChanView"
+		    SID			    "86"
+		    Ports		    [3, 2]
+		    Position		    [235, 122, 330, 308]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/ChanView"
+		    SourceType		    "DSP Builder Advanced Blockset Channel Viewer"
+		    nchans		    "16"
+		    chan_vector		    "[0 1]"
+		    outsvalid		    off
+		    latency		    "2"
+		    version		    "20090407"
+		    Port {
+		    PortNumber		    1
+		    Name		    "I"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    2
+		    Name		    "Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "Channel_Scope"
+		    SID			    "87"
+		    Ports		    [2]
+		    Position		    [650, 120, 690, 315]
+		    Floating		    off
+		    Location		    [703, 505, 1501, 880]
+		    Open		    off
+		    NumInputPorts	    "2"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~-0.075"
+		    YMax		    "0.125~0.075"
+		    SaveName		    "chanFiltData"
+		    DataFormat		    "Array"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux10"
+		    SID			    "88"
+		    Ports		    [2, 1]
+		    Position		    [440, 192, 445, 243]
+		    NamePlacement	    "alternate"
+		    Inputs		    "2"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "q0"
+		    SID			    "89"
+		    Position		    [535, 213, 565, 227]
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "data"
+		    Labels		    [0, 0]
+		    SrcBlock		    "d0"
+		    SrcPort		    1
+		    Points		    [0, 0; 15, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "valid"
+		    Labels		    [0, 0]
+		    SrcBlock		    "v"
+		    SrcPort		    1
+		    Points		    [0, 0; 50, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "channel"
+		    Labels		    [0, 0]
+		    SrcBlock		    "c"
+		    SrcPort		    1
+		    Points		    [0, 0; 85, 0]
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    Name		    "I"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    1
+		    Points		    [80, 0]
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Mux10"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "Q"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    2
+		    Points		    [80, 0]
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Mux10"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Mux10"
+		    SrcPort		    1
+		    DstBlock		    "q0"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "InterpolatingCIC"
+		    SID			    "90"
+		    Ports		    [4, 3]
+		    Position		    [1490, 223, 1595, 467]
+		    BackgroundColor	    "yellow"
+		    LibraryVersion	    "1.44"
+		    SourceBlock		    "DSPBAFilters/InterpolatingCIC"
+		    SourceType		    "DSP Builder Advanced Blockset Interpolating CIC"
+		    nInputRate		    "SampleRate * 8"
+		    nchan		    "2"
+		    nstages		    "4"
+		    nrate		    "5"
+		    ndelay		    "1"
+		    ndecimation		    "1"
+		    sHints		    "'*delay* arch mem'"
+		    inWidth		    "1"
+		    outWidth		    "1"
+		    sysClock		    "200"
+		    latency		    "9"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "InverseSincFIR"
+		    SID			    "91"
+		    Ports		    [3, 3]
+		    Position		    [2665, 222, 2765, 628]
+		    LibraryVersion	    "1.44"
+		    SourceBlock		    "DSPBAFilters/SingleRateFIR"
+		    SourceType		    "DSP Builder Advanced Blockset Single Rate FIR"
+		    nInputRate		    "SampleRate * 40"
+		    nchan		    "1"
+		    symmetry		    "Symmetrical"
+		    coef		    "fi(fir1(16, 0.7),1,16,15)"
+		    addr		    "2048"
+		    rwmode		    "Read/Write"
+		    nband		    "Use All Taps"
+		    latency		    "13"
+		    exposebus		    off
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "MIX_Scopes"
+		    SID			    "92"
+		    Ports		    [3, 1]
+		    Position		    [2581, 740, 2609, 775]
+		    BlockRotation	    270
+		    BlockMirror		    on
+		    NamePlacement	    "alternate"
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    Port {
+		    PortNumber		    1
+		    Name		    "MIX"
+		    PropagatedSignals	    "I, Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    System {
+		    Name		    "MIX_Scopes"
+		    Location		    [160, 399, 1034, 930]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "d0"
+		    SID			    "93"
+		    Position		    [25, 148, 55, 162]
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "data"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "v"
+		    SID			    "94"
+		    Position		    [25, 208, 55, 222]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "c"
+		    SID			    "95"
+		    Position		    [25, 268, 55, 282]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "channel"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "All_Scope"
+		    SID			    "96"
+		    Ports		    [3]
+		    Position		    [56, 35, 164, 75]
+		    BlockRotation	    270
+		    Floating		    off
+		    Location		    [7, 263, 1653, 968]
+		    Open		    off
+		    NumInputPorts	    "3"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    axes3		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "0.0005          "
+		    YMin		    "-0.25~0~0"
+		    YMax		    "0.225~1~1"
+		    SaveName		    "ScopeData29"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "ChanView"
+		    SID			    "97"
+		    Ports		    [3, 2]
+		    Position		    [235, 122, 330, 308]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/ChanView"
+		    SourceType		    "DSP Builder Advanced Blockset Channel Viewer"
+		    nchans		    "16"
+		    chan_vector		    "[0 1]"
+		    outsvalid		    off
+		    latency		    "2"
+		    version		    "20090407"
+		    Port {
+		    PortNumber		    1
+		    Name		    "I"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    2
+		    Name		    "Q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "Channel_Scope"
+		    SID			    "98"
+		    Ports		    [2]
+		    Position		    [650, 120, 690, 315]
+		    Floating		    off
+		    Location		    [703, 505, 1501, 880]
+		    Open		    off
+		    NumInputPorts	    "2"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-0.125~-0.075"
+		    YMax		    "0.125~0.075"
+		    SaveName		    "chanFiltData"
+		    DataFormat		    "Array"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux10"
+		    SID			    "99"
+		    Ports		    [2, 1]
+		    Position		    [440, 192, 445, 243]
+		    NamePlacement	    "alternate"
+		    Inputs		    "2"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "q0"
+		    SID			    "100"
+		    Position		    [535, 213, 565, 227]
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "Mux10"
+		    SrcPort		    1
+		    DstBlock		    "q0"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Q"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    2
+		    Points		    [80, 0]
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Mux10"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "I"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChanView"
+		    SrcPort		    1
+		    Points		    [80, 0; 0, 0]
+		    Branch {
+		    Points		    [0, 10]
+		    DstBlock		    "Mux10"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Channel_Scope"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "channel"
+		    Labels		    [0, 0]
+		    SrcBlock		    "c"
+		    SrcPort		    1
+		    Points		    [0, 0; 85, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    Name		    "valid"
+		    Labels		    [0, 0]
+		    SrcBlock		    "v"
+		    SrcPort		    1
+		    Points		    [0, 0; 50, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "data"
+		    Labels		    [0, 0]
+		    SrcBlock		    "d0"
+		    SrcPort		    1
+		    Points		    [0, 0; 15, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "ChanView"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "All_Scope"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Mixer"
+		    SID			    "101"
+		    Ports		    [5, 3]
+		    Position		    [2280, 221, 2335, 629]
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "Mixer"
+		    Location		    [2, 84, 1270, 971]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "a"
+		    SID			    "102"
+		    Position		    [75, 233, 105, 247]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "av"
+		    SID			    "103"
+		    Position		    [70, 133, 100, 147]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "ac"
+		    SID			    "104"
+		    Position		    [75, 183, 105, 197]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "sin"
+		    SID			    "105"
+		    Position		    [70, 283, 100, 297]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "cos"
+		    SID			    "106"
+		    Position		    [70, 333, 100, 347]
+		    Port		    "5"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Add_I_Reg1"
+		    SID			    "107"
+		    Ports		    [1, 1]
+		    Position		    [470, 215, 520, 265]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/SampleDelay"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "delay"
+		    nInputs		    "1"
+		    nOutputs		    "1"
+		    omode		    "Inherit via internal rule"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "1"
+		    inPortNames		    "[' '; ' ';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "dpoly(1, eye(1,value+1), 'z')"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    flexible		    off
+		    slackgroup		    "0"
+		    augmented		    "0"
+		    version		    "20090407"
+		    Port {
+		    PortNumber		    1
+		    Name		    "inI"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "And1"
+		    SID			    "108"
+		    Ports		    [2, 1]
+		    Position		    [665, 58, 715, 107]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/And"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "and"
+		    nInputs		    "2"
+		    nOutputs		    "1"
+		    omode		    "Inherit via internal rule"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "[' '; ' ';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('&');"
+		    style		    "Optimised"
+		    visibilities	    "8"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "BitExtract1"
+		    SID			    "109"
+		    Ports		    [1, 1]
+		    Position		    [390, 95, 440, 145]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/BitExtract"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "bitextract"
+		    nInputs		    "1"
+		    nOutputs		    "1"
+		    omode		    "Specify via dialog"
+		    otype		    "ufix(2)"
+		    scale		    "2^-0"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "[' '; ' ';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('..%d', value);"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "ChannelIn"
+		    SID			    "110"
+		    Ports		    [5, 5]
+		    Position		    [135, 119, 190, 361]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/ChannelIn"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "channelin"
+		    nInputs		    "dspba_internal_get_channel_ports(gcb)"
+		    nOutputs		    "dspba_internal_get_channel_ports(gcb)"
+		    omode		    "Inherit via internal rule"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "3"
+		    inPortNames		    "['v'; 'c'; '0'; '1'; '2'; '3'; '4'; '5'; '6'; '7'; '8']"
+		    outPortNames	    "['v'; 'c'; '0'; '1'; '2'; '3'; '4'; '5'; '6'; '7'; '8']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('In');"
+		    style		    "Optimised"
+		    dataSignals		    "3"
+		    foldingEnabled	    off
+		    channels		    "1"
+		    sampleRate		    "200"
+		    visibilities	    "dspba_ChannelInVis(gcb)"
+		    latencyCorrection	    "0"
+		    version		    "20090408"
+		    Port {
+		    PortNumber		    3
+		    Name		    "inQ"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "ChannelOut"
+		    SID			    "111"
+		    Ports		    [3, 3]
+		    Position		    [965, 129, 1015, 231]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/ChannelOut"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "channelout"
+		    nInputs		    "dspba_internal_get_channel_ports(gcb)"
+		    nOutputs		    "dspba_internal_get_channel_ports(gcb)"
+		    omode		    "Inherit via internal rule"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "1"
+		    inPortNames		    "['v'; 'c'; '0'; '1'; '2'; '3'; '4'; '5'; '6'; '7'; '8']"
+		    outPortNames	    "['v'; 'c'; '0'; '1'; '2'; '3'; '4'; '5'; '6'; '7'; '8']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('Out');"
+		    style		    "Optimised"
+		    dataSignals		    "1"
+		    foldingEnabled	    off
+		    channels		    "1"
+		    sampleRate		    "200"
+		    visibilities	    "dspba_ChannelOutVis(gcb)"
+		    latency		    "4"
+		    latencyCorrection	    "0"
+		    version		    "20090408"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Channel_1"
+		    SID			    "112"
+		    Ports		    [2, 1]
+		    Position		    [490, 118, 540, 167]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/CmpEQ"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "cmpeq"
+		    nInputs		    "2"
+		    nOutputs		    "1"
+		    omode		    "boolean"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "[' '; ' ';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('==');"
+		    style		    "Optimised"
+		    visibilities	    "0"
+		    advOptions		    "[]"
+		    version		    "20130117"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Const2"
+		    SID			    "113"
+		    Ports		    [0, 1]
+		    Position		    [390, 168, 440, 202]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Const"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "const"
+		    nInputs		    "0"
+		    nOutputs		    "1"
+		    omode		    "Inherit via internal rule"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "['+'; '+';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('%g', value);"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    floatPrecision	    "float32_m23"
+		    version		    "20120820"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Const3"
+		    SID			    "114"
+		    Ports		    [0, 1]
+		    Position		    [810, 163, 860, 197]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Const"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "const"
+		    nInputs		    "0"
+		    nOutputs		    "1"
+		    omode		    "Specify via dialog"
+		    otype		    "uint(8)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "['+'; '+';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('%g', value);"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    floatPrecision	    "float32_m23"
+		    version		    "20120820"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Delay2"
+		    SID			    "115"
+		    Ports		    [1, 1]
+		    Position		    [750, 60, 800, 110]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/SampleDelay"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "sampdelay"
+		    nInputs		    "1"
+		    nOutputs		    "1"
+		    omode		    "Inherit via internal rule"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "1"
+		    inPortNames		    "[' '; ' ';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "dpoly(1, eye(1,value+1), 'z')"
+		    style		    "Optimised"
+		    visibilities	    "8 + 1024"
+		    flexible		    off
+		    slackgroup		    "0"
+		    augmented		    "0"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "IxCos"
+		    SID			    "116"
+		    Ports		    [2, 1]
+		    Position		    [578, 395, 627, 445]
+		    BlockRotation	    270
+		    BlockMirror		    on
+		    NamePlacement	    "alternate"
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Mult"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "mult"
+		    nInputs		    "2"
+		    nOutputs		    "1"
+		    omode		    "Inherit via internal rule"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "[' '; ' ';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('X');"
+		    style		    "Optimised"
+		    visibilities	    "8"
+		    floatPrecision	    "float32_m23"
+		    floatRounding	    "correct"
+		    advOptions		    "[]"
+		    version		    "20130115"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "QxSin"
+		    SID			    "117"
+		    Ports		    [2, 1]
+		    Position		    [343, 390, 392, 440]
+		    BlockRotation	    270
+		    BlockMirror		    on
+		    NamePlacement	    "alternate"
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Mult"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "mult"
+		    nInputs		    "2"
+		    nOutputs		    "1"
+		    omode		    "Inherit via internal rule"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "[' '; ' ';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('X');"
+		    style		    "Optimised"
+		    visibilities	    "8"
+		    floatPrecision	    "float32_m23"
+		    floatRounding	    "correct"
+		    advOptions		    "[]"
+		    version		    "20130115"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Sub"
+		    SID			    "118"
+		    Ports		    [2, 1]
+		    Position		    [620, 494, 670, 541]
+		    NamePlacement	    "alternate"
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/Sub"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "sub"
+		    nInputs		    "2"
+		    nOutputs		    "1"
+		    omode		    "Inherit via internal rule with word growth"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "0"
+		    inPortNames		    "['+'; '-';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim.jpg"
+		    text		    "fprintf('-');"
+		    style		    "Optimised"
+		    visibilities	    "8"
+		    floatRounding	    "correct"
+		    advOptions		    "[]"
+		    version		    "20130115"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "SynthesisInfo"
+		    SID			    "119"
+		    Ports		    []
+		    Position		    [150, 530, 272, 579]
+		    LibraryVersion	    "1.389"
+		    SourceBlock		    "DSPBAPrim/SynthesisInfo"
+		    SourceType		    "DSP Builder Advanced Blockset primitive"
+		    primtype		    "synthinfo"
+		    nInputs		    "0"
+		    nOutputs		    "0"
+		    omode		    "Inherit via internal rule"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Truncate"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0 1 2 -1]"
+		    value		    "6"
+		    inPortNames		    "[' '; ' ';]"
+		    outPortNames	    "[' ']"
+		    dspbaimage		    "dspba_prim_ctrl.jpg"
+		    text		    "fprintf('Synthesise Modulo %d\\nStyle=%s', value, style);"
+		    style		    "Scheduled"
+		    visibilities	    "1024+32768"
+		    constraintInUse	    off
+		    constraintRelation	    ">"
+		    constraintLimit	    "2"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "q"
+		    SID			    "120"
+		    Position		    [1060, 208, 1090, 222]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "qv"
+		    SID			    "121"
+		    Position		    [1060, 138, 1090, 152]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "qc"
+		    SID			    "122"
+		    Position		    [1060, 173, 1090, 187]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "av"
+		    SrcPort		    1
+		    DstBlock		    "ChannelIn"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "ac"
+		    SrcPort		    1
+		    DstBlock		    "ChannelIn"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "a"
+		    SrcPort		    1
+		    DstBlock		    "ChannelIn"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "sin"
+		    SrcPort		    1
+		    DstBlock		    "ChannelIn"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "cos"
+		    SrcPort		    1
+		    DstBlock		    "ChannelIn"
+		    DstPort		    5
+		    }
+		    Line {
+		    Name		    "inQ"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ChannelIn"
+		    SrcPort		    3
+		    Points		    [185, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "QxSin"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Add_I_Reg1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "ChannelIn"
+		    SrcPort		    4
+		    Points		    [160, 0]
+		    DstBlock		    "QxSin"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "ChannelIn"
+		    SrcPort		    5
+		    Points		    [395, 0]
+		    DstBlock		    "IxCos"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "ChannelOut"
+		    SrcPort		    1
+		    DstBlock		    "qv"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "ChannelOut"
+		    SrcPort		    2
+		    DstBlock		    "qc"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "ChannelOut"
+		    SrcPort		    3
+		    DstBlock		    "q"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sub"
+		    SrcPort		    1
+		    Points		    [275, 0]
+		    DstBlock		    "ChannelOut"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "ChannelIn"
+		    SrcPort		    2
+		    Points		    [140, 0; 0, -70]
+		    DstBlock		    "BitExtract1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Const2"
+		    SrcPort		    1
+		    Points		    [25, 0; 0, -30]
+		    DstBlock		    "Channel_1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "BitExtract1"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    DstBlock		    "Channel_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Channel_1"
+		    SrcPort		    1
+		    Points		    [45, 0; 0, -50]
+		    DstBlock		    "And1"
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "inI"
+		    Labels		    [2, 0]
+		    SrcBlock		    "Add_I_Reg1"
+		    SrcPort		    1
+		    Points		    [90, 0]
+		    DstBlock		    "IxCos"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "ChannelIn"
+		    SrcPort		    1
+		    Points		    [130, 0; 0, -70]
+		    DstBlock		    "And1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "And1"
+		    SrcPort		    1
+		    DstBlock		    "Delay2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Delay2"
+		    SrcPort		    1
+		    Points		    [70, 0; 0, 60]
+		    DstBlock		    "ChannelOut"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Const3"
+		    SrcPort		    1
+		    DstBlock		    "ChannelOut"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "IxCos"
+		    SrcPort		    1
+		    DstBlock		    "Sub"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "QxSin"
+		    SrcPort		    1
+		    Points		    [0, 85]
+		    DstBlock		    "Sub"
+		    DstPort		    2
+		    }
+		    Annotation {
+		    Position		    [209, 254]
+		    }
+		    Annotation {
+		    Name		    "Mixer:\nChanCount= 2; (I/Q)\nClockRate= 200;\nInput Sample Rate= 100;\nInput avail. timeslots = 2; \n"
+		    "Input data sequence = I,Q\nInput sine sequence = sinA1, sinA2\nInput cosine sequence = cosA1, cosA2\nmixer perfo"
+		    "rms i' = I*cos - Q*sin\nOutput Sample Rate = 100;\nOutput avail. timeslots = 2;\nOutput ChanCount = 1; (I)\nOutp"
+		    "ut sequence = I,-"
+		    Position		    [394, 736]
+		    HorizontalAlignment	    "left"
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "MixerScale"
+		    SID			    "123"
+		    Ports		    [4, 4]
+		    Position		    [2410, 224, 2505, 761]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/Scale"
+		    SourceType		    "DSP Builder Advanced Blockset Scale"
+		    otype		    "sfix(16)"
+		    scale		    "2^-15"
+		    rndmethod		    "Unbiased"
+		    factor		    "1"
+		    satmethod		    "Symmetric"
+		    shift_vec		    "[0]"
+		    latency		    "3"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "NCO"
+		    SID			    "124"
+		    Ports		    [4, 4]
+		    Position		    [1920, 463, 2025, 787]
+		    LibraryVersion	    "1.405"
+		    SourceBlock		    "DSPBAWaveformSynth/NCO"
+		    SourceType		    "DSP Builder Advanced Blockset NCO"
+		    outputRate		    "SampleRate * 40"
+		    otype		    "sfix(18)"
+		    scale		    "2^-17"
+		    expSFDR		    "108.36"
+		    accumBitWidth	    "30"
+		    accumPrecision	    "+/- 0.046566"
+		    phaseIncrAndInv	    "[0.61 0.61] * 2^30 /6.144"
+		    phaseIncrInMHz	    "[9.92839  9.92839]"
+		    phaseIncrAndInvMap	    "2046"
+		    rwmode		    "Read/Write"
+		    exposebus		    off
+		    outWidth		    "1"
+		    tableSize		    "8"
+		    latency		    "14"
+		    version		    "20090407"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "NCO_Scopes"
+		    SID			    "125"
+		    Ports		    [4, 1]
+		    Position		    [2088, 820, 2132, 855]
+		    BlockRotation	    270
+		    BlockMirror		    on
+		    NamePlacement	    "alternate"
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    Port {
+		    PortNumber		    1
+		    Name		    "NCO"
+		    PropagatedSignals	    "SIn 1, Cos 1"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    System {
+		    Name		    "NCO_Scopes"
+		    Location		    [84, 93, 1331, 638]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "sin0"
+		    SID			    "126"
+		    Position		    [25, 148, 55, 162]
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Sines"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "cos0"
+		    SID			    "127"
+		    Position		    [25, 178, 55, 192]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Cosines"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "v"
+		    SID			    "128"
+		    Position		    [25, 208, 55, 222]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "c"
+		    SID			    "129"
+		    Position		    [25, 268, 55, 282]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Channel"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "DUC_NCO_All_Scope"
+		    SID			    "130"
+		    Ports		    [4]
+		    Position		    [58, 35, 167, 75]
+		    BlockRotation	    270
+		    Floating		    off
+		    Location		    [7, 57, 1653, 968]
+		    Open		    off
+		    NumInputPorts	    "4"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    axes3		    "%<SignalLabel>"
+		    axes4		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-1~0~0~-5"
+		    YMax		    "1~1~15~5"
+		    SaveName		    "ScopeData29"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "DUC_NCO_OutDownsample_Scopes"
+		    SID			    "131"
+		    Ports		    [1, 1]
+		    Position		    [815, 127, 880, 163]
+		    LibraryVersion	    "1.707"
+		    UserDataPersistent	    on
+		    UserData		    "DataTag0"
+		    SourceBlock		    "dspsigops/Downsample"
+		    SourceType		    "Downsample"
+		    N			    "2"
+		    phase		    "0"
+		    InputProcessing	    "Inherited (this choice will be removed - see release notes)"
+		    RateOptions		    "Enforce single-rate processing"
+		    smode		    "Allow multirate"
+		    fmode		    "Maintain input frame size"
+		    ic			    "0"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "DUC_NCO_Scopes_Mux"
+		    SID			    "132"
+		    Ports		    [2, 1]
+		    Position		    [1215, 406, 1220, 444]
+		    Inputs		    "2"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "DUC_NCO_Scopes_Mux2"
+		    SID			    "133"
+		    Ports		    [2, 1]
+		    Position		    [770, 107, 780, 178]
+		    Inputs		    "2"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "DUC_NCO_cos_ChanView0"
+		    SID			    "134"
+		    Ports		    [3, 2]
+		    Position		    [420, 562, 510, 668]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/ChanView"
+		    SourceType		    "DSP Builder Advanced Blockset Channel Viewer"
+		    nchans		    "2"
+		    chan_vector		    "[0 1]"
+		    outsvalid		    off
+		    latency		    "2"
+		    version		    "20090407"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Cos 1"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    2
+		    Name		    "Cos 2"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "DUC_NCO_cos_Scope"
+		    SID			    "135"
+		    Ports		    [2]
+		    Position		    [760, 593, 800, 637]
+		    Floating		    off
+		    Location		    [477, 64, 1275, 975]
+		    Open		    off
+		    NumInputPorts	    "2"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-1~-1"
+		    YMax		    "1~1"
+		    SaveName		    "ScopeData3"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "DUC_NCO_sin_ChanView0"
+		    SID			    "136"
+		    Ports		    [3, 2]
+		    Position		    [410, 44, 505, 226]
+		    LibraryVersion	    "1.131"
+		    SourceBlock		    "DSPBABase/ChanView"
+		    SourceType		    "DSP Builder Advanced Blockset Channel Viewer"
+		    nchans		    "2"
+		    chan_vector		    "[0:1]"
+		    outsvalid		    off
+		    latency		    "2"
+		    version		    "20090407"
+		    Port {
+		    PortNumber		    1
+		    Name		    "SIn 1"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    Port {
+		    PortNumber		    2
+		    Name		    "Sin 2"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "DUC_NCO_sin_Scope"
+		    SID			    "137"
+		    Ports		    [2]
+		    Position		    [775, 13, 815, 57]
+		    Floating		    off
+		    Location		    [477, 64, 1275, 975]
+		    Open		    off
+		    NumInputPorts	    "2"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "10000"
+		    YMin		    "-1~-1"
+		    YMax		    "1~1"
+		    SaveName		    "ScopeData6"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "NCOSinSpectrum"
+		    SID			    "138"
+		    Ports		    [1]
+		    Position		    [945, 127, 980, 163]
+		    LibraryVersion	    "1.464"
+		    DialogController	    "dspdialog.SpectrumScope"
+		    DialogControllerArgs    "DataTag1"
+		    SourceBlock		    "dspsnks4/Spectrum\nScope"
+		    SourceType		    "Spectrum Scope"
+		    ShowPortLabels	    "none"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
+		    ScopeProperties	    on
+		    Domain		    "Frequency"
+		    HorizSpan		    "1"
+		    UseBuffer		    on
+		    BufferSize		    "4096"
+		    Overlap		    "0"
+		    inpFftLenInherit	    off
+		    FFTlength		    "128"
+		    numAvg		    "1"
+		    DisplayProperties	    off
+		    AxisGrid		    on
+		    Memory		    off
+		    FrameNumber		    on
+		    AxisLegend		    on
+		    AxisZoom		    off
+		    OpenScopeAtSimStart	    off
+		    OpenScopeImmediately    off
+		    FigPos		    "get(0,'defaultfigureposition')"
+		    AxisProperties	    off
+		    XUnits		    "Hertz"
+		    XRange		    "[0...Fs/2]"
+		    XDisplay		    "0"
+		    InheritXIncr	    off
+		    XIncr		    "1/(100e6)"
+		    XLabel		    "Samples"
+		    XLimit		    "Auto"
+		    YUnits		    "dB"
+		    XMax		    "1"
+		    XMin		    "0"
+		    YMin		    "-114.271541020359"
+		    YMax		    "31.1780270467433"
+		    YLabel		    "Magnitude-squared, dB"
+		    LineProperties	    off
+		    LineDisables	    "on|on|on|on|on|on|on"
+		    LineStyles		    "-"
+		    LineMarkers		    "None"
+		    LineColors		    "[1 0 1]|[0 0 1]|[1 0 0]|[0 1 0]|[0 1 1]||[1 1 0]|[1 0 0]"
+		    wintypeSpecScope	    "Hann"
+		    RsSpecScope		    "50"
+		    betaSpecScope	    "5"
+		    winsampSpecScope	    "Periodic"
+		    XAxisParamsVer	    "6.8"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "q0"
+		    SID			    "139"
+		    Position		    [1280, 408, 1320, 432]
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "Sines"
+		    Labels		    [0, 0]
+		    SrcBlock		    "sin0"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -5]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "DUC_NCO_All_Scope"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 25; 190, 0; 0, -100]
+		    DstBlock		    "DUC_NCO_sin_ChanView0"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "Channel"
+		    Labels		    [0, 0]
+		    SrcBlock		    "c"
+		    SrcPort		    1
+		    Points		    [120, 0]
+		    Branch {
+		    Points		    [0, -80]
+		    Branch {
+		    Points		    [0, 0]
+		    DstBlock		    "DUC_NCO_sin_ChanView0"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [-30, 0]
+		    DstBlock		    "DUC_NCO_All_Scope"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    Points		    [0, 375]
+		    DstBlock		    "DUC_NCO_cos_ChanView0"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    Name		    "Valid"
+		    Labels		    [0, 0]
+		    SrcBlock		    "v"
+		    SrcPort		    1
+		    Points		    [65, 0]
+		    Branch {
+		    Points		    [0, 0]
+		    Branch {
+		    Points		    [80, 0; 0, -80]
+		    DstBlock		    "DUC_NCO_sin_ChanView0"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [80, 0; 0, 400]
+		    DstBlock		    "DUC_NCO_cos_ChanView0"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "DUC_NCO_All_Scope"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    Name		    "Cosines"
+		    Labels		    [0, 0]
+		    SrcBlock		    "cos0"
+		    SrcPort		    1
+		    Points		    [40, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "DUC_NCO_All_Scope"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 395]
+		    DstBlock		    "DUC_NCO_cos_ChanView0"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "SIn 1"
+		    Labels		    [0, 0]
+		    SrcBlock		    "DUC_NCO_sin_ChanView0"
+		    SrcPort		    1
+		    Points		    [150, 0]
+		    Branch {
+		    Points		    [0, 325]
+		    DstBlock		    "DUC_NCO_Scopes_Mux"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [75, 0]
+		    DstBlock		    "DUC_NCO_Scopes_Mux2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -65]
+		    DstBlock		    "DUC_NCO_sin_Scope"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Line {
+		    Name		    "Sin 2"
+		    Labels		    [0, 0]
+		    SrcBlock		    "DUC_NCO_sin_ChanView0"
+		    SrcPort		    2
+		    Points		    [195, 0]
+		    Branch {
+		    Points		    [50, 0]
+		    DstBlock		    "DUC_NCO_Scopes_Mux2"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -135]
+		    DstBlock		    "DUC_NCO_sin_Scope"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "Cos 1"
+		    Labels		    [0, 0]
+		    SrcBlock		    "DUC_NCO_cos_ChanView0"
+		    SrcPort		    1
+		    Points		    [130, 0]
+		    Branch {
+		    Points		    [0, 15]
+		    DstBlock		    "DUC_NCO_cos_Scope"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -155]
+		    DstBlock		    "DUC_NCO_Scopes_Mux"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    Name		    "Cos 2"
+		    Labels		    [0, 0]
+		    SrcBlock		    "DUC_NCO_cos_ChanView0"
+		    SrcPort		    2
+		    Points		    [130, 0; 0, -20]
+		    DstBlock		    "DUC_NCO_cos_Scope"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "DUC_NCO_Scopes_Mux"
+		    SrcPort		    1
+		    Points		    [20, 0; 0, -5]
+		    DstBlock		    "q0"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "DUC_NCO_OutDownsample_Scopes"
+		    SrcPort		    1
+		    DstBlock		    "NCOSinSpectrum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "DUC_NCO_Scopes_Mux2"
+		    SrcPort		    1
+		    DstBlock		    "DUC_NCO_OutDownsample_Scopes"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "Each block has 2 channels\ncoming into it from the DUC_NCO_sin/cos_Demux. Therefore\nyou actually nee"
+		    "d to change the wiring to see different channels."
+		    Position		    [879, 322]
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "Scopes_A"
+		    SID			    "140"
+		    Ports		    [5]
+		    Position		    [31, 50, 2039, 85]
+		    BlockRotation	    270
+		    Floating		    off
+		    Location		    [32, 296, 752, 897]
+		    Open		    off
+		    NumInputPorts	    "5"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    axes3		    "%<SignalLabel>"
+		    axes4		    "%<SignalLabel>"
+		    axes5		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "5e-005          "
+		    YMin		    "-1~-1~-1~-1~-0.75"
+		    YMax		    "1~0.75~0.75~0.75~0.75"
+		    SaveName		    "ScopeData1"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Scope
+		    Name		    "Scopes_B"
+		    SID			    "141"
+		    Ports		    [3]
+		    Position		    [2000, 980, 3140, 1020]
+		    BlockRotation	    270
+		    BlockMirror		    on
+		    NamePlacement	    "alternate"
+		    Floating		    off
+		    Location		    [390, 253, 766, 855]
+		    Open		    off
+		    NumInputPorts	    "3"
+		    ZoomMode		    "xonly"
+		    List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		    axes2		    "%<SignalLabel>"
+		    axes3		    "%<SignalLabel>"
+		    }
+		    TimeRange		    "5e-005          "
+		    YMin		    "-1~-1~-1"
+		    YMax		    "1~1~1"
+		    SaveName		    "ScopeData2"
+		    DataFormat		    "StructureWithTime"
+		    LimitDataPoints	    off
+		    SampleTime		    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Outq"
+		    SID			    "142"
+		    Position		    [3090, 283, 3120, 297]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Outv"
+		    SID			    "143"
+		    Position		    [3090, 418, 3120, 432]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Outc"
+		    SID			    "144"
+		    Position		    [3090, 553, 3120, 567]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "HB2Ov"
+		    SID			    "145"
+		    Position		    [925, 428, 955, 442]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "HB1Ov"
+		    SID			    "146"
+		    Position		    [520, 428, 550, 442]
+		    Port		    "5"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "CICOv"
+		    SID			    "147"
+		    Position		    [1810, 498, 1840, 512]
+		    Port		    "6"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "MixerOv"
+		    SID			    "148"
+		    Position		    [2535, 688, 2565, 702]
+		    Port		    "7"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "ISFOv"
+		    SID			    "149"
+		    Position		    [2970, 688, 3000, 702]
+		    Port		    "8"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "HB3Ov"
+		    SID			    "150"
+		    Position		    [1370, 428, 1400, 442]
+		    Port		    "9"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "HB1"
+		    SrcPort		    1
+		    DstBlock		    "HB1Scale"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "HB1"
+		    SrcPort		    2
+		    DstBlock		    "HB1Scale"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "HB1"
+		    SrcPort		    3
+		    DstBlock		    "HB1Scale"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "HB1Scale"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    DstBlock		    "HB2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "HB1_Scopes"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "HB1Scale"
+		    SrcPort		    2
+		    Points		    [45, 0]
+		    Branch {
+		    DstBlock		    "HB2"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "HB1_Scopes"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "HB1Scale"
+		    SrcPort		    3
+		    Points		    [55, 0]
+		    Branch {
+		    DstBlock		    "HB2"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "HB1_Scopes"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "HB2"
+		    SrcPort		    1
+		    DstBlock		    "HB2Scale"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "HB2"
+		    SrcPort		    2
+		    DstBlock		    "HB2Scale"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "HB2"
+		    SrcPort		    3
+		    DstBlock		    "HB2Scale"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "HB2Scale"
+		    SrcPort		    1
+		    Points		    [50, 0]
+		    Branch {
+		    DstBlock		    "HB3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "HB2_Scopes"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "HB2Scale"
+		    SrcPort		    2
+		    Points		    [60, 0]
+		    Branch {
+		    DstBlock		    "HB3"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "HB2_Scopes"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "HB2Scale"
+		    SrcPort		    3
+		    Points		    [70, 0]
+		    Branch {
+		    DstBlock		    "HB3"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "HB2_Scopes"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "NCO"
+		    SrcPort		    1
+		    Points		    [65, 0]
+		    Branch {
+		    DstBlock		    "NCO_Scopes"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Mixer"
+		    DstPort		    4
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "NCO"
+		    SrcPort		    2
+		    Points		    [75, 0]
+		    Branch {
+		    DstBlock		    "NCO_Scopes"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Mixer"
+		    DstPort		    5
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "CICScale"
+		    SrcPort		    1
+		    Points		    [40, 0]
+		    Branch {
+		    DstBlock		    "CIC_Scopes"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Mixer"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "CICScale"
+		    SrcPort		    2
+		    Points		    [50, 0]
+		    Branch {
+		    Points		    [25, 0]
+		    Branch {
+		    Points		    [0, 240]
+		    DstBlock		    "NCO"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Mixer"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "CIC_Scopes"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "CICScale"
+		    SrcPort		    3
+		    Points		    [60, 0]
+		    Branch {
+		    Points		    [25, 0]
+		    Branch {
+		    Points		    [0, 80]
+		    DstBlock		    "NCO"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Mixer"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "CIC_Scopes"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "InterpolatingCIC"
+		    SrcPort		    1
+		    DstBlock		    "CICScale"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "InterpolatingCIC"
+		    SrcPort		    2
+		    DstBlock		    "CICScale"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "InterpolatingCIC"
+		    SrcPort		    3
+		    DstBlock		    "CICScale"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Const"
+		    SrcPort		    1
+		    DstBlock		    "HB1Scale"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Const1"
+		    SrcPort		    1
+		    DstBlock		    "HB2Scale"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Const2"
+		    SrcPort		    1
+		    DstBlock		    "CICScale"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Const3"
+		    SrcPort		    1
+		    DstBlock		    "InterpolatingCIC"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Ind"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "HB1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Input_Scopes"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Inv"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    Branch {
+		    DstBlock		    "HB1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Input_Scopes"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Inc"
+		    SrcPort		    1
+		    Points		    [40, 0]
+		    Branch {
+		    DstBlock		    "HB1"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "Input_Scopes"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "PhaseOffset"
+		    SrcPort		    1
+		    DstBlock		    "NCO"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "SYnc"
+		    SrcPort		    1
+		    DstBlock		    "NCO"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "HB2Scale"
+		    SrcPort		    4
+		    DstBlock		    "HB2Ov"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "HB1Scale"
+		    SrcPort		    4
+		    DstBlock		    "HB1Ov"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "CICScale"
+		    SrcPort		    4
+		    DstBlock		    "CICOv"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "NCO"
+		    SrcPort		    3
+		    Points		    [85, 0]
+		    DstBlock		    "NCO_Scopes"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "NCO"
+		    SrcPort		    4
+		    Points		    [95, 0]
+		    DstBlock		    "NCO_Scopes"
+		    DstPort		    4
+		    }
+		    Line {
+		    Name		    "input"
+		    Labels		    [1, 0]
+		    SrcBlock		    "Input_Scopes"
+		    SrcPort		    1
+		    Points		    [0, -50]
+		    DstBlock		    "Scopes_A"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "HB1"
+		    Labels		    [1, 0]
+		    SrcBlock		    "HB1_Scopes"
+		    SrcPort		    1
+		    Points		    [0, -50]
+		    DstBlock		    "Scopes_A"
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "HB2"
+		    Labels		    [1, 0]
+		    SrcBlock		    "HB2_Scopes"
+		    SrcPort		    1
+		    Points		    [0, -50]
+		    DstBlock		    "Scopes_A"
+		    DstPort		    3
+		    }
+		    Line {
+		    Name		    "CIC"
+		    Labels		    [0, 0]
+		    SrcBlock		    "CIC_Scopes"
+		    SrcPort		    1
+		    Points		    [0, -60]
+		    DstBlock		    "Scopes_A"
+		    DstPort		    5
+		    }
+		    Line {
+		    Name		    "NCO"
+		    Labels		    [0, 0]
+		    SrcBlock		    "NCO_Scopes"
+		    SrcPort		    1
+		    Points		    [0, 105]
+		    DstBlock		    "Scopes_B"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "MIX"
+		    Labels		    [0, 0]
+		    SrcBlock		    "MIX_Scopes"
+		    SrcPort		    1
+		    Points		    [0, 185]
+		    DstBlock		    "Scopes_B"
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "ISF"
+		    Labels		    [0, 0]
+		    SrcBlock		    "ISF_Scopes"
+		    SrcPort		    1
+		    Points		    [0, 145]
+		    DstBlock		    "Scopes_B"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "HB3"
+		    SrcPort		    1
+		    DstBlock		    "HB3Scale"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "HB3"
+		    SrcPort		    2
+		    DstBlock		    "HB3Scale"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "HB3"
+		    SrcPort		    3
+		    DstBlock		    "HB3Scale"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "HB3Scale"
+		    SrcPort		    1
+		    Points		    [40, 0]
+		    Branch {
+		    DstBlock		    "InterpolatingCIC"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "HB3_Scopes"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "HB3Scale"
+		    SrcPort		    2
+		    Points		    [50, 0]
+		    Branch {
+		    DstBlock		    "InterpolatingCIC"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "HB3_Scopes"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "HB3Scale"
+		    SrcPort		    3
+		    Points		    [60, 0]
+		    Branch {
+		    DstBlock		    "InterpolatingCIC"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "HB3_Scopes"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Const4"
+		    SrcPort		    1
+		    DstBlock		    "HB3Scale"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "HB3Scale"
+		    SrcPort		    4
+		    DstBlock		    "HB3Ov"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "HB3"
+		    Labels		    [1, 0]
+		    SrcBlock		    "HB3_Scopes"
+		    SrcPort		    1
+		    Points		    [0, -50]
+		    DstBlock		    "Scopes_A"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Mixer"
+		    SrcPort		    1
+		    DstBlock		    "MixerScale"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mixer"
+		    SrcPort		    2
+		    DstBlock		    "MixerScale"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Mixer"
+		    SrcPort		    3
+		    DstBlock		    "MixerScale"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "MixerScale"
+		    SrcPort		    2
+		    Points		    [85, 0]
+		    Branch {
+		    DstBlock		    "MIX_Scopes"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "InverseSincFIR"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "MixerScale"
+		    SrcPort		    3
+		    Points		    [95, 0]
+		    Branch {
+		    DstBlock		    "MIX_Scopes"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "InverseSincFIR"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Const6"
+		    SrcPort		    1
+		    DstBlock		    "MixerScale"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "MixerScale"
+		    SrcPort		    4
+		    DstBlock		    "MixerOv"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "ISFScale"
+		    SrcPort		    1
+		    Points		    [95, 0]
+		    Branch {
+		    DstBlock		    "Outq"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "ISF_Scopes"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "ISFScale"
+		    SrcPort		    2
+		    Points		    [105, 0]
+		    Branch {
+		    DstBlock		    "Outv"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "ISF_Scopes"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "ISFScale"
+		    SrcPort		    3
+		    Points		    [115, 0]
+		    Branch {
+		    DstBlock		    "Outc"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "ISF_Scopes"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "ISFScale"
+		    SrcPort		    4
+		    DstBlock		    "ISFOv"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Const5"
+		    SrcPort		    1
+		    DstBlock		    "ISFScale"
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "InverseSincFIR"
+		    SrcPort		    3
+		    DstBlock		    "ISFScale"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "InverseSincFIR"
+		    SrcPort		    2
+		    DstBlock		    "ISFScale"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "InverseSincFIR"
+		    SrcPort		    1
+		    DstBlock		    "ISFScale"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "MixerScale"
+		    SrcPort		    1
+		    Points		    [75, 0]
+		    Branch {
+		    DstBlock		    "MIX_Scopes"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "InverseSincFIR"
+		    DstPort		    1
+		    }
+		    }
+		    Annotation {
+		    Name		    "HB1:\nChanCount= 2; (I/Q)\nClockRate= 200;\nInput Sample Rate= 2.5;\nInput avail. timeslots = 80; \nI"
+		    "nput data sequence = I,Q,zeros(1,80-2)\nOutput Sample Rate = 5;\nOutput avail. timeslots = 40;\nOutput ChanCount"
+		    " = 2; \nOutput sequence = I,Q,zeros(40-2)"
+		    Position		    [144, 556]
+		    HorizontalAlignment	    "left"
+		    }
+		    Annotation {
+		    Name		    "HB2:\nChanCount= 2; (I/Q)\nClockRate= 200;\nInput Sample Rate= 5;\nInput avail. timeslots = 40; \nInp"
+		    "ut data sequence = I,Q,zeros(1,40-2)\nOutput Sample Rate = 10;\nOutput avail. timeslots = 20;\nOutput ChanCount "
+		    "= 2; \nOutput sequence = I,Q,zeros(20-2)"
+		    Position		    [554, 556]
+		    HorizontalAlignment	    "left"
+		    }
+		    Annotation {
+		    Name		    "HB3:\nChanCount= 2; (I/Q)\nClockRate= 200;\nInput Sample Rate= 10;\nInput avail. timeslots = 20; \nIn"
+		    "put data sequence = I,Q,zeros(1,20-2)\nOutput Sample Rate = 20;\nOutput avail. timeslots = 10;\nOutput ChanCount"
+		    " = 2; \nOutput sequence = I,Q,zeros(10-2)"
+		    Position		    [989, 561]
+		    HorizontalAlignment	    "left"
+		    }
+		    Annotation {
+		    Name		    "InterpolatingCIC:\nChanCount= 2; (I/Q)\nClockRate= 200;\nInput Sample Rate= 20;\nInput avail. timeslo"
+		    "ts = 10; \nInput data sequence = I,Q,zeros(1,10-2)\nOutput Sample Rate = 100;\nOutput avail. timeslots = 2;\nOut"
+		    "put ChanCount = 2; \nOutput sequence = I,Q"
+		    Position		    [1479, 591]
+		    HorizontalAlignment	    "left"
+		    }
+		    Annotation {
+		    Name		    "NCO:\nChanCount= 2; \nClockRate= 200;\nSample Rate= 100;\navail. timeslots = 2; \nsine sequence = sin"
+		    "A1, sinA2 (A1=A2) \ncosine sequence= cosA1,cosA2 (A1=A2) "
+		    Position		    [1914, 866]
+		    HorizontalAlignment	    "left"
+		    }
+		    Annotation {
+		    Name		    "Mixer:\nChanCount= 2; (I/Q)\nClockRate= 200;\nInput Sample Rate= 100;\nInput avail. timeslots = 2; \n"
+		    "Input data sequence = I,Q\nInput sine sequence = sinA1, sinA2\nInput cosine sequence = cosA1, cosA2\nmixer perfo"
+		    "rms i' = I*cos - Q*sin\nOutput Sample Rate = 100;\nOutput avail. timeslots = 2;\nOutput ChanCount = 1; (I)\nOutp"
+		    "ut sequence = I,-"
+		    Position		    [2239, 101]
+		    HorizontalAlignment	    "left"
+		    }
+		    Annotation {
+		    Name		    "InverseSincFIR:\nChanCount= 1; \nClockRate= 200;\nInput Sample Rate= 100;\nInput avail. timeslots = 2"
+		    "; \nInput data sequence = I,-\nOutput Sample Rate = 100;\nOutput avail. timeslots = 2;\nOutput sequence = I,-"
+		    Position		    [2674, 801]
+		    HorizontalAlignment	    "left"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Outq"
+		  SID			  "151"
+		  Position		  [720, 88, 750, 102]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Outv"
+		  SID			  "152"
+		  Position		  [720, 138, 750, 152]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Outc"
+		  SID			  "153"
+		  Position		  [720, 188, 750, 202]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "OutCFirOv"
+		  SID			  "154"
+		  Position		  [720, 238, 750, 252]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "OutFirOv"
+		  SID			  "155"
+		  Position		  [720, 288, 750, 302]
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "OutCICOv"
+		  SID			  "156"
+		  Position		  [720, 338, 750, 352]
+		  Port			  "6"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "OutMixerOv"
+		  SID			  "157"
+		  Position		  [720, 388, 750, 402]
+		  Port			  "7"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "OutISFOv"
+		  SID			  "158"
+		  Position		  [720, 438, 750, 452]
+		  Port			  "8"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "OutHB3Ov"
+		  SID			  "159"
+		  Position		  [720, 488, 750, 502]
+		  Port			  "9"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "DUCIQ"
+		  SrcPort		  1
+		  DstBlock		  "Outq"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Ind"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "DUCIQ"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "DUCIQ"
+		  SrcPort		  2
+		  DstBlock		  "Outv"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Inv"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "DUCIQ"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "DUCIQ"
+		  SrcPort		  3
+		  DstBlock		  "Outc"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Inc"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "DUCIQ"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "DUCIQ"
+		  SrcPort		  4
+		  DstBlock		  "OutCFirOv"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "DUCIQ"
+		  SrcPort		  5
+		  DstBlock		  "OutFirOv"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "DUCIQ"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "DUCIQ"
+		  SrcPort		  6
+		  DstBlock		  "OutCICOv"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  DstBlock		  "DUCIQ"
+		  DstPort		  5
+		}
+		Line {
+		  SrcBlock		  "DUCIQ"
+		  SrcPort		  8
+		  DstBlock		  "OutISFOv"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "DUCIQ"
+		  SrcPort		  9
+		  DstBlock		  "OutHB3Ov"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "DUCIQ"
+		  SrcPort		  7
+		  DstBlock		  "OutMixerOv"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "OutChanView"
+	      SID		      "160"
+	      Ports		      [3, 2]
+	      Position		      [350, 29, 470, 161]
+	      ShowName		      off
+	      LibraryVersion	      "1.131"
+	      SourceBlock	      "DSPBABase/ChanView"
+	      SourceType	      "DSP Builder Advanced Blockset Channel Viewer"
+	      nchans		      "2"
+	      chan_vector	      "[0 1]"
+	      outsvalid		      off
+	      latency		      "2"
+	      version		      "20090407"
+	      Port {
+		PortNumber		1
+		Name			"Iout"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "OvScope"
+	      SID		      "161"
+	      Ports		      [6]
+	      Position		      [310, 167, 345, 428]
+	      Floating		      off
+	      Location		      [765, 89, 1334, 849]
+	      Open		      off
+	      NumInputPorts	      "6"
+	      ZoomMode		      "xonly"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+		axes2			"%<SignalLabel>"
+		axes3			"%<SignalLabel>"
+		axes4			"%<SignalLabel>"
+		axes5			"%<SignalLabel>"
+		axes6			"%<SignalLabel>"
+	      }
+	      TimeRange		      "5e-005"
+	      YMin		      "-1~-1~-1~-1~-1~-5"
+	      YMax		      "1~1~1~1~1~5"
+	      SaveName		      "ScopeData4"
+	      DataFormat	      "StructureWithTime"
+	      LimitDataPoints	      off
+	      SampleTime	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ChanOut0"
+	      SID		      "162"
+	      Position		      [560, 58, 590, 72]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ChanOut1"
+	      SID		      "163"
+	      Position		      [560, 123, 590, 137]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "AD9856"
+	      SrcPort		      1
+	      DstBlock		      "OutChanView"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "AD9856"
+	      SrcPort		      2
+	      DstBlock		      "OutChanView"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "AD9856"
+	      SrcPort		      3
+	      DstBlock		      "OutChanView"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "AD9856"
+	      SrcPort		      4
+	      DstBlock		      "OvScope"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "AD9856"
+	      SrcPort		      5
+	      DstBlock		      "OvScope"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "AD9856"
+	      SrcPort		      6
+	      DstBlock		      "OvScope"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "AD9856"
+	      SrcPort		      7
+	      DstBlock		      "OvScope"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "AD9856"
+	      SrcPort		      8
+	      DstBlock		      "OvScope"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "AD9856"
+	      SrcPort		      9
+	      DstBlock		      "OvScope"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "Iout"
+	      Labels		      [0, 0]
+	      SrcBlock		      "OutChanView"
+	      SrcPort		      1
+	      DstBlock		      "ChanOut0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "DataIn"
+	      SrcPort		      1
+	      DstBlock		      "AD9856"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "OutChanView"
+	      SrcPort		      2
+	      DstBlock		      "ChanOut1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ValidIn"
+	      SrcPort		      1
+	      DstBlock		      "AD9856"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "ChannelIn"
+	      SrcPort		      1
+	      DstBlock		      "AD9856"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Device"
+	  SID			  "164"
+	  Ports			  []
+	  Position		  [550, 302, 630, 388]
+	  BackgroundColor	  "[0.843137, 0.839216, 0.666667]"
+	  LibraryVersion	  "1.131"
+	  SourceBlock		  "DSPBABase/Device"
+	  SourceType		  "DSP Builder Advanced Blockset Device Block"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  family		  "Stratix III"
+	  stratix4device	  "Stratix IV E"
+	  hardcopy4device	  "HardCopy IV E"
+	  stratix5device	  "Stratix V GX"
+	  device		  "AUTO"
+	  speed			  "2"
+	  stratixSpeed		  "-5"
+	  stratix2Speed		  "-3"
+	  stratix3Speed		  "-2"
+	  stratix4gxSpeed	  "-2"
+	  stratix4gtSpeed	  "-1"
+	  cyclone2Speed		  "-6"
+	  cyclone3Speed		  "-6"
+	  arria2Speed		  "-4"
+	  cyclone4eSpeed	  "-8"
+	  stratix5Speed		  "-3"
+	  arria5Speed		  "-4"
+	  arriaSpeed		  "-6"
+	  cyclone3lsSpeed	  "-7"
+	  cyclone5Speed		  "-6"
+	  arria2gzSpeed		  "-3"
+	  nightFurySpeed	  "-2"
+	  ecp2Speed		  "-7"
+	  hardcopycompat	  off
+	  version		  "20110729"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "dspbaChanOut0"
+	  SID			  "165"
+	  Ports			  [1, 1]
+	  Position		  [430, 87, 495, 103]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/HDL Output"
+	  SourceType		  "HDL Output AlteraBlockset"
+	  BusType		  "Signed Fractional"
+	  bwl			  "1"
+	  bwr			  "15"
+	  externalType		  "Inferred"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "dspbaChanOut1"
+	  SID			  "166"
+	  Ports			  [1, 1]
+	  Position		  [430, 192, 495, 208]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/HDL Output"
+	  SourceType		  "HDL Output AlteraBlockset"
+	  BusType		  "Signed Fractional"
+	  bwl			  "1"
+	  bwr			  "15"
+	  externalType		  "Inferred"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "dspbaChannel"
+	  SID			  "167"
+	  Ports			  [1, 1]
+	  Position		  [135, 207, 200, 223]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/HDL Input"
+	  SourceType		  "HDL Input AlteraBlockset"
+	  BusType		  "Unsigned Integer"
+	  bwl			  "8"
+	  bwr			  "0"
+	  externalType		  "Inferred"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "dspbaData"
+	  SID			  "168"
+	  Ports			  [1, 1]
+	  Position		  [135, 67, 200, 83]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/HDL Input"
+	  SourceType		  "HDL Input AlteraBlockset"
+	  BusType		  "Signed Fractional"
+	  bwl			  "1"
+	  bwr			  "11"
+	  externalType		  "Simulink Fixed Point Type"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "dspbaValid"
+	  SID			  "169"
+	  Ports			  [1, 1]
+	  Position		  [135, 137, 200, 153]
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.2"
+	  SourceBlock		  "allblocks_alteradspbuilder2/HDL Input"
+	  SourceType		  "HDL Input AlteraBlockset"
+	  BusType		  "Single Bit"
+	  bwl			  "8"
+	  bwr			  "0"
+	  externalType		  "Inferred"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out0"
+	  SID			  "170"
+	  Position		  [540, 88, 570, 102]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "171"
+	  Position		  [540, 193, 570, 207]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "DSPBA"
+	  SrcPort		  1
+	  DstBlock		  "dspbaChanOut0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "data"
+	  SrcPort		  1
+	  DstBlock		  "dspbaData"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "valid"
+	  SrcPort		  1
+	  DstBlock		  "dspbaValid"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "channel"
+	  SrcPort		  1
+	  DstBlock		  "dspbaChannel"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DSPBA"
+	  SrcPort		  2
+	  DstBlock		  "dspbaChanOut1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "dspbaData"
+	  SrcPort		  1
+	  DstBlock		  "DSPBA"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "dspbaValid"
+	  SrcPort		  1
+	  DstBlock		  "DSPBA"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "dspbaChannel"
+	  SrcPort		  1
+	  DstBlock		  "DSPBA"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "dspbaChanOut0"
+	  SrcPort		  1
+	  DstBlock		  "Out0"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "dspbaChanOut1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Advanced Blockset blocks are separated in the hierarchy from Standard Blockset blocks"
+	  Position		  [315, 279]
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "AllChannelsTone"
+      SID		      "172"
+      Ports		      [2, 1]
+      Position		      [215, 447, 245, 483]
+      ShowName		      off
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      sw		      "0"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Altera DSP Builder Advanced"
+      SID		      "173"
+      Ports		      []
+      Position		      [15, 15, 294, 174]
+      ShowName		      off
+      OpenFcn		      "web('http://www.altera.com', '-new');"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "DSP Builder Advanced Blockset Ignored Block"
+      MaskDisplay	      "image(imread('alteralogo.tif'));"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "pixels"
+      System {
+	Name			"Altera DSP Builder Advanced"
+	Location		[400, 362, 1517, 809]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "ChannelOut0"
+      SID		      "174"
+      Ports		      [1, 1]
+      Position		      [890, 392, 955, 408]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Demos"
+      "/CombinedBlockset/demo_adapted_ad9856/tb_Adapted_AD9856/Adapted%5FAD9856_ChannelOut0.capture"
+      BusType		      "Signed Fractional"
+      bwl		      "1"
+      bwr		      "15"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "ChannelOut1"
+      SID		      "175"
+      Ports		      [1, 1]
+      Position		      [890, 522, 955, 538]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Demos"
+      "/CombinedBlockset/demo_adapted_ad9856/tb_Adapted_AD9856/Adapted%5FAD9856_ChannelOut1.capture"
+      BusType		      "Signed Fractional"
+      bwl		      "1"
+      bwr		      "15"
+      externalType	      "Inferred"
+      PORTTYPE		      "Output"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "ChannelSequence"
+      SID		      "176"
+      Ports		      [0, 1]
+      Position		      [390, 535, 420, 565]
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Sources/Repeating\nSequence\nStair"
+      SourceType	      "Repeating Sequence Stair"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      OutValues		      "[[0:ChanCount-1] zeros(1,Period-ChanCount)].'"
+      tsamp		      "SampleTime"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "fixdt(0,8,0)"
+      OutputDataTypeScalingMode	"Specify via dialog"
+      OutDataType	      "ufix(8)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^-0"
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Clock"
+      SID		      "177"
+      Ports		      []
+      Position		      [836, 116, 897, 138]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Clock"
+      SourceType	      "BaseClock AlteraBlockset"
+      ClockPeriod	      "50"
+      ClockPeriodUnit	      "ns"
+      SampleTime	      "1"
+      ResetLatency	      "0"
+      ResetRegisterCascadeDepth	"0"
+      SimulationStartCycle    "5"
+      PhaseOffset	      "0"
+      Reset		      "aclr"
+      ResetType		      "Active Low"
+      Export		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Control"
+      SID		      "178"
+      Ports		      []
+      Position		      [385, 166, 540, 235]
+      LibraryVersion	      "1.131"
+      SourceBlock	      "DSPBABase/Control"
+      SourceType	      "DSP Builder Advanced Blockset Control Block"
+      generate		      on
+      destination	      "."
+      language		      "VHDL"
+      autotestbench	      on
+      signaldepth	      "2"
+      coveragetestbench	      on
+      logs		      off
+      spacewidth	      "2"
+      spacenum		      "1"
+      addrwidth		      "12"
+      datawidth		      "32"
+      dataendian	      "Big Endian"
+      hierarchicalnames	      on
+      ramThresholdBits	      "-1"
+      distRamThresholdBits    "-1"
+      mlabThresholdBits	      "-1"
+      hardMultiplierThresholdLuts "-1"
+      version		      "20090407"
+      errorOnChanMismatch     "1"
+      errorOnGPIOMismatch     "0"
+      importModelsimResults   "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Data_307KHz_tone_on_all_channels"
+      SID		      "179"
+      Ports		      [0, 1]
+      Position		      [95, 485, 125, 515]
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Sources/Repeating\nSequence\nStair"
+      SourceType	      "Repeating Sequence Stair"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      OutValues		      "floor([(ChanCount:-1:1)/ChanCount * 1 zeros(1, Period-ChanCount) (ChanCount:-1:1)/ChanCount  *"
+      " 0 zeros(1, Period-ChanCount) (ChanCount:-1:1)/ChanCount * -1 zeros(1, Period-ChanCount) (ChanCount:-1:1)/ChanCo"
+      "unt * 0 zeros(1, Period-ChanCount) ]*1412) / 2^11"
+      tsamp		      "SampleTime"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "fixdt(1,12,11)"
+      OutputDataTypeScalingMode	"Specify via dialog"
+      OutDataType	      "sfix(12)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^-11"
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Data_constant_on_all_channels"
+      SID		      "180"
+      Ports		      [0, 1]
+      Position		      [95, 410, 125, 440]
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Sources/Repeating\nSequence\nStair"
+      SourceType	      "Repeating Sequence Stair"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      OutValues		      "floor([(ChanCount:-1:1)/ChanCount zeros(1, Period-ChanCount)] * 1412) / 2^11"
+      tsamp		      "SampleTime"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "fixdt(1,12,11)"
+      OutputDataTypeScalingMode	"Specify via dialog"
+      OutDataType	      "sfix(12)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^-11"
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Data_constant_on_channel1only"
+      SID		      "181"
+      Ports		      [0, 1]
+      Position		      [95, 265, 125, 295]
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Sources/Repeating\nSequence\nStair"
+      SourceType	      "Repeating Sequence Stair"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      OutValues		      "[ones(1, 1)  * 1 zeros(1, 199) ]*(1412 / 2^11)"
+      tsamp		      "SampleTime"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "fixdt(1,12,11)"
+      OutputDataTypeScalingMode	"Specify via dialog"
+      OutDataType	      "sfix(12)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^-11"
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "EditParams"
+      SID		      "182"
+      Ports		      []
+      Position		      [720, 179, 769, 232]
+      BackgroundColor	      "[0.925490, 1.000000, 1.000000]"
+      ShowName		      off
+      LibraryVersion	      "1.131"
+      SourceBlock	      "DSPBABase/EditParams"
+      SourceType	      "DSP Builder Advanced Blockset Ignored Block"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      version		      "20090407"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Impulse_on_channel1only"
+      SID		      "183"
+      Ports		      [0, 1]
+      Position		      [95, 190, 125, 220]
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Sources/Repeating\nSequence\nStair"
+      SourceType	      "Repeating Sequence Stair"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      OutValues		      "[ones(1, 1)  * 1 zeros(1, 19900) ]*(1000 / 2^11)"
+      tsamp		      "SampleTime"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "fixdt(1,12,11)"
+      OutputDataTypeScalingMode	"Specify via dialog"
+      OutDataType	      "sfix(12)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^-11"
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "InScope"
+      SID		      "184"
+      Ports		      [3]
+      Position		      [542, 620, 678, 645]
+      BlockRotation	      270
+      BlockMirror	      on
+      Floating		      off
+      Location		      [28, 613, 611, 1015]
+      Open		      off
+      NumInputPorts	      "3"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+      }
+      TimeRange		      "10000"
+      YMin		      "-1~-1.5~-1.5"
+      YMax		      "1~1.5~1.5"
+      SaveName		      "ScopeData5"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "OnAllChannels"
+      SID		      "185"
+      Ports		      [2, 1]
+      Position		      [400, 362, 430, 398]
+      ShowName		      off
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      sw		      "0"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "OneChannelImpulse"
+      SID		      "186"
+      Ports		      [2, 1]
+      Position		      [205, 227, 235, 263]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      sw		      "1"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "OneChannelTone"
+      SID		      "187"
+      Ports		      [2, 1]
+      Position		      [265, 327, 295, 363]
+      ShowName		      off
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      sw		      "1"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "OutDownsample"
+      SID		      "188"
+      Ports		      [1, 1]
+      Position		      [1005, 292, 1070, 328]
+      LibraryVersion	      "1.707"
+      UserDataPersistent      on
+      UserData		      "DataTag2"
+      SourceBlock	      "dspsigops/Downsample"
+      SourceType	      "Downsample"
+      N			      "2"
+      phase		      "0"
+      InputProcessing	      "Inherited (this choice will be removed - see release notes)"
+      RateOptions	      "Enforce single-rate processing"
+      smode		      "Allow multirate"
+      fmode		      "Maintain input frame size"
+      ic		      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "OutScope"
+      SID		      "189"
+      Ports		      [2]
+      Position		      [1040, 397, 1065, 533]
+      NamePlacement	      "alternate"
+      Floating		      off
+      Location		      [968, 666, 1550, 1068]
+      Open		      off
+      NumInputPorts	      "2"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      TimeRange		      "10000"
+      YMin		      "-0.75~-1"
+      YMax		      "0.75~1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "OutSpectrum"
+      SID		      "190"
+      Ports		      [1]
+      Position		      [1115, 292, 1150, 328]
+      LibraryVersion	      "1.464"
+      DialogController	      "dspdialog.SpectrumScope"
+      DialogControllerArgs    "DataTag3"
+      SourceBlock	      "dspsnks4/Spectrum\nScope"
+      SourceType	      "Spectrum Scope"
+      ShowPortLabels	      "none"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      ScopeProperties	      on
+      Domain		      "Frequency"
+      HorizSpan		      "1"
+      UseBuffer		      on
+      BufferSize	      "1024"
+      Overlap		      "0"
+      inpFftLenInherit	      off
+      FFTlength		      "128"
+      numAvg		      "9"
+      DisplayProperties	      off
+      AxisGrid		      on
+      Memory		      off
+      FrameNumber	      on
+      AxisLegend	      on
+      AxisZoom		      off
+      OpenScopeAtSimStart     on
+      OpenScopeImmediately    off
+      FigPos		      "get(0,'defaultfigureposition')"
+      AxisProperties	      off
+      XUnits		      "Hertz"
+      XRange		      "[0...Fs/2]"
+      XDisplay		      "0"
+      InheritXIncr	      off
+      XIncr		      "1/(100e6)"
+      XLabel		      "Samples"
+      XLimit		      "Auto"
+      YUnits		      "dBW/Hertz"
+      XMax		      "1"
+      XMin		      "0"
+      YMin		      "-191.5695"
+      YMax		      "-66.8917"
+      YLabel		      "Magnitude-squared, dB"
+      LineProperties	      off
+      LineDisables	      "on|off|on|on|on|on|on"
+      LineStyles	      "-"
+      LineMarkers	      "None"
+      LineColors	      "[1 0 1]|[0 0 1]"
+      wintypeSpecScope	      "Hann"
+      RsSpecScope	      "50"
+      betaSpecScope	      "5"
+      winsampSpecScope	      "Periodic"
+      XAxisParamsVer	      "6.8"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Random"
+      SID		      "191"
+      Ports		      [2, 1]
+      Position		      [280, 487, 310, 523]
+      ShowName		      off
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      sw		      "0"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      RandomNumber
+      Name		      "Random\nNumber"
+      SID		      "192"
+      Position		      [95, 560, 125, 590]
+      SampleTime	      "SampleTime"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Signal Compiler"
+      SID		      "193"
+      Ports		      []
+      Position		      [830, 45, 899, 92]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily	      "Stratix III"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "Clock"
+      ExportDir		      "/home/akarapet"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Signals"
+      SID		      "194"
+      Ports		      []
+      Position		      [550, 166, 689, 234]
+      LibraryVersion	      "1.131"
+      SourceBlock	      "DSPBABase/Signals"
+      SourceType	      "DSP Builder Advanced Blockset Signals Block"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      clk		      "clk"
+      freq		      "200"
+      margin		      "0"
+      rst		      "areset"
+      rstactive		      "High"
+      bus		      "bus"
+      enbusclock	      on
+      busfreq		      "50"
+      bussync		      on
+      version		      "20090407"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "TestBench"
+      SID		      "195"
+      Ports		      []
+      Position		      [839, 185, 894, 223]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/TestBench"
+      SourceType	      "TestBench AlteraBlockset"
+      enable		      on
+      advancedMode	      off
+      modelSimGui	      off
+      maxDisplayErrors	      "10"
+      mismatchErrorLevel      "Error"
+      simdatafile	      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/D"
+      "emos/CombinedBlockset/demo_adapted_ad9856/tb_Adapted_AD9856/Adapted_AD9856.simdata.tcl"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "ValidSequence"
+      SID		      "196"
+      Ports		      [0, 1]
+      Position		      [390, 450, 420, 480]
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Sources/Repeating\nSequence\nStair"
+      SourceType	      "Repeating Sequence Stair"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      OutValues		      "[ones(1,ChanCount) zeros(1,Period-ChanCount)].'"
+      tsamp		      "SampleTime"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
+      OutputDataTypeScalingMode	"Inherit via back propagation"
+      OutDataType	      "ufix(1)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^-0"
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "channelIn"
+      SID		      "197"
+      Ports		      [1, 1]
+      Position		      [470, 542, 535, 558]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Demos"
+      "/CombinedBlockset/demo_adapted_ad9856/tb_Adapted_AD9856/Adapted%5FAD9856_channelIn.salt"
+      BusType		      "Unsigned Integer"
+      bwl		      "8"
+      bwr		      "11"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      Name		      "convert"
+      SID		      "198"
+      Position		      [180, 558, 255, 592]
+      OutDataTypeStr	      "fixdt(1,12,11)"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "dataIn"
+      SID		      "199"
+      Ports		      [1, 1]
+      Position		      [470, 372, 535, 388]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Demos"
+      "/CombinedBlockset/demo_adapted_ad9856/tb_Adapted_AD9856/Adapted%5FAD9856_dataIn.salt"
+      BusType		      "Signed Fractional"
+      bwl		      "1"
+      bwr		      "11"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "tone_on_channel1only"
+      SID		      "200"
+      Ports		      [0, 1]
+      Position		      [95, 340, 125, 370]
+      LibraryVersion	      "1.225"
+      SourceBlock	      "simulink/Sources/Repeating\nSequence\nStair"
+      SourceType	      "Repeating Sequence Stair"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      OutValues		      "[ones(1, 1)  * 1 zeros(1, Period-1) ones(1, 1)  * 0 zeros(1, Period-1) ones(1, 1)  * -1 zeros("
+      "1, Period-1) ones(1, 1)  * 0 zeros(1, Period-1) ]*(1412 / 2^11)"
+      tsamp		      "SampleTime"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "fixdt(1,12,11)"
+      OutputDataTypeScalingMode	"Specify via dialog"
+      OutDataType	      "sfix(12)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^-11"
+      LockScale		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "validIn"
+      SID		      "201"
+      Ports		      [1, 1]
+      Position		      [470, 457, 535, 473]
+      ForegroundColor	      "blue"
+      LibraryVersion	      "1.2"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "/data/akarapet/qshell_linux64_test/p4/dsp_builder/dsp_builder2/Documentation/DesignExamples/Demos"
+      "/CombinedBlockset/demo_adapted_ad9856/tb_Adapted_AD9856/Adapted%5FAD9856_validIn.salt"
+      BusType		      "Single Bit"
+      bwl		      "1"
+      bwr		      "11"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+      externalType	      "Inferred"
+      allowFloatingPointOverride on
+      logOutputs	      off
+    }
+    Line {
+      SrcBlock		      "OnAllChannels"
+      SrcPort		      1
+      DstBlock		      "dataIn"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "OneChannelTone"
+      SrcPort		      1
+      Points		      [20, 0; 0, 25]
+      DstBlock		      "OnAllChannels"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Random"
+      SrcPort		      1
+      Points		      [5, 0; 0, -115]
+      DstBlock		      "OnAllChannels"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Data_constant_on_all_channels"
+      SrcPort		      1
+      Points		      [70, 0]
+      DstBlock		      "AllChannelsTone"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Data_307KHz_tone_on_all_channels"
+      SrcPort		      1
+      Points		      [70, 0]
+      DstBlock		      "AllChannelsTone"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "tone_on_channel1only"
+      SrcPort		      1
+      DstBlock		      "OneChannelTone"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "ValidSequence"
+      SrcPort		      1
+      DstBlock		      "validIn"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "ChannelSequence"
+      SrcPort		      1
+      DstBlock		      "channelIn"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "OneChannelImpulse"
+      SrcPort		      1
+      Points		      [0, 90]
+      DstBlock		      "OneChannelTone"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Data_constant_on_channel1only"
+      SrcPort		      1
+      Points		      [60, 0]
+      DstBlock		      "OneChannelImpulse"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Impulse_on_channel1only"
+      SrcPort		      1
+      Points		      [60, 0]
+      DstBlock		      "OneChannelImpulse"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "OutDownsample"
+      SrcPort		      1
+      DstBlock		      "OutSpectrum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "AdvancedBlockset"
+      SrcPort		      1
+      DstBlock		      "ChannelOut0"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "AllChannelsTone"
+      SrcPort		      1
+      Points		      [15, 0]
+      DstBlock		      "Random"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Random\nNumber"
+      SrcPort		      1
+      DstBlock		      "convert"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "convert"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "Random"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "dataIn"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	DstBlock		"AdvancedBlockset"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"InScope"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "validIn"
+      SrcPort		      1
+      Points		      [70, 0]
+      Branch {
+	DstBlock		"AdvancedBlockset"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"InScope"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "channelIn"
+      SrcPort		      1
+      Points		      [115, 0]
+      Branch {
+	DstBlock		"AdvancedBlockset"
+	DstPort			3
+      }
+      Branch {
+	DstBlock		"InScope"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "ChannelOut0"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	Points			[0, -90]
+	DstBlock		"OutDownsample"
+	DstPort			1
+      }
+      Branch {
+	Labels			[-1, 0]
+	Points			[25, 0; 0, 30]
+	DstBlock		"OutScope"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "AdvancedBlockset"
+      SrcPort		      2
+      DstBlock		      "ChannelOut1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "ChannelOut1"
+      SrcPort		      1
+      Points		      [35, 0; 0, -30]
+      DstBlock		      "OutScope"
+      DstPort		      2
+    }
+    Annotation {
+      Name		      "2 Channel Digital Up Converter after AD9856"
+      Position		      [614, 46]
+      FontName		      "Arial Black"
+      FontSize		      18
+    }
+    Annotation {
+      Name		      "In mixed blockset designs the Hardware Destination \nDirectory must be a fixed, not relative, path "
+      Position		      [466, 149]
+    }
+    Annotation {
+      Name		      "Define the DSPB clock to match the frequency of\nthe DSPBA clock specified in the Signals block "
+      Position		      [928, 126]
+      HorizontalAlignment     "left"
+    }
+    Annotation {
+      Name		      "You can use DSPB testBench in mixed blockset designs. \n\nNOTE: In order to run the testBench flow,"
+      "  please update \n'Hardware Destination Directory' in 'Control' block as mentioned\nand run simulation, so DSPBA"
+      " generation is run."
+      Position		      [930, 210]
+      HorizontalAlignment     "left"
+    }
+    Annotation {
+      Name		      "The device family specified in the SignalCompiler\nblock must match that on the DSPBA Device block"
+      Position		      [928, 74]
+      HorizontalAlignment     "left"
+    }
+  }
+}
+MatData {
+  NumRecords		  4
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    ,     8    (    !          %    \"                0         0          "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    ,     8    (    !          %    \"                0         0          "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+}

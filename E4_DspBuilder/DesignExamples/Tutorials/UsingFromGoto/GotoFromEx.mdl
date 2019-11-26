@@ -1,0 +1,1374 @@
+Model {
+  Name			  "GotoFromEx"
+  Version		  6.3
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.40"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-1386_P100-2002"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  InitFcn		  "%% DSPBuilder Start\nalt_dspbuilder_update_model(bd"
+"root)\n%% DSPBuilder End\n"
+  Created		  "Thu Aug 29 08:32:14 2002"
+  Creator		  "gnixon"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "delphick"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Apr 18 14:41:07 2007"
+  ModelVersionFormat	  "1.%<AutoIncrement:40>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "Warning"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "GotoFromEx"
+    Location		    [30, 93, 1357, 650]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "DataRead"
+      Ports		      [1, 1]
+      Position		      [340, 267, 405, 283]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataRead.capture"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataRead1"
+      Ports		      [1, 1]
+      Position		      [760, 262, 825, 278]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataRead1.capture"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataRead2"
+      Ports		      [1, 1]
+      Position		      [1170, 262, 1235, 278]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataRead2.capture"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataRead3"
+      Ports		      [1, 1]
+      Position		      [335, 447, 400, 463]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataRead3.capture"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataRead4"
+      Ports		      [1, 1]
+      Position		      [760, 447, 825, 463]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataRead4.capture"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataRead5"
+      Ports		      [1, 1]
+      Position		      [1170, 447, 1235, 463]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Output"
+      SourceType	      "Output AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataRead5.capture"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      PORTTYPE		      "Output"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataWrite"
+      Ports		      [1, 1]
+      Position		      [110, 212, 175, 228]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataWrite.salt"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataWrite1"
+      Ports		      [1, 1]
+      Position		      [540, 207, 605, 223]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataWrite1.salt"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataWrite2"
+      Ports		      [1, 1]
+      Position		      [950, 207, 1015, 223]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataWrite2.salt"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataWrite3"
+      Ports		      [1, 1]
+      Position		      [105, 392, 170, 408]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataWrite3.salt"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataWrite4"
+      Ports		      [1, 1]
+      Position		      [540, 392, 605, 408]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataWrite4.salt"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DataWrite5"
+      Ports		      [1, 1]
+      Position		      [950, 392, 1015, 408]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Input"
+      SourceType	      "Input AlteraBlockset"
+      iofile		      "C:\\workspace_clean\\Documentation\\DesignExamp"
+"les\\Tutorials\\UsingFromGoto\\tb_GotoFromEx\\GotoFromEx_DataWrite5.salt"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "8"
+      SpecifyClock	      off
+      PORTTYPE		      "Input"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dual-Port RAM"
+      Ports		      [4, 1]
+      Position		      [210, 197, 315, 348]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Dual-Port RAM"
+      SourceType	      "Dual-Port RAM AlteraBlockset"
+      numwords		      "2^(7)"
+      BusType		      "Inferred"
+      bwl		      "8"
+      bwr		      "0"
+      memory_type	      "AUTO"
+      ram_type		      "DualRAM"
+      initialization	      "Blank"
+      init_file		      "input.hex"
+      init_array	      "[0:1:15]"
+      register_outputs	      off
+      use_ena		      off
+      ClockPhase	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dual-Port RAM1"
+      Ports		      [4, 1]
+      Position		      [640, 195, 740, 340]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Dual-Port RAM"
+      SourceType	      "Dual-Port RAM AlteraBlockset"
+      numwords		      "2^(7)"
+      BusType		      "Inferred"
+      bwl		      "8"
+      bwr		      "0"
+      memory_type	      "AUTO"
+      ram_type		      "DualRAM"
+      initialization	      "Blank"
+      init_file		      "input.hex"
+      init_array	      "[0:1:15]"
+      register_outputs	      off
+      use_ena		      off
+      ClockPhase	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dual-Port RAM2"
+      Ports		      [4, 1]
+      Position		      [1050, 195, 1155, 340]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Dual-Port RAM"
+      SourceType	      "Dual-Port RAM AlteraBlockset"
+      numwords		      "2^(7)"
+      BusType		      "Inferred"
+      bwl		      "8"
+      bwr		      "0"
+      memory_type	      "AUTO"
+      ram_type		      "DualRAM"
+      initialization	      "Blank"
+      init_file		      "input.hex"
+      init_array	      "[0:1:15]"
+      register_outputs	      off
+      use_ena		      off
+      ClockPhase	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dual-Port RAM3"
+      Ports		      [4, 1]
+      Position		      [210, 379, 315, 526]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Dual-Port RAM"
+      SourceType	      "Dual-Port RAM AlteraBlockset"
+      numwords		      "2^(7)"
+      BusType		      "Inferred"
+      bwl		      "8"
+      bwr		      "0"
+      memory_type	      "AUTO"
+      ram_type		      "DualRAM"
+      initialization	      "Blank"
+      init_file		      "input.hex"
+      init_array	      "[0:1:15]"
+      register_outputs	      off
+      use_ena		      off
+      ClockPhase	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dual-Port RAM4"
+      Ports		      [4, 1]
+      Position		      [640, 380, 740, 525]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Dual-Port RAM"
+      SourceType	      "Dual-Port RAM AlteraBlockset"
+      numwords		      "2^(7)"
+      BusType		      "Inferred"
+      bwl		      "8"
+      bwr		      "0"
+      memory_type	      "AUTO"
+      ram_type		      "DualRAM"
+      initialization	      "Blank"
+      init_file		      "input.hex"
+      init_array	      "[0:1:15]"
+      register_outputs	      off
+      use_ena		      off
+      ClockPhase	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Dual-Port RAM5"
+      Ports		      [4, 1]
+      Position		      [1050, 380, 1155, 525]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Dual-Port RAM"
+      SourceType	      "Dual-Port RAM AlteraBlockset"
+      numwords		      "2^(7)"
+      BusType		      "Inferred"
+      bwl		      "8"
+      bwr		      "0"
+      memory_type	      "AUTO"
+      ram_type		      "DualRAM"
+      initialization	      "Blank"
+      init_file		      "input.hex"
+      init_array	      "[0:1:15]"
+      register_outputs	      off
+      use_ena		      off
+      ClockPhase	      "1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From"
+      Position		      [110, 245, 185, 265]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ReadAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From1"
+      Position		      [110, 280, 180, 300]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From10"
+      Position		      [105, 460, 175, 480]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From11"
+      Position		      [105, 496, 180, 514]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteEna"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From12"
+      Position		      [540, 460, 610, 480]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From13"
+      Position		      [540, 496, 615, 514]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteEna"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From14"
+      Position		      [540, 425, 615, 445]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ReadAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From15"
+      Position		      [950, 460, 1020, 480]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From16"
+      Position		      [950, 496, 1025, 514]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteEna"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From17"
+      Position		      [950, 425, 1025, 445]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ReadAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From2"
+      Position		      [110, 316, 185, 334]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteEna"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From3"
+      Position		      [540, 240, 615, 260]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ReadAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From4"
+      Position		      [540, 275, 610, 295]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From5"
+      Position		      [540, 311, 615, 329]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteEna"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From6"
+      Position		      [950, 240, 1025, 260]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ReadAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From7"
+      Position		      [950, 275, 1020, 295]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteAddr"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From8"
+      Position		      [950, 311, 1025, 329]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "WriteEna"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From9"
+      Position		      [105, 425, 180, 445]
+      CloseFcn		      "tagdialog Close"
+      GotoTag		      "ReadAddr"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      Position		      [285, 38, 350, 62]
+      GotoTag		      "ReadAddr"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto1"
+      Position		      [290, 103, 355, 127]
+      GotoTag		      "WriteAddr"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto2"
+      Position		      [590, 51, 655, 69]
+      GotoTag		      "WriteEna"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Pattern"
+      Ports		      [0, 1]
+      Position		      [485, 52, 560, 68]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Pattern"
+      SourceType	      "Pattern AlteraBlockset"
+      Sequence		      "100000"
+      SpecifyClock	      off
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator"
+      Ports		      [0, 1]
+      Position		      [25, 158, 70, 192]
+      PulseType		      "Time based"
+      PulseWidth	      "50"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator1"
+      Ports		      [0, 1]
+      Position		      [450, 158, 495, 192]
+      PulseType		      "Time based"
+      PulseWidth	      "50"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator2"
+      Ports		      [0, 1]
+      Position		      [865, 138, 910, 172]
+      PulseType		      "Time based"
+      PulseWidth	      "50"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "ReadCounter"
+      Ports		      [0, 1]
+      Position		      [175, 31, 250, 69]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Increment Decrement"
+      SourceType	      "Increment Decrement AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      clr_value		      "0"
+      direction		      "Increment"
+      phase_selection	      "1"
+      use_ena		      off
+      use_sclr		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "SignalCompiler"
+      Ports		      []
+      Position		      [29, 28, 98, 75]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Signal Compiler"
+      SourceType	      "Signal Compiler AlteraBlockset"
+      DeviceFamily          "Stratix IV"
+      DeviceName	      "AUTO"
+      EnableSignalTap	      off
+      SignalTapDepth	      "128"
+      UseBoardBlock	      off
+      StpUseDefaultClock      on
+      StpClock		      "clock"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      Position		      [1260, 260, 1280, 280]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      Position		      [1260, 445, 1280, 465]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      Position		      [850, 260, 870, 280]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      Position		      [850, 445, 870, 465]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator4"
+      Position		      [425, 265, 445, 285]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator5"
+      Position		      [420, 445, 440, 465]
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "WriteCounter"
+      Ports		      [0, 1]
+      Position		      [175, 96, 250, 134]
+      ForegroundColor	      "blue"
+      SourceBlock	      "allblocks_alteradspbuilder2/Increment Decrement"
+      SourceType	      "Increment Decrement AlteraBlockset"
+      BusType		      "Signed Integer"
+      bwl		      "8"
+      bwr		      "0"
+      SpecifyClock	      off
+      clr_value		      "0"
+      direction		      "Increment"
+      phase_selection	      "1"
+      use_ena		      off
+      use_sclr		      off
+    }
+    Line {
+      SrcBlock		      "DataWrite"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Dual-Port RAM"
+      SrcPort		      1
+      DstBlock		      "DataRead"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From1"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From2"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "DataWrite1"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Dual-Port RAM1"
+      SrcPort		      1
+      DstBlock		      "DataRead1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From3"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From4"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From5"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "DataWrite2"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Dual-Port RAM2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Dual-Port RAM2"
+      SrcPort		      1
+      Points		      [-5, 0]
+      DstBlock		      "DataRead2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From6"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "Dual-Port RAM2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From7"
+      SrcPort		      1
+      Points		      [10, 0]
+      DstBlock		      "Dual-Port RAM2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From8"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "Dual-Port RAM2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "DataWrite3"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Dual-Port RAM3"
+      SrcPort		      1
+      DstBlock		      "DataRead3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From9"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From10"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM3"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From11"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM3"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "DataWrite4"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Dual-Port RAM4"
+      SrcPort		      1
+      DstBlock		      "DataRead4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From14"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM4"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From12"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM4"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From13"
+      SrcPort		      1
+      DstBlock		      "Dual-Port RAM4"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "DataWrite5"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Dual-Port RAM5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Dual-Port RAM5"
+      SrcPort		      1
+      Points		      [-5, 0]
+      DstBlock		      "DataRead5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From17"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "Dual-Port RAM5"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From15"
+      SrcPort		      1
+      Points		      [10, 0]
+      DstBlock		      "Dual-Port RAM5"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From16"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "Dual-Port RAM5"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "ReadCounter"
+      SrcPort		      1
+      DstBlock		      "Goto"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "WriteCounter"
+      SrcPort		      1
+      DstBlock		      "Goto1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Pattern"
+      SrcPort		      1
+      DstBlock		      "Goto2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DataRead2"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DataRead5"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DataRead1"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DataRead4"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DataRead"
+      SrcPort		      1
+      DstBlock		      "Terminator4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DataRead3"
+      SrcPort		      1
+      DstBlock		      "Terminator5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Pulse\nGenerator"
+      SrcPort		      1
+      Points		      [10, 0; 0, 45]
+      Branch {
+	DstBlock		"DataWrite"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 180]
+	DstBlock		"DataWrite3"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Pulse\nGenerator1"
+      SrcPort		      1
+      Points		      [15, 0; 0, 40]
+      Branch {
+	Points			[10, 0]
+	DstBlock		"DataWrite1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 185]
+	DstBlock		"DataWrite4"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Pulse\nGenerator2"
+      SrcPort		      1
+      Points		      [10, 0; 0, 60]
+      Branch {
+	DstBlock		"DataWrite2"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 185]
+	DstBlock		"DataWrite5"
+	DstPort			1
+      }
+    }
+  }
+}

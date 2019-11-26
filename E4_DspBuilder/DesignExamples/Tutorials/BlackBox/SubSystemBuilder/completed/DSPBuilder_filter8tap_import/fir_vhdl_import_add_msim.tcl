@@ -1,0 +1,1 @@
+compile_file work "$mdldir/fir_vhdl.vhd"

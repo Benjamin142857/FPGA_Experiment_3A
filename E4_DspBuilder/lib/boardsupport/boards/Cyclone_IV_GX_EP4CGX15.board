@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board uniquename="CycloneIVGXEP4CGX15" family="Cyclone IV GX">
+	<displayname>Cyclone IV GX 4CGX15 Transceiver Starter Kit</displayname>
+
+	<!-- Push-Button Switches -->
+	<component name="PB0" pin="Pin_H13" />
+	<component name="PB1" pin="Pin_G13" />
+
+	<!-- CPU Reset Push-Button Switches -->
+	<component name="CPU_RESETN" pin="Pin_D10" />
+
+	<!-- LEDs -->
+	<component name="LED0" pin="Pin_N8" />
+	<component name="LED1" pin="Pin_C13" />
+	<component name="LED2" pin="Pin_N5" />
+	<component name="LED3" pin="Pin_M6" />
+
+	<configuration icon="4cgx15.bmp" width="166" height="144">
+		<devices jtag-code="0x028010DD">
+			<device name="EP4CGX15BF14C8" />
+		</devices>
+
+		<option name="ClockPinIn" label="Clock Pin In">
+			<pin location="Pin_M7" /> <!-- CLKIN_SMA_P/125M_OCS_P -->
+			<pin location="Pin_E7" /> <!-- CLKIN_SMA_P/125M_OCS_P -->
+			<pin location="Pin_N7" /> <!-- CLKIN_SMA_N/125M_OCS_N -->
+			<pin location="Pin_E6" /> <!-- CLKIN_SMA_N/125M_OCS_N -->
+			<pin location="None" />
+		</option>
+
+		<option name="GlobalResetPin" label="Global Reset Pin">
+			<pin location="Pin_D10" />
+			<pin location="Pin_H13" />
+			<pin location="Pin_G13" />
+			<pin location="None" />
+		</option>
+	</configuration>
+</board>

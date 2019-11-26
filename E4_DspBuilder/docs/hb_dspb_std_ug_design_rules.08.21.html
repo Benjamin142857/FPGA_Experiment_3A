@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Making Quartus&nbsp;II Assignments to Block Entity Names</title>
+    <link rel="StyleSheet" href="css/hb_dspb_std_ug_design_rules.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+  </head>
+  <body class="" style="background-image: url(&quot;banner.gif&quot;); background-position: left top; background-repeat: no-repeat;">
+    <div style="text-align: right;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="hb_dspb_std_ug_design_rules.08.20.html"><img src="images/prev.gif" alt="Previous" border="0" /></a>
+          </td>
+          <td>
+            <a href="hb_dspb_std_ug_megacore.09.1.html"><img src="images/next.gif" alt="Next" border="0" /></a>
+          </td>
+          <td>
+            <a href="ix.html"><img src="images/index.gif" alt="Index" border="0" /></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;"></div>
+    <hr align="left" />
+    <blockquote>
+      <div class="H1_heading"><a name="1104808">Making Quartus</a>&nbsp;II Assignments to Block Entity Names</div>
+      <div class="Body"><a name="1104812">The VHDL entity names of the blocks in a DSP Builder design are dependent on the </a>block’s parameter values. Blocks of the same type and same parameterization share a common VHDL entity. </div>
+      <div class="Body"><a name="1104886">The entity names have the following format:</a></div>
+      <div class="C1_code_indent"><span class="Code"><a name="1104814">&lt;</a></span><span class="Emphasis">block type name</span><span class="Code" style="font-style: normal;">&gt;_GN&lt;</span><span class="Emphasis">8 alphanumeric characters</span><span class="Code" style="font-style: normal;">&gt;</span></div>
+      <div class="Body"><a name="1104815">For example, a </a><span class="Code">Delay</span> block entity name:</div>
+      <div class="C1_code_indent"><span class="Code"><a name="1104818">alt_dspbuilder_delay_GNLVAGVO3B</a></span></div>
+      <div class="Body"><a name="1104822">Changing the parameterization of the block causes the entity name to change. If you </a>want to make an assignment to a block in the Quartus II project, and for the assignment to remain when the block parameters change, you can use regular expressions in the assignments. </div>
+      <div class="Body"><a name="1104927">For example, you may want to make a </a><span class="Bold">Preserve Registers</span> assignment to the <span class="Code">Delay</span> blocks in <span class="N_007cLink"><a href="#1120247" title="Making Quartus II Assignments to Block Entity Names">Figure&nbsp;3–25</a></span> to prevent them from merging.</div>
+      <div class="TA_table_anchor"><a name="1120240">&nbsp;</a></div>
+      <table class="Figure" style="text-align: left; width: 378.4998pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–25.&nbsp;</span><a name="1120247">Entity Name Assignment Example</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 378.4998pt;">
+            <div class="GA_graphic_anchor"><a name="1120249"><img class="Default" src="images/preserve_regs.png" width="349" height="177" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1104830">Using the Quartus II Assignment Editor and Node Finder tools, you can identify the </a>names of the registers and make the assignments to them. For example, if your model is <span class="Code">my_model</span>, the names may be:</div>
+      <div class="C1_code_indent"><a name="1104832">my_model_GN:auto_inst|alt_dspbuilder_delay_GNLVAGVO3B:Delay|alt_dsp</a>builder_SDelay:Delay1i|DelayLine</div>
+      <div class="C1_code_indent"><a name="1133132">my_model_GN:auto_inst|alt_dspbuilder_delay_GNLVAGVO3B:Delay1|alt_ds</a>pbuilder_SDelay:Delay1i|DelayLine</div>
+      <div class="Body"><a name="1104838">These assignments prevent merging of the registers. If you change the length of the </a>delay, the assignments are no longer valid. However, you can edit the <span class="Bold">To</span> field of the assignment and use a regular expression that is still valid if the entity name changes due to a parameter change: Replace the eight alphanumeric characters following the <span class="Code">GN</span> in the block entity name with <span class="Code">.{8}</span>, which is a regular expression that matches any eight characters. The targets of the assignments then become:</div>
+      <div class="C1_code_indent"><a name="1104840">my_model_GN:auto_inst|alt_dspbuilder_delay_GN.{8}:Delay|alt_dspbuil</a>der_SDelay:Delay1i|DelayLine</div>
+      <div class="C1_code_indent"><a name="1133153">my_model_GN:auto_inst|alt_dspbuilder_delay_GN.{8}:Delay1|alt_dspbui</a>lder_SDelay:Delay1i|DelayLine</div>
+      <div class="Body"><a name="1104844">If you want the assignment to apply to the whole block, not just the specific nodes, </a>you can use the following code:</div>
+      <div class="C1_code_indent"><a name="1104846">my_model_GN:auto_inst|alt_dspbuilder_delay_GN.{8}:Delay</a></div>
+      <div class="C1_code_indent"><a name="1133155">my_model_GN:auto_inst|alt_dspbuilder_delay_GN.{8}:Delay1</a></div>
+      <div class="Body"><span class="N_007cLink"><a href="#1120325" title="Making Quartus II Assignments to Block Entity Names" name="1104850">Figure&nbsp;3–26</a></span> shows this example in the Quartus II Assignment Editor.</div>
+      <div class="TAW_table_anchor_wide"><a name="1120318">&nbsp;</a></div>
+      <table class="Figure_wide" style="text-align: left; width: 468.5004pt;" cellspacing="0" summary="">
+        <caption>
+          <div class="HF_figure_heading">
+            <span class="N_007cRun-in_heading">Figure&nbsp;3–26.&nbsp;</span><a name="1120325">Preserve Registers Assignment in the Quartus II Assignment Editor</a></div>
+        </caption>
+        <tr>
+          <td style="padding-bottom: 4pt; padding-left: 0pt; padding-right: 0pt; padding-top: 6pt; vertical-align: top; width: 468.5004pt;">
+            <div class="GA_graphic_anchor"><a name="1120327"><img class="Default" src="images/AssignmentEditor.png" width="607" height="86" style="display: inline; float: none; left: 0.0; top: 0.0;" alt="" /></a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="1105246">This type of assignment can be useful for a complicated block that contains many </a>registers when you want the assignment to apply to all of the registers.</div>
+      <div class="N_007cPN_part_number"><a name="1003332">&nbsp;</a></div>
+    </blockquote>
+    <hr align="left" />
+    <table align="left" summary="">
+      <tr>
+        <td class="WebWorks_Company_Name_Bottom">
+          <a href="http://www.altera.com/literature/lit-index.html" target="external_window">Copyright © 2001-2010 Altera Corporation, 101 Innovation Drive, San Jose, California 95134, USA.</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
